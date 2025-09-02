@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-T" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>bird&co</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .font-kalam {
+      font-family: 'Kalam', cursive;
+    }
+    .gradient-text {
+      background-image: linear-gradient(to right, #27013D, #6D0037);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .gradient-text-alt {
+      background-image: linear-gradient(to right, #9333ea, #4f46e5);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .gradient-text-expertise {
+      background-image: linear-gradient(101deg, rgb(203, 163, 255) 0%, rgb(163, 226, 255) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .bg-navy-dark {
+      background-color: #0A0D28;
+    }
+    .curved-line-decorator {
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        left: -50%;
+        top: -50%;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        pointer-events: none;
+    }
+    
+    /* Base reveal state */
+    .reveal {
+      --reveal-duration: 520ms;
+      --reveal-ease: cubic-bezier(.2,.65,.2,1); /* snappy but smooth */
+      --reveal-translate: 12px;
+      --reveal-scale: .96;
+
+      opacity: 0;
+      transform: translateY(var(--reveal-translate)) scale(var(--reveal-scale));
+      transition:
+        opacity var(--reveal-duration) var(--reveal-ease),
+        transform var(--reveal-duration) var(--reveal-ease),
+        filter var(--reveal-duration) var(--reveal-ease);
+      will-change: opacity, transform;
+      filter: blur(2px);
+    }
+
+    /* When visible */
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
+
+    /* Variant: pop a bit stronger */
+    .reveal--pop { --reveal-translate: 16px; --reveal-scale: .92; }
+
+    /* Optional stagger helper: apply to a container to stagger children */
+    .stagger > .reveal { transition-delay: calc(var(--i, 0) * 90ms); }
+
+    /* Respect users who prefer less motion */
+    @media (prefers-reduced-motion: reduce) {
+      .reveal,
+      .reveal.is-visible,
+      .stagger > .reveal {
+        transition: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+        filter: none !important;
+      }
+    }
+
+    @keyframes scroll {
+        from { transform: translateX(0); }
+        to { transform: translateX(-100%); }
+    }
+    .animate-scroll {
+        animation: scroll 60s linear infinite;
+    }
+    .logos-scroller:hover .animate-scroll {
+        animation-play-state: paused;
+    }
+    .gradient-border-l {
+        position: relative;
+    }
+    .gradient-border-l::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background-image: linear-gradient(to bottom, #0D0544, #A41752);
+        border-radius: 2px;
+    }
+    .gradient-line-v {
+        background-image: linear-gradient(to bottom, #0D0544, #A41752);
+    }
+    .hero-planet-glow::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 400px;
+      background: radial-gradient(ellipse 80% 100% at 50% 120%, rgba(38, 52, 102, 0.5), transparent);
+      z-index: 1;
+      pointer-events: none;
+    }
+    .glow-card {
+        background-color: #1a1128;
+        background-image: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(129, 93, 248, 0.15), transparent);
+        transition: background-image 0.3s ease;
+    }
+    .glow-card:hover {
+        background-image: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(129, 93, 248, 0.25), transparent);
+    }
+    .grid-card:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+    @keyframes fadeInPop {
+      from {
+        opacity: 0;
+        transform: translateY(16px) scale(.92);
+        filter: blur(2px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+      }
+    }
+    .animate-fade-in-pop {
+      animation: fadeInPop 520ms cubic-bezier(.2,.65,.2,1) forwards;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/"
+  }
+}
+</script>
+</head>
+<body class="bg-white">
+  <div id="root"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

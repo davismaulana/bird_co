@@ -1,0 +1,120 @@
+import React from 'react';
+import Animate from './Animate';
+import { DiagnosticIcon, HandshakeIcon, FundsRaisedIcon, PaperPlaneIcon } from '../constants';
+
+const pillars = [
+  {
+    icon: <DiagnosticIcon />,
+    title: 'Anticipation Proactive',
+    description: "Nous utilisons notre expertise et l'analyse de données pour identifier les opportunités et les risques futurs, vous permettant de garder une longueur d'avance.",
+  },
+  {
+    icon: <HandshakeIcon />,
+    title: 'Partenariat de Confiance',
+    description: "Plus qu'un consultant, nous sommes un véritable 'bras droit', impliqué à vos côtés pour atteindre vos objectifs les plus ambitieux.",
+  },
+  {
+    icon: <PaperPlaneIcon />,
+    title: 'Clarté Décisionnelle',
+    description: "Nous transformons la complexité en clarté, fournissant des analyses et des outils qui éclairent vos décisions stratégiques.",
+  },
+  {
+    icon: <FundsRaisedIcon />,
+    title: 'Performance Durable',
+    description: "Notre but est de bâtir des fondations solides pour une croissance résiliente et une création de valeur sur le long terme.",
+  },
+];
+
+const AmbitionPage: React.FC = () => {
+  return (
+    <div className="bg-white">
+      {/* Pillars Section */}
+      <section className="py-24 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <Animate variant="pop">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+                Les Piliers de Notre Engagement
+              </h2>
+            </Animate>
+            <Animate variant="pop" delay={150}>
+              <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+                Notre ambition repose sur quatre piliers fondamentaux qui guident chacune de nos interventions.
+              </p>
+            </Animate>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto stagger">
+            {pillars.map((pillar, index) => (
+              <Animate key={index} variant="pop">
+                <div className="bg-white rounded-xl p-8 h-full border border-gray-100 transition-all duration-300 hover:shadow-xl hover:shadow-violet-100/50 hover:-translate-y-1">
+                  <div className="mb-5 text-[#27013D]">{React.cloneElement(pillar.icon, { className: 'w-10 h-10' })}</div>
+                  <h3 className="text-2xl font-bold text-[#27013D] mb-3">{pillar.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{pillar.description}</p>
+                </div>
+              </Animate>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Quote/Image Section */}
+      <section className="bg-white">
+          <div className="max-w-none">
+            <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
+                <Animate variant="pop" className="h-full lg:order-last">
+                    <div className="h-[400px] lg:h-full bg-cover bg-center" style={{ backgroundImage: `url('https://picsum.photos/800/800?grayscale&random=42')` }}>
+                    </div>
+                </Animate>
+                <div className="lg:order-first">
+                    <div className="p-8 sm:p-12 md:p-20 container">
+                        <Animate variant="pop">
+                            <blockquote className="text-3xl md:text-4xl font-bold text-[#27013D] leading-snug">
+                                "La meilleure façon de prédire l'avenir, c'est de le créer."
+                            </blockquote>
+                        </Animate>
+                        <Animate variant="pop" delay={150}>
+                            <p className="mt-4 text-lg text-gray-600">— Peter Drucker</p>
+                        </Animate>
+                        <Animate variant="pop" delay={300}>
+                            <p className="mt-8 text-gray-700 leading-relaxed">
+                                Cette philosophie est au cœur de notre démarche. Nous ne nous contentons pas de réagir aux événements ; nous vous donnons les moyens de façonner activement l'avenir de votre entreprise, en transformant l'incertitude en opportunité et la vision en réalité.
+                            </p>
+                        </Animate>
+                    </div>
+                </div>
+            </div>
+          </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="bg-gray-50 py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <Animate variant="pop">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                    Prêt à réaliser <span className="gradient-text">votre ambition ?</span>
+                </h2>
+            </Animate>
+            <Animate variant="pop" delay={150}>
+                <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                    Discutons de la manière dont notre expertise peut se mettre au service de votre succès.
+                </p>
+            </Animate>
+            <Animate variant="pop" delay={300}>
+                <div className="mt-8">
+                    <a
+                      href="https://calendly.com/contact-birdandco/30min"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block bg-[#27013D] text-white px-10 py-4 rounded-full font-semibold hover:bg-[#1c0e2a] transition-transform hover:scale-105 text-lg"
+                    >
+                      Prenons rendez-vous
+                    </a>
+                </div>
+            </Animate>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default AmbitionPage;

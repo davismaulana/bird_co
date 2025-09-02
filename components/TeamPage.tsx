@@ -1,0 +1,173 @@
+import React from 'react';
+import Animate from './Animate';
+import { teamMembers, LinkedInIcon, CheckmarkCircleIcon } from '../constants';
+import LottieGraph from './LottieGraph';
+
+const dnaItems = [
+    {
+      icon: <CheckmarkCircleIcon className="w-6 h-6 flex-shrink-0 mr-4 mt-1" />,
+      text: "<strong>Engagement :</strong> Nous sommes à vos côtés, pleinement investis dans la réussite de vos projets."
+    },
+    {
+      icon: <CheckmarkCircleIcon className="w-6 h-6 flex-shrink-0 mr-4 mt-1" />,
+      text: "<strong>Excellence :</strong> Nous visons les plus hauts standards de qualité dans chacune de nos missions."
+    },
+    {
+      icon: <CheckmarkCircleIcon className="w-6 h-6 flex-shrink-0 mr-4 mt-1" />,
+      text: "<strong>Pragmatisme :</strong> Nous apportons des solutions concrètes, opérationnelles et adaptées à votre réalité."
+    },
+    {
+      icon: <CheckmarkCircleIcon className="w-6 h-6 flex-shrink-0 mr-4 mt-1" />,
+      text: "<strong>Confiance :</strong> Nous construisons des relations durables basées sur la transparence et l'intégrité."
+    }
+];
+
+const TeamPage: React.FC = () => {
+    return (
+        <div className="bg-white text-gray-800">
+            {/* Hero Section */}
+            <section className="bg-[#27013D] text-white overflow-hidden">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-24">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                        <div className="text-center lg:text-left">
+                            <Animate variant="pop">
+                                <p className="font-semibold text-violet-300 uppercase tracking-widest mb-4">Notre Équipe</p>
+                            </Animate>
+                            <Animate variant="pop" delay={100}>
+                                <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight">
+                                    Deux associés, une vision
+                                </h1>
+                            </Animate>
+                            <Animate variant="pop" delay={200}>
+                                <p className="mt-6 text-lg text-gray-300 max-w-xl mx-auto lg:mx-0">
+                                    Des expertises complémentaires au service de votre croissance. Nous sommes plus que des consultants, nous sommes vos partenaires.
+                                </p>
+                            </Animate>
+                            <Animate variant="pop" delay={300}>
+                                <div className="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                                    <a
+                                        href="https://calendly.com/contact-birdandco/30min"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-block text-center bg-white text-[#27013D] px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-transform hover:scale-105 w-full sm:w-auto">
+                                        Prenons rendez-vous
+                                    </a>
+                                </div>
+                            </Animate>
+                        </div>
+
+                        <Animate variant="pop" delay={300} className="flex items-center justify-center">
+                            <LottieGraph className="w-full max-w-xl mx-auto lg:mx-0" />
+                        </Animate>
+                    </div>
+                </div>
+            </section>
+
+            {/* Team Members Section */}
+            <section className="bg-white py-24">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+                    {teamMembers.map((member, index) => {
+                        return (
+                            <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center`}>
+                                <Animate variant="pop" className={`relative ${index % 2 === 1 ? 'lg:order-last' : ''}`}>
+                                    <div className="aspect-w-1 aspect-h-1">
+                                        <img
+                                            src={member.imageUrl}
+                                            alt={`Photo de ${member.name}`}
+                                            className="w-full h-full object-cover rounded-2xl shadow-2xl shadow-violet-200/50"
+                                        />
+                                    </div>
+                                </Animate>
+                                <div>
+                                    <Animate variant="pop" delay={150}>
+                                        <h2 className="text-4xl font-bold text-[#27013D]">{member.name}</h2>
+                                    </Animate>
+                                    <Animate variant="pop" delay={250}>
+                                        <p className="mt-2 text-lg font-semibold text-[#6D0037]">{member.alumni}</p>
+                                    </Animate>
+                                    <Animate variant="pop" delay={300}>
+                                        <p className="mt-1 text-md text-gray-500">{member.diploma}</p>
+                                    </Animate>
+                                    <div className="mt-6 space-y-4 text-gray-700 leading-relaxed">
+                                        {member.description.map((paragraph, pIndex) => (
+                                            <Animate key={pIndex} variant="pop" delay={350 + pIndex * 100}>
+                                                <p>{paragraph}</p>
+                                            </Animate>
+                                        ))}
+                                    </div>
+                                    <Animate variant="pop" delay={450 + member.description.length * 100}>
+                                        <div className="mt-8">
+                                            <a
+                                                href={member.linkedinUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                aria-label={`LinkedIn de ${member.name}`}
+                                                className="inline-flex items-center gap-2 text-[#27013D] font-semibold hover:text-[#6D0037] transition-colors"
+                                            >
+                                                <LinkedInIcon className="w-5 h-5" />
+                                                Profil LinkedIn
+                                            </a>
+                                        </div>
+                                    </Animate>
+                                </div>
+                            </div>
+                        )
+                    })}
+                </div>
+            </section>
+            
+            {/* DNA Section */}
+            <section className="bg-gray-50 py-24">
+              <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center max-w-3xl mx-auto">
+                    <Animate variant="pop">
+                        <h2 className="text-4xl font-bold text-[#27013D] mb-6">Notre ADN</h2>
+                    </Animate>
+                    <Animate variant="pop" delay={150}>
+                        <p className="text-lg text-gray-700 leading-relaxed">Quatre valeurs fondamentales qui définissent qui nous sommes, comment nous travaillons, et ce que nous nous engageons à vous apporter.</p>
+                    </Animate>
+                </div>
+                <ul className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 max-w-4xl mx-auto stagger">
+                    {dnaItems.map((item, index) => (
+                    <Animate as="li" key={index} variant="pop" className="flex items-start">
+                        {item.icon}
+                        <span className="text-gray-700 text-lg leading-relaxed" dangerouslySetInnerHTML={{ __html: item.text }}></span>
+                    </Animate>
+                    ))}
+                </ul>
+              </div>
+            </section>
+
+
+            {/* Final CTA section */}
+            <section className="bg-white py-20">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <Animate variant="pop">
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                            Prêt à collaborer avec <span className="gradient-text">notre équipe ?</span>
+                        </h2>
+                    </Animate>
+                    <Animate variant="pop" delay={150}>
+                        <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                            Contactez-nous pour découvrir comment notre duo d'experts peut devenir le catalyseur de votre succès.
+                        </p>
+                    </Animate>
+                    <Animate variant="pop" delay={300}>
+                        <div className="mt-8">
+                            <a
+                                href="https://calendly.com/contact-birdandco/30min"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-block bg-[#27013D] text-white px-10 py-4 rounded-full font-semibold hover:bg-[#1c0e2a] transition-transform hover:scale-105 text-lg"
+                            >
+                                Rencontrons-nous
+                            </a>
+                        </div>
+                    </Animate>
+                </div>
+            </section>
+        </div>
+    );
+};
+
+export default TeamPage;
