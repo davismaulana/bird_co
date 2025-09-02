@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { WellowLogo, RegenSchoolLogo, PomadLogo, OctoLogo, CameroneCapitalLogo } from '../constants';
 import Animate from './Animate';
@@ -15,33 +16,19 @@ const Logos: React.FC = () => {
     <section className="bg-gray-100 py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <Animate variant="pop">
-          <h2 className="text-center text-4xl lg:text-5xl font-extrabold text-gray-900 mb-20">
+          <h2 className="text-center text-3xl md:text-4xl xl:text-5xl font-extrabold text-gray-900 mb-20">
             Ils nous <span className="gradient-text">font confiance</span>
           </h2>
         </Animate>
-      </div>
-      <div 
-        className="w-full inline-flex flex-nowrap overflow-hidden logos-scroller"
-        style={{ maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)'}}
-      >
-        <ul className="flex items-center justify-center animate-scroll">
+        <div className="flex justify-center items-center flex-wrap gap-x-16 gap-y-12 lg:gap-x-24 stagger">
           {logos.map((logo, index) => (
-            <li key={index} className="mx-24 flex-shrink-0">
-              <div className="h-36 flex items-center justify-center" style={{ width: '280px' }}>
+            <Animate key={index} variant="pop">
+              <div className="h-20 flex items-center justify-center w-48 text-gray-500 hover:text-gray-800 transition-colors">
                 {React.cloneElement(logo.component, { className: "max-h-full max-w-full object-contain" })}
               </div>
-            </li>
+            </Animate>
           ))}
-        </ul>
-        <ul className="flex items-center justify-center animate-scroll" aria-hidden="true">
-          {logos.map((logo, index) => (
-            <li key={index} className="mx-24 flex-shrink-0">
-              <div className="h-36 flex items-center justify-center" style={{ width: '280px' }}>
-                {React.cloneElement(logo.component, { className: "max-h-full max-w-full object-contain" })}
-              </div>
-            </li>
-          ))}
-        </ul>
+        </div>
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Animate from './Animate';
-import { TargetIcon, BarChartIcon, TrendingUpIcon, CheckCircleIcon } from '../constants';
+// FIX: Replaced incorrect CheckCircleIcon with CheckmarkCircleIcon as it is the correct export from constants.
+import { TargetIcon, BarChartIcon, TrendingUpIcon, CheckmarkCircleIcon, BriefcaseIcon } from '../constants';
 
 const PerformanceReportVisual: React.FC = () => (
   <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
@@ -35,7 +36,7 @@ const PerformanceReportVisual: React.FC = () => (
 const FinancialModelVisual: React.FC = () => (
     <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
         <div className="flex space-x-2 mb-4">
-            <div className="px-3 py-1 text-xs font-semibold bg-[#6D0037] text-white rounded-full">P&L</div>
+            <div className="px-3 py-1 text-xs font-semibold bg-[#6D0037] text-white rounded-full">P&amp;L</div>
             <div className="px-3 py-1 text-xs font-semibold bg-gray-100 text-gray-600 rounded-full">Cash Flow</div>
             <div className="px-3 py-1 text-xs font-semibold bg-gray-100 text-gray-600 rounded-full">Bilan</div>
         </div>
@@ -79,23 +80,46 @@ const DueDiligenceVisual: React.FC = () => (
     <h3 className="font-bold text-gray-700 text-sm sm:text-base mb-4">Checklist Due Diligence VDD</h3>
     <div className="flex-grow space-y-3">
       <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
-        <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0" />
+        <CheckmarkCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0" />
         <p className="text-gray-800 text-sm">Qualité des revenus (MRR, churn...)</p>
       </div>
       <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
-        <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0" />
+        <CheckmarkCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0" />
         <p className="text-gray-800 text-sm">Analyse de la rentabilité (EBITDA, marges)</p>
       </div>
       <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
-        <CheckCircleIcon className="w-6 h-6 text-gray-300 flex-shrink-0" />
+        <CheckmarkCircleIcon className="w-6 h-6 text-gray-300 flex-shrink-0" />
         <p className="text-gray-500 text-sm">Normalisation du BFR</p>
       </div>
        <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
-        <CheckCircleIcon className="w-6 h-6 text-gray-300 flex-shrink-0" />
+        <CheckmarkCircleIcon className="w-6 h-6 text-gray-300 flex-shrink-0" />
         <p className="text-gray-500 text-sm">Analyse de la dette nette</p>
       </div>
     </div>
   </div>
+);
+
+const TransactionalSupportVisual: React.FC = () => (
+    <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
+      <h3 className="font-bold text-gray-700 text-sm sm:text-base mb-4">Accompagnement Transactionnel</h3>
+      <div className="flex-grow space-y-3">
+          <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
+              <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse flex-shrink-0"></div>
+              <p className="text-gray-800 text-sm font-medium">Phase 1: Préparation (Teaser, IM, VDD)</p>
+          </div>
+          <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 opacity-60">
+              <div className="w-3 h-3 rounded-full bg-gray-400 flex-shrink-0"></div>
+              <p className="text-gray-600 text-sm">Phase 2: Négociation des offres</p>
+          </div>
+          <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 opacity-60">
+              <div className="w-3 h-3 rounded-full bg-gray-400 flex-shrink-0"></div>
+              <p className="text-gray-600 text-sm">Phase 3: Due Diligence &amp; Closing</p>
+          </div>
+      </div>
+      <div className="mt-4 bg-[#27013D]/5 rounded-lg p-3 border border-[#27013D]/10 text-center">
+          <p className="text-sm font-bold text-[#27013D]">Objectif: Maximiser la valeur</p>
+      </div>
+    </div>
 );
 
 const CashFlowVisual: React.FC = () => (
@@ -132,10 +156,16 @@ const tasks = [
     visual: <FinancialModelVisual />,
   },
   {
-    icon: CheckCircleIcon,
+    icon: CheckmarkCircleIcon,
     title: "Due Diligence",
     description: "Des analyses approfondies pour sécuriser vos opérations de M&A.",
     visual: <DueDiligenceVisual />,
+  },
+  {
+    icon: BriefcaseIcon,
+    title: "Accompagnement Transactionnel",
+    description: "Un soutien de bout en bout pour vos opérations de M&A et levées de fonds.",
+    visual: <TransactionalSupportVisual />,
   },
   {
     icon: TrendingUpIcon,
@@ -153,7 +183,7 @@ const TaskShowcase: React.FC = () => {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16 max-w-3xl mx-auto">
                     <Animate variant="pop">
-                        <h2 className="text-4xl lg:text-5xl font-bold leading-tight text-gray-900">
+                        <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
                            <span className="text-black">De la stratégie</span> <span className="gradient-text">à l'exécution</span>
                         </h2>
                     </Animate>

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Animate from './Animate';
 
@@ -11,13 +10,13 @@ const Hero: React.FC = () => {
           {/* Left side: Text content */}
           <div className="text-center lg:text-left">
             <Animate variant="pop">
-              <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight tracking-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-gray-900 leading-tight tracking-tight">
                 <span className="text-black">Bras droit</span><br />
-                <span className="gradient-text">stratégique et financier</span>
+                <span className="gradient-text whitespace-nowrap">stratégique et financier</span>
               </h1>
             </Animate>
             <Animate variant="pop" delay={200}>
-              <p className="mt-6 text-xl md:text-2xl text-gray-800 max-w-xl mx-auto lg:mx-0">
+              <p className="mt-6 text-lg sm:text-xl lg:text-2xl text-gray-800 max-w-xl mx-auto lg:mx-0">
                 Sollicitez une <span className="gradient-text font-semibold">ressource experte, ingénieuse et polyvalente</span> dédiée au succès de votre organisation.
               </p>
             </Animate>
@@ -39,7 +38,7 @@ const Hero: React.FC = () => {
           <Animate variant="pop" delay={300}>
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop" 
+                src="https://images2.imgbox.com/2b/ac/rVShk4iB_o.jpg" 
                 alt="Équipe de professionnels collaborant dans un bureau moderne" 
                 className="w-full h-full object-cover rounded-3xl shadow-2xl"
               />

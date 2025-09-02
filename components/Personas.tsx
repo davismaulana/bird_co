@@ -32,7 +32,7 @@ const Personas: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <Animate variant="pop">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
               À qui nous <span className="gradient-text">adressons-nous ?</span>
             </h2>
           </Animate>

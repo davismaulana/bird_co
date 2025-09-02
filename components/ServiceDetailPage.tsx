@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { services, serviceDetails, CheckmarkCircleIcon } from '../constants';
 import Animate from './Animate';
@@ -32,7 +33,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                         <p className="font-semibold text-violet-300 uppercase tracking-widest mb-4">{service.subTitle}</p>
                     </Animate>
                     <Animate variant="pop" delay={100}>
-                        <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight">
+                        <h1 className="text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-tight">
                             {details.title}
                         </h1>
                     </Animate>
@@ -78,7 +79,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                 <div className="lg:col-span-1">
                     <div className="lg:sticky lg:top-32">
                         <Animate variant="pop">
-                            <h2 className="text-3xl font-bold text-gray-900">{details.mainContent.title}</h2>
+                            <h2 className="text-2xl lg:text-3xl font-bold text-gray-900">{details.mainContent.title}</h2>
                         </Animate>
                         <Animate variant="pop" delay={150}>
                             <p className="mt-4 text-gray-600 leading-relaxed">{details.mainContent.description}</p>
@@ -91,7 +92,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                         {details.mainContent.categories.map((category: any, index: number) => (
                              <div key={index}>
                                 <Animate variant="pop" delay={200 + index * 100}>
-                                    <h3 className="text-2xl font-semibold text-gray-800 border-b border-gray-200 pb-3 mb-6">{category.title}</h3>
+                                    <h3 className="text-xl lg:text-2xl font-semibold text-gray-800 border-b border-gray-200 pb-3 mb-6">{category.title}</h3>
                                 </Animate>
                                 <ul className="space-y-4 stagger">
                                     {category.list.map((item: string, itemIndex: number) => (
@@ -113,7 +114,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
       <section className="bg-gray-50 py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Animate variant="pop">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
                     Prêt à prendre <span className="gradient-text">le contrôle ?</span>
                 </h2>
             </Animate>

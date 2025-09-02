@@ -51,7 +51,7 @@ const ValueProposition: React.FC = () => {
           </Animate>
           <div className="relative text-left w-full">
             <Animate variant="pop" delay={200}>
-                <h2 className="text-4xl lg:text-5xl text-[#27013D] leading-tight">
+                <h2 className="text-3xl md:text-4xl xl:text-5xl text-[#27013D] leading-tight">
                 À travers <strong className="font-black">Bird</strong>, nous mettons à votre disposition <strong className="font-black">un allié opérationnel essentiel</strong> à vos <strong className="font-black">défis quotidiens</strong>
                 </h2>
             </Animate>

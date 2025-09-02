@@ -1,26 +1,27 @@
-
 import React from 'react';
 import Animate from './Animate';
-import { FinancialReportMockup, KpiDashboardMockup, FieldWorkMockup } from '../constants';
+import { FinancialReportMockup, KpiDashboardMockup, FieldWorkMockup, DiagnosticScanMockup } from '../constants';
 
 const deliverables = [
   {
+    title: "Diagnostic Stratégique & Opérationnel",
+    description: "Nous réalisons une analyse 360° de votre activité pour évaluer sa santé financière et opérationnelle. Ce diagnostic met en lumière les points de friction et les leviers de croissance cachés, formant la base de recommandations actionnables.",
+    mockup: <DiagnosticScanMockup />,
+  },
+  {
     title: "Modélisation Financière & Business Plan",
     description: "Nous construisons des modèles financiers robustes et des business plans détaillés pour soutenir votre stratégie, vos levées de fonds et vos décisions d'investissement.",
-    mockup: <FinancialReportMockup theme="light" />,
-    reverse: false,
+    mockup: <FinancialReportMockup />,
   },
   {
     title: "Reporting & Tableau de Bord",
     description: "Nous mettons en place des reportings clairs et des tableaux de bord interactifs pour un suivi en temps réel de votre performance et une prise de décision éclairée.",
-    mockup: <KpiDashboardMockup theme="light" />,
-    reverse: true,
+    mockup: <KpiDashboardMockup />,
   },
   {
     title: "Intervention sur site",
     description: "Nous nous déplaçons dans vos locaux pour des missions ponctuelles ou récurrentes, offrant un support physique et une collaboration directe avec vos équipes.",
-    mockup: <FieldWorkMockup theme="light" />,
-    reverse: false,
+    mockup: <FieldWorkMockup />,
   }
 ];
 
@@ -30,7 +31,7 @@ const Deliverables: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <Animate variant="pop">
-            <h2 className="text-4xl lg:text-5xl font-bold leading-tight text-gray-900">
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
               Des livrables <span className="gradient-text">clairs et impactants</span>
             </h2>
           </Animate>
@@ -46,11 +47,14 @@ const Deliverables: React.FC = () => {
               key={index}
               className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center`}
             >
-              <Animate variant={'pop'} delay={200} className={`${item.reverse ? 'lg:order-last' : ''}`}>
+              <Animate
+                variant={'pop'}
+                delay={200}
+              >
                 {item.mockup}
               </Animate>
               <Animate variant={'pop'} delay={300}>
-                <div className="text-center lg:text-left">
+                <div className="text-left">
                   <h3 className="text-2xl font-bold text-[#27013D] mb-3">{item.title}</h3>
                   <p className="text-gray-600 leading-relaxed">{item.description}</p>
                 </div>

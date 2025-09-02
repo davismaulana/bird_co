@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Animate from './Animate';
 import { teamMembers, LinkedInIcon, CheckmarkCircleIcon } from '../constants';
@@ -34,7 +35,7 @@ const TeamPage: React.FC = () => {
                                 <p className="font-semibold text-violet-300 uppercase tracking-widest mb-4">Notre Équipe</p>
                             </Animate>
                             <Animate variant="pop" delay={100}>
-                                <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight">
+                                <h1 className="text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-tight">
                                     Deux associés, une vision
                                 </h1>
                             </Animate>
@@ -66,53 +67,95 @@ const TeamPage: React.FC = () => {
             {/* Team Members Section */}
             <section className="bg-white py-24">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
-                    {teamMembers.map((member, index) => {
-                        return (
-                            <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center`}>
-                                <Animate variant="pop" className={`relative ${index % 2 === 1 ? 'lg:order-last' : ''}`}>
-                                    <div className="aspect-w-1 aspect-h-1">
-                                        <img
-                                            src={member.imageUrl}
-                                            alt={`Photo de ${member.name}`}
-                                            className="w-full h-full object-cover rounded-2xl shadow-2xl shadow-violet-200/50"
-                                        />
-                                    </div>
-                                </Animate>
-                                <div>
-                                    <Animate variant="pop" delay={150}>
-                                        <h2 className="text-4xl font-bold text-[#27013D]">{member.name}</h2>
-                                    </Animate>
-                                    <Animate variant="pop" delay={250}>
-                                        <p className="mt-2 text-lg font-semibold text-[#6D0037]">{member.alumni}</p>
-                                    </Animate>
-                                    <Animate variant="pop" delay={300}>
-                                        <p className="mt-1 text-md text-gray-500">{member.diploma}</p>
-                                    </Animate>
-                                    <div className="mt-6 space-y-4 text-gray-700 leading-relaxed">
-                                        {member.description.map((paragraph, pIndex) => (
-                                            <Animate key={pIndex} variant="pop" delay={350 + pIndex * 100}>
-                                                <p>{paragraph}</p>
-                                            </Animate>
-                                        ))}
-                                    </div>
-                                    <Animate variant="pop" delay={450 + member.description.length * 100}>
-                                        <div className="mt-8">
-                                            <a
-                                                href={member.linkedinUrl}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                aria-label={`LinkedIn de ${member.name}`}
-                                                className="inline-flex items-center gap-2 text-[#27013D] font-semibold hover:text-[#6D0037] transition-colors"
-                                            >
-                                                <LinkedInIcon className="w-5 h-5" />
-                                                Profil LinkedIn
-                                            </a>
-                                        </div>
-                                    </Animate>
-                                </div>
+                    {/* Seydina Samb */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                        <Animate variant="pop" className="relative">
+                            <div className="aspect-square">
+                                <img
+                                    src={teamMembers[0].imageUrl}
+                                    alt={`Photo de ${teamMembers[0].name}`}
+                                    className="w-full h-full object-cover object-top rounded-2xl shadow-2xl shadow-violet-200/50"
+                                />
                             </div>
-                        )
-                    })}
+                        </Animate>
+                        <div>
+                            <Animate variant="pop" delay={150}>
+                                <h2 className="text-3xl lg:text-4xl font-bold text-[#27013D]">{teamMembers[0].name}</h2>
+                            </Animate>
+                            <Animate variant="pop" delay={250}>
+                                <p className="mt-2 text-lg font-semibold text-[#6D0037]">{teamMembers[0].alumni}</p>
+                            </Animate>
+                            <Animate variant="pop" delay={300}>
+                                <p className="mt-1 text-md text-gray-500">{teamMembers[0].diploma}</p>
+                            </Animate>
+                            <div className="mt-6 space-y-4 text-gray-700 leading-relaxed">
+                                {teamMembers[0].description.map((paragraph, pIndex) => (
+                                    <Animate key={pIndex} variant="pop" delay={350 + pIndex * 100}>
+                                        <p>{paragraph}</p>
+                                    </Animate>
+                                ))}
+                            </div>
+                            <Animate variant="pop" delay={450 + teamMembers[0].description.length * 100}>
+                                <div className="mt-8">
+                                    <a
+                                        href={teamMembers[0].linkedinUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={`LinkedIn de ${teamMembers[0].name}`}
+                                        className="inline-flex items-center gap-2 text-[#27013D] font-semibold hover:text-[#6D0037] transition-colors"
+                                    >
+                                        <LinkedInIcon className="w-5 h-5" />
+                                        Profil LinkedIn
+                                    </a>
+                                </div>
+                            </Animate>
+                        </div>
+                    </div>
+
+                    {/* Benjamin Le Gal */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                        <Animate variant="pop" className="relative lg:order-last">
+                            <div className="aspect-square">
+                                <img
+                                    src={teamMembers[1].imageUrl}
+                                    alt={`Photo de ${teamMembers[1].name}`}
+                                    className="w-full h-full object-cover object-top rounded-2xl shadow-2xl shadow-violet-200/50"
+                                />
+                            </div>
+                        </Animate>
+                        <div>
+                            <Animate variant="pop" delay={150}>
+                                <h2 className="text-3xl lg:text-4xl font-bold text-[#27013D]">{teamMembers[1].name}</h2>
+                            </Animate>
+                            <Animate variant="pop" delay={250}>
+                                <p className="mt-2 text-lg font-semibold text-[#6D0037]">{teamMembers[1].alumni}</p>
+                            </Animate>
+                            <Animate variant="pop" delay={300}>
+                                <p className="mt-1 text-md text-gray-500">{teamMembers[1].diploma}</p>
+                            </Animate>
+                            <div className="mt-6 space-y-4 text-gray-700 leading-relaxed">
+                                {teamMembers[1].description.map((paragraph, pIndex) => (
+                                    <Animate key={pIndex} variant="pop" delay={350 + pIndex * 100}>
+                                        <p>{paragraph}</p>
+                                    </Animate>
+                                ))}
+                            </div>
+                            <Animate variant="pop" delay={450 + teamMembers[1].description.length * 100}>
+                                <div className="mt-8">
+                                    <a
+                                        href={teamMembers[1].linkedinUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={`LinkedIn de ${teamMembers[1].name}`}
+                                        className="inline-flex items-center gap-2 text-[#27013D] font-semibold hover:text-[#6D0037] transition-colors"
+                                    >
+                                        <LinkedInIcon className="w-5 h-5" />
+                                        Profil LinkedIn
+                                    </a>
+                                </div>
+                            </Animate>
+                        </div>
+                    </div>
                 </div>
             </section>
             
@@ -121,7 +164,7 @@ const TeamPage: React.FC = () => {
               <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center max-w-3xl mx-auto">
                     <Animate variant="pop">
-                        <h2 className="text-4xl font-bold text-[#27013D] mb-6">Notre ADN</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold text-[#27013D] mb-6">Notre ADN</h2>
                     </Animate>
                     <Animate variant="pop" delay={150}>
                         <p className="text-lg text-gray-700 leading-relaxed">Quatre valeurs fondamentales qui définissent qui nous sommes, comment nous travaillons, et ce que nous nous engageons à vous apporter.</p>
@@ -143,7 +186,7 @@ const TeamPage: React.FC = () => {
             <section className="bg-white py-20">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <Animate variant="pop">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
                             Prêt à collaborer avec <span className="gradient-text">notre équipe ?</span>
                         </h2>
                     </Animate>

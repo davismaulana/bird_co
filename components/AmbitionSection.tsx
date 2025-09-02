@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Animate from './Animate';
 import LottieGraph from './LottieGraph';
@@ -19,7 +20,7 @@ const AmbitionSection: React.FC = () => {
                             <p className="font-semibold text-violet-300 uppercase tracking-widest mb-4">Notre Ambition</p>
                         </Animate>
                         <Animate variant="pop" delay={100}>
-                            <h2 className="text-5xl md:text-6xl font-extrabold text-white leading-tight">
+                            <h2 className="text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-tight">
                                 Façonner l'avenir de votre entreprise
                             </h2>
                         </Animate>

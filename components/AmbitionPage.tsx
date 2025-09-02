@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Animate from './Animate';
 import { DiagnosticIcon, HandshakeIcon, FundsRaisedIcon, PaperPlaneIcon } from '../constants';
@@ -33,7 +34,7 @@ const AmbitionPage: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <Animate variant="pop">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+              <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900">
                 Les Piliers de Notre Engagement
               </h2>
             </Animate>
@@ -68,7 +69,7 @@ const AmbitionPage: React.FC = () => {
                 <div className="lg:order-first">
                     <div className="p-8 sm:p-12 md:p-20 container">
                         <Animate variant="pop">
-                            <blockquote className="text-3xl md:text-4xl font-bold text-[#27013D] leading-snug">
+                            <blockquote className="text-2xl md:text-3xl xl:text-4xl font-bold text-[#27013D] leading-snug">
                                 "La meilleure façon de prédire l'avenir, c'est de le créer."
                             </blockquote>
                         </Animate>
@@ -90,7 +91,7 @@ const AmbitionPage: React.FC = () => {
       <section className="bg-gray-50 py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Animate variant="pop">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
                     Prêt à réaliser <span className="gradient-text">votre ambition ?</span>
                 </h2>
             </Animate>

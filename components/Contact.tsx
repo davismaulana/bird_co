@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Animate from './Animate';
 
@@ -10,7 +11,7 @@ const Contact: React.FC = () => {
                 >
                     <div>
                         <Animate variant="pop" delay={200}>
-                            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-[#27013D]">Contact</h2>
+                            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold mb-8 text-[#27013D]">Contact</h2>
                         </Animate>
                         <Animate variant="pop" delay={300}>
                             <p className="text-lg text-gray-700 mb-4">33 Rue La Fayette, 75009 Paris, France</p>
@@ -32,7 +33,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div className="bg-[#F4F2F8] p-8 sm:p-12 md:p-16 flex flex-col justify-center">
                     <Animate variant="pop">
-                        <h2 className="text-3xl font-bold text-[#27013D] mb-4">Laissez-nous un message</h2>
+                        <h2 className="text-2xl lg:text-3xl font-bold text-[#27013D] mb-4">Laissez-nous un message</h2>
                     </Animate>
                     <form>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10 mb-10">
