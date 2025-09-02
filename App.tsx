@@ -13,11 +13,13 @@ import Contact from './components/Contact';
 import Deliverables from './components/Deliverables';
 import ServiceDetailPage from './components/ServiceDetailPage';
 import Expertise from './components/Expertise';
-// import Methodology from './components/Methodology';
 import TaskShowcase from './components/TaskShowcase';
 import AmbitionPage from './components/AmbitionPage';
 import TeamPage from './components/TeamPage';
 import AmbitionSection from './components/AmbitionSection';
+import ValeursPage from './components/ValeursPage';
+import MethodologiePage from './components/MethodologiePage';
+import CarrieresPage from './components/CarrieresPage';
 
 const App: React.FC = () => {
   const { pathname } = window.location;
@@ -78,6 +80,26 @@ const App: React.FC = () => {
     );
   }
 
+  if (pathname === '/valeurs') {
+    return (
+      <div className="bg-white overflow-x-hidden">
+        <Header pathname={pathname} />
+        <ValeursPage />
+        <Footer />
+      </div>
+    );
+  }
+
+  if (pathname === '/methodologie') {
+    return (
+      <div className="bg-white overflow-x-hidden">
+        <Header pathname={pathname} />
+        <MethodologiePage />
+        <Footer />
+      </div>
+    );
+  }
+  
   if (pathname === '/notre-equipe') {
     return (
       <div className="bg-white overflow-x-hidden">
@@ -88,12 +110,21 @@ const App: React.FC = () => {
     );
   }
 
+  if (pathname === '/carrieres') {
+    return (
+      <div className="bg-white overflow-x-hidden">
+        <Header pathname={pathname} />
+        <CarrieresPage />
+        <Footer />
+      </div>
+    );
+  }
+
   return (
     <div className="bg-[#FFFFFF] overflow-x-hidden">
       <Header pathname={pathname} />
       <main>
         <Hero />
-        {/* <Methodology /> */}
         <ServicesOverview />
         <Stats />
         <AmbitionSection />

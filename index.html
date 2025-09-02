@@ -153,6 +153,25 @@
     .animate-fade-in-pop {
       animation: fadeInPop 520ms cubic-bezier(.2,.65,.2,1) forwards;
     }
+    
+    .nav-link-anchor {
+      position: relative;
+    }
+    .nav-link-anchor::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 1rem; /* Corresponds to px-4 */
+      right: 1rem; /* Corresponds to px-4 */
+      height: 2px;
+      background-color: #27013D;
+      transform: scaleX(0);
+      transition: transform 0.3s ease-in-out;
+      transform-origin: center;
+    }
+    .nav-link-anchor.active::after {
+      transform: scaleX(1);
+    }
   </style>
 <script type="importmap">
 {
