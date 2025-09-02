@@ -4,33 +4,14 @@ import { services, BrandLogo, HamburgerIcon, CloseIcon } from '../constants';
 
 const navItems = [
   { name: 'Accueil', href: '/' },
-  {
-    name: 'Notre ambition',
-    href: '/ambition',
-    children: [
-      { name: 'Notre Vision', href: '/ambition' },
-      { name: 'Nos Valeurs', href: '/valeurs' },
-      { name: 'Notre Méthodologie', href: '/methodologie' },
-    ],
-  },
-  {
-    name: 'Notre proposition',
-    href: '/#notre-proposition',
-    children: services.map(s => ({ name: s.title, href: `/service/${s.slug}` })),
-  },
-  {
-    name: 'Notre équipe',
-    href: '/notre-equipe',
-    children: [
-      { name: 'Les Associés', href: '/notre-equipe' },
-      { name: 'Carrières', href: '/carrieres' },
-    ],
-  },
+  { name: 'Notre ambition', href: '/ambition' },
+  { name: 'Notre proposition', href: '/#notre-proposition' },
+  { name: 'Notre équipe', href: '/notre-equipe' },
   { name: 'Contact', href: '/#contact' },
 ];
 
 const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('');
@@ -88,19 +69,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
     };
   }, [pathname]);
   
-  const isNavItemActive = (item: typeof navItems[0]) => {
-    if (item.children) {
-      return pathname === item.href || item.children.some(child => pathname === child.href);
-    }
-    if (item.href.startsWith('/#')) {
-        const sectionId = item.href.substring(2);
-        return pathname === '/' && activeSection === sectionId;
-    }
-    if (item.href === '/') {
-        return pathname === '/' && activeSection === 'accueil';
-    }
-    return pathname === item.href;
-  };
+  const isPropositionSectionActive = pathname.startsWith('/service/');
 
   return (
     <>
@@ -115,52 +84,50 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
               {/* Desktop Navigation */}
               <nav className="flex items-center space-x-2">
                 {navItems.map((item) => {
-                  const isActive = isNavItemActive(item);
+                  if (item.name === 'Notre proposition') {
+                    const isSectionActive = activeSection === 'notre-proposition';
+                    const hasBackground = isDropdownOpen || isPropositionSectionActive;
 
-                  if (item.children) {
-                    let classes = 'px-4 py-2 rounded-lg text-base font-medium transition-colors flex items-center gap-2';
-                    const hasBackground = openDropdown === item.name || isActive;
-                    const isAnchor = item.href.startsWith('/#');
-
-                    if (isAnchor) {
-                        classes += ' nav-link-anchor';
-                    }
-
-                    if (hasBackground && !isAnchor) {
+                    let classes = 'nav-link-anchor px-4 py-2 rounded-lg text-base font-medium transition-colors flex items-center gap-2';
+                    if (hasBackground) {
                         classes += ' bg-[#27013D] text-white';
-                    } else if (isActive) {
-                        classes += ' active text-[#27013D] font-semibold';
                     } else {
-                        classes += ' text-gray-700 hover:bg-[#27013D] hover:text-white';
+                        if (isSectionActive && pathname === '/') {
+                            classes += ' active text-[#27013D] font-semibold';
+                        } else {
+                            classes += ' text-gray-700 hover:bg-[#27013D] hover:text-white';
+                        }
                     }
-
                     return (
                       <div 
                         key={item.name}
                         className="relative"
-                        onMouseEnter={() => setOpenDropdown(item.name)}
-                        onMouseLeave={() => setOpenDropdown(null)}
+                        onMouseEnter={() => setIsDropdownOpen(true)}
+                        onMouseLeave={() => setIsDropdownOpen(false)}
                       >
-                        <a href={item.href} className={classes}>
+                        <a
+                          href={item.href}
+                          className={classes}
+                        >
                           {item.name}
                         </a>
-                        {openDropdown === item.name && (
+                        {isDropdownOpen && (
                           <div className="absolute top-full left-1/2 -translate-x-1/2 w-72">
-                            <div className="h-2" />
+                            <div className="h-2" /> {/* Bridge to prevent premature closing */}
                             <div className="bg-white rounded-lg shadow-2xl ring-1 ring-black/5 py-2 z-50">
-                              {item.children.map(child => {
-                                const isChildActive = pathname === child.href;
+                              {services.map(service => {
+                                const isServiceActive = pathname === `/service/${service.slug}`;
                                 return (
                                   <a 
-                                    key={child.name}
-                                    href={child.href}
+                                    key={service.slug}
+                                    href={`/service/${service.slug}`}
                                     className={`block px-4 py-3 text-base transition-colors ${
-                                      isChildActive
+                                      isServiceActive
                                       ? 'bg-[#27013D] text-white'
                                       : 'text-gray-700 hover:bg-[#27013D] hover:text-white'
                                     }`}
                                   >
-                                    <span>{child.name}</span>
+                                    <span>{service.title}</span>
                                   </a>
                                 );
                               })}
@@ -171,18 +138,30 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                     );
                   }
 
-                  const isAnchorLink = item.href.startsWith('/#');
-                  const finalClasses = ['px-4', 'py-2', 'rounded-lg', 'text-base', 'font-medium', 'transition-colors'];
+                  const isPageLink = item.href !== '/' && !item.href.startsWith('/#');
+                  const isAnchorLink = !isPageLink;
                   
-                  if (isAnchorLink || item.href === '/') {
+                  const isPageActive = isPageLink && pathname === item.href;
+                  
+                  const getSectionId = (href: string) => {
+                      if (href === '/') return 'accueil';
+                      if (href.startsWith('/#')) return href.substring(2);
+                      return null;
+                  }
+                  const sectionId = getSectionId(item.href);
+                  const isSectionActive = pathname === '/' && sectionId ? activeSection === sectionId : false;
+
+                  const finalClasses = ['px-4', 'py-2', 'rounded-lg', 'text-base', 'font-medium', 'transition-colors'];
+
+                  if (isAnchorLink) {
                       finalClasses.push('nav-link-anchor');
-                      if (isActive) {
+                      if (isSectionActive) {
                           finalClasses.push('active', 'text-[#27013D]', 'font-semibold');
                       } else {
                           finalClasses.push('text-gray-700', 'hover:bg-[#27013D]', 'hover:text-white');
                       }
-                  } else {
-                      if (isActive) {
+                  } else { // isPageLink
+                      if (isPageActive) {
                           finalClasses.push('bg-[#27013D]', 'text-white');
                       } else {
                           finalClasses.push('text-gray-700', 'hover:bg-[#27013D]', 'hover:text-white');
@@ -190,7 +169,11 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                   }
                   
                   return (
-                    <a key={item.name} href={item.href} className={finalClasses.join(' ')}>
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className={finalClasses.join(' ')}
+                    >
                       {item.name}
                     </a>
                   );
@@ -241,28 +224,27 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
             
             <nav className="flex flex-col items-center space-y-2 text-center w-full">
               {navItems.map((item) => {
-                 const isActive = isNavItemActive(item);
-                if (item.children) {
+                if (item.name === 'Notre proposition') {
                   return (
                     <div key={item.name} className="w-full">
                        <a href={item.href} onClick={() => setIsMobileMenuOpen(false)} className={`block w-full text-3xl font-semibold py-3 rounded-lg text-gray-900 hover:bg-[#27013D] hover:text-white transition-colors ${
-                         isActive && 'bg-[#27013D] text-white'
+                         isPropositionSectionActive && 'bg-[#27013D] text-white'
                        }`}>{item.name}</a>
                        <div className="mt-4 space-y-1">
-                          {item.children.map((child) => {
-                             const isChildActive = pathname === child.href;
+                          {services.map((service) => {
+                             const isServiceActive = pathname === `/service/${service.slug}`;
                              return (
                                <a
-                                  key={child.name}
-                                  href={child.href}
+                                  key={service.slug}
+                                  href={`/service/${service.slug}`}
                                   onClick={() => setIsMobileMenuOpen(false)}
                                   className={`block text-center w-full py-2 text-xl rounded-lg transition-colors ${
-                                    isChildActive
+                                    isServiceActive
                                     ? 'bg-[#27013D] text-white'
                                     : 'text-gray-600 hover:bg-[#27013D] hover:text-white'
                                   }`}
                                >
-                                  <span>{child.name}</span>
+                                  <span>{service.title}</span>
                                </a>
                             );
                           })}
@@ -270,7 +252,8 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                     </div>
                   );
                 }
-                
+                const isActive = (item.name === 'Notre ambition' && pathname === item.href) ||
+                               (item.name === 'Notre équipe' && pathname === item.href);
                 return (
                   <a
                     key={item.name}
