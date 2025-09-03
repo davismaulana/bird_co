@@ -98,7 +98,7 @@ const Hero: React.FC = () => {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 lg:py-0">
-        <div className="grid lg:grid-cols-2 gap-16 items-center relative">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center relative">
           
           {/* Left side: Text content */}
           <div className="text-center lg:text-left relative z-10">
@@ -119,7 +119,7 @@ const Hero: React.FC = () => {
                   href="https://calendly.com/contact-birdandco/30min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block text-center bg-[#27013D] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#1c0e2a] transition-colors transform hover:scale-105 text-lg"
+                  className="inline-block text-center bg-[#27013D] text-white px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-[#1c0e2a] transition-colors transform hover:scale-105 text-base sm:text-lg"
                 >
                   Prenons rendez-vous
                 </a>
@@ -128,7 +128,7 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Vertical gradient line */}
-          <div className="hidden lg:flex absolute top-0 bottom-0 left-1/2 -translate-x-1/2 items-center justify-center pointer-events-none -ml-8">
+          <div className="hidden lg:flex absolute top-0 bottom-0 left-1/2 -translate-x-1/2 items-center justify-center pointer-events-none lg:-ml-4 xl:-ml-8">
               <div className="relative w-1 h-80">
                   <div 
                       className="absolute inset-0 rounded-full"
