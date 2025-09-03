@@ -128,7 +128,7 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Vertical gradient line */}
-          <div className="hidden lg:flex absolute top-0 bottom-0 left-1/2 -translate-x-1/2 items-center justify-center pointer-events-none lg:-ml-4 xl:-ml-8">
+          <div className="hidden lg:flex absolute top-0 bottom-0 left-1/2 -translate-x-1/2 items-center justify-center pointer-events-none lg:-ml-2">
               <div className="relative w-1 h-80">
                   <div 
                       className="absolute inset-0 rounded-full"
