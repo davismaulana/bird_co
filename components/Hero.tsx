@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import Animate from './Animate';
 
@@ -99,10 +98,10 @@ const Hero: React.FC = () => {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 lg:py-0">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center relative">
           
           {/* Left side: Text content */}
-          <div className="text-center lg:text-left">
+          <div className="text-center lg:text-left relative z-10">
             <Animate variant="pop">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-gray-900 leading-tight tracking-tight">
                 <span className="text-black">Bras droit</span><br />
@@ -128,8 +127,20 @@ const Hero: React.FC = () => {
             </Animate>
           </div>
 
+          {/* Vertical gradient line */}
+          <div className="hidden lg:flex absolute top-0 bottom-0 left-1/2 -translate-x-1/2 items-center justify-center pointer-events-none">
+              <div className="relative w-1 h-80">
+                  <div 
+                      className="absolute inset-0 rounded-full"
+                      style={{ 
+                          backgroundImage: 'linear-gradient(to bottom, #27013D, #A41752)',
+                      }}
+                  ></div>
+              </div>
+          </div>
+
           {/* Right side: Image */}
-          <Animate variant="pop" delay={300}>
+          <Animate variant="pop" delay={300} className="relative z-10">
             <div>
               <img 
                 src="https://images2.imgbox.com/2b/ac/rVShk4iB_o.jpg" 
