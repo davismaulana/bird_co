@@ -2,26 +2,26 @@
 import React from 'react';
 import Animate from './Animate';
 import {
-  ExpertiseCodingIcon,
-  ExpertiseMathIcon,
-  ExpertiseChemistryIcon,
-  ExpertiseHistoryIcon,
-  ExpertiseLanguagesIcon,
-  ExpertiseLawIcon,
-  ExpertiseDataScienceIcon,
-  ExpertiseSpeechIcon,
+  BarChartIcon,
+  CfoIcon,
+  DiagnosticIcon,
+  HandshakeIcon,
+  BriefcaseIcon,
+  TrendingUpIcon,
+  ExpertiseSearchIcon,
+  ExpertiseCompassIcon,
   ArrowRightIcon,
 } from '../constants';
 
 const expertiseItems = [
-  { icon: <ExpertiseCodingIcon />, label: 'Modélisation Financière' },
-  { icon: <ExpertiseMathIcon />, label: 'Optimisation BFR' },
-  { icon: <ExpertiseChemistryIcon />, label: 'Restructuration' },
-  { icon: <ExpertiseHistoryIcon />, label: 'Due Diligence' },
-  { icon: <ExpertiseLanguagesIcon />, label: 'Pilotage Stratégique' },
-  { icon: <ExpertiseLawIcon />, label: 'Fusions & Acquisitions' },
-  { icon: <ExpertiseDataScienceIcon />, label: 'Direction Financière' },
-  { icon: <ExpertiseSpeechIcon />, label: 'Levée de fonds' },
+  { icon: <BarChartIcon />, label: 'Modélisation Financière' },
+  { icon: <CfoIcon />, label: 'Optimisation BFR' },
+  { icon: <DiagnosticIcon />, label: 'Restructuration' },
+  { icon: <ExpertiseSearchIcon />, label: 'Due Diligence' },
+  { icon: <ExpertiseCompassIcon />, label: 'Pilotage Stratégique' },
+  { icon: <HandshakeIcon />, label: 'Fusions & Acquisitions' },
+  { icon: <BriefcaseIcon />, label: 'Direction Financière' },
+  { icon: <TrendingUpIcon />, label: 'Levée de fonds' },
 ];
 
 const Expertise: React.FC = () => {

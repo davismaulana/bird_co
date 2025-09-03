@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-T" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale-1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>bird&co</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@1,900,700,500,301,701,300,501,401,901,400,2&display=swap" rel="stylesheet">
@@ -83,6 +83,9 @@
         opacity: 1 !important;
         filter: none !important;
       }
+      .animate-scroll-x {
+        animation: none !important;
+      }
     }
 
     .gradient-border-l {
@@ -156,6 +159,14 @@
     }
     .nav-link-anchor.active::after {
       transform: scaleX(1);
+    }
+    
+    @keyframes scroll-x {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .animate-scroll-x {
+      animation: scroll-x 40s linear infinite;
     }
   </style>
 <script type="importmap">

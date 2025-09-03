@@ -9,33 +9,34 @@ export const BrandLogo: React.FC<{ className?: string }> = ({ className }) => (
 );
 
 export const PaperPlaneIcon: React.FC<{ className?: string }> = ({ className }) => (
-    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-        <path d="M58.6667 5.33331L32 32M58.6667 5.33331L42.6667 58.6666L32 32M58.6667 5.33331L5.33334 21.3333L32 32" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+    <svg viewBox="20.051 39 160.061 122.147" xmlns="http://www.w3.org/2000/svg" className={className}>
+        <path d="M178.6 39.4c-.7-.4-1.4-.5-2.2-.3-.5-.1-1.1-.1-1.6 0L22 89.4c-1.5.5-2.3 2.1-1.8 3.6.3.8.9 1.5 1.7 1.8l42.9 16.8 13.4 45.3c.4 1.3 1.6 2.2 3 2.1.8-.1 1.5-.4 2-1l19.9-23.6 42.9 26.3c.8.5 1.7.6 2.6.2.9-.3 1.5-1.1 1.7-2l29.8-116.2c.1-1.3-.4-2.6-1.5-3.3zM70.5 110.7l79.2-49.3L83.5 118c-.2.2-.4.5-.6.7-.2.3-.3.7-.4 1.1L79.7 142l-9-30.4-.2-.9zm83.3-58.6l-87 54.1-35.4-13.9 122.4-40.2zM87.7 125l10.2 6.3-13 15.4c.1 0 2.8-21.7 2.8-21.7zm2.6-5.2L172 50l-26.5 103.6-55.2-33.8z" fill="#6D0037"></path>
     </svg>
 );
 
 export const CfoIcon: React.FC<{ className?: string }> = ({ className }) => (
-    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-        <path d="M53.3333 26.6667V16H42.6667" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M10.6667 37.3333V48H21.3333" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M16 26.96C17.76 18.9067 24.1867 13.3333 32.2933 13.3333C42.2667 13.3333 50.32 20.1333 52.48 29.3333" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M48 37.04C46.24 45.0933 39.8133 50.6667 31.7067 50.6667C21.7333 50.6667 13.68 43.8667 11.52 34.6667" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+    <svg viewBox="33 33 133.333 133.333" xmlns="http://www.w3.org/2000/svg" className={className} fill="currentColor">
+        <path d="M47.167 74.667h19.166V83H33V49.667h8.333v17.5C53 46.333 75.5 33 99.667 33c36.666 0 66.666 30 66.666 66.667H158c0-32.5-25.833-58.334-58.333-58.334-22.5 0-43.334 13.334-52.5 33.334Zm105 50H133v-8.334h33.333v33.334H158v-17.5c-11.667 20.833-34.167 34.166-58.333 34.166C63 166.333 33 136.333 33 99.667h8.333c0 32.5 25.834 58.333 58.334 58.333 22.5 0 42.5-13.333 52.5-33.333Z" fillRule="evenodd"></path>
     </svg>
 );
 
 export const DiagnosticIcon: React.FC<{ className?: string }> = ({ className }) => (
-    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-        <path d="M45.1667 27.5C45.1667 36.9371 37.5256 44.5833 28.0833 44.5833C18.6411 44.5833 11 36.9371 11 27.5C11 18.0629 18.6411 10.4167 28.0833 10.4167C37.5256 10.4167 45.1667 18.0629 45.1667 27.5Z" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M40.1625 40.1542L53 53" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+    <svg viewBox="19.899 19.999 160.201 160.001" xmlns="http://www.w3.org/2000/svg" className={className}>
+        <g fill="currentColor">
+            <path d="M107 105.7c-.9 1.9-5.7 5.7-10.7 5.7-13.9 0-14.1 17.5-14.1 18.4l-.2 26.7c.1 9.9 8.2 17.9 18.1 17.8 9.8-.1 17.7-8 17.8-17.8l.1-38.2h5.7l-.1 38.2c-.1 13.1-10.8 23.6-23.8 23.5-12.9-.1-23.4-10.6-23.5-23.5l.2-26.8c0-9.3 4-24.3 19.6-24.1 3.4 0 8.2-3.7 8.6-5.2l2.3 5.3z" ></path>
+            <path d="M105.7 93c1.9.9 5.7 6.6 5.7 11.7 0 13.9 17.5 14.1 18.4 14.1l26.8.2c9.9-.1 17.9-8.2 17.8-18.1-.1-9.8-8-17.7-17.8-17.8l-38.2-.1v-5.7l38.2.1c13.1.1 23.6 10.8 23.5 23.8-.1 12.9-10.6 23.4-23.5 23.5l-26.8-.2c-9.3 0-24.3-4-24.1-19.6 0-3.4-3.7-9.1-5.2-9.6l-2.7-1 7.9-1.3z" ></path>
+            <path d="M92.1 94.3c.9-1.9 6.6-5.7 11.7-5.7 13.9 0 14.1-17.5 14.1-18.4l.2-26.8c-.1-9.9-8.2-17.9-18.1-17.8-9.8.1-17.7 8-17.8 17.8L82 81.7h-5.7l.1-38.2c.1-13.1 10.8-23.6 23.8-23.5 12.9.1 23.4 10.6 23.5 23.5l-.2 26.8c0 9.3-4 24.3-19.6 24.1-3.4 0-9.1 3.7-9.6 5.2l-2.2-5.3z" ></path>
+            <path d="M92.1 105.9c-2.1-2.4-3.3-5.5-3.4-8.7 0-13.9-17.5-14.1-18.4-14.1l-26.8-.2c-9.9.1-17.9 8.2-17.8 18.1.1 9.8 8 17.7 17.8 17.8l34.6.1-1.4 5.7-33.3-.1c-13.1-.1-23.6-10.8-23.5-23.8.1-12.9 10.6-23.4 23.5-23.5l26.8.2c9.3 0 24.3 4 24.1 19.6 0 2.9 2.6 6.7 4.3 8.1.4.2-5.7 1.8-6.5.8z" ></path>
+        </g>
     </svg>
 );
 
 export const HandshakeIcon: React.FC<{ className?: string }> = ({ className }) => (
-    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-        <path d="M53.3333 34.6667L45.3333 26.6667L26.6667 45.3333L32 50.6667C34.4267 53.0933 38.08 53.0933 40.5067 50.6667L53.3333 37.84C54.52 36.6533 54.52 34.72 53.3333 33.5333" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M26.6667 45.3333L10.6667 29.3333" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M18.6667 21.3333L16 13.3333L8 16L10.6667 24L18.6667 21.3333Z" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M45.3333 42.6667L53.3333 45.3333L50.6667 53.3333L42.6667 50.6667L45.3333 42.6667Z" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+    <svg viewBox="20 20 160 160" xmlns="http://www.w3.org/2000/svg" className={className}>
+        <g fill="currentColor">
+            <path d="M139 113l12.4-2.2-6.8-39.8-12.4 2.2 1 5.5-13.8 1.4c-4.8-3.1-15.4-9.7-17.5-9.7-.9 0-3 1-5.6 2.3-.8-.4-4.8-2.1-6.6-2.1-1.6 0-8.2 4.5-13.4 8.4l-9.6-1.2.8-4.7L55 71l-6.8 39.8 12.4 2.2 1.2-6.8c1.2.3 2.3.8 3.6 1.3 2 .9 4.2 1.8 7.2 2.2l-1.7 3.1c-1.5 3-.3 6.6 2.7 8.2l18.7 9.3c.9.4 1.8.6 2.7.6 2.2 0 4.3-1.2 5.4-3.4l4.1-8.2 7.1 4.3c1 .6 2.1.9 3.1.9 2.1 0 4-1 5.2-2.9l8.4-13.6 9.6-1.6 1.1 6.6zm3.6-39.1l6 35-7.6 1.3-6-35 7.6-1.3zm-91.6 35l6-35 7.6 1.3-6 35-7.6-1.3zm22 5.1l2.2-4c1.6.2 3.5.3 5.4.6l-5.1 8.7-.9-.4c-1.6-1-2.4-3.1-1.6-4.9zm19.5-1.8l3.4 2.1-7 11.7-5.2-2.6 6.9-11.4c.8 0 1.6.1 1.9.2zm-11.1 10l-3.7-1.8 5.6-9.4c1.6.2 3.2.4 4.6.6l-6.5 10.6zm16.8 4.3c-.9 1.8-3 2.5-4.8 1.6l-2.3-1.1 6.9-11.4 4.4 2.7-4.2 8.2zm19.6-6c-1 1.7-3.3 2.2-5 1.2l-19.5-11.9h-.2c-.2 0-1.5-.2-3.5-.5l-.2-.2-.1.1c-4.1-.6-10.5-1.4-14.6-1.7-3.5-.2-5.9-1.2-8.3-2.2-1.4-.6-2.7-1.1-4.2-1.5l4-23.4 10.7 1.4.4-.3c5.1-3.8 11.4-8 12.4-8.2.6 0 2.3.6 3.8 1.2-2.6 1.5-5.3 3.1-7 4.2l-.4.2-.1.3c-.1.2-1.8 6.6-2.5 10.6-.4 2.6-.6 5 .5 6.6.6.9 1.6 1.4 3 1.5 2.3.3 6.2.8 6.8-3 .3-2 1.8-7.8 2.2-9.7l5.2-2.6 26.2 15.1c1.7 1 2.2 3.3 1.2 5l-1 1.5L110.8 94l-1.3 2.1 16.9 10.2-2.5 4-16.8-10.1-1.3 2.1 16.8 10.1-2.5 4-16.7-10.1-1.3 2.1 16.7 10.1-1 2zm12.2-15.1l.9-1.4c1.8-2.9.8-6.6-2.1-8.3l-27.4-15.8-7.4 3.7-.2.6c-.1.3-2 8-2.5 10.4-.2 1-.4 1.5-4.1 1-1-.2-1.3-.5-1.4-.6-.6-.8-.3-2.8-.1-4.7.5-3.3 1.8-8.4 2.2-9.9 5.7-3.5 12.3-7.4 13.4-7.4 1.4.2 9.5 5 16.6 9.5l.4.2 14.9-1.5 3.9 23-7.1 1.2z" ></path>
+            <path d="M100 180c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80zm0-157.5c-42.7 0-77.5 34.8-77.5 77.5s34.8 77.5 77.5 77.5 77.5-34.8 77.5-77.5-34.8-77.5-77.5-77.5z" ></path>
+        </g>
     </svg>
 );
 
@@ -192,6 +193,19 @@ export const DiagnosticScanMockup: React.FC<{ theme?: string }> = () => (
     </div>
 );
 
+export const ExpertiseSearchIcon: React.FC<{ className?: string }> = ({ className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" className={className} fill="currentColor">
+        <g opacity="0.2"><path d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z"></path></g>
+        <g><path d="M156,144.35a68,68,0,1,0-11.65,11.65L188.69,200.29a8,8,0,0,0,11.31-11.31ZM48,128a80,80,0,1,1,80,80A80.09,80.09,0,0,1,48,128Z"></path></g>
+    </svg>
+);
+export const ExpertiseCompassIcon: React.FC<{ className?: string }> = ({ className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" className={className} fill="currentColor">
+        <g opacity="0.2"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Z"></path></g>
+        <g><path d="M128,16a112,112,0,1,0,112,112A112.13,112.13,0,0,0,128,16Zm0,208a96,96,0,1,1,96-96A96.11,96.11,0,0,1,128,224Zm41.11-139.54L102,120.89l-36.43,67.1a8,8,0,0,1-14.23-7.74l48-88a8,8,0,0,1,14.23,7.74L87.11,154l67-36.43a8,8,0,1,1-7.74,14.23Z"></path></g>
+    </svg>
+);
+
 export const ExpertiseCodingIcon: React.FC<{ className?: string }> = ({ className }) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" className={className} fill="currentColor">
         <g opacity="0.2"><path d="M240,128l-72,64H88L16,128,88,64h80Z"></path></g>
@@ -248,10 +262,10 @@ export const TrendingUpIcon: React.FC<{ className?: string }> = ({ className }) 
 export const BriefcaseIcon: React.FC<{ className?: string }> = ({ className }) => <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>;
 
 export const services = [
-    { slug: 'cfo-part-time', title: 'CFO à temps partagé', subTitle: 'PILOTAGE FINANCIER', description: 'Un expert financier à vos côtés pour structurer votre croissance.', icon: <CfoIcon />, iconClassName: 'w-16 h-16' },
-    { slug: 'diagnostic-360', title: 'Diagnostic 360°', subTitle: 'STRATÉGIE & OPÉRATIONS', description: 'Une analyse complète pour identifier vos leviers de performance.', icon: <DiagnosticIcon />, iconClassName: 'w-16 h-16' },
-    { slug: 'ma-support', title: 'Accompagnement M&A', subTitle: 'TRANSACTIONS', description: 'Un soutien stratégique et opérationnel pour sécuriser vos opérations.', icon: <HandshakeIcon />, iconClassName: 'w-16 h-16' },
-    { slug: 'project-structuring', title: 'Structuration & Lancement', subTitle: 'PROJETS SPÉCIFIQUES', description: 'Donnez vie à vos projets avec une base financière et stratégique solide.', icon: <PaperPlaneIcon />, iconClassName: 'w-16 h-16' }
+    { slug: 'pilotage-planification', title: 'Pilotage & Planification', subTitle: 'Construire', description: 'les outils indispensables à une gestion financière et opérationnelle optimale.', icon: <PaperPlaneIcon />, iconClassName: 'w-16 h-16' },
+    { slug: 'cfo-part-time', title: 'CFO Part-time', subTitle: 'Structurer', description: 'votre croissance et mettre en exécution votre stratégie financière avec un bras-droit dédié à temps partiel.', icon: <CfoIcon />, iconClassName: 'w-16 h-16' },
+    { slug: 'diagnostic-restructuration', title: 'Diagnostic & Restructuration', subTitle: 'Rassurer', description: 'vos actionnaires et créanciers sur la santé financière de votre activité et votre capacité à la relancer.', icon: <DiagnosticIcon />, iconClassName: 'w-16 h-16' },
+    { slug: 'services-ma', title: 'Services M&A', subTitle: 'Faciliter', description: 'vos opérations de levées de fonds et cessions en produisant les documents et analyses indispensables à vos discussions.', icon: <img src="https://images2.imgbox.com/fd/19/nDGCEmGz_o.png" alt="Services M&A icon" />, iconClassName: 'w-16 h-16 object-contain' },
 ];
 
 export const teamMembers = [
@@ -282,37 +296,40 @@ export const teamMembers = [
 ];
 
 export const serviceDetails: { [key: string]: any } = {
+    'pilotage-planification': {
+        title: 'Pilotage & Planification',
+        subtitle: 'Construire les outils indispensables à une gestion financière et opérationnelle optimale. Donnez vie à vos projets avec une base financière et stratégique solide.',
+        heroItems: ['Business plan', 'Modélisation financière', 'Tableaux de bord', 'Reporting'],
+        mainContent: { title: 'Nos livrables', description: 'Des outils pour convaincre et piloter.', categories: [
+            { title: 'Business Plan & Modélisation', list: ['BP complet et détaillé pour levée de fonds', 'Modèle financier dynamique sur 3-5 ans', 'Analyse de sensibilité et scénarios'] },
+            { title: 'Outils de pilotage', list: ['Mise en place de reporting mensuel', 'Création de tableaux de bord de KPIs', 'Automatisation de la collecte de données'] },
+        ] }
+    },
     'cfo-part-time': {
-        title: 'CFO à temps partagé',
-        subtitle: 'Bénéficiez d’une expertise financière de haut niveau sans internaliser un poste à temps plein. Nous vous aidons à structurer votre fonction finance, à optimiser votre performance et à prendre des décisions éclairées.',
+        title: 'CFO Part-time',
+        subtitle: 'Structurer votre croissance et exécuter votre stratégie financière avec un bras-droit dédié à temps partiel. Bénéficiez d’une expertise financière de haut niveau sans internaliser un poste à temps plein.',
         heroItems: ['Reporting & KPIs', 'Budget & Prévisionnel', 'Gestion de trésorerie', 'Optimisation BFR'],
         mainContent: { title: 'Nos interventions', description: 'Nous intervenons sur l’ensemble du périmètre de la fonction finance.', categories: [
             { title: 'Pilotage de la performance', list: ['Mise en place de reporting mensuel', 'Définition des KPIs pertinents', 'Élaboration de budget et suivi des écarts', 'Analyses de rentabilité'] },
             { title: 'Gestion de trésorerie', list: ['Construction de prévisionnels de trésorerie', 'Optimisation du BFR', 'Mise en place de solutions de financement', 'Relations bancaires'] }
         ] }
     },
-     'diagnostic-360': {
-        title: 'Diagnostic 360°',
-        subtitle: 'Une analyse complète pour identifier vos leviers de performance.',
+    'diagnostic-restructuration': {
+        title: 'Diagnostic & Restructuration',
+        subtitle: 'Rassurer vos actionnaires et créanciers sur la santé financière de votre activité et votre capacité à la relancer. Une analyse complète pour identifier vos leviers de performance.',
         heroItems: ['Analyse financière', 'Revue opérationnelle', 'Benchmark sectoriel', 'Plan d\'action'],
-        mainContent: { title: 'Notre approche', description: 'Un diagnostic complet pour une vision claire.', categories: [
-            { title: 'Analyse financière', list: ['Analyse du compte de résultat', 'Analyse du bilan', 'Analyse des flux de trésorerie'] },
+        mainContent: { title: 'Notre approche', description: 'Un diagnostic complet pour une vision claire et un plan d\'action solide.', categories: [
+            { title: 'Analyse financière et opérationnelle', list: ['Analyse du compte de résultat, bilan et flux de trésorerie', 'Revue des processus clés', 'Identification des zones de risque'] },
+            { title: 'Plan de restructuration', list: ['Définition d\'un plan d\'action priorisé', 'Assistance à la mise en oeuvre', 'Communication avec les parties prenantes'] },
         ] }
     },
-    'ma-support': {
-        title: 'Accompagnement M&A',
-        subtitle: 'Un soutien stratégique et opérationnel pour sécuriser vos opérations.',
+    'services-ma': {
+        title: 'Services M&A',
+        subtitle: 'Faciliter vos opérations de levées de fonds et cessions en produisant les documents et analyses indispensables à vos discussions. Un soutien stratégique et opérationnel pour sécuriser vos opérations.',
         heroItems: ['Cession', 'Acquisition', 'Levée de fonds', 'Due diligence'],
-        mainContent: { title: 'Nos services', description: 'Un accompagnement sur mesure.', categories: [
-            { title: 'Cession & Acquisition', list: ['Evaluation', 'Recherche de contreparties', 'Négociation', 'Closing'] },
+        mainContent: { title: 'Nos services', description: 'Un accompagnement sur mesure pour vos transactions.', categories: [
+            { title: 'Cession & Acquisition', list: ['Evaluation d\'entreprise', 'Recherche de contreparties', 'Préparation de la documentation (IM, Teaser)', 'Négociation et assistance au closing'] },
+            { title: 'Due Diligence', list: ['Due diligence financière (VDD ou côté acquéreur)', 'Analyse de la qualité des revenus et de la rentabilité', 'Analyse du BFR et de la dette nette'] },
         ] }
     },
-    'project-structuring': {
-        title: 'Structuration & Lancement',
-        subtitle: 'Donnez vie à vos projets avec une base financière et stratégique solide.',
-        heroItems: ['Business plan', 'Modélisation financière', 'Recherche de financements', 'Structuration juridique'],
-        mainContent: { title: 'Nos livrables', description: 'Des outils pour convaincre.', categories: [
-            { title: 'Business Plan & Modélisation', list: ['BP complet et détaillé', 'Modèle financier dynamique', 'Analyse de sensibilité'] },
-        ] }
-    }
 };
