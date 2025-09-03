@@ -105,7 +105,7 @@ const Hero: React.FC = () => {
             <Animate variant="pop">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-gray-900 leading-tight tracking-tight">
                 <span className="text-black">Bras droit</span><br />
-                <span className="gradient-text whitespace-nowrap">stratégique et financier</span>
+                <span className="gradient-text">stratégique et financier</span>
               </h1>
             </Animate>
             <Animate variant="pop" delay={200}>
