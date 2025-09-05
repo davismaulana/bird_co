@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 
 // Make lottie available globally

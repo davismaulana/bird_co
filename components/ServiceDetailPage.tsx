@@ -23,18 +23,32 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
 
   return (
     <div className="bg-white text-gray-800">
+      {/* Hero Section */}
+      <section className="bg-white pt-32 md:pt-40 pb-12 md:pb-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <Animate variant="pop">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
+              {details.title}
+            </h1>
+          </Animate>
+          <Animate variant="pop" delay={150}>
+            <p className="mt-6 text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">{details.subtitle}</p>
+          </Animate>
+        </div>
+      </section>
+
       {/* Diagnostic Section */}
-      <section className="bg-white pt-40 md:pt-48 pb-20 md:pb-24">
+      <section className="bg-gray-50 py-20 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 max-w-3xl mx-auto">
               <Animate variant="pop">
                 <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
-                  Des livrables <span className="gradient-text">clairs et impactants</span>
+                  Notre point de départ : <span className="gradient-text">le diagnostic</span>
                 </h2>
               </Animate>
               <Animate variant="pop" delay={150}>
                 <p className="text-lg text-gray-600 mt-4">
-                  Nous transformons des données complexes en outils de pilotage visuels et intuitifs, conçus pour vous donner une visibilité complète sur votre activité.
+                  Chaque mission commence par une analyse complète pour comprendre vos défis et identifier les meilleurs leviers de performance.
                 </p>
               </Animate>
           </div>
@@ -55,7 +69,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
       </section>
 
       {/* Content Section */}
-      <main id="content" className="bg-gray-50 py-24 sm:py-32">
+      <main id="content" className="bg-white py-24 sm:py-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-3 gap-12 lg:gap-24">
                 <div className="lg:col-span-1">
@@ -74,12 +88,12 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                         {details.mainContent.categories.map((category: any, index: number) => (
                              <div key={index}>
                                 <Animate variant="pop" delay={200 + index * 100}>
-                                    <h3 className="text-xl lg:text-2xl font-semibold text-gray-800 border-b border-gray-200 pb-3 mb-6">{category.title}</h3>
+                                    <h3 className="text-xl lg:text-2xl font-semibold text-[#27013D] border-b-2 border-[#6D0037]/20 pb-3 mb-6">{category.title}</h3>
                                 </Animate>
-                                <ul className="space-y-4 stagger">
+                                <ul className="space-y-4 stagger text-lg">
                                     {category.list.map((item: string, itemIndex: number) => (
-                                        <Animate as="li" key={itemIndex} variant="pop" className="flex items-center">
-                                            <CheckmarkCircleIcon className="w-6 h-6 flex-shrink-0 mr-4" />
+                                        <Animate as="li" key={itemIndex} variant="pop" className="flex items-start">
+                                            <CheckmarkCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mr-4 mt-1" />
                                             <span className="text-gray-700">{item}</span>
                                         </Animate>
                                     ))}
@@ -93,7 +107,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
       </main>
 
       {/* Final CTA section */}
-      <section className="bg-white py-20">
+      <section className="bg-gray-50 py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Animate variant="pop">
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">

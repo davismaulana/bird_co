@@ -29,6 +29,22 @@ const pillars = [
 const AmbitionPage: React.FC = () => {
   return (
     <div className="bg-white">
+      {/* Hero Section */}
+      <section className="bg-[#27013D] text-white pt-40 pb-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <Animate variant="pop">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
+                    Notre ambition
+                </h1>
+            </Animate>
+            <Animate variant="pop" delay={150}>
+                <p className="mt-6 text-lg lg:text-xl text-violet-200 max-w-3xl mx-auto">
+                    Vous permettre d'anticiper les enjeux financiers et opérationnels futurs et prévenir les éventuelles difficultés.
+                </p>
+            </Animate>
+        </div>
+      </section>
+
       {/* Pillars Section */}
       <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -63,7 +79,7 @@ const AmbitionPage: React.FC = () => {
           <div className="max-w-none">
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
                 <Animate variant="pop" className="h-full lg:order-last">
-                    <div className="h-[400px] lg:h-full bg-cover bg-center" style={{ backgroundImage: `url('https://picsum.photos/800/800?grayscale&random=42')` }}>
+                    <div className="h-[400px] lg:h-full bg-cover bg-center" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')` }}>
                     </div>
                 </Animate>
                 <div className="lg:order-first">

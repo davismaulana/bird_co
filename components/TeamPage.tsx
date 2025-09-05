@@ -1,5 +1,4 @@
 
-
 import React from 'react';
 import Animate from './Animate';
 import { teamMembers, LinkedInIcon, CheckmarkCircleIcon } from '../constants';
@@ -7,19 +6,19 @@ import LottieGraph from './LottieGraph';
 
 const dnaItems = [
     {
-      icon: <CheckmarkCircleIcon className="w-6 h-6 flex-shrink-0 mr-4 mt-1" />,
+      icon: <CheckmarkCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mr-4 mt-1" />,
       text: "<strong>Engagement :</strong> Nous sommes à vos côtés, pleinement investis dans la réussite de vos projets."
     },
     {
-      icon: <CheckmarkCircleIcon className="w-6 h-6 flex-shrink-0 mr-4 mt-1" />,
+      icon: <CheckmarkCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mr-4 mt-1" />,
       text: "<strong>Excellence :</strong> Nous visons les plus hauts standards de qualité dans chacune de nos missions."
     },
     {
-      icon: <CheckmarkCircleIcon className="w-6 h-6 flex-shrink-0 mr-4 mt-1" />,
+      icon: <CheckmarkCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mr-4 mt-1" />,
       text: "<strong>Pragmatisme :</strong> Nous apportons des solutions concrètes, opérationnelles et adaptées à votre réalité."
     },
     {
-      icon: <CheckmarkCircleIcon className="w-6 h-6 flex-shrink-0 mr-4 mt-1" />,
+      icon: <CheckmarkCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mr-4 mt-1" />,
       text: "<strong>Confiance :</strong> Nous construisons des relations durables basées sur la transparence et l'intégrité."
     }
 ];
@@ -28,7 +27,7 @@ const TeamPage: React.FC = () => {
     return (
         <div className="bg-white text-gray-800">
             {/* Hero Section */}
-            <section className="bg-[#27013D] text-white overflow-hidden">
+            <section className="bg-[#27013D] text-white overflow-hidden pt-24">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-24">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                         <div className="text-center lg:text-left">
