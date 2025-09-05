@@ -46,24 +46,24 @@ const Expertise: React.FC = () => {
             </p>
           </Animate>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 border-y border-gray-200 max-w-6xl mx-auto">
+        <div className="bg-white rounded-2xl shadow-xl shadow-violet-100/50 grid grid-cols-1 md:grid-cols-3 max-w-6xl mx-auto overflow-hidden">
           {allItems.map((item, index) => {
             const isMiddleCol = index % 3 === 1;
-            const borderClass = isMiddleCol ? 'border-x border-gray-200' : '';
+            const borderClass = isMiddleCol ? 'border-x border-gray-100' : '';
 
             if ('icon' in item) {
               return (
-                <Animate key={index} variant="pop" className={`${borderClass} p-8 flex flex-col items-center text-center justify-center min-h-[220px] transition-colors hover:bg-white`}>
+                <Animate key={index} variant="pop" className={`${borderClass} p-8 flex flex-col items-center text-center justify-center min-h-[220px] transition-colors duration-300 hover:bg-gray-50`}>
                   {React.cloneElement(item.icon, { className: 'w-16 h-16 text-[#27013D]' })}
-                  <p className="text-gray-900 font-medium mt-4 text-lg">{item.label}</p>
+                  <p className="text-gray-800 font-medium mt-4 text-lg">{item.label}</p>
                 </Animate>
               );
             } else {
               return (
                 <Animate key={index} variant="pop" className={borderClass}>
-                  <a href="#contact" className="bg-[#27013D] h-full flex flex-col justify-center items-center text-center p-8 transition-transform hover:scale-105 group">
-                    <h3 className="text-xl font-bold text-white">Et bien plus encore...</h3>
-                    <p className="mt-2 text-violet-200 flex items-center gap-2 group-hover:text-white transition-colors">
+                  <a href="#contact" className="bg-[#E9E4F0] h-full flex flex-col justify-center items-center text-center p-8 transition-all duration-300 hover:bg-[#DBD3E6] group">
+                    <h3 className="text-xl font-bold text-[#27013D]">Et bien plus encore...</h3>
+                    <p className="mt-2 text-[#27013D]/80 flex items-center gap-2 group-hover:text-[#27013D] transition-colors">
                       Discutons de votre projet
                       <ArrowRightIcon className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                     </p>
