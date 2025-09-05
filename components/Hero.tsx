@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
               </h1>
             </Animate>
             <Animate variant="pop" delay={200}>
-              <p className="mt-6 text-base sm:text-lg lg:text-xl text-gray-800 max-w-xl mx-auto lg:mx-0">
+              <p className="mt-6 text-sm sm:text-base lg:text-lg text-gray-800 max-w-xl mx-auto lg:mx-0">
                 Sollicitez une <span className="gradient-text font-semibold">ressource experte, ingénieuse et polyvalente</span> dédiée au succès de votre organisation.
               </p>
             </Animate>
