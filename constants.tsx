@@ -285,7 +285,7 @@ export const teamMembers = [
     ],
     alumni: 'Alumni EY, E-WingeIs & Payfit',
     diploma: 'Master 2 CCA – IGR-IAE Rennes',
-    imageUrl: 'https://images2.imgbox.com/7a/8b/3MQxgYom_o.jpg',
+    imageUrl: 'https://images2.imgbox.com/10/2f/ZTxsNFQ1_o.jpg',
     linkedinUrl: 'https://www.linkedin.com/in/benjamin-le-gal-04a64353/',
   },
 ];
