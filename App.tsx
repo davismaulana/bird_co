@@ -93,16 +93,16 @@ const App: React.FC = () => {
       <Header pathname={pathname} />
       <main>
         <Hero />
+        <AmbitionSection />
         {/* <Methodology /> */}
         <ServicesOverview />
         <Stats />
-        <AmbitionSection />
+        <Logos />
         <ValueProposition />
         <Personas />
         <Expertise />
         <Deliverables />
         <TaskShowcase />
-        <Logos />
         <Team />
         <Contact />
       </main>

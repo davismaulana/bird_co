@@ -1,60 +1,51 @@
-
 import React from 'react';
 import Animate from './Animate';
-import LottieGraph from './LottieGraph';
 
-const heroItems = [
-    "Plus de 50M€ levés pour nos clients",
-    "Plus de 100 missions réalisées",
-    "Plus de 30 ans d'expérience cumulée",
-    "Une vision stratégique et collaborative"
+const credentials = [
+    "+50 missions réalisées en un an (TPE à Grande entreprise)",
+    "+30 consultants qualifiés entre 8 et 30 ans d'expérience issus de cabinets de renom (BCG etc.)",
+    "+50M€ levés pour nos clients"
 ];
 
 const AmbitionSection: React.FC = () => {
     return (
         <section className="bg-[#27013D] text-white overflow-hidden">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-24">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-                    <div className="text-center lg:text-left">
+                <div className="grid grid-cols-1 gap-10 items-center">
+                    <div className="text-center max-w-3xl mx-auto">
                         <Animate variant="pop">
-                            <p className="font-semibold text-violet-300 uppercase tracking-widest mb-4">Notre Ambition</p>
-                        </Animate>
-                        <Animate variant="pop" delay={100}>
                             <h2 className="text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-tight">
                                 Façonner l'avenir de votre entreprise
                             </h2>
                         </Animate>
-                        <Animate variant="pop" delay={200}>
-                            <p className="mt-6 text-lg text-gray-300 max-w-xl mx-auto lg:mx-0">
+                        <Animate variant="pop" delay={100}>
+                            <p className="mt-6 text-lg text-gray-300">
                                 Vous permettre d'anticiper les enjeux financiers et opérationnels futurs et prévenir les éventuelles difficultés.
                             </p>
                         </Animate>
-                        <Animate variant="pop" delay={300}>
-                            <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-gray-300">
-                                {heroItems.map((item: string) => (
-                                    <li key={item} className="flex">
-                                        <span className="text-violet-400 mr-3">—</span>
-                                        <span>{item}</span>
+                        <Animate variant="pop" delay={200}>
+                            <ul className="mt-8 space-y-3 text-gray-300 inline-block text-left">
+                                {credentials.map((item: string) => (
+                                    <li key={item} className="flex items-start">
+                                        <span className="text-violet-400 mr-3 font-bold text-xl leading-tight mt-1">{item.charAt(0)}</span>
+                                        <span className="flex-1">{item.substring(1).trim()}</span>
                                     </li>
                                 ))}
                             </ul>
                         </Animate>
-                        <Animate variant="pop" delay={400}>
-                            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <Animate variant="pop" delay={300}>
+                            <div className="mt-10 flex justify-center">
                                 <a
                                     href="https://calendly.com/contact-birdandco/30min"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-block text-center bg-white text-[#27013D] px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-transform hover:scale-105 w-full sm:w-auto">
+                                    className="inline-block text-center bg-white text-[#27013D] px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-transform hover:scale-105"
+                                >
                                     Prenons rendez-vous
                                 </a>
                             </div>
                         </Animate>
                     </div>
-
-                    <Animate variant="pop" delay={300} className="flex items-center justify-center">
-                        <LottieGraph className="w-full max-w-xl mx-auto lg:mx-0" />
-                    </Animate>
                 </div>
             </div>
         </section>

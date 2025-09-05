@@ -1,6 +1,8 @@
 
+
 import React from 'react';
 import Animate from './Animate';
+import { PaperPlaneIcon } from '../constants';
 
 const personas = [
   {
@@ -14,7 +16,7 @@ const personas = [
     description: "Nous vous renforçons pour faire face aux projets de transformation et aux défis de croissance, en agissant comme votre bras-droit.",
   },
   {
-    icon: <img src="https://images2.imgbox.com/a2/10/4l4MqUDL_o.png" alt="Avocats icon" className="w-16 h-16 object-contain" />,
+    icon: <PaperPlaneIcon className="w-16 h-16 object-contain text-black" />,
     title: "Avocats",
     description: "Nous collaborons sur des dossiers complexes nécessitant une expertise financière pointue, comme les litiges, les M&A ou les restructurations.",
   },
@@ -49,7 +51,7 @@ const Personas: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-[#27013D] mb-2">{persona.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-black leading-relaxed">
                       {persona.description}
                     </p>
                   </div>

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Animate from './Animate';
 import { LinkedInIcon, teamMembers } from '../constants';
@@ -38,26 +39,24 @@ const Team: React.FC = () => {
                     </Animate>
                   ))}
                 </div>
-                <Animate variant="pop" delay={400 + teamMembers[0].description.length * 100}>
-                  <div className="mt-6 pt-6 border-t border-white/20 text-sm">
-                    <p className="font-semibold">{teamMembers[0].alumni}</p>
-                    <p className="text-gray-400">{teamMembers[0].diploma}</p>
-                  </div>
-                </Animate>
               </div>
-                <Animate variant="pop" delay={500 + teamMembers[0].description.length * 100}>
-                  <div className="mt-6 text-left">
+              <Animate variant="pop" delay={400 + teamMembers[0].description.length * 100}>
+                  <div className="mt-6 pt-6 border-t border-white/20 text-sm flex justify-between items-center">
+                    <div>
+                      <p className="font-semibold">{teamMembers[0].alumni}</p>
+                      <p className="text-gray-400">{teamMembers[0].diploma}</p>
+                    </div>
                     <a 
                       href={teamMembers[0].linkedinUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`LinkedIn de ${teamMembers[0].name}`} 
-                      className="text-white hover:text-gray-300 transition-colors inline-block"
+                      className="text-white hover:text-gray-300 transition-colors"
                     >
                       <LinkedInIcon className="w-6 h-6" />
                     </a>
                   </div>
-                </Animate>
+              </Animate>
             </div>
           </div>
 
@@ -82,26 +81,24 @@ const Team: React.FC = () => {
                     </Animate>
                   ))}
                 </div>
-                <Animate variant="pop" delay={900 + teamMembers[1].description.length * 100}>
-                  <div className="mt-6 pt-6 border-t border-white/20 text-sm">
-                    <p className="font-semibold">{teamMembers[1].alumni}</p>
-                    <p className="text-gray-400">{teamMembers[1].diploma}</p>
-                  </div>
-                </Animate>
               </div>
-                <Animate variant="pop" delay={1000 + teamMembers[1].description.length * 100}>
-                  <div className="mt-6 text-left">
+              <Animate variant="pop" delay={900 + teamMembers[1].description.length * 100}>
+                  <div className="mt-6 pt-6 border-t border-white/20 text-sm flex justify-between items-center">
+                    <div>
+                      <p className="font-semibold">{teamMembers[1].alumni}</p>
+                      <p className="text-gray-400">{teamMembers[1].diploma}</p>
+                    </div>
                     <a 
                       href={teamMembers[1].linkedinUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`LinkedIn de ${teamMembers[1].name}`} 
-                      className="text-white hover:text-gray-300 transition-colors inline-block"
+                      className="text-white hover:text-gray-300 transition-colors"
                     >
                       <LinkedInIcon className="w-6 h-6" />
                     </a>
                   </div>
-                </Animate>
+              </Animate>
             </div>
           </div>
         </div>

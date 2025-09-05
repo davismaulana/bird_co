@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import Animate from './Animate';
 import { teamMembers, LinkedInIcon, CheckmarkCircleIcon } from '../constants';
@@ -82,12 +83,6 @@ const TeamPage: React.FC = () => {
                             <Animate variant="pop" delay={150}>
                                 <h2 className="text-3xl lg:text-4xl font-bold text-[#27013D]">{teamMembers[0].name}</h2>
                             </Animate>
-                            <Animate variant="pop" delay={250}>
-                                <p className="mt-2 text-lg font-semibold text-[#6D0037]">{teamMembers[0].alumni}</p>
-                            </Animate>
-                            <Animate variant="pop" delay={300}>
-                                <p className="mt-1 text-md text-gray-500">{teamMembers[0].diploma}</p>
-                            </Animate>
                             <div className="mt-6 space-y-4 text-gray-700 leading-relaxed">
                                 {teamMembers[0].description.map((paragraph, pIndex) => (
                                     <Animate key={pIndex} variant="pop" delay={350 + pIndex * 100}>
@@ -95,8 +90,16 @@ const TeamPage: React.FC = () => {
                                     </Animate>
                                 ))}
                             </div>
-                            <Animate variant="pop" delay={450 + teamMembers[0].description.length * 100}>
-                                <div className="mt-8">
+                            <div className="mt-8 flex justify-between items-center">
+                                <div>
+                                    <Animate variant="pop" delay={250}>
+                                        <p className="text-lg font-semibold text-[#6D0037]">{teamMembers[0].alumni}</p>
+                                    </Animate>
+                                    <Animate variant="pop" delay={300}>
+                                        <p className="mt-1 text-md text-gray-500">{teamMembers[0].diploma}</p>
+                                    </Animate>
+                                </div>
+                                <Animate variant="pop" delay={450 + teamMembers[0].description.length * 100}>
                                     <a
                                         href={teamMembers[0].linkedinUrl}
                                         target="_blank"
@@ -107,8 +110,8 @@ const TeamPage: React.FC = () => {
                                         <LinkedInIcon className="w-5 h-5" />
                                         Profil LinkedIn
                                     </a>
-                                </div>
-                            </Animate>
+                                </Animate>
+                            </div>
                         </div>
                     </div>
 
@@ -127,12 +130,6 @@ const TeamPage: React.FC = () => {
                             <Animate variant="pop" delay={150}>
                                 <h2 className="text-3xl lg:text-4xl font-bold text-[#27013D]">{teamMembers[1].name}</h2>
                             </Animate>
-                            <Animate variant="pop" delay={250}>
-                                <p className="mt-2 text-lg font-semibold text-[#6D0037]">{teamMembers[1].alumni}</p>
-                            </Animate>
-                            <Animate variant="pop" delay={300}>
-                                <p className="mt-1 text-md text-gray-500">{teamMembers[1].diploma}</p>
-                            </Animate>
                             <div className="mt-6 space-y-4 text-gray-700 leading-relaxed">
                                 {teamMembers[1].description.map((paragraph, pIndex) => (
                                     <Animate key={pIndex} variant="pop" delay={350 + pIndex * 100}>
@@ -140,8 +137,16 @@ const TeamPage: React.FC = () => {
                                     </Animate>
                                 ))}
                             </div>
-                            <Animate variant="pop" delay={450 + teamMembers[1].description.length * 100}>
-                                <div className="mt-8">
+                            <div className="mt-8 flex justify-between items-center">
+                                <div>
+                                    <Animate variant="pop" delay={250}>
+                                        <p className="text-lg font-semibold text-[#6D0037]">{teamMembers[1].alumni}</p>
+                                    </Animate>
+                                    <Animate variant="pop" delay={300}>
+                                        <p className="mt-1 text-md text-gray-500">{teamMembers[1].diploma}</p>
+                                    </Animate>
+                                </div>
+                                <Animate variant="pop" delay={450 + teamMembers[1].description.length * 100}>
                                     <a
                                         href={teamMembers[1].linkedinUrl}
                                         target="_blank"
@@ -152,8 +157,8 @@ const TeamPage: React.FC = () => {
                                         <LinkedInIcon className="w-5 h-5" />
                                         Profil LinkedIn
                                     </a>
-                                </div>
-                            </Animate>
+                                </Animate>
+                            </div>
                         </div>
                     </div>
                 </div>

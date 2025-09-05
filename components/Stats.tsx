@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Animate from './Animate';
 
@@ -10,13 +9,13 @@ const stats = [
   },
   {
     icon: <img src="https://images2.imgbox.com/0e/6d/ydTjAfbc_o.png" alt="Missions réalisées icon" className="w-16 h-16 object-contain" />,
-    value: "100+",
-    label: "Missions réalisées",
+    value: "50+",
+    label: "Missions réalisées en un an (TPE à Grande entreprise)",
   },
   {
-    icon: <img src="https://images2.imgbox.com/a2/4e/MpHeVXjA_o.png" alt="Années d'expérience cumulée icon" className="w-16 h-16 object-contain" />,
+    icon: <img src="https://images2.imgbox.com/d8/ce/23Kq8TYw_o.png" alt="Consultants qualifiés icon" className="w-16 h-16 object-contain" />,
     value: "30+",
-    label: "Années d'expérience cumulée",
+    label: "Consultants qualifiés (8 à 30 ans d'expérience) issus de cabinets de renom",
   },
 ];
 
@@ -24,11 +23,18 @@ const Stats: React.FC = () => {
   return (
     <section className="bg-white py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <Animate variant="pop">
-            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight mb-16">
+        <div className="mb-16">
+          <Animate variant="pop">
+            <div className="flex justify-center mb-4">
+              <div className="w-16 h-1 bg-gradient-to-r from-[#27013D] to-[#6D0037] rounded-full"></div>
+            </div>
+          </Animate>
+          <Animate variant="pop" delay={100}>
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
               Un impact qui <span className="gradient-text">fait la différence</span>
             </h2>
-        </Animate>
+          </Animate>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto stagger">
           {stats.map((stat, index) => (
             <Animate key={index} variant="pop">

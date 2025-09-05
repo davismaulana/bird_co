@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { services, BrandLogo, HamburgerIcon, CloseIcon } from '../constants';
+import { services, HamburgerIcon, CloseIcon } from '../constants';
 
 const navItems = [
   { name: 'Accueil', href: '/' },
@@ -73,11 +73,13 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
 
   return (
     <>
-      <header className={`bg-white/95 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${isScrolled ? 'border-b border-gray-200' : 'border-b border-transparent'}`}>
+      <header 
+        className={`bg-white/95 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${isScrolled ? 'border-b border-gray-200' : 'border-b border-transparent'}`}
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <a href="/">
-              <BrandLogo className="text-gray-900" />
+              <img src="https://images2.imgbox.com/13/b5/jo8qM6j8_o.png" alt="bird&co logo" className="h-10 w-auto" />
             </a>
             
             <div className="hidden lg:flex items-center">
@@ -95,7 +97,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                         if (isSectionActive && pathname === '/') {
                             classes += ' active text-[#27013D] font-semibold';
                         } else {
-                            classes += ' text-gray-700 hover:bg-[#27013D] hover:text-white';
+                            classes += ' text-black hover:bg-[#27013D] hover:text-white';
                         }
                     }
                     return (
@@ -124,7 +126,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                                     className={`block px-4 py-3 text-base transition-colors ${
                                       isServiceActive
                                       ? 'bg-[#27013D] text-white'
-                                      : 'text-gray-700 hover:bg-[#27013D] hover:text-white'
+                                      : 'text-black hover:bg-[#27013D] hover:text-white'
                                     }`}
                                   >
                                     <span>{service.title}</span>
@@ -158,13 +160,13 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                       if (isSectionActive) {
                           finalClasses.push('active', 'text-[#27013D]', 'font-semibold');
                       } else {
-                          finalClasses.push('text-gray-700', 'hover:bg-[#27013D]', 'hover:text-white');
+                          finalClasses.push('text-black', 'hover:bg-[#27013D]', 'hover:text-white');
                       }
                   } else { // isPageLink
                       if (isPageActive) {
                           finalClasses.push('bg-[#27013D]', 'text-white');
                       } else {
-                          finalClasses.push('text-gray-700', 'hover:bg-[#27013D]', 'hover:text-white');
+                          finalClasses.push('text-black', 'hover:bg-[#27013D]', 'hover:text-white');
                       }
                   }
                   
@@ -197,7 +199,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
               <button
                 onClick={() => setIsMobileMenuOpen(true)}
                 aria-label="Ouvrir le menu"
-                className="text-gray-800 p-2 -mr-2"
+                className="text-black p-2 -mr-2"
               >
                 <HamburgerIcon className="w-7 h-7" />
               </button>
@@ -217,7 +219,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
             <button
               onClick={() => setIsMobileMenuOpen(false)}
               aria-label="Fermer le menu"
-              className="absolute top-6 right-5 p-2 text-gray-800"
+              className="absolute top-6 right-5 p-2 text-black"
             >
               <CloseIcon className="w-8 h-8" />
             </button>
@@ -227,7 +229,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                 if (item.name === 'Notre proposition') {
                   return (
                     <div key={item.name} className="w-full">
-                       <a href={item.href} onClick={() => setIsMobileMenuOpen(false)} className={`block w-full text-3xl font-semibold py-3 rounded-lg text-gray-900 hover:bg-[#27013D] hover:text-white transition-colors ${
+                       <a href={item.href} onClick={() => setIsMobileMenuOpen(false)} className={`block w-full text-3xl font-semibold py-3 rounded-lg text-black hover:bg-[#27013D] hover:text-white transition-colors ${
                          isPropositionSectionActive && 'bg-[#27013D] text-white'
                        }`}>{item.name}</a>
                        <div className="mt-4 space-y-1">
@@ -241,7 +243,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                                   className={`block text-center w-full py-2 text-xl rounded-lg transition-colors ${
                                     isServiceActive
                                     ? 'bg-[#27013D] text-white'
-                                    : 'text-gray-600 hover:bg-[#27013D] hover:text-white'
+                                    : 'text-black hover:bg-[#27013D] hover:text-white'
                                   }`}
                                >
                                   <span>{service.title}</span>
@@ -259,7 +261,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                     key={item.name}
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`block w-full text-3xl font-semibold text-gray-900 py-3 rounded-lg hover:bg-[#27013D] hover:text-white transition-colors ${
+                    className={`block w-full text-3xl font-semibold text-black py-3 rounded-lg hover:bg-[#27013D] hover:text-white transition-colors ${
                       isActive && 'bg-[#27013D] text-white'
                     }`}
                   >

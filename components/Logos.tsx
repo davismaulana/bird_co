@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { WellowLogo, RegenSchoolLogo, PomadLogo, OctoLogo, CameroneCapitalLogo } from '../constants';
+import { WellowLogo, RegenSchoolLogo, PomadLogo, OctoLogo, CameroneCapitalLogo, FinpalLogo, LaBruneEtLaBlondeLogo, LesTontonsLogo, SquareLogo } from '../constants';
 import Animate from './Animate';
 
 const logos = [
@@ -9,6 +8,10 @@ const logos = [
   { component: <PomadLogo />, name: 'Pomad' },
   { component: <OctoLogo />, name: 'Octo' },
   { component: <CameroneCapitalLogo />, name: 'Camerone Capital' },
+  { component: <FinpalLogo />, name: 'Finpal' },
+  { component: <LaBruneEtLaBlondeLogo />, name: 'La Brune & La Blonde' },
+  { component: <LesTontonsLogo />, name: 'Les Tontons' },
+  { component: <SquareLogo />, name: 'Square' },
 ];
 
 const Logos: React.FC = () => {
@@ -30,13 +33,27 @@ const Logos: React.FC = () => {
           }}
         >
           <div className="flex w-max animate-scroll-x hover:[animation-play-state:paused]">
-            {allLogos.map((logo, index) => (
-              <div key={index} className="flex-shrink-0 px-8 lg:px-12 py-4">
-                <div className="h-40 flex items-center justify-center w-64 text-gray-500 hover:text-gray-800 transition-colors">
-                  {React.cloneElement(logo.component, { className: "max-h-full max-w-full object-contain" })}
+            {allLogos.map((logo, index) => {
+              // Based on user request "octo, eric, wellow, UI investment", we are increasing size for these logos.
+              // "eric" is interpreted as "Regen School" and "UI investment" as "Camerone Capital"
+              const isLargeLogo = ['Wellow', 'Octo', 'Regen School', 'Camerone Capital'].includes(logo.name);
+              
+              let logoClassName;
+
+              if (isLargeLogo) {
+                logoClassName = "max-h-full max-w-full object-contain transform scale-125";
+              } else {
+                logoClassName = "max-h-full max-w-full object-contain";
+              }
+
+              return (
+                <div key={index} className="flex-shrink-0 px-6 lg:px-10 py-2">
+                  <div className="h-32 flex items-center justify-center w-48 text-gray-500 hover:text-gray-800 transition-colors">
+                    {React.cloneElement(logo.component, { className: logoClassName })}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>

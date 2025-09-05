@@ -16,9 +16,9 @@ const LottieGraph: React.FC<{ className?: string }> = ({ className }) => {
             animRef.current = window.lottie.loadAnimation({
                 container: containerRef.current,
                 renderer: 'svg',
-                loop: false,
+                loop: true,
                 autoplay: true,
-                path: 'https://cdn.prod.website-files.com/66b09aac8872a8a0bf7addd4/6709098dc82d60ff5c237971_illustration-graph-%5Bremix%5D.json'
+                path: 'https://lottie.host/01c4f346-723a-43a5-ba7e-c40d6c66c39f/o8i4jYgC4s.json'
             });
         }
 
@@ -31,7 +31,7 @@ const LottieGraph: React.FC<{ className?: string }> = ({ className }) => {
     }, []);
 
     return (
-        <div className={`bg-black/20 border border-white/10 rounded-3xl p-4 sm:p-6 backdrop-blur-sm shadow-2xl shadow-violet-500/10 ${className}`}>
+        <div className={`bg-gradient-to-br from-black/30 to-black/10 border border-white/10 rounded-3xl p-4 sm:p-6 backdrop-blur-md shadow-2xl shadow-violet-500/20 ${className}`}>
             <div ref={containerRef}></div>
         </div>
     );

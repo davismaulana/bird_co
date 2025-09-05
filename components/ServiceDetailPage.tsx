@@ -1,8 +1,7 @@
 
 import React from 'react';
-import { services, serviceDetails, CheckmarkCircleIcon } from '../constants';
+import { services, serviceDetails, CheckmarkCircleIcon, DiagnosticScanMockup } from '../constants';
 import Animate from './Animate';
-import LottieGraph from './LottieGraph';
 
 const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
   const details = serviceDetails[serviceId];
@@ -24,56 +23,39 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
 
   return (
     <div className="bg-white text-gray-800">
-      {/* Hero Section */}
-      <section className="bg-[#27013D] text-white overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-24">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-                <div className="text-center lg:text-left">
-                    <Animate variant="pop">
-                        <p className="font-semibold text-violet-300 uppercase tracking-widest mb-4">{service.subTitle}</p>
-                    </Animate>
-                    <Animate variant="pop" delay={100}>
-                        <h1 className="text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-tight">
-                            {details.title}
-                        </h1>
-                    </Animate>
-                    <Animate variant="pop" delay={200}>
-                        <p className="mt-6 text-lg text-gray-300 max-w-xl mx-auto lg:mx-0">
-                            {details.subtitle}
-                        </p>
-                    </Animate>
-                    <Animate variant="pop" delay={300}>
-                        <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-gray-300">
-                            {details.heroItems.map((item: string) => (
-                                <li key={item} className="flex">
-                                    <span className="text-violet-400 mr-3">—</span>
-                                    <span>{item}</span>
-                                </li>
-                            ))}
-                        </ul>
-                    </Animate>
-                    <Animate variant="pop" delay={400}>
-                        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                            <a
-                                href="https://calendly.com/contact-birdandco/30min"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-block text-center bg-white text-[#27013D] px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-transform hover:scale-105 w-full sm:w-auto">
-                                Prenons rendez-vous
-                            </a>
-                        </div>
-                    </Animate>
-                </div>
-
-                <Animate variant="pop" delay={300} className="flex items-center justify-center">
-                    <LottieGraph className="w-full max-w-xl mx-auto lg:mx-0" />
-                </Animate>
-            </div>
+      {/* Diagnostic Section */}
+      <section className="bg-white pt-40 md:pt-48 pb-20 md:pb-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 max-w-3xl mx-auto">
+              <Animate variant="pop">
+                <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
+                  Des livrables <span className="gradient-text">clairs et impactants</span>
+                </h2>
+              </Animate>
+              <Animate variant="pop" delay={150}>
+                <p className="text-lg text-gray-600 mt-4">
+                  Nous transformons des données complexes en outils de pilotage visuels et intuitifs, conçus pour vous donner une visibilité complète sur votre activité.
+                </p>
+              </Animate>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center max-w-6xl mx-auto">
+              <Animate variant={'pop'} delay={200}>
+                  <DiagnosticScanMockup />
+              </Animate>
+              <Animate variant={'pop'} delay={300}>
+                  <div className="text-left">
+                    <h3 className="text-2xl font-bold text-[#27013D] mb-3">Diagnostic Stratégique & Opérationnel</h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      Nous réalisons une analyse 360° pour évaluer votre santé financière et opérationnelle. Ce diagnostic met en lumière les points de friction et les leviers de croissance cachés, formant la base de recommandations actionnables pour construire une stratégie sur-mesure.
+                    </p>
+                  </div>
+              </Animate>
+          </div>
         </div>
       </section>
 
       {/* Content Section */}
-      <main id="content" className="bg-white py-24 sm:py-32">
+      <main id="content" className="bg-gray-50 py-24 sm:py-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-3 gap-12 lg:gap-24">
                 <div className="lg:col-span-1">
@@ -111,7 +93,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
       </main>
 
       {/* Final CTA section */}
-      <section className="bg-gray-50 py-20">
+      <section className="bg-white py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Animate variant="pop">
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">

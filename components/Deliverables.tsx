@@ -1,13 +1,8 @@
 import React from 'react';
 import Animate from './Animate';
-import { FinancialReportMockup, KpiDashboardMockup, FieldWorkMockup, DiagnosticScanMockup } from '../constants';
+import { FinancialReportMockup, KpiDashboardMockup, FieldWorkMockup } from '../constants';
 
 const deliverables = [
-  {
-    title: "Diagnostic Stratégique & Opérationnel",
-    description: "Nous réalisons une analyse 360° de votre activité pour évaluer sa santé financière et opérationnelle. Ce diagnostic met en lumière les points de friction et les leviers de croissance cachés, formant la base de recommandations actionnables.",
-    mockup: <DiagnosticScanMockup />,
-  },
   {
     title: "Modélisation Financière & Business Plan",
     description: "Nous construisons des modèles financiers robustes et des business plans détaillés pour soutenir votre stratégie, vos levées de fonds et vos décisions d'investissement.",

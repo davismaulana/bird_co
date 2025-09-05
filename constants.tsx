@@ -1,16 +1,9 @@
 
-
 import React from 'react';
-
-export const BrandLogo: React.FC<{ className?: string }> = ({ className }) => (
-    <div className={`flex items-center ${className}`}>
-        <span className="text-3xl font-bold tracking-tighter">BIRD&</span>
-    </div>
-);
 
 export const PaperPlaneIcon: React.FC<{ className?: string }> = ({ className }) => (
     <svg viewBox="20.051 39 160.061 122.147" xmlns="http://www.w3.org/2000/svg" className={className}>
-        <path d="M178.6 39.4c-.7-.4-1.4-.5-2.2-.3-.5-.1-1.1-.1-1.6 0L22 89.4c-1.5.5-2.3 2.1-1.8 3.6.3.8.9 1.5 1.7 1.8l42.9 16.8 13.4 45.3c.4 1.3 1.6 2.2 3 2.1.8-.1 1.5-.4 2-1l19.9-23.6 42.9 26.3c.8.5 1.7.6 2.6.2.9-.3 1.5-1.1 1.7-2l29.8-116.2c.1-1.3-.4-2.6-1.5-3.3zM70.5 110.7l79.2-49.3L83.5 118c-.2.2-.4.5-.6.7-.2.3-.3.7-.4 1.1L79.7 142l-9-30.4-.2-.9zm83.3-58.6l-87 54.1-35.4-13.9 122.4-40.2zM87.7 125l10.2 6.3-13 15.4c.1 0 2.8-21.7 2.8-21.7zm2.6-5.2L172 50l-26.5 103.6-55.2-33.8z" fill="#6D0037"></path>
+        <path d="M178.6 39.4c-.7-.4-1.4-.5-2.2-.3-.5-.1-1.1-.1-1.6 0L22 89.4c-1.5.5-2.3 2.1-1.8 3.6.3.8.9 1.5 1.7 1.8l42.9 16.8 13.4 45.3c.4 1.3 1.6 2.2 3 2.1.8-.1 1.5-.4 2-1l19.9-23.6 42.9 26.3c.8.5 1.7.6 2.6.2.9-.3 1.5-1.1 1.7-2l29.8-116.2c.1-1.3-.4-2.6-1.5-3.3zM70.5 110.7l79.2-49.3L83.5 118c-.2.2-.4.5-.6.7-.2.3-.3.7-.4 1.1L79.7 142l-9-30.4-.2-.9zm83.3-58.6l-87 54.1-35.4-13.9 122.4-40.2zM87.7 125l10.2 6.3-13 15.4c.1 0 2.8-21.7 2.8-21.7zm2.6-5.2L172 50l-26.5 103.6-55.2-33.8z" fill="currentColor"></path>
     </svg>
 );
 
@@ -75,11 +68,15 @@ export const FundsRaisedIcon: React.FC<{ className?: string }> = ({ className })
 
 const PlaceholderComponent: React.FC<{ name: string, className?: string }> = ({ name, className }) => <div className={`text-xs text-gray-500 ${className}`}>[{name}]</div>;
 
-export const WellowLogo = () => <img src="https://static.wixstatic.com/media/7bfd2f_41cbb9b9d5e340d9a25af26860d861b1~mv2.png" alt="Wellow Logo" />;
-export const RegenSchoolLogo = () => <img src="https://static.wixstatic.com/media/7bfd2f_01fba9e6ecbb414c90a29c40b793f8cb~mv2.png" alt="Regen School Logo" />;
-export const PomadLogo = () => <img src="https://static.wixstatic.com/media/7bfd2f_8f755945e31d45fba32951129b040994~mv2.png" alt="Pomad Logo" />;
-export const OctoLogo = () => <img src="https://static.wixstatic.com/media/7bfd2f_eff6d7f274f3477393d513ca25459148~mv2.png" alt="Octo Logo" />;
-export const CameroneCapitalLogo = () => <img src="https://static.wixstatic.com/media/7bfd2f_1b1546b30c1a40158136d72a41b42857~mv2.png" alt="Camerone Capital Logo" />;
+export const WellowLogo = ({ className }: { className?: string }) => <img src="https://static.wixstatic.com/media/7bfd2f_41cbb9b9d5e340d9a25af26860d861b1~mv2.png" alt="Wellow Logo" className={className} />;
+export const RegenSchoolLogo = ({ className }: { className?: string }) => <img src="https://static.wixstatic.com/media/7bfd2f_01fba9e6ecbb414c90a29c40b793f8cb~mv2.png" alt="Regen School Logo" className={className} />;
+export const PomadLogo = ({ className }: { className?: string }) => <img src="https://static.wixstatic.com/media/7bfd2f_8f755945e31d45fba32951129b040994~mv2.png" alt="Pomad Logo" className={className} />;
+export const OctoLogo = ({ className }: { className?: string }) => <img src="https://static.wixstatic.com/media/7bfd2f_eff6d7f274f3477393d513ca25459148~mv2.png" alt="Octo Logo" className={className} />;
+export const CameroneCapitalLogo = ({ className }: { className?: string }) => <img src="https://static.wixstatic.com/media/7bfd2f_1b1546b30c1a40158136d72a41b42857~mv2.png" alt="Camerone Capital Logo" className={className} />;
+export const FinpalLogo = ({ className }: { className?: string }) => <img src="https://images2.imgbox.com/a3/2a/UYgiQyJX_o.jpg" alt="Finpal Logo" className={className} />;
+export const LaBruneEtLaBlondeLogo = ({ className }: { className?: string }) => <img src="https://images2.imgbox.com/55/ee/9af2q46w_o.png" alt="La Brune & La Blonde Logo" className={className} />;
+export const LesTontonsLogo = ({ className }: { className?: string }) => <img src="https://images2.imgbox.com/d7/ce/fwv4v4em_o.png" alt="Les Tontons Logo" className={className} />;
+export const SquareLogo = ({ className }: { className?: string }) => <img src="https://images2.imgbox.com/39/33/4ug9ldzK_o.png" alt="Square Logo" className={className} />;
 
 export const FinancialReportMockup: React.FC<{ theme?: string }> = () => (
     <div className="w-full h-full bg-white rounded-2xl p-6 shadow-2xl border border-gray-100 flex flex-col transform hover:scale-105 transition-transform duration-300 aspect-[4/3]">
@@ -87,7 +84,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string }> = () => (
             <h3 className="font-bold text-gray-700 text-base">Modèle Financier</h3>
             <div className="px-3 py-1 text-xs font-semibold bg-[#27013D] text-white rounded-full">Prévisions 5 ans</div>
         </div>
-        <div className="flex-grow bg-gray-50 rounded-lg p-4 space-y-3 border border-gray-100 text-sm font-mono">
+        <div className="flex-grow bg-gray-50 rounded-lg p-4 space-y-3 border border-gray-100 text-sm">
             <div className="grid grid-cols-4 gap-2 text-xs text-gray-500">
                 <span>Metric</span>
                 <span className="text-right">Y1</span>
@@ -195,14 +192,12 @@ export const DiagnosticScanMockup: React.FC<{ theme?: string }> = () => (
 
 export const ExpertiseSearchIcon: React.FC<{ className?: string }> = ({ className }) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" className={className} fill="currentColor">
-        <g opacity="0.2"><path d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z"></path></g>
-        <g><path d="M156,144.35a68,68,0,1,0-11.65,11.65L188.69,200.29a8,8,0,0,0,11.31-11.31ZM48,128a80,80,0,1,1,80,80A80.09,80.09,0,0,1,48,128Z"></path></g>
+        <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,128a88,88,0,1,1,88,88A88.1,88.1,0,0,1,40,128Z"></path>
     </svg>
 );
 export const ExpertiseCompassIcon: React.FC<{ className?: string }> = ({ className }) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" className={className} fill="currentColor">
-        <g opacity="0.2"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Z"></path></g>
-        <g><path d="M128,16a112,112,0,1,0,112,112A112.13,112.13,0,0,0,128,16Zm0,208a96,96,0,1,1,96-96A96.11,96.11,0,0,1,128,224Zm41.11-139.54L102,120.89l-36.43,67.1a8,8,0,0,1-14.23-7.74l48-88a8,8,0,0,1,14.23,7.74L87.11,154l67-36.43a8,8,0,1,1-7.74,14.23Z"></path></g>
+        <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm45.48-130.52L106.4,124.52,73.48,189.48a8,8,0,0,1-13.9-8l44-80.8a8,8,0,0,1,13.9,8L90.52,152.2l61.08-33.2a8,8,0,1,1,8,13.9Z"></path>
     </svg>
 );
 
@@ -257,15 +252,15 @@ export const ExpertiseSpeechIcon: React.FC<{ className?: string }> = ({ classNam
 
 export const ArrowRightIcon: React.FC<{ className?: string }> = ({ className }) => <svg className={className} viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" /></svg>;
 export const TargetIcon: React.FC<{ className?: string }> = ({ className }) => <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 21a9 9 0 100-18 9 9 0 000 18z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15a3 3 0 100-6 3 3 0 000 6z" /></svg>;
-export const BarChartIcon: React.FC<{ className?: string }> = ({ className }) => <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>;
-export const TrendingUpIcon: React.FC<{ className?: string }> = ({ className }) => <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>;
-export const BriefcaseIcon: React.FC<{ className?: string }> = ({ className }) => <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>;
+export const BarChartIcon: React.FC<{ className?: string }> = ({ className }) => <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>;
+export const TrendingUpIcon: React.FC<{ className?: string }> = ({ className }) => <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>;
+export const BriefcaseIcon: React.FC<{ className?: string }> = ({ className }) => <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>;
 
 export const services = [
     { slug: 'pilotage-planification', title: 'Pilotage & Planification', subTitle: 'Construire', description: 'les outils indispensables à une gestion financière et opérationnelle optimale.', icon: <PaperPlaneIcon />, iconClassName: 'w-16 h-16' },
-    { slug: 'cfo-part-time', title: 'CFO Part-time', subTitle: 'Structurer', description: 'votre croissance et mettre en exécution votre stratégie financière avec un bras-droit dédié à temps partiel.', icon: <CfoIcon />, iconClassName: 'w-16 h-16' },
+    { slug: 'cfo-part-time', title: 'CFO Part-time', subTitle: 'Structurer', description: 'votre croissance et mettre en exécution votre stratégie financière avec un bras-droit dédié à temps partiel.', icon: <CfoIcon />, iconClassName: 'w-14 h-14' },
     { slug: 'diagnostic-restructuration', title: 'Diagnostic & Restructuration', subTitle: 'Rassurer', description: 'vos actionnaires et créanciers sur la santé financière de votre activité et votre capacité à la relancer.', icon: <DiagnosticIcon />, iconClassName: 'w-16 h-16' },
-    { slug: 'services-ma', title: 'Services M&A', subTitle: 'Faciliter', description: 'vos opérations de levées de fonds et cessions en produisant les documents et analyses indispensables à vos discussions.', icon: <img src="https://images2.imgbox.com/fd/19/nDGCEmGz_o.png" alt="Services M&A icon" />, iconClassName: 'w-16 h-16 object-contain' },
+    { slug: 'services-ma', title: 'Services M&A', subTitle: 'Faciliter', description: 'vos opérations de levées de fonds et cessions en produisant les documents et analyses indispensables à vos discussions.', icon: <img src="https://images2.imgbox.com/f3/92/VmCZC5gO_o.png" alt="Services M&A icon" />, iconClassName: 'w-20 h-20 object-contain' },
 ];
 
 export const teamMembers = [
@@ -278,7 +273,7 @@ export const teamMembers = [
     ],
     alumni: 'Alumni EY, Eight Advisory & PwC',
     diploma: 'Master Spécialisé – ESCP Europe',
-    imageUrl: 'https://images2.imgbox.com/f7/7a/f1AuycIm_o.png',
+    imageUrl: 'https://images2.imgbox.com/26/ab/ooTECEUa_o.jpg',
     linkedinUrl: 'https://www.linkedin.com/in/seydinasamb/',
   },
   {
@@ -290,7 +285,7 @@ export const teamMembers = [
     ],
     alumni: 'Alumni EY, E-WingeIs & Payfit',
     diploma: 'Master 2 CCA – IGR-IAE Rennes',
-    imageUrl: 'https://images2.imgbox.com/9c/29/9WlaeoKB_o.jpg',
+    imageUrl: 'https://images2.imgbox.com/7a/8b/3MQxgYom_o.jpg',
     linkedinUrl: 'https://www.linkedin.com/in/benjamin-le-gal-04a64353/',
   },
 ];

@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Animate from './Animate';
 // FIX: Replaced incorrect CheckCircleIcon with CheckmarkCircleIcon as it is the correct export from constants.
@@ -41,32 +42,32 @@ const FinancialModelVisual: React.FC = () => (
             <div className="px-3 py-1 text-xs font-semibold bg-gray-100 text-gray-600 rounded-full">Bilan</div>
         </div>
         <div className="flex-grow bg-gray-50 rounded-lg p-3 space-y-2 border border-gray-100">
-            <div className="flex justify-between items-center text-xs text-gray-500 font-mono">
+            <div className="flex justify-between items-center text-xs text-gray-500">
                 <span className="w-1/2">Ligne</span>
                 <span className="w-1/4 text-right">Année 1</span>
                 <span className="w-1/4 text-right">Année 2</span>
             </div>
-            <div className="flex justify-between items-center text-sm text-gray-800 font-mono">
+            <div className="flex justify-between items-center text-sm text-gray-800">
                 <span className="w-1/2 font-medium">Revenus</span>
                 <span className="w-1/4 text-right">5.2M</span>
                 <span className="w-1/4 text-right">7.8M</span>
             </div>
-            <div className="flex justify-between items-center text-sm text-gray-600 font-mono">
+            <div className="flex justify-between items-center text-sm text-gray-600">
                 <span className="w-1/2 pl-4">COGS</span>
                 <span className="w-1/4 text-right">(2.1M)</span>
                 <span className="w-1/4 text-right">(3.1M)</span>
             </div>
-            <div className="flex justify-between items-center text-sm text-gray-800 font-medium font-mono">
+            <div className="flex justify-between items-center text-sm text-gray-800 font-medium">
                 <span className="w-1/2">Marge Brute</span>
                 <span className="w-1/4 text-right">3.1M</span>
                 <span className="w-1/4 text-right">4.7M</span>
             </div>
-            <div className="flex justify-between items-center text-sm text-gray-600 font-mono">
+            <div className="flex justify-between items-center text-sm text-gray-600">
                 <span className="w-1/2 pl-4">OPEX</span>
                 <span className="w-1/4 text-right">(1.5M)</span>
                 <span className="w-1/4 text-right">(2.0M)</span>
             </div>
-            <div className="flex justify-between items-center text-sm text-gray-800 font-bold border-t border-gray-200 pt-2 mt-2 font-mono">
+            <div className="flex justify-between items-center text-sm text-gray-800 font-bold border-t border-gray-200 pt-2 mt-2">
                 <span className="w-1/2">EBITDA</span>
                 <span className="w-1/4 text-right">1.6M</span>
                 <span className="w-1/4 text-right">2.7M</span>
