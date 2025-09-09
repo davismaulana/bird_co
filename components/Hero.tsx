@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Animate from './Animate';
 import HeroAnimation from './HeroAnimation';
@@ -11,7 +12,7 @@ const Hero: React.FC = () => {
           {/* Left side: Text content */}
           <div className="text-center lg:text-left relative z-10">
             <Animate variant="pop">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight tracking-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight tracking-tight">
                 <span>Bras droit</span><br />
                 <span className="gradient-text">stratégique et financier</span>
               </h1>
