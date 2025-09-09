@@ -23,7 +23,7 @@ const ServicesOverview: React.FC = () => {
             </p>
           </Animate>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 group stagger">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 group stagger">
           {services.map((service: any, index) => (
             <Animate
               key={index}
@@ -35,10 +35,10 @@ const ServicesOverview: React.FC = () => {
                   <div className="h-20 w-20 flex items-center justify-center text-[#27013D] mb-6">
                     {React.cloneElement(service.icon, { className: service.iconClassName })}
                   </div>
-                  <h3 className="text-lg sm:text-sm lg:text-xs xl:text-sm font-bold text-black leading-tight h-12 flex items-center justify-center whitespace-nowrap">
+                  <h3 className="text-base font-bold text-black leading-tight h-12 flex items-center justify-center">
                     {service.title}
                   </h3>
-                  <p className="text-base font-semibold text-[#6D0037] my-2 whitespace-nowrap">{service.subTitle}</p>
+                  <p className="text-base font-semibold text-[#6D0037] mb-2 whitespace-nowrap">{service.subTitle}</p>
                   <p className="text-gray-600 text-sm leading-relaxed flex-grow">{service.description}</p>
                 </div>
               </a>

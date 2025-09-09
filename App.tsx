@@ -17,7 +17,6 @@ import Expertise from './components/Expertise';
 import TaskShowcase from './components/TaskShowcase';
 import AmbitionPage from './components/AmbitionPage';
 import TeamPage from './components/TeamPage';
-import AmbitionSection from './components/AmbitionSection';
 
 const App: React.FC = () => {
   const { pathname } = window.location;
@@ -93,7 +92,6 @@ const App: React.FC = () => {
       <Header pathname={pathname} />
       <main>
         <Hero />
-        <AmbitionSection />
         {/* <Methodology /> */}
         <ServicesOverview />
         <Stats />

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Animate from './Animate';
 
@@ -8,9 +9,9 @@ const stats = [
     label: "Levés pour nos clients",
   },
   {
-    icon: <img src="https://images2.imgbox.com/0e/6d/ydTjAfbc_o.png" alt="Missions réalisées icon" className="w-16 h-16 object-contain" />,
+    icon: <img src="https://images2.imgbox.com/0e/6d/ydTjAfbc_o.png" alt="Dirigeants et actionnaires accompagnés icon" className="w-16 h-16 object-contain" />,
     value: "50+",
-    label: "Missions réalisées en un an (TPE à Grande entreprise)",
+    label: "dirigeants et actionnaires accompagnés",
   },
   {
     icon: <img src="https://images2.imgbox.com/d8/ce/23Kq8TYw_o.png" alt="Consultants qualifiés icon" className="w-16 h-16 object-contain" />,

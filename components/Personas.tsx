@@ -1,27 +1,25 @@
 
-
 import React from 'react';
 import Animate from './Animate';
-import { PaperPlaneIcon } from '../constants';
 
 const personas = [
   {
-    icon: <img src="https://images2.imgbox.com/87/dd/sN3rtZQi_o.png" alt="Actionnaires icon" className="w-16 h-16 object-contain" />,
+    icon: <img src="https://images2.imgbox.com/88/a2/fagQVMCi_o.png" alt="Actionnaires icon" className="w-16 h-16 object-contain" />,
     title: "Actionnaires",
     description: "Nous vous apportons une vision stratégique et un cadre financier solide pour sécuriser et valoriser votre investissement.",
   },
   {
-    icon: <img src="https://images2.imgbox.com/d8/ce/23Kq8TYw_o.png" alt="Dirigeants & Fondateurs icon" className="w-16 h-16 object-contain" />,
+    icon: <img src="https://images2.imgbox.com/5c/0a/1tuigqwq_o.png" alt="Dirigeants & Fondateurs icon" className="w-16 h-16 object-contain" />,
     title: "Dirigeants & Fondateurs",
     description: "Nous vous renforçons pour faire face aux projets de transformation et aux défis de croissance, en agissant comme votre bras-droit.",
   },
   {
-    icon: <PaperPlaneIcon className="w-16 h-16 object-contain text-black" />,
+    icon: <img src="https://images2.imgbox.com/4f/d9/hcbc6lOc_o.png" alt="Avocats icon" className="w-16 h-16 object-contain" />,
     title: "Avocats",
     description: "Nous collaborons sur des dossiers complexes nécessitant une expertise financière pointue, comme les litiges, les M&A ou les restructurations.",
   },
   {
-    icon: <img src="https://images2.imgbox.com/43/96/4i7F4XMX_o.png" alt="Experts-Comptables icon" className="w-16 h-16 object-contain" />,
+    icon: <img src="https://images2.imgbox.com/39/e6/RZ9G3FHM_o.png" alt="Experts-Comptables icon" className="w-16 h-16 object-contain" />,
     title: "Experts-Comptables",
     description: "Nous intervenons en appui sur des missions exceptionnelles qui dépassent le cadre de votre mission récurrente : évaluation, due diligence, business plan.",
   },
