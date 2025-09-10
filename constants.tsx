@@ -261,6 +261,7 @@ export const services = [
     { slug: 'pilotage-planification', title: 'Pilotage & Planification', subTitle: 'Construire', description: 'les outils indispensables à une gestion financière et opérationnelle optimale.', icon: <PaperPlaneIcon />, iconClassName: 'w-16 h-16' },
     { slug: 'cfo-part-time', title: 'CFO Part-time', subTitle: 'Structurer', description: 'votre croissance et mettre en exécution votre stratégie financière avec un bras-droit dédié à temps partiel.', icon: <CfoIcon />, iconClassName: 'w-14 h-14' },
     { slug: 'diagnostic-restructuration', title: 'Diagnostic & Restructuration', subTitle: 'Rassurer', description: 'vos actionnaires et créanciers sur la santé financière de votre activité et votre capacité à la relancer.', icon: <DiagnosticIcon />, iconClassName: 'w-16 h-16' },
+    { slug: 'services-ma', title: 'Services M&A', subTitle: 'Faciliter', description: 'vos levées de fonds et cessions en produisant les documents et analyses indispensables à vos discussions.', icon: <img src="https://images2.imgbox.com/91/32/P6brUIBM_o.png" alt="Services M&A Icon" />, iconClassName: 'w-20 h-20' },
 ];
 
 export const teamMembers = [
@@ -316,6 +317,15 @@ export const serviceDetails: { [key: string]: any } = {
         mainContent: { title: 'Notre approche', description: 'Un diagnostic complet pour une vision claire et un plan d\'action solide.', categories: [
             { title: 'Analyse financière et opérationnelle', list: ['Analyse du compte de résultat, bilan et flux de trésorerie', 'Revue des processus clés', 'Identification des zones de risque'] },
             { title: 'Plan de restructuration', list: ['Définition d\'un plan d\'action priorisé', 'Assistance à la mise en oeuvre', 'Communication avec les parties prenantes'] },
+        ] }
+    },
+    'services-ma': {
+        title: 'Services M&A',
+        subtitle: 'Faciliter vos levées de fonds et cessions en produisant les documents et analyses indispensables à vos discussions.',
+        heroItems: ['Levée de fonds', 'Cession', 'Due Diligence', 'Valorisation'],
+        mainContent: { title: 'Nos livrables', description: 'Des documents et analyses pour sécuriser vos transactions.', categories: [
+            { title: 'Processus de Levée de Fonds', list: ['Préparation du business plan et du pitch deck', 'Modélisation financière et valorisation', 'Gestion de la data room', 'Négociation avec les investisseurs'] },
+            { title: 'Accompagnement à la Cession', list: ['Préparation du mémorandum d\'information', 'Identification et approche des acquéreurs potentiels', 'Due diligence vendeur (VDD)', 'Assistance dans les négociations finales'] },
         ] }
     },
 };

@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect } from 'react';
 
 const HeroAnimation: React.FC = () => {
@@ -58,8 +59,10 @@ const HeroAnimation: React.FC = () => {
         const init = () => {
             resizeCanvas();
             particles = [];
-            const numberOfParticles = (canvas.height * canvas.width) / 9000;
+            // Decreased number of particles for a sparser effect
+            const numberOfParticles = (canvas.height * canvas.width) / 25000;
             for (let i = 0; i < numberOfParticles; i++) {
+                // Particles are a bit larger and faster for more dynamism
                 const size = Math.random() * 1.5 + 1;
                 const x = Math.random() * (canvas.width - size * 2) + size;
                 const y = Math.random() * (canvas.height - size * 2) + size;
@@ -76,9 +79,13 @@ const HeroAnimation: React.FC = () => {
                 for (let b = a; b < particles.length; b++) {
                     const distance = ((particles[a].x - particles[b].x) * (particles[a].x - particles[b].x)) +
                                      ((particles[a].y - particles[b].y) * (particles[a].y - particles[b].y));
-                    if (distance < (canvas.width / 7) * (canvas.height / 7)) {
-                        opacityValue = 1 - (distance / 20000);
-                        ctx.strokeStyle = `rgba(39, 1, 61, ${opacityValue * 0.3})`;
+                    
+                    // Increased connection distance for longer lines
+                    const connectThreshold = (canvas.width / 4) * (canvas.height / 4);
+                    if (distance < connectThreshold) {
+                        opacityValue = 1 - (distance / connectThreshold);
+                        // Made connecting lines more visible
+                        ctx.strokeStyle = `rgba(39, 1, 61, ${opacityValue * 0.5})`;
                         ctx.lineWidth = 1;
                         ctx.beginPath();
                         ctx.moveTo(particles[a].x, particles[a].y);

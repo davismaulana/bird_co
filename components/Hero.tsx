@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Animate from './Animate';
 import HeroAnimation from './HeroAnimation';
@@ -12,13 +11,13 @@ const Hero: React.FC = () => {
           {/* Left side: Text content */}
           <div className="text-center lg:text-left relative z-10">
             <Animate variant="pop">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight tracking-tight">
+              <h1 className="text-3xl lg:text-5xl font-extrabold text-gray-900 leading-tight tracking-tight">
                 <span>Bras droit</span><br />
                 <span className="gradient-text">stratégique et financier</span>
               </h1>
             </Animate>
             <Animate variant="pop" delay={200}>
-              <p className="mt-6 text-base sm:text-lg lg:text-xl text-gray-600 max-w-xl mx-auto lg:mx-0">
+              <p className="mt-6 text-sm lg:text-lg text-gray-600 max-w-xl mx-auto lg:mx-0">
                 Sollicitez une <span className="gradient-text font-semibold">ressource experte, ingénieuse et polyvalente</span> dédiée au succès de votre organisation.
               </p>
             </Animate>
@@ -28,7 +27,7 @@ const Hero: React.FC = () => {
                   href="https://calendly.com/contact-birdandco/30min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block text-center bg-[#27013D] text-white px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-[#1c0e2a] transition-colors transform hover:scale-105 text-base sm:text-lg"
+                  className="inline-block text-center bg-[#27013D] text-white px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-[#1c0e2a] transition-colors transform hover:scale-105 text-sm lg:text-base"
                 >
                   Prenons rendez-vous
                 </a>
