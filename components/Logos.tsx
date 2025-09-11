@@ -1,12 +1,12 @@
 import React from 'react';
-import { WellowLogo, RegenSchoolLogo, PomadLogo, LaBruneEtLaBlondeLogo, LesTontonsLogo, SquareLogo, FinpalLogo } from '../constants';
+import { WellowLogo, RegenSchoolLogo, PomadLogo, BredLogo, EricKayserLogo, SquareLogo, FinpalLogo } from '../constants';
 import Animate from './Animate';
 
 const logos = [
   { component: <SquareLogo />, name: 'UI Investment' },
-  { component: <LaBruneEtLaBlondeLogo />, name: 'BRED' },
-  { component: <LesTontonsLogo />, name: 'Eric Kayser' },
-  { component: <FinpalLogo />, name: 'CASA France' },
+  { component: <BredLogo />, name: 'BRED' },
+  { component: <EricKayserLogo />, name: 'Eric Kayser' },
+  { component: <FinpalLogo />, name: 'Finpal' },
   { component: <PomadLogo />, name: 'Pomad' },
   { component: <RegenSchoolLogo />, name: 'Regen School' },
   { component: <WellowLogo />, name: 'Wellow' },

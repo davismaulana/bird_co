@@ -8,7 +8,7 @@ const PrivacyPolicyPage: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Animate variant="pop">
                 <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
-                    Politique de <span className="gradient-text">Confidentialité</span>
+                    Mentions Légales & <span className="gradient-text">Confidentialité</span>
                 </h1>
             </Animate>
             <Animate variant="pop" delay={150}>
@@ -21,44 +21,42 @@ const PrivacyPolicyPage: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <div className="text-gray-800 space-y-8 text-lg leading-relaxed">
                 <Animate variant="pop">
-                    <p>BIRD&CO ("nous", "notre") s'engage à protéger la confidentialité des informations personnelles que vous nous confiez. Cette politique de confidentialité décrit comment nous collectons, utilisons, et protégeons vos données lorsque vous visitez et interagissez avec notre site web.</p>
+                    <h2 className="text-3xl font-bold text-[#27013D]">1. Éditeur du Site</h2>
+                    <p>Le site birdandco.fr est édité par la société BIRD&CO, SASU au capital de 1.000,00 euros, immatriculée au RCS de Paris sous le numéro 984 766 595, dont le siège social est situé au 33 rue La Fayette, 75009 Paris.</p>
+                    <p>N° de TVA intracommunautaire : FR50984766595</p>
+                    <p>Email : <a href="mailto:contact@birdandco.fr" className="text-[#6D0037] hover:underline font-semibold">contact@birdandco.fr</a></p>
                 </Animate>
 
                 <Animate variant="pop" delay={100}>
-                    <h2 className="text-3xl font-bold text-[#27013D] pt-4">1. Collecte des informations</h2>
-                    <p>Nous collectons des informations lorsque vous utilisez notre formulaire de contact ou naviguez sur notre site. Les informations collectées peuvent inclure votre nom, votre adresse e-mail, le nom de votre entreprise, ainsi que des données de navigation (telles que l'adresse IP, le type de navigateur) via les cookies.</p>
+                    <h2 className="text-3xl font-bold text-[#27013D] pt-4">2. Directeur de la publication</h2>
+                    <p>Le directeur de la publication est Monsieur Seydina SAMB, en sa qualité de Président de la société BIRD&CO.</p>
                 </Animate>
 
                 <Animate variant="pop" delay={200}>
-                    <h2 className="text-3xl font-bold text-[#27013D] pt-4">2. Utilisation des informations</h2>
-                    <p>Toutes les informations que nous recueillons auprès de vous peuvent être utilisées pour :</p>
-                    <ul className="list-disc pl-6 space-y-2 mt-4">
-                        <li>Personnaliser votre expérience et répondre à vos besoins individuels.</li>
-                        <li>Améliorer la performance et le contenu de notre site web.</li>
-                        <li>Vous contacter par e-mail pour répondre à vos demandes d'information ou planifier un rendez-vous.</li>
-                        <li>Assurer la sécurité de notre site web.</li>
-                    </ul>
+                    <h2 className="text-3xl font-bold text-[#27013D] pt-4">3. Hébergeur du Site</h2>
+                    <p>Le site est hébergé par Webflow, Inc., dont le siège social est situé 398 11th Street, 2nd Floor, San Francisco, CA 94103, États-Unis.</p>
                 </Animate>
 
                 <Animate variant="pop" delay={300}>
-                    <h2 className="text-3xl font-bold text-[#27013D] pt-4">3. Confidentialité et Divulgation à des tiers</h2>
-                    <p>Nous sommes les seuls propriétaires des informations recueillies sur ce site. Vos informations personnelles ne seront pas vendues, échangées, transférées, ou données à une autre société sans votre consentement, en dehors de ce qui est nécessaire pour répondre à une demande ou dans le cadre d'obligations légales.</p>
-                    <p>Nous pouvons partager des informations avec des partenaires de confiance (fournisseurs de services techniques, etc.) qui nous aident à exploiter notre site Web ou à mener nos affaires, à condition que ces parties conviennent de garder ces informations confidentielles.</p>
+                    <h2 className="text-3xl font-bold text-[#27013D] pt-4">4. Propriété intellectuelle</h2>
+                    <p>L'ensemble du site, y compris sa structure, son arborescence, ses textes, ses images, ses graphismes et tout autre élément le composant, constitue une œuvre protégée par le droit d'auteur et la propriété intellectuelle. Toute représentation, reproduction, modification, ou exploitation, totale ou partielle, du site ou de son contenu, par quelque procédé que ce soit et sur quelque support que ce soit, sans l'autorisation préalable et écrite de BIRD&CO, est strictly interdite.</p>
                 </Animate>
 
-                <Animate variant="pop" delay={400}>
-                    <h2 className="text-3xl font-bold text-[#27013D] pt-4">4. Protection des informations</h2>
-                    <p>Nous mettons en œuvre une variété de mesures de sécurité techniques et organisationnelles pour préserver la sécurité de vos informations personnelles. Nous utilisons un cryptage SSL pour protéger les informations sensibles transmises en ligne.</p>
-                </Animate>
-
-                 <Animate variant="pop" delay={500}>
-                    <h2 className="text-3xl font-bold text-[#27013D] pt-4">5. Vos droits</h2>
-                    <p>Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification, de suppression, de portabilité et d'opposition aux données personnelles vous concernant. Vous pouvez exercer ce droit en nous contactant à <a href="mailto:contact@birdandco.fr" className="text-[#6D0037] hover:underline font-semibold">contact@birdandco.fr</a>.</p>
+                 <Animate variant="pop" delay={400}>
+                    <h2 className="text-3xl font-bold text-[#27013D] pt-4">5. Données personnelles (RGPD)</h2>
+                    <p>BIRD&CO s'engage à ce que la collecte et le traitement de vos données, effectués à partir du site birdandco.fr, soient conformes au règlement général sur la protection des données (RGPD) et à la loi Informatique et Libertés.</p>
+                    <p>Les informations recueillies via le formulaire de contact sont enregistrées dans un fichier informatisé par BIRD&CO pour la gestion de notre clientèle. Elles sont conservées pendant 3 ans et sont destinées au service commercial.</p>
+                    <p>Conformément à la loi, vous pouvez exercer votre droit d'accès aux données vous concernant et les faire rectifier en contactant : <a href="mailto:contact@birdandco.fr" className="text-[#6D0037] hover:underline font-semibold">contact@birdandco.fr</a>.</p>
                 </Animate>
                 
+                <Animate variant="pop" delay={500}>
+                    <h2 className="text-3xl font-bold text-[#27013D] pt-4">6. Cookies</h2>
+                    <p>Le site birdandco.fr peut être amené à vous demander l’acceptation des cookies pour des besoins de statistiques et d'affichage. Un cookie est une information déposée sur votre disque dur par le serveur du site que vous visitez.</p>
+                </Animate>
+
                 <Animate variant="pop" delay={600}>
-                    <h2 className="text-3xl font-bold text-[#27013D] pt-4">6. Consentement</h2>
-                    <p>En utilisant notre site, vous consentez à notre politique de confidentialité.</p>
+                    <h2 className="text-3xl font-bold text-[#27013D] pt-4">7. Droit applicable</h2>
+                    <p>Le présent site et ses mentions légales sont soumis au droit français.</p>
                 </Animate>
             </div>
         </div>
