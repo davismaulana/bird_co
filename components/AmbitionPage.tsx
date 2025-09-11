@@ -1,27 +1,25 @@
 
-
 import React from 'react';
 import Animate from './Animate';
-import { AnticipationIcon, HandshakeIcon, ClartePillarIcon, PerformancePillarIcon } from '../constants';
 
 const pillars = [
   {
-    icon: <AnticipationIcon />,
+    icon: <img src="https://images2.imgbox.com/2f/13/L7k9WDsI_o.png" alt="Anticipation Proactive icon" />,
     title: 'Anticipation Proactive',
     description: "Nous utilisons notre expertise et l'analyse de données pour identifier les opportunités et les risques futurs, vous permettant de garder une longueur d'avance.",
   },
   {
-    icon: <HandshakeIcon />,
+    icon: <img src="https://images2.imgbox.com/e8/f0/9T0x7aLC_o.png" alt="Partenariat de Confiance icon" />,
     title: 'Partenariat de Confiance',
     description: "Plus qu'un consultant, nous sommes un véritable 'bras droit', impliqué à vos côtés pour atteindre vos objectifs les plus ambitieux.",
   },
   {
-    icon: <ClartePillarIcon />,
+    icon: <img src="https://images2.imgbox.com/a0/6d/UoY4lF5N_o.png" alt="Clarté Décisionnelle icon" />,
     title: 'Clarté Décisionnelle',
     description: "Nous transformons la complexité en clarté, fournissant des analyses et des outils qui éclairent vos décisions stratégiques.",
   },
   {
-    icon: <PerformancePillarIcon />,
+    icon: <img src="https://images2.imgbox.com/71/39/QQ5Svc9D_o.png" alt="Performance Durable icon" />,
     title: 'Performance Durable',
     description: "Notre but est de bâtir des fondations solides pour une croissance résiliente et une création de valeur sur le long terme.",
   },
@@ -65,7 +63,7 @@ const AmbitionPage: React.FC = () => {
             {pillars.map((pillar, index) => (
               <Animate key={index} variant="pop">
                 <div className="bg-white rounded-xl p-8 h-full border border-gray-100 transition-all duration-300 hover:shadow-xl hover:shadow-violet-100/50 hover:-translate-y-1">
-                  <div className="mb-5 text-[#27013D]">{React.cloneElement(pillar.icon, { className: 'w-10 h-10' })}</div>
+                  <div className="mb-5 text-[#27013D]">{React.cloneElement(pillar.icon, { className: 'w-10 h-10 object-contain' })}</div>
                   <h3 className="text-2xl font-bold text-[#27013D] mb-3">{pillar.title}</h3>
                   <p className="text-gray-800 leading-relaxed">{pillar.description}</p>
                 </div>
