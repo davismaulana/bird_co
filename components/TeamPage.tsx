@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import Animate from './Animate';
 import { teamMembers, LinkedInIcon, CheckmarkCircleIcon } from '../constants';
@@ -78,7 +79,7 @@ const TeamPage: React.FC = () => {
                             <Animate variant="pop" delay={150}>
                                 <h2 className="text-3xl lg:text-4xl font-bold text-[#27013D]">{teamMembers[0].name}</h2>
                             </Animate>
-                            <div className="mt-6 space-y-4 text-gray-700 leading-relaxed">
+                            <div className="mt-6 space-y-4 text-gray-800 leading-relaxed">
                                 {teamMembers[0].description.map((paragraph, pIndex) => (
                                     <Animate key={pIndex} variant="pop" delay={350 + pIndex * 100}>
                                         <p>{paragraph}</p>
@@ -91,7 +92,7 @@ const TeamPage: React.FC = () => {
                                         <p className="text-lg font-semibold text-[#6D0037]">{teamMembers[0].alumni}</p>
                                     </Animate>
                                     <Animate variant="pop" delay={300}>
-                                        <p className="mt-1 text-md text-gray-500">{teamMembers[0].diploma}</p>
+                                        <p className="mt-1 text-md text-gray-700">{teamMembers[0].diploma}</p>
                                     </Animate>
                                 </div>
                                 <Animate variant="pop" delay={450 + teamMembers[0].description.length * 100}>
@@ -126,7 +127,7 @@ const TeamPage: React.FC = () => {
                             <Animate variant="pop" delay={150}>
                                 <h2 className="text-3xl lg:text-4xl font-bold text-[#27013D]">{teamMembers[1].name}</h2>
                             </Animate>
-                            <div className="mt-6 space-y-4 text-gray-700 leading-relaxed">
+                            <div className="mt-6 space-y-4 text-gray-800 leading-relaxed">
                                 {teamMembers[1].description.map((paragraph, pIndex) => (
                                     <Animate key={pIndex} variant="pop" delay={350 + pIndex * 100}>
                                         <p>{paragraph}</p>
@@ -139,7 +140,7 @@ const TeamPage: React.FC = () => {
                                         <p className="text-lg font-semibold text-[#6D0037]">{teamMembers[1].alumni}</p>
                                     </Animate>
                                     <Animate variant="pop" delay={300}>
-                                        <p className="mt-1 text-md text-gray-500">{teamMembers[1].diploma}</p>
+                                        <p className="mt-1 text-md text-gray-700">{teamMembers[1].diploma}</p>
                                     </Animate>
                                 </div>
                                 <Animate variant="pop" delay={450 + teamMembers[1].description.length * 100}>
@@ -165,17 +166,19 @@ const TeamPage: React.FC = () => {
               <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center max-w-3xl mx-auto">
                     <Animate variant="pop">
-                        <h2 className="text-3xl md:text-4xl font-bold text-[#27013D] mb-6">Notre ADN</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                            <span className="text-black">Notre </span><span className="gradient-text">ADN</span>
+                        </h2>
                     </Animate>
                     <Animate variant="pop" delay={150}>
-                        <p className="text-lg text-gray-700 leading-relaxed">Quatre valeurs fondamentales qui définissent qui nous sommes, comment nous travaillons, et ce que nous nous engageons à vous apporter.</p>
+                        <p className="text-lg text-gray-800 leading-relaxed">Quatre valeurs fondamentales qui définissent qui nous sommes, comment nous travaillons, et ce que nous nous engageons à vous apporter.</p>
                     </Animate>
                 </div>
                 <ul className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 max-w-4xl mx-auto stagger">
                     {dnaItems.map((item, index) => (
                     <Animate as="li" key={index} variant="pop" className="flex items-start">
                         {item.icon}
-                        <span className="text-gray-700 text-lg leading-relaxed" dangerouslySetInnerHTML={{ __html: item.text }}></span>
+                        <span className="text-gray-800 text-lg leading-relaxed" dangerouslySetInnerHTML={{ __html: item.text }}></span>
                     </Animate>
                     ))}
                 </ul>
@@ -192,7 +195,7 @@ const TeamPage: React.FC = () => {
                         </h2>
                     </Animate>
                     <Animate variant="pop" delay={150}>
-                        <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                        <p className="mt-4 text-lg text-gray-800 max-w-2xl mx-auto">
                             Contactez-nous pour découvrir comment notre duo d'experts peut devenir le catalyseur de votre succès.
                         </p>
                     </Animate>

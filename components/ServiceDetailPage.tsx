@@ -12,7 +12,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-48 text-center">
         <Animate variant="pop">
             <h1 className="text-4xl font-bold text-gray-900">Service Bientôt Disponible</h1>
-            <p className="mt-4 text-gray-600">Cette page est en cours de construction.</p>
+            <p className="mt-4 text-gray-800">Cette page est en cours de construction.</p>
             <a href="/" className="mt-8 inline-block bg-gray-800 text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-900 transition-colors">
             Retour à l'accueil
             </a>
@@ -32,7 +32,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
             </h1>
           </Animate>
           <Animate variant="pop" delay={150}>
-            <p className="mt-6 text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">{details.subtitle}</p>
+            <p className="mt-6 text-lg lg:text-xl text-gray-800 max-w-3xl mx-auto">{details.subtitle}</p>
           </Animate>
         </div>
       </section>
@@ -43,11 +43,11 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
           <div className="text-center mb-16 max-w-3xl mx-auto">
               <Animate variant="pop">
                 <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
-                  Notre point de départ : <span className="gradient-text">le diagnostic</span>
+                  <span className="text-black">Notre point de départ :</span> <span className="gradient-text">le diagnostic</span>
                 </h2>
               </Animate>
               <Animate variant="pop" delay={150}>
-                <p className="text-lg text-gray-600 mt-4">
+                <p className="text-lg text-gray-800 mt-4">
                   Chaque mission commence par une analyse complète pour comprendre vos défis et identifier les meilleurs leviers de performance.
                 </p>
               </Animate>
@@ -59,7 +59,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
               <Animate variant={'pop'} delay={300}>
                   <div className="text-left">
                     <h3 className="text-2xl font-bold text-[#27013D] mb-3">Diagnostic Stratégique & Opérationnel</h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-gray-800 leading-relaxed">
                       Nous réalisons une analyse 360° pour évaluer votre santé financière et opérationnelle. Ce diagnostic met en lumière les points de friction et les leviers de croissance cachés, formant la base de recommandations actionnables pour construire une stratégie sur-mesure.
                     </p>
                   </div>
@@ -78,7 +78,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                             <h2 className="text-2xl lg:text-3xl font-bold text-gray-900">{details.mainContent.title}</h2>
                         </Animate>
                         <Animate variant="pop" delay={150}>
-                            <p className="mt-4 text-gray-600 leading-relaxed">{details.mainContent.description}</p>
+                            <p className="mt-4 text-gray-800 leading-relaxed">{details.mainContent.description}</p>
                         </Animate>
                     </div>
                 </div>
@@ -94,7 +94,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                                     {category.list.map((item: string, itemIndex: number) => (
                                         <Animate as="li" key={itemIndex} variant="pop" className="flex items-start">
                                             <CheckmarkCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mr-4 mt-1" />
-                                            <span className="text-gray-700">{item}</span>
+                                            <span className="text-gray-800">{item}</span>
                                         </Animate>
                                     ))}
                                 </ul>
@@ -115,7 +115,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                 </h2>
             </Animate>
             <Animate variant="pop" delay={150}>
-                <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                <p className="mt-4 text-lg text-gray-800 max-w-2xl mx-auto">
                     Contactez-nous pour discuter de la manière dont nous pouvons construire ensemble les outils de votre succès.
                 </p>
             </Animate>

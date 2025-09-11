@@ -1,11 +1,12 @@
 
+
 import React from 'react';
 import Animate from './Animate';
-import { DiagnosticIcon, HandshakeIcon, FundsRaisedIcon, PaperPlaneIcon } from '../constants';
+import { AnticipationIcon, HandshakeIcon, ClartePillarIcon, PerformancePillarIcon } from '../constants';
 
 const pillars = [
   {
-    icon: <DiagnosticIcon />,
+    icon: <AnticipationIcon />,
     title: 'Anticipation Proactive',
     description: "Nous utilisons notre expertise et l'analyse de données pour identifier les opportunités et les risques futurs, vous permettant de garder une longueur d'avance.",
   },
@@ -15,12 +16,12 @@ const pillars = [
     description: "Plus qu'un consultant, nous sommes un véritable 'bras droit', impliqué à vos côtés pour atteindre vos objectifs les plus ambitieux.",
   },
   {
-    icon: <PaperPlaneIcon />,
+    icon: <ClartePillarIcon />,
     title: 'Clarté Décisionnelle',
     description: "Nous transformons la complexité en clarté, fournissant des analyses et des outils qui éclairent vos décisions stratégiques.",
   },
   {
-    icon: <FundsRaisedIcon />,
+    icon: <PerformancePillarIcon />,
     title: 'Performance Durable',
     description: "Notre but est de bâtir des fondations solides pour une croissance résiliente et une création de valeur sur le long terme.",
   },
@@ -51,11 +52,11 @@ const AmbitionPage: React.FC = () => {
           <div className="text-center mb-16">
             <Animate variant="pop">
               <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900">
-                Les Piliers de Notre Engagement
+                <span className="text-black">Les Piliers</span> <span className="gradient-text">de Notre Engagement</span>
               </h2>
             </Animate>
             <Animate variant="pop" delay={150}>
-              <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-800 mt-4 max-w-2xl mx-auto">
                 Notre ambition repose sur quatre piliers fondamentaux qui guident chacune de nos interventions.
               </p>
             </Animate>
@@ -66,7 +67,7 @@ const AmbitionPage: React.FC = () => {
                 <div className="bg-white rounded-xl p-8 h-full border border-gray-100 transition-all duration-300 hover:shadow-xl hover:shadow-violet-100/50 hover:-translate-y-1">
                   <div className="mb-5 text-[#27013D]">{React.cloneElement(pillar.icon, { className: 'w-10 h-10' })}</div>
                   <h3 className="text-2xl font-bold text-[#27013D] mb-3">{pillar.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{pillar.description}</p>
+                  <p className="text-gray-800 leading-relaxed">{pillar.description}</p>
                 </div>
               </Animate>
             ))}
@@ -90,10 +91,10 @@ const AmbitionPage: React.FC = () => {
                             </blockquote>
                         </Animate>
                         <Animate variant="pop" delay={150}>
-                            <p className="mt-4 text-lg text-gray-600">— Peter Drucker</p>
+                            <p className="mt-4 text-lg text-gray-800">— Peter Drucker</p>
                         </Animate>
                         <Animate variant="pop" delay={300}>
-                            <p className="mt-8 text-gray-700 leading-relaxed">
+                            <p className="mt-8 text-gray-800 leading-relaxed">
                                 Cette philosophie est au cœur de notre démarche. Nous ne nous contentons pas de réagir aux événements ; nous vous donnons les moyens de façonner activement l'avenir de votre entreprise, en transformant l'incertitude en opportunité et la vision en réalité.
                             </p>
                         </Animate>
@@ -112,7 +113,7 @@ const AmbitionPage: React.FC = () => {
                 </h2>
             </Animate>
             <Animate variant="pop" delay={150}>
-                <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                <p className="mt-4 text-lg text-gray-800 max-w-2xl mx-auto">
                     Discutons de la manière dont notre expertise peut se mettre au service de votre succès.
                 </p>
             </Animate>

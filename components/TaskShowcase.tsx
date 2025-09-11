@@ -4,7 +4,7 @@ import { TargetIcon, BarChartIcon, TrendingUpIcon, CheckmarkCircleIcon, Briefcas
 
 const DueDiligenceVisual: React.FC = () => (
   <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
-    <h3 className="font-bold text-gray-700 text-sm sm:text-base mb-4">Checklist Due Diligence VDD</h3>
+    <h3 className="font-bold text-gray-800 text-sm sm:text-base mb-4">Checklist Due Diligence VDD</h3>
     <div className="flex-grow space-y-3">
       <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
         <CheckmarkCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0" />
@@ -16,11 +16,11 @@ const DueDiligenceVisual: React.FC = () => (
       </div>
       <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
         <CheckmarkCircleIcon className="w-6 h-6 text-gray-300 flex-shrink-0" />
-        <p className="text-gray-500 text-sm">Normalisation du BFR</p>
+        <p className="text-gray-700 text-sm">Normalisation du BFR</p>
       </div>
        <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
         <CheckmarkCircleIcon className="w-6 h-6 text-gray-300 flex-shrink-0" />
-        <p className="text-gray-500 text-sm">Analyse de la dette nette</p>
+        <p className="text-gray-700 text-sm">Analyse de la dette nette</p>
       </div>
     </div>
   </div>
@@ -28,7 +28,7 @@ const DueDiligenceVisual: React.FC = () => (
 
 const TransactionalSupportVisual: React.FC = () => (
     <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
-      <h3 className="font-bold text-gray-700 text-sm sm:text-base mb-4">Accompagnement Transactionnel</h3>
+      <h3 className="font-bold text-gray-800 text-sm sm:text-base mb-4">Accompagnement Transactionnel</h3>
       <div className="flex-grow space-y-3">
           <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
               <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse flex-shrink-0"></div>
@@ -36,11 +36,11 @@ const TransactionalSupportVisual: React.FC = () => (
           </div>
           <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 opacity-60">
               <div className="w-3 h-3 rounded-full bg-gray-400 flex-shrink-0"></div>
-              <p className="text-gray-600 text-sm">Phase 2: Négociation des offres</p>
+              <p className="text-gray-700 text-sm">Phase 2: Négociation des offres</p>
           </div>
           <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 opacity-60">
               <div className="w-3 h-3 rounded-full bg-gray-400 flex-shrink-0"></div>
-              <p className="text-gray-600 text-sm">Phase 3: Due Diligence &amp; Closing</p>
+              <p className="text-gray-700 text-sm">Phase 3: Due Diligence &amp; Closing</p>
           </div>
       </div>
       <div className="mt-4 bg-[#27013D]/5 rounded-lg p-3 border border-[#27013D]/10 text-center">
@@ -56,21 +56,21 @@ const CashGrowthVisual: React.FC = () => {
     return (
         <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
             <div className="flex justify-between items-start mb-2">
-                <h3 className="font-bold text-gray-700 text-sm sm:text-base">Cash Management</h3>
+                <h3 className="font-bold text-gray-800 text-sm sm:text-base">Cash Management</h3>
             </div>
             <div className="relative flex-grow">
                 <svg viewBox="0 0 335 170" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
                     {/* Y-axis labels */}
-                    <text x="0" y="25" alignmentBaseline="middle" fill="#6b7280" fontSize="12" fontWeight="semibold">+50k€</text>
-                    <text x="0" y="75" alignmentBaseline="middle" fill="#6b7280" fontSize="12" fontWeight="semibold">0</text>
-                    <text x="0" y="125" alignmentBaseline="middle" fill="#6b7280" fontSize="12" fontWeight="semibold">-50k€</text>
+                    <text x="0" y="25" alignmentBaseline="middle" fill="#374151" fontSize="12" fontWeight="semibold">+50k€</text>
+                    <text x="0" y="75" alignmentBaseline="middle" fill="#374151" fontSize="12" fontWeight="semibold">0</text>
+                    <text x="0" y="125" alignmentBaseline="middle" fill="#374151" fontSize="12" fontWeight="semibold">-50k€</text>
                     
                     <g transform="translate(35, 0)">
                         {/* X-axis labels */}
-                        <text x="0" y="165" textAnchor="middle" fill="#6b7280" fontSize="12">T0</text>
-                        <text x="100" y="165" textAnchor="middle" fill="#6b7280" fontSize="12">T5</text>
-                        <text x="200" y="165" textAnchor="middle" fill="#6b7280" fontSize="12">T10</text>
-                        <text x="300" y="165" textAnchor="middle" fill="#6b7280" fontSize="12">T15</text>
+                        <text x="0" y="165" textAnchor="middle" fill="#374151" fontSize="12">T0</text>
+                        <text x="100" y="165" textAnchor="middle" fill="#374151" fontSize="12">T5</text>
+                        <text x="200" y="165" textAnchor="middle" fill="#374151" fontSize="12">T10</text>
+                        <text x="300" y="165" textAnchor="middle" fill="#374151" fontSize="12">T15</text>
                         
                         {/* Dashed reference line for zero */}
                         <line x1="0" y1="75" x2="300" y2="75" stroke="#d1d5db" strokeWidth="1" strokeDasharray="3 3" />
@@ -135,7 +135,7 @@ const TaskShowcase: React.FC = () => {
                         </h2>
                     </Animate>
                     <Animate variant="pop" delay={150}>
-                        <p className="text-lg text-gray-600 mt-4">
+                        <p className="text-lg text-gray-800 mt-4">
                             Quel que soit votre besoin, nous produisons des livrables clairs et actionnables pour piloter votre performance.
                         </p>
                     </Animate>
@@ -149,8 +149,8 @@ const TaskShowcase: React.FC = () => {
                                         onClick={() => setActiveTask(index)}
                                         className={`w-full text-left p-6 rounded-xl transition-all duration-300 group ${
                                             activeTask === index
-                                                ? 'bg-white shadow-xl shadow-violet-100/50 scale-105'
-                                                : 'bg-white hover:bg-gray-100'
+                                                ? 'bg-white shadow-xl shadow-violet-100/50 scale-105 hover:scale-[1.07]'
+                                                : 'bg-white hover:shadow-xl hover:shadow-violet-100/50 hover:scale-105'
                                         }`}
                                     >
                                         <div className="flex items-center gap-4">
@@ -159,7 +159,7 @@ const TaskShowcase: React.FC = () => {
                                             </div>
                                             <div>
                                                 <h3 className="font-bold text-gray-900">{task.title}</h3>
-                                                <p className="text-sm text-gray-500">{task.description}</p>
+                                                <p className="text-sm text-gray-700">{task.description}</p>
                                             </div>
                                         </div>
                                     </button>

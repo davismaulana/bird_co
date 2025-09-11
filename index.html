@@ -157,10 +157,10 @@
 
     .loading-logo-container {
       position: relative;
-      font-size: 5rem; /* Increased from 3.75rem */
+      font-size: 5rem;
       line-height: 1;
-      font-weight: 700; /* font-bold */
-      letter-spacing: -0.025em; /* tracking-tight from tailwind */
+      font-weight: 700;
+      letter-spacing: -0.025em;
       color: white;
       user-select: none;
     }
@@ -171,20 +171,23 @@
     }
     .loading-logo-fill-wrapper {
       position: absolute;
-      top: 0;
+      bottom: 0;
       left: 0;
-      width: 0%;
-      height: 100%;
+      width: 100%;
+      height: 0%;
       overflow: hidden;
-      animation: fill-width 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s forwards;
+      animation: fill-height 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s forwards;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
     }
     .loading-logo-fill {
       white-space: nowrap;
     }
 
-    @keyframes fill-width {
-      from { width: 0%; }
-      to { width: 100%; }
+    @keyframes fill-height {
+      from { height: 0%; }
+      to { height: 100%; }
     }
   </style>
 <script type="importmap">

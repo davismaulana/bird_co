@@ -45,7 +45,7 @@ const Logos: React.FC = () => {
 
               return (
                 <div key={index} className="flex-shrink-0 px-6 lg:px-10 py-2">
-                  <div className={`${sizeClass} flex items-center justify-center text-gray-500 hover:text-gray-800 transition-colors`}>
+                  <div className={`${sizeClass} flex items-center justify-center text-gray-700 hover:text-gray-900 transition-colors`}>
                     {React.cloneElement(logo.component, { className: logoClassName })}
                   </div>
                 </div>

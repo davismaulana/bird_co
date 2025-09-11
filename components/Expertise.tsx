@@ -41,7 +41,7 @@ const Expertise: React.FC = () => {
             </h2>
           </Animate>
           <Animate variant="pop" delay={150}>
-            <p className="text-lg text-gray-600 mt-4">
+            <p className="text-lg text-gray-800 mt-4">
               Une expertise financière et stratégique complète pour répondre à l'ensemble de vos défis.
             </p>
           </Animate>

@@ -18,7 +18,7 @@ const ServicesOverview: React.FC = () => {
             </h2>
           </Animate>
           <Animate variant="pop" delay={200}>
-            <p className="text-lg text-gray-600 mt-2 font-medium">
+            <p className="text-lg text-gray-800 mt-2 font-medium">
               dans la gestion quotidienne comme dans les processus transactionnels
             </p>
           </Animate>
@@ -39,7 +39,7 @@ const ServicesOverview: React.FC = () => {
                     {service.title}
                   </h3>
                   <p className="text-base font-semibold text-[#6D0037] mb-2 whitespace-nowrap">{service.subTitle}</p>
-                  <p className="text-gray-600 text-sm leading-relaxed flex-grow">{service.description}</p>
+                  <p className="text-gray-800 text-sm leading-relaxed flex-grow">{service.description}</p>
                 </div>
               </a>
             </Animate>

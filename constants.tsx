@@ -67,7 +67,30 @@ export const FundsRaisedIcon: React.FC<{ className?: string }> = ({ className })
     </svg>
 );
 
-const PlaceholderComponent: React.FC<{ name: string, className?: string }> = ({ name, className }) => <div className={`text-xs text-gray-500 ${className}`}>[{name}]</div>;
+export const AnticipationIcon: React.FC<{ className?: string }> = ({ className }) => (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M15.536 8.464A5 5 0 1 0 8.464 15.536 5 5 0 0 0 15.536 8.464z" />
+        <path d="M15.536 15.536A5 5 0 1 0 8.464 8.464 5 5 0 0 0 15.536 15.536z" />
+    </svg>
+);
+
+export const ClartePillarIcon: React.FC<{ className?: string }> = ({ className }) => (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M21 3L3 10.53v.98l6.84 2.65L12.48 21h.98L21 3z" />
+    </svg>
+);
+
+export const PerformancePillarIcon: React.FC<{ className?: string }> = ({ className }) => (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+        <polyline points="13 2 13 9 20 9"></polyline>
+        <circle cx="12" cy="15" r="1" fill="currentColor"></circle>
+        <path d="M10 15H8"></path>
+        <path d="M16 15h-2"></path>
+    </svg>
+);
+
+const PlaceholderComponent: React.FC<{ name: string, className?: string }> = ({ name, className }) => <div className={`text-xs text-gray-600 ${className}`}>[{name}]</div>;
 
 export const WellowLogo = ({ className }: { className?: string }) => <img src="https://static.wixstatic.com/media/7bfd2f_41cbb9b9d5e340d9a25af26860d861b1~mv2.png" alt="Wellow Logo" className={className} />;
 export const RegenSchoolLogo = ({ className }: { className?: string }) => <img src="https://static.wixstatic.com/media/7bfd2f_01fba9e6ecbb414c90a29c40b793f8cb~mv2.png" alt="Regen School Logo" className={className} />;
@@ -82,11 +105,11 @@ export const SquareLogo = ({ className }: { className?: string }) => <img src="h
 export const FinancialReportMockup: React.FC<{ theme?: string }> = () => (
     <div className="w-full h-full bg-white rounded-2xl p-6 shadow-2xl border border-gray-100 flex flex-col transform hover:scale-105 transition-transform duration-300 aspect-[4/3]">
         <div className="flex items-center justify-between mb-4">
-            <h3 className="font-bold text-gray-700 text-base">Modèle Financier</h3>
+            <h3 className="font-bold text-gray-900 text-base">Modèle Financier</h3>
             <div className="px-3 py-1 text-xs font-semibold bg-[#27013D] text-white rounded-full">Prévisions 5 ans</div>
         </div>
         <div className="flex-grow bg-gray-50 rounded-lg p-4 space-y-2 border border-gray-100 text-sm">
-            <div className="grid grid-cols-4 gap-2 text-xs text-gray-500">
+            <div className="grid grid-cols-4 gap-2 text-xs text-gray-700">
                 <span>Metric</span>
                 <span className="text-right">Y1</span>
                 <span className="text-right">Y2</span>
@@ -98,7 +121,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string }> = () => (
                 <span className="text-right text-green-600 font-semibold">€7.8M</span>
                 <span className="text-right text-green-600 font-semibold">€11.5M</span>
             </div>
-            <div className="grid grid-cols-4 gap-2 text-gray-600">
+            <div className="grid grid-cols-4 gap-2 text-gray-800">
                 <span className="pl-4">Marge Brute</span>
                 <span className="text-right">60%</span>
                 <span className="text-right">62%</span>
@@ -122,12 +145,12 @@ export const FinancialReportMockup: React.FC<{ theme?: string }> = () => (
 export const KpiDashboardMockup: React.FC<{ theme?: string }> = () => (
   <div className="w-full h-full bg-white rounded-2xl p-6 shadow-2xl border border-gray-100 flex flex-col transform hover:scale-105 transition-transform duration-300 aspect-[4/3]">
     <div className="w-full text-left mb-4">
-      <h3 className="font-bold text-gray-700 text-base">Tableau de Bord - T4 2024</h3>
-      <p className="text-sm text-gray-500">Suivi des KPIs clés</p>
+      <h3 className="font-bold text-gray-900 text-base">Tableau de Bord - T4 2024</h3>
+      <p className="text-sm text-gray-700">Suivi des KPIs clés</p>
     </div>
     <div className="flex-grow grid grid-cols-2 grid-rows-2 gap-4">
       <div className="bg-gray-50 rounded-lg p-3 border border-gray-100 col-span-1 row-span-2 flex flex-col">
-        <p className="text-sm font-semibold text-gray-500 mb-2">Croissance MRR</p>
+        <p className="text-sm font-semibold text-gray-700 mb-2">Croissance MRR</p>
         <div className="flex-grow flex items-end space-x-2">
             <div className="w-full h-1/3 bg-[#6D0037]/20 rounded-t-sm"></div>
             <div className="w-full h-2/3 bg-[#6D0037]/20 rounded-t-sm"></div>
@@ -136,11 +159,11 @@ export const KpiDashboardMockup: React.FC<{ theme?: string }> = () => (
         </div>
       </div>
       <div className="bg-gray-50 rounded-lg p-4 border border-gray-100 col-span-1 row-span-1">
-        <p className="text-sm text-gray-500">Taux de Churn</p>
+        <p className="text-sm text-gray-700">Taux de Churn</p>
         <p className="font-bold text-gray-800 text-2xl">2.1% <span className="text-green-500 text-base">↓</span></p>
       </div>
        <div className="bg-gray-50 rounded-lg p-4 border border-gray-100 col-span-1 row-span-1">
-        <p className="text-sm text-gray-500">CAC</p>
+        <p className="text-sm text-gray-700">CAC</p>
         <p className="font-bold text-[#27013D] text-2xl">1.2k€ <span className="text-red-500 text-base">↑</span></p>
       </div>
     </div>
@@ -149,29 +172,29 @@ export const KpiDashboardMockup: React.FC<{ theme?: string }> = () => (
 export const FieldWorkMockup: React.FC<{ theme?: string }> = () => (
     <div className="w-full h-full bg-white rounded-2xl p-6 shadow-2xl border border-gray-100 flex flex-col transform hover:scale-105 transition-transform duration-300 aspect-[4/3]">
         <div className="flex items-center justify-between mb-4">
-            <h3 className="font-bold text-gray-700 text-base">Atelier Stratégique</h3>
-            <div className="px-3 py-1 text-xs font-semibold bg-gray-100 text-gray-600 rounded-full">En personne</div>
+            <h3 className="font-bold text-gray-900 text-base">Atelier Stratégique</h3>
+            <div className="px-3 py-1 text-xs font-semibold bg-gray-100 text-gray-800 rounded-full">En personne</div>
         </div>
         <div className="flex-grow bg-gray-50 rounded-lg p-4 space-y-3 border border-gray-100 text-sm">
             <p className="font-semibold text-gray-800 mb-2">Agenda de la session :</p>
             <div className="flex items-start gap-3">
                 <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">1</div>
-                <p className="text-gray-600">Revue des performances et analyse des KPIs</p>
+                <p className="text-gray-800">Revue des performances et analyse des KPIs</p>
             </div>
             <div className="flex items-start gap-3">
                 <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">2</div>
-                <p className="text-gray-600">Identification des leviers de croissance</p>
+                <p className="text-gray-800">Identification des leviers de croissance</p>
             </div>
             <div className="flex items-start gap-3">
                 <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">3</div>
-                <p className="text-gray-600">Définition de la feuille de route stratégique</p>
+                <p className="text-gray-800">Définition de la feuille de route stratégique</p>
             </div>
             <div className="flex items-start gap-3">
                 <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">4</div>
-                <p className="text-gray-600">Plan d'action et prochaines étapes</p>
+                <p className="text-gray-800">Plan d'action et prochaines étapes</p>
             </div>
         </div>
-        <div className="mt-4 flex items-center justify-between text-xs text-gray-400">
+        <div className="mt-4 flex items-center justify-between text-xs text-gray-500">
             <span>BIRD&CO</span>
             <span>CONFIDENTIEL</span>
         </div>
@@ -179,7 +202,7 @@ export const FieldWorkMockup: React.FC<{ theme?: string }> = () => (
 );
 export const DiagnosticScanMockup: React.FC<{ theme?: string }> = () => (
     <div className="w-full h-full bg-white rounded-2xl p-6 shadow-2xl border border-gray-100 flex flex-col transform hover:scale-105 transition-transform duration-300 aspect-[4/3]">
-      <h3 className="font-bold text-gray-700 text-base mb-4">Diagnostic 360° - Rapport d'Audit</h3>
+      <h3 className="font-bold text-gray-900 text-base mb-4">Diagnostic 360° - Rapport d'Audit</h3>
       <div className="flex-grow grid grid-cols-2 gap-4">
         <div className="bg-violet-50/50 rounded-lg p-4 border border-violet-100 flex flex-col justify-center items-center">
             <div className="w-24 h-24 rounded-full border-8 border-white flex items-center justify-center shadow-inner bg-violet-100">

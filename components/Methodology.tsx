@@ -48,7 +48,7 @@ const Methodology: React.FC = () => {
             </h2>
           </Animate>
           <Animate variant="pop" delay={150}>
-            <p className="text-base sm:text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-800 mt-4 max-w-2xl mx-auto">
               Une démarche structurée pour garantir le succès de vos projets.
             </p>
           </Animate>
@@ -65,7 +65,7 @@ const Methodology: React.FC = () => {
               <div className="mt-4 sm:pl-1 space-y-2">
                 {step.points.map((point, pIndex) => (
                     <Animate key={pIndex} variant="pop" delay={300 + index * 200 + (pIndex + 1) * 100}>
-                        <p className="text-gray-600 text-base text-center sm:text-left">{point}</p>
+                        <p className="text-gray-800 text-base text-center sm:text-left">{point}</p>
                     </Animate>
                 ))}
               </div>
