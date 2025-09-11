@@ -18,6 +18,8 @@ import TaskShowcase from './components/TaskShowcase';
 import AmbitionPage from './components/AmbitionPage';
 import TeamPage from './components/TeamPage';
 import LoadingScreen from './components/LoadingScreen';
+import PrivacyPolicyPage from './components/PrivacyPolicyPage';
+import TermsOfServicePage from './components/TermsOfServicePage';
 
 const App: React.FC = () => {
   const { pathname } = window.location;
@@ -103,6 +105,26 @@ const App: React.FC = () => {
       );
     }
   
+    if (pathname === '/politique-de-confidentialite') {
+      return (
+        <div className="bg-white overflow-x-hidden">
+          <Header pathname={pathname} />
+          <PrivacyPolicyPage />
+          <Footer />
+        </div>
+      );
+    }
+
+    if (pathname === '/conditions-generales-utilisation') {
+      return (
+        <div className="bg-white overflow-x-hidden">
+          <Header pathname={pathname} />
+          <TermsOfServicePage />
+          <Footer />
+        </div>
+      );
+    }
+
     return (
       <div className="bg-[#FFFFFF] overflow-x-hidden">
         <Header pathname={pathname} />
