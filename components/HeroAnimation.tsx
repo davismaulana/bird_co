@@ -43,7 +43,7 @@ const HeroAnimation: React.FC = () => {
                 if (!ctx) return;
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-                ctx.fillStyle = 'rgba(39, 1, 61, 0.6)';
+                ctx.fillStyle = 'rgba(39, 1, 61, 0.8)'; // Increased opacity
                 ctx.fill();
             }
 
@@ -59,11 +59,11 @@ const HeroAnimation: React.FC = () => {
         const init = () => {
             resizeCanvas();
             particles = [];
-            // Decreased number of particles for a sparser effect
-            const numberOfParticles = (canvas.height * canvas.width) / 25000;
+            // Increased number of particles for a more visible effect
+            const numberOfParticles = (canvas.height * canvas.width) / 15000;
             for (let i = 0; i < numberOfParticles; i++) {
-                // Particles are a bit larger and faster for more dynamism
-                const size = Math.random() * 1.5 + 1;
+                // Increased particle size for visibility
+                const size = Math.random() * 1.5 + 0.5;
                 const x = Math.random() * (canvas.width - size * 2) + size;
                 const y = Math.random() * (canvas.height - size * 2) + size;
                 const speedX = (Math.random() * 0.4) - 0.2;
@@ -80,13 +80,13 @@ const HeroAnimation: React.FC = () => {
                     const distance = ((particles[a].x - particles[b].x) * (particles[a].x - particles[b].x)) +
                                      ((particles[a].y - particles[b].y) * (particles[a].y - particles[b].y));
                     
-                    // Increased connection distance for longer lines
-                    const connectThreshold = (canvas.width / 4) * (canvas.height / 4);
+                    // Increased connection distance for more lines
+                    const connectThreshold = (canvas.width / 3) * (canvas.height / 3);
                     if (distance < connectThreshold) {
                         opacityValue = 1 - (distance / connectThreshold);
                         // Made connecting lines more visible
-                        ctx.strokeStyle = `rgba(39, 1, 61, ${opacityValue * 0.5})`;
-                        ctx.lineWidth = 1;
+                        ctx.strokeStyle = `rgba(39, 1, 61, ${opacityValue * 0.4})`;
+                        ctx.lineWidth = 0.3;
                         ctx.beginPath();
                         ctx.moveTo(particles[a].x, particles[a].y);
                         ctx.lineTo(particles[b].x, particles[b].y);
@@ -119,7 +119,7 @@ const HeroAnimation: React.FC = () => {
     }, []);
 
     return (
-        <div className="absolute inset-0 w-full h-full opacity-80">
+        <div className="absolute inset-0 w-full h-full">
           <canvas ref={canvasRef} className="w-full h-full block" />
         </div>
     );

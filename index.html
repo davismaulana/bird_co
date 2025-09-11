@@ -23,12 +23,6 @@
       background-clip: text;
       color: transparent;
     }
-    .gradient-text-expertise {
-      background-image: linear-gradient(101deg, rgb(203, 163, 255) 0%, rgb(163, 226, 255) 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
     .bg-navy-dark {
       background-color: #0A0D28;
     }
@@ -115,14 +109,6 @@
       z-index: 1;
       pointer-events: none;
     }
-    .glow-card {
-        background-color: #1a1128;
-        background-image: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(129, 93, 248, 0.15), transparent);
-        transition: background-image 0.3s ease;
-    }
-    .glow-card:hover {
-        background-image: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(129, 93, 248, 0.25), transparent);
-    }
     .grid-card:hover {
         background-color: rgba(255, 255, 255, 0.05);
     }
@@ -166,7 +152,39 @@
       to { transform: translateX(-50%); }
     }
     .animate-scroll-x {
-      animation: scroll-x 40s linear infinite;
+      animation: scroll-x 30s linear infinite;
+    }
+
+    .loading-logo-container {
+      position: relative;
+      font-size: 3.75rem; /* text-6xl */
+      line-height: 1;
+      font-weight: 700; /* font-bold */
+      letter-spacing: -0.025em; /* tracking-tight from tailwind */
+      color: white;
+      user-select: none;
+    }
+    .loading-logo-outline {
+      color: transparent;
+      -webkit-text-stroke: 1px white;
+      stroke: 1px white;
+    }
+    .loading-logo-fill-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      overflow: hidden;
+      animation: fill-width 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s forwards;
+    }
+    .loading-logo-fill {
+      white-space: nowrap;
+    }
+
+    @keyframes fill-width {
+      from { width: 0%; }
+      to { width: 100%; }
     }
   </style>
 <script type="importmap">

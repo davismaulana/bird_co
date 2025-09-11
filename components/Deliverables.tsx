@@ -10,7 +10,7 @@ const deliverables = [
   },
   {
     title: "Reporting & Tableau de Bord",
-    description: "Nous mettons en place des reportings clairs et des tableaux de bord interactifs pour un suivi en temps réel de votre performance et une prise de décision éclairée.",
+    description: "Des tableaux de bord sur-mesure et des reportings clairs pour un pilotage visuel et intuitif de votre activité.",
     mockup: <KpiDashboardMockup />,
   },
   {

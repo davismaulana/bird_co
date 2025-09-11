@@ -24,7 +24,8 @@ const Team: React.FC = () => {
               <img
                 src={teamMembers[0].imageUrl}
                 alt={`Photo de ${teamMembers[0].name}`}
-                className="w-full aspect-square object-cover object-top"
+                className="w-full aspect-square object-cover"
+                style={{ objectPosition: 'center 20%' }}
               />
             </Animate>
             <div className="p-8 flex flex-col flex-grow">
@@ -66,7 +67,8 @@ const Team: React.FC = () => {
               <img
                 src={teamMembers[1].imageUrl}
                 alt={`Photo de ${teamMembers[1].name}`}
-                className="w-full aspect-square object-cover object-top"
+                className="w-full aspect-square object-cover"
+                style={{ objectPosition: 'center 20%' }}
               />
             </Animate>
             <div className="p-8 flex flex-col flex-grow">

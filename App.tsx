@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Logos from './components/Logos';
@@ -17,11 +17,15 @@ import Expertise from './components/Expertise';
 import TaskShowcase from './components/TaskShowcase';
 import AmbitionPage from './components/AmbitionPage';
 import TeamPage from './components/TeamPage';
+import LoadingScreen from './components/LoadingScreen';
 
 const App: React.FC = () => {
   const { pathname } = window.location;
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    if (isLoading) return; // Don't setup observers until content is visible
+
     const revealEls = Array.from(document.querySelectorAll('.reveal'));
 
     if (!('IntersectionObserver'in window) || revealEls.length === 0) {
@@ -54,58 +58,83 @@ const App: React.FC = () => {
     return () => {
       revealEls.forEach(el => io.unobserve(el));
     }
-  }, [pathname]);
+  }, [pathname, isLoading]);
 
-  if (pathname.startsWith('/service/')) {
-    const serviceId = pathname.substring('/service/'.length);
+  // Prevent scrolling while loading
+  useEffect(() => {
+    if (isLoading) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      setTimeout(() => {
+         document.body.style.overflow = 'unset';
+      }, 500); // match transition duration
+    }
+  }, [isLoading]);
+
+  const AppContent: React.FC = () => {
+    if (pathname.startsWith('/service/')) {
+      const serviceId = pathname.substring('/service/'.length);
+      return (
+        <div className="bg-white overflow-x-hidden">
+          <Header pathname={pathname} />
+          <ServiceDetailPage serviceId={serviceId} />
+          <Footer />
+        </div>
+      );
+    }
+  
+    if (pathname === '/ambition') {
+      return (
+        <div className="bg-white overflow-x-hidden">
+          <Header pathname={pathname} />
+          <AmbitionPage />
+          <Footer />
+        </div>
+      );
+    }
+  
+    if (pathname === '/notre-equipe') {
+      return (
+        <div className="bg-white overflow-x-hidden">
+          <Header pathname={pathname} />
+          <TeamPage />
+          <Footer />
+        </div>
+      );
+    }
+  
     return (
-      <div className="bg-white overflow-x-hidden">
+      <div className="bg-[#FFFFFF] overflow-x-hidden">
         <Header pathname={pathname} />
-        <ServiceDetailPage serviceId={serviceId} />
+        <main>
+          <Hero />
+          {/* <Methodology /> */}
+          <ServicesOverview />
+          <Stats />
+          <Logos />
+          <ValueProposition />
+          <Personas />
+          <Expertise />
+          <Deliverables />
+          <TaskShowcase />
+          <Team />
+          <Contact />
+        </main>
         <Footer />
       </div>
     );
-  }
-
-  if (pathname === '/ambition') {
-    return (
-      <div className="bg-white overflow-x-hidden">
-        <Header pathname={pathname} />
-        <AmbitionPage />
-        <Footer />
-      </div>
-    );
-  }
-
-  if (pathname === '/notre-equipe') {
-    return (
-      <div className="bg-white overflow-x-hidden">
-        <Header pathname={pathname} />
-        <TeamPage />
-        <Footer />
-      </div>
-    );
-  }
+  };
 
   return (
-    <div className="bg-[#FFFFFF] overflow-x-hidden">
-      <Header pathname={pathname} />
-      <main>
-        <Hero />
-        {/* <Methodology /> */}
-        <ServicesOverview />
-        <Stats />
-        <Logos />
-        <ValueProposition />
-        <Personas />
-        <Expertise />
-        <Deliverables />
-        <TaskShowcase />
-        <Team />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <>
+      {isLoading && <LoadingScreen onLoaded={() => setIsLoading(false)} />}
+      <div 
+        className={`transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`} 
+        aria-hidden={isLoading}
+      >
+        <AppContent />
+      </div>
+    </>
   );
 };
 

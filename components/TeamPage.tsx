@@ -69,7 +69,8 @@ const TeamPage: React.FC = () => {
                                 <img
                                     src={teamMembers[0].imageUrl}
                                     alt={`Photo de ${teamMembers[0].name}`}
-                                    className="w-full h-full object-cover object-top rounded-2xl shadow-2xl shadow-violet-200/50"
+                                    className="w-full h-full object-cover rounded-2xl shadow-2xl shadow-violet-200/50"
+                                    style={{ objectPosition: 'center 20%' }}
                                 />
                             </div>
                         </Animate>
@@ -116,7 +117,8 @@ const TeamPage: React.FC = () => {
                                 <img
                                     src={teamMembers[1].imageUrl}
                                     alt={`Photo de ${teamMembers[1].name}`}
-                                    className="w-full h-full object-cover object-top rounded-2xl shadow-2xl shadow-violet-200/50"
+                                    className="w-full h-full object-cover rounded-2xl shadow-2xl shadow-violet-200/50"
+                                    style={{ objectPosition: 'center 20%' }}
                                 />
                             </div>
                         </Animate>

@@ -85,7 +85,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string }> = () => (
             <h3 className="font-bold text-gray-700 text-base">Modèle Financier</h3>
             <div className="px-3 py-1 text-xs font-semibold bg-[#27013D] text-white rounded-full">Prévisions 5 ans</div>
         </div>
-        <div className="flex-grow bg-gray-50 rounded-lg p-4 space-y-3 border border-gray-100 text-sm">
+        <div className="flex-grow bg-gray-50 rounded-lg p-4 space-y-2 border border-gray-100 text-sm">
             <div className="grid grid-cols-4 gap-2 text-xs text-gray-500">
                 <span>Metric</span>
                 <span className="text-right">Y1</span>
@@ -109,6 +109,12 @@ export const FinancialReportMockup: React.FC<{ theme?: string }> = () => (
                 <span className="text-right">€1.6M</span>
                 <span className="text-right text-green-600 font-semibold">€2.7M</span>
                 <span className="text-right text-green-600 font-semibold">€4.2M</span>
+            </div>
+            <div className="grid grid-cols-4 gap-2 text-gray-800 font-medium">
+                <span>Cash End of&nbsp;Period</span>
+                <span className="text-right">€0.8M</span>
+                <span className="text-right text-green-600 font-semibold">€1.5M</span>
+                <span className="text-right text-green-600 font-semibold">€2.9M</span>
             </div>
         </div>
     </div>
@@ -141,24 +147,34 @@ export const KpiDashboardMockup: React.FC<{ theme?: string }> = () => (
   </div>
 );
 export const FieldWorkMockup: React.FC<{ theme?: string }> = () => (
-    <div className="w-full h-full bg-white rounded-2xl p-6 shadow-2xl border border-gray-100 flex flex-col transform hover:scale-105 transition-transform duration-300 aspect-[4/3] justify-center items-center text-center">
-        <h3 className="font-bold text-gray-700 text-base mb-4">Intervention sur site</h3>
-        <div className="relative w-48 h-32">
-            {/* Avatars */}
-            <div className="absolute top-1/2 -translate-y-1/2 left-0 w-12 h-12 bg-violet-100 rounded-full border-2 border-white flex items-center justify-center text-sm font-semibold text-[#27013D]">C1</div>
-            <div className="absolute top-1/2 -translate-y-1/2 right-0 w-12 h-12 bg-violet-100 rounded-full border-2 border-white flex items-center justify-center text-sm font-semibold text-[#27013D]">C2</div>
-            <div className="absolute left-1/2 -translate-x-1/2 top-0 w-12 h-12 bg-[#27013D] text-white flex items-center justify-center rounded-full border-2 border-white text-xs font-bold">B&</div>
-
-            {/* Connecting lines */}
-            <svg className="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 100 70">
-                <line x1="28" y1="35" x2="50" y2="13" stroke="#27013D" strokeWidth="1.5" />
-                <line x1="72" y1="35" x2="50" y2="13" stroke="#27013D" strokeWidth="1.5" />
-                <line x1="25" y1="35" x2="75" y2="35" stroke="#27013D" strokeWidth="1.5" />
-            </svg>
+    <div className="w-full h-full bg-white rounded-2xl p-6 shadow-2xl border border-gray-100 flex flex-col transform hover:scale-105 transition-transform duration-300 aspect-[4/3]">
+        <div className="flex items-center justify-between mb-4">
+            <h3 className="font-bold text-gray-700 text-base">Atelier Stratégique</h3>
+            <div className="px-3 py-1 text-xs font-semibold bg-gray-100 text-gray-600 rounded-full">En personne</div>
         </div>
-        <p className="text-sm text-gray-600 mt-4 max-w-xs">
-            Collaboration directe avec vos équipes pour un support et une intégration sur-mesure.
-        </p>
+        <div className="flex-grow bg-gray-50 rounded-lg p-4 space-y-3 border border-gray-100 text-sm">
+            <p className="font-semibold text-gray-800 mb-2">Agenda de la session :</p>
+            <div className="flex items-start gap-3">
+                <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">1</div>
+                <p className="text-gray-600">Revue des performances et analyse des KPIs</p>
+            </div>
+            <div className="flex items-start gap-3">
+                <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">2</div>
+                <p className="text-gray-600">Identification des leviers de croissance</p>
+            </div>
+            <div className="flex items-start gap-3">
+                <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">3</div>
+                <p className="text-gray-600">Définition de la feuille de route stratégique</p>
+            </div>
+            <div className="flex items-start gap-3">
+                <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">4</div>
+                <p className="text-gray-600">Plan d'action et prochaines étapes</p>
+            </div>
+        </div>
+        <div className="mt-4 flex items-center justify-between text-xs text-gray-400">
+            <span>BIRD&CO</span>
+            <span>CONFIDENTIEL</span>
+        </div>
     </div>
 );
 export const DiagnosticScanMockup: React.FC<{ theme?: string }> = () => (
@@ -272,10 +288,10 @@ export const teamMembers = [
       'Tout au long de son parcours, il s’est montré résilient, agile et créatif notamment dans des processus transactionnels lourds.',
       'Sa passion pour la musique et le cinéma, deux univers exigeants, témoigne d’un esprit curieux, structuré et d’un sens du détail prononcé.',
     ],
-    alumni: 'Alumni EY, Eight Advisory & PwC',
-    diploma: 'Master Spécialisé – ESCP Europe',
+    alumni: 'Alumni Eight Advisory & KPMG',
+    diploma: 'Diplômé de l’IESEG School Of Management',
     imageUrl: 'https://images2.imgbox.com/26/ab/ooTECEUa_o.jpg',
-    linkedinUrl: 'https://www.linkedin.com/in/seydinasamb/',
+    linkedinUrl: 'https://www.linkedin.com/in/seydina-samb-6638ba56/',
   },
   {
     name: 'Benjamin Le Gal - Associé',
@@ -284,10 +300,10 @@ export const teamMembers = [
       'Il bénéfice également d’une expérience solide en Direction financière de start-ups et ETI dont il a accompagné les levées de fonds.',
       'Ancien footballeur semi-professionnel, il est toujours guidé par la discipline, la stratégie et l’engagement.',
     ],
-    alumni: 'Alumni EY, E-WingeIs & Payfit',
-    diploma: 'Master 2 CCA – IGR-IAE Rennes',
+    alumni: 'Alumni EY, E-Wingels & Payfit',
+    diploma: 'Diplômé de l’IESEG School Of Management',
     imageUrl: 'https://images2.imgbox.com/10/2f/ZTxsNFQ1_o.jpg',
-    linkedinUrl: 'https://www.linkedin.com/in/benjamin-le-gal-04a64353/',
+    linkedinUrl: 'https://www.linkedin.com/in/benjaminlegal/',
   },
 ];
 

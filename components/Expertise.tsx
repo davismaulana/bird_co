@@ -14,12 +14,12 @@ import {
 
 const expertiseItems = [
   { icon: <BarChartIcon />, label: 'Modélisation Financière' },
-  { icon: <CfoIcon />, label: 'Optimisation BFR' },
+  { icon: <CfoIcon />, label: 'Gestion de la\u00a0trésorerie' },
   { icon: <DiagnosticIcon />, label: 'Restructuration' },
   { icon: <ExpertiseSearchIcon />, label: 'Due Diligence' },
-  { icon: <ExpertiseCompassIcon />, label: 'Pilotage Stratégique' },
+  { icon: <ExpertiseCompassIcon />, label: 'Reporting & Tableau\u00a0de\u00a0bord' },
   { icon: <HandshakeIcon />, label: 'Fusions & Acquisitions' },
-  { icon: <BriefcaseIcon />, label: 'Direction Financière' },
+  { icon: <BriefcaseIcon />, label: 'Gestion\u00a0de\u00a0projets' },
   { icon: <TrendingUpIcon />, label: 'Levée de fonds' },
 ];
 
@@ -46,24 +46,24 @@ const Expertise: React.FC = () => {
             </p>
           </Animate>
         </div>
-        <div className="bg-white rounded-2xl shadow-xl shadow-violet-100/50 grid grid-cols-1 md:grid-cols-3 max-w-6xl mx-auto overflow-hidden">
+        <div className="bg-[#27013D] rounded-2xl grid grid-cols-1 md:grid-cols-3 max-w-6xl mx-auto overflow-hidden border border-white/10">
           {allItems.map((item, index) => {
             const isMiddleCol = index % 3 === 1;
-            const borderClass = isMiddleCol ? 'border-x border-gray-100' : '';
+            const borderClass = isMiddleCol ? 'border-x border-white/10' : '';
 
             if ('icon' in item) {
               return (
-                <Animate key={index} variant="pop" className={`${borderClass} p-8 flex flex-col items-center text-center justify-center min-h-[220px] transition-colors duration-300 hover:bg-gray-50`}>
-                  {React.cloneElement(item.icon, { className: 'w-16 h-16 text-[#27013D]' })}
-                  <p className="text-gray-800 font-medium mt-4 text-lg">{item.label}</p>
+                <Animate key={index} variant="pop" className={`${borderClass} p-8 flex flex-col items-center text-center justify-center min-h-[220px] transition-colors duration-300 hover:bg-white/5`}>
+                  {React.cloneElement(item.icon, { className: 'w-16 h-16 text-white' })}
+                  <p className="text-gray-100 font-medium mt-4 text-lg">{item.label}</p>
                 </Animate>
               );
             } else {
               return (
                 <Animate key={index} variant="pop" className={borderClass}>
-                  <a href="#contact" className="bg-[#E9E4F0] h-full flex flex-col justify-center items-center text-center p-8 transition-all duration-300 hover:bg-[#DBD3E6] group">
-                    <h3 className="text-xl font-bold text-[#27013D]">Et bien plus encore...</h3>
-                    <p className="mt-2 text-[#27013D]/80 flex items-center gap-2 group-hover:text-[#27013D] transition-colors">
+                  <a href="#contact" className="bg-[#3A224E] h-full flex flex-col justify-center items-center text-center p-8 transition-all duration-300 hover:bg-[#4f3066] group">
+                    <h3 className="text-xl font-bold text-white">Et bien plus encore...</h3>
+                    <p className="mt-2 text-violet-200 flex items-center gap-2 group-hover:text-white transition-colors">
                       Discutons de votre projet
                       <ArrowRightIcon className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                     </p>

@@ -1,80 +1,6 @@
-
 import React, { useState } from 'react';
 import Animate from './Animate';
-// FIX: Replaced incorrect CheckCircleIcon with CheckmarkCircleIcon as it is the correct export from constants.
-import { TargetIcon, BarChartIcon, TrendingUpIcon, CheckmarkCircleIcon, BriefcaseIcon } from '../constants';
-
-const PerformanceReportVisual: React.FC = () => (
-  <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
-    <div className="w-full text-left mb-4">
-      <h3 className="font-bold text-gray-700 text-sm sm:text-base">Rapport Mensuel - Octobre</h3>
-      <p className="text-xs sm:text-sm text-gray-500">Synthèse de la performance financière</p>
-    </div>
-    <div className="flex-grow grid grid-cols-2 gap-4">
-      <div className="bg-gray-50 rounded-lg p-3 flex flex-col justify-end border border-gray-100">
-        <p className="text-xs font-semibold text-gray-500 mb-2">Evolution du CA</p>
-        <div className="flex items-end space-x-1.5 sm:space-x-2 h-full">
-          <div className="w-full h-1/3 bg-[#6D0037]/20 rounded-t-sm"></div>
-          <div className="w-full h-2/3 bg-[#6D0037]/20 rounded-t-sm"></div>
-          <div className="w-full h-1/2 bg-[#6D0037]/20 rounded-t-sm"></div>
-          <div className="w-full h-3/4 bg-[#6D0037] rounded-t-sm"></div>
-        </div>
-      </div>
-      <div className="space-y-3">
-        <div className="bg-gray-50 rounded-lg p-3 border border-gray-100">
-          <p className="text-xs text-gray-500">EBITDA</p>
-          <p className="font-bold text-gray-800 text-lg">1.2M€ <span className="text-green-500 text-sm">↑</span></p>
-        </div>
-        <div className="bg-gray-50 rounded-lg p-3 border border-gray-100">
-          <p className="text-xs text-gray-500">Trésorerie</p>
-          <p className="font-bold text-gray-800 text-lg">450k€ <span className="text-red-500 text-sm">↓</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-);
-
-const FinancialModelVisual: React.FC = () => (
-    <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
-        <div className="flex space-x-2 mb-4">
-            <div className="px-3 py-1 text-xs font-semibold bg-[#6D0037] text-white rounded-full">P&amp;L</div>
-            <div className="px-3 py-1 text-xs font-semibold bg-gray-100 text-gray-600 rounded-full">Cash Flow</div>
-            <div className="px-3 py-1 text-xs font-semibold bg-gray-100 text-gray-600 rounded-full">Bilan</div>
-        </div>
-        <div className="flex-grow bg-gray-50 rounded-lg p-3 space-y-2 border border-gray-100">
-            <div className="flex justify-between items-center text-xs text-gray-500">
-                <span className="w-1/2">Ligne</span>
-                <span className="w-1/4 text-right">Année 1</span>
-                <span className="w-1/4 text-right">Année 2</span>
-            </div>
-            <div className="flex justify-between items-center text-sm text-gray-800">
-                <span className="w-1/2 font-medium">Revenus</span>
-                <span className="w-1/4 text-right">5.2M</span>
-                <span className="w-1/4 text-right">7.8M</span>
-            </div>
-            <div className="flex justify-between items-center text-sm text-gray-600">
-                <span className="w-1/2 pl-4">COGS</span>
-                <span className="w-1/4 text-right">(2.1M)</span>
-                <span className="w-1/4 text-right">(3.1M)</span>
-            </div>
-            <div className="flex justify-between items-center text-sm text-gray-800 font-medium">
-                <span className="w-1/2">Marge Brute</span>
-                <span className="w-1/4 text-right">3.1M</span>
-                <span className="w-1/4 text-right">4.7M</span>
-            </div>
-            <div className="flex justify-between items-center text-sm text-gray-600">
-                <span className="w-1/2 pl-4">OPEX</span>
-                <span className="w-1/4 text-right">(1.5M)</span>
-                <span className="w-1/4 text-right">(2.0M)</span>
-            </div>
-            <div className="flex justify-between items-center text-sm text-gray-800 font-bold border-t border-gray-200 pt-2 mt-2">
-                <span className="w-1/2">EBITDA</span>
-                <span className="w-1/4 text-right">1.6M</span>
-                <span className="w-1/4 text-right">2.7M</span>
-            </div>
-        </div>
-    </div>
-);
+import { TargetIcon, BarChartIcon, TrendingUpIcon, CheckmarkCircleIcon, BriefcaseIcon, KpiDashboardMockup, FinancialReportMockup } from '../constants';
 
 const DueDiligenceVisual: React.FC = () => (
   <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
@@ -123,38 +49,58 @@ const TransactionalSupportVisual: React.FC = () => (
     </div>
 );
 
-const CashFlowVisual: React.FC = () => (
-  <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
-    <h3 className="font-bold text-gray-700 text-sm sm:text-base mb-4">Prévisionnel de Trésorerie - 12 mois</h3>
-    <div className="flex-grow flex items-end space-x-1 sm:space-x-2 border-b-2 border-gray-200 pb-2">
-      <div className="w-full h-1/2 bg-[#27013D]/20 rounded-t-md"></div>
-      <div className="w-full h-2/3 bg-[#27013D]/20 rounded-t-md"></div>
-      <div className="w-full h-3/4 bg-[#27013D]/20 rounded-t-md"></div>
-      <div className="w-full h-2/5 bg-[#27013D]/20 rounded-t-md"></div>
-      <div className="w-full h-1/2 bg-[#27013D]/20 rounded-t-md"></div>
-      <div className="w-full h-1/3 bg-[#6D0037] rounded-t-md"></div>
-      <div className="w-full h-1/4 bg-[#6D0037] rounded-t-md"></div>
-      <div className="w-full h-2/5 bg-[#6D0037] rounded-t-md"></div>
-      <div className="w-full h-1/2 bg-[#6D0037] rounded-t-md"></div>
-      <div className="w-full h-3/5 bg-[#6D0037] rounded-t-md"></div>
-      <div className="w-full h-4/5 bg-[#6D0037] rounded-t-md"></div>
-      <div className="w-full h-full bg-[#6D0037] rounded-t-md"></div>
-    </div>
-  </div>
-);
+const CashGrowthVisual: React.FC = () => {
+    // This path now clearly dips below the 'zero' line (y=75 in SVG coords) to represent negative cash flow.
+    const pathData = "M0,90 L20,95 L40,100 L60,85 L80,92 L100,110 L120,120 L140,80 L160,50 L180,60 L200,45 L220,70 L240,95 L260,105 L280,90 L300,98";
+
+    return (
+        <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
+            <div className="flex justify-between items-start mb-2">
+                <h3 className="font-bold text-gray-700 text-sm sm:text-base">Cash Management</h3>
+            </div>
+            <div className="relative flex-grow">
+                <svg viewBox="0 0 335 170" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
+                    {/* Y-axis labels */}
+                    <text x="0" y="25" alignmentBaseline="middle" fill="#6b7280" fontSize="12" fontWeight="semibold">+50k€</text>
+                    <text x="0" y="75" alignmentBaseline="middle" fill="#6b7280" fontSize="12" fontWeight="semibold">0</text>
+                    <text x="0" y="125" alignmentBaseline="middle" fill="#6b7280" fontSize="12" fontWeight="semibold">-50k€</text>
+                    
+                    <g transform="translate(35, 0)">
+                        {/* X-axis labels */}
+                        <text x="0" y="165" textAnchor="middle" fill="#6b7280" fontSize="12">T0</text>
+                        <text x="100" y="165" textAnchor="middle" fill="#6b7280" fontSize="12">T5</text>
+                        <text x="200" y="165" textAnchor="middle" fill="#6b7280" fontSize="12">T10</text>
+                        <text x="300" y="165" textAnchor="middle" fill="#6b7280" fontSize="12">T15</text>
+                        
+                        {/* Dashed reference line for zero */}
+                        <line x1="0" y1="75" x2="300" y2="75" stroke="#d1d5db" strokeWidth="1" strokeDasharray="3 3" />
+                        
+                        {/* Additional reference lines */}
+                        <line x1="0" y1="25" x2="300" y2="25" stroke="#e5e7eb" strokeWidth="0.5" strokeDasharray="2 4" />
+                        <line x1="0" y1="125" x2="300" y2="125" stroke="#e5e7eb" strokeWidth="0.5" strokeDasharray="2 4" />
+
+                        {/* Green line chart */}
+                        <path d={pathData} stroke="#10B981" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                    </g>
+                </svg>
+            </div>
+        </div>
+    );
+};
+
 
 const tasks = [
   {
     icon: BarChartIcon,
     title: "Reporting",
-    description: "Des rapports qui transforment vos données brutes en informations stratégiques.",
-    visual: <PerformanceReportVisual />,
+    description: "Suivi des KPIs clés et reporting mensuel.",
+    visual: <KpiDashboardMockup />,
   },
   {
     icon: TargetIcon,
     title: "Modélisation",
-    description: "Des business plans et modèles financiers qui éclairent vos décisions futures.",
-    visual: <FinancialModelVisual />,
+    description: "Construction de modèles financiers et business plans pour vos prévisions.",
+    visual: <FinancialReportMockup />,
   },
   {
     icon: CheckmarkCircleIcon,
@@ -172,7 +118,7 @@ const tasks = [
     icon: TrendingUpIcon,
     title: "Cash Management",
     description: "Une gestion optimisée de votre trésorerie pour financer votre croissance.",
-    visual: <CashFlowVisual />,
+    visual: <CashGrowthVisual />,
   },
 ];
 

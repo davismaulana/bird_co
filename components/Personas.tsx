@@ -19,9 +19,9 @@ const personas = [
     description: "Nous collaborons sur des dossiers complexes nécessitant une expertise financière pointue, comme les litiges, les M&A ou les restructurations.",
   },
   {
-    icon: <img src="https://images2.imgbox.com/39/e6/RZ9G3FHM_o.png" alt="Experts-Comptables icon" className="w-16 h-16 object-contain" />,
+    icon: <img src="https://images2.imgbox.com/78/c2/3dK6Hk8k_o.png" alt="Experts-Comptables icon" className="w-20 h-20 object-contain" />,
     title: "Experts-Comptables",
-    description: "Nous intervenons en appui sur des missions exceptionnelles qui dépassent le cadre de votre mission récurrente : évaluation, due diligence, business plan.",
+    description: "Nous intervenons en appui sur des missions exceptionnelles qui dépassent le cadre de votre mission récurrente.",
   },
 ];
 

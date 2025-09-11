@@ -8,8 +8,8 @@ const ServicesOverview: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <Animate variant="pop">
-            <div className="flex justify-center mb-4">
-              <div className="w-16 h-1 bg-gradient-to-r from-[#27013D] to-[#6D0037] rounded-full"></div>
+            <div className="flex justify-center mb-1">
+              <div className="w-20 h-1 bg-gradient-to-r from-[#27013D] to-[#6D0037] rounded-full"></div>
             </div>
           </Animate>
           <Animate variant="pop" delay={100}>
@@ -32,7 +32,7 @@ const ServicesOverview: React.FC = () => {
             >
               <a href={`/service/${service.slug}`} className="block h-full">
                 <div className="bg-white rounded-xl p-6 lg:p-4 flex flex-col items-center text-center h-full transition-all duration-300 ease-in-out border border-gray-200 group-hover:opacity-50 hover:!opacity-100 hover:scale-105 hover:shadow-2xl hover:shadow-violet-100/50">
-                  <div className="h-20 w-20 flex items-center justify-center text-[#27013D] mb-6">
+                  <div className="h-20 w-20 flex items-center justify-center text-[#27013D] mb-2">
                     {React.cloneElement(service.icon, { className: service.iconClassName })}
                   </div>
                   <h3 className="text-base font-bold text-black leading-tight h-12 flex items-center justify-center">

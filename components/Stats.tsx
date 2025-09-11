@@ -14,9 +14,9 @@ const stats = [
     label: "dirigeants et actionnaires accompagnés",
   },
   {
-    icon: <img src="https://images2.imgbox.com/d8/ce/23Kq8TYw_o.png" alt="Consultants qualifiés icon" className="w-16 h-16 object-contain" />,
-    value: "30+",
-    label: "Consultants qualifiés (8 à 30 ans d'expérience) issus de cabinets de renom",
+    icon: <img src="https://images2.imgbox.com/d8/ce/23Kq8TYw_o.png" alt="Experts partenaires icon" className="w-16 h-16 object-contain" />,
+    value: "10+",
+    label: "experts partenaires avec 5+ années d'expérience, issus de cabinets de conseil de renom",
   },
 ];
 
@@ -24,7 +24,7 @@ const Stats: React.FC = () => {
   return (
     <section className="bg-white py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="mb-16">
+        <div className="mb-12">
           <Animate variant="pop">
             <div className="flex justify-center mb-4">
               <div className="w-16 h-1 bg-gradient-to-r from-[#27013D] to-[#6D0037] rounded-full"></div>
@@ -36,6 +36,20 @@ const Stats: React.FC = () => {
             </h2>
           </Animate>
         </div>
+
+        <div className="mb-16 max-w-3xl mx-auto">
+          <Animate variant="pop" delay={200}>
+            <p className="text-xl md:text-2xl font-bold gradient-text">
+              TPE, PME, ETI, Grandes entreprises
+            </p>
+          </Animate>
+          <Animate variant="pop" delay={300}>
+            <p className="mt-2 text-lg text-gray-600">
+              Un allié et un soutien sur-mesure quelle que soit votre&nbsp;taille
+            </p>
+          </Animate>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto stagger">
           {stats.map((stat, index) => (
             <Animate key={index} variant="pop">
