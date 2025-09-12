@@ -29,7 +29,7 @@ const AmbitionPage: React.FC = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="bg-[#27013D] text-white pt-40 pb-20">
+      <section className="bg-[#27013D] text-white pt-32 pb-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Animate variant="pop">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
@@ -45,7 +45,7 @@ const AmbitionPage: React.FC = () => {
       </section>
 
       {/* Pillars Section */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <Animate variant="pop">
@@ -103,7 +103,7 @@ const AmbitionPage: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gray-50 py-20">
+      <section className="bg-gray-50 py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Animate variant="pop">
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">

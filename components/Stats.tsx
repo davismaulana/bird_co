@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Animate from './Animate';
 
@@ -22,9 +21,9 @@ const stats = [
 
 const Stats: React.FC = () => {
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="mb-12">
+        <div className="mb-20">
           <Animate variant="pop">
             <div className="flex justify-center mb-4">
               <div className="w-16 h-1 bg-gradient-to-r from-[#27013D] to-[#6D0037] rounded-full"></div>
@@ -34,19 +33,6 @@ const Stats: React.FC = () => {
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
               Un impact qui <span className="gradient-text">fait la différence</span>
             </h2>
-          </Animate>
-        </div>
-
-        <div className="mb-16 max-w-3xl mx-auto">
-          <Animate variant="pop" delay={200}>
-            <p className="text-xl md:text-2xl font-bold gradient-text">
-              TPE, PME, ETI, Grandes entreprises
-            </p>
-          </Animate>
-          <Animate variant="pop" delay={300}>
-            <p className="mt-2 text-lg text-gray-800">
-              Un allié et un soutien sur-mesure quelle que soit votre&nbsp;taille
-            </p>
           </Animate>
         </div>
 
@@ -60,6 +46,19 @@ const Stats: React.FC = () => {
               </div>
             </Animate>
           ))}
+        </div>
+
+        <div className="text-center mt-20 max-w-3xl mx-auto">
+          <Animate variant="pop">
+            <p className="text-xl md:text-2xl font-bold gradient-text">
+              TPE, PME, ETI, Grandes entreprises, Fonds d'investissements
+            </p>
+          </Animate>
+          <Animate variant="pop" delay={100}>
+            <p className="mt-2 text-lg text-gray-800">
+              Un <strong>allié</strong> et un <strong>soutien sur-mesure</strong> quelle que soit votre&nbsp;taille
+            </p>
+          </Animate>
         </div>
       </div>
     </section>

@@ -19,7 +19,7 @@ const ServicesOverview: React.FC = () => {
           </Animate>
           <Animate variant="pop" delay={200}>
             <p className="text-lg text-gray-800 mt-2 font-medium">
-              dans la gestion quotidienne comme dans les processus transactionnels
+              dans la <strong>gestion quotidienne</strong> comme dans les <strong>processus transactionnels</strong>
             </p>
           </Animate>
         </div>

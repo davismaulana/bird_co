@@ -78,7 +78,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            <a href="/" className="text-4xl font-bold text-[#27013D] tracking-tight">
+            <a href="/" className="text-4xl font-black text-[#27013D] tracking-tight">
               BIRD&
             </a>
             

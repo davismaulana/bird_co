@@ -24,7 +24,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
   return (
     <div className="bg-white text-gray-800">
       {/* Hero Section */}
-      <section className="bg-white pt-32 md:pt-40 pb-12 md:pb-16">
+      <section className="bg-white pt-24 md:pt-32 pb-12 md:pb-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Animate variant="pop">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
@@ -38,7 +38,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
       </section>
 
       {/* Diagnostic Section */}
-      <section className="bg-gray-50 py-20 md:py-24">
+      <section className="bg-gray-50 py-16 md:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 max-w-3xl mx-auto">
               <Animate variant="pop">
@@ -69,7 +69,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
       </section>
 
       {/* Content Section */}
-      <main id="content" className="bg-white py-24 sm:py-32">
+      <main id="content" className="bg-white py-16 sm:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-3 gap-12 lg:gap-24">
                 <div className="lg:col-span-1">
@@ -107,7 +107,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
       </main>
 
       {/* Final CTA section */}
-      <section className="bg-gray-50 py-20">
+      <section className="bg-gray-50 py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Animate variant="pop">
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">

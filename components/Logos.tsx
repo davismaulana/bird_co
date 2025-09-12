@@ -16,7 +16,7 @@ const Logos: React.FC = () => {
   const allLogos = [...logos, ...logos]; // Duplicate logos for a seamless loop
 
   return (
-    <section className="bg-gray-100 py-24">
+    <section className="bg-gray-100 py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <Animate variant="pop">

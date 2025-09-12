@@ -28,7 +28,7 @@ const TeamPage: React.FC = () => {
         <div className="bg-white text-gray-800">
             {/* Hero Section */}
             <section className="bg-[#27013D] text-white overflow-hidden pt-24">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-24">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
                     <div className="grid grid-cols-1 gap-10 items-center">
                         <div className="text-center">
                             <Animate variant="pop">
@@ -61,7 +61,7 @@ const TeamPage: React.FC = () => {
             </section>
 
             {/* Team Members Section */}
-            <section className="bg-white py-24">
+            <section className="bg-white py-16">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
                     {/* Seydina Samb */}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -162,7 +162,7 @@ const TeamPage: React.FC = () => {
             </section>
             
             {/* DNA Section */}
-            <section className="bg-gray-50 py-24">
+            <section className="bg-gray-50 py-16">
               <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center max-w-3xl mx-auto">
                     <Animate variant="pop">
@@ -187,7 +187,7 @@ const TeamPage: React.FC = () => {
 
 
             {/* Final CTA section */}
-            <section className="bg-white py-20">
+            <section className="bg-white py-16">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <Animate variant="pop">
                         <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">

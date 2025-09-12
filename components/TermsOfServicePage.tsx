@@ -4,7 +4,7 @@ import Animate from './Animate';
 const TermsOfServicePage: React.FC = () => {
   return (
     <div className="bg-white">
-      <section className="bg-gray-50 pt-40 pb-20">
+      <section className="bg-gray-50 pt-32 pb-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Animate variant="pop">
                 <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
@@ -17,7 +17,7 @@ const TermsOfServicePage: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-24">
+      <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <div className="text-gray-800 space-y-8 text-lg leading-relaxed">
                 <Animate variant="pop">

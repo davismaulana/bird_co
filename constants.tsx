@@ -1,5 +1,4 @@
 
-
 import React from 'react';
 
 export const PaperPlaneIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -98,12 +97,12 @@ export const PomadLogo = ({ className }: { className?: string }) => <img src="ht
 export const OctoLogo = ({ className }: { className?: string }) => <img src="https://static.wixstatic.com/media/7bfd2f_eff6d7f274f3477393d513ca25459148~mv2.png" alt="Octo Logo" className={className} />;
 export const CameroneCapitalLogo = ({ className }: { className?: string }) => <img src="https://static.wixstatic.com/media/7bfd2f_1b1546b30c1a40158136d72a41b42857~mv2.png" alt="Camerone Capital Logo" className={className} />;
 export const FinpalLogo = ({ className }: { className?: string }) => <img src="https://images2.imgbox.com/a3/2a/UYgiQyJX_o.jpg" alt="Finpal Logo" className={className} />;
-export const BredLogo = ({ className }: { className?: string }) => <img src="https://images2.imgbox.com/3f/91/tUoXJ27Z_o.png" alt="BRED Logo" className={className} />;
-export const EricKayserLogo = ({ className }: { className?: string }) => <img src="https://images2.imgbox.com/6c/a0/W83WpS2x_o.png" alt="Eric Kayser Logo" className={className} />;
+export const BredLogo = ({ className }: { className?: string }) => <img src="https://images2.imgbox.com/80/da/LmaUelaP_o.png" alt="BRED Logo" className={className} />;
+export const EricKayserLogo = ({ className }: { className?: string }) => <img src="https://images2.imgbox.com/4a/9e/jS5lKo0o_o.png" alt="Eric Kayser Logo" className={className} />;
 export const SquareLogo = ({ className }: { className?: string }) => <img src="https://images2.imgbox.com/39/33/4ug9ldzK_o.png" alt="UI Investment Partners Logo" className={className} />;
 
-export const FinancialReportMockup: React.FC<{ theme?: string }> = () => (
-    <div className="w-full h-full bg-white rounded-2xl p-6 shadow-2xl border border-gray-100 flex flex-col transform hover:scale-105 transition-transform duration-300 aspect-[4/3]">
+export const FinancialReportMockup: React.FC<{ theme?: string, noAspectRatio?: boolean, disableHover?: boolean }> = ({ noAspectRatio = false, disableHover = false }) => (
+    <div className={`w-full h-full bg-white rounded-2xl ${noAspectRatio ? 'p-4 sm:p-6' : 'p-6'} shadow-2xl border border-gray-100 flex flex-col ${!disableHover ? 'transform hover:scale-105 transition-transform duration-300' : ''} ${!noAspectRatio ? 'aspect-[4/3]' : ''}`}>
         <div className="flex items-center justify-between mb-4">
             <h3 className="font-bold text-gray-900 text-base">Modèle Financier</h3>
             <div className="px-3 py-1 text-xs font-semibold bg-[#27013D] text-white rounded-full">Prévisions 5 ans</div>
@@ -142,8 +141,8 @@ export const FinancialReportMockup: React.FC<{ theme?: string }> = () => (
         </div>
     </div>
 );
-export const KpiDashboardMockup: React.FC<{ theme?: string }> = () => (
-  <div className="w-full h-full bg-white rounded-2xl p-6 shadow-2xl border border-gray-100 flex flex-col transform hover:scale-105 transition-transform duration-300 aspect-[4/3]">
+export const KpiDashboardMockup: React.FC<{ theme?: string, noAspectRatio?: boolean, disableHover?: boolean }> = ({ noAspectRatio = false, disableHover = false }) => (
+  <div className={`w-full h-full bg-white rounded-2xl ${noAspectRatio ? 'p-4 sm:p-6' : 'p-6'} shadow-2xl border border-gray-100 flex flex-col ${!disableHover ? 'transform hover:scale-105 transition-transform duration-300' : ''} ${!noAspectRatio ? 'aspect-[4/3]' : ''}`}>
     <div className="w-full text-left mb-4">
       <h3 className="font-bold text-gray-900 text-base">Tableau de Bord - T4 2024</h3>
       <p className="text-sm text-gray-700">Suivi des KPIs clés</p>
