@@ -16,7 +16,7 @@ const Logos: React.FC = () => {
   const allLogos = [...logos, ...logos]; // Duplicate logos for a seamless loop
 
   return (
-    <section className="bg-gray-100 py-16">
+    <section className="bg-white py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <Animate variant="pop">
@@ -25,8 +25,14 @@ const Logos: React.FC = () => {
             </div>
           </Animate>
           <Animate variant="pop" delay={100}>
-            <h2 className="text-3xl md:text-4xl xl:text-5xl font-extrabold text-gray-900">
-              Ils nous <span className="gradient-text">font confiance</span>
+            <h2 className="text-2xl md:text-3xl text-gray-900 text-center max-w-5xl mx-auto leading-tight">
+              <span className="font-extrabold">
+                Ils nous <span className="gradient-text">font confiance</span> :
+              </span>
+              {' '}
+              <span className="font-normal text-gray-800">
+                Un <strong>allié</strong> et un <strong>soutien sur-mesure</strong> pour votre structure (<span className="gradient-text font-bold">TPE à Grandes entreprises et Fonds d'investissements</span>)
+              </span>
             </h2>
           </Animate>
         </div>

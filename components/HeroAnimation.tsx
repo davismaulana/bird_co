@@ -16,11 +16,14 @@ const HeroAnimation: React.FC = () => {
         const resizeCanvas = () => {
             const parent = canvas.parentElement;
             if (parent) {
-                canvas.width = parent.getBoundingClientRect().width;
-                canvas.height = parent.getBoundingClientRect().height;
-            } else {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
+                // Use devicePixelRatio for sharper rendering on high-DPI displays
+                const rect = parent.getBoundingClientRect();
+                const dpr = window.devicePixelRatio || 1;
+                canvas.width = rect.width * dpr;
+                canvas.height = rect.height * dpr;
+                canvas.style.width = `${rect.width}px`;
+                canvas.style.height = `${rect.height}px`;
+                ctx.scale(dpr, dpr);
             }
         };
 
@@ -43,13 +46,15 @@ const HeroAnimation: React.FC = () => {
                 if (!ctx) return;
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-                ctx.fillStyle = 'rgba(39, 1, 61, 0.8)'; // Increased opacity
+                ctx.fillStyle = 'rgba(39, 1, 61, 0.7)';
                 ctx.fill();
             }
 
             update() {
-                if (this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
-                if (this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
+                const parentWidth = canvas.getBoundingClientRect().width;
+                const parentHeight = canvas.getBoundingClientRect().height;
+                if (this.x > parentWidth || this.x < 0) this.speedX = -this.speedX;
+                if (this.y > parentHeight || this.y < 0) this.speedY = -this.speedY;
 
                 this.x += this.speedX;
                 this.y += this.speedY;
@@ -59,15 +64,18 @@ const HeroAnimation: React.FC = () => {
         const init = () => {
             resizeCanvas();
             particles = [];
-            // Increased number of particles for a more visible effect
-            const numberOfParticles = (canvas.height * canvas.width) / 15000;
+            
+            const parentWidth = canvas.getBoundingClientRect().width;
+            const parentHeight = canvas.getBoundingClientRect().height;
+
+            // Significantly fewer particles to increase the gap between them
+            const numberOfParticles = (parentHeight * parentWidth) / 40000;
             for (let i = 0; i < numberOfParticles; i++) {
-                // Increased particle size for visibility
                 const size = Math.random() * 1.5 + 0.5;
-                const x = Math.random() * (canvas.width - size * 2) + size;
-                const y = Math.random() * (canvas.height - size * 2) + size;
-                const speedX = (Math.random() * 0.4) - 0.2;
-                const speedY = (Math.random() * 0.4) - 0.2;
+                const x = Math.random() * (parentWidth - size * 2) + size;
+                const y = Math.random() * (parentHeight - size * 2) + size;
+                const speedX = (Math.random() * 0.3) - 0.15;
+                const speedY = (Math.random() * 0.3) - 0.15;
                 particles.push(new Particle(x, y, size, speedX, speedY));
             }
         };
@@ -80,13 +88,15 @@ const HeroAnimation: React.FC = () => {
                     const distance = ((particles[a].x - particles[b].x) * (particles[a].x - particles[b].x)) +
                                      ((particles[a].y - particles[b].y) * (particles[a].y - particles[b].y));
                     
-                    // Increased connection distance for more lines
-                    const connectThreshold = (canvas.width / 3) * (canvas.height / 3);
+                    const parentWidth = canvas.getBoundingClientRect().width;
+
+                    // Further increased connection distance for very long lines
+                    const connectThreshold = (parentWidth / 2.5) * (parentWidth / 2.5);
                     if (distance < connectThreshold) {
                         opacityValue = 1 - (distance / connectThreshold);
-                        // Made connecting lines more visible
-                        ctx.strokeStyle = `rgba(39, 1, 61, ${opacityValue * 0.4})`;
-                        ctx.lineWidth = 0.3;
+                        // More visible lines, even at a distance
+                        ctx.strokeStyle = `rgba(39, 1, 61, ${opacityValue * 0.6})`;
+                        ctx.lineWidth = 0.5;
                         ctx.beginPath();
                         ctx.moveTo(particles[a].x, particles[a].y);
                         ctx.lineTo(particles[b].x, particles[b].y);
@@ -98,7 +108,10 @@ const HeroAnimation: React.FC = () => {
 
         const animate = () => {
             if (!ctx || !particles) return;
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const parentWidth = canvas.getBoundingClientRect().width;
+            const parentHeight = canvas.getBoundingClientRect().height;
+
+            ctx.clearRect(0, 0, parentWidth, parentHeight);
             for (const particle of particles) {
                 particle.update();
                 particle.draw();

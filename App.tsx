@@ -132,10 +132,10 @@ const App: React.FC = () => {
           <Hero />
           {/* <Methodology /> */}
           <ServicesOverview />
-          <Stats />
           <Logos />
           <ValueProposition />
           <Personas />
+          <Stats />
           <Expertise />
           <Deliverables />
           <TaskShowcase />

@@ -47,19 +47,6 @@ const Stats: React.FC = () => {
             </Animate>
           ))}
         </div>
-
-        <div className="text-center mt-20 max-w-3xl mx-auto">
-          <Animate variant="pop">
-            <p className="text-xl md:text-2xl font-bold gradient-text">
-              TPE, PME, ETI, Grandes entreprises, Fonds d'investissements
-            </p>
-          </Animate>
-          <Animate variant="pop" delay={100}>
-            <p className="mt-2 text-lg text-gray-800">
-              Un <strong>allié</strong> et un <strong>soutien sur-mesure</strong> quelle que soit votre&nbsp;taille
-            </p>
-          </Animate>
-        </div>
       </div>
     </section>
   );

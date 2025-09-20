@@ -28,7 +28,7 @@ const personas = [
 
 const Personas: React.FC = () => {
   return (
-    <section id="personas" className="bg-white py-16">
+    <section id="personas" className="bg-gray-50 py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <Animate variant="pop">
@@ -43,8 +43,8 @@ const Personas: React.FC = () => {
                 key={index} 
                 variant="pop"
               >
-                <div className="bg-gray-50 rounded-xl p-8 h-full flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left gap-6 border border-gray-100 transition-all duration-300 hover:bg-white hover:shadow-xl hover:shadow-violet-100/50">
-                  <div className="flex-shrink-0 bg-gradient-to-br from-violet-100 to-pink-100 rounded-2xl p-4 shadow-inner flex items-center justify-center">
+                <div className="bg-white rounded-xl p-8 h-full flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left gap-6 border border-gray-200 transition-all duration-300 hover:shadow-xl hover:shadow-violet-100/50">
+                  <div className="flex-shrink-0 bg-gradient-to-br from-violet-100 to-pink-100 rounded-2xl p-4 shadow-inner flex items-center justify-center w-28 h-28">
                     {persona.icon}
                   </div>
                   <div>

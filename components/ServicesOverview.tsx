@@ -13,7 +13,7 @@ const ServicesOverview: React.FC = () => {
             </div>
           </Animate>
           <Animate variant="pop" delay={100}>
-            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900">
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
               <span className="text-black">Un soutien</span> <span className="gradient-text">à vos côtés</span>
             </h2>
           </Animate>
@@ -35,7 +35,7 @@ const ServicesOverview: React.FC = () => {
                   <div className="h-20 w-20 flex items-center justify-center text-[#27013D] mb-2">
                     {React.cloneElement(service.icon, { className: service.iconClassName })}
                   </div>
-                  <h3 className="text-base font-bold text-black leading-tight h-12 flex items-center justify-center">
+                  <h3 className="text-base font-bold text-black leading-tight h-10 flex items-center justify-center">
                     {service.title}
                   </h3>
                   <p className="text-base font-semibold text-[#6D0037] mb-2 whitespace-nowrap">{service.subTitle}</p>
