@@ -3,9 +3,9 @@ import Animate from './Animate';
 
 const stats = [
   {
-    icon: <img src="https://images2.imgbox.com/87/dd/sN3rtZQi_o.png" alt="Levés pour nos clients icon" className="w-16 h-16 object-contain" />,
-    value: "50M€+",
-    label: "Levés pour nos clients",
+    icon: <img src="https://images2.imgbox.com/87/dd/sN3rtZQi_o.png" alt="Naissance du réseau Bird& icon" className="w-16 h-16 object-contain" />,
+    value: "2024",
+    label: "Naissance du réseau Bird&",
   },
   {
     icon: <img src="https://images2.imgbox.com/0e/6d/ydTjAfbc_o.png" alt="Dirigeants et actionnaires accompagnés icon" className="w-16 h-16 object-contain" />,

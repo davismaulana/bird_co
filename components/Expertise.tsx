@@ -1,26 +1,19 @@
+
 import React from 'react';
 import Animate from './Animate';
 import {
-  BarChartIcon,
-  CfoIcon,
-  DiagnosticIcon,
-  HandshakeIcon,
-  BriefcaseIcon,
-  TrendingUpIcon,
-  ExpertiseSearchIcon,
-  ExpertiseCompassIcon,
   ArrowRightIcon,
 } from '../constants';
 
 const expertiseItems = [
-  { icon: <BarChartIcon />, label: 'Modélisation Financière' },
-  { icon: <CfoIcon />, label: 'Gestion de la\u00a0trésorerie' },
-  { icon: <DiagnosticIcon />, label: 'Restructuration' },
-  { icon: <ExpertiseSearchIcon />, label: 'Due Diligence' },
-  { icon: <ExpertiseCompassIcon />, label: 'Reporting & Tableau\u00a0de\u00a0bord' },
-  { icon: <HandshakeIcon />, label: 'Fusions & Acquisitions' },
-  { icon: <BriefcaseIcon />, label: 'Gestion\u00a0de\u00a0projets' },
-  { icon: <TrendingUpIcon />, label: 'Levée de fonds' },
+  { icon: <img src="https://images2.imgbox.com/a6/a9/GD6FUQ72_o.png" alt="Modélisation Financière icon" />, label: 'Modélisation Financière' },
+  { icon: <img src="https://images2.imgbox.com/c9/3a/aTMjbvJm_o.png" alt="Gestion de la trésorerie icon" />, label: 'Gestion de la\u00a0trésorerie' },
+  { icon: <img src="https://images2.imgbox.com/be/67/EKki9YYj_o.png" alt="Restructuration icon" />, label: 'Restructuration' },
+  { icon: <img src="https://images2.imgbox.com/b9/14/MF1gdmdv_o.png" alt="Due Diligence icon" />, label: 'Due Diligence' },
+  { icon: <img src="https://images2.imgbox.com/df/52/6W0vqaOM_o.png" alt="Reporting & Tableau de bord icon" />, label: 'Reporting & Tableau\u00a0de\u00a0bord' },
+  { icon: <img src="https://images2.imgbox.com/c5/04/90xx8pVB_o.png" alt="Fusions & Acquisitions icon" />, label: 'Fusions & Acquisitions' },
+  { icon: <img src="https://images2.imgbox.com/1c/0d/cqWjAv3g_o.png" alt="Gestion de projets icon" />, label: 'Gestion\u00a0de\u00a0projets' },
+  { icon: <img src="https://images2.imgbox.com/79/f8/8XIMmfYK_o.png" alt="Levée de fonds icon" />, label: 'Levée de fonds' },
 ];
 
 const Expertise: React.FC = () => {
@@ -54,7 +47,7 @@ const Expertise: React.FC = () => {
             if ('icon' in item) {
               return (
                 <Animate key={index} variant="pop" className={`${borderClass} p-8 flex flex-col items-center text-center justify-center min-h-[220px] transition-colors duration-300 hover:bg-white/5`}>
-                  {React.cloneElement(item.icon, { className: 'w-16 h-16 text-white' })}
+                  {React.cloneElement(item.icon, { className: 'w-16 h-16 object-contain' })}
                   <p className="text-gray-100 font-medium mt-4 text-lg">{item.label}</p>
                 </Animate>
               );
