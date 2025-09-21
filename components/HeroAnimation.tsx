@@ -69,7 +69,7 @@ const HeroAnimation: React.FC = () => {
             const parentHeight = canvas.getBoundingClientRect().height;
 
             // Adjust particle density based on canvas size
-            const numberOfParticles = (parentHeight * parentWidth) / 25000;
+            const numberOfParticles = (parentHeight * parentWidth) / 28000;
             for (let i = 0; i < numberOfParticles; i++) {
                 const size = Math.random() * 1.5 + 0.5;
                 const x = Math.random() * (parentWidth - size * 2) + size;
@@ -91,7 +91,7 @@ const HeroAnimation: React.FC = () => {
                     const parentWidth = canvas.getBoundingClientRect().width;
 
                     // Further increased connection distance for very long lines
-                    const connectThreshold = (parentWidth / 2.2) * (parentWidth / 2.2);
+                    const connectThreshold = (parentWidth / 2.5) * (parentWidth / 2.5);
                     if (distance < connectThreshold) {
                         opacityValue = 1 - (distance / connectThreshold);
                         // More visible lines, even at a distance
