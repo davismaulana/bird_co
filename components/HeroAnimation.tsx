@@ -11,12 +11,12 @@ const HeroAnimation: React.FC = () => {
         if (!ctx) return;
 
         let animationFrameId: number;
-        let particles: Particle[];
+        let particleSections: Particle[][] = [];
+        const gridConfig = { rows: 2, cols: 2 };
         
         const resizeCanvas = () => {
             const parent = canvas.parentElement;
             if (parent) {
-                // Use devicePixelRatio for sharper rendering on high-DPI displays
                 const rect = parent.getBoundingClientRect();
                 const dpr = window.devicePixelRatio || 1;
                 canvas.width = rect.width * dpr;
@@ -50,11 +50,18 @@ const HeroAnimation: React.FC = () => {
                 ctx.fill();
             }
 
-            update() {
-                const parentWidth = canvas.getBoundingClientRect().width;
-                const parentHeight = canvas.getBoundingClientRect().height;
-                if (this.x > parentWidth || this.x < 0) this.speedX = -this.speedX;
-                if (this.y > parentHeight || this.y < 0) this.speedY = -this.speedY;
+            update(minX: number, maxX: number, minY: number, maxY: number) {
+                if (this.x + this.size > maxX || this.x - this.size < minX) {
+                    this.speedX = -this.speedX;
+                }
+                if (this.y + this.size > maxY || this.y - this.size < minY) {
+                    this.speedY = -this.speedY;
+                }
+
+                if (this.x + this.size > maxX) this.x = maxX - this.size;
+                if (this.x - this.size < minX) this.x = minX + this.size;
+                if (this.y + this.size > maxY) this.y = maxY - this.size;
+                if (this.y - this.size < minY) this.y = minY + this.size;
 
                 this.x += this.speedX;
                 this.y += this.speedY;
@@ -63,59 +70,87 @@ const HeroAnimation: React.FC = () => {
 
         const init = () => {
             resizeCanvas();
-            particles = [];
+            particleSections = [];
             
             const parentWidth = canvas.getBoundingClientRect().width;
             const parentHeight = canvas.getBoundingClientRect().height;
+            const sectionWidth = parentWidth / gridConfig.cols;
+            const sectionHeight = parentHeight / gridConfig.rows;
 
-            // Adjust particle density based on canvas size
-            const numberOfParticles = (parentHeight * parentWidth) / 28000;
-            for (let i = 0; i < numberOfParticles; i++) {
-                const size = Math.random() * 1.5 + 0.5;
-                const x = Math.random() * (parentWidth - size * 2) + size;
-                const y = Math.random() * (parentHeight - size * 2) + size;
-                const speedX = (Math.random() * 0.3) - 0.15;
-                const speedY = (Math.random() * 0.3) - 0.15;
-                particles.push(new Particle(x, y, size, speedX, speedY));
-            }
-        };
+            for (let r = 0; r < gridConfig.rows; r++) {
+                for (let c = 0; c < gridConfig.cols; c++) {
+                    const sectionParticles: Particle[] = [];
+                    const minX = c * sectionWidth;
+                    const minY = r * sectionHeight;
 
-        const connect = () => {
-            if (!ctx) return;
-            let opacityValue = 1;
-            for (let a = 0; a < particles.length; a++) {
-                for (let b = a; b < particles.length; b++) {
-                    const distance = ((particles[a].x - particles[b].x) * (particles[a].x - particles[b].x)) +
-                                     ((particles[a].y - particles[b].y) * (particles[a].y - particles[b].y));
-                    
-                    const parentWidth = canvas.getBoundingClientRect().width;
-
-                    // Further increased connection distance for very long lines
-                    const connectThreshold = (parentWidth / 2.5) * (parentWidth / 2.5);
-                    if (distance < connectThreshold) {
-                        opacityValue = 1 - (distance / connectThreshold);
-                        // More visible lines, even at a distance
-                        ctx.strokeStyle = `rgba(39, 1, 61, ${opacityValue * 0.6})`;
-                        ctx.lineWidth = 0.5;
-                        ctx.beginPath();
-                        ctx.moveTo(particles[a].x, particles[a].y);
-                        ctx.lineTo(particles[b].x, particles[b].y);
-                        ctx.stroke();
+                    for (let i = 0; i < 3; i++) { // Exactly 3 dots per section
+                        const size = Math.random() * 1.5 + 0.5;
+                        const x = Math.random() * (sectionWidth - size * 2) + minX + size;
+                        const y = Math.random() * (sectionHeight - size * 2) + minY + size;
+                        const speedX = (Math.random() * 0.3) - 0.15;
+                        const speedY = (Math.random() * 0.3) - 0.15;
+                        sectionParticles.push(new Particle(x, y, size, speedX, speedY));
                     }
+                    particleSections.push(sectionParticles);
                 }
             }
         };
 
+        const connectChainedParticles = (particleArray: Particle[]) => {
+            if (!ctx || particleArray.length !== 3) return;
+            
+            const parentWidth = canvas.getBoundingClientRect().width;
+            const sectionWidth = parentWidth / gridConfig.cols;
+            const connectThreshold = (sectionWidth / 1.25) * (sectionWidth / 1.25);
+
+            const connections = [
+                [particleArray[0], particleArray[1]],
+                [particleArray[1], particleArray[2]],
+            ];
+
+            for (const [pA, pB] of connections) {
+                const distance = ((pA.x - pB.x) * (pA.x - pB.x)) + ((pA.y - pB.y) * (pA.y - pB.y));
+
+                if (distance < connectThreshold) {
+                    const opacityValue = 1 - (distance / connectThreshold);
+                    ctx.strokeStyle = `rgba(39, 1, 61, ${opacityValue * 0.6})`;
+                    ctx.lineWidth = 0.5;
+                    ctx.beginPath();
+                    ctx.moveTo(pA.x, pA.y);
+                    ctx.lineTo(pB.x, pB.y);
+                    ctx.stroke();
+                }
+            }
+        };
+
+        const connect = () => {
+            if (!particleSections) return;
+            particleSections.forEach(connectChainedParticles);
+        };
+
         const animate = () => {
-            if (!ctx || !particles) return;
+            if (!ctx || !particleSections) return;
             const parentWidth = canvas.getBoundingClientRect().width;
             const parentHeight = canvas.getBoundingClientRect().height;
+            const sectionWidth = parentWidth / gridConfig.cols;
+            const sectionHeight = parentHeight / gridConfig.rows;
 
             ctx.clearRect(0, 0, parentWidth, parentHeight);
-            for (const particle of particles) {
-                particle.update();
-                particle.draw();
-            }
+            
+            particleSections.forEach((section, index) => {
+                const c = index % gridConfig.cols;
+                const r = Math.floor(index / gridConfig.cols);
+                const minX = c * sectionWidth;
+                const maxX = (c + 1) * sectionWidth;
+                const minY = r * sectionHeight;
+                const maxY = (r + 1) * sectionHeight;
+
+                for (const particle of section) {
+                    particle.update(minX, maxX, minY, maxY);
+                    particle.draw();
+                }
+            });
+            
             connect();
             animationFrameId = requestAnimationFrame(animate);
         };
