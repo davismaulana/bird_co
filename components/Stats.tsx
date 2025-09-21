@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Animate from './Animate';
 
@@ -8,12 +9,12 @@ const stats = [
     label: "Naissance du réseau Bird&",
   },
   {
-    icon: <img src="https://images2.imgbox.com/0e/6d/ydTjAfbc_o.png" alt="Dirigeants et actionnaires accompagnés icon" className="w-16 h-16 object-contain" />,
-    value: "50+",
+    icon: <img src="https://images2.imgbox.com/0e/6d/ydTjAfbc_o.png" alt="Dirigeants et actionnaires accompagnés icon" className="w-20 h-20 object-contain" />,
+    value: "20+",
     label: "Dirigeants et actionnaires accompagnés",
   },
   {
-    icon: <img src="https://images2.imgbox.com/d8/ce/23Kq8TYw_o.png" alt="Experts partenaires icon" className="w-16 h-16 object-contain" />,
+    icon: <img src="https://images2.imgbox.com/80/73/qtj75VEW_o.png" alt="Experts partenaires icon" className="w-20 h-20 object-contain" />,
     value: "10+",
     label: "Experts partenaires avec 5+ années d'expérience, issus de cabinets de conseil de renom",
   },
@@ -40,7 +41,9 @@ const Stats: React.FC = () => {
           {stats.map((stat, index) => (
             <Animate key={index} variant="pop">
               <div className="flex flex-col items-center">
-                <div className="mb-6">{stat.icon}</div>
+                <div className="mb-6 flex items-center justify-center h-20">
+                  {stat.icon}
+                </div>
                 <p className="text-4xl lg:text-5xl font-extrabold text-[#27013D] tracking-tighter">{stat.value}</p>
                 <p className="text-gray-800 mt-2 text-base font-medium">{stat.label}</p>
               </div>

@@ -6,7 +6,7 @@ import {
 } from '../constants';
 
 const expertiseItems = [
-  { icon: <img src="https://images2.imgbox.com/a6/a9/GD6FUQ72_o.png" alt="Modélisation Financière icon" />, label: 'Modélisation Financière' },
+  { icon: <img src="https://images2.imgbox.com/3d/3e/Xmi67EFc_o.png" alt="Modélisation Financière icon" />, label: 'Modélisation Financière' },
   { icon: <img src="https://images2.imgbox.com/c9/3a/aTMjbvJm_o.png" alt="Gestion de la trésorerie icon" />, label: 'Gestion de la\u00a0trésorerie' },
   { icon: <img src="https://images2.imgbox.com/be/67/EKki9YYj_o.png" alt="Restructuration icon" />, label: 'Restructuration' },
   { icon: <img src="https://images2.imgbox.com/b9/14/MF1gdmdv_o.png" alt="Due Diligence icon" />, label: 'Due Diligence' },

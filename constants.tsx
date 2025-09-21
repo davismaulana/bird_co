@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 
 export const PaperPlaneIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -366,4 +367,88 @@ export const serviceDetails: { [key: string]: any } = {
             { title: 'Accompagnement à la Cession', list: ['Préparation du mémorandum d\'information', 'Identification et approche des acquéreurs potentiels', 'Due diligence vendeur (VDD)', 'Assistance dans les négociations finales'] },
         ] }
     },
+};
+export const DueDiligenceVisual: React.FC = () => (
+  <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
+    <h3 className="font-bold text-gray-800 text-sm sm:text-base mb-4">Checklist Due Diligence VDD</h3>
+    <div className="flex-grow space-y-3">
+      <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
+        <CheckmarkCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0" />
+        <p className="text-gray-800 text-sm">Qualité des revenus (MRR, churn...)</p>
+      </div>
+      <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
+        <CheckmarkCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0" />
+        <p className="text-gray-800 text-sm">Analyse de la rentabilité (EBITDA, marges)</p>
+      </div>
+      <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
+        <CheckmarkCircleIcon className="w-6 h-6 text-gray-300 flex-shrink-0" />
+        <p className="text-gray-700 text-sm">Normalisation du BFR</p>
+      </div>
+       <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
+        <CheckmarkCircleIcon className="w-6 h-6 text-gray-300 flex-shrink-0" />
+        <p className="text-gray-700 text-sm">Analyse de la dette nette</p>
+      </div>
+    </div>
+  </div>
+);
+
+export const TransactionalSupportVisual: React.FC = () => (
+    <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
+      <h3 className="font-bold text-gray-800 text-sm sm:text-base mb-4">Accompagnement Transactionnel</h3>
+      <div className="flex-grow space-y-3">
+          <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
+              <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse flex-shrink-0"></div>
+              <p className="text-gray-800 text-sm font-medium">Phase 1: Préparation (Teaser, IM, VDD)</p>
+          </div>
+          <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 opacity-60">
+              <div className="w-3 h-3 rounded-full bg-gray-400 flex-shrink-0"></div>
+              <p className="text-gray-700 text-sm">Phase 2: Négociation des offres</p>
+          </div>
+          <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 opacity-60">
+              <div className="w-3 h-3 rounded-full bg-gray-400 flex-shrink-0"></div>
+              <p className="text-gray-700 text-sm">Phase 3: Due Diligence &amp; Closing</p>
+          </div>
+      </div>
+      <div className="mt-4 bg-[#27013D]/5 rounded-lg p-3 border border-[#27013D]/10 text-center">
+          <p className="text-sm font-bold text-[#27013D]">Objectif: Maximiser la valeur</p>
+      </div>
+    </div>
+);
+
+export const CashGrowthVisual: React.FC = () => {
+    const pathData = "M 0 90 C 7 92 13 97 20 95 C 27 93 33 98 40 100 C 47 102 53 91 60 85 C 67 79 73 89 80 92 C 87 95 93 104 100 110 C 107 116 113 119 120 120 C 127 121 133 93 140 80 C 147 67 153 53 160 50 C 167 47 173 57 180 60 C 187 63 193 51 200 45 C 207 39 213 60 220 70 C 227 80 233 91 240 95 C 247 99 253 105 260 105 C 267 105 273 95 280 90 C 287 85 293 95 300 98";
+
+    return (
+        <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
+            <div className="flex justify-between items-start mb-2">
+                <h3 className="font-bold text-gray-800 text-sm sm:text-base">Cash Management</h3>
+            </div>
+            <div className="relative flex-grow">
+                <svg viewBox="0 0 335 170" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
+                    {/* Y-axis labels */}
+                    <text x="0" y="25" alignmentBaseline="middle" fill="#6b7280" fontSize="10">+50k€</text>
+                    <text x="0" y="75" alignmentBaseline="middle" fill="#6b7280" fontSize="10">0</text>
+                    <text x="0" y="125" alignmentBaseline="middle" fill="#6b7280" fontSize="10">-50k€</text>
+                    
+                    <g transform="translate(35, 0)">
+                        {/* X-axis labels */}
+                        <text x="0" y="165" textAnchor="middle" fill="#6b7280" fontSize="10">T0</text>
+                        <text x="100" y="165" textAnchor="middle" fill="#6b7280" fontSize="10">T5</text>
+                        <text x="200" y="165" textAnchor="middle" fill="#6b7280" fontSize="10">T10</text>
+                        <text x="300" y="165" textAnchor="middle" fill="#6b7280" fontSize="10">T15</text>
+                        
+                        {/* Dashed reference line for zero */}
+                        <line x1="0" y1="75" x2="300" y2="75" stroke="#d1d5db" strokeWidth="1" strokeDasharray="3 3" />
+                        
+                        {/* Additional reference lines */}
+                        <line x1="0" y1="25" x2="300" y2="25" stroke="#e5e7eb" strokeWidth="0.5" strokeDasharray="2 4" />
+                        <line x1="0" y1="125" x2="300" y2="125" stroke="#e5e7eb" strokeWidth="0.5" strokeDasharray="2 4" />
+
+                        {/* Green line chart */}
+                        <path d={pathData} stroke="#10B981" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                    </g>
+                </svg>
+            </div>
+        </div>
+    );
 };
