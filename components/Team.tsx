@@ -36,7 +36,8 @@ const Team: React.FC = () => {
             <div className="p-8 flex flex-col flex-grow">
               <div className="flex-grow">
                   <Animate variant="pop" delay={400}>
-                  <h3 className="text-2xl font-bold mb-4">{teamMembers[0].name}</h3>
+                    <h3 className="text-2xl font-bold">{teamMembers[0].name}</h3>
+                    <p className="text-lg text-violet-300 mb-4">{teamMembers[0].role}</p>
                   </Animate>
                 <div className="space-y-4 text-gray-300">
                   {teamMembers[0].description.map((paragraph, pIndex) => (
@@ -79,7 +80,8 @@ const Team: React.FC = () => {
             <div className="p-8 flex flex-col flex-grow">
               <div className="flex-grow">
                   <Animate variant="pop" delay={900}>
-                  <h3 className="text-2xl font-bold mb-4">{teamMembers[1].name}</h3>
+                    <h3 className="text-2xl font-bold">{teamMembers[1].name}</h3>
+                    <p className="text-lg text-violet-300 mb-4">{teamMembers[1].role}</p>
                   </Animate>
                 <div className="space-y-4 text-gray-300">
                   {teamMembers[1].description.map((paragraph, pIndex) => (

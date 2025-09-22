@@ -305,7 +305,8 @@ export const services = [
 
 export const teamMembers = [
   {
-    name: 'Seydina Samb - Associé',
+    name: 'Seydina Samb',
+    role: 'Associé',
     description: [
       'Spécialiste des situations complexes et entreprises nécessitant structuration voire restructuration financière, stratégique et opérationnelle.',
       'Tout au long de son parcours, il s’est montré résilient, agile et créatif notamment dans des processus transactionnels lourds.',
@@ -317,7 +318,8 @@ export const teamMembers = [
     linkedinUrl: 'https://www.linkedin.com/in/seydina-samb-6638ba56/',
   },
   {
-    name: 'Benjamin Le Gal - Associé',
+    name: 'Benjamin Le Gal',
+    role: 'Associé',
     description: [
       'Expert dans l’assistance des entreprises et fonds dans leur processus de cessions-acquisitions notamment due diligence et recherche de repreneurs.',
       'Il bénéfice également d’une expérience solide en Direction financière de start-ups et ETI dont il a accompagné les levées de fonds.',

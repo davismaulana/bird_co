@@ -78,6 +78,7 @@ const TeamPage: React.FC = () => {
                         <div>
                             <Animate variant="pop" delay={150}>
                                 <h2 className="text-3xl lg:text-4xl font-bold text-[#27013D]">{teamMembers[0].name}</h2>
+                                <p className="text-2xl font-semibold text-[#6D0037] mt-1">{teamMembers[0].role}</p>
                             </Animate>
                             <div className="mt-6 space-y-4 text-gray-800 leading-relaxed">
                                 {teamMembers[0].description.map((paragraph, pIndex) => (
@@ -126,6 +127,7 @@ const TeamPage: React.FC = () => {
                         <div>
                             <Animate variant="pop" delay={150}>
                                 <h2 className="text-3xl lg:text-4xl font-bold text-[#27013D]">{teamMembers[1].name}</h2>
+                                <p className="text-2xl font-semibold text-[#6D0037] mt-1">{teamMembers[1].role}</p>
                             </Animate>
                             <div className="mt-6 space-y-4 text-gray-800 leading-relaxed">
                                 {teamMembers[1].description.map((paragraph, pIndex) => (
