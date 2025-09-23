@@ -1,6 +1,4 @@
 
-
-
 import React from 'react';
 
 export const PaperPlaneIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -307,7 +305,7 @@ export const services = [
 export const teamMembers = [
   {
     name: 'Seydina Samb',
-    role: 'Associé',
+    role: 'Co-fondateur',
     description: [
       'Spécialiste des situations complexes et entreprises nécessitant structuration voire restructuration financière, stratégique et opérationnelle.',
       'Tout au long de son parcours, il s’est montré résilient, agile et créatif notamment dans des processus transactionnels lourds.',
@@ -320,7 +318,7 @@ export const teamMembers = [
   },
   {
     name: 'Benjamin Le Gal',
-    role: 'Associé',
+    role: 'Co-fondateur',
     description: [
       'Expert dans l’assistance des entreprises et fonds dans leur processus de cessions-acquisitions notamment due diligence et recherche de repreneurs.',
       'Il bénéfice également d’une expérience solide en Direction financière de start-ups et ETI dont il a accompagné les levées de fonds.',
