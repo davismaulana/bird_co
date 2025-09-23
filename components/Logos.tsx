@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { WellowLogo, RegenSchoolLogo, PomadLogo, BredLogo, EricKayserLogo, SquareLogo, FinpalLogo } from '../constants';
 import Animate from './Animate';
@@ -25,15 +26,14 @@ const Logos: React.FC = () => {
             </div>
           </Animate>
           <Animate variant="pop" delay={100}>
-            <h2 className="text-2xl md:text-3xl text-gray-900 text-center max-w-5xl mx-auto leading-tight">
-              <span className="font-extrabold">
-                Ils nous <span className="gradient-text">font confiance</span> :
-              </span>
-              {' '}
-              <span className="font-normal text-gray-800">
-                Un <strong>allié</strong> et un <strong>soutien sur-mesure</strong> pour votre structure (<span className="gradient-text font-bold">TPE à Grandes entreprises et Fonds d'investissements</span>)
-              </span>
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
+              Ils nous <span className="gradient-text">font confiance</span>
             </h2>
+          </Animate>
+          <Animate variant="pop" delay={200}>
+            <p className="text-lg text-gray-800 mt-4 whitespace-nowrap">
+              Un <strong>allié</strong> et un <strong>soutien sur-mesure</strong> pour votre structure (<span className="gradient-text font-bold">TPE à Grandes entreprises et Fonds d'investissements</span>)
+            </p>
           </Animate>
         </div>
         <div

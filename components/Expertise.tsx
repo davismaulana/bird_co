@@ -6,14 +6,14 @@ import {
 } from '../constants';
 
 const expertiseItems = [
-  { icon: <img src="https://images2.imgbox.com/3d/3e/Xmi67EFc_o.png" alt="Modélisation Financière icon" />, label: 'Modélisation Financière' },
-  { icon: <img src="https://images2.imgbox.com/c9/3a/aTMjbvJm_o.png" alt="Gestion de la trésorerie icon" />, label: 'Gestion de la\u00a0trésorerie' },
-  { icon: <img src="https://images2.imgbox.com/be/67/EKki9YYj_o.png" alt="Restructuration icon" />, label: 'Restructuration' },
-  { icon: <img src="https://images2.imgbox.com/b9/14/MF1gdmdv_o.png" alt="Due Diligence icon" />, label: 'Due Diligence' },
   { icon: <img src="https://images2.imgbox.com/df/52/6W0vqaOM_o.png" alt="Reporting & Tableau de bord icon" />, label: 'Reporting & Tableau\u00a0de\u00a0bord' },
-  { icon: <img src="https://images2.imgbox.com/c5/04/90xx8pVB_o.png" alt="Fusions & Acquisitions icon" />, label: 'Fusions & Acquisitions' },
+  { icon: <img src="https://images2.imgbox.com/c9/3a/aTMjbvJm_o.png" alt="Gestion de la trésorerie icon" />, label: 'Gestion de la\u00a0trésorerie' },
+  { icon: <img src="https://images2.imgbox.com/3d/3e/Xmi67EFc_o.png" alt="Modélisation Financière icon" />, label: 'Modélisation Financière' },
   { icon: <img src="https://images2.imgbox.com/1c/0d/cqWjAv3g_o.png" alt="Gestion de projets icon" />, label: 'Gestion\u00a0de\u00a0projets' },
+  { icon: <img src="https://images2.imgbox.com/be/67/EKki9YYj_o.png" alt="Restructuration icon" />, label: 'Restructuration' },
+  { icon: <img src="https://images2.imgbox.com/c5/04/90xx8pVB_o.png" alt="Fusions & Acquisitions icon" />, label: 'Fusions & Acquisitions' },
   { icon: <img src="https://images2.imgbox.com/79/f8/8XIMmfYK_o.png" alt="Levée de fonds icon" />, label: 'Levée de fonds' },
+  { icon: <img src="https://images2.imgbox.com/b9/14/MF1gdmdv_o.png" alt="Due Diligence icon" />, label: 'Due Diligence' },
 ];
 
 const Expertise: React.FC = () => {

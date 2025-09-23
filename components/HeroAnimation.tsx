@@ -12,7 +12,7 @@ const HeroAnimation: React.FC = () => {
 
         let animationFrameId: number;
         let particleSections: Particle[][] = [];
-        const gridConfig = { rows: 2, cols: 2 };
+        const gridConfig = { rows: 1, cols: 1 };
         
         const resizeCanvas = () => {
             const parent = canvas.parentElement;
@@ -83,12 +83,12 @@ const HeroAnimation: React.FC = () => {
                     const minX = c * sectionWidth;
                     const minY = r * sectionHeight;
 
-                    for (let i = 0; i < 3; i++) { // Exactly 3 dots per section
+                    for (let i = 0; i < 20; i++) { // Increased particle count to 20
                         const size = Math.random() * 1.5 + 0.5;
                         const x = Math.random() * (sectionWidth - size * 2) + minX + size;
                         const y = Math.random() * (sectionHeight - size * 2) + minY + size;
-                        const speedX = (Math.random() * 0.3) - 0.15;
-                        const speedY = (Math.random() * 0.3) - 0.15;
+                        const speedX = (Math.random() * 0.6) - 0.3;
+                        const speedY = (Math.random() * 0.6) - 0.3;
                         sectionParticles.push(new Particle(x, y, size, speedX, speedY));
                     }
                     particleSections.push(sectionParticles);
@@ -96,36 +96,34 @@ const HeroAnimation: React.FC = () => {
             }
         };
 
-        const connectChainedParticles = (particleArray: Particle[]) => {
-            if (!ctx || particleArray.length !== 3) return;
+        const connectParticles = (particleArray: Particle[]) => {
+            if (!ctx) return;
             
             const parentWidth = canvas.getBoundingClientRect().width;
-            const sectionWidth = parentWidth / gridConfig.cols;
-            const connectThreshold = (sectionWidth / 1.25) * (sectionWidth / 1.25);
+            const connectThreshold = (parentWidth / 3.5) * (parentWidth / 3.5);
 
-            const connections = [
-                [particleArray[0], particleArray[1]],
-                [particleArray[1], particleArray[2]],
-            ];
+            for (let i = 0; i < particleArray.length; i++) {
+                for (let j = i + 1; j < particleArray.length; j++) {
+                    const pA = particleArray[i];
+                    const pB = particleArray[j];
+                    const distance = ((pA.x - pB.x) * (pA.x - pB.x)) + ((pA.y - pB.y) * (pA.y - pB.y));
 
-            for (const [pA, pB] of connections) {
-                const distance = ((pA.x - pB.x) * (pA.x - pB.x)) + ((pA.y - pB.y) * (pA.y - pB.y));
-
-                if (distance < connectThreshold) {
-                    const opacityValue = 1 - (distance / connectThreshold);
-                    ctx.strokeStyle = `rgba(39, 1, 61, ${opacityValue * 0.6})`;
-                    ctx.lineWidth = 0.5;
-                    ctx.beginPath();
-                    ctx.moveTo(pA.x, pA.y);
-                    ctx.lineTo(pB.x, pB.y);
-                    ctx.stroke();
+                    if (distance < connectThreshold) {
+                        const opacityValue = 1 - (distance / connectThreshold);
+                        ctx.strokeStyle = `rgba(39, 1, 61, ${opacityValue * 0.3})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(pA.x, pA.y);
+                        ctx.lineTo(pB.x, pB.y);
+                        ctx.stroke();
+                    }
                 }
             }
         };
 
         const connect = () => {
             if (!particleSections) return;
-            particleSections.forEach(connectChainedParticles);
+            particleSections.forEach(connectParticles);
         };
 
         const animate = () => {

@@ -11,7 +11,7 @@ const stats = [
   {
     icon: <img src="https://images2.imgbox.com/0e/6d/ydTjAfbc_o.png" alt="Dirigeants et actionnaires accompagnés icon" className="w-20 h-20 object-contain" />,
     value: "20+",
-    label: "Dirigeants et actionnaires accompagnés",
+    label: <>Dirigeants et actionnaires<br />accompagnés</>,
   },
   {
     icon: <img src="https://images2.imgbox.com/80/73/qtj75VEW_o.png" alt="Experts partenaires icon" className="w-20 h-20 object-contain" />,

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Animate from './Animate';
-import { TargetIcon, BarChartIcon, TrendingUpIcon, CheckmarkCircleIcon, BriefcaseIcon, KpiDashboardMockup, FinancialReportMockup, HandshakeIcon } from '../constants';
+import { CheckmarkCircleIcon, KpiDashboardMockup, FinancialReportMockup } from '../constants';
 
 const DueDiligenceVisual: React.FC = () => (
   <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
@@ -118,37 +118,55 @@ const OnSiteInterventionVisual: React.FC = () => (
 
 const tasks = [
   {
-    icon: BarChartIcon,
+    icon: {
+      active: "https://images2.imgbox.com/df/52/6W0vqaOM_o.png",
+      inactive: "https://images2.imgbox.com/49/76/VCQT8RGf_o.png",
+    },
     title: "Reporting & Tableau de Bord",
     description: "Des tableaux de bord sur-mesure et des reportings clairs pour un pilotage visuel et intuitif de votre activité.",
     visual: <KpiDashboardMockup noAspectRatio disableHover />,
   },
   {
-    icon: TargetIcon,
+    icon: {
+      active: "https://images2.imgbox.com/3d/3e/Xmi67EFc_o.png",
+      inactive: "https://images2.imgbox.com/78/74/vQLOdRKy_o.png",
+    },
     title: "Modélisation",
     description: "Construction de modèles financiers et business plans pour vos prévisions.",
     visual: <FinancialReportMockup noAspectRatio disableHover />,
   },
   {
-    icon: CheckmarkCircleIcon,
+    icon: {
+      active: "https://images2.imgbox.com/b9/14/MF1gdmdv_o.png",
+      inactive: "https://images2.imgbox.com/6f/40/aXO1So4w_o.png",
+    },
     title: "Due Diligence",
     description: "Des analyses approfondies pour sécuriser vos opérations de M&A.",
     visual: <DueDiligenceVisual />,
   },
   {
-    icon: BriefcaseIcon,
+    icon: {
+      active: "https://images2.imgbox.com/79/f8/8XIMmfYK_o.png",
+      inactive: "https://images2.imgbox.com/19/00/31wNCP51_o.png",
+    },
     title: "Accompagnement Transactionnel",
     description: "Un soutien de bout en bout pour vos opérations de M&A et levées de fonds.",
     visual: <TransactionalSupportVisual />,
   },
   {
-    icon: TrendingUpIcon,
+    icon: {
+      active: "https://images2.imgbox.com/c9/3a/aTMjbvJm_o.png",
+      inactive: "https://images2.imgbox.com/39/ad/jr5KyoWX_o.png",
+    },
     title: "Cash Management",
     description: "Une gestion optimisée de votre trésorerie pour financer votre croissance.",
     visual: <CashGrowthVisual />,
   },
   {
-    icon: HandshakeIcon,
+    icon: {
+      active: "https://images2.imgbox.com/a2/b7/59FiRfCP_o.png",
+      inactive: "https://images2.imgbox.com/e3/33/EMa1rUaj_o.png",
+    },
     title: "Intervention sur site",
     description: "Un soutien physique et une collaboration directe avec vos équipes.",
     visual: <OnSiteInterventionVisual />,
@@ -180,15 +198,23 @@ const TaskShowcase: React.FC = () => {
                                 <Animate variant="pop" key={index}>
                                     <button
                                         onClick={() => setActiveTask(index)}
-                                        className={`w-full text-left p-6 rounded-xl transition-all duration-300 group ${
+                                        className={`w-full text-left p-4 rounded-xl transition-all duration-300 group ${
                                             activeTask === index
                                                 ? 'bg-white shadow-xl shadow-violet-100/50 scale-105 hover:scale-[1.07]'
                                                 : 'bg-white hover:shadow-xl hover:shadow-violet-100/50 hover:scale-105'
                                         }`}
                                     >
                                         <div className="flex items-center gap-4">
-                                            <div className={`p-3 rounded-lg transition-colors duration-300 ${activeTask === index ? 'bg-[#27013D]' : 'bg-gray-200 group-hover:bg-gray-300'}`}>
-                                                <task.icon className={`w-6 h-6 ${activeTask === index ? 'text-white' : 'text-[#27013D]'}`} />
+                                            <div
+                                                className={`w-20 h-20 rounded-xl flex-shrink-0 flex items-center justify-center transition-colors duration-300 ${
+                                                    activeTask === index ? 'bg-[#27013D]' : 'bg-gray-100'
+                                                }`}
+                                            >
+                                                <img
+                                                    src={activeTask === index ? task.icon.active : task.icon.inactive}
+                                                    alt={`${task.title} icon`}
+                                                    className="w-12 h-12 object-contain"
+                                                />
                                             </div>
                                             <div>
                                                 <h3 className="font-bold text-gray-900">{task.title}</h3>
