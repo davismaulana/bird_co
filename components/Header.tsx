@@ -49,6 +49,14 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
 
     const handleScroll = () => {
       const headerOffset = 150;
+      
+      const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+
+      if (isAtBottom) {
+        setActiveSection('contact');
+        return;
+      }
+
       const reversedSections = [...sections].reverse();
       const currentSection = reversedSections.find(section => window.scrollY >= section.offsetTop - headerOffset);
 
