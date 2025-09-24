@@ -15,10 +15,10 @@ import Expertise from './components/Expertise';
 // import Methodology from './components/Methodology';
 import TaskShowcase from './components/TaskShowcase';
 import AmbitionPage from './components/AmbitionPage';
-import TeamPage from './components/TeamPage';
 import LoadingScreen from './components/LoadingScreen';
 import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 import TermsOfServicePage from './components/TermsOfServicePage';
+import BackToTopButton from './components/BackToTopButton';
 
 const App: React.FC = () => {
   const { pathname } = window.location;
@@ -94,16 +94,6 @@ const App: React.FC = () => {
       );
     }
   
-    if (pathname === '/notre-equipe') {
-      return (
-        <div className="bg-white overflow-x-hidden">
-          <Header pathname={pathname} />
-          <TeamPage />
-          <Footer />
-        </div>
-      );
-    }
-  
     if (pathname === '/politique-de-confidentialite') {
       return (
         <div className="bg-white overflow-x-hidden">
@@ -154,6 +144,7 @@ const App: React.FC = () => {
       >
         <AppContent />
       </div>
+      <BackToTopButton />
     </>
   );
 };

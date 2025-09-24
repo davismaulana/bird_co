@@ -4,9 +4,9 @@ import { services, HamburgerIcon, CloseIcon } from '../constants';
 
 const navItems = [
   { name: 'Accueil', href: '/' },
-  { name: 'Notre ambition', href: '/ambition' },
+  { name: 'Notre engagement', href: '/ambition' },
   { name: 'Notre proposition', href: '/#notre-proposition' },
-  { name: 'Notre équipe', href: '/notre-equipe' },
+  { name: 'Notre équipe', href: '/#notre-equipe' },
   { name: 'Contact', href: '/#contact' },
 ];
 
@@ -42,7 +42,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
       return;
     }
 
-    const sectionIds = ['accueil', 'notre-proposition', 'contact'];
+    const sectionIds = ['accueil', 'notre-proposition', 'notre-equipe', 'contact'];
     const sections = sectionIds.map(id => document.getElementById(id)).filter(el => el !== null) as HTMLElement[];
 
     if (sections.length === 0) return;
@@ -78,8 +78,17 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            <a href="/" className="text-4xl font-black text-[#27013D] tracking-tight">
-              BIRD&
+            <a href="/" className="header-logo-container text-4xl font-bold text-[#27013D] tracking-tight">
+              <span className="sr-only">BIRD&</span>
+              <span 
+                className="header-logo-outline"
+                aria-hidden="true"
+              >
+                BIRD&
+              </span>
+              <div className="header-logo-fill-wrapper" aria-hidden="true">
+                <span className="header-logo-fill">BIRD&</span>
+              </div>
             </a>
             
             <div className="hidden lg:flex items-center">
@@ -189,7 +198,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                 rel="noopener noreferrer"
                 className="ml-6 bg-[#27013D] text-white px-4 py-2 rounded-full font-semibold text-sm hover:bg-[#1c0e2a] transition-colors whitespace-nowrap"
               >
-                Prenons rendez-vous
+                Planifier un rendez-vous
               </a>
             </div>
 
@@ -254,8 +263,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                     </div>
                   );
                 }
-                const isActive = (item.name === 'Notre ambition' && pathname === item.href) ||
-                               (item.name === 'Notre équipe' && pathname === item.href);
+                const isActive = (item.href !== '/' && !item.href.startsWith('/#') && pathname === item.href);
                 return (
                   <a
                     key={item.name}
@@ -279,7 +287,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="block w-full text-center bg-[#27013D] text-white px-6 py-4 rounded-full font-semibold hover:bg-[#1c0e2a] transition-colors text-xl"
               >
-                  Prenons rendez-vous
+                  Planifier un rendez-vous
               </a>
             </div>
           </div>

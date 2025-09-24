@@ -51,7 +51,7 @@ const TeamPage: React.FC = () => {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="inline-block text-center bg-white text-[#27013D] px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-transform hover:scale-105 w-full sm:w-auto">
-                                        Prenons rendez-vous
+                                        Planifier un rendez-vous
                                     </a>
                                 </div>
                             </Animate>

@@ -74,7 +74,7 @@ const AmbitionPage: React.FC = () => {
                       rel="noopener noreferrer"
                       className="inline-block bg-[#27013D] text-white px-10 py-4 rounded-full font-semibold hover:bg-[#1c0e2a] transition-transform hover:scale-105 text-lg"
                     >
-                      Prenons rendez-vous
+                      Planifier un rendez-vous
                     </a>
                 </div>
             </Animate>

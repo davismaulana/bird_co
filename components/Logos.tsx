@@ -1,16 +1,18 @@
 
 import React from 'react';
-import { WellowLogo, RegenSchoolLogo, PomadLogo, BredLogo, EricKayserLogo, SquareLogo, FinpalLogo } from '../constants';
+import { WellowLogo, RegenSchoolLogo, PomadLogo, BredLogo, EricKayserLogo, SquareLogo, CasaLogo, TmhAvocatsLogo, FoodPilotLogo } from '../constants';
 import Animate from './Animate';
 
 const logos = [
-  { component: <SquareLogo />, name: 'UI Investment' },
-  { component: <BredLogo />, name: 'BRED' },
-  { component: <EricKayserLogo />, name: 'Eric Kayser' },
-  { component: <FinpalLogo />, name: 'Finpal' },
-  { component: <PomadLogo />, name: 'Pomad' },
-  { component: <RegenSchoolLogo />, name: 'Regen School' },
-  { component: <WellowLogo />, name: 'Wellow' },
+  { component: <SquareLogo />, name: 'UI Investment', href: 'https://www.ui-investissement.com/' },
+  { component: <BredLogo />, name: 'BRED', href: 'https://www.bred.fr/' },
+  { component: <EricKayserLogo />, name: 'Eric Kayser', href: 'https://maison-kayser.com/' },
+  { component: <CasaLogo />, name: 'CASA', href: 'https://www.instagram.com/casashops_belgium' },
+  { component: <PomadLogo />, name: 'Pomad', href: 'https://pomad.paris/' },
+  { component: <RegenSchoolLogo />, name: 'Regen School', href: 'https://www.regen-school.com/' },
+  { component: <WellowLogo />, name: 'Wellow', href: 'https://www.wellowhouse.com/' },
+  { component: <TmhAvocatsLogo />, name: 'TMH Avocats', href: 'https://tmhavocats.com/' },
+  { component: <FoodPilotLogo />, name: 'Food Pilot', href: 'https://foodpilot.io/fr/' },
 ];
 
 const Logos: React.FC = () => {
@@ -51,9 +53,9 @@ const Logos: React.FC = () => {
 
               return (
                 <div key={index} className="flex-shrink-0 px-6 lg:px-10 py-2">
-                  <div className={`${sizeClass} flex items-center justify-center text-gray-700 hover:text-gray-900 transition-colors`}>
+                  <a href={logo.href} target="_blank" rel="noopener noreferrer" className={`${sizeClass} flex items-center justify-center text-gray-700 hover:text-gray-900 transition-colors`}>
                     {React.cloneElement(logo.component, { className: logoClassName })}
-                  </div>
+                  </a>
                 </div>
               );
             })}
