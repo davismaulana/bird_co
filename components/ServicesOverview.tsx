@@ -4,7 +4,7 @@ import { services } from '../constants';
 
 const ServicesOverview: React.FC = () => {
   return (
-    <section className="bg-gray-50 py-16">
+    <section id="notre-proposition" className="bg-gray-50 py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <Animate variant="pop">

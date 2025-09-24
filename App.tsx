@@ -6,7 +6,6 @@ import Logos from './components/Logos';
 import Footer from './components/Footer';
 import ServicesOverview from './components/ServicesOverview';
 import Stats from './components/Stats';
-import ValueProposition from './components/ValueProposition';
 import Personas from './components/Personas';
 import Team from './components/Team';
 import Contact from './components/Contact';
@@ -133,7 +132,6 @@ const App: React.FC = () => {
           {/* <Methodology /> */}
           <ServicesOverview />
           <Logos />
-          <ValueProposition />
           <Personas />
           <Stats />
           <Expertise />

@@ -38,7 +38,7 @@ const propositionPoints = [
 
 const ValueProposition: React.FC = () => {
   return (
-    <section id="notre-proposition" className="bg-white">
+    <section className="bg-white">
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="bg-[#E9E4F0] min-h-[500px] lg:min-h-[700px] flex items-center justify-center p-8 md:p-16">
           <div className="relative text-left w-full">
