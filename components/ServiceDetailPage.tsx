@@ -42,7 +42,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 max-w-3xl mx-auto">
                 <Animate variant="pop">
-                  <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
+                  <h2 className="text-3xl md:text-4xl font-bold leading-tight text-gray-900">
                     {details.diagnostic.title}
                   </h2>
                 </Animate>
@@ -76,7 +76,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
         <section className="bg-white py-16 md:py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <Animate variant="pop">
-                  <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight">
+                  <h2 className="text-3xl md:text-4xl font-bold leading-tight">
                       <span className="gradient-text">{details.ambition.title}</span>
                   </h2>
               </Animate>
@@ -96,7 +96,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                 <div className="lg:col-span-1">
                     <div className="lg:sticky lg:top-32">
                         <Animate variant="pop">
-                            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">{details.mainContent.title}</h2>
+                            <h2 className="text-3xl md:text-4xl font-bold leading-tight gradient-text">{details.mainContent.title}</h2>
                         </Animate>
                         {details.mainContent.description && (
                             <Animate variant="pop" delay={150}>
@@ -133,7 +133,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
       <section className="bg-white py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Animate variant="pop">
-                <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
+                <h2 className="text-3xl md:text-4xl font-bold leading-tight text-gray-900">
                     Prêt à prendre <span className="gradient-text">le contrôle ?</span>
                 </h2>
             </Animate>
