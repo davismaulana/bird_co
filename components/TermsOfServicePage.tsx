@@ -10,14 +10,14 @@ const TermsOfServicePage: React.FC = () => {
           <HeroAnimation color="light" />
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl text-left">
+          <div className="max-w-5xl text-left">
             <Animate variant="pop">
               <h1 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight tracking-tight">
                 Conditions Générales <span>de Vente</span>
               </h1>
             </Animate>
             <Animate variant="pop" delay={200}>
-              <p className="mt-6 text-base md:text-lg text-gray-200 max-w-xl">
+              <p className="mt-6 text-base md:text-lg text-gray-200 max-w-3xl">
                 Dernière mise à jour : {new Date().toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}
               </p>
             </Animate>
