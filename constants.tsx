@@ -231,6 +231,92 @@ export const DiagnosticScanMockup: React.FC<{ theme?: string }> = () => (
     </div>
 );
 
+{/* FIX: Moved TransactionalSupportVisual, DueDiligenceVisual, and CashGrowthVisual components before they are referenced. */}
+export const DueDiligenceVisual: React.FC = () => (
+  <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
+    <h3 className="font-bold text-gray-800 text-sm sm:text-base mb-4">Checklist Due Diligence VDD</h3>
+    <div className="flex-grow space-y-3">
+      <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
+        <CheckmarkCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0" />
+        <p className="text-gray-800 text-sm">Qualité des revenus (MRR, churn...)</p>
+      </div>
+      <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
+        <CheckmarkCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0" />
+        <p className="text-gray-800 text-sm">Analyse de la rentabilité (EBITDA, marges)</p>
+      </div>
+      <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
+        <CheckmarkCircleIcon className="w-6 h-6 text-gray-300 flex-shrink-0" />
+        <p className="text-gray-700 text-sm">Normalisation du BFR</p>
+      </div>
+       <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
+        <CheckmarkCircleIcon className="w-6 h-6 text-gray-300 flex-shrink-0" />
+        <p className="text-gray-700 text-sm">Analyse de la dette nette</p>
+      </div>
+    </div>
+  </div>
+);
+
+export const TransactionalSupportVisual: React.FC = () => (
+    <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
+      <h3 className="font-bold text-gray-800 text-sm sm:text-base mb-4">Accompagnement Transactionnel</h3>
+      <div className="flex-grow space-y-3">
+          <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
+              <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse flex-shrink-0"></div>
+              <p className="text-gray-800 text-sm font-medium">Phase 1: Préparation (Teaser, IM, VDD)</p>
+          </div>
+          <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 opacity-60">
+              <div className="w-3 h-3 rounded-full bg-gray-400 flex-shrink-0"></div>
+              <p className="text-gray-700 text-sm">Phase 2: Négociation des offres</p>
+          </div>
+          <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 opacity-60">
+              <div className="w-3 h-3 rounded-full bg-gray-400 flex-shrink-0"></div>
+              <p className="text-gray-700 text-sm">Phase 3: Due Diligence &amp; Closing</p>
+          </div>
+      </div>
+      <div className="mt-4 bg-[#27013D]/5 rounded-lg p-3 border border-[#27013D]/10 text-center">
+          <p className="text-sm font-bold text-[#27013D]">Objectif: Maximiser la valeur</p>
+      </div>
+    </div>
+);
+
+export const CashGrowthVisual: React.FC = () => {
+    const pathData = "M 0 90 C 7 92 13 97 20 95 C 27 93 33 98 40 100 C 47 102 53 91 60 85 C 67 79 73 89 80 92 C 87 95 93 104 100 110 C 107 116 113 119 120 120 C 127 121 133 93 140 80 C 147 67 153 53 160 50 C 167 47 173 57 180 60 C 187 63 193 51 200 45 C 207 39 213 60 220 70 C 227 80 233 91 240 95 C 247 99 253 105 260 105 C 267 105 273 95 280 90 C 287 85 293 95 300 98";
+
+    return (
+        <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
+            <div className="flex justify-between items-start mb-2">
+                <h3 className="font-bold text-gray-800 text-sm sm:text-base">Cash Management</h3>
+            </div>
+            <div className="relative flex-grow">
+                <svg viewBox="0 0 335 170" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
+                    {/* Y-axis labels */}
+                    <text x="0" y="25" alignmentBaseline="middle" fill="#6b7280" fontSize="10">+50k€</text>
+                    <text x="0" y="75" alignmentBaseline="middle" fill="#6b7280" fontSize="10">0</text>
+                    <text x="0" y="125" alignmentBaseline="middle" fill="#6b7280" fontSize="10">-50k€</text>
+                    
+                    <g transform="translate(35, 0)">
+                        {/* X-axis labels */}
+                        <text x="0" y="165" textAnchor="middle" fill="#6b7280" fontSize="10">T0</text>
+                        <text x="100" y="165" textAnchor="middle" fill="#6b7280" fontSize="10">T5</text>
+                        <text x="200" y="165" textAnchor="middle" fill="#6b7280" fontSize="10">T10</text>
+                        <text x="300" y="165" textAnchor="middle" fill="#6b7280" fontSize="10">T15</text>
+                        
+                        {/* Dashed reference line for zero */}
+                        <line x1="0" y1="75" x2="300" y2="75" stroke="#d1d5db" strokeWidth="1" strokeDasharray="3 3" />
+                        
+                        {/* Additional reference lines */}
+                        <line x1="0" y1="25" x2="300" y2="25" stroke="#e5e7eb" strokeWidth="0.5" strokeDasharray="2 4" />
+                        <line x1="0" y1="125" x2="300" y2="125" stroke="#e5e7eb" strokeWidth="0.5" strokeDasharray="2 4" />
+
+                        {/* Green line chart */}
+                        <path d={pathData} stroke="#10B981" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                    </g>
+                </svg>
+            </div>
+        </div>
+    );
+};
+
 export const ExpertiseSearchIcon: React.FC<{ className?: string }> = ({ className }) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" className={className} fill="currentColor">
         <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,128a88,88,0,1,1,88,88A88.1,88.1,0,0,1,40,128Z"></path>
@@ -301,7 +387,7 @@ export const services = [
     { slug: 'pilotage-planification', title: 'Pilotage & Planification', subTitle: 'Construire', description: 'les outils indispensables à une gestion optimale : reporting, business plan, prévisionnels de trésorerie etc.', icon: <PaperPlaneIcon />, iconClassName: 'w-16 h-16' },
     { slug: 'cfo-part-time', title: 'CFO Part-time', subTitle: 'Structurer', description: 'votre croissance et mettre en exécution votre stratégie financière avec un bras-droit dédié à temps partiel.', icon: <CfoIcon />, iconClassName: 'w-14 h-14' },
     { slug: 'diagnostic-restructuration', title: 'Diagnostic & Restructuration', subTitle: 'Relancer', description: 'Apporter le recul et la clarté nécessaires pour relancer votre activité.', icon: <DiagnosticIcon />, iconClassName: 'w-16 h-16' },
-    { slug: 'services-ma', title: 'Services M&A', subTitle: 'Faciliter', description: 'vos levées de fonds et cessions en produisant les documents et analyses indispensables à vos discussions.', icon: <img src="https://images2.imgbox.com/91/32/P6brUIBM_o.png" alt="Services M&A Icon" />, iconClassName: 'w-20 h-20' },
+    { slug: 'services-ma', title: 'Services M&A', subTitle: 'Accompagner', description: 'vos projets capitalistiques : cession, levée de fonds et réorganisation.', icon: <img src="https://images2.imgbox.com/91/32/P6brUIBM_o.png" alt="Services M&A Icon" />, iconClassName: 'w-20 h-20' },
 ];
 
 export const teamMembers = [
@@ -529,108 +615,63 @@ export const serviceDetails: { [key: string]: any } = {
     },
     'services-ma': {
         title: 'Services M&A',
-        subtitle: 'Faciliter vos levées de fonds et cessions en produisant les documents et analyses indispensables à vos discussions.',
+        subtitle: 'Accompagner vos projets capitalistiques : cession, levée de fonds et réorganisation',
         diagnostic: {
-            title: <>Notre point de départ : <span className="gradient-text">le diagnostic</span></>,
-            description: 'Chaque mission commence par une analyse complète pour comprendre vos défis et identifier les meilleurs leviers de performance.',
+            title: <>Vos <span className="gradient-text">objectifs</span></>,
+            description: 'Construire les documents clés présentant la performance financière et opérationnelle de votre activité ainsi que ses ambitions stratégiques pour :',
             content: {
-                title: 'Diagnostic Stratégique & Opérationnel',
-                description: 'Nous réalisons une analyse 360° pour évaluer votre santé financière et opérationnelle. Ce diagnostic met en lumière les points de friction et les leviers de croissance cachés, formant la base de recommandations actionnables pour construire une stratégie sur-mesure.',
-                visual: <DiagnosticScanMockup />,
+                title: 'Maximiser la valeur et sécuriser la transaction',
+                description: (
+                    <ul className="space-y-3">
+                        {[
+                            'Crédibiliser et maximiser la valorisation de l’entreprise',
+                            'Accélérer le processus de vente',
+                            'Réduire les risques de transactions',
+                            'Gagner la confiance des acheteurs potentiels',
+                            'Renforcer la position négociatrice',
+                            'Rechercher des repreneurs pertinents',
+                        ].map(item => (
+                            <li key={item} className="flex items-start">
+                                <CheckmarkCircleIcon className="w-5 h-5 text-green-500 flex-shrink-0 mr-3 mt-1" />
+                                <span>{item}</span>
+                            </li>
+                        ))}
+                    </ul>
+                ),
+                visual: <TransactionalSupportVisual />,
             }
         },
-        mainContent: { title: 'Nos livrables', description: 'Des documents et analyses pour sécuriser vos transactions.', categories: [
-            { title: 'Processus de Levée de Fonds', list: ['Préparation du business plan et du pitch deck', 'Modélisation financière et valorisation', 'Gestion de la data room', 'Négociation avec les investisseurs'] },
-            { title: 'Accompagnement à la Cession', list: ['Préparation du mémorandum d\'information', 'Identification et approche des acquéreurs potentiels', 'Due diligence vendeur (VDD)', 'Assistance dans les négociations finales'] },
-        ] },
+        mainContent: {
+            title: 'Les missions et livrables essentiels',
+            description: '',
+            categories: [
+                {
+                    title: 'Information Memorandum',
+                    list: [
+                        "Présentation​ de l'opportunité d'investissement",
+                        'Analyse du marché et positionnement',
+                        'Performance opérationnelle et financière historique et projetée',
+                        "Liste d'acquéreurs, fonds ou prêteurs pertinents pour votre opération",
+                        'Calendrier du processus de transaction',
+                        "Amorçage et suivi des discussions avec les candidats à l'opportunité",
+                    ]
+                },
+                {
+                    title: 'Vendor Assistance',
+                    list: [
+                        'Analyse approfondie des états financiers (P&L, Bilan, TFT)',
+                        'Analyse des indicateurs de performance clés (KPI)',
+                        'Revue critique / Construction du Business Plan',
+                        'Définition de la rentabilité normative (QoE)',
+                        'Analyse de la dette nette financière (QoD)',
+                    ]
+                }
+            ]
+        },
         ambition: {
             title: "Notre ambition",
-            description: "Vous permettre d'anticiper les enjeux financiers et opérationnels futurs et prévenir les éventuelles difficultés.",
+            description: "Anticiper les attentes des investisseurs et renforcer votre position dans le processus de transaction",
             icon: <AnticipationIcon />,
         }
     },
-};
-export const DueDiligenceVisual: React.FC = () => (
-  <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
-    <h3 className="font-bold text-gray-800 text-sm sm:text-base mb-4">Checklist Due Diligence VDD</h3>
-    <div className="flex-grow space-y-3">
-      <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
-        <CheckmarkCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0" />
-        <p className="text-gray-800 text-sm">Qualité des revenus (MRR, churn...)</p>
-      </div>
-      <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
-        <CheckmarkCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0" />
-        <p className="text-gray-800 text-sm">Analyse de la rentabilité (EBITDA, marges)</p>
-      </div>
-      <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
-        <CheckmarkCircleIcon className="w-6 h-6 text-gray-300 flex-shrink-0" />
-        <p className="text-gray-700 text-sm">Normalisation du BFR</p>
-      </div>
-       <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
-        <CheckmarkCircleIcon className="w-6 h-6 text-gray-300 flex-shrink-0" />
-        <p className="text-gray-700 text-sm">Analyse de la dette nette</p>
-      </div>
-    </div>
-  </div>
-);
-
-export const TransactionalSupportVisual: React.FC = () => (
-    <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
-      <h3 className="font-bold text-gray-800 text-sm sm:text-base mb-4">Accompagnement Transactionnel</h3>
-      <div className="flex-grow space-y-3">
-          <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
-              <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse flex-shrink-0"></div>
-              <p className="text-gray-800 text-sm font-medium">Phase 1: Préparation (Teaser, IM, VDD)</p>
-          </div>
-          <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 opacity-60">
-              <div className="w-3 h-3 rounded-full bg-gray-400 flex-shrink-0"></div>
-              <p className="text-gray-700 text-sm">Phase 2: Négociation des offres</p>
-          </div>
-          <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 opacity-60">
-              <div className="w-3 h-3 rounded-full bg-gray-400 flex-shrink-0"></div>
-              <p className="text-gray-700 text-sm">Phase 3: Due Diligence &amp; Closing</p>
-          </div>
-      </div>
-      <div className="mt-4 bg-[#27013D]/5 rounded-lg p-3 border border-[#27013D]/10 text-center">
-          <p className="text-sm font-bold text-[#27013D]">Objectif: Maximiser la valeur</p>
-      </div>
-    </div>
-);
-
-export const CashGrowthVisual: React.FC = () => {
-    const pathData = "M 0 90 C 7 92 13 97 20 95 C 27 93 33 98 40 100 C 47 102 53 91 60 85 C 67 79 73 89 80 92 C 87 95 93 104 100 110 C 107 116 113 119 120 120 C 127 121 133 93 140 80 C 147 67 153 53 160 50 C 167 47 173 57 180 60 C 187 63 193 51 200 45 C 207 39 213 60 220 70 C 227 80 233 91 240 95 C 247 99 253 105 260 105 C 267 105 273 95 280 90 C 287 85 293 95 300 98";
-
-    return (
-        <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
-            <div className="flex justify-between items-start mb-2">
-                <h3 className="font-bold text-gray-800 text-sm sm:text-base">Cash Management</h3>
-            </div>
-            <div className="relative flex-grow">
-                <svg viewBox="0 0 335 170" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
-                    {/* Y-axis labels */}
-                    <text x="0" y="25" alignmentBaseline="middle" fill="#6b7280" fontSize="10">+50k€</text>
-                    <text x="0" y="75" alignmentBaseline="middle" fill="#6b7280" fontSize="10">0</text>
-                    <text x="0" y="125" alignmentBaseline="middle" fill="#6b7280" fontSize="10">-50k€</text>
-                    
-                    <g transform="translate(35, 0)">
-                        {/* X-axis labels */}
-                        <text x="0" y="165" textAnchor="middle" fill="#6b7280" fontSize="10">T0</text>
-                        <text x="100" y="165" textAnchor="middle" fill="#6b7280" fontSize="10">T5</text>
-                        <text x="200" y="165" textAnchor="middle" fill="#6b7280" fontSize="10">T10</text>
-                        <text x="300" y="165" textAnchor="middle" fill="#6b7280" fontSize="10">T15</text>
-                        
-                        {/* Dashed reference line for zero */}
-                        <line x1="0" y1="75" x2="300" y2="75" stroke="#d1d5db" strokeWidth="1" strokeDasharray="3 3" />
-                        
-                        {/* Additional reference lines */}
-                        <line x1="0" y1="25" x2="300" y2="25" stroke="#e5e7eb" strokeWidth="0.5" strokeDasharray="2 4" />
-                        <line x1="0" y1="125" x2="300" y2="125" stroke="#e5e7eb" strokeWidth="0.5" strokeDasharray="2 4" />
-
-                        {/* Green line chart */}
-                        <path d={pathData} stroke="#10B981" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-                    </g>
-                </svg>
-            </div>
-        </div>
-    );
 };
