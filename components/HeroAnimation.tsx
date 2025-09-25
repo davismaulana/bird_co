@@ -46,7 +46,7 @@ const HeroAnimation: React.FC = () => {
                 if (!ctx) return;
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-                ctx.fillStyle = 'rgba(39, 1, 61, 0.7)';
+                ctx.fillStyle = 'rgba(39, 1, 61, 0.8)';
                 ctx.fill();
             }
 
@@ -110,7 +110,7 @@ const HeroAnimation: React.FC = () => {
 
                     if (distance < connectThreshold) {
                         const opacityValue = 1 - (distance / connectThreshold);
-                        ctx.strokeStyle = `rgba(39, 1, 61, ${opacityValue * 0.3})`;
+                        ctx.strokeStyle = `rgba(39, 1, 61, ${opacityValue * 0.4})`;
                         ctx.lineWidth = 0.5;
                         ctx.beginPath();
                         ctx.moveTo(pA.x, pA.y);

@@ -6,11 +6,11 @@ import HeroAnimation from './HeroAnimation';
 const PrivacyPolicyPage: React.FC = () => {
   return (
     <div className="bg-white">
-      <section className="relative bg-white text-gray-900 flex items-center min-h-screen overflow-hidden pt-20 md:pt-0">
-        <div className="absolute inset-0 z-0 opacity-20">
+      <section className="relative bg-white text-gray-900 flex items-center overflow-hidden pt-32 pb-16 md:pt-40 md:pb-20">
+        <div className="absolute inset-0 z-0 opacity-40">
           <HeroAnimation />
         </div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 md:py-0">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <Animate variant="pop">
               <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight tracking-tight">
