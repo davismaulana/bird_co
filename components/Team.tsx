@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Animate from './Animate';
 import { LinkedInIcon, teamMembers } from '../constants';
@@ -9,15 +8,15 @@ const Team: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <Animate variant="pop">
+            <div className="flex justify-center mb-4">
+              <div className="w-16 h-1 bg-gradient-to-r from-white to-gray-400 rounded-full"></div>
+            </div>
+          </Animate>
+          <Animate variant="pop" delay={100}>
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold">
               <span className="text-white">À l'origine du </span>
               <span className="bg-gradient-to-r from-white to-gray-400 text-transparent bg-clip-text">réseau de bras droit</span>
             </h2>
-          </Animate>
-          <Animate variant="pop" delay={100}>
-            <div className="mt-4 flex justify-center">
-              <div className="w-16 h-1 bg-gradient-to-r from-white to-gray-400 rounded-full"></div>
-            </div>
           </Animate>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">

@@ -6,10 +6,10 @@ const ServicesOverview: React.FC = () => {
   return (
     <section id="notre-proposition" className="bg-gray-50 py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <Animate variant="pop">
-            <div className="flex justify-center mb-1">
-              <div className="w-20 h-1 bg-gradient-to-r from-[#27013D] to-[#6D0037] rounded-full"></div>
+            <div className="flex justify-center mb-4">
+              <div className="w-16 h-1 bg-gradient-to-r from-[#27013D] to-[#6D0037] rounded-full"></div>
             </div>
           </Animate>
           <Animate variant="pop" delay={100}>
@@ -18,7 +18,7 @@ const ServicesOverview: React.FC = () => {
             </h2>
           </Animate>
           <Animate variant="pop" delay={200}>
-            <p className="text-lg text-gray-800 mt-2 font-medium">
+            <p className="text-lg text-gray-800 mt-4 font-medium">
               dans la <strong>gestion quotidienne</strong> comme dans les <strong>processus transactionnels</strong>
             </p>
           </Animate>
