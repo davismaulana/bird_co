@@ -36,7 +36,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
         </div>
       </section>
 
-      {/* Diagnostic Section */}
+      {/* Diagnostic & Ambition Section */}
       {details.diagnostic && (
         <section className="bg-gray-50 py-16 md:py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -68,6 +68,22 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
               </div>
             )}
           </div>
+          
+          {/* Ambition Sub-Section */}
+          {details.ambition && (
+              <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center mt-16 md:mt-20">
+                  <Animate variant="pop">
+                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+                          <span className="gradient-text">{details.ambition.title}</span>
+                      </h2>
+                  </Animate>
+                  <Animate variant="pop" delay={150}>
+                      <p className="mt-4 text-lg text-gray-800 max-w-2xl mx-auto">
+                          {details.ambition.description}
+                      </p>
+                  </Animate>
+              </div>
+          )}
         </section>
       )}
 
@@ -111,27 +127,6 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
         </div>
       </main>
       
-      {/* Ambition Section */}
-      {details.ambition && (
-        <section className="bg-white py-16">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <Animate variant="pop" className="max-w-3xl mx-auto bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 lg:p-12 text-center border border-gray-200 shadow-xl shadow-violet-100/50">
-                    <div className="flex justify-center mb-6">
-                        <div className="bg-white rounded-full p-4 shadow-md">
-                            {React.cloneElement(details.ambition.icon, { className: "w-12 h-12 text-[#27013D]" })}
-                        </div>
-                    </div>
-                    <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                        <span className="gradient-text">{details.ambition.title}</span>
-                    </h2>
-                    <p className="text-xl text-gray-800 leading-relaxed">
-                        {details.ambition.description}
-                    </p>
-                </Animate>
-            </div>
-        </section>
-      )}
-
       {/* Final CTA section */}
       <section className="bg-gray-50 py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
