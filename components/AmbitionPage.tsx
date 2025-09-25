@@ -13,19 +13,19 @@ const AmbitionPage: React.FC = () => {
           <HeroAnimation />
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-3xl text-left">
             <Animate variant="pop">
               <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight tracking-tight">
                 Notre <span className="gradient-text">ambition</span>
               </h1>
             </Animate>
             <Animate variant="pop" delay={200}>
-              <p className="mt-6 text-base md:text-lg text-gray-800 max-w-xl mx-auto">
+              <p className="mt-6 text-base md:text-lg text-gray-800 max-w-xl">
                 Vous permettre d'anticiper les enjeux financiers et opérationnels futurs et prévenir les éventuelles difficultés.
               </p>
             </Animate>
             <Animate variant="pop" delay={400}>
-              <div className="mt-10 flex justify-center">
+              <div className="mt-10 flex justify-start">
                 <a
                   href="https://calendly.com/contact-birdandco/30min"
                   target="_blank"
