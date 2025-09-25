@@ -42,11 +42,16 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 max-w-3xl mx-auto">
                 <Animate variant="pop">
+                  <div className="flex justify-center mb-4">
+                    <div className="w-16 h-1 bg-gradient-to-r from-[#27013D] to-[#6D0037] rounded-full"></div>
+                  </div>
+                </Animate>
+                <Animate variant="pop" delay={100}>
                   <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
                     {details.diagnostic.title}
                   </h2>
                 </Animate>
-                <Animate variant="pop" delay={150}>
+                <Animate variant="pop" delay={200}>
                   <p className="text-lg text-gray-800 mt-4">
                     {details.diagnostic.description}
                   </p>
@@ -76,11 +81,16 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
         <section className="bg-white py-16 md:py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <Animate variant="pop">
+                <div className="flex justify-center mb-4">
+                  <div className="w-16 h-1 bg-gradient-to-r from-[#27013D] to-[#6D0037] rounded-full"></div>
+                </div>
+              </Animate>
+              <Animate variant="pop" delay={100}>
                   <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight">
                       <span className="gradient-text">{details.ambition.title}</span>
                   </h2>
               </Animate>
-              <Animate variant="pop" delay={150}>
+              <Animate variant="pop" delay={200}>
                   <p className="mt-4 text-lg text-gray-800 max-w-2xl mx-auto">
                       {details.ambition.description}
                   </p>
@@ -96,10 +106,13 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                 <div className="lg:col-span-1">
                     <div className="lg:sticky lg:top-32">
                         <Animate variant="pop">
+                          <div className="w-16 h-1 bg-gradient-to-r from-[#27013D] to-[#6D0037] rounded-full mb-4"></div>
+                        </Animate>
+                        <Animate variant="pop" delay={100}>
                             <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight gradient-text">{details.mainContent.title}</h2>
                         </Animate>
                         {details.mainContent.description && (
-                            <Animate variant="pop" delay={150}>
+                            <Animate variant="pop" delay={200}>
                                 <p className="mt-4 text-gray-800 leading-relaxed">{details.mainContent.description}</p>
                             </Animate>
                         )}
@@ -133,11 +146,16 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
       <section className="bg-white py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Animate variant="pop">
+              <div className="flex justify-center mb-4">
+                <div className="w-16 h-1 bg-gradient-to-r from-[#27013D] to-[#6D0037] rounded-full"></div>
+              </div>
+            </Animate>
+            <Animate variant="pop" delay={100}>
                 <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
                     Prêt à prendre <span className="gradient-text">le contrôle ?</span>
                 </h2>
             </Animate>
-            <Animate variant="pop" delay={150}>
+            <Animate variant="pop" delay={200}>
                 <p className="mt-4 text-lg text-gray-800 max-w-2xl mx-auto">
                     Contactez-nous pour discuter de la manière dont nous pouvons construire ensemble les outils de votre succès.
                 </p>
