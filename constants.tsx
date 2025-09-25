@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 export const PaperPlaneIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -365,7 +364,7 @@ export const serviceDetails: { [key: string]: any } = {
         },
         mainContent: { 
             title: 'Les livrables essentiels', 
-            description: 'Notre ambition : Vous permettre d\'anticiper les enjeux financiers et opérationnels futurs et prévenir les éventuelles difficultés.', 
+            description: '',
             categories: [
                 { 
                     title: 'Reporting opérationnel et financier', 
@@ -379,7 +378,7 @@ export const serviceDetails: { [key: string]: any } = {
                     ] 
                 },
                 {
-                    title: 'Outils de planification et stratégiques',
+                    title: 'Outils stratégiques et de planification',
                     list: [
                         'Business plan',
                         'Prévisionnel de trésorerie',
@@ -389,6 +388,11 @@ export const serviceDetails: { [key: string]: any } = {
                     ]
                 }
             ] 
+        },
+        ambition: {
+            title: "Notre ambition",
+            description: "Vous permettre d'anticiper les enjeux financiers et opérationnels futurs et prévenir les éventuelles difficultés.",
+            icon: <AnticipationIcon />,
         }
     },
     'cfo-part-time': {
@@ -406,7 +410,12 @@ export const serviceDetails: { [key: string]: any } = {
         mainContent: { title: 'Nos interventions', description: 'Nous intervenons sur l’ensemble du périmètre de la fonction finance.', categories: [
             { title: 'Pilotage de la performance', list: ['Mise en place de reporting mensuel', 'Définition des KPIs pertinents', 'Élaboration de budget et suivi des écarts', 'Analyses de rentabilité'] },
             { title: 'Gestion de trésorerie', list: ['Construction de prévisionnels de trésorerie', 'Optimisation du BFR', 'Mise en place de solutions de financement', 'Relations bancaires'] }
-        ] }
+        ] },
+        ambition: {
+            title: "Notre ambition",
+            description: "Vous permettre d'anticiper les enjeux financiers et opérationnels futurs et prévenir les éventuelles difficultés.",
+            icon: <AnticipationIcon />,
+        }
     },
     'diagnostic-restructuration': {
         title: 'Diagnostic & Restructuration',
@@ -423,7 +432,12 @@ export const serviceDetails: { [key: string]: any } = {
         mainContent: { title: 'Notre approche', description: 'Un diagnostic complet pour une vision claire et un plan d\'action solide.', categories: [
             { title: 'Analyse financière et opérationnelle', list: ['Analyse du compte de résultat, bilan et flux de trésorerie', 'Revue des processus clés', 'Identification des zones de risque'] },
             { title: 'Plan de restructuration', list: ['Définition d\'un plan d\'action priorisé', 'Assistance à la mise en oeuvre', 'Communication avec les parties prenantes'] },
-        ] }
+        ] },
+        ambition: {
+            title: "Notre ambition",
+            description: "Vous permettre d'anticiper les enjeux financiers et opérationnels futurs et prévenir les éventuelles difficultés.",
+            icon: <AnticipationIcon />,
+        }
     },
     'services-ma': {
         title: 'Services M&A',
@@ -440,7 +454,12 @@ export const serviceDetails: { [key: string]: any } = {
         mainContent: { title: 'Nos livrables', description: 'Des documents et analyses pour sécuriser vos transactions.', categories: [
             { title: 'Processus de Levée de Fonds', list: ['Préparation du business plan et du pitch deck', 'Modélisation financière et valorisation', 'Gestion de la data room', 'Négociation avec les investisseurs'] },
             { title: 'Accompagnement à la Cession', list: ['Préparation du mémorandum d\'information', 'Identification et approche des acquéreurs potentiels', 'Due diligence vendeur (VDD)', 'Assistance dans les négociations finales'] },
-        ] }
+        ] },
+        ambition: {
+            title: "Notre ambition",
+            description: "Vous permettre d'anticiper les enjeux financiers et opérationnels futurs et prévenir les éventuelles difficultés.",
+            icon: <AnticipationIcon />,
+        }
     },
 };
 export const DueDiligenceVisual: React.FC = () => (

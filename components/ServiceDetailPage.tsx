@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { services, serviceDetails, CheckmarkCircleIcon, FinancialReportMockup } from '../constants';
 import Animate from './Animate';
@@ -81,9 +80,11 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                         <Animate variant="pop">
                             <h2 className="text-2xl lg:text-3xl font-bold text-gray-900">{details.mainContent.title}</h2>
                         </Animate>
-                        <Animate variant="pop" delay={150}>
-                            <p className="mt-4 text-gray-800 leading-relaxed">{details.mainContent.description}</p>
-                        </Animate>
+                        {details.mainContent.description && (
+                            <Animate variant="pop" delay={150}>
+                                <p className="mt-4 text-gray-800 leading-relaxed">{details.mainContent.description}</p>
+                            </Animate>
+                        )}
                     </div>
                 </div>
 
@@ -109,6 +110,27 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
             </div>
         </div>
       </main>
+      
+      {/* Ambition Section */}
+      {details.ambition && (
+        <section className="bg-white py-16">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                <Animate variant="pop" className="max-w-3xl mx-auto bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 lg:p-12 text-center border border-gray-200 shadow-xl shadow-violet-100/50">
+                    <div className="flex justify-center mb-6">
+                        <div className="bg-white rounded-full p-4 shadow-md">
+                            {React.cloneElement(details.ambition.icon, { className: "w-12 h-12 text-[#27013D]" })}
+                        </div>
+                    </div>
+                    <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                        <span className="gradient-text">{details.ambition.title}</span>
+                    </h2>
+                    <p className="text-xl text-gray-800 leading-relaxed">
+                        {details.ambition.description}
+                    </p>
+                </Animate>
+            </div>
+        </section>
+      )}
 
       {/* Final CTA section */}
       <section className="bg-gray-50 py-16">
