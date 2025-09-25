@@ -336,17 +336,73 @@ export const teamMembers = [
 export const serviceDetails: { [key: string]: any } = {
     'pilotage-planification': {
         title: 'Pilotage & Planification',
-        subtitle: 'Construire les outils indispensables à une gestion financière et opérationnelle optimale. Donnez vie à vos projets avec une base financière et stratégique solide.',
-        heroItems: ['Business plan', 'Modélisation financière', 'Tableaux de bord', 'Reporting'],
-        mainContent: { title: 'Nos livrables', description: 'Des outils pour convaincre et piloter.', categories: [
-            { title: 'Business Plan & Modélisation', list: ['BP complet et détaillé pour levée de fonds', 'Modèle financier dynamique sur 3-5 ans', 'Analyse de sensibilité et scénarios'] },
-            { title: 'Outils de pilotage', list: ['Mise en place de reporting mensuel', 'Création de tableaux de bord de KPIs', 'Automatisation de la collecte de données'] },
-        ] }
+        subtitle: 'Construire les outils indispensables à la gestion quotidienne de votre entreprise',
+        diagnostic: {
+            title: <>Vos <span className="gradient-text">objectifs</span></>,
+            description: 'Construire les outils indispensables pour appliquer votre stratégie financière et accompagner la croissance de votre entreprise.',
+            content: {
+                title: 'Définir une feuille de route claire',
+                description: (
+                    <ul className="space-y-3">
+                        {[
+                            'Mettre en place des processus et des outils pour un pilotage financier efficace',
+                            'Fixer des objectifs opérationnels et financiers',
+                            'Analyser rigoureusement la performance financière et opérationnelle',
+                            'Prendre les décisions nécessaires à son amélioration',
+                            'Optimiser le BFR et la trésorerie',
+                            'Planifier votre activité et projeter vos états financiers',
+                            'Assurer les relations avec vos investisseurs et créanciers',
+                        ].map(item => (
+                            <li key={item} className="flex items-start">
+                                <CheckmarkCircleIcon className="w-5 h-5 text-green-500 flex-shrink-0 mr-3 mt-1" />
+                                <span>{item}</span>
+                            </li>
+                        ))}
+                    </ul>
+                ),
+                visual: <FinancialReportMockup noAspectRatio disableHover />,
+            }
+        },
+        mainContent: { 
+            title: 'Les livrables essentiels', 
+            description: 'Notre ambition : Vous permettre d\'anticiper les enjeux financiers et opérationnels futurs et prévenir les éventuelles difficultés.', 
+            categories: [
+                { 
+                    title: 'Reporting opérationnel et financier', 
+                    list: ['Chiffre d\'affaires, EBITDA, Ecart Budget vs Réel, ETP, Cash burn, BFR, Dettes'] 
+                },
+                { 
+                    title: 'Tableau de bord commercial', 
+                    list: [
+                        'Chiffre d\'affaires et marge par segment, produit, zone géographique, Panier moyen',
+                        'Pipe commercial, Suivi des leads, Taux de conversion, churn, rétention, Coût d\'acquisition client'
+                    ] 
+                },
+                {
+                    title: 'Outils de planification et stratégiques',
+                    list: [
+                        'Business plan',
+                        'Prévisionnel de trésorerie',
+                        'Plan d’optimisation du BFR',
+                        'Analyses et évaluations de projets stratégiques (Projets d’investissements, opportunités de croissance)',
+                        'Identification de leviers opérationnels et financiers'
+                    ]
+                }
+            ] 
+        }
     },
     'cfo-part-time': {
         title: 'CFO Part-time',
         subtitle: 'Structurer votre croissance et exécuter votre stratégie financière avec un bras-droit dédié à temps partiel. Bénéficiez d’une expertise financière de haut niveau sans internaliser un poste à temps plein.',
-        heroItems: ['Reporting & KPIs', 'Budget & Prévisionnel', 'Gestion de trésorerie', 'Optimisation BFR'],
+        diagnostic: {
+            title: <>Notre point de départ : <span className="gradient-text">le diagnostic</span></>,
+            description: 'Chaque mission commence par une analyse complète pour comprendre vos défis et identifier les meilleurs leviers de performance.',
+            content: {
+                title: 'Diagnostic Stratégique & Opérationnel',
+                description: 'Nous réalisons une analyse 360° pour évaluer votre santé financière et opérationnelle. Ce diagnostic met en lumière les points de friction et les leviers de croissance cachés, formant la base de recommandations actionnables pour construire une stratégie sur-mesure.',
+                visual: <DiagnosticScanMockup />,
+            }
+        },
         mainContent: { title: 'Nos interventions', description: 'Nous intervenons sur l’ensemble du périmètre de la fonction finance.', categories: [
             { title: 'Pilotage de la performance', list: ['Mise en place de reporting mensuel', 'Définition des KPIs pertinents', 'Élaboration de budget et suivi des écarts', 'Analyses de rentabilité'] },
             { title: 'Gestion de trésorerie', list: ['Construction de prévisionnels de trésorerie', 'Optimisation du BFR', 'Mise en place de solutions de financement', 'Relations bancaires'] }
@@ -355,7 +411,15 @@ export const serviceDetails: { [key: string]: any } = {
     'diagnostic-restructuration': {
         title: 'Diagnostic & Restructuration',
         subtitle: 'Rassurer vos actionnaires et créanciers sur la santé financière de votre activité et votre capacité à la relancer. Une analyse complète pour identifier vos leviers de performance.',
-        heroItems: ['Analyse financière', 'Revue opérationnelle', 'Benchmark sectoriel', 'Plan d\'action'],
+        diagnostic: {
+            title: <>Notre point de départ : <span className="gradient-text">le diagnostic</span></>,
+            description: 'Chaque mission commence par une analyse complète pour comprendre vos défis et identifier les meilleurs leviers de performance.',
+            content: {
+                title: 'Diagnostic Stratégique & Opérationnel',
+                description: 'Nous réalisons une analyse 360° pour évaluer votre santé financière et opérationnelle. Ce diagnostic met en lumière les points de friction et les leviers de croissance cachés, formant la base de recommandations actionnables pour construire une stratégie sur-mesure.',
+                visual: <DiagnosticScanMockup />,
+            }
+        },
         mainContent: { title: 'Notre approche', description: 'Un diagnostic complet pour une vision claire et un plan d\'action solide.', categories: [
             { title: 'Analyse financière et opérationnelle', list: ['Analyse du compte de résultat, bilan et flux de trésorerie', 'Revue des processus clés', 'Identification des zones de risque'] },
             { title: 'Plan de restructuration', list: ['Définition d\'un plan d\'action priorisé', 'Assistance à la mise en oeuvre', 'Communication avec les parties prenantes'] },
@@ -364,7 +428,15 @@ export const serviceDetails: { [key: string]: any } = {
     'services-ma': {
         title: 'Services M&A',
         subtitle: 'Faciliter vos levées de fonds et cessions en produisant les documents et analyses indispensables à vos discussions.',
-        heroItems: ['Levée de fonds', 'Cession', 'Due Diligence', 'Valorisation'],
+        diagnostic: {
+            title: <>Notre point de départ : <span className="gradient-text">le diagnostic</span></>,
+            description: 'Chaque mission commence par une analyse complète pour comprendre vos défis et identifier les meilleurs leviers de performance.',
+            content: {
+                title: 'Diagnostic Stratégique & Opérationnel',
+                description: 'Nous réalisons une analyse 360° pour évaluer votre santé financière et opérationnelle. Ce diagnostic met en lumière les points de friction et les leviers de croissance cachés, formant la base de recommandations actionnables pour construire une stratégie sur-mesure.',
+                visual: <DiagnosticScanMockup />,
+            }
+        },
         mainContent: { title: 'Nos livrables', description: 'Des documents et analyses pour sécuriser vos transactions.', categories: [
             { title: 'Processus de Levée de Fonds', list: ['Préparation du business plan et du pitch deck', 'Modélisation financière et valorisation', 'Gestion de la data room', 'Négociation avec les investisseurs'] },
             { title: 'Accompagnement à la Cession', list: ['Préparation du mémorandum d\'information', 'Identification et approche des acquéreurs potentiels', 'Due diligence vendeur (VDD)', 'Assistance dans les négociations finales'] },

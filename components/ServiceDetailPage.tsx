@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { services, serviceDetails, CheckmarkCircleIcon, DiagnosticScanMockup } from '../constants';
+import { services, serviceDetails, CheckmarkCircleIcon, FinancialReportMockup } from '../constants';
 import Animate from './Animate';
 
 const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
@@ -38,35 +38,39 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
       </section>
 
       {/* Diagnostic Section */}
-      <section className="bg-gray-50 py-16 md:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 max-w-3xl mx-auto">
-              <Animate variant="pop">
-                <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
-                  <span className="text-black">Notre point de départ :</span> <span className="gradient-text">le diagnostic</span>
-                </h2>
-              </Animate>
-              <Animate variant="pop" delay={150}>
-                <p className="text-lg text-gray-800 mt-4">
-                  Chaque mission commence par une analyse complète pour comprendre vos défis et identifier les meilleurs leviers de performance.
-                </p>
-              </Animate>
+      {details.diagnostic && (
+        <section className="bg-gray-50 py-16 md:py-20">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16 max-w-3xl mx-auto">
+                <Animate variant="pop">
+                  <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
+                    {details.diagnostic.title}
+                  </h2>
+                </Animate>
+                <Animate variant="pop" delay={150}>
+                  <p className="text-lg text-gray-800 mt-4">
+                    {details.diagnostic.description}
+                  </p>
+                </Animate>
+            </div>
+            {details.diagnostic.content && (
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center max-w-6xl mx-auto">
+                  <Animate variant={'pop'} delay={200} className="aspect-[4/3] lg:aspect-auto h-full">
+                      {details.diagnostic.content.visual}
+                  </Animate>
+                  <Animate variant={'pop'} delay={300}>
+                      <div className="text-left">
+                        <h3 className="text-2xl font-bold text-[#27013D] mb-4">{details.diagnostic.content.title}</h3>
+                        <div className="text-gray-800 leading-relaxed">
+                          {details.diagnostic.content.description}
+                        </div>
+                      </div>
+                  </Animate>
+              </div>
+            )}
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center max-w-6xl mx-auto">
-              <Animate variant={'pop'} delay={200}>
-                  <DiagnosticScanMockup />
-              </Animate>
-              <Animate variant={'pop'} delay={300}>
-                  <div className="text-left">
-                    <h3 className="text-2xl font-bold text-[#27013D] mb-3">Diagnostic Stratégique & Opérationnel</h3>
-                    <p className="text-gray-800 leading-relaxed">
-                      Nous réalisons une analyse 360° pour évaluer votre santé financière et opérationnelle. Ce diagnostic met en lumière les points de friction et les leviers de croissance cachés, formant la base de recommandations actionnables pour construire une stratégie sur-mesure.
-                    </p>
-                  </div>
-              </Animate>
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Content Section */}
       <main id="content" className="bg-white py-16 sm:py-20">
