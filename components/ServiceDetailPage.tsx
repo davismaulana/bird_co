@@ -38,7 +38,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
 
       {/* Diagnostic Section */}
       {details.diagnostic && (
-        <section className="bg-gray-50 py-16 md:py-20">
+        <section className="bg-gray-50 py-12 md:py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 max-w-3xl mx-auto">
                 <Animate variant="pop">
@@ -78,7 +78,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
       
       {/* Ambition Section */}
       {details.ambition && (
-        <section className="bg-white py-16 md:py-20">
+        <section className="bg-white py-12 md:py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <Animate variant="pop">
                 <div className="flex justify-center mb-4">
@@ -100,7 +100,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
       )}
 
       {/* Content Section */}
-      <main id="content" className="bg-gray-50 py-16 sm:py-20">
+      <main id="content" className="bg-gray-50 py-12 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-3 gap-12 lg:gap-24">
                 <div className="lg:col-span-1">
@@ -143,7 +143,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
       </main>
       
       {/* Final CTA section */}
-      <section className="bg-white py-16">
+      <section className="bg-white py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Animate variant="pop">
               <div className="flex justify-center mb-4">
