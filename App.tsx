@@ -79,7 +79,7 @@ const App: React.FC = () => {
         <div className="bg-white overflow-x-hidden">
           <Header pathname={pathname} />
           <ServiceDetailPage serviceId={serviceId} />
-          <Logos />
+          <Logos backgroundColor="bg-gray-50" />
           <Footer />
         </div>
       );
@@ -101,7 +101,7 @@ const App: React.FC = () => {
         <div className="bg-white overflow-x-hidden">
           <Header pathname={pathname} />
           <PrivacyPolicyPage />
-          <Logos />
+          <Logos backgroundColor="bg-gray-50" />
           <Footer />
         </div>
       );
@@ -112,7 +112,7 @@ const App: React.FC = () => {
         <div className="bg-white overflow-x-hidden">
           <Header pathname={pathname} />
           <TermsOfServicePage />
-          <Logos />
+          <Logos backgroundColor="bg-gray-50" />
           <Footer />
         </div>
       );

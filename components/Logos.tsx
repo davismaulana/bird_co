@@ -15,11 +15,15 @@ const logos = [
   { component: <FoodPilotLogo />, name: 'Food Pilot', href: 'https://foodpilot.io/fr/' },
 ];
 
-const Logos: React.FC = () => {
+interface LogosProps {
+  backgroundColor?: string;
+}
+
+const Logos: React.FC<LogosProps> = ({ backgroundColor = 'bg-white' }) => {
   const allLogos = [...logos, ...logos]; // Duplicate logos for a seamless loop
 
   return (
-    <section className="bg-white py-16">
+    <section className={`${backgroundColor} py-16`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <Animate variant="pop">
