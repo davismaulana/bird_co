@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { services, serviceDetails, CheckmarkCircleIcon, FinancialReportMockup } from '../constants';
 import Animate from './Animate';
@@ -25,19 +24,19 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
   return (
     <div className="bg-white text-gray-800">
       {/* Hero Section */}
-      <section className="relative bg-white text-gray-900 flex items-center overflow-hidden pt-32 pb-16 md:pt-40 md:pb-20">
-        <div className="absolute inset-0 z-0 opacity-40">
-          <HeroAnimation />
+      <section className="relative bg-gradient-to-br from-[#27013D] to-[#6D0037] text-white flex items-center overflow-hidden pt-32 pb-16 md:pt-40 md:pb-20">
+        <div className="absolute inset-0 z-0 opacity-30">
+          <HeroAnimation color="light" />
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl text-left">
             <Animate variant="pop">
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight tracking-tight">
-                <span className="gradient-text">{details.title}</span>
+              <h1 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight tracking-tight">
+                <span>{details.title}</span>
               </h1>
             </Animate>
             <Animate variant="pop" delay={200}>
-              <p className={`mt-6 text-gray-800 max-w-xl ${serviceId === 'pilotage-planification' || serviceId === 'cfo-part-time' ? 'text-base' : 'text-base md:text-lg'}`}>
+              <p className={`mt-6 text-gray-200 max-w-xl ${serviceId === 'pilotage-planification' || serviceId === 'cfo-part-time' ? 'text-base' : 'text-base md:text-lg'}`}>
                 {details.subtitle}
               </p>
             </Animate>
@@ -47,7 +46,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                   href="https://calendly.com/contact-birdandco/30min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block text-center bg-[#27013D] text-white px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-[#1c0e2a] transition-colors transform hover:scale-105 text-base"
+                  className="inline-block text-center bg-white text-[#27013D] px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors transform hover:scale-105 text-base"
                 >
                   Planifier une consultation
                 </a>

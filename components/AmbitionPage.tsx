@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Animate from './Animate';
 import ValueProposition from './ValueProposition';
@@ -8,19 +7,19 @@ const AmbitionPage: React.FC = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative bg-white text-gray-900 flex items-center overflow-hidden pt-32 pb-16 md:pt-40 md:pb-20">
-        <div className="absolute inset-0 z-0 opacity-40">
-          <HeroAnimation />
+      <section className="relative bg-gradient-to-br from-[#27013D] to-[#6D0037] text-white flex items-center overflow-hidden pt-32 pb-16 md:pt-40 md:pb-20">
+        <div className="absolute inset-0 z-0 opacity-30">
+          <HeroAnimation color="light" />
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl text-left">
             <Animate variant="pop">
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight tracking-tight">
-                Notre <span className="gradient-text">ambition</span>
+              <h1 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight tracking-tight">
+                Notre <span>ambition</span>
               </h1>
             </Animate>
             <Animate variant="pop" delay={200}>
-              <p className="mt-6 text-base md:text-lg text-gray-800 max-w-xl">
+              <p className="mt-6 text-base md:text-lg text-gray-200 max-w-xl">
                 Vous permettre d'anticiper les enjeux financiers et opérationnels futurs et prévenir les éventuelles difficultés.
               </p>
             </Animate>
@@ -30,7 +29,7 @@ const AmbitionPage: React.FC = () => {
                   href="https://calendly.com/contact-birdandco/30min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block text-center bg-[#27013D] text-white px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-[#1c0e2a] transition-colors transform hover:scale-105 text-base"
+                  className="inline-block text-center bg-white text-[#27013D] px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors transform hover:scale-105 text-base"
                 >
                   Planifier un rendez-vous
                 </a>

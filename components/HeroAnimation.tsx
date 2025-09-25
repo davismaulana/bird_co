@@ -1,6 +1,10 @@
 import React, { useRef, useEffect } from 'react';
 
-const HeroAnimation: React.FC = () => {
+interface HeroAnimationProps {
+  color?: 'dark' | 'light';
+}
+
+const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
@@ -8,6 +12,9 @@ const HeroAnimation: React.FC = () => {
         if (!canvas) return;
         const ctx = canvas.getContext('2d');
         if (!ctx) return;
+
+        const particleFillColor = color === 'dark' ? 'rgba(39, 1, 61, 0.8)' : 'rgba(255, 255, 255, 0.8)';
+        const lineStrokeColorRGB = color === 'dark' ? '39, 1, 61' : '255, 255, 255';
 
         let animationFrameId: number;
         let particleSections: Particle[][] = [];
@@ -45,7 +52,7 @@ const HeroAnimation: React.FC = () => {
                 if (!ctx) return;
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-                ctx.fillStyle = 'rgba(39, 1, 61, 0.8)';
+                ctx.fillStyle = particleFillColor;
                 ctx.fill();
             }
 
@@ -109,7 +116,7 @@ const HeroAnimation: React.FC = () => {
 
                     if (distance < connectThreshold) {
                         const opacityValue = 1 - (distance / connectThreshold);
-                        ctx.strokeStyle = `rgba(39, 1, 61, ${opacityValue * 0.4})`;
+                        ctx.strokeStyle = `rgba(${lineStrokeColorRGB}, ${opacityValue * 0.4})`;
                         ctx.lineWidth = 0.5;
                         ctx.beginPath();
                         ctx.moveTo(pA.x, pA.y);
@@ -161,7 +168,7 @@ const HeroAnimation: React.FC = () => {
             window.removeEventListener('resize', init);
             cancelAnimationFrame(animationFrameId);
         };
-    }, []);
+    }, [color]);
 
     return (
         <div className="absolute inset-0 w-full h-full">
