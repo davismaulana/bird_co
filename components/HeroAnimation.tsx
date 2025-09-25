@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from 'react';
 
 const HeroAnimation: React.FC = () => {
