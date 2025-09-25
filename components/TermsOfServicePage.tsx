@@ -1,19 +1,51 @@
 import React from 'react';
 import Animate from './Animate';
+import HeroAnimation from './HeroAnimation';
 
 const TermsOfServicePage: React.FC = () => {
   return (
     <div className="bg-white">
-      <section className="bg-gray-50 pt-32 pb-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <Animate variant="pop">
-                <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
-                    Conditions Générales <span className="gradient-text">de Vente</span>
+      <section className="relative bg-white text-gray-900 flex items-center min-h-screen overflow-hidden pt-20 md:pt-0">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 md:py-0">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center relative">
+            <div className="text-center md:text-left relative z-10">
+              <Animate variant="pop">
+                <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight tracking-tight">
+                  Conditions Générales <span className="gradient-text">de Vente</span>
                 </h1>
+              </Animate>
+              <Animate variant="pop" delay={200}>
+                <p className="mt-6 text-base md:text-lg text-gray-800 max-w-xl mx-auto md:mx-0">
+                  Dernière mise à jour : {new Date().toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}
+                </p>
+              </Animate>
+              <Animate variant="pop" delay={400}>
+                <div className="mt-10 flex justify-center md:justify-start">
+                  <a
+                    href="/"
+                    className="inline-block text-center bg-[#27013D] text-white px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-[#1c0e2a] transition-colors transform hover:scale-105 text-base"
+                  >
+                    Retour à l'accueil
+                  </a>
+                </div>
+              </Animate>
+            </div>
+
+            <div className="hidden md:flex absolute top-0 bottom-0 left-1/2 -translate-x-1/2 items-center justify-center pointer-events-none">
+                <div className="relative w-1 h-80">
+                    <div 
+                        className="absolute inset-0 rounded-full"
+                        style={{ 
+                            backgroundImage: 'linear-gradient(to bottom, #27013D, #6D0037)',
+                        }}
+                    ></div>
+                </div>
+            </div>
+
+            <Animate variant="pop" delay={300} className="relative z-10 w-full aspect-square md:aspect-auto md:h-[400px] lg:h-[500px]">
+              <HeroAnimation />
             </Animate>
-            <Animate variant="pop" delay={150}>
-                <p className="mt-4 text-lg text-gray-600">Dernière mise à jour : {new Date().toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-            </Animate>
+          </div>
         </div>
       </section>
 
