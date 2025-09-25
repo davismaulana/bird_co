@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 export const PaperPlaneIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -299,7 +300,7 @@ export const BriefcaseIcon: React.FC<{ className?: string }> = ({ className }) =
 export const services = [
     { slug: 'pilotage-planification', title: 'Pilotage & Planification', subTitle: 'Construire', description: 'les outils indispensables à une gestion optimale : reporting, business plan, prévisionnels de trésorerie etc.', icon: <PaperPlaneIcon />, iconClassName: 'w-16 h-16' },
     { slug: 'cfo-part-time', title: 'CFO Part-time', subTitle: 'Structurer', description: 'votre croissance et mettre en exécution votre stratégie financière avec un bras-droit dédié à temps partiel.', icon: <CfoIcon />, iconClassName: 'w-14 h-14' },
-    { slug: 'diagnostic-restructuration', title: 'Diagnostic & Restructuration', subTitle: 'Rassurer', description: 'vos actionnaires et créanciers sur la santé financière de votre activité et votre capacité à la relancer.', icon: <DiagnosticIcon />, iconClassName: 'w-16 h-16' },
+    { slug: 'diagnostic-restructuration', title: 'Diagnostic & Restructuration', subTitle: 'Relancer', description: 'Apporter le recul et la clarté nécessaires pour relancer votre activité.', icon: <DiagnosticIcon />, iconClassName: 'w-16 h-16' },
     { slug: 'services-ma', title: 'Services M&A', subTitle: 'Faciliter', description: 'vos levées de fonds et cessions en produisant les documents et analyses indispensables à vos discussions.', icon: <img src="https://images2.imgbox.com/91/32/P6brUIBM_o.png" alt="Services M&A Icon" />, iconClassName: 'w-20 h-20' },
 ];
 
@@ -470,23 +471,59 @@ export const serviceDetails: { [key: string]: any } = {
     },
     'diagnostic-restructuration': {
         title: 'Diagnostic & Restructuration',
-        subtitle: 'Rassurer vos actionnaires et créanciers sur la santé financière de votre activité et votre capacité à la relancer. Une analyse complète pour identifier vos leviers de performance.',
+        subtitle: 'Apporter le recul et la clarté nécessaires à la prise de décision et relancer votre activité',
         diagnostic: {
-            title: <>Notre point de départ : <span className="gradient-text">le diagnostic</span></>,
-            description: 'Chaque mission commence par une analyse complète pour comprendre vos défis et identifier les meilleurs leviers de performance.',
+            title: <>Vos <span className="gradient-text">objectifs</span></>,
+            description: 'Réaliser une évaluation complète, claire et objective de la santé financière de l’entreprise afin de :',
             content: {
-                title: 'Diagnostic Stratégique & Opérationnel',
-                description: 'Nous réalisons une analyse 360° pour évaluer votre santé financière et opérationnelle. Ce diagnostic met en lumière les points de friction et les leviers de croissance cachés, formant la base de recommandations actionnables pour construire une stratégie sur-mesure.',
+                title: 'Piloter la relance de l\'activité',
+                description: (
+                    <ul className="space-y-3">
+                        {[
+                            'Comprendre la performance historique',
+                            'Identifier les dysfonctionnements de gestion',
+                            'Renégocier ses dettes',
+                            'Lever de nouveaux financements',
+                            'Redéfinir la stratégie de l’entreprise',
+                            'Restructurer son organisation et ses opérations',
+                        ].map(item => (
+                            <li key={item} className="flex items-start">
+                                <CheckmarkCircleIcon className="w-5 h-5 text-green-500 flex-shrink-0 mr-3 mt-1" />
+                                <span>{item}</span>
+                            </li>
+                        ))}
+                    </ul>
+                ),
                 visual: <DiagnosticScanMockup />,
             }
         },
-        mainContent: { title: 'Notre approche', description: 'Un diagnostic complet pour une vision claire et un plan d\'action solide.', categories: [
-            { title: 'Analyse financière et opérationnelle', list: ['Analyse du compte de résultat, bilan et flux de trésorerie', 'Revue des processus clés', 'Identification des zones de risque'] },
-            { title: 'Plan de restructuration', list: ['Définition d\'un plan d\'action priorisé', 'Assistance à la mise en oeuvre', 'Communication avec les parties prenantes'] },
-        ] },
+        mainContent: { 
+            title: 'Les livrables essentiels', 
+            description: '', 
+            categories: [
+                { 
+                    title: 'Clarification & Analyse', 
+                    list: [
+                        'Clarification de l’origine des difficultés',
+                        'Examen détaillé et critique des états financiers',
+                        'Analyse approfondie des principaux agrégats de résultat (Chiffre d’affaires, Marge, Masse salariale)',
+                        'Analyse du besoin en fonds de roulement',
+                        'Analyse de la dette financière long et court terme',
+                    ] 
+                },
+                { 
+                    title: 'Plan d\'action & Leviers', 
+                    list: [
+                        'Construction des prévisionnels d’exploitation et de trésorerie',
+                        'Proposition de restructuration financière',
+                        'Identification de leviers d’amélioration de la performance financière et opérationnelle',
+                    ] 
+                },
+            ] 
+        },
         ambition: {
             title: "Notre ambition",
-            description: "Vous permettre d'anticiper les enjeux financiers et opérationnels futurs et prévenir les éventuelles difficultés.",
+            description: "Apporter la prise de recul nécessaire à la prise de décision et à la relance de votre activité",
             icon: <AnticipationIcon />,
         }
     },
