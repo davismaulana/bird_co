@@ -396,25 +396,76 @@ export const serviceDetails: { [key: string]: any } = {
         }
     },
     'cfo-part-time': {
-        title: 'CFO Part-time',
-        subtitle: 'Structurer votre croissance et exécuter votre stratégie financière avec un bras-droit dédié à temps partiel. Bénéficiez d’une expertise financière de haut niveau sans internaliser un poste à temps plein.',
+        title: 'CFO Part-Time',
+        subtitle: 'Apporter le recul et la clarté nécessaires à la prise de décision et relancer votre activité',
         diagnostic: {
-            title: <>Notre point de départ : <span className="gradient-text">le diagnostic</span></>,
-            description: 'Chaque mission commence par une analyse complète pour comprendre vos défis et identifier les meilleurs leviers de performance.',
+            title: <>Vos <span className="gradient-text">enjeux</span></>,
+            description: 'Structurer une fonction Finance indispensable pour développer sereinement votre activité :',
             content: {
-                title: 'Diagnostic Stratégique & Opérationnel',
-                description: 'Nous réalisons une analyse 360° pour évaluer votre santé financière et opérationnelle. Ce diagnostic met en lumière les points de friction et les leviers de croissance cachés, formant la base de recommandations actionnables pour construire une stratégie sur-mesure.',
-                visual: <DiagnosticScanMockup />,
+                title: 'Développer sereinement votre activité',
+                description: (
+                    <ul className="space-y-3">
+                        {[
+                            'Piloter la rentabilité et la performance financière',
+                            'Prendre les décisions nécessaires à son amélioration',
+                            'Rechercher les financements nécessaires et adaptés à la maturité de l\'entreprise',
+                            'Fixer des objectifs opérationnels et financiers',
+                            'Gérer les relations avec vos investisseurs et créanciers',
+                            'Accompagner les projets de fusion-acquisition et de restructuration',
+                            'Contribuer à la stratégie d’investissement et d’innovation',
+                        ].map(item => (
+                            <li key={item} className="flex items-start">
+                                <CheckmarkCircleIcon className="w-5 h-5 text-green-500 flex-shrink-0 mr-3 mt-1" />
+                                <span>{item}</span>
+                            </li>
+                        ))}
+                    </ul>
+                ),
+                visual: <KpiDashboardMockup noAspectRatio disableHover />,
             }
         },
-        mainContent: { title: 'Nos interventions', description: 'Nous intervenons sur l’ensemble du périmètre de la fonction finance.', categories: [
-            { title: 'Pilotage de la performance', list: ['Mise en place de reporting mensuel', 'Définition des KPIs pertinents', 'Élaboration de budget et suivi des écarts', 'Analyses de rentabilité'] },
-            { title: 'Gestion de trésorerie', list: ['Construction de prévisionnels de trésorerie', 'Optimisation du BFR', 'Mise en place de solutions de financement', 'Relations bancaires'] }
-        ] },
+        mainContent: { 
+            title: 'Les missions essentielles', 
+            description: '',
+            categories: [
+                { 
+                    title: 'Mise en place d’une gouvernance financière', 
+                    list: ['Reporting, Tableaux de bord, Processus budgétaires'] 
+                },
+                { 
+                    title: 'Pilotage et optimisation des marges et coûts', 
+                    list: ['Analyses de rentabilité, plans d’amélioration'] 
+                },
+                {
+                    title: 'Gestion et sécurisation de la trésorerie',
+                    list: ['Optimisation du BFR, Relation avec les banques']
+                },
+                {
+                    title: 'Définition et suivi des KPIs stratégiques',
+                    list: []
+                },
+                {
+                    title: 'Construction des prévisionnels d\'exploitation et de trésorerie',
+                    list: ['Budget, Business plan, Cash Flow Forecast']
+                },
+                {
+                    title: 'Recherche et structuration des financements',
+                    list: ['Levées de fonds, Dettes bancaires, Subventions']
+                },
+                {
+                    title: 'Analyses et évaluations de projets stratégiques',
+                    list: ['Projets d’investissements, Opportunités de croissance']
+                },
+                {
+                    title: 'Identification de leviers opérationnels et financiers',
+                    list: []
+                }
+            ] 
+        },
         ambition: {
             title: "Notre ambition",
-            description: "Vous permettre d'anticiper les enjeux financiers et opérationnels futurs et prévenir les éventuelles difficultés.",
-            icon: <AnticipationIcon />,
+            description: "Garantir la croissance et la pérennité de votre entreprise",
+            icon: <TargetIcon />,
         }
     },
     'diagnostic-restructuration': {
