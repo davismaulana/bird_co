@@ -35,7 +35,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                 </h1>
               </Animate>
               <Animate variant="pop" delay={200}>
-                <p className={`mt-6 text-gray-800 max-w-xl mx-auto md:mx-0 ${serviceId === 'pilotage-planification' ? 'text-base' : 'text-base md:text-lg'}`}>
+                <p className={`mt-6 text-gray-800 max-w-xl mx-auto md:mx-0 ${serviceId === 'pilotage-planification' || serviceId === 'cfo-part-time' ? 'text-base' : 'text-base md:text-lg'}`}>
                   {details.subtitle}
                 </p>
               </Animate>
