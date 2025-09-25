@@ -36,7 +36,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
         </div>
       </section>
 
-      {/* Diagnostic & Ambition Section */}
+      {/* Diagnostic Section */}
       {details.diagnostic && (
         <section className="bg-gray-50 py-16 md:py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -68,27 +68,29 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
               </div>
             )}
           </div>
-          
-          {/* Ambition Sub-Section */}
-          {details.ambition && (
-              <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center mt-16 md:mt-20">
-                  <Animate variant="pop">
-                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
-                          <span className="gradient-text">{details.ambition.title}</span>
-                      </h2>
-                  </Animate>
-                  <Animate variant="pop" delay={150}>
-                      <p className="mt-4 text-lg text-gray-800 max-w-2xl mx-auto">
-                          {details.ambition.description}
-                      </p>
-                  </Animate>
-              </div>
-          )}
+        </section>
+      )}
+      
+      {/* Ambition Section */}
+      {details.ambition && (
+        <section className="bg-white py-16 md:py-20">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+              <Animate variant="pop">
+                  <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+                      <span className="gradient-text">{details.ambition.title}</span>
+                  </h2>
+              </Animate>
+              <Animate variant="pop" delay={150}>
+                  <p className="mt-4 text-lg text-gray-800 max-w-2xl mx-auto">
+                      {details.ambition.description}
+                  </p>
+              </Animate>
+          </div>
         </section>
       )}
 
       {/* Content Section */}
-      <main id="content" className="bg-white py-16 sm:py-20">
+      <main id="content" className="bg-gray-50 py-16 sm:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-3 gap-12 lg:gap-24">
                 <div className="lg:col-span-1">
@@ -128,7 +130,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
       </main>
       
       {/* Final CTA section */}
-      <section className="bg-gray-50 py-16">
+      <section className="bg-white py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Animate variant="pop">
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
