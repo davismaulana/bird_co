@@ -161,7 +161,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
       </main>
       
       {/* Final CTA section */}
-      <section className="bg-white py-12">
+      <section className="py-12 bg-gradient-to-br from-violet-50 to-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Animate variant="pop">
               <div className="flex justify-center mb-4">
@@ -169,8 +169,8 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
               </div>
             </Animate>
             <Animate variant="pop" delay={100}>
-                <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-[#27013D]">
-                    Prêt à prendre <span className="gradient-text-gray">le contrôle ?</span>
+                <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight">
+                    <span className="gradient-text">Prêt à prendre le contrôle ?</span>
                 </h2>
             </Animate>
             <Animate variant="pop" delay={200}>
