@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { WellowLogo, RegenSchoolLogo, PomadLogo, BredLogo, EricKayserLogo, SquareLogo, CasaLogo, TmhAvocatsLogo, FoodPilotLogo } from '../constants';
+import { WellowLogo, RegenSchoolLogo, PomadLogo, BredLogo, EricKayserLogo, SquareLogo, CasaLogo, TmhAvocatsLogo, FoodPilotLogo, OctoGamingLogo, CameroneCapitalLogo, SOCABEGLogo } from '../constants';
 import Animate from './Animate';
 
 const logos = [
@@ -13,6 +13,9 @@ const logos = [
   { component: <WellowLogo />, name: 'Wellow', href: 'https://www.wellowhouse.com/' },
   { component: <TmhAvocatsLogo />, name: 'TMH Avocats', href: 'https://tmhavocats.com/' },
   { component: <FoodPilotLogo />, name: 'Food Pilot', href: 'https://foodpilot.io/fr/' },
+  { component: <OctoGamingLogo />, name: 'Octo Gaming', href: 'https://octo-gaming.com' },
+  { component: <CameroneCapitalLogo />, name: 'Camerone Capital', href: 'https://cameronecap.fr/' },
+  { component: <SOCABEGLogo />, name: 'SOCABEG', href: 'https://socabeg.com/' },
 ];
 
 interface LogosProps {
@@ -52,7 +55,7 @@ const Logos: React.FC<LogosProps> = ({ backgroundColor = 'bg-white' }) => {
           <div className="flex w-max animate-scroll-x hover:[animation-play-state:paused] items-center">
             {allLogos.map((logo, index) => {
               const logoClassName = "max-h-full max-w-full object-contain";
-              const isEnlarged = logo.name === 'Wellow';
+              const isEnlarged = ['Wellow', 'Octo Gaming', 'Camerone Capital'].includes(logo.name);
               const sizeClass = isEnlarged ? "h-32 w-52" : "h-24 w-40";
 
               return (

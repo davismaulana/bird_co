@@ -95,13 +95,15 @@ export const WellowLogo = ({ className }: { className?: string }) => <img src="h
 export const RegenSchoolLogo = ({ className }: { className?: string }) => <img src="https://static.wixstatic.com/media/7bfd2f_01fba9e6ecbb414c90a29c40b793f8cb~mv2.png" alt="Regen School Logo" className={className} />;
 export const PomadLogo = ({ className }: { className?: string }) => <img src="https://static.wixstatic.com/media/7bfd2f_8f755945e31d45fba32951129b040994~mv2.png" alt="Pomad Logo" className={className} />;
 export const OctoLogo = ({ className }: { className?: string }) => <img src="https://static.wixstatic.com/media/7bfd2f_eff6d7f274f3477393d513ca25459148~mv2.png" alt="Octo Logo" className={className} />;
-export const CameroneCapitalLogo = ({ className }: { className?: string }) => <img src="https://static.wixstatic.com/media/7bfd2f_1b1546b30c1a40158136d72a41b42857~mv2.png" alt="Camerone Capital Logo" className={className} />;
+export const CameroneCapitalLogo = ({ className }: { className?: string }) => <img src="https://images2.imgbox.com/e2/a1/XIrbhwm7_o.png" alt="Camerone Capital Logo" className={className} />;
 export const CasaLogo = ({ className }: { className?: string }) => <img src="https://images2.imgbox.com/37/c9/jRyH0zm4_o.png" alt="CASA Logo" className={className} />;
 export const BredLogo = ({ className }: { className?: string }) => <img src="https://images2.imgbox.com/80/da/LmaUelaP_o.png" alt="BRED Logo" className={className} />;
 export const EricKayserLogo = ({ className }: { className?: string }) => <img src="https://images2.imgbox.com/4a/9e/jS5lKo0o_o.png" alt="Eric Kayser Logo" className={className} />;
 export const SquareLogo = ({ className }: { className?: string }) => <img src="https://images2.imgbox.com/39/33/4ug9ldzK_o.png" alt="UI Investment Partners Logo" className={className} />;
 export const TmhAvocatsLogo = ({ className }: { className?: string }) => <img src="https://tmhavocats.com/wp-content/uploads/2021/09/Fichier-12tmh-couleurs-1.png" alt="TMH Avocats Logo" className={className} />;
 export const FoodPilotLogo = ({ className }: { className?: string }) => <img src="https://foodpilot.io/wp-content/uploads/2024/01/cropped-Logo-Food-Pilot-JB.png" alt="Food Pilot Logo" className={className} />;
+export const OctoGamingLogo = ({ className }: { className?: string }) => <img src="https://images2.imgbox.com/7b/76/O3kSavYf_o.png" alt="Octo Gaming Logo" className={className} />;
+export const SOCABEGLogo = ({ className }: { className?: string }) => <img src="https://images2.imgbox.com/94/30/H1BnocDS_o.png" alt="SOCABEG Logo" className={className} />;
 
 export const FinancialReportMockup: React.FC<{ theme?: string, noAspectRatio?: boolean, disableHover?: boolean }> = ({ noAspectRatio = false, disableHover = false }) => (
     <div className={`w-full h-full bg-white rounded-2xl ${noAspectRatio ? 'p-4 sm:p-6' : 'p-6'} shadow-2xl border border-gray-100 flex flex-col ${!disableHover ? 'transform hover:scale-105 transition-transform duration-300' : ''} ${!noAspectRatio ? 'aspect-[4/3]' : ''}`}>
