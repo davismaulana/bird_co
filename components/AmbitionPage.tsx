@@ -72,15 +72,15 @@ const AmbitionPage: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-br from-violet-50 to-gray-50">
+      <section className="py-16 bg-gradient-to-br from-[#27013D] to-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Animate variant="pop">
                 <h2 className="text-3xl lg:text-4xl font-bold">
-                    <span className="gradient-text">Prêt à réaliser votre ambition ?</span>
+                    <span className="gradient-text-light">Prêt à réaliser votre ambition ?</span>
                 </h2>
             </Animate>
             <Animate variant="pop" delay={150}>
-                <p className="mt-4 text-lg text-gray-800 max-w-2xl mx-auto">
+                <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
                     Discutons de la manière dont notre expertise peut se mettre au service de votre succès.
                 </p>
             </Animate>
@@ -90,7 +90,7 @@ const AmbitionPage: React.FC = () => {
                       href="https://calendly.com/contact-birdandco/30min"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block bg-[#27013D] text-white px-10 py-4 rounded-full font-semibold hover:bg-[#1c0e2a] transition-transform hover:scale-105 text-lg"
+                      className="inline-block bg-white text-[#27013D] px-10 py-4 rounded-full font-semibold hover:bg-gray-200 transition-all transform hover:scale-105 text-lg"
                     >
                       Échanger avec un bras droit
                     </a>

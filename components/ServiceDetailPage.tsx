@@ -161,20 +161,20 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
       </main>
       
       {/* Final CTA section */}
-      <section className="py-12 bg-gradient-to-br from-violet-50 to-gray-50">
+      <section className="py-16 bg-gradient-to-br from-[#27013D] to-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Animate variant="pop">
               <div className="flex justify-center mb-4">
-                <div className="w-16 h-1 bg-gradient-to-r from-[#27013D] to-[#6D0037] rounded-full"></div>
+                <div className="w-16 h-1 bg-gradient-to-r from-white to-gray-400 rounded-full"></div>
               </div>
             </Animate>
             <Animate variant="pop" delay={100}>
                 <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight">
-                    <span className="gradient-text">Prêt à prendre le contrôle ?</span>
+                    <span className="gradient-text-light">Prêt à prendre le contrôle ?</span>
                 </h2>
             </Animate>
             <Animate variant="pop" delay={200}>
-                <p className="mt-4 text-lg text-gray-800 max-w-2xl mx-auto">
+                <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
                     Contactez-nous pour discuter de la manière dont nous pouvons construire ensemble les outils de votre succès.
                 </p>
             </Animate>
@@ -184,7 +184,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                       href="https://calendly.com/contact-birdandco/30min"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block bg-[#27013D] text-white px-10 py-4 rounded-full font-semibold hover:bg-[#1c0e2a] transition-transform hover:scale-105 text-lg"
+                      className="inline-block bg-white text-[#27013D] px-10 py-4 rounded-full font-semibold hover:bg-gray-200 transition-all transform hover:scale-105 text-lg"
                     >
                       Échanger avec un bras droit
                     </a>
