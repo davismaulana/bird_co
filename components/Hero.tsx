@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
             </Animate>
             <Animate variant="pop" delay={200}>
               <p className="mt-6 text-base md:text-lg text-gray-800 max-w-xl mx-auto md:mx-0">
-                Sollicitez une <span className="gradient-text font-semibold">ressource experte, ingénieuse et polyvalente</span> dédiée à la réalisation de vos ambitions.
+                Sollicitez une <span className="gradient-text font-semibold">ressource experte, ingénieuse et polyvalente</span><br />dédiée à la réalisation de vos ambitions
               </p>
             </Animate>
             <Animate variant="pop" delay={400}>

@@ -168,8 +168,8 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
               </div>
             </Animate>
             <Animate variant="pop" delay={100}>
-                <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
-                    Prêt à prendre <span className="gradient-text">le contrôle ?</span>
+                <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-[#27013D]">
+                    Prêt à prendre <span className="gradient-text-gray">le contrôle ?</span>
                 </h2>
             </Animate>
             <Animate variant="pop" delay={200}>

@@ -74,8 +74,8 @@ const AmbitionPage: React.FC = () => {
       <section className="bg-gray-50 py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Animate variant="pop">
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
-                    Prêt à réaliser <span className="gradient-text">votre ambition ?</span>
+                <h2 className="text-3xl lg:text-4xl font-bold">
+                    <span className="gradient-text">Prêt à réaliser votre ambition ?</span>
                 </h2>
             </Animate>
             <Animate variant="pop" delay={150}>
