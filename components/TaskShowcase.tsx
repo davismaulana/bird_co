@@ -205,14 +205,14 @@ const TaskShowcase: React.FC = () => {
                                         onClick={() => setActiveTask(index)}
                                         className={`w-full text-left p-4 rounded-xl transition-all duration-300 group ${
                                             activeTask === index
-                                                ? 'bg-white shadow-xl shadow-violet-100/50 scale-105 hover:scale-[1.07]'
+                                                ? 'bg-[#27013D] shadow-xl shadow-violet-200/50 scale-105 hover:scale-[1.07]'
                                                 : 'bg-white hover:shadow-xl hover:shadow-violet-100/50 hover:scale-105'
                                         }`}
                                     >
                                         <div className="flex items-center gap-4">
                                             <div
                                                 className={`w-20 h-20 rounded-xl flex-shrink-0 flex items-center justify-center transition-colors duration-300 ${
-                                                    activeTask === index ? 'bg-[#27013D]' : 'bg-gray-100'
+                                                    activeTask === index ? 'bg-white/20' : 'bg-gray-100'
                                                 }`}
                                             >
                                                 <img
@@ -222,8 +222,8 @@ const TaskShowcase: React.FC = () => {
                                                 />
                                             </div>
                                             <div>
-                                                <h3 className="font-bold text-gray-900">{task.title}</h3>
-                                                <p className="text-sm text-gray-700">{task.description}</p>
+                                                <h3 className={`font-bold ${activeTask === index ? 'text-white' : 'text-gray-900'}`}>{task.title}</h3>
+                                                <p className={`text-sm ${activeTask === index ? 'text-violet-200' : 'text-gray-700'}`}>{task.description}</p>
                                             </div>
                                         </div>
                                     </button>
