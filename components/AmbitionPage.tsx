@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Animate from './Animate';
 import ValueProposition from './ValueProposition';
@@ -31,7 +32,7 @@ const AmbitionPage: React.FC = () => {
                   rel="noopener noreferrer"
                   className="inline-block text-center bg-white text-[#27013D] px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors transform hover:scale-105 text-base"
                 >
-                  Planifier un rendez-vous
+                  Échanger avec un bras droit
                 </a>
               </div>
             </Animate>
@@ -91,7 +92,7 @@ const AmbitionPage: React.FC = () => {
                       rel="noopener noreferrer"
                       className="inline-block bg-[#27013D] text-white px-10 py-4 rounded-full font-semibold hover:bg-[#1c0e2a] transition-transform hover:scale-105 text-lg"
                     >
-                      Planifier un rendez-vous
+                      Échanger avec un bras droit
                     </a>
                 </div>
             </Animate>

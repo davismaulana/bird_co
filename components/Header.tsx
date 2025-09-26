@@ -78,6 +78,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
   }, [pathname]);
   
   const isPropositionSectionActive = pathname.startsWith('/service/');
+  const ctaText = pathname === '/' ? 'Réserver une consultation' : 'Échanger avec un bras droit';
 
   return (
     <>
@@ -206,7 +207,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                 rel="noopener noreferrer"
                 className="ml-6 bg-[#27013D] text-white px-4 py-2 rounded-full font-semibold text-sm hover:bg-[#1c0e2a] transition-colors whitespace-nowrap"
               >
-                Planifier un rendez-vous
+                {ctaText}
               </a>
             </div>
 
@@ -295,7 +296,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="block w-full text-center bg-[#27013D] text-white px-6 py-4 rounded-full font-semibold hover:bg-[#1c0e2a] transition-colors text-xl"
               >
-                  Planifier un rendez-vous
+                  {ctaText}
               </a>
             </div>
           </div>

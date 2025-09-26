@@ -30,7 +30,7 @@ const Hero: React.FC = () => {
                   rel="noopener noreferrer"
                   className="inline-block text-center bg-[#27013D] text-white px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-[#1c0e2a] transition-colors transform hover:scale-105 text-base"
                 >
-                  Planifier un rendez-vous
+                  Réserver une consultation
                 </a>
               </div>
             </Animate>
