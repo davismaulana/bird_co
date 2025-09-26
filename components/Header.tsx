@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { services, HamburgerIcon, CloseIcon } from '../constants';
 
@@ -78,7 +77,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
   }, [pathname]);
   
   const isPropositionSectionActive = pathname.startsWith('/service/');
-  const ctaText = pathname === '/' ? 'Réserver une consultation' : 'Échanger avec un bras droit';
+  const ctaText = 'Réserver une consultation';
 
   return (
     <>
