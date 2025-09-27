@@ -60,6 +60,18 @@ export const CheckmarkCircleIcon: React.FC<{ className?: string }> = ({ classNam
     </svg>
 );
 
+export const GradientCheckIcon: React.FC<{ className?: string }> = ({ className }) => (
+    <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style={{ stopColor: '#27013D', stopOpacity: 1 }} />
+                <stop offset="100%" style={{ stopColor: '#6D0037', stopOpacity: 1 }} />
+            </linearGradient>
+        </defs>
+        <path d="M5 13l4 4L19 7" stroke="url(#grad1)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+);
+
 export const FundsRaisedIcon: React.FC<{ className?: string }> = ({ className }) => (
     <svg className={className} fill="none" viewBox="0 0 64 64" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M29.333 58.667h-16A5.333 5.333 0 018 53.333V10.667A5.333 5.333 0 0113.333 5.333H40l10.667 10.667v13.333M40 5.333v10.667h10.667M21.333 29.333h13.334M21.333 42.667h8m21.334-5.334a8 8 0 11-16 0 8 8 0 0116 0zm-8-5.333v10.667m-5.333-5.334h10.666" />
@@ -388,7 +400,7 @@ export const BriefcaseIcon: React.FC<{ className?: string }> = ({ className }) =
 export const services = [
     { slug: 'pilotage-planification', title: 'Pilotage & Planification', subTitle: 'Construire', description: 'les outils indispensables à une gestion optimale : reporting, business plan, prévisionnels de trésorerie etc.', icon: <PaperPlaneIcon />, iconClassName: 'w-16 h-16' },
     { slug: 'cfo-part-time', title: 'CFO Part-time', subTitle: 'Structurer', description: 'votre croissance et mettre en exécution votre stratégie financière avec un bras-droit dédié à temps partiel.', icon: <CfoIcon />, iconClassName: 'w-14 h-14' },
-    { slug: 'diagnostic-restructuration', title: 'Diagnostic & Restructuration', subTitle: 'Relancer', description: 'Apporter le recul et la clarté nécessaires pour relancer votre activité.', icon: <DiagnosticIcon />, iconClassName: 'w-16 h-16' },
+    { slug: 'diagnostic-restructuration', title: 'Diagnostic & Restructuration', subTitle: 'Relancer', description: 'Analyser votre situation, identifier les leviers et restaurer la confiance.', icon: <DiagnosticIcon />, iconClassName: 'w-16 h-16' },
     { slug: 'services-ma', title: 'Services M&A', subTitle: 'Accompagner', description: 'vos projets capitalistiques : cession, levée de fonds et réorganisation.', icon: <img src="https://images2.imgbox.com/91/32/P6brUIBM_o.png" alt="Services M&A Icon" />, iconClassName: 'w-20 h-20' },
 ];
 
@@ -441,8 +453,8 @@ export const serviceDetails: { [key: string]: any } = {
                             'Planifier votre activité et projeter vos états financiers',
                             'Assurer les relations avec vos investisseurs et créanciers',
                         ].map(item => (
-                            <li key={item} className="flex items-start">
-                                <CheckmarkCircleIcon className="w-5 h-5 text-green-500 flex-shrink-0 mr-3 mt-1" />
+                            <li key={item} className="flex items-center">
+                                <GradientCheckIcon className="w-6 h-6 flex-shrink-0 mr-2" />
                                 <span>{item}</span>
                             </li>
                         ))}
@@ -503,8 +515,8 @@ export const serviceDetails: { [key: string]: any } = {
                             'Accompagner les projets de fusion-acquisition et de restructuration',
                             'Contribuer à la stratégie d’investissement et d’innovation',
                         ].map(item => (
-                            <li key={item} className="flex items-start">
-                                <CheckmarkCircleIcon className="w-5 h-5 text-green-500 flex-shrink-0 mr-3 mt-1" />
+                            <li key={item} className="flex items-center">
+                                <GradientCheckIcon className="w-6 h-6 flex-shrink-0 mr-2" />
                                 <span>{item}</span>
                             </li>
                         ))}
@@ -575,8 +587,8 @@ export const serviceDetails: { [key: string]: any } = {
                             'Redéfinir la stratégie de l’entreprise',
                             'Restructurer son organisation et ses opérations',
                         ].map(item => (
-                            <li key={item} className="flex items-start">
-                                <CheckmarkCircleIcon className="w-5 h-5 text-green-500 flex-shrink-0 mr-3 mt-1" />
+                            <li key={item} className="flex items-center">
+                                <GradientCheckIcon className="w-6 h-6 flex-shrink-0 mr-2" />
                                 <span>{item}</span>
                             </li>
                         ))}
@@ -633,8 +645,8 @@ export const serviceDetails: { [key: string]: any } = {
                             'Renforcer la position négociatrice',
                             'Rechercher des repreneurs pertinents',
                         ].map(item => (
-                            <li key={item} className="flex items-start">
-                                <CheckmarkCircleIcon className="w-5 h-5 text-green-500 flex-shrink-0 mr-3 mt-1" />
+                            <li key={item} className="flex items-center">
+                                <GradientCheckIcon className="w-6 h-6 flex-shrink-0 mr-2" />
                                 <span>{item}</span>
                             </li>
                         ))}

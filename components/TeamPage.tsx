@@ -2,23 +2,23 @@
 
 import React from 'react';
 import Animate from './Animate';
-import { teamMembers, LinkedInIcon, CheckmarkCircleIcon } from '../constants';
+import { teamMembers, LinkedInIcon, GradientCheckIcon } from '../constants';
 
 const dnaItems = [
     {
-      icon: <CheckmarkCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mr-4 mt-1" />,
+      icon: <GradientCheckIcon className="w-6 h-6 flex-shrink-0 mr-4" />,
       text: "<strong>Engagement :</strong> Nous sommes à vos côtés, pleinement investis dans la réussite de vos projets."
     },
     {
-      icon: <CheckmarkCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mr-4 mt-1" />,
+      icon: <GradientCheckIcon className="w-6 h-6 flex-shrink-0 mr-4" />,
       text: "<strong>Excellence :</strong> Nous visons les plus hauts standards de qualité dans chacune de nos missions."
     },
     {
-      icon: <CheckmarkCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mr-4 mt-1" />,
+      icon: <GradientCheckIcon className="w-6 h-6 flex-shrink-0 mr-4" />,
       text: "<strong>Pragmatisme :</strong> Nous apportons des solutions concrètes, opérationnelles et adaptées à votre réalité."
     },
     {
-      icon: <CheckmarkCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mr-4 mt-1" />,
+      icon: <GradientCheckIcon className="w-6 h-6 flex-shrink-0 mr-4" />,
       text: "<strong>Confiance :</strong> Nous construisons des relations durables basées sur la transparence et l'intégrité."
     }
 ];
@@ -178,7 +178,7 @@ const TeamPage: React.FC = () => {
                 </div>
                 <ul className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 max-w-4xl mx-auto stagger">
                     {dnaItems.map((item, index) => (
-                    <Animate as="li" key={index} variant="pop" className="flex items-start">
+                    <Animate as="li" key={index} variant="pop" className="flex items-center">
                         {item.icon}
                         <span className="text-gray-800 text-lg leading-relaxed" dangerouslySetInnerHTML={{ __html: item.text }}></span>
                     </Animate>

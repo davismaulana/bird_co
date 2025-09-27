@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { services, serviceDetails, CheckmarkCircleIcon, FinancialReportMockup } from '../constants';
+import { services, serviceDetails, GradientCheckIcon, FinancialReportMockup } from '../constants';
 import Animate from './Animate';
 import HeroAnimation from './HeroAnimation';
 
@@ -146,8 +146,8 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                                 </Animate>
                                 <ul className="space-y-4 stagger text-lg">
                                     {category.list.map((item: string, itemIndex: number) => (
-                                        <Animate as="li" key={itemIndex} variant="pop" className="flex items-start">
-                                            <CheckmarkCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mr-4 mt-1" />
+                                        <Animate as="li" key={itemIndex} variant="pop" className="flex items-center">
+                                            <GradientCheckIcon className="w-6 h-6 flex-shrink-0 mr-3" />
                                             <span className="text-gray-800">{item}</span>
                                         </Animate>
                                     ))}
