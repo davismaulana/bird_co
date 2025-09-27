@@ -445,9 +445,9 @@ export const serviceDetails: { [key: string]: any } = {
                 description: (
                     <ul className="space-y-3">
                         {[
-                            'Mettre en place des processus et des outils pour un pilotage financier efficace',
+                            'Mettre en place des outils de pilotage financier efficaces',
                             'Fixer des objectifs opérationnels et financiers',
-                            'Analyser rigoureusement la performance financière et opérationnelle',
+                            'Analyser la performance financière et opérationnelle',
                             'Prendre les décisions nécessaires à son amélioration',
                             'Optimiser le BFR et la trésorerie',
                             'Planifier votre activité et projeter vos états financiers',
@@ -509,10 +509,10 @@ export const serviceDetails: { [key: string]: any } = {
                         {[
                             'Piloter la rentabilité et la performance financière',
                             'Prendre les décisions nécessaires à son amélioration',
-                            'Rechercher les financements nécessaires et adaptés à la maturité de l\'entreprise',
+                            'Rechercher les financements adaptés à votre maturité',
                             'Fixer des objectifs opérationnels et financiers',
                             'Gérer les relations avec vos investisseurs et créanciers',
-                            'Accompagner les projets de fusion-acquisition et de restructuration',
+                            'Accompagner les projets M&A et de restructuration',
                             'Contribuer à la stratégie d’investissement et d’innovation',
                         ].map(item => (
                             <li key={item} className="flex items-center">
