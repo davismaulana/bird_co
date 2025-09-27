@@ -80,16 +80,16 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
             </div>
             {details.diagnostic.content && (
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center max-w-6xl mx-auto">
-                  <Animate variant={'pop'} delay={200} className="aspect-[4/3] lg:aspect-auto h-full">
-                      {details.diagnostic.content.visual}
-                  </Animate>
-                  <Animate variant={'pop'} delay={300}>
+                  <Animate variant={'pop'} delay={200}>
                       <div className="text-left">
                         <h3 className="text-2xl font-bold text-[#27013D] mb-4">{details.diagnostic.content.title}</h3>
                         <div className="text-gray-800 leading-relaxed">
                           {details.diagnostic.content.description}
                         </div>
                       </div>
+                  </Animate>
+                  <Animate variant={'pop'} delay={300} className="aspect-[4/3] lg:aspect-auto h-full">
+                      {details.diagnostic.content.visual}
                   </Animate>
               </div>
             )}
