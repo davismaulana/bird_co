@@ -176,18 +176,14 @@ const TeamPage: React.FC = () => {
                         <p className="text-lg text-gray-800 leading-relaxed">Quatre valeurs fondamentales qui définissent qui nous sommes, comment nous travaillons, et ce que nous nous engageons à vous apporter.</p>
                     </Animate>
                 </div>
-                <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto stagger">
+                <ul className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 max-w-4xl mx-auto stagger">
                     {dnaItems.map((item, index) => (
-                        <Animate
-                            key={index}
-                            variant="pop"
-                            className="bg-white p-6 rounded-xl border border-gray-200 shadow-lg shadow-violet-100/50 flex items-start"
-                        >
-                            {item.icon}
-                            <span className="text-gray-800 text-lg leading-relaxed" dangerouslySetInnerHTML={{ __html: item.text }}></span>
-                        </Animate>
+                    <Animate as="li" key={index} variant="pop" className="flex items-center">
+                        {item.icon}
+                        <span className="text-gray-800 text-lg leading-relaxed" dangerouslySetInnerHTML={{ __html: item.text }}></span>
+                    </Animate>
                     ))}
-                </div>
+                </ul>
               </div>
             </section>
 

@@ -86,17 +86,8 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                   <Animate variant={'pop'} delay={300}>
                       <div className="text-left">
                         <h3 className="text-2xl font-bold text-[#27013D] mb-4">{details.diagnostic.content.title}</h3>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6 stagger text-lg">
-                            {details.diagnostic.content.points.map((point: string, index: number) => (
-                                <Animate
-                                    key={index}
-                                    variant="pop"
-                                    className="bg-white p-5 rounded-xl border border-gray-200 flex items-start space-x-4 text-left h-full shadow-lg shadow-violet-100/50"
-                                >
-                                    <GradientCheckIcon className="w-7 h-7 flex-shrink-0 mt-1" />
-                                    <span className="text-gray-800">{point}</span>
-                                </Animate>
-                            ))}
+                        <div className="text-gray-800 leading-relaxed">
+                          {details.diagnostic.content.description}
                         </div>
                       </div>
                   </Animate>
@@ -153,20 +144,14 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                                 <Animate variant="pop" delay={200 + index * 100}>
                                     <h3 className="text-xl lg:text-2xl font-semibold text-[#27013D] border-b-2 border-[#6D0037]/20 pb-3 mb-6">{category.title}</h3>
                                 </Animate>
-                                {category.list.length > 0 ? (
-                                    <div className="flex flex-wrap gap-3 stagger">
-                                        {category.list.map((item: string, itemIndex: number) => (
-                                            <Animate
-                                                key={itemIndex}
-                                                variant="pop"
-                                                className="bg-white py-2 px-4 rounded-full border border-gray-200 flex items-center space-x-2 text-left"
-                                            >
-                                                <GradientCheckIcon className="w-5 h-5 flex-shrink-0" />
-                                                <span className="text-gray-800 text-base font-medium">{item}</span>
-                                            </Animate>
-                                        ))}
-                                    </div>
-                                ) : null}
+                                <ul className="space-y-4 stagger text-lg">
+                                    {category.list.map((item: string, itemIndex: number) => (
+                                        <Animate as="li" key={itemIndex} variant="pop" className="flex items-center">
+                                            <GradientCheckIcon className="w-6 h-6 flex-shrink-0 mr-3" />
+                                            <span className="text-gray-800">{item}</span>
+                                        </Animate>
+                                    ))}
+                                </ul>
                             </div>
                         ))}
                     </div>

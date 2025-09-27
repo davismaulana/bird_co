@@ -442,15 +442,24 @@ export const serviceDetails: { [key: string]: any } = {
             description: 'Construire les outils indispensables pour appliquer votre stratégie financière et accompagner la croissance de votre entreprise.',
             content: {
                 title: 'Définir une feuille de route claire',
-                points: [
-                    'Mettre en place des processus et des outils pour un pilotage financier efficace',
-                    'Fixer des objectifs opérationnels et financiers',
-                    'Analyser rigoureusement la performance financière et opérationnelle',
-                    'Prendre les décisions nécessaires à son amélioration',
-                    'Optimiser le BFR et la trésorerie',
-                    'Planifier votre activité et projeter vos états financiers',
-                    'Assurer les relations avec vos investisseurs et créanciers',
-                ],
+                description: (
+                    <ul className="space-y-3">
+                        {[
+                            'Mettre en place des processus et des outils pour un pilotage financier efficace',
+                            'Fixer des objectifs opérationnels et financiers',
+                            'Analyser rigoureusement la performance financière et opérationnelle',
+                            'Prendre les décisions nécessaires à son amélioration',
+                            'Optimiser le BFR et la trésorerie',
+                            'Planifier votre activité et projeter vos états financiers',
+                            'Assurer les relations avec vos investisseurs et créanciers',
+                        ].map(item => (
+                            <li key={item} className="flex items-center">
+                                <GradientCheckIcon className="w-6 h-6 flex-shrink-0 mr-2" />
+                                <span>{item}</span>
+                            </li>
+                        ))}
+                    </ul>
+                ),
                 visual: <FinancialReportMockup noAspectRatio disableHover />,
             }
         },
@@ -495,15 +504,24 @@ export const serviceDetails: { [key: string]: any } = {
             description: 'Structurer une fonction Finance indispensable pour développer sereinement votre activité :',
             content: {
                 title: 'Développer sereinement votre activité',
-                points: [
-                    'Piloter la rentabilité et la performance financière',
-                    'Prendre les décisions nécessaires à son amélioration',
-                    'Rechercher les financements nécessaires et adaptés à la maturité de l\'entreprise',
-                    'Fixer des objectifs opérationnels et financiers',
-                    'Gérer les relations avec vos investisseurs et créanciers',
-                    'Accompagner les projets de fusion-acquisition et de restructuration',
-                    'Contribuer à la stratégie d’investissement et d’innovation',
-                ],
+                description: (
+                    <ul className="space-y-3">
+                        {[
+                            'Piloter la rentabilité et la performance financière',
+                            'Prendre les décisions nécessaires à son amélioration',
+                            'Rechercher les financements nécessaires et adaptés à la maturité de l\'entreprise',
+                            'Fixer des objectifs opérationnels et financiers',
+                            'Gérer les relations avec vos investisseurs et créanciers',
+                            'Accompagner les projets de fusion-acquisition et de restructuration',
+                            'Contribuer à la stratégie d’investissement et d’innovation',
+                        ].map(item => (
+                            <li key={item} className="flex items-center">
+                                <GradientCheckIcon className="w-6 h-6 flex-shrink-0 mr-2" />
+                                <span>{item}</span>
+                            </li>
+                        ))}
+                    </ul>
+                ),
                 visual: <KpiDashboardMockup noAspectRatio disableHover />,
             }
         },
@@ -559,14 +577,23 @@ export const serviceDetails: { [key: string]: any } = {
             description: 'Réaliser une évaluation complète, claire et objective de la santé financière de l’entreprise afin de :',
             content: {
                 title: 'Piloter la relance de l\'activité',
-                points: [
-                    'Comprendre la performance historique',
-                    'Identifier les dysfonctionnements de gestion',
-                    'Renégocier ses dettes',
-                    'Lever de nouveaux financements',
-                    'Redéfinir la stratégie de l’entreprise',
-                    'Restructurer son organisation et ses opérations',
-                ],
+                description: (
+                    <ul className="space-y-3">
+                        {[
+                            'Comprendre la performance historique',
+                            'Identifier les dysfonctionnements de gestion',
+                            'Renégocier ses dettes',
+                            'Lever de nouveaux financements',
+                            'Redéfinir la stratégie de l’entreprise',
+                            'Restructurer son organisation et ses opérations',
+                        ].map(item => (
+                            <li key={item} className="flex items-center">
+                                <GradientCheckIcon className="w-6 h-6 flex-shrink-0 mr-2" />
+                                <span>{item}</span>
+                            </li>
+                        ))}
+                    </ul>
+                ),
                 visual: <DiagnosticScanMockup />,
             }
         },
@@ -608,14 +635,23 @@ export const serviceDetails: { [key: string]: any } = {
             description: 'Construire les documents clés présentant la performance financière et opérationnelle de votre activité ainsi que ses ambitions stratégiques pour :',
             content: {
                 title: 'Maximiser la valeur et sécuriser la transaction',
-                points: [
-                    'Crédibiliser et maximiser la valorisation de l’entreprise',
-                    'Accélérer le processus de vente',
-                    'Réduire les risques de transactions',
-                    'Gagner la confiance des acheteurs potentiels',
-                    'Renforcer la position négociatrice',
-                    'Rechercher des repreneurs pertinents',
-                ],
+                description: (
+                    <ul className="space-y-3">
+                        {[
+                            'Crédibiliser et maximiser la valorisation de l’entreprise',
+                            'Accélérer le processus de vente',
+                            'Réduire les risques de transactions',
+                            'Gagner la confiance des acheteurs potentiels',
+                            'Renforcer la position négociatrice',
+                            'Rechercher des repreneurs pertinents',
+                        ].map(item => (
+                            <li key={item} className="flex items-center">
+                                <GradientCheckIcon className="w-6 h-6 flex-shrink-0 mr-2" />
+                                <span>{item}</span>
+                            </li>
+                        ))}
+                    </ul>
+                ),
                 visual: <TransactionalSupportVisual />,
             }
         },
