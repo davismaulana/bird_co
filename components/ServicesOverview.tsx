@@ -41,7 +41,7 @@ const ServicesOverview: React.FC = () => {
                   <p className="text-sm font-semibold text-[#6D0037] mb-2 whitespace-nowrap">{service.subTitle}</p>
                   <p className="text-gray-800 text-sm leading-relaxed">{service.description}</p>
                   <div className="flex-grow" />
-                  <div className="mt-4 flex items-center justify-center text-sm font-semibold text-[#27013D] transition-colors duration-300 group-hover:text-[#6D0037]">
+                  <div className="mt-4 flex items-center justify-center text-sm font-semibold text-[#27013D] transition-colors duration-300">
                     <span>En savoir plus</span>
                     <ArrowRightIcon className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
                   </div>
