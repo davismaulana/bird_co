@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 
 export const PaperPlaneIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -542,7 +543,7 @@ export const serviceDetails: { [key: string]: any } = {
     },
     'cfo-part-time': {
         title: 'CFO Part-Time',
-        subtitle: 'Apporter le recul et la clarté nécessaires à la prise de décision et relancer votre activité',
+        subtitle: "Un partenaire clé pour structurer et faire croître votre organisation",
         diagnostic: {
             title: <>Vos <span className="gradient-text">enjeux</span></>,
             description: 'Structurer une fonction Finance indispensable pour développer sereinement votre activité :',
