@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { services, serviceDetails, GradientCheckIcon, FinancialReportMockup } from '../constants';
 import Animate from './Animate';
@@ -68,12 +67,12 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                   </div>
                 </Animate>
                 <Animate variant="pop" delay={100}>
-                  <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
+                  <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold leading-tight text-gray-900">
                     {details.diagnostic.title}
                   </h2>
                 </Animate>
                 <Animate variant="pop" delay={200}>
-                  <p className="text-lg text-gray-800 mt-4">
+                  <p className="text-base text-gray-800 mt-4">
                     {details.diagnostic.description}
                   </p>
                 </Animate>
@@ -85,8 +84,8 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                   </Animate>
                   <Animate variant={'pop'} delay={200}>
                       <div className="text-left">
-                        <h3 className="text-2xl font-bold text-[#27013D] mb-4">{details.diagnostic.content.title}</h3>
-                        <div className="text-gray-800 leading-relaxed">
+                        <h3 className="text-xl font-bold text-[#27013D] mb-4">{details.diagnostic.content.title}</h3>
+                        <div className="text-gray-800 leading-relaxed text-sm">
                           {details.diagnostic.content.description}
                         </div>
                       </div>
@@ -107,12 +106,12 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                 </div>
               </Animate>
               <Animate variant="pop" delay={100}>
-                  <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight">
+                  <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold leading-tight">
                       <span className="gradient-text">{details.ambition.title}</span>
                   </h2>
               </Animate>
               <Animate variant="pop" delay={200}>
-                  <p className="mt-4 text-lg text-gray-800 max-w-2xl mx-auto">
+                  <p className="mt-4 text-base text-gray-800 max-w-2xl mx-auto">
                       {details.ambition.description}
                   </p>
               </Animate>
@@ -127,11 +126,11 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                 <div className="lg:col-span-1">
                     <div className="lg:sticky lg:top-32">
                         <Animate variant="pop" delay={100}>
-                            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight gradient-text">{details.mainContent.title}</h2>
+                            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold leading-tight gradient-text">{details.mainContent.title}</h2>
                         </Animate>
                         {details.mainContent.description && (
                             <Animate variant="pop" delay={200}>
-                                <p className="mt-4 text-gray-800 leading-relaxed">{details.mainContent.description}</p>
+                                <p className="mt-4 text-gray-800 leading-relaxed text-sm">{details.mainContent.description}</p>
                             </Animate>
                         )}
                     </div>
@@ -142,9 +141,9 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                         {details.mainContent.categories.map((category: any, index: number) => (
                              <div key={index}>
                                 <Animate variant="pop" delay={200 + index * 100}>
-                                    <h3 className="text-xl lg:text-2xl font-semibold text-[#27013D] border-b-2 border-[#6D0037]/20 pb-3 mb-6">{category.title}</h3>
+                                    <h3 className="text-lg lg:text-xl font-semibold text-[#27013D] border-b-2 border-[#6D0037]/20 pb-3 mb-6">{category.title}</h3>
                                 </Animate>
-                                <ul className="space-y-4 stagger text-lg">
+                                <ul className="space-y-4 stagger text-base">
                                     {category.list.map((item: string, itemIndex: number) => (
                                         <Animate as="li" key={itemIndex} variant="pop" className="flex items-center">
                                             <GradientCheckIcon className="w-6 h-6 flex-shrink-0 mr-3" />
@@ -169,12 +168,12 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
               </div>
             </Animate>
             <Animate variant="pop" delay={100}>
-                <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight">
+                <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold leading-tight">
                     <span className="gradient-text-light">Prêt à prendre le contrôle ?</span>
                 </h2>
             </Animate>
             <Animate variant="pop" delay={200}>
-                <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
+                <p className="mt-4 text-base text-gray-300 max-w-2xl mx-auto">
                     Contactez-nous pour discuter de la manière dont nous pouvons construire ensemble les outils de votre succès.
                 </p>
             </Animate>
@@ -184,7 +183,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                       href="https://calendly.com/contact-birdandco/30min"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block bg-white text-[#27013D] px-10 py-4 rounded-full font-semibold hover:bg-gray-200 transition-all transform hover:scale-105 text-lg"
+                      className="inline-block bg-white text-[#27013D] px-10 py-4 rounded-full font-semibold hover:bg-gray-200 transition-all transform hover:scale-105 text-base"
                     >
                       Échanger avec un bras droit
                     </a>

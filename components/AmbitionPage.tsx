@@ -61,19 +61,19 @@ const AmbitionPage: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
               <Animate variant="pop">
-                  <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 mb-6">
+                  <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold text-gray-900 mb-6">
                       Notre <span className="gradient-text">ADN</span>
                   </h2>
               </Animate>
               <Animate variant="pop" delay={150}>
-                  <p className="text-lg text-gray-800 leading-relaxed">Quatre valeurs fondamentales qui définissent qui nous sommes, comment nous travaillons, et ce que nous nous engageons à vous apporter.</p>
+                  <p className="text-base text-gray-800 leading-relaxed">Quatre valeurs fondamentales qui définissent qui nous sommes, comment nous travaillons, et ce que nous nous engageons à vous apporter.</p>
               </Animate>
           </div>
           <ul className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-5xl mx-auto stagger">
               {dnaItems.map((item, index) => (
               <Animate as="li" key={index} variant="pop" className="flex items-start">
                   <CheckmarkCircleIcon className="w-6 h-6 flex-shrink-0 mr-4 text-green-500 mt-1" />
-                  <p className="text-gray-800 text-lg leading-relaxed" dangerouslySetInnerHTML={{ __html: item.text }}></p>
+                  <p className="text-base text-gray-800 leading-relaxed" dangerouslySetInnerHTML={{ __html: item.text }}></p>
               </Animate>
               ))}
           </ul>
@@ -93,15 +93,15 @@ const AmbitionPage: React.FC = () => {
                 <div className="lg:order-first">
                     <div className="p-8 sm:p-12 md:p-20 container">
                         <Animate variant="pop">
-                            <blockquote className="text-2xl md:text-3xl xl:text-4xl font-bold text-[#27013D] leading-snug">
+                            <blockquote className="text-xl md:text-2xl xl:text-3xl font-bold text-[#27013D] leading-snug">
                                 "La meilleure façon de prédire l'avenir, c'est de le créer."
                             </blockquote>
                         </Animate>
                         <Animate variant="pop" delay={150}>
-                            <p className="mt-4 text-lg text-gray-800">— Peter Drucker</p>
+                            <p className="mt-4 text-base text-gray-800">— Peter Drucker</p>
                         </Animate>
                         <Animate variant="pop" delay={300}>
-                            <p className="mt-8 text-gray-800 leading-relaxed">
+                            <p className="mt-8 text-gray-800 leading-relaxed text-sm">
                                 Cette philosophie est au cœur de notre démarche. Nous ne nous contentons pas de réagir aux événements ; nous vous donnons les moyens de façonner activement l'avenir de votre entreprise, en transformant l'incertitude en opportunité et la vision en réalité.
                             </p>
                         </Animate>
@@ -115,12 +115,12 @@ const AmbitionPage: React.FC = () => {
       <section className="py-16 bg-gradient-to-br from-[#27013D] to-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Animate variant="pop">
-                <h2 className="text-3xl lg:text-4xl font-bold">
+                <h2 className="text-2xl lg:text-3xl font-bold">
                     <span className="gradient-text-light">Prêt à réaliser votre ambition ?</span>
                 </h2>
             </Animate>
             <Animate variant="pop" delay={150}>
-                <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
+                <p className="mt-4 text-base text-gray-300 max-w-2xl mx-auto">
                     Discutons de la manière dont notre expertise peut se mettre au service de votre succès.
                 </p>
             </Animate>
@@ -130,7 +130,7 @@ const AmbitionPage: React.FC = () => {
                       href="https://calendly.com/contact-birdandco/30min"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block bg-white text-[#27013D] px-10 py-4 rounded-full font-semibold hover:bg-gray-200 transition-all transform hover:scale-105 text-lg"
+                      className="inline-block bg-white text-[#27013D] px-10 py-4 rounded-full font-semibold hover:bg-gray-200 transition-all transform hover:scale-105 text-base"
                     >
                       Échanger avec un bras droit
                     </a>
