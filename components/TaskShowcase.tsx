@@ -107,6 +107,10 @@ const OnSiteInterventionVisual: React.FC = () => (
                 <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">3</div>
                 <p className="text-gray-800">Définition de la feuille de route stratégique</p>
             </div>
+            <div className="flex items-start gap-3">
+                <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">4</div>
+                <p className="text-gray-800">Plan d'action et prochaines étapes</p>
+            </div>
         </div>
         <div className="mt-4 flex items-center justify-between text-xs text-gray-500">
             <span>BIRD&CO</span>
