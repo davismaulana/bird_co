@@ -26,8 +26,8 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
   return (
     <div className="bg-white text-gray-800">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#27013D] to-[#6D0037] text-white flex items-center overflow-hidden pt-28 pb-12 md:pt-36 md:pb-16">
-        <div className="absolute inset-0 z-0 opacity-30">
+      <section className="relative bg-gradient-to-br from-[#27013D] to-gray-900 text-white flex items-center overflow-hidden pt-28 pb-12 md:pt-36 md:pb-16">
+        <div className="absolute inset-0 z-0 opacity-40">
           <HeroAnimation color="light" />
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

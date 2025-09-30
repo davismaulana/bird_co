@@ -25,8 +25,8 @@ const AmbitionPage: React.FC = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#27013D] to-[#6D0037] text-white flex items-center overflow-hidden pt-28 pb-12 md:pt-36 md:pb-16">
-        <div className="absolute inset-0 z-0 opacity-30">
+      <section className="relative bg-gradient-to-br from-[#27013D] to-gray-900 text-white flex items-center overflow-hidden pt-28 pb-12 md:pt-36 md:pb-16">
+        <div className="absolute inset-0 z-0 opacity-40">
           <HeroAnimation color="light" />
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -87,7 +87,7 @@ const AmbitionPage: React.FC = () => {
           <div className="max-w-none">
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
                 <Animate variant="pop" className="h-[400px] lg:h-full lg:order-last">
-                    <div className="h-[400px] lg:h-full bg-cover bg-center" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')` }}>
+                    <div className="h-[400px] lg:h-full bg-cover bg-center" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')` }}>
                     </div>
                 </Animate>
                 <div className="lg:order-first">
