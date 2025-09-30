@@ -28,6 +28,23 @@ const PillarsSection: React.FC = () => {
   return (
     <section className="bg-white py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <Animate variant="pop">
+            <div className="flex justify-center mb-4">
+              <div className="w-16 h-1 bg-gradient-to-r from-[#27013D] to-[#6D0037] rounded-full"></div>
+            </div>
+          </Animate>
+          <Animate variant="pop" delay={100}>
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
+              <span className="text-black">Les Piliers de</span> <span className="gradient-text">Notre Engagement</span>
+            </h2>
+          </Animate>
+          <Animate variant="pop" delay={200}>
+            <p className="text-lg text-gray-800 mt-2">
+              Notre ambition repose sur <strong>quatre piliers fondamentaux</strong> qui guident chacune de nos interventions.
+            </p>
+          </Animate>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto stagger">
           {pillars.map((pillar, index) => (
             <Animate key={index} variant="pop">
