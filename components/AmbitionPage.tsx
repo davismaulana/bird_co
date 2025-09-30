@@ -1,8 +1,25 @@
 
+
 import React from 'react';
 import Animate from './Animate';
 import ValueProposition from './ValueProposition';
 import HeroAnimation from './HeroAnimation';
+import { CheckmarkCircleIcon } from '../constants';
+
+const dnaItems = [
+    {
+      text: "<strong>Engagement :</strong> Nous sommes à vos côtés, pleinement investis dans la réussite de vos projets."
+    },
+    {
+      text: "<strong>Excellence :</strong> Nous visons les plus hauts standards de qualité dans chacune de nos missions."
+    },
+    {
+      text: "<strong>Pragmatisme :</strong> Nous apportons des solutions concrètes, opérationnelles et adaptées à votre réalité."
+    },
+    {
+      text: "<strong>Confiance :</strong> Nous construisons des relations durables basées sur la transparence et l'intégrité."
+    }
+];
 
 const AmbitionPage: React.FC = () => {
   return (
@@ -37,6 +54,29 @@ const AmbitionPage: React.FC = () => {
               </div>
             </Animate>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto">
+              <Animate variant="pop">
+                  <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 mb-6">
+                      Notre <span className="gradient-text">ADN</span>
+                  </h2>
+              </Animate>
+              <Animate variant="pop" delay={150}>
+                  <p className="text-lg text-gray-800 leading-relaxed">Quatre valeurs fondamentales qui définissent qui nous sommes, comment nous travaillons, et ce que nous nous engageons à vous apporter.</p>
+              </Animate>
+          </div>
+          <ul className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-5xl mx-auto stagger">
+              {dnaItems.map((item, index) => (
+              <Animate as="li" key={index} variant="pop" className="flex items-start">
+                  <CheckmarkCircleIcon className="w-6 h-6 flex-shrink-0 mr-4 text-green-500 mt-1" />
+                  <p className="text-gray-800 text-lg leading-relaxed" dangerouslySetInnerHTML={{ __html: item.text }}></p>
+              </Animate>
+              ))}
+          </ul>
         </div>
       </section>
 
