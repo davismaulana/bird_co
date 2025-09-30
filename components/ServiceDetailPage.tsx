@@ -123,8 +123,9 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
       {/* Content Section */}
       <main id="content" className="bg-gray-50 py-12 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-start">
-                <div className="lg:col-span-1 lg:sticky lg:top-32 lg:order-last">
+            {/* Title Row */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12 lg:mb-16">
+                <div className="lg:col-start-5 lg:col-span-8">
                     <div className="text-left">
                         <Animate variant="pop">
                             <h2 className="text-3xl md:text-4xl font-bold leading-tight text-gray-900">
@@ -140,7 +141,11 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                         )}
                     </div>
                 </div>
-                <div className="lg:col-span-2 lg:order-first">
+            </div>
+
+            {/* Content Row */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <div className="lg:col-span-8">
                     <div className="space-y-12">
                         {details.mainContent.categories.map((category: any, index: number) => (
                              <div key={index}>
