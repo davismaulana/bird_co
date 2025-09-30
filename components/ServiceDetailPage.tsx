@@ -125,8 +125,8 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             {/* Title Row */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12 lg:mb-16">
-                <div className="lg:col-start-5 lg:col-span-8">
-                    <div className="text-left lg:text-right">
+                <div className="lg:col-span-8">
+                    <div className="text-left">
                         <Animate variant="pop">
                             <h2 className="text-3xl md:text-4xl font-bold leading-tight text-gray-900">
                                 <span className="gradient-text">{details.mainContent.title}</span>
@@ -145,7 +145,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
 
             {/* Content Row */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                <div className="lg:col-span-8">
+                <div className="lg:col-start-5 lg:col-span-8">
                     <div className="space-y-12">
                         {details.mainContent.categories.map((category: any, index: number) => (
                              <div key={index}>
