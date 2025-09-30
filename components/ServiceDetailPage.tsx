@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { services, serviceDetails, GradientCheckIcon, FinancialReportMockup } from '../constants';
 import Animate from './Animate';
@@ -125,6 +126,11 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
             <div className="grid lg:grid-cols-3 gap-12 lg:gap-24">
                 <div className="lg:col-span-1">
                     <div className="lg:sticky lg:top-32">
+                        <Animate variant="pop" delay={100}>
+                            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900 mb-8">
+                                <span className="gradient-text">{details.mainContent.title}</span>
+                            </h2>
+                        </Animate>
                         {details.mainContent.description && (
                             <Animate variant="pop" delay={200}>
                                 <p className="text-gray-800 leading-relaxed text-sm">{details.mainContent.description}</p>
@@ -134,11 +140,6 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                 </div>
 
                 <div className="lg:col-span-2">
-                    <Animate variant="pop" delay={100}>
-                        <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900 mb-12">
-                            <span className="gradient-text">{details.mainContent.title}</span>
-                        </h2>
-                    </Animate>
                     <div className="space-y-12">
                         {details.mainContent.categories.map((category: any, index: number) => (
                              <div key={index}>
