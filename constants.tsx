@@ -523,7 +523,7 @@ export const serviceDetails: { [key: string]: any } = {
                     ] 
                 },
                 {
-                    title: 'Outils stratégiques et de planification',
+                    title: 'Outils de planification',
                     list: [
                         'Business plan',
                         'Prévisionnel de trésorerie',
