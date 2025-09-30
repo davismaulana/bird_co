@@ -1,11 +1,10 @@
 
-import React, { useState } from 'react';
-import { services, serviceDetails, GradientCheckIcon } from '../constants';
+import React from 'react';
+import { services, serviceDetails, GradientCheckIcon, FinancialReportMockup } from '../constants';
 import Animate from './Animate';
 import HeroAnimation from './HeroAnimation';
 
 const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
   const details = serviceDetails[serviceId];
   const service = services.find(s => s.slug === serviceId);
 
@@ -22,11 +21,6 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
       </div>
     );
   }
-
-  const categories = details.mainContent.categories;
-  const SHOW_INITIAL_CATEGORIES = 2;
-  const canExpand = categories.length > SHOW_INITIAL_CATEGORIES;
-  const displayedCategories = canExpand && !isExpanded ? categories.slice(0, SHOW_INITIAL_CATEGORIES) : categories;
 
   return (
     <div className="bg-white text-gray-800">
@@ -151,55 +145,22 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
 
             <div className="max-w-4xl mx-auto">
                 <div className="space-y-12">
-                    {displayedCategories.map((category: any, index: number) => {
-                       const allItems = category.list.flatMap((item: string) => item.split(',').map(s => s.trim())).filter(Boolean);
-                       
-                       return (
+                    {details.mainContent.categories.map((category: any, index: number) => (
                          <div key={index}>
-                            <Animate variant="pop">
-                                <h3 className="text-xl font-semibold text-gray-900 mb-4">{category.title}</h3>
+                            <Animate variant="pop" delay={200 + index * 100}>
+                                <h3 className="text-lg lg:text-xl font-semibold text-[#27013D] border-b-2 border-[#6D0037]/20 pb-3 mb-6">{category.title}</h3>
                             </Animate>
-                            {allItems.length > 0 && (
-                                <Animate variant="pop">
-                                    <div className="flex flex-wrap gap-3">
-                                        {allItems.map((tag: string, tagIndex: number) => (
-                                            <span key={tagIndex} className="bg-teal-50 text-teal-800 text-sm font-medium px-4 py-2 rounded-lg border border-teal-100">
-                                                {tag}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </Animate>
-                            )}
+                            <ul className="space-y-4 stagger text-base">
+                                {category.list.map((item: string, itemIndex: number) => (
+                                    <Animate as="li" key={itemIndex} variant="pop" className="flex items-center">
+                                        <GradientCheckIcon className="w-6 h-6 flex-shrink-0 mr-3" />
+                                        <span className="text-gray-800">{item}</span>
+                                    </Animate>
+                                ))}
+                            </ul>
                         </div>
-                        );
-                    })}
+                    ))}
                 </div>
-
-                {canExpand && (
-                    <Animate variant="pop">
-                        <div className="mt-12 text-center">
-                            <button
-                                onClick={() => setIsExpanded(!isExpanded)}
-                                className="flex items-center justify-center gap-2 mx-auto font-semibold text-[#27013D] hover:text-[#6D0037] transition-colors group"
-                                aria-expanded={isExpanded}
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className={`w-5 h-5 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
-                                    viewBox="0 0 20 20"
-                                    fill="currentColor"
-                                >
-                                    <path
-                                    fillRule="evenodd"
-                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                    clipRule="evenodd"
-                                    />
-                                </svg>
-                                <span>{isExpanded ? 'Voir moins' : 'Voir plus'}</span>
-                            </button>
-                        </div>
-                    </Animate>
-                )}
             </div>
         </div>
       </main>
