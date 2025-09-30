@@ -1,10 +1,11 @@
+
 import React, { useState, useEffect } from 'react';
 import { services, HamburgerIcon, CloseIcon } from '../constants';
 
 const navItems = [
   { name: 'Accueil', href: '/' },
-  { name: 'Notre engagement', href: '/ambition' },
   { name: 'Notre proposition', href: '/#notre-proposition' },
+  { name: 'Notre engagement', href: '/ambition' },
   { name: 'Notre équipe', href: '/#notre-equipe' },
   { name: 'Contact', href: '/#contact' },
 ];
