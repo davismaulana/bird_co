@@ -123,40 +123,43 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
       {/* Content Section */}
       <main id="content" className="bg-gray-50 py-12 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-3 gap-12 lg:gap-24">
-                <div className="lg:col-span-1">
-                    <div className="lg:sticky lg:top-32">
-                        <Animate variant="pop" delay={100}>
-                            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900 mb-6">
-                                <span className="gradient-text">{details.mainContent.title}</span>
-                            </h2>
-                        </Animate>
-                        {details.mainContent.description && (
-                            <Animate variant="pop" delay={200}>
-                                <p className="text-gray-800 leading-relaxed text-sm">{details.mainContent.description}</p>
-                            </Animate>
-                        )}
+            <div className="text-center mb-16 max-w-3xl mx-auto">
+                <Animate variant="pop">
+                    <div className="flex justify-center mb-4">
+                        <div className="w-16 h-1 bg-gradient-to-r from-[#27013D] to-[#6D0037] rounded-full"></div>
                     </div>
-                </div>
+                </Animate>
+                <Animate variant="pop" delay={100}>
+                    <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
+                        <span className="gradient-text">{details.mainContent.title}</span>
+                    </h2>
+                </Animate>
+                {details.mainContent.description && (
+                    <Animate variant="pop" delay={200}>
+                        <p className="text-base text-gray-800 mt-4">
+                            {details.mainContent.description}
+                        </p>
+                    </Animate>
+                )}
+            </div>
 
-                <div className="lg:col-span-2">
-                    <div className="space-y-12">
-                        {details.mainContent.categories.map((category: any, index: number) => (
-                             <div key={index}>
-                                <Animate variant="pop" delay={200 + index * 100}>
-                                    <h3 className="text-lg lg:text-xl font-semibold text-[#27013D] border-b-2 border-[#6D0037]/20 pb-3 mb-6">{category.title}</h3>
-                                </Animate>
-                                <ul className="space-y-4 stagger text-base">
-                                    {category.list.map((item: string, itemIndex: number) => (
-                                        <Animate as="li" key={itemIndex} variant="pop" className="flex items-center">
-                                            <GradientCheckIcon className="w-6 h-6 flex-shrink-0 mr-3" />
-                                            <span className="text-gray-800">{item}</span>
-                                        </Animate>
-                                    ))}
-                                </ul>
-                            </div>
-                        ))}
-                    </div>
+            <div className="max-w-4xl mx-auto">
+                <div className="space-y-12">
+                    {details.mainContent.categories.map((category: any, index: number) => (
+                         <div key={index}>
+                            <Animate variant="pop" delay={200 + index * 100}>
+                                <h3 className="text-lg lg:text-xl font-semibold text-[#27013D] border-b-2 border-[#6D0037]/20 pb-3 mb-6">{category.title}</h3>
+                            </Animate>
+                            <ul className="space-y-4 stagger text-base">
+                                {category.list.map((item: string, itemIndex: number) => (
+                                    <Animate as="li" key={itemIndex} variant="pop" className="flex items-center">
+                                        <GradientCheckIcon className="w-6 h-6 flex-shrink-0 mr-3" />
+                                        <span className="text-gray-800">{item}</span>
+                                    </Animate>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
