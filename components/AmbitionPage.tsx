@@ -13,7 +13,7 @@ const dnaItems = [
       text: "<strong>Excellence :</strong> Nous visons les plus hauts standards de qualité dans chacune de nos missions."
     },
     {
-      text: "<strong>Pragmatisme :</strong> Nous apportons des solutions concrètes, opérationnelles et adaptées à votre réalité."
+      text: "<strong>Pragmatisme:</strong> Nous apportons des solutions concrètes et adaptées à votre réalité, en conjuguant expertise et pragmatisme, pour un accompagnement aussi pertinent qu’économique."
     },
     {
       text: "<strong>Confiance :</strong> Nous construisons des relations durables basées sur la transparence et l'intégrité."
@@ -86,7 +86,7 @@ const AmbitionPage: React.FC = () => {
           <div className="max-w-none">
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
                 <Animate variant="pop" className="h-full lg:order-last">
-                    <div className="h-[400px] lg:h-full bg-cover bg-center" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')` }}>
+                    <div className="h-[400px] lg:h-full bg-cover bg-center" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')` }}>
                     </div>
                 </Animate>
                 <div className="lg:order-first">

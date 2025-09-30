@@ -15,7 +15,7 @@ const dnaItems = [
     },
     {
       icon: <GradientCheckIcon className="w-6 h-6 flex-shrink-0 mr-4" />,
-      text: "<strong>Pragmatisme :</strong> Nous apportons des solutions concrètes, opérationnelles et adaptées à votre réalité."
+      text: "<strong>Pragmatisme:</strong> Nous apportons des solutions concrètes et adaptées à votre réalité, en conjuguant expertise et pragmatisme, pour un accompagnement aussi pertinent qu’économique."
     },
     {
       icon: <GradientCheckIcon className="w-6 h-6 flex-shrink-0 mr-4" />,
