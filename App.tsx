@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -19,6 +18,7 @@ import LoadingScreen from './components/LoadingScreen';
 import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 import TermsOfServicePage from './components/TermsOfServicePage';
 import BackToTopButton from './components/BackToTopButton';
+import PillarsSection from './components/PillarsSection';
 
 const App: React.FC = () => {
   const { pathname } = window.location;
@@ -125,7 +125,8 @@ const App: React.FC = () => {
           <Hero />
           {/* <Methodology /> */}
           <ServicesOverview />
-          <Logos />
+          <PillarsSection />
+          <Logos backgroundColor="bg-gray-50" />
           <Personas />
           <Stats />
           <Expertise />

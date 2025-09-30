@@ -101,6 +101,49 @@ export const PerformancePillarIcon: React.FC<{ className?: string }> = ({ classN
     </svg>
 );
 
+export const PillarBinocularsIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M8 7.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11z" />
+    <path d="M16 7.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11z" />
+    <path d="M11 7.5h2" />
+    <path d="M6 5.5L4 4" />
+    <path d="M18 5.5l2-1.5" />
+  </svg>
+);
+
+export const PillarHandshakeIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M18 11l-3-3-9 9 3 3" />
+      <path d="M15 8l-4 4" />
+      <path d="M15 8c.55-.55.55-1.45 0-2-.55-.55-1.45-.55-2 0l-1 1" />
+      <path d="M9 17c-.55.55-1.45.55-2 0-.55-.55-.55-1.45 0-2l1-1" />
+      <path d="M8 12L5 9l-1 1 3 3" />
+      <path d="M14 16l3 3 1-1-3-3" />
+  </svg>
+);
+
+export const PillarShieldCheckIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      <path d="M9 12l2 2 4-4" />
+  </svg>
+);
+
+export const PillarPerformanceIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M4 22H20" />
+    <path d="M6 18V11" />
+    <path d="M10 18V11" />
+    <path d="M14 18V11" />
+    <path d="M18 18V11" />
+    <path d="M3 11H21" />
+    <path d="M2 11L12 3L22 11" />
+    <path d="M12 7.5a2 2 0 100-4 2 2 0 000 4z" />
+    <path d="M12 5.5V4.5M12 6.5V5.5" />
+  </svg>
+);
+
+
 const PlaceholderComponent: React.FC<{ name: string, className?: string }> = ({ name, className }) => <div className={`text-xs text-gray-600 ${className}`}>[{name}]</div>;
 
 export const WellowLogo = ({ className }: { className?: string }) => <img src="https://static.wixstatic.com/media/7bfd2f_41cbb9b9d5e340d9a25af26860d861b1~mv2.png" alt="Wellow Logo" className={className} />;
