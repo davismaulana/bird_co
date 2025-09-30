@@ -85,7 +85,7 @@ const App: React.FC = () => {
       );
     }
   
-    if (pathname === '/piliers') {
+    if (pathname === '/ambition') {
       return (
         <div className="bg-white overflow-x-hidden">
           <Header pathname={pathname} />
