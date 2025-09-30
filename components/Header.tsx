@@ -3,7 +3,7 @@ import { services, HamburgerIcon, CloseIcon } from '../constants';
 
 const navItems = [
   { name: 'Accueil', href: '/' },
-  { name: 'Notre proposition', href: '/#notre-proposition' },
+  { name: 'Solutions', href: '/#notre-proposition' },
   { name: 'Nos Piliers', href: '/ambition' },
   { name: 'À l\'origine', href: '/#notre-equipe' },
   { name: 'Contact', href: '/#contact' },
@@ -103,7 +103,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
               {/* Desktop Navigation */}
               <nav className="flex items-center space-x-2">
                 {navItems.map((item) => {
-                  if (item.name === 'Notre proposition') {
+                  if (item.name === 'Solutions') {
                     const isSectionActive = activeSection === 'notre-proposition';
                     const hasBackground = isDropdownOpen || isPropositionSectionActive;
 
@@ -243,7 +243,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
             
             <nav className="flex flex-col items-center space-y-2 text-center w-full">
               {navItems.map((item) => {
-                if (item.name === 'Notre proposition') {
+                if (item.name === 'Solutions') {
                   return (
                     <div key={item.name} className="w-full">
                        <a href={item.href} onClick={() => setIsMobileMenuOpen(false)} className={`block w-full text-2xl font-semibold py-3 rounded-lg text-black hover:bg-[#27013D] hover:text-white transition-colors ${
