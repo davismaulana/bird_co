@@ -1,5 +1,4 @@
 
-
 import React from 'react';
 
 export const PaperPlaneIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -665,7 +664,7 @@ export const serviceDetails: { [key: string]: any } = {
         subtitle: 'Accompagner vos projets capitalistiques : cession, levée de fonds, croissance externe et réorganisation',
         diagnostic: {
             title: <>Vos <span className="gradient-text">objectifs</span></>,
-            description: 'Construire les documents clés présentant la performance financière et opérationnelle de votre activité ainsi que ses ambitions stratégiques pour :',
+            description: 'Concevoir des analyses et présentations objectives qui mettent en évidence la performance et le potentiel de la cible',
             content: {
                 title: 'Maximiser la valeur et sécuriser la transaction',
                 description: (
