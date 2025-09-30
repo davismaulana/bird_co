@@ -126,7 +126,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
             {/* Title Row */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12 lg:mb-16">
                 <div className="lg:col-start-5 lg:col-span-8">
-                    <div className="text-left">
+                    <div className="text-left lg:text-right">
                         <Animate variant="pop">
                             <h2 className="text-3xl md:text-4xl font-bold leading-tight text-gray-900">
                                 <span className="gradient-text">{details.mainContent.title}</span>
