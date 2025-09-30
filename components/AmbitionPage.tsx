@@ -25,7 +25,7 @@ const AmbitionPage: React.FC = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#27013D] to-[#6D0037] text-white flex items-center overflow-hidden pt-32 pb-16 md:pt-40 md:pb-20">
+      <section className="relative bg-gradient-to-br from-[#27013D] to-[#6D0037] text-white flex items-center overflow-hidden pt-28 pb-12 md:pt-36 md:pb-16">
         <div className="absolute inset-0 z-0 opacity-30">
           <HeroAnimation color="light" />
         </div>
@@ -37,12 +37,12 @@ const AmbitionPage: React.FC = () => {
               </h1>
             </Animate>
             <Animate variant="pop" delay={200}>
-              <p className="mt-6 text-base md:text-lg text-gray-200 max-w-5xl">
+              <p className="mt-4 text-base md:text-lg text-gray-200 max-w-5xl">
                 Vous permettre d'anticiper les enjeux financiers et opérationnels futurs et prévenir les éventuelles difficultés.
               </p>
             </Animate>
             <Animate variant="pop" delay={400}>
-              <div className="mt-10 flex justify-start">
+              <div className="mt-8 flex justify-start">
                 <a
                   href="https://calendly.com/contact-birdandco/30min"
                   target="_blank"

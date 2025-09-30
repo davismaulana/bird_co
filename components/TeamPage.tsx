@@ -28,11 +28,11 @@ const TeamPage: React.FC = () => {
         <div className="bg-white text-gray-800">
             {/* Hero Section */}
             <section className="bg-[#27013D] text-white overflow-hidden pt-24">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
                     <div className="grid grid-cols-1 gap-10 items-center">
                         <div className="text-center">
                             <Animate variant="pop">
-                                <p className="font-semibold text-violet-300 uppercase tracking-widest mb-4">Notre Équipe</p>
+                                <p className="font-semibold text-violet-300 uppercase tracking-widest mb-2">Notre Équipe</p>
                             </Animate>
                             <Animate variant="pop" delay={100}>
                                 <h1 className="text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-tight">
@@ -40,12 +40,12 @@ const TeamPage: React.FC = () => {
                                 </h1>
                             </Animate>
                             <Animate variant="pop" delay={200}>
-                                <p className="mt-6 text-lg text-gray-300 max-w-4xl mx-auto">
+                                <p className="mt-4 text-lg text-gray-300 max-w-4xl mx-auto">
                                     Des expertises complémentaires au service de votre croissance. Nous sommes plus que des consultants, nous sommes vos partenaires.
                                 </p>
                             </Animate>
                             <Animate variant="pop" delay={300}>
-                                <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+                                <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
                                     <a
                                         href="https://calendly.com/contact-birdandco/30min"
                                         target="_blank"

@@ -25,7 +25,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
   return (
     <div className="bg-white text-gray-800">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#27013D] to-[#6D0037] text-white flex items-center overflow-hidden pt-32 pb-16 md:pt-40 md:pb-20">
+      <section className="relative bg-gradient-to-br from-[#27013D] to-[#6D0037] text-white flex items-center overflow-hidden pt-28 pb-12 md:pt-36 md:pb-16">
         <div className="absolute inset-0 z-0 opacity-30">
           <HeroAnimation color="light" />
         </div>
@@ -37,12 +37,12 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
               </h1>
             </Animate>
             <Animate variant="pop" delay={200}>
-              <p className={`mt-6 text-gray-200 max-w-5xl ${serviceId === 'pilotage-planification' || serviceId === 'cfo-part-time' ? 'text-base' : 'text-base md:text-lg'}`}>
+              <p className={`mt-4 text-gray-200 max-w-5xl ${serviceId === 'pilotage-planification' || serviceId === 'cfo-part-time' ? 'text-base' : 'text-base md:text-lg'}`}>
                 {details.subtitle}
               </p>
             </Animate>
             <Animate variant="pop" delay={400}>
-              <div className="mt-10 flex justify-start">
+              <div className="mt-8 flex justify-start">
                 <a
                   href="https://calendly.com/contact-birdandco/30min"
                   target="_blank"

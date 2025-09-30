@@ -5,7 +5,7 @@ import HeroAnimation from './HeroAnimation';
 const TermsOfServicePage: React.FC = () => {
   return (
     <div className="bg-white">
-      <section className="relative bg-gradient-to-br from-[#27013D] to-[#6D0037] text-white flex items-center overflow-hidden pt-32 pb-16 md:pt-40 md:pb-20">
+      <section className="relative bg-gradient-to-br from-[#27013D] to-[#6D0037] text-white flex items-center overflow-hidden pt-28 pb-12 md:pt-36 md:pb-16">
         <div className="absolute inset-0 z-0 opacity-30">
           <HeroAnimation color="light" />
         </div>
@@ -17,12 +17,12 @@ const TermsOfServicePage: React.FC = () => {
               </h1>
             </Animate>
             <Animate variant="pop" delay={200}>
-              <p className="mt-6 text-base md:text-lg text-gray-200 max-w-5xl">
+              <p className="mt-4 text-base md:text-lg text-gray-200 max-w-5xl">
                 Dernière mise à jour : {new Date().toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}
               </p>
             </Animate>
             <Animate variant="pop" delay={400}>
-              <div className="mt-10 flex justify-start">
+              <div className="mt-8 flex justify-start">
                 <a
                   href="/"
                   className="inline-block text-center bg-white text-[#27013D] px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors transform hover:scale-105 text-base"
