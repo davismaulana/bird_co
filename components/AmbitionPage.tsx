@@ -60,7 +60,7 @@ const AmbitionPage: React.FC = () => {
           <div className="text-center max-w-3xl mx-auto">
               <Animate variant="pop">
                   <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 mb-6">
-                      L'ADN de <span className="gradient-text">Notre Engagement</span>
+                      Notre <span className="gradient-text">ADN</span>
                   </h2>
               </Animate>
               <Animate variant="pop" delay={150}>
