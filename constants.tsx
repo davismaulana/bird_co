@@ -443,8 +443,8 @@ export const BriefcaseIcon: React.FC<{ className?: string }> = ({ className }) =
 export const services = [
     { slug: 'pilotage-planification', title: 'Pilotage & Planification', subTitle: 'Construire', description: 'les outils indispensables à une gestion optimale : reporting, business plan, prévisionnels de trésorerie etc.', icon: <PaperPlaneIcon />, iconClassName: 'w-16 h-16' },
     { slug: 'cfo-part-time', title: 'CFO Part-time', subTitle: 'Structurer', description: 'votre croissance et mettre en exécution votre stratégie financière avec un bras-droit dédié à temps partiel.', icon: <CfoIcon />, iconClassName: 'w-14 h-14' },
-    { slug: 'diagnostic-restructuration', title: 'Diagnostic & Restructuration', subTitle: 'Relancer', description: 'vos actionnaires et créanciers sur la santé financière de votre activité et votre capacité à la relancer.', icon: <DiagnosticIcon />, iconClassName: 'w-16 h-16' },
-    { slug: 'services-ma', title: 'Services M&A', subTitle: 'Accompagner', description: 'vos projets capitalistiques : cession, levée de fonds et réorganisation.', icon: <img src="https://images2.imgbox.com/91/32/P6brUIBM_o.png" alt="Services M&A Icon" />, iconClassName: 'w-20 h-20' },
+    { slug: 'diagnostic-restructuration', title: 'Diagnostic & Restructuration', subTitle: 'Rassurer', description: 'vos actionnaires et créanciers sur la santé financière de votre activité et votre capacité à la relancer.', icon: <DiagnosticIcon />, iconClassName: 'w-16 h-16' },
+    { slug: 'services-ma', title: 'Services M&A', subTitle: 'Accompagner', description: 'vos projets capitalistiques : cession, levée de fonds, croissance externe et réorganisation.', icon: <img src="https://images2.imgbox.com/91/32/P6brUIBM_o.png" alt="Services M&A Icon" />, iconClassName: 'w-20 h-20' },
 ];
 
 export const teamMembers = [
@@ -661,7 +661,7 @@ export const serviceDetails: { [key: string]: any } = {
     },
     'services-ma': {
         title: 'Services M&A',
-        subtitle: 'Accompagner vos projets capitalistiques : cession, levée de fonds et réorganisation',
+        subtitle: 'Accompagner vos projets capitalistiques : cession, levée de fonds, croissance externe et réorganisation',
         diagnostic: {
             title: <>Vos <span className="gradient-text">objectifs</span></>,
             description: 'Construire les documents clés présentant la performance financière et opérationnelle de votre activité ainsi que ses ambitions stratégiques pour :',
