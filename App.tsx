@@ -72,6 +72,26 @@ const App: React.FC = () => {
     }
   }, [isLoading]);
 
+  // Handle scrolling to anchor links on page load
+  useEffect(() => {
+    if (isLoading) return;
+
+    const { hash } = window.location;
+    if (hash) {
+      const id = hash.substring(1);
+      const element = document.getElementById(id);
+      
+      if (element) {
+        // Wait for the main content fade-in animation to complete before scrolling
+        const timer = setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 550); 
+
+        return () => clearTimeout(timer);
+      }
+    }
+  }, [isLoading]);
+
   const AppContent: React.FC = () => {
     if (pathname.startsWith('/service/')) {
       const serviceId = pathname.substring('/service/'.length);
