@@ -35,7 +35,7 @@ const AmbitionPage: React.FC = () => {
               </h1>
             </Animate>
             <Animate variant="pop" delay={200}>
-              <p className="mt-4 text-base md:text-lg text-gray-200 max-w-5xl">
+              <p className="mt-4 text-base text-gray-200 max-w-5xl">
                 Notre engagement repose sur quatre piliers fondamentaux qui guident chacune de nos interventions et façonnent notre approche unique.
               </p>
             </Animate>
