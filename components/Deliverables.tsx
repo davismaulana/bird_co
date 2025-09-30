@@ -31,12 +31,12 @@ const Deliverables: React.FC = () => {
             </div>
           </Animate>
           <Animate variant="pop" delay={100}>
-            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
+            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold leading-tight text-gray-900">
               Des livrables <span className="gradient-text">clairs et impactants</span>
             </h2>
           </Animate>
           <Animate variant="pop" delay={200}>
-            <p className="text-lg text-gray-800 mt-4 max-w-3xl mx-auto">
+            <p className="text-base text-gray-800 mt-4 max-w-3xl mx-auto">
               Nous transformons des données complexes en outils de pilotage visuels et intuitifs, conçus pour vous donner une visibilité complète sur votre activité.
             </p>
           </Animate>
@@ -55,8 +55,8 @@ const Deliverables: React.FC = () => {
               </Animate>
               <Animate variant={'pop'} delay={300}>
                 <div className="text-left">
-                  <h3 className="text-2xl font-bold text-[#27013D] mb-3">{item.title}</h3>
-                  <p className="text-gray-800 leading-relaxed">{item.description}</p>
+                  <h3 className="text-xl font-bold text-[#27013D] mb-3">{item.title}</h3>
+                  <p className="text-gray-800 leading-relaxed text-sm">{item.description}</p>
                 </div>
               </Animate>
             </div>

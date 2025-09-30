@@ -163,10 +163,10 @@ export const SOCABEGLogo = ({ className }: { className?: string }) => <img src="
 export const FinancialReportMockup: React.FC<{ theme?: string, noAspectRatio?: boolean, disableHover?: boolean }> = ({ noAspectRatio = false, disableHover = false }) => (
     <div className={`w-full h-full bg-white rounded-2xl ${noAspectRatio ? 'p-4 sm:p-6' : 'p-6'} shadow-2xl border border-gray-100 flex flex-col ${!disableHover ? 'transform hover:scale-105 transition-transform duration-300' : ''} ${!noAspectRatio ? 'aspect-[4/3]' : ''}`}>
         <div className="flex items-center justify-between mb-4">
-            <h3 className="font-bold text-gray-900 text-base">Modèle Financier</h3>
+            <h3 className="font-bold text-gray-900 text-sm">Modèle Financier</h3>
             <div className="px-3 py-1 text-xs font-semibold bg-[#27013D] text-white rounded-full">Prévisions 5 ans</div>
         </div>
-        <div className="flex-grow bg-gray-50 rounded-lg p-4 space-y-2 border border-gray-100 text-sm">
+        <div className="flex-grow bg-gray-50 rounded-lg p-4 space-y-2 border border-gray-100 text-xs">
             <div className="grid grid-cols-4 gap-2 text-xs text-gray-700">
                 <span>Metric</span>
                 <span className="text-right">Y1</span>
@@ -203,12 +203,12 @@ export const FinancialReportMockup: React.FC<{ theme?: string, noAspectRatio?: b
 export const KpiDashboardMockup: React.FC<{ theme?: string, noAspectRatio?: boolean, disableHover?: boolean }> = ({ noAspectRatio = false, disableHover = false }) => (
   <div className={`w-full h-full bg-white rounded-2xl ${noAspectRatio ? 'p-4 sm:p-6' : 'p-6'} shadow-2xl border border-gray-100 flex flex-col ${!disableHover ? 'transform hover:scale-105 transition-transform duration-300' : ''} ${!noAspectRatio ? 'aspect-[4/3]' : ''}`}>
     <div className="w-full text-left mb-4">
-      <h3 className="font-bold text-gray-900 text-base">Tableau de Bord - T4 2024</h3>
-      <p className="text-sm text-gray-700">Suivi des KPIs clés</p>
+      <h3 className="font-bold text-gray-900 text-sm">Tableau de Bord - T4 2024</h3>
+      <p className="text-xs text-gray-700">Suivi des KPIs clés</p>
     </div>
     <div className="flex-grow grid grid-cols-2 grid-rows-2 gap-4">
       <div className="bg-gray-50 rounded-lg p-3 border border-gray-100 col-span-1 row-span-2 flex flex-col">
-        <p className="text-sm font-semibold text-gray-700 mb-2">Croissance MRR</p>
+        <p className="text-xs font-semibold text-gray-700 mb-2">Croissance MRR</p>
         <div className="flex-grow flex items-end space-x-2">
             <div className="w-full h-1/3 bg-[#6D0037]/20 rounded-t-sm"></div>
             <div className="w-full h-2/3 bg-[#6D0037]/20 rounded-t-sm"></div>
@@ -217,12 +217,12 @@ export const KpiDashboardMockup: React.FC<{ theme?: string, noAspectRatio?: bool
         </div>
       </div>
       <div className="bg-gray-50 rounded-lg p-4 border border-gray-100 col-span-1 row-span-1">
-        <p className="text-sm text-gray-700">Taux de Churn</p>
-        <p className="font-bold text-gray-800 text-2xl">2.1% <span className="text-green-500 text-base">↓</span></p>
+        <p className="text-xs text-gray-700">Taux de Churn</p>
+        <p className="font-bold text-gray-800 text-xl">2.1% <span className="text-green-500 text-sm">↓</span></p>
       </div>
        <div className="bg-gray-50 rounded-lg p-4 border border-gray-100 col-span-1 row-span-1">
-        <p className="text-sm text-gray-700">CAC</p>
-        <p className="font-bold text-[#27013D] text-2xl">1.2k€ <span className="text-red-500 text-base">↑</span></p>
+        <p className="text-xs text-gray-700">CAC</p>
+        <p className="font-bold text-[#27013D] text-xl">1.2k€ <span className="text-red-500 text-sm">↑</span></p>
       </div>
     </div>
   </div>
@@ -230,10 +230,10 @@ export const KpiDashboardMockup: React.FC<{ theme?: string, noAspectRatio?: bool
 export const FieldWorkMockup: React.FC<{ theme?: string }> = () => (
     <div className="w-full h-full bg-white rounded-2xl p-6 shadow-2xl border border-gray-100 flex flex-col transform hover:scale-105 transition-transform duration-300 aspect-[4/3]">
         <div className="flex items-center justify-between mb-4">
-            <h3 className="font-bold text-gray-900 text-base">Atelier Stratégique</h3>
+            <h3 className="font-bold text-gray-900 text-sm">Atelier Stratégique</h3>
             <div className="px-3 py-1 text-xs font-semibold bg-gray-100 text-gray-800 rounded-full">En personne</div>
         </div>
-        <div className="flex-grow bg-gray-50 rounded-lg p-4 space-y-3 border border-gray-100 text-sm">
+        <div className="flex-grow bg-gray-50 rounded-lg p-4 space-y-3 border border-gray-100 text-xs">
             <p className="font-semibold text-gray-800 mb-2">Agenda de la session :</p>
             <div className="flex items-start gap-3">
                 <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">1</div>
@@ -260,28 +260,28 @@ export const FieldWorkMockup: React.FC<{ theme?: string }> = () => (
 );
 export const DiagnosticScanMockup: React.FC<{ theme?: string }> = () => (
     <div className="w-full h-full bg-white rounded-2xl p-6 shadow-2xl border border-gray-100 flex flex-col transform hover:scale-105 transition-transform duration-300 aspect-[4/3]">
-      <h3 className="font-bold text-gray-900 text-base mb-4">Diagnostic 360° - Rapport d'Audit</h3>
+      <h3 className="font-bold text-gray-900 text-sm mb-4">Diagnostic 360° - Rapport d'Audit</h3>
       <div className="flex-grow grid grid-cols-2 gap-4">
         <div className="bg-violet-50/50 rounded-lg p-4 border border-violet-100 flex flex-col justify-center items-center">
             <div className="w-24 h-24 rounded-full border-8 border-white flex items-center justify-center shadow-inner bg-violet-100">
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex items-center justify-center text-white font-bold text-2xl">
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex items-center justify-center text-white font-bold text-xl">
                     86%
                 </div>
             </div>
-            <p className="text-sm font-semibold text-[#27013D] mt-3">Score de Performance</p>
+            <p className="text-xs font-semibold text-[#27013D] mt-3">Score de Performance</p>
         </div>
         <div className="space-y-3">
              <div className="flex items-center gap-3 bg-violet-50/50 p-3 rounded-lg border border-violet-100">
                 <CheckmarkCircleIcon className="w-5 h-5 text-green-500 flex-shrink-0" />
-                <p className="text-gray-800 text-sm">Santé Financière</p>
+                <p className="text-gray-800 text-xs">Santé Financière</p>
             </div>
              <div className="flex items-center gap-3 bg-violet-50/50 p-3 rounded-lg border border-violet-100">
                 <CheckmarkCircleIcon className="w-5 h-5 text-green-500 flex-shrink-0" />
-                <p className="text-gray-800 text-sm">Efficacité Opérationnelle</p>
+                <p className="text-gray-800 text-xs">Efficacité Opérationnelle</p>
             </div>
              <div className="flex items-center gap-3 bg-violet-50/50 p-3 rounded-lg border border-violet-100">
                 <TrendingUpIcon className="w-5 h-5 text-blue-500 flex-shrink-0" />
-                <p className="text-gray-800 text-sm">Stratégie de Croissance</p>
+                <p className="text-gray-800 text-xs">Stratégie de Croissance</p>
             </div>
         </div>
       </div>
@@ -291,23 +291,23 @@ export const DiagnosticScanMockup: React.FC<{ theme?: string }> = () => (
 {/* FIX: Moved TransactionalSupportVisual, DueDiligenceVisual, and CashGrowthVisual components before they are referenced. */}
 export const DueDiligenceVisual: React.FC = () => (
   <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
-    <h3 className="font-bold text-gray-800 text-sm sm:text-base mb-4">Checklist Due Diligence VDD</h3>
+    <h3 className="font-bold text-gray-800 text-xs sm:text-sm mb-4">Checklist Due Diligence VDD</h3>
     <div className="flex-grow space-y-3">
       <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
         <CheckmarkCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0" />
-        <p className="text-gray-800 text-sm">Qualité des revenus (MRR, churn...)</p>
+        <p className="text-gray-800 text-xs">Qualité des revenus (MRR, churn...)</p>
       </div>
       <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
         <CheckmarkCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0" />
-        <p className="text-gray-800 text-sm">Analyse de la rentabilité (EBITDA, marges)</p>
+        <p className="text-gray-800 text-xs">Analyse de la rentabilité (EBITDA, marges)</p>
       </div>
       <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
         <CheckmarkCircleIcon className="w-6 h-6 text-gray-300 flex-shrink-0" />
-        <p className="text-gray-700 text-sm">Normalisation du BFR</p>
+        <p className="text-gray-700 text-xs">Normalisation du BFR</p>
       </div>
        <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
         <CheckmarkCircleIcon className="w-6 h-6 text-gray-300 flex-shrink-0" />
-        <p className="text-gray-700 text-sm">Analyse de la dette nette</p>
+        <p className="text-gray-700 text-xs">Analyse de la dette nette</p>
       </div>
     </div>
   </div>
@@ -315,23 +315,23 @@ export const DueDiligenceVisual: React.FC = () => (
 
 export const TransactionalSupportVisual: React.FC = () => (
     <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
-      <h3 className="font-bold text-gray-800 text-sm sm:text-base mb-4">Accompagnement Transactionnel</h3>
+      <h3 className="font-bold text-gray-800 text-xs sm:text-sm mb-4">Accompagnement Transactionnel</h3>
       <div className="flex-grow space-y-3">
           <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
               <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse flex-shrink-0"></div>
-              <p className="text-gray-800 text-sm font-medium">Phase 1: Préparation (Teaser, IM, VDD)</p>
+              <p className="text-gray-800 text-xs font-medium">Phase 1: Préparation (Teaser, IM, VDD)</p>
           </div>
           <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 opacity-60">
               <div className="w-3 h-3 rounded-full bg-gray-400 flex-shrink-0"></div>
-              <p className="text-gray-700 text-sm">Phase 2: Négociation des offres</p>
+              <p className="text-gray-700 text-xs">Phase 2: Négociation des offres</p>
           </div>
           <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 opacity-60">
               <div className="w-3 h-3 rounded-full bg-gray-400 flex-shrink-0"></div>
-              <p className="text-gray-700 text-sm">Phase 3: Due Diligence &amp; Closing</p>
+              <p className="text-gray-700 text-xs">Phase 3: Due Diligence &amp; Closing</p>
           </div>
       </div>
       <div className="mt-4 bg-[#27013D]/5 rounded-lg p-3 border border-[#27013D]/10 text-center">
-          <p className="text-sm font-bold text-[#27013D]">Objectif: Maximiser la valeur</p>
+          <p className="text-xs font-bold text-[#27013D]">Objectif: Maximiser la valeur</p>
       </div>
     </div>
 );
@@ -342,21 +342,21 @@ export const CashGrowthVisual: React.FC = () => {
     return (
         <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
             <div className="flex justify-between items-start mb-2">
-                <h3 className="font-bold text-gray-800 text-sm sm:text-base">Cash Management</h3>
+                <h3 className="font-bold text-gray-800 text-xs sm:text-sm">Cash Management</h3>
             </div>
             <div className="relative flex-grow">
                 <svg viewBox="0 0 335 170" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
                     {/* Y-axis labels */}
-                    <text x="0" y="25" alignmentBaseline="middle" fill="#6b7280" fontSize="10">+50k€</text>
-                    <text x="0" y="75" alignmentBaseline="middle" fill="#6b7280" fontSize="10">0</text>
-                    <text x="0" y="125" alignmentBaseline="middle" fill="#6b7280" fontSize="10">-50k€</text>
+                    <text x="0" y="25" alignmentBaseline="middle" fill="#6b7280" fontSize="8">+50k€</text>
+                    <text x="0" y="75" alignmentBaseline="middle" fill="#6b7280" fontSize="8">0</text>
+                    <text x="0" y="125" alignmentBaseline="middle" fill="#6b7280" fontSize="8">-50k€</text>
                     
                     <g transform="translate(35, 0)">
                         {/* X-axis labels */}
-                        <text x="0" y="165" textAnchor="middle" fill="#6b7280" fontSize="10">T0</text>
-                        <text x="100" y="165" textAnchor="middle" fill="#6b7280" fontSize="10">T5</text>
-                        <text x="200" y="165" textAnchor="middle" fill="#6b7280" fontSize="10">T10</text>
-                        <text x="300" y="165" textAnchor="middle" fill="#6b7280" fontSize="10">T15</text>
+                        <text x="0" y="165" textAnchor="middle" fill="#6b7280" fontSize="8">T0</text>
+                        <text x="100" y="165" textAnchor="middle" fill="#6b7280" fontSize="8">T5</text>
+                        <text x="200" y="165" textAnchor="middle" fill="#6b7280" fontSize="8">T10</text>
+                        <text x="300" y="165" textAnchor="middle" fill="#6b7280" fontSize="8">T15</text>
                         
                         {/* Dashed reference line for zero */}
                         <line x1="0" y1="75" x2="300" y2="75" stroke="#d1d5db" strokeWidth="1" strokeDasharray="3 3" />

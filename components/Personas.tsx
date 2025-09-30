@@ -36,7 +36,7 @@ const Personas: React.FC = () => {
             </div>
           </Animate>
           <Animate variant="pop" delay={100}>
-            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
+            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold text-gray-900 leading-tight">
               À qui nous <span className="gradient-text">adressons-nous ?</span>
             </h2>
           </Animate>
@@ -52,8 +52,8 @@ const Personas: React.FC = () => {
                     {persona.icon}
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-[#27013D] mb-2">{persona.title}</h3>
-                    <p className="text-black leading-relaxed">
+                    <h3 className="text-lg font-bold text-[#27013D] mb-2">{persona.title}</h3>
+                    <p className="text-black leading-relaxed text-sm">
                       {persona.description}
                     </p>
                   </div>

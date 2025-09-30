@@ -14,20 +14,20 @@ const AmbitionSection: React.FC = () => {
                 <div className="grid grid-cols-1 gap-10 items-center">
                     <div className="text-center max-w-3xl mx-auto">
                         <Animate variant="pop">
-                            <h2 className="text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-tight">
+                            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-extrabold text-white leading-tight">
                                 Façonner l'avenir de votre entreprise
                             </h2>
                         </Animate>
                         <Animate variant="pop" delay={100}>
-                            <p className="mt-6 text-lg text-gray-300">
+                            <p className="mt-6 text-base text-gray-300">
                                 Vous permettre d'anticiper les enjeux financiers et opérationnels futurs et prévenir les éventuelles difficultés.
                             </p>
                         </Animate>
                         <Animate variant="pop" delay={200}>
-                            <ul className="mt-8 space-y-3 text-gray-300 inline-block text-left">
+                            <ul className="mt-8 space-y-3 text-gray-300 inline-block text-left text-sm">
                                 {credentials.map((item: string) => (
                                     <li key={item} className="flex items-start">
-                                        <span className="text-violet-400 mr-3 font-bold text-xl leading-tight mt-1">{item.charAt(0)}</span>
+                                        <span className="text-violet-400 mr-3 font-bold text-lg leading-tight mt-1">{item.charAt(0)}</span>
                                         <span className="flex-1">{item.substring(1).trim()}</span>
                                     </li>
                                 ))}

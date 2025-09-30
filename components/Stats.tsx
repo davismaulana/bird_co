@@ -30,7 +30,7 @@ const Stats: React.FC = () => {
             </div>
           </Animate>
           <Animate variant="pop" delay={100}>
-            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
+            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold text-gray-900 leading-tight">
               Un impact qui <span className="gradient-text">fait la différence</span>
             </h2>
           </Animate>
@@ -43,8 +43,8 @@ const Stats: React.FC = () => {
                 <div className="mb-6 flex items-center justify-center h-20">
                   {stat.icon}
                 </div>
-                <p className="text-4xl lg:text-5xl font-extrabold text-[#27013D] tracking-tighter">{stat.value}</p>
-                <p className="text-gray-800 mt-2 text-base font-medium">{stat.label}</p>
+                <p className="text-3xl lg:text-4xl font-extrabold text-[#27013D] tracking-tighter">{stat.value}</p>
+                <p className="text-gray-800 mt-2 text-sm font-medium">{stat.label}</p>
               </div>
             </Animate>
           ))}

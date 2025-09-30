@@ -13,12 +13,12 @@ const ServicesOverview: React.FC = () => {
             </div>
           </Animate>
           <Animate variant="pop" delay={100}>
-            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
+            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold text-gray-900 leading-tight">
               Un soutien <span className="gradient-text">à vos côtés</span>
             </h2>
           </Animate>
           <Animate variant="pop" delay={200}>
-            <p className="text-lg text-gray-800 mt-2">
+            <p className="text-base text-gray-800 mt-2">
               Dans la <strong>gestion quotidienne</strong> comme dans les <strong>processus transactionnels</strong>
             </p>
           </Animate>
@@ -35,13 +35,13 @@ const ServicesOverview: React.FC = () => {
                   <div className="h-20 w-20 flex items-center justify-center text-[#27013D] mb-2">
                     {React.cloneElement(service.icon, { className: service.iconClassName })}
                   </div>
-                  <h3 className="text-base font-bold text-black leading-tight h-10 flex items-center justify-center">
+                  <h3 className="text-sm font-bold text-black leading-tight h-10 flex items-center justify-center">
                     {service.title}
                   </h3>
-                  <p className="text-sm font-semibold text-[#6D0037] mb-2 whitespace-nowrap">{service.subTitle}</p>
-                  <p className="text-gray-800 text-sm leading-relaxed">{service.description}</p>
+                  <p className="text-xs font-semibold text-[#6D0037] mb-2 whitespace-nowrap">{service.subTitle}</p>
+                  <p className="text-gray-800 text-xs leading-relaxed">{service.description}</p>
                   <div className="flex-grow" />
-                  <div className="mt-4 flex items-center justify-center text-sm font-semibold text-[#27013D] transition-colors duration-300">
+                  <div className="mt-4 flex items-center justify-center text-xs font-semibold text-[#27013D] transition-colors duration-300">
                     <span>En savoir plus</span>
                     <ArrowRightIcon className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
                   </div>

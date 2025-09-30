@@ -13,7 +13,7 @@ const Team: React.FC = () => {
             </div>
           </Animate>
           <Animate variant="pop" delay={100}>
-            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-white">
+            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold text-white">
               À l'origine du <span className="gradient-text-light">réseau de bras droit</span>
             </h2>
           </Animate>
@@ -33,9 +33,9 @@ const Team: React.FC = () => {
               <div className="p-8 flex flex-col flex-grow">
                 <div className="flex-grow">
                     <Animate variant="pop" delay={400}>
-                      <h3 className="text-2xl font-bold text-[#27013D] mb-4">{teamMembers[1].name}</h3>
+                      <h3 className="text-xl font-bold text-[#27013D] mb-4">{teamMembers[1].name}</h3>
                     </Animate>
-                  <div className="space-y-4 text-gray-800">
+                  <div className="space-y-4 text-gray-800 text-sm">
                     {teamMembers[1].description.map((paragraph, pIndex) => (
                       <Animate key={pIndex} variant="pop" delay={500 + pIndex * 100}>
                         <p>{paragraph}</p>
@@ -44,7 +44,7 @@ const Team: React.FC = () => {
                   </div>
                 </div>
                 <Animate variant="pop" delay={500 + teamMembers[1].description.length * 100}>
-                    <div className="mt-6 pt-6 border-t border-gray-200 text-sm flex justify-between items-center">
+                    <div className="mt-6 pt-6 border-t border-gray-200 text-xs flex justify-between items-center">
                       <div>
                         <p className="font-semibold text-[#27013D]">{teamMembers[1].alumni}</p>
                         <p className="text-gray-600">{teamMembers[1].diploma}</p>
@@ -78,9 +78,9 @@ const Team: React.FC = () => {
               <div className="p-8 flex flex-col flex-grow">
                 <div className="flex-grow">
                     <Animate variant="pop" delay={900}>
-                      <h3 className="text-2xl font-bold text-[#27013D] mb-4">{teamMembers[0].name}</h3>
+                      <h3 className="text-xl font-bold text-[#27013D] mb-4">{teamMembers[0].name}</h3>
                     </Animate>
-                  <div className="space-y-4 text-gray-800">
+                  <div className="space-y-4 text-gray-800 text-sm">
                     {teamMembers[0].description.map((paragraph, pIndex) => (
                       <Animate key={pIndex} variant="pop" delay={1000 + pIndex * 100}>
                         <p>{paragraph}</p>
@@ -89,7 +89,7 @@ const Team: React.FC = () => {
                   </div>
                 </div>
                 <Animate variant="pop" delay={1000 + teamMembers[0].description.length * 100}>
-                    <div className="mt-6 pt-6 border-t border-gray-200 text-sm flex justify-between items-center">
+                    <div className="mt-6 pt-6 border-t border-gray-200 text-xs flex justify-between items-center">
                       <div>
                         <p className="font-semibold text-[#27013D]">{teamMembers[0].alumni}</p>
                         <p className="text-gray-600">{teamMembers[0].diploma}</p>

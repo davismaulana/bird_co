@@ -51,12 +51,12 @@ const Expertise: React.FC = () => {
             </div>
           </Animate>
           <Animate variant="pop" delay={100}>
-            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
+            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold text-gray-900 leading-tight">
               Nos domaines <span className="gradient-text">d'expertise</span>
             </h2>
           </Animate>
           <Animate variant="pop" delay={200}>
-            <p className="text-lg text-gray-800 mt-4">
+            <p className="text-base text-gray-800 mt-4">
               Une expertise financière et stratégique complète <span className="gradient-text font-bold">pour répondre à l'ensemble de vos défis.</span>
             </p>
           </Animate>
@@ -68,7 +68,7 @@ const Expertise: React.FC = () => {
               return (
                 <Animate key={index} variant="pop" className={`${borderClasses} p-8 flex flex-col items-center text-center justify-center min-h-[220px] transition-colors duration-300 hover:bg-white/5`}>
                   {React.cloneElement(item.icon, { className: 'w-16 h-16 object-contain' })}
-                  <p className="text-gray-100 font-medium mt-4 text-lg">{item.label}</p>
+                  <p className="text-gray-100 font-medium mt-4 text-base">{item.label}</p>
                 </Animate>
               );
             } else {
@@ -76,8 +76,8 @@ const Expertise: React.FC = () => {
               return (
                 <Animate key={index} variant="pop" className={`${borderClasses} h-full`}>
                   <a href="#contact" className="bg-[#3A224E] h-full flex flex-col justify-center items-center text-center p-8 transition-all duration-300 hover:bg-[#4f3066] group">
-                    <h3 className="text-xl font-bold text-white">Et bien plus encore...</h3>
-                    <p className="mt-2 text-violet-200 flex items-center gap-2 group-hover:text-white transition-colors">
+                    <h3 className="text-lg font-bold text-white">Et bien plus encore...</h3>
+                    <p className="mt-2 text-violet-200 flex items-center gap-2 group-hover:text-white transition-colors text-sm">
                       Discutons de votre projet
                       <ArrowRightIcon className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                     </p>

@@ -35,12 +35,12 @@ const TeamPage: React.FC = () => {
                                 <p className="font-semibold text-violet-300 uppercase tracking-widest mb-2">Notre Équipe</p>
                             </Animate>
                             <Animate variant="pop" delay={100}>
-                                <h1 className="text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-tight">
+                                <h1 className="text-3xl lg:text-4xl xl:text-5xl font-extrabold text-white leading-tight">
                                     Deux associés, une vision
                                 </h1>
                             </Animate>
                             <Animate variant="pop" delay={200}>
-                                <p className="mt-4 text-lg text-gray-300 max-w-4xl mx-auto">
+                                <p className="mt-4 text-base text-gray-300 max-w-4xl mx-auto">
                                     Des expertises complémentaires au service de votre croissance. Nous sommes plus que des consultants, nous sommes vos partenaires.
                                 </p>
                             </Animate>
@@ -50,7 +50,7 @@ const TeamPage: React.FC = () => {
                                         href="https://calendly.com/contact-birdandco/30min"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-block text-center bg-white text-[#27013D] px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-transform hover:scale-105 w-full sm:w-auto">
+                                        className="inline-block text-center bg-white text-[#27013D] px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-transform hover:scale-105 w-full sm:w-auto text-sm">
                                         Planifier un rendez-vous
                                     </a>
                                 </div>
@@ -77,10 +77,10 @@ const TeamPage: React.FC = () => {
                         </Animate>
                         <div>
                             <Animate variant="pop" delay={150}>
-                                <h2 className="text-2xl lg:text-3xl font-bold text-[#27013D]">{teamMembers[0].name}</h2>
-                                <p className="text-xl font-semibold text-[#6D0037] mt-1">{teamMembers[0].role}</p>
+                                <h2 className="text-xl lg:text-2xl font-bold text-[#27013D]">{teamMembers[0].name}</h2>
+                                <p className="text-lg font-semibold text-[#6D0037] mt-1">{teamMembers[0].role}</p>
                             </Animate>
-                            <div className="mt-6 space-y-4 text-gray-800 leading-relaxed text-sm">
+                            <div className="mt-6 space-y-4 text-gray-800 leading-relaxed text-xs">
                                 {teamMembers[0].description.map((paragraph, pIndex) => (
                                     <Animate key={pIndex} variant="pop" delay={350 + pIndex * 100}>
                                         <p>{paragraph}</p>
@@ -90,10 +90,10 @@ const TeamPage: React.FC = () => {
                             <div className="mt-8 flex justify-between items-center">
                                 <div>
                                     <Animate variant="pop" delay={250}>
-                                        <p className="text-base font-semibold text-[#6D0037]">{teamMembers[0].alumni}</p>
+                                        <p className="text-sm font-semibold text-[#6D0037]">{teamMembers[0].alumni}</p>
                                     </Animate>
                                     <Animate variant="pop" delay={300}>
-                                        <p className="mt-1 text-sm text-gray-700">{teamMembers[0].diploma}</p>
+                                        <p className="mt-1 text-xs text-gray-700">{teamMembers[0].diploma}</p>
                                     </Animate>
                                 </div>
                                 <Animate variant="pop" delay={450 + teamMembers[0].description.length * 100}>
@@ -102,7 +102,7 @@ const TeamPage: React.FC = () => {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         aria-label={`LinkedIn de ${teamMembers[0].name}`}
-                                        className="inline-flex items-center gap-2 text-[#27013D] font-semibold hover:text-[#6D0037] transition-colors text-sm"
+                                        className="inline-flex items-center gap-2 text-[#27013D] font-semibold hover:text-[#6D0037] transition-colors text-xs"
                                     >
                                         <LinkedInIcon className="w-5 h-5" />
                                         Profil LinkedIn
@@ -126,10 +126,10 @@ const TeamPage: React.FC = () => {
                         </Animate>
                         <div>
                             <Animate variant="pop" delay={150}>
-                                <h2 className="text-2xl lg:text-3xl font-bold text-[#27013D]">{teamMembers[1].name}</h2>
-                                <p className="text-xl font-semibold text-[#6D0037] mt-1">{teamMembers[1].role}</p>
+                                <h2 className="text-xl lg:text-2xl font-bold text-[#27013D]">{teamMembers[1].name}</h2>
+                                <p className="text-lg font-semibold text-[#6D0037] mt-1">{teamMembers[1].role}</p>
                             </Animate>
-                            <div className="mt-6 space-y-4 text-gray-800 leading-relaxed text-sm">
+                            <div className="mt-6 space-y-4 text-gray-800 leading-relaxed text-xs">
                                 {teamMembers[1].description.map((paragraph, pIndex) => (
                                     <Animate key={pIndex} variant="pop" delay={350 + pIndex * 100}>
                                         <p>{paragraph}</p>
@@ -139,10 +139,10 @@ const TeamPage: React.FC = () => {
                             <div className="mt-8 flex justify-between items-center">
                                 <div>
                                     <Animate variant="pop" delay={250}>
-                                        <p className="text-base font-semibold text-[#6D0037]">{teamMembers[1].alumni}</p>
+                                        <p className="text-sm font-semibold text-[#6D0037]">{teamMembers[1].alumni}</p>
                                     </Animate>
                                     <Animate variant="pop" delay={300}>
-                                        <p className="mt-1 text-sm text-gray-700">{teamMembers[1].diploma}</p>
+                                        <p className="mt-1 text-xs text-gray-700">{teamMembers[1].diploma}</p>
                                     </Animate>
                                 </div>
                                 <Animate variant="pop" delay={450 + teamMembers[1].description.length * 100}>
@@ -151,7 +151,7 @@ const TeamPage: React.FC = () => {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         aria-label={`LinkedIn de ${teamMembers[1].name}`}
-                                        className="inline-flex items-center gap-2 text-[#27013D] font-semibold hover:text-[#6D0037] transition-colors text-sm"
+                                        className="inline-flex items-center gap-2 text-[#27013D] font-semibold hover:text-[#6D0037] transition-colors text-xs"
                                     >
                                         <LinkedInIcon className="w-5 h-5" />
                                         Profil LinkedIn
@@ -168,19 +168,19 @@ const TeamPage: React.FC = () => {
               <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center max-w-3xl mx-auto">
                     <Animate variant="pop">
-                        <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 mb-6">
+                        <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold text-gray-900 mb-6">
                             Notre <span className="gradient-text">ADN</span>
                         </h2>
                     </Animate>
                     <Animate variant="pop" delay={150}>
-                        <p className="text-base text-gray-800 leading-relaxed">Quatre valeurs fondamentales qui définissent qui nous sommes, comment nous travaillons, et ce que nous nous engageons à vous apporter.</p>
+                        <p className="text-sm text-gray-800 leading-relaxed">Quatre valeurs fondamentales qui définissent qui nous sommes, comment nous travaillons, et ce que nous nous engageons à vous apporter.</p>
                     </Animate>
                 </div>
                 <ul className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 max-w-4xl mx-auto stagger">
                     {dnaItems.map((item, index) => (
                     <Animate as="li" key={index} variant="pop" className="flex items-center">
                         {item.icon}
-                        <span className="text-base text-gray-800 leading-relaxed" dangerouslySetInnerHTML={{ __html: item.text }}></span>
+                        <span className="text-sm text-gray-800 leading-relaxed" dangerouslySetInnerHTML={{ __html: item.text }}></span>
                     </Animate>
                     ))}
                 </ul>
@@ -192,12 +192,12 @@ const TeamPage: React.FC = () => {
             <section className="bg-white py-16">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <Animate variant="pop">
-                        <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900">
+                        <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold text-gray-900">
                             Prêt à collaborer avec <span className="gradient-text">notre équipe ?</span>
                         </h2>
                     </Animate>
                     <Animate variant="pop" delay={150}>
-                        <p className="mt-4 text-base text-gray-800 max-w-2xl mx-auto">
+                        <p className="mt-4 text-sm text-gray-800 max-w-2xl mx-auto">
                             Contactez-nous pour découvrir comment notre duo d'experts peut devenir le catalyseur de votre succès.
                         </p>
                     </Animate>
@@ -207,7 +207,7 @@ const TeamPage: React.FC = () => {
                                 href="https://calendly.com/contact-birdandco/30min"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-block bg-[#27013D] text-white px-10 py-4 rounded-full font-semibold hover:bg-[#1c0e2a] transition-transform hover:scale-105 text-base"
+                                className="inline-block bg-[#27013D] text-white px-10 py-4 rounded-full font-semibold hover:bg-[#1c0e2a] transition-transform hover:scale-105 text-sm"
                             >
                                 Rencontrons-nous
                             </a>

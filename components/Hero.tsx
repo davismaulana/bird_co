@@ -12,13 +12,13 @@ const Hero: React.FC = () => {
           {/* Left side: Text content */}
           <div className="text-center md:text-left relative z-10">
             <Animate variant="pop">
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight tracking-tight">
+              <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 leading-tight tracking-tight">
                 <span>Bras droit</span><br />
                 <span className="gradient-text">stratégique et financier</span>
               </h1>
             </Animate>
             <Animate variant="pop" delay={200}>
-              <p className="mt-6 text-base md:text-lg text-gray-800 max-w-xl mx-auto md:mx-0">
+              <p className="mt-6 text-sm md:text-base text-gray-800 max-w-xl mx-auto md:mx-0">
                 Sollicitez une <span className="gradient-text font-semibold">ressource experte, ingénieuse et polyvalente</span><br />dédiée à la réalisation de vos ambitions
               </p>
             </Animate>
@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
                   href="https://calendly.com/contact-birdandco/30min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block text-center bg-[#27013D] text-white px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-[#1c0e2a] transition-colors transform hover:scale-105 text-base"
+                  className="inline-block text-center bg-[#27013D] text-white px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-[#1c0e2a] transition-colors transform hover:scale-105 text-sm"
                 >
                   Réserver une consultation
                 </a>

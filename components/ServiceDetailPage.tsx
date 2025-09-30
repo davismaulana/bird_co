@@ -13,7 +13,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
     return (
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-48 text-center">
         <Animate variant="pop">
-            <h1 className="text-4xl font-bold text-gray-900">Service Bientôt Disponible</h1>
+            <h1 className="text-3xl font-bold text-gray-900">Service Bientôt Disponible</h1>
             <p className="mt-4 text-gray-800">Cette page est en cours de construction.</p>
             <a href="/" className="mt-8 inline-block bg-gray-800 text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-900 transition-colors">
             Retour à l'accueil
@@ -33,12 +33,12 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-7xl text-left">
             <Animate variant="pop">
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight tracking-tight">
+              <h1 className="text-3xl sm:text-4xl font-extrabold text-white leading-tight tracking-tight">
                 <span>{details.title}</span>
               </h1>
             </Animate>
             <Animate variant="pop" delay={200}>
-              <p className={`mt-4 text-gray-200 max-w-5xl ${serviceId === 'pilotage-planification' || serviceId === 'cfo-part-time' ? 'text-base' : 'text-base md:text-lg'}`}>
+              <p className={`mt-4 text-gray-200 max-w-5xl ${serviceId === 'pilotage-planification' || serviceId === 'cfo-part-time' ? 'text-sm' : 'text-sm md:text-base'}`}>
                 {details.subtitle}
               </p>
             </Animate>
@@ -48,7 +48,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                   href="https://calendly.com/contact-birdandco/30min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block text-center bg-white text-[#27013D] px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors transform hover:scale-105 text-base"
+                  className="inline-block text-center bg-white text-[#27013D] px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors transform hover:scale-105 text-sm"
                 >
                   Échanger avec un bras droit
                 </a>
@@ -69,12 +69,12 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                   </div>
                 </Animate>
                 <Animate variant="pop" delay={100}>
-                  <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
+                  <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold leading-tight text-gray-900">
                     {details.diagnostic.title}
                   </h2>
                 </Animate>
                 <Animate variant="pop" delay={200}>
-                  <p className="text-base text-gray-800 mt-4">
+                  <p className="text-sm text-gray-800 mt-4">
                     {details.diagnostic.description}
                   </p>
                 </Animate>
@@ -86,8 +86,8 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                   </Animate>
                   <Animate variant={'pop'} delay={200}>
                       <div className="text-left">
-                        <h3 className="text-xl font-bold text-[#27013D] mb-4">{details.diagnostic.content.title}</h3>
-                        <div className="text-gray-800 leading-relaxed text-sm">
+                        <h3 className="text-lg font-bold text-[#27013D] mb-4">{details.diagnostic.content.title}</h3>
+                        <div className="text-gray-800 leading-relaxed text-xs">
                           {details.diagnostic.content.description}
                         </div>
                       </div>
@@ -108,12 +108,12 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                 </div>
               </Animate>
               <Animate variant="pop" delay={100}>
-                  <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
+                  <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold leading-tight text-gray-900">
                       Notre <span className="gradient-text">ambition</span>
                   </h2>
               </Animate>
               <Animate variant="pop" delay={200}>
-                  <p className="mt-4 text-base text-gray-800 max-w-2xl mx-auto">
+                  <p className="mt-4 text-sm text-gray-800 max-w-2xl mx-auto">
                       {details.ambition.description}
                   </p>
               </Animate>
@@ -131,13 +131,13 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                   </div>
                 </Animate>
                 <Animate variant="pop" delay={100}>
-                  <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
+                  <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold leading-tight text-gray-900">
                     <span className="gradient-text">{details.mainContent.title}</span>
                   </h2>
                 </Animate>
                 {details.mainContent.description && (
                     <Animate variant="pop" delay={200}>
-                        <p className="text-base text-gray-800 mt-4">
+                        <p className="text-sm text-gray-800 mt-4">
                             {details.mainContent.description}
                         </p>
                     </Animate>
@@ -149,7 +149,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                     {details.mainContent.categories.map((category: any, index: number) => (
                          <div key={index}>
                             <Animate variant="pop" delay={300 + index * 50}>
-                                <h3 className="text-xl font-semibold text-[#27013D] mb-6">{category.title}</h3>
+                                <h3 className="text-lg font-semibold text-[#27013D] mb-6">{category.title}</h3>
                             </Animate>
                             
                             <div className="flex flex-wrap gap-3">
@@ -159,7 +159,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                                         variant="pop"
                                         delay={400 + index * 50 + tagIndex * 20}
                                     >
-                                      <div className="bg-violet-50 text-[#27013D] px-4 py-2 rounded-xl text-sm font-medium border border-violet-100">
+                                      <div className="bg-violet-50 text-[#27013D] px-4 py-2 rounded-xl text-xs font-medium border border-violet-100">
                                           {tag}
                                       </div>
                                     </Animate>
@@ -181,12 +181,12 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
               </div>
             </Animate>
             <Animate variant="pop" delay={100}>
-                <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-white">
+                <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold leading-tight text-white">
                     Prêt à prendre <span className="gradient-text-light">le contrôle ?</span>
                 </h2>
             </Animate>
             <Animate variant="pop" delay={200}>
-                <p className="mt-4 text-base text-gray-300 max-w-2xl mx-auto">
+                <p className="mt-4 text-sm text-gray-300 max-w-2xl mx-auto">
                     Contactez-nous pour discuter de la manière dont nous pouvons construire ensemble les outils de votre succès.
                 </p>
             </Animate>
@@ -196,7 +196,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                       href="https://calendly.com/contact-birdandco/30min"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block bg-white text-[#27013D] px-10 py-4 rounded-full font-semibold hover:bg-gray-200 transition-all transform hover:scale-105 text-base"
+                      className="inline-block bg-white text-[#27013D] px-10 py-4 rounded-full font-semibold hover:bg-gray-200 transition-all transform hover:scale-105 text-sm"
                     >
                       Échanger avec un bras droit
                     </a>

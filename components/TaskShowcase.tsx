@@ -4,23 +4,23 @@ import { CheckmarkCircleIcon, KpiDashboardMockup, FinancialReportMockup } from '
 
 const DueDiligenceVisual: React.FC = () => (
   <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
-    <h3 className="font-bold text-gray-800 text-sm sm:text-base mb-4">Checklist Due Diligence VDD</h3>
+    <h3 className="font-bold text-gray-800 text-xs sm:text-sm mb-4">Checklist Due Diligence VDD</h3>
     <div className="flex-grow space-y-3">
       <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
         <CheckmarkCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0" />
-        <p className="text-gray-800 text-sm">Qualité des revenus (MRR, churn...)</p>
+        <p className="text-gray-800 text-xs">Qualité des revenus (MRR, churn...)</p>
       </div>
       <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
         <CheckmarkCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0" />
-        <p className="text-gray-800 text-sm">Analyse de la rentabilité (EBITDA, marges)</p>
+        <p className="text-gray-800 text-xs">Analyse de la rentabilité (EBITDA, marges)</p>
       </div>
       <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
         <CheckmarkCircleIcon className="w-6 h-6 text-gray-300 flex-shrink-0" />
-        <p className="text-gray-700 text-sm">Normalisation du BFR</p>
+        <p className="text-gray-700 text-xs">Normalisation du BFR</p>
       </div>
        <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
         <CheckmarkCircleIcon className="w-6 h-6 text-gray-300 flex-shrink-0" />
-        <p className="text-gray-700 text-sm">Analyse de la dette nette</p>
+        <p className="text-gray-700 text-xs">Analyse de la dette nette</p>
       </div>
     </div>
   </div>
@@ -28,23 +28,23 @@ const DueDiligenceVisual: React.FC = () => (
 
 const TransactionalSupportVisual: React.FC = () => (
     <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
-      <h3 className="font-bold text-gray-800 text-sm sm:text-base mb-4">Accompagnement Transactionnel</h3>
+      <h3 className="font-bold text-gray-800 text-xs sm:text-sm mb-4">Accompagnement Transactionnel</h3>
       <div className="flex-grow space-y-3">
           <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
               <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse flex-shrink-0"></div>
-              <p className="text-gray-800 text-sm font-medium">Phase 1: Préparation (Teaser, IM, VDD)</p>
+              <p className="text-gray-800 text-xs font-medium">Phase 1: Préparation (Teaser, IM, VDD)</p>
           </div>
           <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 opacity-60">
               <div className="w-3 h-3 rounded-full bg-gray-400 flex-shrink-0"></div>
-              <p className="text-gray-700 text-sm">Phase 2: Négociation des offres</p>
+              <p className="text-gray-700 text-xs">Phase 2: Négociation des offres</p>
           </div>
           <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 opacity-60">
               <div className="w-3 h-3 rounded-full bg-gray-400 flex-shrink-0"></div>
-              <p className="text-gray-700 text-sm">Phase 3: Due Diligence &amp; Closing</p>
+              <p className="text-gray-700 text-xs">Phase 3: Due Diligence &amp; Closing</p>
           </div>
       </div>
       <div className="mt-4 bg-[#27013D]/5 rounded-lg p-3 border border-[#27013D]/10 text-center">
-          <p className="text-sm font-bold text-[#27013D]">Objectif: Maximiser la valeur</p>
+          <p className="text-xs font-bold text-[#27013D]">Objectif: Maximiser la valeur</p>
       </div>
     </div>
 );
@@ -55,21 +55,21 @@ const CashGrowthVisual: React.FC = () => {
     return (
         <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
             <div className="flex justify-between items-start mb-2">
-                <h3 className="font-bold text-gray-800 text-sm sm:text-base">Cash Management</h3>
+                <h3 className="font-bold text-gray-800 text-xs sm:text-sm">Cash Management</h3>
             </div>
             <div className="relative flex-grow">
                 <svg viewBox="0 0 335 170" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
                     {/* Y-axis labels */}
-                    <text x="0" y="25" alignmentBaseline="middle" fill="#6b7280" fontSize="6">+50k€</text>
-                    <text x="0" y="75" alignmentBaseline="middle" fill="#6b7280" fontSize="6">0</text>
-                    <text x="0" y="125" alignmentBaseline="middle" fill="#6b7280" fontSize="6">-50k€</text>
+                    <text x="0" y="25" alignmentBaseline="middle" fill="#6b7280" fontSize="5">+50k€</text>
+                    <text x="0" y="75" alignmentBaseline="middle" fill="#6b7280" fontSize="5">0</text>
+                    <text x="0" y="125" alignmentBaseline="middle" fill="#6b7280" fontSize="5">-50k€</text>
                     
                     <g transform="translate(35, 0)">
                         {/* X-axis labels */}
-                        <text x="0" y="160" textAnchor="middle" fill="#6b7280" fontSize="6">T0</text>
-                        <text x="100" y="160" textAnchor="middle" fill="#6b7280" fontSize="6">T5</text>
-                        <text x="200" y="160" textAnchor="middle" fill="#6b7280" fontSize="6">T10</text>
-                        <text x="300" y="160" textAnchor="middle" fill="#6b7280" fontSize="6">T15</text>
+                        <text x="0" y="160" textAnchor="middle" fill="#6b7280" fontSize="5">T0</text>
+                        <text x="100" y="160" textAnchor="middle" fill="#6b7280" fontSize="5">T5</text>
+                        <text x="200" y="160" textAnchor="middle" fill="#6b7280" fontSize="5">T10</text>
+                        <text x="300" y="160" textAnchor="middle" fill="#6b7280" fontSize="5">T15</text>
                         
                         {/* Dashed reference line for zero */}
                         <line x1="0" y1="75" x2="300" y2="75" stroke="#d1d5db" strokeWidth="1" strokeDasharray="3 3" />
@@ -90,10 +90,10 @@ const CashGrowthVisual: React.FC = () => {
 const OnSiteInterventionVisual: React.FC = () => (
     <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
         <div className="flex items-center justify-between mb-4">
-            <h3 className="font-bold text-gray-800 text-sm sm:text-base">Atelier Stratégique</h3>
+            <h3 className="font-bold text-gray-800 text-xs sm:text-sm">Atelier Stratégique</h3>
             <div className="px-3 py-1 text-xs font-semibold bg-gray-100 text-gray-800 rounded-full">En personne</div>
         </div>
-        <div className="flex-grow bg-gray-50 rounded-lg p-4 space-y-3 border border-gray-100 text-sm">
+        <div className="flex-grow bg-gray-50 rounded-lg p-4 space-y-3 border border-gray-100 text-xs">
             <p className="font-semibold text-gray-800 mb-2">Agenda de la session :</p>
             <div className="flex items-start gap-3">
                 <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">1</div>
@@ -186,12 +186,12 @@ const TaskShowcase: React.FC = () => {
                       </div>
                     </Animate>
                     <Animate variant="pop" delay={100}>
-                        <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
+                        <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold leading-tight text-gray-900">
                           De la stratégie <span className="gradient-text">à l'exécution</span>
                         </h2>
                     </Animate>
                     <Animate variant="pop" delay={200}>
-                        <p className="text-lg text-gray-800 mt-4">
+                        <p className="text-base text-gray-800 mt-4">
                             Quel que soit votre besoin, nous produisons des livrables clairs et actionnables pour piloter votre performance, quel que soit votre besoin.
                         </p>
                     </Animate>
@@ -222,8 +222,8 @@ const TaskShowcase: React.FC = () => {
                                                 />
                                             </div>
                                             <div>
-                                                <h3 className={`font-bold ${activeTask === index ? 'text-white' : 'text-gray-900'}`}>{task.title}</h3>
-                                                <p className={`text-sm ${activeTask === index ? 'text-violet-200' : 'text-gray-700'}`}>{task.description}</p>
+                                                <h3 className={`font-bold text-sm ${activeTask === index ? 'text-white' : 'text-gray-900'}`}>{task.title}</h3>
+                                                <p className={`text-xs ${activeTask === index ? 'text-violet-200' : 'text-gray-700'}`}>{task.description}</p>
                                             </div>
                                         </div>
                                     </button>
