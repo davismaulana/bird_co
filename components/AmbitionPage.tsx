@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Animate from './Animate';
 import ValueProposition from './ValueProposition';
@@ -64,7 +65,7 @@ const AmbitionPage: React.FC = () => {
                   </h2>
               </Animate>
               <Animate variant="pop" delay={150}>
-                  <p className="text-base text-gray-800 leading-relaxed">Quatre valeurs fondamentales qui définissent qui nous sommes, comment nous travaillons, et ce que nous nous engageons à vous apporter.</p>
+                  <p className="text-base text-gray-800 leading-relaxed">Quatre valeurs fondamentales définissent qui nous sommes, comment nous travaillons, et ce que nous nous engageons à vous apporter.</p>
               </Animate>
           </div>
           <ul className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-5xl mx-auto stagger">
