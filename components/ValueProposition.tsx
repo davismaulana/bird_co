@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Animate from './Animate';
 
@@ -11,7 +12,7 @@ const propositionPoints = [
     ),
   },
   {
-    title: "Votre partenaire de confiance",
+    title: "Allié stratégique",
     description: () => (
       <>
         Un partenaire <strong>proche du dirigeant</strong> impliqué dans les réflexions critiques. Un véritable "alter ego" pour le dirigeant capable de créer une relation de confiance permettant d'<strong>anticiper les besoins, soutenir la prise de décision</strong>, et <strong>gérer les sujets sensibles</strong>.
