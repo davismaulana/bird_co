@@ -33,7 +33,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div className="bg-[#F4F2F8] p-8 sm:p-12 md:p-16 flex flex-col justify-center">
                     <Animate variant="pop">
-                        <h2 className="text-xl lg:text-2xl font-bold text-[#27013D] mb-4">Laissez-nous un message</h2>
+                        <h2 className="text-xl lg:text-2xl font-bold text-[#27013D] mb-4">Parlons&nbsp;de&nbsp;vos&nbsp;projets</h2>
                     </Animate>
                     <form>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10 mb-10">
@@ -45,7 +45,7 @@ const Contact: React.FC = () => {
                             </Animate>
                              <Animate variant="pop" delay={200}>
                                 <div>
-                                    <label htmlFor="company" className="text-xs text-gray-800 block mb-1">Votre entreprise</label>
+                                    <label htmlFor="company" className="text-xs text-gray-800 block mb-1">Votre organisation</label>
                                     <input type="text" id="company" className="w-full bg-transparent border-b border-gray-500 py-2 focus:outline-none focus:border-[#27013D] transition-colors text-gray-900"/>
                                 </div>
                             </Animate>
