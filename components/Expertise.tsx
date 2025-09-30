@@ -51,9 +51,8 @@ const Expertise: React.FC = () => {
             </div>
           </Animate>
           <Animate variant="pop" delay={100}>
-            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight">
-              <span className="text-black">Nos domaines </span>
-              <span className="gradient-text">d'expertise</span>
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
+              Nos domaines <span className="gradient-text">d'expertise</span>
             </h2>
           </Animate>
           <Animate variant="pop" delay={200}>

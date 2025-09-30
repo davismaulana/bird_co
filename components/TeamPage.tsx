@@ -168,8 +168,8 @@ const TeamPage: React.FC = () => {
               <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center max-w-3xl mx-auto">
                     <Animate variant="pop">
-                        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-                            <span className="text-black">Notre </span><span className="gradient-text">ADN</span>
+                        <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 mb-6">
+                            Notre <span className="gradient-text">ADN</span>
                         </h2>
                     </Animate>
                     <Animate variant="pop" delay={150}>
@@ -192,7 +192,7 @@ const TeamPage: React.FC = () => {
             <section className="bg-white py-16">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <Animate variant="pop">
-                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900">
+                        <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900">
                             Prêt à collaborer avec <span className="gradient-text">notre équipe ?</span>
                         </h2>
                     </Animate>

@@ -20,6 +20,10 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
       </div>
     );
   }
+  
+  const mainContentTitleParts = details.mainContent.title.split(' ');
+  const mainContentLastWord = mainContentTitleParts.pop();
+  const mainContentFirstPart = mainContentTitleParts.join(' ');
 
   return (
     <div className="bg-white text-gray-800">
@@ -67,7 +71,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                   </div>
                 </Animate>
                 <Animate variant="pop" delay={100}>
-                  <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold leading-tight text-gray-900">
+                  <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
                     {details.diagnostic.title}
                   </h2>
                 </Animate>
@@ -106,8 +110,8 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                 </div>
               </Animate>
               <Animate variant="pop" delay={100}>
-                  <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold leading-tight">
-                      <span className="gradient-text">{details.ambition.title}</span>
+                  <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
+                      Notre <span className="gradient-text">ambition</span>
                   </h2>
               </Animate>
               <Animate variant="pop" delay={200}>
@@ -126,7 +130,9 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                 <div className="lg:col-span-1">
                     <div className="lg:sticky lg:top-32">
                         <Animate variant="pop" delay={100}>
-                            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold leading-tight gradient-text">{details.mainContent.title}</h2>
+                            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
+                                {mainContentFirstPart} <span className="gradient-text">{mainContentLastWord}</span>
+                            </h2>
                         </Animate>
                         {details.mainContent.description && (
                             <Animate variant="pop" delay={200}>
@@ -168,8 +174,8 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
               </div>
             </Animate>
             <Animate variant="pop" delay={100}>
-                <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold leading-tight">
-                    <span className="gradient-text-light">Prêt à prendre le contrôle ?</span>
+                <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-white">
+                    Prêt à prendre <span className="gradient-text-light">le contrôle ?</span>
                 </h2>
             </Animate>
             <Animate variant="pop" delay={200}>

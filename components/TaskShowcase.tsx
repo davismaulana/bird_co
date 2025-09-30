@@ -187,7 +187,7 @@ const TaskShowcase: React.FC = () => {
                     </Animate>
                     <Animate variant="pop" delay={100}>
                         <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
-                           <span className="text-black">De la stratégie</span> <span className="gradient-text">à l'exécution</span>
+                          De la stratégie <span className="gradient-text">à l'exécution</span>
                         </h2>
                     </Animate>
                     <Animate variant="pop" delay={200}>

@@ -13,9 +13,8 @@ const Team: React.FC = () => {
             </div>
           </Animate>
           <Animate variant="pop" delay={100}>
-            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold">
-              <span className="text-white">À l'origine du </span>
-              <span className="bg-gradient-to-r from-white to-gray-400 text-transparent bg-clip-text">réseau de bras droit</span>
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-white">
+              À l'origine du <span className="gradient-text-light">réseau de bras droit</span>
             </h2>
           </Animate>
         </div>

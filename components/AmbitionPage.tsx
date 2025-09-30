@@ -61,7 +61,7 @@ const AmbitionPage: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
               <Animate variant="pop">
-                  <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold text-gray-900 mb-6">
+                  <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 mb-6">
                       Notre <span className="gradient-text">ADN</span>
                   </h2>
               </Animate>
@@ -115,8 +115,8 @@ const AmbitionPage: React.FC = () => {
       <section className="py-16 bg-gradient-to-br from-[#27013D] to-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Animate variant="pop">
-                <h2 className="text-2xl lg:text-3xl font-bold">
-                    <span className="gradient-text-light">Prêt à réaliser votre ambition ?</span>
+                <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-white">
+                    Prêt à réaliser <span className="gradient-text-light">votre ambition ?</span>
                 </h2>
             </Animate>
             <Animate variant="pop" delay={150}>
