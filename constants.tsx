@@ -575,7 +575,7 @@ export const serviceDetails: { [key: string]: any } = {
             categories: [
                 {
                     title: 'Gouvernance financière',
-                    list: ['Reporting', 'Tableaux de bord', 'Processus budgétaires']
+                    list: ['Reporting', 'Tableaux de bord', 'Définition et construction du processus budgétaires']
                 },
                 {
                     title: 'Pilotage de la performance',
@@ -587,7 +587,7 @@ export const serviceDetails: { [key: string]: any } = {
                 },
                 {
                     title: 'Stratégie financière',
-                    list: ['Construction du Business plan', 'Définition et suivi des KPIs stratégiques', 'Identification de leviers opérationnels et financiers']
+                    list: ['Construction du Business plan', 'Définition et suivi des KPIs stratégiques', 'Identification de leviers opérationnels et financiers', 'Analyse de la performance historique', 'Rédaction de l\'equity story', 'Définition de la stratégie à 5 ans']
                 },
                 {
                     title: 'Financement & Croissance',

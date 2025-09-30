@@ -123,49 +123,53 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
       {/* Content Section */}
       <main id="content" className="bg-gray-50 py-12 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16 max-w-3xl mx-auto">
-                <Animate variant="pop">
-                    <div className="flex justify-center mb-4">
-                        <div className="w-16 h-1 bg-gradient-to-r from-[#27013D] to-[#6D0037] rounded-full"></div>
-                    </div>
-                </Animate>
-                <Animate variant="pop" delay={100}>
-                    <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
-                        <span className="gradient-text">{details.mainContent.title}</span>
-                    </h2>
-                </Animate>
-                {details.mainContent.description && (
-                    <Animate variant="pop" delay={200}>
-                        <p className="text-base text-gray-800 mt-4">
-                            {details.mainContent.description}
-                        </p>
-                    </Animate>
-                )}
-            </div>
-
-            <div className="max-w-4xl mx-auto">
-                <div className="space-y-12">
-                    {details.mainContent.categories.map((category: any, index: number) => (
-                         <div key={index}>
-                            <Animate variant="pop" delay={200 + index * 50}>
-                                <h3 className="text-xl font-semibold text-[#27013D] mb-6">{category.title}</h3>
-                            </Animate>
-                            
-                            <div className="flex flex-wrap gap-3">
-                                {category.list.map((tag: string, tagIndex: number) => (
-                                    <Animate
-                                        key={tagIndex}
-                                        variant="pop"
-                                        delay={300 + index * 50 + tagIndex * 20}
-                                    >
-                                      <div className="bg-violet-50 text-[#27013D] px-4 py-2 rounded-xl text-sm font-medium border border-violet-100">
-                                          {tag}
-                                      </div>
-                                    </Animate>
-                                ))}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-start">
+                <div className="lg:col-span-2">
+                    <div className="space-y-12">
+                        {details.mainContent.categories.map((category: any, index: number) => (
+                             <div key={index}>
+                                <Animate variant="pop" delay={300 + index * 50}>
+                                    <h3 className="text-xl font-semibold text-[#27013D] mb-6">{category.title}</h3>
+                                </Animate>
+                                
+                                <div className="flex flex-wrap gap-3">
+                                    {category.list.map((tag: string, tagIndex: number) => (
+                                        <Animate
+                                            key={tagIndex}
+                                            variant="pop"
+                                            delay={400 + index * 50 + tagIndex * 20}
+                                        >
+                                          <div className="bg-violet-50 text-[#27013D] px-4 py-2 rounded-xl text-sm font-medium border border-violet-100">
+                                              {tag}
+                                          </div>
+                                        </Animate>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
+                </div>
+
+                <div className="lg:col-span-1 lg:sticky lg:top-32">
+                    <div className="text-left">
+                        <Animate variant="pop">
+                            <div className="flex justify-start mb-4">
+                                <div className="w-16 h-1 bg-gradient-to-r from-[#27013D] to-[#6D0037] rounded-full"></div>
+                            </div>
+                        </Animate>
+                        <Animate variant="pop" delay={100}>
+                            <h2 className="text-3xl md:text-4xl font-bold leading-tight text-gray-900">
+                                <span className="gradient-text">{details.mainContent.title}</span>
+                            </h2>
+                        </Animate>
+                        {details.mainContent.description && (
+                            <Animate variant="pop" delay={200}>
+                                <p className="text-base text-gray-800 mt-4">
+                                    {details.mainContent.description}
+                                </p>
+                            </Animate>
+                        )}
+                    </div>
                 </div>
             </div>
         </div>
