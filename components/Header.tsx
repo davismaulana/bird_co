@@ -4,8 +4,8 @@ import { services, HamburgerIcon, CloseIcon } from '../constants';
 const navItems = [
   { name: 'Accueil', href: '/' },
   { name: 'Notre proposition', href: '/#notre-proposition' },
-  { name: 'Notre ambition', href: '/ambition' },
-  { name: 'à l\'origine', href: '/#notre-equipe' },
+  { name: 'Nos Piliers', href: '/ambition' },
+  { name: 'À l\'origine', href: '/#notre-equipe' },
   { name: 'Contact', href: '/#contact' },
 ];
 
