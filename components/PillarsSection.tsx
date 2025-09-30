@@ -37,7 +37,7 @@ const PillarsSection: React.FC = () => {
           </Animate>
           <Animate variant="pop" delay={100}>
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
-              les Piliers de <span className="gradient-text">Notre Engagement</span>
+              Les piliers de <span className="gradient-text">notre engagement</span>
             </h2>
           </Animate>
           <Animate variant="pop" delay={200}>
