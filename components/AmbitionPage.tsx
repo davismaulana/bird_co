@@ -60,7 +60,7 @@ const AmbitionPage: React.FC = () => {
           <div className="text-center max-w-3xl mx-auto">
               <Animate variant="pop">
                   <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 mb-6">
-                      Notre <span className="gradient-text">ADN</span>
+                      L'ADN du réseau <span className="gradient-text">Bird</span>
                   </h2>
               </Animate>
               <Animate variant="pop" delay={150}>
@@ -85,7 +85,7 @@ const AmbitionPage: React.FC = () => {
           <div className="max-w-none">
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
                 <Animate variant="pop" className="h-full lg:order-last">
-                    <div className="h-[400px] lg:h-full bg-cover bg-center" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')` }}>
+                    <div className="h-[400px] lg:h-full bg-cover bg-center" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')` }}>
                     </div>
                 </Animate>
                 <div className="lg:order-first">
