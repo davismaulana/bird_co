@@ -127,7 +127,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                 <div className="lg:col-span-1">
                     <div className="lg:sticky lg:top-32">
                         <Animate variant="pop" delay={100}>
-                            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900 mb-8">
+                            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900 mb-6">
                                 <span className="gradient-text">{details.mainContent.title}</span>
                             </h2>
                         </Animate>
