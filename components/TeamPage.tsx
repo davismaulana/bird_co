@@ -40,7 +40,7 @@ const TeamPage: React.FC = () => {
                                 </h1>
                             </Animate>
                             <Animate variant="pop" delay={200}>
-                                <p className="mt-6 text-lg text-gray-300 max-w-2xl mx-auto">
+                                <p className="mt-6 text-lg text-gray-300 max-w-4xl mx-auto">
                                     Des expertises complémentaires au service de votre croissance. Nous sommes plus que des consultants, nous sommes vos partenaires.
                                 </p>
                             </Animate>

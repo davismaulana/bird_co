@@ -5,8 +5,8 @@ import { services, HamburgerIcon, CloseIcon } from '../constants';
 const navItems = [
   { name: 'Accueil', href: '/' },
   { name: 'Notre proposition', href: '/#notre-proposition' },
-  { name: 'Notre engagement', href: '/ambition' },
-  { name: 'Notre équipe', href: '/#notre-equipe' },
+  { name: 'Nos Piliers', href: '/#nos-piliers' },
+  { name: 'à l\'origine', href: '/#notre-equipe' },
   { name: 'Contact', href: '/#contact' },
 ];
 
@@ -42,7 +42,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
       return;
     }
 
-    const sectionIds = ['accueil', 'notre-proposition', 'notre-equipe', 'contact'];
+    const sectionIds = ['accueil', 'notre-proposition', 'nos-piliers', 'notre-equipe', 'contact'];
     const sections = sectionIds.map(id => document.getElementById(id)).filter(el => el !== null) as HTMLElement[];
 
     if (sections.length === 0) return;
