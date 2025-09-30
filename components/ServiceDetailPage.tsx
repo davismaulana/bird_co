@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { services, serviceDetails, GradientCheckIcon, FinancialReportMockup } from '../constants';
 import Animate from './Animate';
 import HeroAnimation from './HeroAnimation';
@@ -7,6 +7,7 @@ import HeroAnimation from './HeroAnimation';
 const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
   const details = serviceDetails[serviceId];
   const service = services.find(s => s.slug === serviceId);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   if (!details || !service) {
     return (
@@ -21,6 +22,9 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
       </div>
     );
   }
+
+  const categories = details.mainContent.categories;
+  const categoriesWithContent = categories.filter((cat: any) => cat.list.filter((i: string) => i && i.trim() !== '').length > 0);
 
   return (
     <div className="bg-white text-gray-800">
@@ -144,23 +148,46 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
             </div>
 
             <div className="max-w-4xl mx-auto">
-                <div className="space-y-12">
-                    {details.mainContent.categories.map((category: any, index: number) => (
-                         <div key={index}>
-                            <Animate variant="pop" delay={200 + index * 100}>
-                                <h3 className="text-lg lg:text-xl font-semibold text-[#27013D] border-b-2 border-[#6D0037]/20 pb-3 mb-6">{category.title}</h3>
-                            </Animate>
-                            <ul className="space-y-4 stagger text-base">
-                                {category.list.map((item: string, itemIndex: number) => (
-                                    <Animate as="li" key={itemIndex} variant="pop" className="flex items-center">
-                                        <GradientCheckIcon className="w-6 h-6 flex-shrink-0 mr-3" />
-                                        <span className="text-gray-800">{item}</span>
-                                    </Animate>
-                                ))}
-                            </ul>
-                        </div>
-                    ))}
+                <div className="space-y-8">
+                    {categories.map((category: any, index: number) => {
+                        if (!isExpanded && index > 0) return null;
+
+                        const pills = category.list.filter((item: string) => item && item.trim() !== '');
+                        if (pills.length === 0) return null;
+
+                        return (
+                             <div key={index}>
+                                <Animate variant="pop">
+                                    <h3 className="text-xl font-bold text-gray-800 mb-4">{category.title}</h3>
+                                </Animate>
+                                <Animate variant="pop" delay={100}>
+                                  <div className="flex flex-wrap gap-3">
+                                    {pills.map((item: string, itemIndex: number) => (
+                                      <span key={itemIndex} className="bg-teal-50 text-teal-800 px-4 py-2 rounded-lg text-sm font-medium border border-teal-100">
+                                        {item}
+                                      </span>
+                                    ))}
+                                  </div>
+                                </Animate>
+                            </div>
+                        )
+                    })}
                 </div>
+
+                {categoriesWithContent.length > 1 && (
+                    <div className="mt-12 text-center">
+                        <button 
+                            onClick={() => setIsExpanded(!isExpanded)}
+                            className="text-lg font-semibold text-[#27013D] hover:text-[#6D0037] transition-colors flex items-center gap-2 mx-auto"
+                            aria-expanded={isExpanded}
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" className={`h-5 w-5 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                            </svg>
+                            <span>{isExpanded ? 'Voir moins' : 'Voir plus'}</span>
+                        </button>
+                    </div>
+                )}
             </div>
         </div>
       </main>
