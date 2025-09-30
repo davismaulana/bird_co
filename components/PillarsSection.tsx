@@ -11,7 +11,7 @@ const pillars = [
   {
     icon: <img src="https://images2.imgbox.com/a9/6f/sEU8YeyP_o.png" alt="Partenariat de Confiance icon" className="w-14 h-14 object-contain" />,
     title: "Partenariat de Confiance",
-    description: "Plus qu'un consultant, nous sommes un véritable 'bras droit', impliqué à vos côtés pour atteindre vos objectifs les plus ambitieux.",
+    description: "Plus qu’un consultant : un partenaire investi, guidé par la transparence et l’intégrité.",
   },
   {
     icon: <img src="https://images2.imgbox.com/0f/19/ZMKxUMu0_o.png" alt="Clarté Décisionnelle icon" className="w-14 h-14 object-contain" />,
