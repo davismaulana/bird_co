@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import Animate from './Animate';
 import ValueProposition from './ValueProposition';
@@ -33,12 +31,12 @@ const AmbitionPage: React.FC = () => {
           <div className="max-w-7xl text-left">
             <Animate variant="pop">
               <h1 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight tracking-tight">
-                Notre <span>ambition</span>
+                Nos <span>Piliers</span>
               </h1>
             </Animate>
             <Animate variant="pop" delay={200}>
               <p className="mt-4 text-base md:text-lg text-gray-200 max-w-5xl">
-                Vous permettre d'anticiper les enjeux financiers et opérationnels futurs et prévenir les éventuelles difficultés.
+                Notre engagement repose sur quatre piliers fondamentaux qui guident chacune de nos interventions et façonnent notre approche unique.
               </p>
             </Animate>
             <Animate variant="pop" delay={400}>
@@ -62,11 +60,11 @@ const AmbitionPage: React.FC = () => {
           <div className="text-center max-w-3xl mx-auto">
               <Animate variant="pop">
                   <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 mb-6">
-                      Notre <span className="gradient-text">ADN</span>
+                      Les Piliers de <span className="gradient-text">Notre Engagement</span>
                   </h2>
               </Animate>
               <Animate variant="pop" delay={150}>
-                  <p className="text-base text-gray-800 leading-relaxed">Quatre valeurs fondamentales qui définissent qui nous sommes, comment nous travaillons, et ce que nous nous engageons à vous apporter.</p>
+                  <p className="text-base text-gray-800 leading-relaxed">Ces quatre valeurs fondamentales définissent qui nous sommes, comment nous travaillons, et ce que nous nous engageons à vous apporter.</p>
               </Animate>
           </div>
           <ul className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-5xl mx-auto stagger">
@@ -87,7 +85,7 @@ const AmbitionPage: React.FC = () => {
           <div className="max-w-none">
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
                 <Animate variant="pop" className="h-full lg:order-last">
-                    <div className="h-[400px] lg:h-full bg-cover bg-center" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')` }}>
+                    <div className="h-[400px] lg:h-full bg-cover bg-center" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')` }}>
                     </div>
                 </Animate>
                 <div className="lg:order-first">
@@ -116,12 +114,12 @@ const AmbitionPage: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Animate variant="pop">
                 <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-white">
-                    Prêt à réaliser <span className="gradient-text-light">votre ambition ?</span>
+                    Prêt à bâtir sur des <span className="gradient-text-light">fondations solides ?</span>
                 </h2>
             </Animate>
             <Animate variant="pop" delay={150}>
                 <p className="mt-4 text-base text-gray-300 max-w-2xl mx-auto">
-                    Discutons de la manière dont notre expertise peut se mettre au service de votre succès.
+                    Discutons de la manière dont nos piliers peuvent soutenir la croissance durable de votre entreprise.
                 </p>
             </Animate>
             <Animate variant="pop" delay={300}>
