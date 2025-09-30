@@ -42,7 +42,7 @@ const PillarsSection: React.FC = () => {
           </Animate>
           <Animate variant="pop" delay={200}>
             <p className="text-base text-gray-800 mt-2">
-              Notre ambition repose sur <strong>quatre piliers fondamentaux</strong> qui guident chacune de nos interventions.
+              Notre proposition repose sur <strong>quatre piliers fondamentaux</strong> qui guident chacune de nos interventions.
             </p>
           </Animate>
         </div>
