@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import Animate from './Animate';
 import ValueProposition from './ValueProposition';
@@ -13,7 +14,7 @@ const dnaItems = [
       text: "<strong>Excellence :</strong> Nous visons les plus hauts standards de qualité dans chacune de nos missions."
     },
     {
-      text: "<strong>Pragmatisme:</strong> Nous apportons des solutions concrètes et adaptées à votre réalité, en conjuguant expertise et pragmatisme, pour un accompagnement aussi pertinent qu’économique."
+      text: "<strong>Proactivité :</strong> Nous utilisons notre expertise et l'analyse de données pour identifier les opportunités et les risques futurs, vous permettant de garder une longueur d'avance."
     },
     {
       text: "<strong>Confiance :</strong> Nous construisons des relations durables basées sur la transparence et l'intégrité."
