@@ -1,17 +1,10 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { services, serviceDetails } from '../constants';
 import Animate from './Animate';
 import HeroAnimation from './HeroAnimation';
 
-const ChevronDownIcon: React.FC<{ className?: string }> = ({ className }) => (
-    <svg className={className} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-    </svg>
-);
-
 const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
   const details = serviceDetails[serviceId];
   const service = services.find(s => s.slug === serviceId);
 
@@ -28,11 +21,6 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
       </div>
     );
   }
-
-  const hasMultipleCategories = details.mainContent.categories.length > 2;
-  const visibleCategories = hasMultipleCategories && !isExpanded
-    ? details.mainContent.categories.slice(0, 2)
-    : details.mainContent.categories;
 
   return (
     <div className="bg-white text-gray-800">
@@ -157,45 +145,28 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
 
             <div className="max-w-4xl mx-auto">
                 <div className="space-y-12">
-                    {visibleCategories.map((category: any, index: number) => (
+                    {details.mainContent.categories.map((category: any, index: number) => (
                          <div key={index}>
                             <Animate variant="pop" delay={200 + index * 50}>
                                 <h3 className="text-xl font-semibold text-[#27013D] mb-6">{category.title}</h3>
                             </Animate>
                             
                             <div className="flex flex-wrap gap-3">
-                                {category.list
-                                    .flatMap((item: string) => item.split(/, | ,|,/g).map(subItem => subItem.trim()))
-                                    .filter(Boolean)
-                                    .map((tag: string, tagIndex: number) => (
-                                        <Animate
-                                            key={tagIndex}
-                                            variant="pop"
-                                            delay={300 + index * 50 + tagIndex * 20}
-                                        >
-                                          <div className="bg-violet-50 text-[#27013D] px-4 py-2 rounded-xl text-sm font-medium border border-violet-100">
-                                              {tag}
-                                          </div>
-                                        </Animate>
-                                    ))}
+                                {category.list.map((tag: string, tagIndex: number) => (
+                                    <Animate
+                                        key={tagIndex}
+                                        variant="pop"
+                                        delay={300 + index * 50 + tagIndex * 20}
+                                    >
+                                      <div className="bg-violet-50 text-[#27013D] px-4 py-2 rounded-xl text-sm font-medium border border-violet-100">
+                                          {tag}
+                                      </div>
+                                    </Animate>
+                                ))}
                             </div>
                         </div>
                     ))}
                 </div>
-                
-                {hasMultipleCategories && (
-                    <Animate variant="pop" delay={300}>
-                        <div className="text-center mt-12">
-                            <button
-                                onClick={() => setIsExpanded(!isExpanded)}
-                                className="inline-flex items-center gap-2 font-semibold text-[#27013D] hover:text-[#6D0037] transition-colors"
-                            >
-                                <ChevronDownIcon className={`w-5 h-5 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
-                                <span>{isExpanded ? 'Voir moins' : 'Voir plus'}</span>
-                            </button>
-                        </div>
-                    </Animate>
-                )}
             </div>
         </div>
       </main>

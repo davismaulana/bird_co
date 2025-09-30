@@ -512,13 +512,14 @@ export const serviceDetails: { [key: string]: any } = {
             categories: [
                 { 
                     title: 'Reporting opérationnel et financier', 
-                    list: ['Chiffre d\'affaires, EBITDA, Ecart Budget vs Réel, ETP, Cash burn, BFR, Dettes'] 
+                    list: [
+                        'Chiffre d\'affaires', 'EBITDA', 'Ecart Budget vs Réel', 'ETP', 'Cash burn', 'BFR', 'Dettes'
+                    ]
                 },
                 { 
                     title: 'Tableau de bord commercial', 
                     list: [
-                        'Chiffre d\'affaires et marge par segment, produit, zone géographique, Panier moyen',
-                        'Pipe commercial, Suivi des leads, Taux de conversion, churn, rétention, Coût d\'acquisition client'
+                        'Chiffre d\'affaires et marge par segment/produit/zone', 'Panier moyen', 'Pipe commercial', 'Suivi des leads', 'Taux de conversion', 'Churn & Rétention', 'Coût d\'acquisition client'
                     ] 
                 },
                 {
@@ -527,7 +528,7 @@ export const serviceDetails: { [key: string]: any } = {
                         'Business plan',
                         'Prévisionnel de trésorerie',
                         'Plan d’optimisation du BFR',
-                        'Analyses et évaluations de projets stratégiques (Projets d’investissements, opportunités de croissance)',
+                        'Analyses et évaluations de projets stratégiques (investissements, croissance)',
                         'Identification de leviers opérationnels et financiers'
                     ]
                 }
@@ -572,37 +573,25 @@ export const serviceDetails: { [key: string]: any } = {
             title: 'Les missions essentielles', 
             description: '',
             categories: [
-                { 
-                    title: 'Mise en place d’une gouvernance financière', 
-                    list: ['Reporting, Tableaux de bord, Processus budgétaires'] 
-                },
-                { 
-                    title: 'Pilotage et optimisation des marges et coûts', 
-                    list: ['Analyses de rentabilité, plans d’amélioration'] 
+                {
+                    title: 'Gouvernance financière',
+                    list: ['Reporting', 'Tableaux de bord', 'Processus budgétaires']
                 },
                 {
-                    title: 'Gestion et sécurisation de la trésorerie',
-                    list: ['Optimisation du BFR, Relation avec les banques']
+                    title: 'Pilotage de la performance',
+                    list: ['Optimisation des marges et coûts', 'Analyses de rentabilité', 'Plans d’amélioration']
                 },
                 {
-                    title: 'Définition et suivi des KPIs stratégiques',
-                    list: []
+                    title: 'Gestion de trésorerie',
+                    list: ['Optimisation du BFR', 'Relation avec les banques', 'Cash Flow Forecast']
                 },
                 {
-                    title: 'Construction des prévisionnels d\'exploitation et de trésorerie',
-                    list: ['Budget, Business plan, Cash Flow Forecast']
+                    title: 'Stratégie financière',
+                    list: ['Construction du Business plan', 'Définition et suivi des KPIs stratégiques', 'Identification de leviers opérationnels et financiers']
                 },
                 {
-                    title: 'Recherche et structuration des financements',
-                    list: ['Levées de fonds, Dettes bancaires, Subventions']
-                },
-                {
-                    title: 'Analyses et évaluations de projets stratégiques',
-                    list: ['Projets d’investissements, Opportunités de croissance']
-                },
-                {
-                    title: 'Identification de leviers opérationnels et financiers',
-                    list: []
+                    title: 'Financement & Croissance',
+                    list: ['Recherche et structuration des financements (Levées de fonds, Dettes, Subventions)', 'Analyses et évaluations de projets stratégiques (investissements, croissance)']
                 }
             ] 
         },
@@ -644,24 +633,24 @@ export const serviceDetails: { [key: string]: any } = {
             title: 'Les livrables essentiels', 
             description: '', 
             categories: [
-                { 
-                    title: 'Clarification & Analyse', 
+                {
+                    title: 'Phase de Diagnostic & Analyse',
                     list: [
                         'Clarification de l’origine des difficultés',
                         'Examen détaillé et critique des états financiers',
-                        'Analyse approfondie des principaux agrégats de résultat (Chiffre d’affaires, Marge, Masse salariale)',
+                        'Analyse des agrégats de résultat (Chiffre d’affaires, Marge, Masse salariale)',
                         'Analyse du besoin en fonds de roulement',
-                        'Analyse de la dette financière long et court terme',
-                    ] 
+                        'Analyse de la dette financière long et court terme'
+                    ]
                 },
-                { 
-                    title: 'Plan d\'action & Leviers', 
+                {
+                    title: 'Phase de Recommandation & Plan d\'Action',
                     list: [
                         'Construction des prévisionnels d’exploitation et de trésorerie',
-                        'Proposition de restructuration financière',
-                        'Identification de leviers d’amélioration de la performance financière et opérationnelle',
-                    ] 
-                },
+                        'Proposition de plan de restructuration financière',
+                        'Identification de leviers d’amélioration de la performance'
+                    ]
+                }
             ] 
         },
         ambition: {
@@ -703,24 +692,24 @@ export const serviceDetails: { [key: string]: any } = {
             description: '',
             categories: [
                 {
-                    title: 'Information Memorandum',
+                    title: 'Information Memorandum & Process',
                     list: [
                         "Présentation​ de l'opportunité d'investissement",
                         'Analyse du marché et positionnement',
-                        'Performance opérationnelle et financière historique et projetée',
-                        "Liste d'acquéreurs, fonds ou prêteurs pertinents pour votre opération",
+                        'Performance opérationnelle et financière',
+                        "Liste d'acquéreurs / fonds / prêteurs pertinents",
                         'Calendrier du processus de transaction',
-                        "Amorçage et suivi des discussions avec les candidats à l'opportunité",
+                        'Amorçage et suivi des discussions avec les candidats'
                     ]
                 },
                 {
-                    title: 'Vendor Assistance',
+                    title: 'Vendor Assistance & Due Diligence',
                     list: [
                         'Analyse approfondie des états financiers (P&L, Bilan, TFT)',
                         'Analyse des indicateurs de performance clés (KPI)',
                         'Revue critique / Construction du Business Plan',
                         'Définition de la rentabilité normative (QoE)',
-                        'Analyse de la dette nette financière (QoD)',
+                        'Analyse de la dette nette financière (QoD)'
                     ]
                 }
             ]
