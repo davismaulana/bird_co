@@ -44,7 +44,7 @@ const ValueProposition: React.FC = () => {
           <div className="relative text-left w-full">
             <Animate variant="pop" delay={200}>
                 <h2 className="text-xl md:text-2xl xl:text-3xl text-[#27013D] leading-tight">
-                  Au-delà du conseil, Bird vous accompagne comme <strong className="font-semibold">partenaire opérationnel</strong> pour relever vos enjeux <strong className="font-semibold">stratégiques&nbsp;et&nbsp;financiers</strong>.
+                  <strong className="font-semibold">Au-delà du conseil</strong>, Bird vous accompagne comme <strong className="font-semibold">partenaire opérationnel</strong> pour relever vos enjeux <strong className="font-semibold">stratégiques&nbsp;et&nbsp;financiers</strong>.
                 </h2>
             </Animate>
           </div>
