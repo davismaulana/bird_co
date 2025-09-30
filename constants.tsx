@@ -604,7 +604,7 @@ export const serviceDetails: { [key: string]: any } = {
     },
     'diagnostic-restructuration': {
         title: 'Diagnostic & Restructuration',
-        subtitle: 'Apporter le recul et la clarté nécessaires à la prise de décision et relancer votre activité',
+        subtitle: 'Un regard avisé pour prendre du recul, décider juste et relancer avec confiance',
         diagnostic: {
             title: <>Vos <span className="gradient-text">objectifs</span></>,
             description: 'Réaliser une évaluation complète, claire et objective de la santé financière de l’entreprise afin de :',
