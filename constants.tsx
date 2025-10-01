@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 export const PaperPlaneIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -620,7 +621,19 @@ export const serviceDetails: { [key: string]: any } = {
                 },
                 {
                     title: 'Gestion de trésorerie',
-                    list: ['Optimisation du BFR', 'Relation avec les banques', 'Cash Flow Forecast']
+                    list: [
+                        'Prévisions de trésorerie', 
+                        'suivi quotidien des encaissements et décaissements', 
+                        'optimisation du besoin en fonds de roulement', 
+                        'gestion des délais de paiement clients et fournisseurs', 
+                        'suivi des encours bancaires', 
+                        'gestion des financements court terme', 
+                        'placement des excédents de trésorerie', 
+                        'sécurisation des flux financiers', 
+                        'analyse des écarts prévisionnel vs réalisé', 
+                        'reporting de trésorerie', 
+                        'plan de financement'
+                    ]
                 },
                 {
                     title: 'Stratégie financière',
