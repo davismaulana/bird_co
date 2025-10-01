@@ -146,14 +146,14 @@ const App: React.FC = () => {
           <Hero />
           <StakesSection />
           {/* <Methodology /> */}
-          <ServicesOverview />
+          <TaskShowcase />
           <PillarsSection />
-          <Logos backgroundColor="bg-white" />
           <Personas />
+          <Logos backgroundColor="bg-gray-50" />
           <Stats />
           <Expertise />
           <Deliverables />
-          <TaskShowcase />
+          <ServicesOverview />
           <Team />
           <Contact />
         </main>

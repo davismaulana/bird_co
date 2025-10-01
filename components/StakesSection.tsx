@@ -14,7 +14,7 @@ const stakes = [
   {
     icon: <img src="https://images2.imgbox.com/df/8e/KHz9cB7k_o.png" alt="Obstacles à la transmission icon" className="w-20 h-20 object-contain" />,
     title: "Obstacles à la transmission",
-    description: "Le dirigeant rencontre de nombreux obstacles lors de la transmission si son évaluation est irréaliste, sa stratégie de vente inefficace et les documents incomplets.",
+    description: "Le dirigeant rencontre de nombreux obstacles lors de la transmission si son évaluation est irréaliste ou sa stratégie de vente inefficace.",
     details: [
         "Une valeur surestimée et/ou un passif sous-estimé.",
         "Une information financière manquante ou incomplète."
@@ -68,14 +68,14 @@ const StakesSection: React.FC = () => {
                 </h3>
                 <p className="text-gray-800 text-sm leading-relaxed mb-4">{stake.description}</p>
                 <div className="flex-grow" />
-                <ul className="space-y-2 text-xs text-gray-700 mt-auto pt-4 border-t border-gray-200">
+                <div className="space-y-3 text-sm text-gray-800 mt-auto pt-6">
                     {stake.details.map((detail, i) => (
-                        <li key={i} className="flex items-start">
-                            <span className="text-[#6D0037] mr-2 font-bold leading-tight">›</span>
+                        <div key={i} className="flex items-start">
+                            <span className="text-[#6D0037] mr-3 font-bold text-lg leading-tight">›</span>
                             <span className="flex-1">{detail}</span>
-                        </li>
+                        </div>
                     ))}
-                </ul>
+                </div>
               </div>
             </Animate>
           ))}
