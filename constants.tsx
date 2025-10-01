@@ -526,10 +526,27 @@ export const serviceDetails: { [key: string]: any } = {
                     title: 'Outils de planification',
                     list: [
                         'Business plan',
-                        'Prévisionnel de trésorerie',
                         'Plan d’optimisation du BFR',
                         'Analyses et évaluations de projets stratégiques (investissements, croissance)',
                         'Identification de leviers opérationnels et financiers'
+                    ]
+                },
+                {
+                    title: 'Prévisionnel de trésorerie',
+                    list: [
+                        'EBITDA Cash',
+                        'BFR d\'exploitation',
+                        'BFR hors exploitation',
+                        'Produits financiers',
+                        'Charges financières',
+                        'Impôts sur les sociétés',
+                        'Coûts exceptionnels',
+                        'CAPEX',
+                        'Emprunts',
+                        'Autres financement',
+                        'Augmentation de capital',
+                        'Distribution de dividendes',
+                        'Avances en compte courant'
                     ]
                 }
             ] 
