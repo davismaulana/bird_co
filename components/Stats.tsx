@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Animate from './Animate';
 
@@ -21,7 +22,7 @@ const stats = [
 
 const Stats: React.FC = () => {
   return (
-    <section className="bg-white py-16">
+    <section className="bg-gray-50 py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="mb-20">
           <Animate variant="pop">

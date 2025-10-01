@@ -159,15 +159,15 @@ const App: React.FC = () => {
         <main>
           <Hero />
           <StakesSection />
+          <ServicesOverview />
           {/* <Methodology /> */}
           <TaskShowcase />
           <PillarsSection />
           <Personas />
-          <Logos backgroundColor="bg-gray-50" />
+          <Logos backgroundColor="bg-white" />
           <Stats />
           <Expertise />
           <Deliverables />
-          <ServicesOverview />
           <Team />
           <section className="bg-gray-50 py-16">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
