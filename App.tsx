@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -21,6 +22,7 @@ import BackToTopButton from './components/BackToTopButton';
 import PillarsSection from './components/PillarsSection';
 import StakesSection from './components/StakesSection';
 import Animate from './components/Animate';
+import FAQPage from './components/FAQPage';
 
 const App: React.FC = () => {
   const { pathname } = window.location;
@@ -113,6 +115,17 @@ const App: React.FC = () => {
           <Header pathname={pathname} />
           <AmbitionPage />
           <Logos />
+          <Footer />
+        </div>
+      );
+    }
+
+    if (pathname === '/faq') {
+      return (
+        <div className="bg-white overflow-x-hidden">
+          <Header pathname={pathname} />
+          <FAQPage />
+          <Logos backgroundColor="bg-gray-50" />
           <Footer />
         </div>
       );

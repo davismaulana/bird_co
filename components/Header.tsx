@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { services, HamburgerIcon, CloseIcon } from '../constants';
 
@@ -8,6 +9,7 @@ const navItems = [
   { name: 'Nos Piliers', href: '/ambition' },
   { name: 'À l\'origine', href: '/#notre-equipe' },
   { name: 'Contact', href: '/#contact' },
+  { name: 'FAQ', href: '/faq' },
 ];
 
 const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
