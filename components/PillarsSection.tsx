@@ -26,7 +26,7 @@ const pillars = [
 
 const PillarsSection: React.FC = () => {
   return (
-    <section id="nos-piliers" className="bg-gray-50 py-16">
+    <section id="piliers" className="bg-gray-50 py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <Animate variant="pop">
@@ -36,7 +36,7 @@ const PillarsSection: React.FC = () => {
           </Animate>
           <Animate variant="pop" delay={100}>
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold text-gray-900 leading-tight">
-              Les piliers de <span className="gradient-text">notre engagement</span>
+              <span className="gradient-text">Piliers</span>
             </h2>
           </Animate>
           <Animate variant="pop" delay={200}>
