@@ -659,21 +659,100 @@ export const serviceDetails: { [key: string]: any } = {
             description: '', 
             categories: [
                 {
-                    title: 'Phase de Diagnostic & Analyse',
+                    title: 'Recommandations stratégiques',
                     list: [
                         'Clarification de l’origine des difficultés',
                         'Examen détaillé et critique des états financiers',
                         'Analyse des agrégats de résultat (Chiffre d’affaires, Marge, Masse salariale)',
                         'Analyse du besoin en fonds de roulement',
-                        'Analyse de la dette financière long et court terme'
-                    ]
-                },
-                {
-                    title: 'Phase de Recommandation & Plan d\'Action',
-                    list: [
+                        'Analyse de la dette financière long et court terme',
                         'Construction des prévisionnels d’exploitation et de trésorerie',
                         'Proposition de plan de restructuration financière',
                         'Identification de leviers d’amélioration de la performance'
+                    ]
+                },
+                {
+                    title: 'Amélioration de la performance',
+                    list: [
+                        'Diagnostic opérationnel et financier',
+                        'Suivi des KPIs',
+                        "Définition et mise en place d'OKR",
+                        'Plan de réduction des coûts',
+                        'Revue des marges par activité',
+                        'Renégociation avec les fournisseurs',
+                        'Optimisation BFR',
+                        'Digitalisation',
+                        'Montée en compétence des collaborateurs',
+                        'Amélioration des processus',
+                        'Mise en place de comité de suivi de la performance',
+                    ]
+                },
+                {
+                    title: 'Reporting opé et financier',
+                    list: [
+                        'Suivi du chiffre d’affaires',
+                        'marge brute',
+                        'analyse de la masse salariale',
+                        'coûts de structure',
+                        'EBITDA',
+                        'trésorerie disponible',
+                        'cash burn',
+                        'runway',
+                        'endettement',
+                        'variation du BFR',
+                        'créances clients',
+                        'dettes fournisseurs',
+                        'niveau de stocks',
+                        'Investissements réalisés',
+                        'carnet de commandes',
+                        'taux de conversion commerciale',
+                        'productivité des équipes',
+                        'satisfaction client',
+                        'respect des délais',
+                        'indicateurs RH',
+                        'plan d’actions',
+                        'écarts réel vs budget'
+                    ]
+                },
+                {
+                    title: 'Tableau de bord commercial',
+                    list: [
+                        'Chiffre d’affaires réalisé',
+                        'chiffre d’affaires prévisionnel',
+                        'carnet de commandes',
+                        'taux de conversion prospects',
+                        'coût d’acquisition client',
+                        'panier moyen',
+                        'marge commerciale',
+                        'volume de ventes',
+                        'nouveaux clients acquis',
+                        'clients perdus',
+                        'churn',
+                        'taux de rétention',
+                        'taux de fidélisation',
+                        'créances clients',
+                        'délai moyen de paiement (DSO)',
+                        'performance par produit',
+                        'performance par canal',
+                        'performance par commercial',
+                        'pipe commercial',
+                        'taux de réalisation des objectifs',
+                        'actions commerciales en cours'
+                    ]
+                },
+                {
+                    title: 'Recherche de financement',
+                    list: [
+                        'Business angels',
+                        'plateformes de crowdfunding',
+                        'fonds d’investissement',
+                        'prêts bancaires en ligne',
+                        'microcrédits',
+                        'prêts participatifs',
+                        'aides et subventions publiques',
+                        'incubateurs et accélérateurs',
+                        'réseaux de prêts d’honneur',
+                        'investisseurs privés via plateformes spécialisées'
                     ]
                 }
             ] 
