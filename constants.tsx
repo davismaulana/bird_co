@@ -637,7 +637,17 @@ export const serviceDetails: { [key: string]: any } = {
                 },
                 {
                     title: 'Stratégie financière',
-                    list: ['Construction du Business plan', 'Définition et suivi des KPIs stratégiques', 'Identification de leviers opérationnels et financiers', "Analyse de la performance historique", "Rédaction de l'equity story", "Définition de la stratégie à 5 ans"]
+                    list: [
+                        'Rédaction de l\'equity story',
+                        'Construction du business plan',
+                        'Allocation du capital',
+                        'Choix des sources de financement',
+                        'Politique d’investissement',
+                        'Gestion du risque',
+                        'Optimisation du coût du capital',
+                        'Définition et suivi des KPIs stratégiques',
+                        'Identification de leviers opérationnels et financiers'
+                    ]
                 },
                 {
                     title: 'Financement & Croissance',
