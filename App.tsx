@@ -19,6 +19,7 @@ import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 import TermsOfServicePage from './components/TermsOfServicePage';
 import BackToTopButton from './components/BackToTopButton';
 import PillarsSection from './components/PillarsSection';
+import StakesSection from './components/StakesSection';
 
 const App: React.FC = () => {
   const { pathname } = window.location;
@@ -143,10 +144,11 @@ const App: React.FC = () => {
         <Header pathname={pathname} />
         <main>
           <Hero />
+          <StakesSection />
           {/* <Methodology /> */}
           <ServicesOverview />
           <PillarsSection />
-          <Logos backgroundColor="bg-gray-50" />
+          <Logos backgroundColor="bg-white" />
           <Personas />
           <Stats />
           <Expertise />
