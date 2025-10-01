@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Animate from './Animate';
 import HeroAnimation from './HeroAnimation';
@@ -10,7 +9,7 @@ const Hero: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center relative">
           
           {/* Left side: Text content */}
-          <div className="text-center md:text-left relative z-10">
+          <div className="text-center md:text-left relative z-10 md:pl-16">
             <Animate variant="pop">
               <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 leading-tight tracking-tight">
                 <span>Bras droit</span><br />
