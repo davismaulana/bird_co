@@ -207,7 +207,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                 href="https://calendly.com/contact-birdandco/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ml-6 bg-[#27013D] text-white px-4 py-2 rounded-full font-semibold text-sm hover:bg-[#1c0e2a] transition-colors whitespace-nowrap"
+                className="ml-6 bg-[#27013D] text-white px-4 py-2 rounded-full font-semibold text-base hover:bg-[#1c0e2a] transition-colors whitespace-nowrap"
               >
                 {ctaText}
               </a>
