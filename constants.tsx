@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 export const PaperPlaneIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -465,7 +464,7 @@ export const teamMembers = [
     name: 'Benjamin Le Gal',
     role: 'Co-fondateur',
     description: [
-      'Expert dans l’assistance des entreprises et fonds dans leur processus de cessions-acquisitions notamment due diligence et recherche de repreneurs.',
+      'Expert dans l’assistance des entreprises et fonds dans their processus de cessions-acquisitions notamment due diligence et recherche de repreneurs.',
       'Il bénéfice également d’une expérience solide en Direction financière de start-ups et ETI dont il a accompagné les levées de fonds.',
       'Ancien footballeur semi-professionnel, il est toujours guidé par la discipline, la stratégie et l’engagement.',
     ],
@@ -529,6 +528,15 @@ export const serviceDetails: { [key: string]: any } = {
                         'Plan d’optimisation du BFR',
                         'Analyses et évaluations de projets stratégiques (investissements, croissance)',
                         'Identification de leviers opérationnels et financiers'
+                    ]
+                },
+                {
+                    title: 'Budget et Business plan',
+                    list: [
+                        'Chiffre d\'affaires',
+                        'Coûts variables',
+                        'Coûts de structure',
+                        'EBITDA'
                     ]
                 },
                 {
