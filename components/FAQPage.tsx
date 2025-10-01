@@ -30,7 +30,7 @@ const faqs = [
     ]
   },
   {
-    category: "🎯 Services & expertise",
+    category: "Services & expertise",
     items: [
       {
         question: "Quels services proposez-vous ?",
@@ -160,7 +160,7 @@ const FAQPage: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Animate variant="pop">
                 <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold text-gray-900">
