@@ -3,30 +3,33 @@ import Animate from './Animate';
 
 const stakes = [
   {
-    icon: <img src="https://images2.imgbox.com/30/ad/ToMA2afU_o.png" alt="Manque de pilotage icon" className="w-20 h-20 object-contain" />,
-    title: "Manque de pilotage",
-    description: "2/3 des entreprises qui échouent dans les 5 premières années citent l'absence d'outils de pilotage comme une cause principale d'échec.",
+    icon: <img src="https://images2.imgbox.com/30/ad/ToMA2afU_o.png" alt="Prévention des difficultés et résilience icon" className="w-20 h-20 object-contain" />,
+    title: "Prévention des difficultés et résilience",
+    description: "Plus de 66k faillites sont attendues en 2025, souvent faute d’accompagnement adapté.",
     details: [
-        "On anticipe plus de 66k faillites en 2025, la plupart faute d'accompagnement pertinent.",
-        "82% des entreprises avec un reporting robuste ont de meilleures performances financières."
+        "Selon la Banque de France, la moitié des défaillances pourraient être évitées grâce à une détection précoce et un accompagnement adapté.",
+        "Les entreprises ayant un dispositif de prévention structuré réduisent de près de 30% leur risque de faillite.",
+        "Côté financement, près de 60% des demandes de refinancement ou de restructuration de dettes échouent faute de business plan crédible et de documents complets (Banque de France / Observatoire du financement)."
     ]
   },
   {
-    icon: <img src="https://images2.imgbox.com/df/8e/KHz9cB7k_o.png" alt="Obstacles à la transmission icon" className="w-20 h-20 object-contain" />,
-    title: "Obstacles à la transmission",
-    description: "Le dirigeant rencontre de nombreux obstacles lors de la transmission si son évaluation est irréaliste ou sa stratégie de vente inefficace.",
+    icon: <img src="https://images2.imgbox.com/df/8e/KHz9cB7k_o.png" alt="Transmission et Stratégie de négociation icon" className="w-20 h-20 object-contain" />,
+    title: "Transmission et Stratégie de négociation",
+    description: "1/3 des transactions échouent directement faute d’audit ou de préparation (source : multiples études M&A, dont PwC et Deloitte).",
     details: [
-        "Une valeur surestimée et/ou un passif sous-estimé.",
-        "Une information financière manquante ou incomplète."
+        "70% des entreprises sous-estiment les difficultés liées à la transmission et arrivent en négociation avec des informations financières incomplètes (PwC).",
+        "Les transactions préparées en amont avec un audit vendeur (“vendor due diligence”) se concrétisent 2 fois plus rapidement, avec un prix de vente amélioré de 10 à 20%.",
+        "En M&A, une bonne préparation peut augmenter le prix de vente de 10 à 20% (Harvard Business Review, étude sur la négociation d’actifs)."
     ]
   },
   {
-    icon: <img src="https://images2.imgbox.com/47/18/8gfHAt43_o.png" alt="Stratégie inefficace icon" className="w-20 h-20 object-contain" />,
-    title: "Stratégie inefficace",
-    description: "Une vente ou une négociation mal préparée, souvent due à des documents incomplets, mène à une stratégie inefficace et des opportunités manquées.",
+    icon: <img src="https://images2.imgbox.com/47/18/8gfHAt43_o.png" alt="Défis de la croissance icon" className="w-20 h-20 object-contain" />,
+    title: "Défis de la croissance",
+    description: "Sans une structure financière solide, la croissance rapide peut mener à des problèmes de trésorerie et une perte de contrôle.",
     details: [
-        "Manque de préparation en amont des négociations.",
-        "Informations financières et documents clés manquants."
+        "Complexité accrue des opérations et des finances.",
+        "Besoin de financements externes pour soutenir l'expansion.",
+        "Nécessité de mettre en place des processus et des outils de pilotage scalables."
     ]
   },
 ];
@@ -66,9 +69,8 @@ const StakesSection: React.FC = () => {
                 <h3 className="text-lg font-bold text-[#27013D] mb-3 leading-tight">
                   {stake.title}
                 </h3>
-                <p className="text-gray-800 text-sm leading-relaxed mb-4">{stake.description}</p>
-                <div className="flex-grow" />
-                <div className="space-y-3 text-sm text-gray-800 mt-auto pt-6">
+                <p className="text-gray-800 text-sm leading-relaxed">{stake.description}</p>
+                <div className="space-y-3 text-sm text-gray-800 mt-4">
                     {stake.details.map((detail, i) => (
                         <div key={i} className="flex items-start">
                             <span className="text-[#6D0037] mr-3 font-bold text-lg leading-tight">›</span>
@@ -76,6 +78,7 @@ const StakesSection: React.FC = () => {
                         </div>
                     ))}
                 </div>
+                <div className="flex-grow" />
               </div>
             </Animate>
           ))}
