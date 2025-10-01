@@ -600,7 +600,19 @@ export const serviceDetails: { [key: string]: any } = {
             categories: [
                 {
                     title: 'Gouvernance financière',
-                    list: ['Reporting', 'Tableaux de bord', 'Définition et construction du budget']
+                    list: [
+                        'Structure de pilotage',
+                        'comité financier',
+                        'gestion du processus budgétaire',
+                        'négociation',
+                        'gestion des risques',
+                        'suivi des investissements',
+                        'reporting régulier',
+                        'indicateurs de performance',
+                        'conformité réglementaire',
+                        'relation avec les auditeurs',
+                        'relations investisseurs',
+                    ]
                 },
                 {
                     title: 'Pilotage de la performance',
