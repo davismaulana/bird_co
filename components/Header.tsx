@@ -110,7 +110,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                     const isSectionActive = activeSection === 'notre-proposition';
                     const hasBackground = isDropdownOpen || isPropositionSectionActive;
 
-                    let classes = 'nav-link-anchor px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2';
+                    let classes = 'nav-link-anchor px-4 py-2 rounded-lg text-base font-medium transition-colors flex items-center gap-2';
                     if (hasBackground) {
                         classes += ' bg-[#27013D] text-white';
                     } else {
@@ -173,7 +173,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                   const sectionId = getSectionId(item.href);
                   const isSectionActive = pathname === '/' && sectionId ? activeSection === sectionId : false;
 
-                  const finalClasses = ['px-4', 'py-2', 'rounded-lg', 'text-sm', 'font-medium', 'transition-colors'];
+                  const finalClasses = ['px-4', 'py-2', 'rounded-lg', 'text-base', 'font-medium', 'transition-colors'];
 
                   if (isAnchorLink) {
                       finalClasses.push('nav-link-anchor');
@@ -207,7 +207,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                 href="https://calendly.com/contact-birdandco/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ml-6 bg-[#27013D] text-white px-4 py-2 rounded-full font-semibold text-xs hover:bg-[#1c0e2a] transition-colors whitespace-nowrap"
+                className="ml-6 bg-[#27013D] text-white px-4 py-2 rounded-full font-semibold text-sm hover:bg-[#1c0e2a] transition-colors whitespace-nowrap"
               >
                 {ctaText}
               </a>
