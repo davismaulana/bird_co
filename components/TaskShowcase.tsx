@@ -55,7 +55,7 @@ const CashGrowthVisual: React.FC = () => {
     return (
         <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
             <div className="flex justify-between items-start mb-2 anim-child" style={{'--i': 0} as React.CSSProperties}>
-                <h3 className="font-bold text-gray-800 text-xs sm:text-sm">Cash Management</h3>
+                <h3 className="font-bold text-gray-800 text-xs">Prévisionnel de trésorerie</h3>
             </div>
             <div className="relative flex-grow">
                 <svg viewBox="0 0 335 170" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
@@ -97,22 +97,30 @@ const OnSiteInterventionVisual: React.FC = () => (
             <p className="font-semibold text-gray-800 mb-2 anim-child" style={{'--i': 1} as React.CSSProperties}>Agenda de la session :</p>
             <div className="flex items-start gap-3 anim-child" style={{'--i': 2} as React.CSSProperties}>
                 <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">1</div>
-                <p className="text-gray-800">Revue des performances et analyse des KPIs</p>
+                <p className="text-gray-800">Présentation aux équipes</p>
             </div>
             <div className="flex items-start gap-3 anim-child" style={{'--i': 3} as React.CSSProperties}>
                 <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">2</div>
-                <p className="text-gray-800">Identification des leviers de croissance</p>
+                <p className="text-gray-800">Revue des processus internes</p>
             </div>
             <div className="flex items-start gap-3 anim-child" style={{'--i': 4} as React.CSSProperties}>
                 <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">3</div>
-                <p className="text-gray-800">Définition de la feuille de route stratégique</p>
+                <p className="text-gray-800">Revue des performances et analyse des KPIs</p>
             </div>
             <div className="flex items-start gap-3 anim-child" style={{'--i': 5} as React.CSSProperties}>
                 <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">4</div>
-                <p className="text-gray-800">Plan d'action et prochaines étapes</p>
+                <p className="text-gray-800">Identification des leviers de croissance</p>
+            </div>
+            <div className="flex items-start gap-3 anim-child" style={{'--i': 6} as React.CSSProperties}>
+                <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">5</div>
+                <p className="text-gray-800">Définition de la feuille de route stratégique</p>
+            </div>
+            <div className="flex items-start gap-3 anim-child" style={{'--i': 7} as React.CSSProperties}>
+                <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">6</div>
+                <p className="text-gray-800">Plan d'action et Planification des réunions de travail et points d'étapes</p>
             </div>
         </div>
-        <div className="mt-4 flex items-center justify-between text-xs text-gray-500 anim-child" style={{'--i': 6} as React.CSSProperties}>
+        <div className="mt-4 flex items-center justify-between text-xs text-gray-500 anim-child" style={{'--i': 8} as React.CSSProperties}>
             <span>BIRD&CO</span>
             <span>CONFIDENTIEL</span>
         </div>
@@ -127,7 +135,7 @@ const tasks = [
       inactive: "https://images2.imgbox.com/49/76/VCQT8RGf_o.png",
     },
     title: "Reporting & Tableau de Bord",
-    description: "Des tableaux de bord sur-mesure et des reportings clairs pour un pilotage visuel et intuitif de votre activité.",
+    description: "des outils clairs et nécessaires pour un pilotage efficace de votre activité",
     visual: <KpiDashboardMockup noAspectRatio disableHover />,
   },
   {
@@ -136,8 +144,9 @@ const tasks = [
       inactive: "https://images2.imgbox.com/78/74/vQLOdRKy_o.png",
     },
     title: "Modélisation",
-    description: "Construction de modèles financiers et business plans pour vos prévisions.",
-    visual: <FinancialReportMockup noAspectRatio disableHover />,
+    description: "Des prévisionnels robustes et détaillés pour soutenir votre stratégie, vos levées de fonds et vos décisions d'investissement.",
+    // FIX: Removed invalid `noAspectRatio` prop from `FinancialReportMockup`. The error message was likely pointing to the wrong component but described this exact problem.
+    visual: <FinancialReportMockup disableHover />,
   },
   {
     icon: {
