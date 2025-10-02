@@ -60,16 +60,16 @@ const CashGrowthVisual: React.FC = () => {
             <div className="relative flex-grow">
                 <svg viewBox="0 0 335 170" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
                     {/* Y-axis labels */}
-                    <text x="0" y="25" alignmentBaseline="middle" fill="#6b7280" fontSize="8" className="anim-child" style={{'--i': 1} as React.CSSProperties}>+50k€</text>
-                    <text x="0" y="75" alignmentBaseline="middle" fill="#6b7280" fontSize="8" className="anim-child" style={{'--i': 2} as React.CSSProperties}>0</text>
-                    <text x="0" y="125" alignmentBaseline="middle" fill="#6b7280" fontSize="8" className="anim-child" style={{'--i': 3} as React.CSSProperties}>-50k€</text>
+                    <text x="0" y="25" alignmentBaseline="middle" fill="#6b7280" fontSize="6" className="anim-child" style={{'--i': 1} as React.CSSProperties}>+50k€</text>
+                    <text x="0" y="75" alignmentBaseline="middle" fill="#6b7280" fontSize="6" className="anim-child" style={{'--i': 2} as React.CSSProperties}>0</text>
+                    <text x="0" y="125" alignmentBaseline="middle" fill="#6b7280" fontSize="6" className="anim-child" style={{'--i': 3} as React.CSSProperties}>-50k€</text>
                     
                     <g transform="translate(35, 0)">
                         {/* X-axis labels */}
-                        <text x="0" y="165" textAnchor="middle" fill="#6b7280" fontSize="8" className="anim-child" style={{'--i': 4} as React.CSSProperties}>T0</text>
-                        <text x="100" y="165" textAnchor="middle" fill="#6b7280" fontSize="8" className="anim-child" style={{'--i': 5} as React.CSSProperties}>T5</text>
-                        <text x="200" y="165" textAnchor="middle" fill="#6b7280" fontSize="8" className="anim-child" style={{'--i': 6} as React.CSSProperties}>T10</text>
-                        <text x="300" y="165" textAnchor="middle" fill="#6b7280" fontSize="8" className="anim-child" style={{'--i': 7} as React.CSSProperties}>T15</text>
+                        <text x="0" y="165" textAnchor="middle" fill="#6b7280" fontSize="6" className="anim-child" style={{'--i': 4} as React.CSSProperties}>T0</text>
+                        <text x="100" y="165" textAnchor="middle" fill="#6b7280" fontSize="6" className="anim-child" style={{'--i': 5} as React.CSSProperties}>T5</text>
+                        <text x="200" y="165" textAnchor="middle" fill="#6b7280" fontSize="6" className="anim-child" style={{'--i': 6} as React.CSSProperties}>T10</text>
+                        <text x="300" y="165" textAnchor="middle" fill="#6b7280" fontSize="6" className="anim-child" style={{'--i': 7} as React.CSSProperties}>T15</text>
                         
                         {/* Dashed reference line for zero */}
                         <line x1="0" y1="75" x2="300" y2="75" stroke="#d1d5db" strokeWidth="1" strokeDasharray="3 3" className="anim-child" style={{'--i': 1} as React.CSSProperties} />
@@ -79,7 +79,7 @@ const CashGrowthVisual: React.FC = () => {
                         <line x1="0" y1="125" x2="300" y2="125" stroke="#e5e7eb" strokeWidth="0.5" strokeDasharray="2 4" className="anim-child" style={{'--i': 1} as React.CSSProperties}/>
 
                         {/* Green line chart */}
-                        <path d={pathData} stroke="#10B981" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" className="animated-line-chart" />
+                        <path d={pathData} stroke="#10B981" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" className="animated-line-chart" />
                     </g>
                 </svg>
             </div>

@@ -348,16 +348,16 @@ export const CashGrowthVisual: React.FC = () => {
             <div className="relative flex-grow">
                 <svg viewBox="0 0 335 170" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
                     {/* Y-axis labels */}
-                    <text x="0" y="25" alignmentBaseline="middle" fill="#6b7280" fontSize="8">+50k€</text>
-                    <text x="0" y="75" alignmentBaseline="middle" fill="#6b7280" fontSize="8">0</text>
-                    <text x="0" y="125" alignmentBaseline="middle" fill="#6b7280" fontSize="8">-50k€</text>
+                    <text x="0" y="25" alignmentBaseline="middle" fill="#6b7280" fontSize="6">+50k€</text>
+                    <text x="0" y="75" alignmentBaseline="middle" fill="#6b7280" fontSize="6">0</text>
+                    <text x="0" y="125" alignmentBaseline="middle" fill="#6b7280" fontSize="6">-50k€</text>
                     
                     <g transform="translate(35, 0)">
                         {/* X-axis labels */}
-                        <text x="0" y="165" textAnchor="middle" fill="#6b7280" fontSize="8">T0</text>
-                        <text x="100" y="165" textAnchor="middle" fill="#6b7280" fontSize="8">T5</text>
-                        <text x="200" y="165" textAnchor="middle" fill="#6b7280" fontSize="8">T10</text>
-                        <text x="300" y="165" textAnchor="middle" fill="#6b7280" fontSize="8">T15</text>
+                        <text x="0" y="165" textAnchor="middle" fill="#6b7280" fontSize="6">T0</text>
+                        <text x="100" y="165" textAnchor="middle" fill="#6b7280" fontSize="6">T5</text>
+                        <text x="200" y="165" textAnchor="middle" fill="#6b7280" fontSize="6">T10</text>
+                        <text x="300" y="165" textAnchor="middle" fill="#6b7280" fontSize="6">T15</text>
                         
                         {/* Dashed reference line for zero */}
                         <line x1="0" y1="75" x2="300" y2="75" stroke="#d1d5db" strokeWidth="1" strokeDasharray="3 3" />
@@ -367,7 +367,7 @@ export const CashGrowthVisual: React.FC = () => {
                         <line x1="0" y1="125" x2="300" y2="125" stroke="#e5e7eb" strokeWidth="0.5" strokeDasharray="2 4" />
 
                         {/* Green line chart */}
-                        <path d={pathData} stroke="#10B981" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d={pathData} stroke="#10B981" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
                     </g>
                 </svg>
             </div>
