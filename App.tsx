@@ -14,12 +14,12 @@ import ServiceDetailPage from './components/ServiceDetailPage';
 import Expertise from './components/Expertise';
 // import Methodology from './components/Methodology';
 import TaskShowcase from './components/TaskShowcase';
-import AmbitionPage from './components/AmbitionPage';
+// import AmbitionPage from './components/AmbitionPage';
 import LoadingScreen from './components/LoadingScreen';
 import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 import TermsOfServicePage from './components/TermsOfServicePage';
 import BackToTopButton from './components/BackToTopButton';
-import PillarsSection from './components/PillarsSection';
+// import PillarsSection from './components/PillarsSection';
 import StakesSection from './components/StakesSection';
 import Animate from './components/Animate';
 import FAQPage from './components/FAQPage';
@@ -110,6 +110,7 @@ const App: React.FC = () => {
       );
     }
   
+    /*
     if (pathname === '/ambition') {
       return (
         <div className="bg-white overflow-x-hidden">
@@ -120,6 +121,7 @@ const App: React.FC = () => {
         </div>
       );
     }
+    */
 
     if (pathname === '/faq') {
       return (
@@ -164,7 +166,7 @@ const App: React.FC = () => {
           <ValueProposition />
           {/* <Methodology /> */}
           <TaskShowcase />
-          <PillarsSection />
+          {/* <PillarsSection /> */}
           <Personas />
           <Logos backgroundColor="bg-white" />
           <Stats />

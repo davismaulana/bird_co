@@ -6,7 +6,7 @@ const navItems = [
   { name: 'Accueil', href: '/' },
   { name: 'Enjeux', href: '/#vos-enjeux' },
   { name: 'Solutions', href: '/#notre-proposition' },
-  { name: 'Piliers', href: '/ambition' },
+  // { name: 'Piliers', href: '/ambition' },
   { name: 'À l\'origine', href: '/#notre-equipe' },
   { name: 'Contact', href: '/#contact' },
   { name: 'FAQ', href: '/faq' },
