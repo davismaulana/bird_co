@@ -164,6 +164,30 @@
       to { transform: scaleY(1); }
     }
 
+    /* Styles for TaskShowcase component animations */
+    .showcase-active {
+        animation: fadeInPop 800ms cubic-bezier(.2,.65,.2,1) forwards;
+    }
+    .showcase-active .animated-mockup .anim-child {
+      animation: fadeInPop 800ms cubic-bezier(.2,.65,.2,1) forwards;
+      animation-delay: calc(var(--i, 0) * 120ms);
+    }
+    .showcase-active .animated-mockup .anim-bar {
+      transform-origin: bottom;
+      animation: growUp 750ms cubic-bezier(.2,.65,.2,1) forwards;
+      animation-delay: calc(300ms + var(--d, 0) * 100ms);
+    }
+    .showcase-active .animated-line-chart {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: draw-line 2s ease-out 300ms forwards;
+    }
+    @keyframes draw-line {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
     .nav-link-anchor {
       position: relative;
     }
