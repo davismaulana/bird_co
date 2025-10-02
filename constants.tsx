@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 
 export const PaperPlaneIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -161,37 +162,37 @@ export const OctoGamingLogo = ({ className }: { className?: string }) => <img sr
 export const SOCABEGLogo = ({ className }: { className?: string }) => <img src="https://images2.imgbox.com/94/30/H1BnocDS_o.png" alt="SOCABEG Logo" className={className} />;
 
 export const FinancialReportMockup: React.FC<{ theme?: string, noAspectRatio?: boolean, disableHover?: boolean }> = ({ noAspectRatio = false, disableHover = false }) => (
-    <div className={`w-full h-full bg-white rounded-2xl ${noAspectRatio ? 'p-4 sm:p-6' : 'p-6'} shadow-2xl border border-gray-100 flex flex-col ${!disableHover ? 'transform hover:scale-105 transition-transform duration-300' : ''} ${!noAspectRatio ? 'aspect-[4/3]' : ''}`}>
-        <div className="flex items-center justify-between mb-4">
+    <div className={`animated-mockup w-full h-full bg-white rounded-2xl ${noAspectRatio ? 'p-4 sm:p-6' : 'p-6'} shadow-2xl border border-gray-100 flex flex-col ${!disableHover ? 'transform hover:scale-105 transition-transform duration-300' : ''} ${!noAspectRatio ? 'aspect-[4/3]' : ''}`}>
+        <div className="flex items-center justify-between mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
             <h3 className="font-bold text-gray-900 text-sm">Modèle Financier</h3>
             <div className="px-3 py-1 text-xs font-semibold bg-[#27013D] text-white rounded-full">Prévisions 5 ans</div>
         </div>
         <div className="flex-grow bg-gray-50 rounded-lg p-4 space-y-2 border border-gray-100 text-xs">
-            <div className="grid grid-cols-4 gap-2 text-xs text-gray-700">
+            <div className="grid grid-cols-4 gap-2 text-xs text-gray-700 anim-child" style={{'--i': 1} as React.CSSProperties}>
                 <span>Metric</span>
                 <span className="text-right">Y1</span>
                 <span className="text-right">Y2</span>
                 <span className="text-right">Y3</span>
             </div>
-            <div className="grid grid-cols-4 gap-2 text-gray-800">
+            <div className="grid grid-cols-4 gap-2 text-gray-800 anim-child" style={{'--i': 2} as React.CSSProperties}>
                 <span className="font-medium">Chiffre d'affaires</span>
                 <span className="text-right">€5.2M</span>
                 <span className="text-right text-green-600 font-semibold">€7.8M</span>
                 <span className="text-right text-green-600 font-semibold">€11.5M</span>
             </div>
-            <div className="grid grid-cols-4 gap-2 text-gray-800">
+            <div className="grid grid-cols-4 gap-2 text-gray-800 anim-child" style={{'--i': 3} as React.CSSProperties}>
                 <span className="pl-4">Marge Brute</span>
                 <span className="text-right">60%</span>
                 <span className="text-right">62%</span>
                 <span className="text-right">65%</span>
             </div>
-            <div className="grid grid-cols-4 gap-2 text-gray-800 font-medium border-t border-gray-200 pt-2 mt-2">
+            <div className="grid grid-cols-4 gap-2 text-gray-800 font-medium border-t border-gray-200 pt-2 mt-2 anim-child" style={{'--i': 4} as React.CSSProperties}>
                 <span>EBITDA</span>
                 <span className="text-right">€1.6M</span>
                 <span className="text-right text-green-600 font-semibold">€2.7M</span>
                 <span className="text-right text-green-600 font-semibold">€4.2M</span>
             </div>
-            <div className="grid grid-cols-4 gap-2 text-gray-800 font-medium">
+            <div className="grid grid-cols-4 gap-2 text-gray-800 font-medium anim-child" style={{'--i': 5} as React.CSSProperties}>
                 <span>Cash End of&nbsp;Period</span>
                 <span className="text-right">€0.8M</span>
                 <span className="text-right text-green-600 font-semibold">€1.5M</span>
@@ -201,26 +202,26 @@ export const FinancialReportMockup: React.FC<{ theme?: string, noAspectRatio?: b
     </div>
 );
 export const KpiDashboardMockup: React.FC<{ theme?: string, noAspectRatio?: boolean, disableHover?: boolean }> = ({ noAspectRatio = false, disableHover = false }) => (
-  <div className={`w-full h-full bg-white rounded-2xl ${noAspectRatio ? 'p-4 sm:p-6' : 'p-6'} shadow-2xl border border-gray-100 flex flex-col ${!disableHover ? 'transform hover:scale-105 transition-transform duration-300' : ''} ${!noAspectRatio ? 'aspect-[4/3]' : ''}`}>
-    <div className="w-full text-left mb-4">
+  <div className={`animated-mockup w-full h-full bg-white rounded-2xl ${noAspectRatio ? 'p-4 sm:p-6' : 'p-6'} shadow-2xl border border-gray-100 flex flex-col ${!disableHover ? 'transform hover:scale-105 transition-transform duration-300' : ''} ${!noAspectRatio ? 'aspect-[4/3]' : ''}`}>
+    <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
       <h3 className="font-bold text-gray-900 text-sm">Tableau de Bord - T4 2024</h3>
       <p className="text-xs text-gray-700">Suivi des KPIs clés</p>
     </div>
     <div className="flex-grow grid grid-cols-2 grid-rows-2 gap-4">
-      <div className="bg-gray-50 rounded-lg p-3 border border-gray-100 col-span-1 row-span-2 flex flex-col">
+      <div className="bg-gray-50 rounded-lg p-3 border border-gray-100 col-span-1 row-span-2 flex flex-col anim-child" style={{'--i': 1} as React.CSSProperties}>
         <p className="text-xs font-semibold text-gray-700 mb-2">Croissance MRR</p>
         <div className="flex-grow flex items-end space-x-2">
-            <div className="w-full h-1/3 bg-[#6D0037]/20 rounded-t-sm"></div>
-            <div className="w-full h-2/3 bg-[#6D0037]/20 rounded-t-sm"></div>
-            <div className="w-full h-1/2 bg-[#6D0037]/20 rounded-t-sm"></div>
-            <div className="w-full h-3/4 bg-[#6D0037] rounded-t-sm"></div>
+            <div className="w-full h-1/3 bg-[#6D0037]/20 rounded-t-sm anim-bar" style={{'--d': 0} as React.CSSProperties}></div>
+            <div className="w-full h-2/3 bg-[#6D0037]/20 rounded-t-sm anim-bar" style={{'--d': 1} as React.CSSProperties}></div>
+            <div className="w-full h-1/2 bg-[#6D0037]/20 rounded-t-sm anim-bar" style={{'--d': 2} as React.CSSProperties}></div>
+            <div className="w-full h-3/4 bg-[#6D0037] rounded-t-sm anim-bar" style={{'--d': 3} as React.CSSProperties}></div>
         </div>
       </div>
-      <div className="bg-gray-50 rounded-lg p-4 border border-gray-100 col-span-1 row-span-1">
+      <div className="bg-gray-50 rounded-lg p-4 border border-gray-100 col-span-1 row-span-1 anim-child" style={{'--i': 2} as React.CSSProperties}>
         <p className="text-xs text-gray-700">Taux de Churn</p>
         <p className="font-bold text-gray-800 text-xl">2.1% <span className="text-green-500 text-sm">↓</span></p>
       </div>
-       <div className="bg-gray-50 rounded-lg p-4 border border-gray-100 col-span-1 row-span-1">
+       <div className="bg-gray-50 rounded-lg p-4 border border-gray-100 col-span-1 row-span-1 anim-child" style={{'--i': 3} as React.CSSProperties}>
         <p className="text-xs text-gray-700">CAC</p>
         <p className="font-bold text-[#27013D] text-xl">1.2k€ <span className="text-red-500 text-sm">↑</span></p>
       </div>
@@ -228,31 +229,31 @@ export const KpiDashboardMockup: React.FC<{ theme?: string, noAspectRatio?: bool
   </div>
 );
 export const FieldWorkMockup: React.FC<{ theme?: string }> = () => (
-    <div className="w-full h-full bg-white rounded-2xl p-6 shadow-2xl border border-gray-100 flex flex-col transform hover:scale-105 transition-transform duration-300 aspect-[4/3]">
-        <div className="flex items-center justify-between mb-4">
+    <div className="animated-mockup w-full h-full bg-white rounded-2xl p-6 shadow-2xl border border-gray-100 flex flex-col transform hover:scale-105 transition-transform duration-300 aspect-[4/3]">
+        <div className="flex items-center justify-between mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
             <h3 className="font-bold text-gray-900 text-sm">Atelier Stratégique</h3>
             <div className="px-3 py-1 text-xs font-semibold bg-gray-100 text-gray-800 rounded-full">En personne</div>
         </div>
         <div className="flex-grow bg-gray-50 rounded-lg p-4 space-y-3 border border-gray-100 text-xs">
-            <p className="font-semibold text-gray-800 mb-2">Agenda de la session :</p>
-            <div className="flex items-start gap-3">
+            <p className="font-semibold text-gray-800 mb-2 anim-child" style={{'--i': 1} as React.CSSProperties}>Agenda de la session :</p>
+            <div className="flex items-start gap-3 anim-child" style={{'--i': 2} as React.CSSProperties}>
                 <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">1</div>
                 <p className="text-gray-800">Revue des performances et analyse des KPIs</p>
             </div>
-            <div className="flex items-start gap-3">
+            <div className="flex items-start gap-3 anim-child" style={{'--i': 3} as React.CSSProperties}>
                 <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">2</div>
                 <p className="text-gray-800">Identification des leviers de croissance</p>
             </div>
-            <div className="flex items-start gap-3">
+            <div className="flex items-start gap-3 anim-child" style={{'--i': 4} as React.CSSProperties}>
                 <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">3</div>
                 <p className="text-gray-800">Définition de la feuille de route stratégique</p>
             </div>
-            <div className="flex items-start gap-3">
+            <div className="flex items-start gap-3 anim-child" style={{'--i': 5} as React.CSSProperties}>
                 <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">4</div>
                 <p className="text-gray-800">Plan d'action et prochaines étapes</p>
             </div>
         </div>
-        <div className="mt-4 flex items-center justify-between text-xs text-gray-500">
+        <div className="mt-4 flex items-center justify-between text-xs text-gray-500 anim-child" style={{'--i': 6} as React.CSSProperties}>
             <span>BIRD&CO</span>
             <span>CONFIDENTIEL</span>
         </div>

@@ -4,7 +4,7 @@ const LoadingScreen: React.FC<{ onLoaded: () => void }> = ({ onLoaded }) => {
   const [isFadingOut, setIsFadingOut] = useState(false);
 
   useEffect(() => {
-    const animationDuration = 1500; // ms for the fill animation
+    const animationDuration = 2500; // ms for the fill animation
     const initialDelay = 500;       // ms before animation starts
     const fadeOutDelay = 200;       // ms after animation before fade-out
     

@@ -1,8 +1,8 @@
 import React from 'react';
 
 const StairsAnimation: React.FC = () => {
-    const steps = 12; // Increased number of steps for more detail
-    const baseDelay = 100; // Faster stagger for more objects
+    const steps = 12;
+    const baseDelay = 150; // Slower stagger
 
     const styles = `
         .stair-step, .stair-outline {
@@ -11,11 +11,11 @@ const StairsAnimation: React.FC = () => {
         }
 
         .reveal.is-visible .stair-step {
-            animation: fadeInScaleUp 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            animation: fadeInScaleUp 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
         
         .reveal.is-visible .stair-outline {
-            animation: fadeIn 1.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            animation: fadeIn 2.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
 
         @keyframes fadeInScaleUp {

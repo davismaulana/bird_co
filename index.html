@@ -58,7 +58,7 @@
     
     /* Base reveal state */
     .reveal {
-      --reveal-duration: 520ms;
+      --reveal-duration: 800ms;
       --reveal-ease: cubic-bezier(.2,.65,.2,1); /* snappy but smooth */
       --reveal-translate: 12px;
       --reveal-scale: .96;
@@ -84,7 +84,7 @@
     .reveal--pop { --reveal-translate: 16px; --reveal-scale: .92; }
 
     /* Optional stagger helper: apply to a container to stagger children */
-    .stagger > .reveal { transition-delay: calc(var(--i, 0) * 90ms); }
+    .stagger > .reveal { transition-delay: calc(var(--i, 0) * 120ms); }
 
     /* Respect users who prefer less motion */
     @media (prefers-reduced-motion: reduce) {
@@ -144,9 +144,26 @@
       }
     }
     .animate-fade-in-pop {
-      animation: fadeInPop 520ms cubic-bezier(.2,.65,.2,1) forwards;
+      animation: fadeInPop 800ms cubic-bezier(.2,.65,.2,1) forwards;
     }
     
+    .animated-mockup .anim-child {
+      opacity: 0;
+    }
+    .reveal.is-visible .animated-mockup .anim-child {
+      animation: fadeInPop 800ms cubic-bezier(.2,.65,.2,1) forwards;
+      animation-delay: calc(var(--i, 0) * 120ms);
+    }
+    .reveal.is-visible .animated-mockup .anim-bar {
+      transform-origin: bottom;
+      animation: growUp 750ms cubic-bezier(.2,.65,.2,1) forwards;
+      animation-delay: calc(300ms + var(--d, 0) * 100ms);
+    }
+    @keyframes growUp {
+      from { transform: scaleY(0); }
+      to { transform: scaleY(1); }
+    }
+
     .nav-link-anchor {
       position: relative;
     }
@@ -171,7 +188,7 @@
       to { transform: translateX(-50%); }
     }
     .animate-scroll-x {
-      animation: scroll-x 15s linear infinite;
+      animation: scroll-x 30s linear infinite;
     }
 
     .loading-logo-container {
@@ -195,7 +212,7 @@
       width: 100%;
       height: 0%;
       overflow: hidden;
-      animation: fill-height 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s forwards;
+      animation: fill-height 2.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s forwards;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -224,7 +241,7 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      animation: fill-height 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s forwards;
+      animation: fill-height 2.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s forwards;
     }
     .header-logo-fill {
       white-space: nowrap;
