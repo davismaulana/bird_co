@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { services, HamburgerIcon, CloseIcon } from '../constants';
 
 const navItems = [
@@ -15,14 +15,17 @@ const navItems = [
 const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileSolutionsOpen, setIsMobileSolutionsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const dropdownContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
+      setIsMobileSolutionsOpen(false);
     }
     return () => {
       document.body.style.overflow = 'unset';
@@ -79,6 +82,20 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
     };
   }, [pathname]);
   
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownContainerRef.current && !dropdownContainerRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+    if (isDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isDropdownOpen]);
+
   const isPropositionSectionActive = pathname.startsWith('/service/');
   const ctaText = 'Réserver une consultation';
 
@@ -124,15 +141,17 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                       <div 
                         key={item.name}
                         className="relative"
-                        onMouseEnter={() => setIsDropdownOpen(true)}
-                        onMouseLeave={() => setIsDropdownOpen(false)}
+                        ref={dropdownContainerRef}
                       >
-                        <a
-                          href={item.href}
+                        <button
+                          type="button"
+                          onClick={() => setIsDropdownOpen(prev => !prev)}
                           className={classes}
+                          aria-haspopup="true"
+                          aria-expanded={isDropdownOpen}
                         >
                           {item.name}
-                        </a>
+                        </button>
                         {isDropdownOpen && (
                           <div className="absolute top-full left-1/2 -translate-x-1/2 w-72">
                             <div className="h-2" /> {/* Bridge to prevent premature closing */}
@@ -249,28 +268,37 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                 if (item.name === 'Solutions') {
                   return (
                     <div key={item.name} className="w-full">
-                       <a href={item.href} onClick={() => setIsMobileMenuOpen(false)} className={`block w-full text-2xl font-semibold py-3 rounded-lg text-black hover:bg-[#27013D] hover:text-white transition-colors ${
-                         isPropositionSectionActive && 'bg-[#27013D] text-white'
-                       }`}>{item.name}</a>
-                       <div className="mt-4 space-y-1">
-                          {services.map((service) => {
-                             const isServiceActive = pathname === `/service/${service.slug}`;
-                             return (
-                               <a
-                                  key={service.slug}
-                                  href={`/service/${service.slug}`}
-                                  onClick={() => setIsMobileMenuOpen(false)}
-                                  className={`block text-center w-full py-2 text-lg rounded-lg transition-colors ${
-                                    isServiceActive
-                                    ? 'bg-[#27013D] text-white'
-                                    : 'text-black hover:bg-[#27013D] hover:text-white'
-                                  }`}
-                               >
-                                  <span>{service.title}</span>
-                               </a>
-                            );
-                          })}
-                       </div>
+                       <button
+                         type="button"
+                         onClick={() => setIsMobileSolutionsOpen(prev => !prev)}
+                         className={`block w-full text-2xl font-semibold py-3 rounded-lg text-black hover:bg-[#27013D] hover:text-white transition-colors text-center ${
+                           (isPropositionSectionActive || isMobileSolutionsOpen) && 'bg-[#27013D] text-white'
+                         }`}
+                         aria-expanded={isMobileSolutionsOpen}
+                       >
+                         {item.name}
+                       </button>
+                       {isMobileSolutionsOpen && (
+                         <div className="mt-4 space-y-1">
+                            {services.map((service) => {
+                               const isServiceActive = pathname === `/service/${service.slug}`;
+                               return (
+                                 <a
+                                    key={service.slug}
+                                    href={`/service/${service.slug}`}
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    className={`block text-center w-full py-2 text-lg rounded-lg transition-colors ${
+                                      isServiceActive
+                                      ? 'bg-[#27013D] text-white'
+                                      : 'text-black hover:bg-[#27013D] hover:text-white'
+                                    }`}
+                                 >
+                                    <span>{service.title}</span>
+                                 </a>
+                              );
+                            })}
+                         </div>
+                       )}
                     </div>
                   );
                 }
