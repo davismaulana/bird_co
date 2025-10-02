@@ -4,6 +4,7 @@ import React from 'react';
 import Animate from './Animate';
 import HeroAnimation from './HeroAnimation';
 import { CheckmarkCircleIcon } from '../constants';
+import StairsAnimation from './StairsAnimation';
 
 const dnaItems = [
     {
@@ -84,7 +85,8 @@ const AmbitionPage: React.FC = () => {
           <div className="max-w-none">
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
                 <Animate variant="pop" className="h-[400px] lg:h-full lg:order-last">
-                    <div className="h-[400px] lg:h-full bg-cover bg-center" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')` }}>
+                    <div className="h-[400px] lg:h-full">
+                        <StairsAnimation />
                     </div>
                 </Animate>
                 <div className="lg:order-first">
