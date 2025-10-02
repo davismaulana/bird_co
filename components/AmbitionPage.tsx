@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Animate from './Animate';
-import ValueProposition from './ValueProposition';
 import HeroAnimation from './HeroAnimation';
 import { CheckmarkCircleIcon } from '../constants';
 
@@ -79,8 +78,6 @@ const AmbitionPage: React.FC = () => {
           </ul>
         </div>
       </section>
-
-      <ValueProposition />
 
       {/* Quote/Image Section */}
       <section className="bg-white">

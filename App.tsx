@@ -23,6 +23,7 @@ import PillarsSection from './components/PillarsSection';
 import StakesSection from './components/StakesSection';
 import Animate from './components/Animate';
 import FAQPage from './components/FAQPage';
+import ValueProposition from './components/ValueProposition';
 
 const App: React.FC = () => {
   const { pathname } = window.location;
@@ -160,6 +161,7 @@ const App: React.FC = () => {
           <Hero />
           <StakesSection />
           <ServicesOverview />
+          <ValueProposition />
           {/* <Methodology /> */}
           <TaskShowcase />
           <PillarsSection />
