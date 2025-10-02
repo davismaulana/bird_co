@@ -4,9 +4,9 @@ import Animate from './Animate';
 
 const pillars = [
   {
-    icon: <img src="https://images2.imgbox.com/86/1a/o1GwdJHF_o.png" alt="Anticipation Proactive icon" className="w-14 h-14 object-contain" />,
-    title: "Anticipation Proactive",
-    description: "Nous utilisons notre expertise et l'analyse de données pour identifier les opportunités et les risques futurs, vous permettant de garder une longueur d'avance.",
+    icon: <img src="https://images2.imgbox.com/86/1a/o1GwdJHF_o.png" alt="Pragmatisme icon" className="w-14 h-14 object-contain" />,
+    title: "Pragmatisme",
+    description: "Nous apportons des solutions concrètes et adaptées à votre réalité, en conjuguant expertise et pragmatisme, pour un accompagnement aussi pertinent qu’économique.",
   },
   {
     icon: <img src="https://images2.imgbox.com/a9/6f/sEU8YeyP_o.png" alt="Partenariat de Confiance icon" className="w-14 h-14 object-contain" />,
