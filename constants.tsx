@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 export const PaperPlaneIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -626,11 +625,31 @@ export const serviceDetails: { [key: string]: any } = {
                         'Chiffre d\'affaires', 'EBITDA', 'Ecart Budget vs Réel', 'ETP', 'Cash burn', 'BFR', 'Dettes'
                     ]
                 },
-                { 
-                    title: 'Tableau de bord commercial', 
+                {
+                    title: 'Tableau de bord commercial',
                     list: [
-                        'Chiffre d\'affaires et marge par segment/produit/zone', 'Panier moyen', 'Pipe commercial', 'Suivi des leads', 'Taux de conversion', 'Churn & Rétention', 'Coût d\'acquisition client'
-                    ] 
+                        'Chiffre d’affaires réalisé',
+                        'Chiffre d’affaires prévisionnel',
+                        'Carnet de commandes',
+                        'Taux de conversion prospects',
+                        'Coût d’acquisition client',
+                        'Panier moyen',
+                        'Marge commerciale',
+                        'Volume de ventes',
+                        'Nouveaux clients acquis',
+                        'Clients perdus',
+                        'Churn',
+                        'Taux de rétention',
+                        'Taux de fidélisation',
+                        'Créances clients',
+                        'Délai moyen de paiement (DSO)',
+                        'Performance par produit',
+                        'Performance par canal',
+                        'Performance par commercial',
+                        'Pipe commercial',
+                        'Taux de réalisation des objectifs',
+                        'Actions commerciales en cours'
+                    ]
                 },
                 {
                     title: 'Autres outils de planification',
@@ -819,7 +838,7 @@ export const serviceDetails: { [key: string]: any } = {
             description: '', 
             categories: [
                 {
-                    title: 'Recommandations stratégiques',
+                    title: 'Diagnostic économique et financier',
                     list: [
                         'Clarification de l’origine des difficultés',
                         'Examen détaillé et critique des états financiers',
@@ -848,7 +867,7 @@ export const serviceDetails: { [key: string]: any } = {
                     ]
                 },
                 {
-                    title: 'Reporting opé et financier',
+                    title: 'Reporting opérationnel et financier',
                     list: [
                         'Suivi du chiffre d’affaires',
                         'Marge brute',
@@ -875,42 +894,16 @@ export const serviceDetails: { [key: string]: any } = {
                     ]
                 },
                 {
-                    title: 'Tableau de bord commercial',
-                    list: [
-                        'Chiffre d’affaires réalisé',
-                        'Chiffre d’affaires prévisionnel',
-                        'Carnet de commandes',
-                        'Taux de conversion prospects',
-                        'Coût d’acquisition client',
-                        'Panier moyen',
-                        'Marge commerciale',
-                        'Volume de ventes',
-                        'Nouveaux clients acquis',
-                        'Clients perdus',
-                        'Churn',
-                        'Taux de rétention',
-                        'Taux de fidélisation',
-                        'Créances clients',
-                        'Délai moyen de paiement (DSO)',
-                        'Performance par produit',
-                        'Performance par canal',
-                        'Performance par commercial',
-                        'Pipe commercial',
-                        'Taux de réalisation des objectifs',
-                        'Actions commerciales en cours'
-                    ]
-                },
-                {
                     title: 'Recherche de financement',
                     list: [
                         'Business angels',
+                        'Incubateurs et accélérateurs',
                         'Plateformes de crowdfunding',
                         'Fonds d’investissement',
-                        'Prêts bancaires en ligne',
+                        'Prêts bancaires',
                         'Microcrédits',
                         'Prêts participatifs',
                         'Aides et subventions publiques',
-                        'Incubateurs et accélérateurs',
                         'Réseaux de prêts d’honneur',
                         'Investisseurs privés via plateformes spécialisées'
                     ]
