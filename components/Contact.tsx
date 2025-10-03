@@ -4,75 +4,38 @@ import Animate from './Animate';
 
 const Contact: React.FC = () => {
     return (
-        <section id="contact">
-            <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div 
-                    className="bg-[#E9E4F0] p-8 sm:p-12 md:p-16 flex flex-col justify-center min-h-[500px] lg:min-h-0"
-                >
-                    <div>
-                        <Animate variant="pop" delay={200}>
-                            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold mb-8 text-[#27013D]">Contact</h2>
-                        </Animate>
-                        <Animate variant="pop" delay={300}>
-                            <p className="text-base text-gray-900 mb-4">33 Rue La Fayette, 75009 Paris, France</p>
-                        </Animate>
-                        <Animate variant="pop" delay={400}>
-                            <p className="text-base text-gray-900 mb-8"><a href="mailto:contact@birdandco.fr" className="hover:text-[#27013D] underline">contact@birdandco.fr</a></p>
-                        </Animate>
-                        <Animate variant="pop" delay={500}>
-                            <a 
-                                href="https://calendly.com/contact-birdandco/30min"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-block bg-[#27013D] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#1c0e2a] transition-transform hover:scale-105"
-                            >
-                                Réserver une consultation
-                            </a>
-                        </Animate>
+        <section id="contact" className="bg-white py-16">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <Animate variant="pop">
+                  <div className="flex justify-center mb-4">
+                    <div className="w-16 h-1 bg-gradient-to-r from-[#27013D] to-[#6D0037] rounded-full"></div>
+                  </div>
+                </Animate>
+                <Animate variant="pop" delay={100}>
+                    <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold text-gray-900">
+                        Vous avez d'autres&nbsp;<span className="gradient-text">questions&nbsp;?</span>
+                    </h2>
+                </Animate>
+                <Animate variant="pop" delay={200}>
+                    <p className="mt-4 text-sm text-gray-800 max-w-2xl mx-auto">
+                        Notre équipe est à votre disposition pour discuter de vos projets et répondre à toutes vos interrogations.
+                    </p>
+                </Animate>
+                <Animate variant="pop" delay={300}>
+                    <div className="mt-8">
+                        <a
+                          href="https://calendly.com/contact-birdandco/30min"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-block bg-[#27013D] text-white px-10 py-4 rounded-full font-semibold hover:bg-[#1c0e2a] transition-transform hover:scale-105 text-sm"
+                        >
+                          Échanger avec un bras droit
+                        </a>
                     </div>
-                </div>
-                <div className="bg-[#F4F2F8] p-8 sm:p-12 md:p-16 flex flex-col justify-center">
-                    <Animate variant="pop">
-                        <h2 className="text-xl lg:text-2xl font-bold text-[#27013D] mb-4">Parlons&nbsp;de&nbsp;vos&nbsp;projets</h2>
-                    </Animate>
-                    <form>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10 mb-10">
-                            <Animate variant="pop" delay={100}>
-                                <div>
-                                    <label htmlFor="name" className="text-xs text-gray-800 block mb-1">Prénom Nom</label>
-                                    <input type="text" id="name" className="w-full bg-transparent border-b border-gray-500 py-2 focus:outline-none focus:border-[#27013D] transition-colors text-gray-900"/>
-                                </div>
-                            </Animate>
-                             <Animate variant="pop" delay={200}>
-                                <div>
-                                    <label htmlFor="company" className="text-xs text-gray-800 block mb-1">Votre organisation</label>
-                                    <input type="text" id="company" className="w-full bg-transparent border-b border-gray-500 py-2 focus:outline-none focus:border-[#27013D] transition-colors text-gray-900"/>
-                                </div>
-                            </Animate>
-                        </div>
-                        <Animate variant="pop" delay={300}>
-                            <div className="mb-10">
-                                <label htmlFor="email" className="text-xs text-gray-800 block mb-1">E-mail *</label>
-                                <input type="email" id="email" required className="w-full bg-transparent border-b border-gray-500 py-2 focus:outline-none focus:border-[#27013D] transition-colors text-gray-900"/>
-                            </div>
-                        </Animate>
-                        <Animate variant="pop" delay={400}>
-                            <div className="mb-12">
-                                <label htmlFor="question" className="text-xs text-gray-800 block mb-1">Posez vos questions *</label>
-                                <textarea id="question" rows={2} required className="w-full bg-transparent border-b border-gray-500 py-2 focus:outline-none focus:border-[#27013D] transition-colors resize-none text-gray-900"></textarea>
-                            </div>
-                        </Animate>
-                        <Animate variant="pop" delay={500}>
-                            <div>
-                                <button type="submit" className="bg-[#27013D] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#1c0e2a] transition-colors">
-                                    Envoyer
-                                </button>
-                            </div>
-                        </Animate>
-                    </form>
-                </div>
+                </Animate>
             </div>
         </section>
-    )
-}
+    );
+};
+
 export default Contact;

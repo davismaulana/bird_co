@@ -23,6 +23,7 @@ import PillarsSection from './components/PillarsSection';
 import StakesSection from './components/StakesSection';
 import Animate from './components/Animate';
 import FAQPage from './components/FAQPage';
+import FAQSection from './components/FAQSection';
 import ValueProposition from './components/ValueProposition';
 import StairsAnimation from './components/StairsAnimation';
 
@@ -202,6 +203,7 @@ const App: React.FC = () => {
               </div>
             </div>
         </section>
+          <FAQSection />
           <Contact />
         </main>
         <Footer />
