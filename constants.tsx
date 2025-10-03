@@ -979,24 +979,21 @@ export const serviceDetails: { [key: string]: any } = {
             description: '',
             categories: [
                 {
-                    title: 'Information Memorandum & Process',
+                    title: "Information Memorandum / Assistance à la cession et levée de fonds",
                     list: [
-                        "Présentation​ de l'opportunité d'investissement",
-                        'Analyse du marché et positionnement',
-                        'Performance opérationnelle et financière',
-                        "Liste d'acquéreurs / fonds / prêteurs pertinents",
-                        'Calendrier du processus de transaction',
-                        'Amorçage et suivi des discussions avec les candidats'
+                        'executive summary', 'présentation de l’entreprise', 'analyse du marché et de la concurrence', 'description des produits et services', 'stratégie de développement', 'organisation et management', 'données financières historiques et prévisionnelles', 'besoins de financement', 'valorisation et structure de l’opération', 'risques et opportunités', 'calendrier du process', 'sélection et approche des repreneurs et investisseurs potentiels', 'Mise en place de data room', 'Organisation de due diligence', 'négociation des termes', 'closing de l’opération'
                     ]
                 },
                 {
-                    title: 'Vendor Assistance & Due Diligence',
+                    title: "Vendor Assistance",
                     list: [
-                        'Analyse approfondie des états financiers (P&L, Bilan, TFT)',
-                        'Analyse des indicateurs de performance clés (KPI)',
-                        'Revue critique / Construction du Business Plan',
-                        'Définition de la rentabilité normative (QoE)',
-                        'Analyse de la dette nette financière (QoD)'
+                        'Préparation de la documentation financière', 'revue de la qualité des résultats (QoE)', 'normalisation de l’EBITDA', 'analyse du cash-flow et du BFR', 'identification des ajustements de dette nette (QoD)', 'préparation du business plan et des prévisions', 'mise en place de la data room', 'anticipation et réponse aux questions des investisseurs'
+                    ]
+                },
+                {
+                    title: "Buy-side due diligence",
+                    list: [
+                        'évaluation de la résilience du modèle économique', 'identification des zones de fragilité opérationnelle et financière', 'Revue critique de la qualité des résultats', 'validation indépendante de l’EBITDA retraité', 'stress-test du cash-flow et du BFR', 'analyse de la soutenabilité de la dette nette', 'test de cohérence des prévisions financières', 'revue critique des hypothèses de croissance et de marges', 'analyse contradictoire des ajustements proposés par la vendor assistance', 'mise en évidence des risques fiscaux, sociaux et réglementaires', 'appréciation des synergies réalistes', "recommandations d'ajustements du prix", 'structuration des garanties'
                     ]
                 }
             ]
