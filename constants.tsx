@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 export const PaperPlaneIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -630,12 +631,14 @@ export const serviceDetails: { [key: string]: any } = {
                     ] 
                 },
                 {
-                    title: 'Outils de planification',
+                    title: 'autres outils de planification',
                     list: [
-                        'Business plan',
-                        'Plan d’optimisation du BFR',
-                        'Analyses et évaluations de projets stratégiques (investissements, croissance)',
-                        'Identification de leviers opérationnels et financiers'
+                        'Scénarios prospectifs',
+                        'Analyse de sensibilité',
+                        'Plan de continuité d’activité',
+                        'Plan de transformation',
+                        'Tableau de bord prospectif',
+                        'Analyses et évaluations de projets stratégiques'
                     ]
                 },
                 {
@@ -643,6 +646,7 @@ export const serviceDetails: { [key: string]: any } = {
                     list: [
                         'Chiffre d\'affaires',
                         'Coûts variables',
+                        'Masse salariale',
                         'Coûts de structure',
                         'EBITDA'
                     ]
@@ -656,10 +660,9 @@ export const serviceDetails: { [key: string]: any } = {
                         'Produits financiers',
                         'Charges financières',
                         'Impôts sur les sociétés',
-                        'Coûts exceptionnels',
                         'CAPEX',
                         'Emprunts',
-                        'Autres financement',
+                        'Autres financements',
                         'Augmentation de capital',
                         'Distribution de dividendes',
                         'Avances en compte courant'
