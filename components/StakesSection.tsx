@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Animate from './Animate';
 
@@ -62,7 +61,7 @@ const StakesSection: React.FC = () => {
           </Animate>
           <Animate variant="pop" delay={200}>
             <p className="text-base text-gray-800 mt-2">
-              Identifier les risques pour mieux les maîtriser et transformer les défis en opportunités.
+              <strong>Identifier les risques</strong> pour mieux les <strong>maîtriser</strong> et <strong>transformer</strong> les défis en opportunités
             </p>
           </Animate>
         </div>
