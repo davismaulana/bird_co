@@ -17,10 +17,15 @@ const Team: React.FC = () => {
               À l'origine du <span className="gradient-text-light">réseau de bras droit</span>
             </h2>
           </Animate>
+          <Animate variant="pop" delay={200}>
+            <p className="text-base text-gray-300 leading-relaxed max-w-3xl mx-auto mt-6">
+              Bird est né de la rencontre d’anciens consultants convaincus qu’il existe une autre façon d’accompagner les organisations. À mi-chemin entre l’expertise structurée du conseil et la flexibilité d’un consultant autonome, nous offrons un accompagnement sur mesure et accessible. Notre démarche ne remet pas en cause la valeur des cabinets traditionnels, mais vise à combler un vide : permettre à des organisations qui n’en ont pas toujours les moyens de bénéficier, elles aussi, d’un soutien stratégique et financier de haut niveau.
+            </p>
+          </Animate>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
           {/* Benjamin Le Gal */}
-          <div className="bg-gray-300 rounded-lg p-1 shadow-2xl">
+          <div className="bg-gray-300 rounded-lg p-2 shadow-2xl">
             <div className="bg-white rounded-md h-full flex flex-col overflow-hidden">
               <Animate variant="pop" delay={300}>
                 <img
@@ -35,7 +40,7 @@ const Team: React.FC = () => {
                     <Animate variant="pop" delay={400}>
                       <h3 className="text-xl font-bold text-[#27013D] mb-4">{teamMembers[1].name}</h3>
                     </Animate>
-                  <div className="space-y-4 text-gray-800 text-sm">
+                  <div className="space-y-4 text-gray-800 text-xs">
                     {teamMembers[1].description.map((paragraph, pIndex) => (
                       <Animate key={pIndex} variant="pop" delay={500 + pIndex * 100}>
                         <p>{paragraph}</p>
@@ -65,7 +70,7 @@ const Team: React.FC = () => {
           </div>
 
           {/* Seydina Samb */}
-          <div className="bg-gray-300 rounded-lg p-1 shadow-2xl">
+          <div className="bg-gray-300 rounded-lg p-2 shadow-2xl">
             <div className="bg-white rounded-md h-full flex flex-col overflow-hidden">
               <Animate variant="pop" delay={800}>
                 <img
@@ -80,7 +85,7 @@ const Team: React.FC = () => {
                     <Animate variant="pop" delay={900}>
                       <h3 className="text-xl font-bold text-[#27013D] mb-4">{teamMembers[0].name}</h3>
                     </Animate>
-                  <div className="space-y-4 text-gray-800 text-sm">
+                  <div className="space-y-4 text-gray-800 text-xs">
                     {teamMembers[0].description.map((paragraph, pIndex) => (
                       <Animate key={pIndex} variant="pop" delay={1000 + pIndex * 100}>
                         <p>{paragraph}</p>

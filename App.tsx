@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -173,17 +174,6 @@ const App: React.FC = () => {
           <Expertise />
           {/* <Deliverables /> */}
           <Team />
-          <section className="bg-gray-50 py-16">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="max-w-3xl mx-auto text-center">
-                <Animate variant="pop">
-                  <p className="text-base text-gray-800 leading-relaxed">
-                    Bird est né de la rencontre d’anciens consultants convaincus qu’il existe une autre façon d’accompagner les organisations. À mi-chemin entre l’expertise structurée du conseil et la flexibilité d’un consultant autonome, nous offrons un accompagnement sur mesure et accessible. Notre démarche ne remet pas en cause la valeur des cabinets traditionnels, mais vise à combler un vide : permettre à des organisations qui n’en ont pas toujours les moyens de bénéficier, elles aussi, d’un soutien stratégique et financier de haut niveau.
-                  </p>
-                </Animate>
-              </div>
-            </div>
-          </section>
           <section className="bg-white">
             <div className="max-w-none">
               <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
