@@ -115,12 +115,12 @@ const AmbitionPage: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Animate variant="pop">
                 <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold text-white">
-                    Prêt à concrétiser <span className="gradient-text-light">vos ambitions ?</span>
+                    Vous avez des <span className="gradient-text-light">questions ?</span>
                 </h2>
             </Animate>
             <Animate variant="pop" delay={150}>
                 <p className="mt-4 text-sm text-gray-300 max-w-2xl mx-auto">
-                    Discutons de la manière dont nous pouvons vous aider à atteindre vos objectifs stratégiques et financiers.
+                    Laissez-nous un message
                 </p>
             </Animate>
             <Animate variant="pop" delay={300}>
@@ -131,7 +131,7 @@ const AmbitionPage: React.FC = () => {
                       rel="noopener noreferrer"
                       className="inline-block bg-white text-[#27013D] px-10 py-4 rounded-full font-semibold hover:bg-gray-200 transition-all transform hover:scale-105 text-sm"
                     >
-                      Échanger avec un bras droit
+                      On&nbsp;vous&nbsp;écoute
                     </a>
                 </div>
             </Animate>

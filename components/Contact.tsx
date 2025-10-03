@@ -13,12 +13,12 @@ const Contact: React.FC = () => {
                 </Animate>
                 <Animate variant="pop" delay={100}>
                     <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold text-gray-900">
-                        Vous avez d'autres&nbsp;<span className="gradient-text">questions&nbsp;?</span>
+                        Vous avez des&nbsp;<span className="gradient-text">questions&nbsp;?</span>
                     </h2>
                 </Animate>
                 <Animate variant="pop" delay={200}>
                     <p className="mt-4 text-sm text-gray-800 max-w-2xl mx-auto">
-                        Notre équipe est à votre disposition pour discuter de vos projets et répondre à toutes vos interrogations.
+                        Laissez-nous un message
                     </p>
                 </Animate>
                 <Animate variant="pop" delay={300}>
@@ -29,7 +29,7 @@ const Contact: React.FC = () => {
                           rel="noopener noreferrer"
                           className="inline-block bg-[#27013D] text-white px-10 py-4 rounded-full font-semibold hover:bg-[#1c0e2a] transition-transform hover:scale-105 text-sm"
                         >
-                          Échanger avec un bras droit
+                          On&nbsp;vous&nbsp;écoute
                         </a>
                     </div>
                 </Animate>

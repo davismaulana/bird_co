@@ -182,12 +182,12 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
             </Animate>
             <Animate variant="pop" delay={100}>
                 <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold leading-tight text-white">
-                    Prêt à prendre <span className="gradient-text-light">le contrôle ?</span>
+                    Vous avez des <span className="gradient-text-light">questions ?</span>
                 </h2>
             </Animate>
             <Animate variant="pop" delay={200}>
                 <p className="mt-4 text-sm text-gray-300 max-w-2xl mx-auto">
-                    Contactez-nous pour discuter de la manière dont nous pouvons construire ensemble les outils de votre succès.
+                    Laissez-nous un message
                 </p>
             </Animate>
             <Animate variant="pop" delay={300}>
@@ -198,7 +198,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                       rel="noopener noreferrer"
                       className="inline-block bg-white text-[#27013D] px-10 py-4 rounded-full font-semibold hover:bg-gray-200 transition-all transform hover:scale-105 text-sm"
                     >
-                      Échanger avec un bras droit
+                      On&nbsp;vous&nbsp;écoute
                     </a>
                 </div>
             </Animate>

@@ -193,12 +193,12 @@ const TeamPage: React.FC = () => {
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <Animate variant="pop">
                         <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold text-gray-900">
-                            Prêt à collaborer avec <span className="gradient-text">notre équipe ?</span>
+                            Vous avez des <span className="gradient-text">questions ?</span>
                         </h2>
                     </Animate>
                     <Animate variant="pop" delay={150}>
                         <p className="mt-4 text-sm text-gray-800 max-w-2xl mx-auto">
-                            Contactez-nous pour découvrir comment notre duo d'experts peut devenir le catalyseur de votre succès.
+                            Laissez-nous un message
                         </p>
                     </Animate>
                     <Animate variant="pop" delay={300}>
@@ -209,7 +209,7 @@ const TeamPage: React.FC = () => {
                                 rel="noopener noreferrer"
                                 className="inline-block bg-[#27013D] text-white px-10 py-4 rounded-full font-semibold hover:bg-[#1c0e2a] transition-transform hover:scale-105 text-sm"
                             >
-                                Rencontrons-nous
+                                On&nbsp;vous&nbsp;écoute
                             </a>
                         </div>
                     </Animate>
