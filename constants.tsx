@@ -846,8 +846,36 @@ export const serviceDetails: { [key: string]: any } = {
                         'Analyse du besoin en fonds de roulement',
                         'Analyse de la dette financière long et court terme',
                         'Construction des prévisionnels d’exploitation et de trésorerie',
-                        'Proposition de plan de restructuration financière',
                         'Identification de leviers d’amélioration de la performance'
+                    ]
+                },
+                {
+                    title: 'Restructuration financière',
+                    list: [
+                        'Proposition de plan de restructuration financière',
+                        'Assistance à l\'ouverture de procédures collectives avec administrateurs judiciaires et avocats',
+                        'Suivi et mise à jour du prévisionnel de trésorerie',
+                        'Accompagnement lors des procédures collectives',
+                        'Coordination avec les parties prenantes',
+                        'Recherche de financements court-terme (stocks, affacturage)',
+                        'Négociation avec les créanciers'
+                    ]
+                },
+                {
+                    title: 'Restructuration stratégique et opérationnelle',
+                    list: [
+                        'Revue du portefeuille d’activités, recentrage sur les activités coeur de métier, cession ou arrêt des activités non stratégiques',
+                        'Redéfinition du positionnement et du modèle économique',
+                        'Optimisation de la chaîne de valeur',
+                        'Amélioration des processus opérationnels',
+                        'Digitalisation et automatisation',
+                        'Identification de leviers d’amélioration de la performance',
+                        'Réduction des coûts et gains de productivité',
+                        'Réorganisation des équipes et des responsabilités',
+                        'Plan social ou mobilité interne',
+                        'Renforcement de la gouvernance',
+                        'Mise en place d’indicateurs de suivi et de pilotage',
+                        'Communication interne et externe'
                     ]
                 },
                 {
