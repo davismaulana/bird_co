@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { services, HamburgerIcon, CloseIcon } from '../constants';
 
 const navItems = [
@@ -18,7 +18,6 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
   const [isMobileSolutionsOpen, setIsMobileSolutionsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('');
-  const dropdownContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -81,20 +80,6 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [pathname]);
-  
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownContainerRef.current && !dropdownContainerRef.current.contains(event.target as Node)) {
-        setIsDropdownOpen(false);
-      }
-    };
-    if (isDropdownOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isDropdownOpen]);
 
   const isPropositionSectionActive = pathname.startsWith('/service/');
   const ctaText = 'Réserver une consultation';
@@ -141,17 +126,17 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                       <div 
                         key={item.name}
                         className="relative"
-                        ref={dropdownContainerRef}
+                        onMouseEnter={() => setIsDropdownOpen(true)}
+                        onMouseLeave={() => setIsDropdownOpen(false)}
                       >
-                        <button
-                          type="button"
-                          onClick={() => setIsDropdownOpen(prev => !prev)}
+                        <a
+                          href={item.href}
                           className={classes}
                           aria-haspopup="true"
                           aria-expanded={isDropdownOpen}
                         >
                           {item.name}
-                        </button>
+                        </a>
                         {isDropdownOpen && (
                           <div className="absolute top-full left-1/2 -translate-x-1/2 w-72">
                             <div className="h-2" /> {/* Bridge to prevent premature closing */}
