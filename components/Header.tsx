@@ -3,11 +3,9 @@ import React, { useState, useEffect } from 'react';
 import { services, HamburgerIcon, CloseIcon } from '../constants';
 
 const navItems = [
-  { name: 'Accueil', href: '/' },
-  { name: 'Enjeux', href: '/#vos-enjeux' },
-  { name: 'Solutions', href: '/#solutions' },
-  // { name: 'Piliers', href: '/ambition' },
-  { name: 'À l\'origine', href: '/#notre-equipe' },
+  { name: 'Vos enjeux', href: '/#vos-enjeux' },
+  { name: 'Nos solutions', href: '/#solutions' },
+  { name: 'Les piliers', href: '/#piliers' },
   { name: 'Contact', href: '/#contact' },
   { name: 'FAQ', href: '/faq' },
 ];
@@ -46,7 +44,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
       return;
     }
 
-    const sectionIds = ['accueil', 'vos-enjeux', 'solutions', 'notre-equipe', 'contact'];
+    const sectionIds = ['vos-enjeux', 'solutions', 'piliers', 'contact'];
     const sections = sectionIds.map(id => document.getElementById(id)).filter(el => el !== null) as HTMLElement[];
 
     if (sections.length === 0) return;
@@ -66,8 +64,6 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
 
       if (currentSection) {
         setActiveSection(currentSection.id);
-      } else if (window.scrollY < sections[0].offsetTop - headerOffset) {
-        setActiveSection('accueil');
       } else {
         setActiveSection('');
       }
@@ -108,11 +104,11 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
               {/* Desktop Navigation */}
               <nav className="flex items-center space-x-2">
                 {navItems.map((item) => {
-                  if (item.name === 'Solutions') {
+                  if (item.name === 'Nos solutions') {
                     const isSectionActive = activeSection === 'solutions';
                     const hasBackground = isDropdownOpen || isPropositionSectionActive;
 
-                    let classes = 'nav-link-anchor px-4 py-2 rounded-lg text-base font-medium transition-colors flex items-center gap-2';
+                    let classes = 'nav-link-anchor px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2';
                     if (hasBackground) {
                         classes += ' bg-[#27013D] text-white';
                     } else {
@@ -170,14 +166,13 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                   const isPageActive = isPageLink && pathname === item.href;
                   
                   const getSectionId = (href: string) => {
-                      if (href === '/') return 'accueil';
                       if (href.startsWith('/#')) return href.substring(2);
                       return null;
                   }
                   const sectionId = getSectionId(item.href);
                   const isSectionActive = pathname === '/' && sectionId ? activeSection === sectionId : false;
 
-                  const finalClasses = ['px-4', 'py-2', 'rounded-lg', 'text-base', 'font-medium', 'transition-colors'];
+                  const finalClasses = ['px-4', 'py-2', 'rounded-lg', 'text-sm', 'font-medium', 'transition-colors'];
 
                   if (isAnchorLink) {
                       finalClasses.push('nav-link-anchor');
@@ -211,7 +206,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                 href="https://calendly.com/contact-birdandco/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ml-6 bg-[#27013D] text-white px-4 py-2 rounded-full font-semibold text-base hover:bg-[#1c0e2a] transition-colors whitespace-nowrap"
+                className="ml-6 bg-[#27013D] text-white px-3 py-2 rounded-full font-semibold text-sm hover:bg-[#1c0e2a] transition-colors whitespace-nowrap"
               >
                 {ctaText}
               </a>
@@ -250,13 +245,13 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
             
             <nav className="flex flex-col items-center space-y-2 text-center w-full">
               {navItems.map((item) => {
-                if (item.name === 'Solutions') {
+                if (item.name === 'Nos solutions') {
                   return (
                     <div key={item.name} className="w-full">
                        <button
                          type="button"
                          onClick={() => setIsMobileSolutionsOpen(prev => !prev)}
-                         className={`block w-full text-2xl font-semibold py-3 rounded-lg text-black hover:bg-[#27013D] hover:text-white transition-colors text-center ${
+                         className={`block w-full text-xl font-semibold py-3 rounded-lg text-black hover:bg-[#27013D] hover:text-white transition-colors text-center ${
                            (isPropositionSectionActive || isMobileSolutionsOpen) && 'bg-[#27013D] text-white'
                          }`}
                          aria-expanded={isMobileSolutionsOpen}
@@ -272,7 +267,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                                     key={service.slug}
                                     href={`/service/${service.slug}`}
                                     onClick={() => setIsMobileMenuOpen(false)}
-                                    className={`block text-center w-full py-2 text-lg rounded-lg transition-colors ${
+                                    className={`block text-center w-full py-2 text-base rounded-lg transition-colors ${
                                       isServiceActive
                                       ? 'bg-[#27013D] text-white'
                                       : 'text-black hover:bg-[#27013D] hover:text-white'
@@ -293,7 +288,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                     key={item.name}
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`block w-full text-2xl font-semibold text-black py-3 rounded-lg hover:bg-[#27013D] hover:text-white transition-colors ${
+                    className={`block w-full text-xl font-semibold text-black py-3 rounded-lg hover:bg-[#27013D] hover:text-white transition-colors ${
                       isActive && 'bg-[#27013D] text-white'
                     }`}
                   >
@@ -309,7 +304,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block w-full text-center bg-[#27013D] text-white px-6 py-4 rounded-full font-semibold hover:bg-[#1c0e2a] transition-colors text-lg"
+                  className="block w-full text-center bg-[#27013D] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#1c0e2a] transition-colors text-base"
               >
                   {ctaText}
               </a>
