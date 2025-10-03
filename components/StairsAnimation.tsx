@@ -1,8 +1,8 @@
 import React from 'react';
 
 const StairsAnimation: React.FC = () => {
-    const steps = 12;
-    const baseDelay = 150; // Slower stagger
+    const steps = 24; // More stairs
+    const baseDelay = 100; // Adjusted for more steps
 
     const styles = `
         .stair-step, .stair-outline {
@@ -43,21 +43,57 @@ const StairsAnimation: React.FC = () => {
     const viewBoxHeight = 60;
     const stepWidth = viewBoxWidth / steps;
 
+    // Color interpolation logic
+    const hexToRgb = (hex: string): { r: number, g: number, b: number } | null => {
+        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result ? {
+            r: parseInt(result[1], 16),
+            g: parseInt(result[2], 16),
+            b: parseInt(result[3], 16)
+        } : null;
+    };
+
+    const rgbToHex = (r: number, g: number, b: number): string => {
+        return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).padStart(6, '0');
+    };
+    
+    const colorStops = [
+        hexToRgb('#FFFFFF'), // white
+        hexToRgb('#D1D5DB'), // grey
+        hexToRgb('#881337'), // burgundy
+        hexToRgb('#5B21B6'), // purple
+        hexToRgb('#27013D'), // dark purple
+        hexToRgb('#000000'), // black
+    ].filter(c => c !== null) as { r: number, g: number, b: number }[];
+
+    const getStepColor = (index: number): string => {
+        const ratio = index / (steps - 1);
+        
+        const colorSegment = ratio * (colorStops.length - 1);
+        const startIndex = Math.floor(colorSegment);
+        const endIndex = Math.min(startIndex + 1, colorStops.length - 1);
+        
+        const segmentRatio = colorSegment - startIndex;
+
+        const startColor = colorStops[startIndex];
+        const endColor = colorStops[endIndex];
+
+        const r = Math.round(startColor.r * (1 - segmentRatio) + endColor.r * segmentRatio);
+        const g = Math.round(startColor.g * (1 - segmentRatio) + endColor.g * segmentRatio);
+        const b = Math.round(startColor.b * (1 - segmentRatio) + endColor.b * segmentRatio);
+
+        return rgbToHex(r, g, b);
+    };
+
     return (
-        <div className="w-full h-full bg-gray-50 flex items-center justify-center">
+        <div className="w-full h-full bg-white flex items-center justify-center">
             <style>{styles}</style>
             <svg viewBox={`0 0 ${viewBoxWidth} ${viewBoxHeight}`} className="w-full h-full" preserveAspectRatio="xMidYMid meet">
-                <defs>
-                    <linearGradient id="stair-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#27013D" />
-                        <stop offset="100%" stopColor="#6D0037" />
-                    </linearGradient>
-                </defs>
-
                 <g>
                     {/* Background/filled steps for refinement */}
                     {Array.from({ length: steps }).map((_, i) => {
                         const stepHeight = ((i + 1) / steps) * viewBoxHeight;
+                        const color = getStepColor(i);
                         return (
                             <rect
                                 key={`stair-outline-${i}`}
@@ -66,7 +102,7 @@ const StairsAnimation: React.FC = () => {
                                 y={viewBoxHeight - stepHeight}
                                 width={stepWidth}
                                 height={stepHeight}
-                                fill="url(#stair-grad)"
+                                fill={color}
                                 fillOpacity="0.2"
                                 rx="1"
                                 ry="1"
@@ -80,6 +116,7 @@ const StairsAnimation: React.FC = () => {
                     {/* Main solid steps */}
                     {Array.from({ length: steps }).map((_, i) => {
                         const stepHeight = ((i + 1) / steps) * viewBoxHeight;
+                        const color = getStepColor(i);
                         return (
                             <rect
                                 key={`stair-step-${i}`}
@@ -88,10 +125,10 @@ const StairsAnimation: React.FC = () => {
                                 y={viewBoxHeight - stepHeight}
                                 width={stepWidth}
                                 height={stepHeight}
-                                fill="url(#stair-grad)"
+                                fill={color}
                                 rx="2"
                                 ry="2"
-                                style={{ animationDelay: `${i * baseDelay + 100}ms` }} // Slightly offset delay from outlines
+                                style={{ animationDelay: `${i * baseDelay + 100}ms` }}
                             />
                         );
                     })}
