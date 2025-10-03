@@ -45,10 +45,10 @@ const ValueProposition: React.FC = () => {
           <div className="relative text-left w-full">
             <Animate variant="pop" delay={200}>
                 <h2 className="text-xl md:text-2xl xl:text-3xl text-[#27013D] leading-tight">
-                  au-delà du conseil,<br />
+                  Au-delà du conseil,<br />
                   Bird vous <strong className="font-black">accompagne</strong><br />
-                  comme partenaire opérationnel pour relever<br />
-                  vos défis stratégiques et financiers&nbsp;avec&nbsp;sérénité
+                  pour <strong className="font-black">relever vos défis</strong><br />
+                  stratégiques et financiers&nbsp;avec&nbsp;<strong className="font-black">sérénité</strong>
                 </h2>
             </Animate>
           </div>
