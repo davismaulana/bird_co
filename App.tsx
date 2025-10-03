@@ -168,7 +168,7 @@ const App: React.FC = () => {
           <TaskShowcase />
           <PillarsSection />
           <Personas />
-          <Logos backgroundColor="bg-white" />
+          <Logos backgroundColor="bg-gray-50" />
           <Stats />
           <Expertise />
           {/* <Deliverables /> */}
