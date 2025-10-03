@@ -117,10 +117,14 @@ const OnSiteInterventionVisual: React.FC = () => (
             </div>
             <div className="flex items-start gap-3 anim-child" style={{'--i': 7} as React.CSSProperties}>
                 <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">6</div>
-                <p className="text-gray-800">Plan d'action et Planification des réunions de travail et points d'étapes</p>
+                <p className="text-gray-800">Définition du plan d'action</p>
+            </div>
+             <div className="flex items-start gap-3 anim-child" style={{'--i': 8} as React.CSSProperties}>
+                <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">7</div>
+                <p className="text-gray-800">Planification des réunions de travail et points d'étape</p>
             </div>
         </div>
-        <div className="mt-4 flex items-center justify-between text-xs text-gray-500 anim-child" style={{'--i': 8} as React.CSSProperties}>
+        <div className="mt-4 flex items-center justify-between text-xs text-gray-500 anim-child" style={{'--i': 9} as React.CSSProperties}>
             <span>BIRD&CO</span>
             <span>CONFIDENTIEL</span>
         </div>
