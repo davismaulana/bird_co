@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -9,7 +8,7 @@ import Stats from './components/Stats';
 import Personas from './components/Personas';
 import Team from './components/Team';
 import Contact from './components/Contact';
-import Deliverables from './components/Deliverables';
+// import Deliverables from './components/Deliverables';
 import ServiceDetailPage from './components/ServiceDetailPage';
 import Expertise from './components/Expertise';
 // import Methodology from './components/Methodology';
@@ -172,7 +171,7 @@ const App: React.FC = () => {
           <Logos backgroundColor="bg-white" />
           <Stats />
           <Expertise />
-          <Deliverables />
+          {/* <Deliverables /> */}
           <Team />
           <section className="bg-gray-50 py-16">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
