@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Animate from './Animate';
 
@@ -27,7 +26,7 @@ const pillars = [
 
 const PillarsSection: React.FC = () => {
   return (
-    <section id="piliers" className="bg-white py-16">
+    <section id="piliers" className="bg-gray-50 py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <Animate variant="pop">
