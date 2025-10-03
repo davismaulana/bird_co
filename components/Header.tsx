@@ -5,7 +5,7 @@ import { services, HamburgerIcon, CloseIcon } from '../constants';
 const navItems = [
   { name: 'Accueil', href: '/' },
   { name: 'Enjeux', href: '/#vos-enjeux' },
-  { name: 'Solutions', href: '/#notre-proposition' },
+  { name: 'Solutions', href: '/#solutions' },
   // { name: 'Piliers', href: '/ambition' },
   { name: 'À l\'origine', href: '/#notre-equipe' },
   { name: 'Contact', href: '/#contact' },
@@ -46,7 +46,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
       return;
     }
 
-    const sectionIds = ['accueil', 'vos-enjeux', 'notre-proposition', 'notre-equipe', 'contact'];
+    const sectionIds = ['accueil', 'vos-enjeux', 'solutions', 'notre-equipe', 'contact'];
     const sections = sectionIds.map(id => document.getElementById(id)).filter(el => el !== null) as HTMLElement[];
 
     if (sections.length === 0) return;
@@ -109,7 +109,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
               <nav className="flex items-center space-x-2">
                 {navItems.map((item) => {
                   if (item.name === 'Solutions') {
-                    const isSectionActive = activeSection === 'notre-proposition';
+                    const isSectionActive = activeSection === 'solutions';
                     const hasBackground = isDropdownOpen || isPropositionSectionActive;
 
                     let classes = 'nav-link-anchor px-4 py-2 rounded-lg text-base font-medium transition-colors flex items-center gap-2';

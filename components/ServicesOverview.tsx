@@ -5,7 +5,7 @@ import { services, ArrowRightIcon } from '../constants';
 
 const ServicesOverview: React.FC = () => {
   return (
-    <section id="notre-proposition" className="bg-white py-16">
+    <section id="solutions" className="bg-white py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <Animate variant="pop">
