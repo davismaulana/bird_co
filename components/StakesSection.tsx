@@ -62,23 +62,25 @@ const StakesSection: React.FC = () => {
               variant="pop"
               className="h-full"
             >
-              <div className="bg-white rounded-xl p-8 flex flex-col h-full transition-all duration-300 ease-in-out border border-gray-200/50 hover:shadow-2xl hover:shadow-violet-100/50 hover:border-violet-200 hover:scale-105">
-                <div className="h-24 w-24 flex items-center justify-center bg-gradient-to-br from-violet-100 to-pink-100 rounded-2xl p-4 shadow-inner mb-6">
+              <div className="bg-white rounded-xl flex flex-col h-full transition-all duration-300 ease-in-out border border-gray-200/50 hover:shadow-2xl hover:shadow-violet-100/50 hover:border-violet-200 hover:scale-105 overflow-hidden">
+                <div className="w-full h-48 flex items-center justify-center bg-gradient-to-br from-violet-100 to-pink-100 p-4 shadow-inner">
                   {stake.icon}
                 </div>
-                <h3 className="text-lg font-bold text-[#27013D] mb-3 leading-tight">
-                  {stake.title}
-                </h3>
-                <p className="text-gray-800 text-sm leading-relaxed">{stake.description}</p>
-                <div className="space-y-3 text-sm text-gray-800 mt-4">
-                    {stake.details.map((detail, i) => (
-                        <div key={i} className="flex items-start">
-                            <span className="text-[#6D0037] mr-3 font-bold text-lg leading-tight">›</span>
-                            <span className="flex-1">{detail}</span>
-                        </div>
-                    ))}
+                <div className="p-8 flex flex-col flex-grow">
+                    <h3 className="text-xl font-bold text-black mb-3 leading-tight">
+                      {stake.title}
+                    </h3>
+                    <p className="text-gray-800 text-sm leading-relaxed">{stake.description}</p>
+                    <div className="space-y-3 text-sm text-gray-800 mt-4">
+                        {stake.details.map((detail, i) => (
+                            <div key={i} className="flex items-start">
+                                <span className="text-[#6D0037] mr-3 font-bold text-lg leading-tight">›</span>
+                                <span className="flex-1">{detail}</span>
+                            </div>
+                        ))}
+                    </div>
+                    <div className="flex-grow" />
                 </div>
-                <div className="flex-grow" />
               </div>
             </Animate>
           ))}
