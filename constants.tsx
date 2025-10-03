@@ -864,7 +864,9 @@ export const serviceDetails: { [key: string]: any } = {
                 {
                     title: 'Restructuration stratégique et opérationnelle',
                     list: [
-                        'Revue du portefeuille d’activités, recentrage sur les activités coeur de métier, cession ou arrêt des activités non stratégiques',
+                        'Revue du portefeuille d’activités',
+                        'Recentrage sur les activités coeur de métier',
+                        'Cession ou arrêt des activités non stratégiques',
                         'Redéfinition du positionnement et du modèle économique',
                         'Optimisation de la chaîne de valeur',
                         'Amélioration des processus opérationnels',
