@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Animate from './Animate';
 
@@ -48,12 +49,12 @@ const Personas: React.FC = () => {
                 variant="pop"
               >
                 <div className="bg-white rounded-xl p-8 h-full flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left gap-6 border border-gray-200 transition-all duration-300 hover:shadow-xl hover:shadow-violet-100/50">
-                  <div className="flex-shrink-0 bg-gradient-to-br from-violet-100 to-pink-100 rounded-2xl p-4 shadow-inner flex items-center justify-center w-28 h-28">
+                  <div className="flex-shrink-0 bg-gradient-to-br from-violet-100 to-pink-100 rounded-xl p-4 shadow-inner flex items-center justify-center w-28 h-28">
                     {persona.icon}
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#27013D] mb-2">{persona.title}</h3>
-                    <p className="text-black leading-relaxed text-sm">
+                    <h3 className="text-sm font-bold text-[#27013D] mb-2">{persona.title}</h3>
+                    <p className="text-black leading-relaxed text-xs">
                       {persona.description}
                     </p>
                   </div>

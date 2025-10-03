@@ -3,9 +3,9 @@ import React, { useState, useEffect } from 'react';
 import { services, HamburgerIcon, CloseIcon } from '../constants';
 
 const navItems = [
-  { name: 'Vos enjeux', href: '/#vos-enjeux' },
-  { name: 'Nos solutions', href: '/#solutions' },
-  { name: 'Les piliers', href: '/#piliers' },
+  { name: 'Enjeux', href: '/#vos-enjeux' },
+  { name: 'Solutions', href: '/#solutions' },
+  { name: 'Piliers', href: '/#piliers' },
   { name: 'Contact', href: '/#contact' },
   { name: 'FAQ', href: '/faq' },
 ];
@@ -104,7 +104,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
               {/* Desktop Navigation */}
               <nav className="flex items-center space-x-2">
                 {navItems.map((item) => {
-                  if (item.name === 'Nos solutions') {
+                  if (item.name === 'Solutions') {
                     const isSectionActive = activeSection === 'solutions';
                     const hasBackground = isDropdownOpen || isPropositionSectionActive;
 
@@ -245,7 +245,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
             
             <nav className="flex flex-col items-center space-y-2 text-center w-full">
               {navItems.map((item) => {
-                if (item.name === 'Nos solutions') {
+                if (item.name === 'Solutions') {
                   return (
                     <div key={item.name} className="w-full">
                        <button
