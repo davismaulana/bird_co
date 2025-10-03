@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Animate from './Animate';
 
@@ -7,9 +8,9 @@ const stakes = [
     title: "Défis de la croissance",
     description: "Sans une structure financière solide, la croissance rapide peut mener à des problèmes de trésorerie et une perte de contrôle.",
     details: [
-        "Complexité accrue des opérations et des finances.",
-        "Besoin de financements externes pour soutenir l'expansion.",
-        "Nécessité de mettre en place des processus et des outils de pilotage scalables."
+        "2 PME en forte croissance sur 3 rencontrent des tensions de trésorerie dans les deux ans suivant leur phase d’expansion et doivent recourir à des financements externes pour soutenir leur expansion",
+        "La complexité opérationnelle augmente en moyenne de 30 % pour chaque doublement du chiffre d’affaires",
+        "Les entreprises qui mettent en place tôt des outils de pilotage réduisent de 40 % leur risque de déséquilibre financier"
     ]
   },
   {
@@ -30,6 +31,16 @@ const stakes = [
         "70% des entreprises sous-estiment les difficultés liées à la transmission et arrivent en négociation avec des informations financières incomplètes.",
         "Les transactions préparées en amont avec un audit vendeur se concrétisent 2 fois plus rapidement.",
         "Une bonne préparation peut augmenter le prix de vente de 10 à 20%."
+    ]
+  },
+  {
+    icon: <img src="https://images2.imgbox.com/d4/4b/mBi6r288_o.png" alt="Sécurisation de la fonction financière icon" className="w-24 h-24 object-contain" />,
+    title: "Sécurisation de la fonction financière",
+    description: "60 % des PME déclarent manquer de compétences financières stratégiques en interne :",
+    details: [
+        "Le délai moyen de recrutement d’un CFO est supérieur à 6 mois, avec un coût total souvent inaccessible pour une entreprise en phase de croissance",
+        "Lorsqu’un CFO quitte l’entreprise, il faut en moyenne 4 à 6 mois pour le remplacer, créant un vide critique dans le pilotage financier",
+        "Le recours à un CFO part-time permet de bénéficier immédiatement d’une expertise senior, d’accompagner la croissance, de sécuriser les financements et de renforcer la gouvernance sans supporter le coût d’un recrutement permanent"
     ]
   },
 ];
@@ -55,7 +66,7 @@ const StakesSection: React.FC = () => {
             </p>
           </Animate>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto stagger">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto stagger">
           {stakes.map((stake, index) => (
             <Animate
               key={index}
