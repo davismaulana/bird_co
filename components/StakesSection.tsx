@@ -3,26 +3,6 @@ import Animate from './Animate';
 
 const stakes = [
   {
-    icon: <img src="https://images2.imgbox.com/30/ad/ToMA2afU_o.png" alt="Prévention des difficultés et résilience icon" className="w-24 h-24 object-contain" />,
-    title: "Prévention des difficultés et résilience",
-    description: "Plus de 66k faillites sont attendues en 2025, souvent faute d’accompagnement adapté.",
-    details: [
-        "Selon la Banque de France, la moitié des défaillances pourraient être évitées grâce à une détection précoce et un accompagnement adapté.",
-        "Les entreprises ayant un dispositif de prévention structuré réduisent de près de 30% leur risque de faillite.",
-        "Côté financement, près de 60% des demandes de refinancement ou de restructuration de dettes échouent faute de business plan crédible et de documents complets (Banque de France / Observatoire du financement)."
-    ]
-  },
-  {
-    icon: <img src="https://images2.imgbox.com/df/8e/KHz9cB7k_o.png" alt="Transmission et Stratégie de négociation icon" className="w-24 h-24 object-contain" />,
-    title: "Transmission et Stratégie de négociation",
-    description: "1/3 des transactions échouent directement faute d’audit ou de préparation (source : multiples études M&A, dont PwC et Deloitte).",
-    details: [
-        "70% des entreprises sous-estiment les difficultés liées à la transmission et arrivent en négociation avec des informations financières incomplètes (PwC).",
-        "Les transactions préparées en amont avec un audit vendeur (“vendor due diligence”) se concrétisent 2 fois plus rapidement, avec un prix de vente amélioré de 10 à 20%.",
-        "En M&A, une bonne préparation peut augmenter le prix de vente de 10 à 20% (Harvard Business Review, étude sur la négociation d’actifs)."
-    ]
-  },
-  {
     icon: <img src="https://images2.imgbox.com/47/18/8gfHAt43_o.png" alt="Défis de la croissance icon" className="w-24 h-24 object-contain" />,
     title: "Défis de la croissance",
     description: "Sans une structure financière solide, la croissance rapide peut mener à des problèmes de trésorerie et une perte de contrôle.",
@@ -30,6 +10,26 @@ const stakes = [
         "Complexité accrue des opérations et des finances.",
         "Besoin de financements externes pour soutenir l'expansion.",
         "Nécessité de mettre en place des processus et des outils de pilotage scalables."
+    ]
+  },
+  {
+    icon: <img src="https://images2.imgbox.com/30/ad/ToMA2afU_o.png" alt="Prévention des difficultés et résilience icon" className="w-24 h-24 object-contain" />,
+    title: "Prévention des difficultés et résilience",
+    description: "Plus de 66 000 faillites sont attendues en 2025 :",
+    details: [
+        "Les entreprises ayant un dispositif de prévention structuré réduisent de près de 30% leur risque de faillite.",
+        "Près de 60% des demandes de refinancement ou de restructuration de dettes échouent faute de business plan crédible et de documents complets.",
+        "La moitié des défaillances pourraient être évitées grâce à une détection précoce et un accompagnement adapté."
+    ]
+  },
+  {
+    icon: <img src="https://images2.imgbox.com/df/8e/KHz9cB7k_o.png" alt="Transmission et Stratégie de négociation icon" className="w-24 h-24 object-contain" />,
+    title: "Transmission et Stratégie de négociation",
+    description: "1/3 des transactions échouent directement faute d’audit ou de préparation :",
+    details: [
+        "70% des entreprises sous-estiment les difficultés liées à la transmission et arrivent en négociation avec des informations financières incomplètes.",
+        "Les transactions préparées en amont avec un audit vendeur se concrétisent 2 fois plus rapidement.",
+        "Une bonne préparation peut augmenter le prix de vente de 10 à 20%."
     ]
   },
 ];
