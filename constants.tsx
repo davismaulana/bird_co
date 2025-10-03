@@ -631,7 +631,7 @@ export const serviceDetails: { [key: string]: any } = {
                     ] 
                 },
                 {
-                    title: 'autres outils de planification',
+                    title: 'Autres outils de planification',
                     list: [
                         'Scénarios prospectifs',
                         'Analyse de sensibilité',
