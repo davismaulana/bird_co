@@ -55,7 +55,7 @@ const CashGrowthVisual: React.FC = () => {
     return (
         <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
             <div className="flex justify-between items-start mb-2 anim-child" style={{'--i': 0} as React.CSSProperties}>
-                <h3 className="font-bold text-gray-800 text-xs">Prévisionnel de trésorerie</h3>
+                <h3 className="font-bold text-gray-800 text-xs">Gestion de la trésorerie</h3>
             </div>
             <div className="relative flex-grow">
                 <svg viewBox="0 0 335 170" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
@@ -140,22 +140,21 @@ const tasks = [
   },
   {
     icon: {
+      active: "https://images2.imgbox.com/c9/3a/aTMjbvJm_o.png",
+      inactive: "https://images2.imgbox.com/39/ad/jr5KyoWX_o.png",
+    },
+    title: "Gestion de la trésorerie",
+    description: "Une gestion optimisée de votre trésorerie pour financer votre croissance.",
+    visual: <CashGrowthVisual />,
+  },
+  {
+    icon: {
       active: "https://images2.imgbox.com/3d/3e/Xmi67EFc_o.png",
       inactive: "https://images2.imgbox.com/78/74/vQLOdRKy_o.png",
     },
     title: "Modélisation",
     description: "Des prévisionnels robustes et détaillés pour soutenir votre stratégie, vos levées de fonds et vos décisions d'investissement.",
-    // FIX: Removed invalid `noAspectRatio` prop from `FinancialReportMockup`. The error message was likely pointing to the wrong component but described this exact problem.
     visual: <FinancialReportMockup disableHover />,
-  },
-  {
-    icon: {
-      active: "https://images2.imgbox.com/b9/14/MF1gdmdv_o.png",
-      inactive: "https://images2.imgbox.com/6f/40/aXO1So4w_o.png",
-    },
-    title: "Due Diligence",
-    description: "Des analyses approfondies pour sécuriser vos opérations de M&A.",
-    visual: <DueDiligenceVisual />,
   },
   {
     icon: {
@@ -168,12 +167,12 @@ const tasks = [
   },
   {
     icon: {
-      active: "https://images2.imgbox.com/c9/3a/aTMjbvJm_o.png",
-      inactive: "https://images2.imgbox.com/39/ad/jr5KyoWX_o.png",
+      active: "https://images2.imgbox.com/b9/14/MF1gdmdv_o.png",
+      inactive: "https://images2.imgbox.com/6f/40/aXO1So4w_o.png",
     },
-    title: "Cash Management",
-    description: "Une gestion optimisée de votre trésorerie pour financer votre croissance.",
-    visual: <CashGrowthVisual />,
+    title: "Due Diligence",
+    description: "Des analyses approfondies pour sécuriser vos opérations de M&A.",
+    visual: <DueDiligenceVisual />,
   },
   {
     icon: {
