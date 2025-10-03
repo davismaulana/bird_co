@@ -763,7 +763,20 @@ export const serviceDetails: { [key: string]: any } = {
                 },
                 {
                     title: 'Financement & Croissance',
-                    list: ['Recherche et structuration des financements (Levées de fonds, Dettes, Subventions)', 'Analyses et évaluations de projets stratégiques (investissements, croissance)']
+                    list: [
+                        'Identification des besoins de financement',
+                        'Structuration du plan de financement',
+                        'Levée de fonds en capital',
+                        'Recours à la dette bancaire ou obligataire',
+                        'Financement alternatif et participatif',
+                        'Subventions et aides publiques',
+                        'Optimisation du cash-flow',
+                        'Investissement en R&D et innovation',
+                        'Développement commercial et international',
+                        'Croissance organique et externe',
+                        'Suivi des indicateurs de rentabilité',
+                        'Plan de création de valeur',
+                    ]
                 }
             ] 
         },
