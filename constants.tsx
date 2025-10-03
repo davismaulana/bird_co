@@ -164,136 +164,138 @@ export const FinancialReportMockup: React.FC<{ theme?: string, disableHover?: bo
     <div className={`animated-mockup w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col ${!disableHover ? 'transform hover:scale-105 transition-transform duration-300' : ''}`}>
         <div className="flex items-center justify-between mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
             <h3 className="font-bold text-gray-900 text-sm">Modèle Financier</h3>
-            <div className="px-3 py-1 text-xs font-semibold bg-[#27013D] text-white rounded-full">Prévisions 2025-2027</div>
+            <div className="px-3 py-1 text-[10px] font-semibold bg-[#27013D] text-white rounded-full">Prévisions 2025-2027</div>
         </div>
-        <div className="flex-grow grid grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-4 text-xs">
-            {/* Financials Column */}
+        <div className="flex-grow grid grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-4 text-[11px]">
+            {/* P&L and KPIs Column */}
             <div className="space-y-1">
-                <div className="grid grid-cols-4 gap-2 text-gray-600 font-semibold px-1 anim-child" style={{'--i': 1} as React.CSSProperties}>
-                    <span>P&L</span>
+                {/* P&L */}
+                <div className="grid grid-cols-5 gap-2 text-gray-600 font-semibold px-1 anim-child" style={{'--i': 1} as React.CSSProperties}>
+                    <span className="col-span-2">P&L</span>
                     <span className="text-right">2025</span>
                     <span className="text-right">2026</span>
                     <span className="text-right">2027</span>
                 </div>
                 <div className="bg-gray-50 rounded-lg p-2 border border-gray-100 space-y-1">
-                    <div className="grid grid-cols-4 gap-2 text-gray-800 font-medium bg-violet-50 rounded-md p-1 anim-child" style={{'--i': 2} as React.CSSProperties}>
-                        <span className="font-semibold">Chiffre d'affaires</span>
-                        <span className="text-right">5,2M€</span>
-                        <span className="text-right text-green-600">7,8M€</span>
-                        <span className="text-right text-green-600">11,5M€</span>
+                    <div className="grid grid-cols-5 gap-2 text-gray-800 font-medium bg-violet-50 rounded-md p-1 anim-child" style={{'--i': 2} as React.CSSProperties}>
+                        <span className="font-semibold col-span-2">Chiffre d'affaires</span>
+                        <span className="text-right">5,2m€</span>
+                        <span className="text-right text-green-600">7,8m€</span>
+                        <span className="text-right text-green-600">11,5m€</span>
                     </div>
-                    <div className="grid grid-cols-4 gap-2 text-gray-800 anim-child" style={{'--i': 3} as React.CSSProperties}>
-                        <span className="font-medium">Marge brute</span>
-                        <span className="text-right">3,1M€</span>
-                        <span className="text-right">4,8M€</span>
-                        <span className="text-right">7,5M€</span>
+                    <div className="grid grid-cols-5 gap-2 text-gray-800 anim-child" style={{'--i': 3} as React.CSSProperties}>
+                        <span className="font-medium col-span-2">Marge brute</span>
+                        <span className="text-right">3,1m€</span>
+                        <span className="text-right">4,8m€</span>
+                        <span className="text-right">7,5m€</span>
                     </div>
-                    <div className="grid grid-cols-4 gap-2 text-gray-700 anim-child" style={{'--i': 4} as React.CSSProperties}>
-                        <span className="pl-2">Taux de marge</span>
+                    <div className="grid grid-cols-5 gap-2 text-gray-700 anim-child" style={{'--i': 4} as React.CSSProperties}>
+                        <span className="pl-2 col-span-2">Taux de marge</span>
                         <span className="text-right">60%</span>
                         <span className="text-right">62%</span>
                         <span className="text-right">65%</span>
                     </div>
-                     <div className="grid grid-cols-4 gap-2 text-gray-800 anim-child" style={{'--i': 5} as React.CSSProperties}>
-                        <span className="font-medium">Masse salariale</span>
-                        <span className="text-right">(1,0M€)</span>
-                        <span className="text-right">(1,5M€)</span>
-                        <span className="text-right">(2,1M€)</span>
+                     <div className="grid grid-cols-5 gap-2 text-gray-800 anim-child" style={{'--i': 5} as React.CSSProperties}>
+                        <span className="font-medium col-span-2">Masse salariale</span>
+                        <span className="text-right">(1,0)m€</span>
+                        <span className="text-right">(1,5)m€</span>
+                        <span className="text-right">(2,1)m€</span>
                     </div>
-                    <div className="grid grid-cols-4 gap-2 text-gray-800 anim-child" style={{'--i': 6} as React.CSSProperties}>
-                        <span className="font-medium">Loyers</span>
-                        <span className="text-right">(0,1M€)</span>
-                        <span className="text-right">(0,1M€)</span>
-                        <span className="text-right">(0,2M€)</span>
+                    <div className="grid grid-cols-5 gap-2 text-gray-800 anim-child" style={{'--i': 6} as React.CSSProperties}>
+                        <span className="font-medium col-span-2">Loyers</span>
+                        <span className="text-right">(0,1)m€</span>
+                        <span className="text-right">(0,1)m€</span>
+                        <span className="text-right">(0,2)m€</span>
                     </div>
-                    <div className="grid grid-cols-4 gap-2 text-gray-800 anim-child" style={{'--i': 7} as React.CSSProperties}>
-                        <span className="font-medium">Frais généraux</span>
-                        <span className="text-right">(0,4M€)</span>
-                        <span className="text-right">(0,6M€)</span>
-                        <span className="text-right">(0,8M€)</span>
+                    <div className="grid grid-cols-5 gap-2 text-gray-800 anim-child" style={{'--i': 7} as React.CSSProperties}>
+                        <span className="font-medium col-span-2">Frais généraux</span>
+                        <span className="text-right">(0,4)m€</span>
+                        <span className="text-right">(0,6)m€</span>
+                        <span className="text-right">(0,8)m€</span>
                     </div>
-                    <div className="grid grid-cols-4 gap-2 text-gray-800 font-medium bg-violet-50 rounded-md p-1 anim-child" style={{'--i': 8} as React.CSSProperties}>
-                        <span className="font-semibold">EBITDA</span>
-                        <span className="text-right">1,6M€</span>
-                        <span className="text-right text-green-600">2,6M€</span>
-                        <span className="text-right text-green-600">4,4M€</span>
+                    <div className="grid grid-cols-5 gap-2 text-gray-800 font-medium bg-violet-50 rounded-md p-1 anim-child" style={{'--i': 8} as React.CSSProperties}>
+                        <span className="font-semibold col-span-2">EBITDA</span>
+                        <span className="text-right">1,6m€</span>
+                        <span className="text-right text-green-600">2,6m€</span>
+                        <span className="text-right text-green-600">4,4m€</span>
                     </div>
-                    <div className="grid grid-cols-4 gap-2 text-gray-700 anim-child" style={{'--i': 9} as React.CSSProperties}>
-                        <span className="pl-2">Taux d'EBITDA</span>
+                    <div className="grid grid-cols-5 gap-2 text-gray-700 anim-child" style={{'--i': 9} as React.CSSProperties}>
+                        <span className="pl-2 col-span-2">Taux d'EBITDA</span>
                         <span className="text-right">30%</span>
                         <span className="text-right">34%</span>
                         <span className="text-right">39%</span>
                     </div>
                 </div>
-                <div className="grid grid-cols-4 gap-2 text-gray-600 font-semibold px-1 pt-2 anim-child" style={{'--i': 10} as React.CSSProperties}>
-                    <span>Cash Flow</span>
-                </div>
+                {/* KPIs */}
                 <div className="bg-gray-50 rounded-lg p-2 border border-gray-100 space-y-1">
-                     <div className="grid grid-cols-4 gap-2 text-gray-800 anim-child" style={{'--i': 11} as React.CSSProperties}>
-                        <span className="font-medium">BFR</span>
-                        <span className="text-right">(0,3M€)</span>
-                        <span className="text-right">(0,3M€)</span>
-                        <span className="text-right">(0,4M€)</span>
+                    <div className="grid grid-cols-5 gap-2 text-gray-600 font-semibold p-1 anim-child" style={{'--i': 10} as React.CSSProperties}>
+                       <span className="col-span-5">KPIs</span>
                     </div>
-                    <div className="grid grid-cols-4 gap-2 text-gray-800 anim-child" style={{'--i': 12} as React.CSSProperties}>
-                        <span className="font-medium">CAPEX</span>
-                        <span className="text-right">(0,4M€)</span>
-                        <span className="text-right">(0,6M€)</span>
-                        <span className="text-right">(0,8M€)</span>
-                    </div>
-                    <div className="grid grid-cols-4 gap-2 text-gray-800 anim-child" style={{'--i': 13} as React.CSSProperties}>
-                        <span className="font-medium">Financements</span>
-                        <span className="text-right">0,5M€</span>
-                        <span className="text-right text-green-600">1,0M€</span>
-                        <span className="text-right text-green-600">1,5M€</span>
-                    </div>
-                    <div className="grid grid-cols-4 gap-2 text-gray-800 font-medium bg-violet-50 rounded-md p-1 anim-child" style={{'--i': 14} as React.CSSProperties}>
-                        <span className="font-semibold">Cash End of Period</span>
-                        <span className="text-right">0,8M€</span>
-                        <span className="text-right text-green-600">1,5M€</span>
-                        <span className="text-right text-green-600">2,9M€</span>
-                    </div>
-                </div>
-            </div>
-            
-            {/* KPIs Column */}
-            <div className="space-y-1">
-                 <div className="grid grid-cols-4 gap-2 text-gray-600 font-semibold px-1 anim-child invisible" style={{'--i': 1} as React.CSSProperties}>
-                    <span>KPIs</span>
-                </div>
-                <div className="bg-gray-50 rounded-lg p-2 border border-gray-100 space-y-1">
-                    <div className="grid grid-cols-4 gap-2 text-gray-600 font-semibold p-1 anim-child" style={{'--i': 2} as React.CSSProperties}>
-                       <span className="col-span-4">KPIs</span>
-                    </div>
-                    <div className="grid grid-cols-4 gap-2 text-gray-800 anim-child" style={{'--i': 3} as React.CSSProperties}>
-                        <span className="font-medium">ETP</span>
+                    <div className="grid grid-cols-5 gap-2 text-gray-800 anim-child" style={{'--i': 11} as React.CSSProperties}>
+                        <span className="font-medium col-span-2">ETP</span>
                         <span className="text-right">21</span>
                         <span className="text-right">29</span>
                         <span className="text-right">38</span>
                     </div>
-                    <div className="grid grid-cols-4 gap-2 text-gray-800 anim-child" style={{'--i': 4} as React.CSSProperties}>
-                        <span className="font-medium">Salaire moyen / ETP</span>
+                    <div className="grid grid-cols-5 gap-2 text-gray-800 anim-child" style={{'--i': 12} as React.CSSProperties}>
+                        <span className="font-medium col-span-2">Salaire moyen / ETP</span>
                         <span className="text-right">50k€</span>
                         <span className="text-right">52k€</span>
                         <span className="text-right">55k€</span>
                     </div>
-                    <div className="grid grid-cols-4 gap-2 text-gray-800 anim-child" style={{'--i': 5} as React.CSSProperties}>
-                        <span className="font-medium">CA moyen / ETP</span>
+                    <div className="grid grid-cols-5 gap-2 text-gray-800 anim-child" style={{'--i': 13} as React.CSSProperties}>
+                        <span className="font-medium col-span-2">CA moyen / ETP</span>
                         <span className="text-right">248k€</span>
                         <span className="text-right">269k€</span>
                         <span className="text-right">303k€</span>
                     </div>
-                     <div className="grid grid-cols-4 gap-2 text-gray-800 anim-child" style={{'--i': 6} as React.CSSProperties}>
-                        <span className="font-medium">Points de vente</span>
+                     <div className="grid grid-cols-5 gap-2 text-gray-800 anim-child" style={{'--i': 14} as React.CSSProperties}>
+                        <span className="font-medium col-span-2">Points de vente</span>
                         <span className="text-right">5</span>
                         <span className="text-right">7</span>
                         <span className="text-right">10</span>
                     </div>
-                     <div className="grid grid-cols-4 gap-2 text-gray-800 anim-child" style={{'--i': 7} as React.CSSProperties}>
-                        <span className="font-medium">CA / Points de vente</span>
-                        <span className="text-right">1,0M€</span>
-                        <span className="text-right">1,1M€</span>
-                        <span className="text-right">1,2M€</span>
+                     <div className="grid grid-cols-5 gap-2 text-gray-800 anim-child" style={{'--i': 15} as React.CSSProperties}>
+                        <span className="font-medium col-span-2">CA / Points de vente</span>
+                        <span className="text-right">1,0m€</span>
+                        <span className="text-right">1,1m€</span>
+                        <span className="text-right">1,2m€</span>
+                    </div>
+                </div>
+            </div>
+            
+            {/* Cash Management Column */}
+            <div className="space-y-1">
+                <div className="grid grid-cols-5 gap-2 text-gray-600 font-semibold px-1 anim-child" style={{'--i': 1} as React.CSSProperties}>
+                    <span className="col-span-2">Cash Flow</span>
+                    <span className="text-right">2025</span>
+                    <span className="text-right">2026</span>
+                    <span className="text-right">2027</span>
+                </div>
+                <div className="bg-gray-50 rounded-lg p-2 border border-gray-100 space-y-1">
+                     <div className="grid grid-cols-5 gap-2 text-gray-800 anim-child" style={{'--i': 2} as React.CSSProperties}>
+                        <span className="font-medium col-span-2">BFR</span>
+                        <span className="text-right">(0,3)m€</span>
+                        <span className="text-right">(0,3)m€</span>
+                        <span className="text-right">(0,4)m€</span>
+                    </div>
+                    <div className="grid grid-cols-5 gap-2 text-gray-800 anim-child" style={{'--i': 3} as React.CSSProperties}>
+                        <span className="font-medium col-span-2">CAPEX</span>
+                        <span className="text-right">(0,4)m€</span>
+                        <span className="text-right">(0,6)m€</span>
+                        <span className="text-right">(0,8)m€</span>
+                    </div>
+                    <div className="grid grid-cols-5 gap-2 text-gray-800 anim-child" style={{'--i': 4} as React.CSSProperties}>
+                        <span className="font-medium col-span-2">Financements</span>
+                        <span className="text-right">0,5m€</span>
+                        <span className="text-right text-green-600">1,0m€</span>
+                        <span className="text-right text-green-600">1,5m€</span>
+                    </div>
+                    <div className="grid grid-cols-5 gap-2 text-gray-800 font-medium bg-violet-50 rounded-md p-1 anim-child" style={{'--i': 5} as React.CSSProperties}>
+                        <span className="font-semibold col-span-2">Cash End of Period</span>
+                        <span className="text-right">0,8m€</span>
+                        <span className="text-right text-green-600">1,5m€</span>
+                        <span className="text-right text-green-600">2,9m€</span>
                     </div>
                 </div>
             </div>

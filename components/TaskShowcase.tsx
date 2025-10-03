@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Animate from './Animate';
 import { CheckmarkCircleIcon, KpiDashboardMockup, FinancialReportMockup } from '../constants';
@@ -135,7 +136,7 @@ const tasks = [
       inactive: "https://images2.imgbox.com/49/76/VCQT8RGf_o.png",
     },
     title: "Reporting & Tableau de Bord",
-    description: "des outils clairs et nécessaires pour un pilotage efficace de votre activité",
+    description: "Des outils clairs et nécessaires pour un pilotage efficace de votre activité",
     visual: <KpiDashboardMockup noAspectRatio disableHover />,
   },
   {
