@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Animate from './Animate';
 import { CheckmarkCircleIcon, KpiDashboardMockup, FinancialReportMockup } from '../constants';
@@ -210,14 +209,14 @@ const TaskShowcase: React.FC = () => {
                         </p>
                     </Animate>
                 </div>
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                    <div className="lg:col-span-1">
-                        <div className="space-y-4 stagger">
+                <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+                    <div className="lg:col-span-3">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 stagger">
                             {tasks.map((task, index) => (
                                 <Animate variant="pop" key={index}>
                                     <button
                                         onClick={() => setActiveTask(index)}
-                                        className={`w-full text-left p-4 rounded-xl transition-all duration-300 group ${
+                                        className={`w-full h-full text-left p-4 rounded-xl transition-all duration-300 group ${
                                             activeTask === index
                                                 ? 'bg-[#27013D] shadow-xl shadow-violet-200/50 scale-105 hover:scale-[1.07]'
                                                 : 'bg-white hover:shadow-xl hover:shadow-violet-100/50 hover:scale-105'
@@ -225,14 +224,14 @@ const TaskShowcase: React.FC = () => {
                                     >
                                         <div className="flex items-center gap-4">
                                             <div
-                                                className={`w-20 h-20 rounded-xl flex-shrink-0 flex items-center justify-center transition-colors duration-300 ${
+                                                className={`w-16 h-16 rounded-lg flex-shrink-0 flex items-center justify-center transition-colors duration-300 ${
                                                     activeTask === index ? 'bg-white/20' : 'bg-gray-100'
                                                 }`}
                                             >
                                                 <img
                                                     src={activeTask === index ? task.icon.active : task.icon.inactive}
                                                     alt={`${task.title} icon`}
-                                                    className="w-12 h-12 object-contain"
+                                                    className="w-10 h-10 object-contain"
                                                 />
                                             </div>
                                             <div>
@@ -245,7 +244,7 @@ const TaskShowcase: React.FC = () => {
                             ))}
                         </div>
                     </div>
-                    <div className="lg:col-span-2 min-h-[350px] sm:min-h-[450px]">
+                    <div className="lg:col-span-2 min-h-[350px] sm:min-h-[400px]">
                         <div className="w-full h-full showcase-active" key={activeTask}>
                            {tasks[activeTask].visual}
                         </div>
