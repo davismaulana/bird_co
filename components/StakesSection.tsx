@@ -3,7 +3,7 @@ import Animate from './Animate';
 
 const stakes = [
   {
-    icon: <img src="https://images2.imgbox.com/30/ad/ToMA2afU_o.png" alt="Prévention des difficultés et résilience icon" className="w-20 h-20 object-contain" />,
+    icon: <img src="https://images2.imgbox.com/30/ad/ToMA2afU_o.png" alt="Prévention des difficultés et résilience icon" className="w-24 h-24 object-contain" />,
     title: "Prévention des difficultés et résilience",
     description: "Plus de 66k faillites sont attendues en 2025, souvent faute d’accompagnement adapté.",
     details: [
@@ -13,7 +13,7 @@ const stakes = [
     ]
   },
   {
-    icon: <img src="https://images2.imgbox.com/df/8e/KHz9cB7k_o.png" alt="Transmission et Stratégie de négociation icon" className="w-20 h-20 object-contain" />,
+    icon: <img src="https://images2.imgbox.com/df/8e/KHz9cB7k_o.png" alt="Transmission et Stratégie de négociation icon" className="w-24 h-24 object-contain" />,
     title: "Transmission et Stratégie de négociation",
     description: "1/3 des transactions échouent directement faute d’audit ou de préparation (source : multiples études M&A, dont PwC et Deloitte).",
     details: [
@@ -23,7 +23,7 @@ const stakes = [
     ]
   },
   {
-    icon: <img src="https://images2.imgbox.com/47/18/8gfHAt43_o.png" alt="Défis de la croissance icon" className="w-20 h-20 object-contain" />,
+    icon: <img src="https://images2.imgbox.com/47/18/8gfHAt43_o.png" alt="Défis de la croissance icon" className="w-24 h-24 object-contain" />,
     title: "Défis de la croissance",
     description: "Sans une structure financière solide, la croissance rapide peut mener à des problèmes de trésorerie et une perte de contrôle.",
     details: [
