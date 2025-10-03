@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 export const PaperPlaneIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -812,7 +813,7 @@ export const serviceDetails: { [key: string]: any } = {
         subtitle: 'Un regard avisé pour prendre du recul, décider juste et relancer avec confiance',
         diagnostic: {
             title: <>Vos <span className="gradient-text">objectifs</span></>,
-            description: 'Réaliser une évaluation complète, claire et objective de la santé financière de l’entreprise afin de :',
+            description: 'Réaliser une évaluation complète, claire et objective de la santé financière de l’entreprise',
             content: {
                 title: 'Piloter la relance de l\'activité',
                 description: (
