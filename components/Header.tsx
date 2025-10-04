@@ -1,11 +1,10 @@
-
 import React, { useState, useEffect } from 'react';
 import { services, HamburgerIcon, CloseIcon } from '../constants';
 
 const navItems = [
   { name: 'Enjeux', href: '/#vos-enjeux' },
   { name: 'Solutions', href: '/#solutions' },
-  { name: 'Piliers', href: '/#piliers' },
+  { name: 'Pilliers', href: '/#piliers' },
   { name: 'Contact', href: '/#contact' },
   { name: 'FAQ', href: '/faq' },
 ];
@@ -86,7 +85,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
         className={`bg-white/95 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${isScrolled ? 'border-b border-gray-200' : 'border-b border-transparent'}`}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
+          <div className="flex justify-between items-center h-16">
             <a href="/" className="header-logo-container text-3xl font-bold text-[#27013D] tracking-tight">
               <span className="sr-only">BIRD&</span>
               <span 
