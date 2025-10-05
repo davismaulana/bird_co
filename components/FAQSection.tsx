@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     question: "Quels types d’organisations accompagnez-vous ?",
-    answer: "Startups, PME, associations, écoles, institutions publiques, fonds à impact."
+    answer: "TPE, PME, ETI, Grandes entreprises, Fonds d'investissements, Banque d'investissement, institutions publiques, associations selon les enjeux auxquels elles sont confrontées. Nous nous adressons également aux avocats, experts comptables, CSE, administrateurs judiciaires."
   }
 ];
 

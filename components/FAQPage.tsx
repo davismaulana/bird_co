@@ -34,7 +34,10 @@ const faqs = [
     items: [
       {
         question: "Quels services proposez-vous ?",
-        answer: "Stratégie, modélisation financière, levée de fonds, structuration RSE/ESG, business plans et accompagnement opérationnel."
+        answer: `Nous accompagnons les dirigeants dans la structuration, le financement et le pilotage de leur croissance.
+Nos interventions couvrent l’ensemble du cycle de vie financier de l’entreprise — de la construction des outils de pilotage à la préparation d’opérations capitalistiques — avec une approche pragmatique et orientée résultats.
+
+Découvrez les quatre axes d’expertise de nos bras droit dans la section Solutions et dans les pages de détail incluant un aperçu des livrables qui matérialisent notre accompagnement.`
       },
       {
         question: "Aidez-vous à lever des fonds ?",
@@ -50,7 +53,7 @@ const faqs = [
       },
       {
         question: "Quels types d’organisations accompagnez-vous ?",
-        answer: "Startups, PME, associations, écoles, institutions publiques, fonds à impact."
+        answer: "TPE, PME, ETI, Grandes entreprises, Fonds d'investissements, Banque d'investissement, institutions publiques, associations selon les enjeux auxquels elles sont confrontées. Nous nous adressons également aux avocats, experts comptables, CSE, administrateurs judiciaires."
       },
       {
         question: "Est-ce que vous êtes spécialisés dans un secteur ?",
@@ -84,7 +87,7 @@ const AccordionItem: React.FC<{ question: string; answer: string; isOpen: boolea
         className={`grid transition-all duration-500 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
       >
         <div className="overflow-hidden">
-          <p className="pt-4 pr-12 text-sm text-gray-700 leading-relaxed">
+          <p className="pt-4 pr-12 text-sm text-gray-700 leading-relaxed whitespace-pre-line">
             {answer}
           </p>
         </div>
