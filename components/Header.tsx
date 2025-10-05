@@ -86,7 +86,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <a href="/" className="header-logo-container text-3xl font-extrabold tracking-tight gradient-text">
+            <a href="/" className="header-logo-container text-3xl font-bold tracking-tight text-[#27013D]">
               <span className="sr-only">BIRD&</span>
               <span 
                 className="header-logo-outline"
@@ -111,10 +111,9 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                     if (hasBackground) {
                         classes += ' bg-[#27013D] text-white';
                     } else {
+                        classes += ' text-black hover:bg-[#27013D] hover:text-white';
                         if (isSectionActive && pathname === '/') {
-                            classes += ' active text-[#27013D] font-semibold';
-                        } else {
-                            classes += ' text-black hover:bg-[#27013D] hover:text-white';
+                            classes += ' active';
                         }
                     }
                     return (
@@ -175,10 +174,9 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
 
                   if (isAnchorLink) {
                       finalClasses.push('nav-link-anchor');
+                      finalClasses.push('text-black', 'hover:bg-[#27013D]', 'hover:text-white');
                       if (isSectionActive) {
-                          finalClasses.push('active', 'text-[#27013D]', 'font-semibold');
-                      } else {
-                          finalClasses.push('text-black', 'hover:bg-[#27013D]', 'hover:text-white');
+                          finalClasses.push('active');
                       }
                   } else { // isPageLink
                       if (isPageActive) {
@@ -250,8 +248,8 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                        <button
                          type="button"
                          onClick={() => setIsMobileSolutionsOpen(prev => !prev)}
-                         className={`block w-full text-xl font-semibold py-3 rounded-lg text-black hover:bg-[#27013D] hover:text-white transition-colors text-center ${
-                           (isPropositionSectionActive || isMobileSolutionsOpen) && 'bg-[#27013D] text-white'
+                         className={`block w-full text-xl font-medium py-3 rounded-lg hover:bg-[#27013D] hover:text-white transition-colors text-center ${
+                           (isPropositionSectionActive || isMobileSolutionsOpen) ? 'bg-[#27013D] text-white' : 'text-black'
                          }`}
                          aria-expanded={isMobileSolutionsOpen}
                        >
@@ -287,8 +285,8 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                     key={item.name}
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`block w-full text-xl font-semibold text-black py-3 rounded-lg hover:bg-[#27013D] hover:text-white transition-colors ${
-                      isActive && 'bg-[#27013D] text-white'
+                    className={`block w-full text-xl font-medium py-3 rounded-lg hover:bg-[#27013D] hover:text-white transition-colors ${
+                      isActive ? 'bg-[#27013D] text-white' : 'text-black'
                     }`}
                   >
                     {item.name}
