@@ -5,11 +5,11 @@ const stakes = [
   {
     icon: <img src="https://images2.imgbox.com/47/18/8gfHAt43_o.png" alt="Défis de la croissance icon" className="w-24 h-24 object-contain" />,
     title: "Défis de la croissance",
-    description: "Sans une structure financière solide, la croissance rapide peut mener à des problèmes de trésorerie et une perte de contrôle.",
+    description: <>Sans une structure financière solide, la croissance rapide peut mener à des <span className="font-semibold">problèmes de trésorerie</span> et une <span className="font-semibold">perte de contrôle</span> :</>,
     details: [
-        "2 PME en forte croissance sur 3 rencontrent des tensions de trésorerie dans les deux ans suivant leur phase d’expansion et doivent recourir à des financements externes pour soutenir leur expansion",
-        "La complexité opérationnelle augmente en moyenne de 30 % pour chaque doublement du chiffre d’affaires",
-        "Les entreprises qui mettent en place tôt des outils de pilotage réduisent de 40 % leur risque de déséquilibre financier"
+        <><span className="font-semibold">2 PME en forte croissance sur 3</span> rencontrent des <span className="font-semibold">tensions de trésorerie</span> dans les deux ans suivant leur phase d’expansion</>,
+        <>La <span className="font-semibold">complexité opérationnelle</span> augmente en moyenne de <span className="font-semibold">30 %</span> pour chaque <span className="font-semibold">doublement du chiffre d’affaires</span></>,
+        <>Les entreprises qui mettent en place tôt des <span className="font-semibold">outils de pilotage réduisent</span> de 40 % <span className="font-semibold">leur risque de déséquilibre financier</span></>
     ]
   },
   {
