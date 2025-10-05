@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Animate from './Animate';
 
@@ -63,6 +62,11 @@ const StakesSection: React.FC = () => {
           <Animate variant="pop" delay={200}>
             <p className="text-base text-gray-800 mt-2">
               <strong>Identifier les risques</strong> pour mieux les <strong>maîtriser</strong> et <strong>transformer</strong> les défis en opportunités
+            </p>
+          </Animate>
+          <Animate variant="pop" delay={300}>
+            <p className="text-xs text-gray-500 mt-4 max-w-3xl mx-auto">
+              Source : Bpifrance Le Lab, INSEE, Banque de France, Eurostat, Observatoire des PME, MEDEF, Deloitte CFO Survey, EY Baromètre croissance et financement, PwC CEO Survey, Banque Européenne d’Investissement (BEI), OCDE.
             </p>
           </Animate>
         </div>
