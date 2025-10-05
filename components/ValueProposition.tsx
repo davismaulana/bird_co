@@ -7,7 +7,7 @@ const propositionPoints = [
     title: "Un support de haut niveau",
     description: () => (
       <>
-        Un <strong>réseau constitué de spécialistes en finance d'entreprise</strong> qui combinent rigueur technique et capacité habile à prendre le recul nécessaire pour aider le dirigeant à la prise de décision. Un rôle clé pour <strong>soutenir votre stratégie financière</strong> et <strong>exécuter des projets stratégiques</strong>.
+        Un <strong>réseau constitué de spécialistes en finance d'entreprise</strong> qui combinent rigueur technique et capacité habile à prendre le recul nécessaire pour aider le dirigeant à la prise de décision. Un rôle clé pour <strong>soutenir votre stratégie financière</strong> et <strong>exécuter vos projets</strong>.
       </>
     ),
   },
