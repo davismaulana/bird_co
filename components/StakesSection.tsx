@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Animate from './Animate';
 
@@ -15,7 +16,7 @@ const stakes = [
   {
     icon: <img src="https://images2.imgbox.com/30/ad/ToMA2afU_o.png" alt="Prévention des difficultés et résilience icon" className="w-24 h-24 object-contain" />,
     title: "Prévention des difficultés et résilience",
-    description: "Plus de 66 000 faillites sont attendues en 2025 :",
+    description: <>Au moins 66 000 faillites d’entreprises sont attendues en 2025 en France — un niveau historiquement élevé, conséquence directe du <span className="font-semibold">ralentissement économique</span>, de la <span className="font-semibold">fin des aides publiques</span> et du durcissement des <span className="font-semibold">conditions de crédit</span></>,
     details: [
         "Les entreprises ayant un dispositif de prévention structuré réduisent de près de 30% leur risque de faillite.",
         "Près de 60% des demandes de refinancement ou de restructuration de dettes échouent faute de business plan crédible et de documents complets.",
