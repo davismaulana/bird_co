@@ -17,29 +17,29 @@ const stakes = [
     title: "Prévention des difficultés et résilience",
     description: <>Au moins 66 000 faillites d’entreprises sont attendues en 2025 en France — un niveau historiquement élevé, conséquence directe du <span className="font-semibold">ralentissement économique</span>, de la <span className="font-semibold">fin des aides publiques</span> et du durcissement des <span className="font-semibold">conditions de crédit</span> :</>,
     details: [
-        "Les entreprises ayant un dispositif de prévention structuré réduisent de près de 30% leur risque de faillite.",
-        "Près de 60% des demandes de refinancement ou de restructuration de dettes échouent faute de business plan crédible et de documents complets.",
-        "La moitié des défaillances pourraient être évitées grâce à une détection précoce et un accompagnement adapté."
+        <>Les entreprises ayant un <span className="font-semibold">dispositif de prévention structuré</span> réduisent de près de 30% leur risque de faillite.</>,
+        <>Près de 60% des demandes de refinancement ou de restructuration de dettes échouent <span className="font-semibold">faute de business plan crédible</span> et de documents complets.</>,
+        <>La moitié des défaillances pourraient être évitées grâce à une <span className="font-semibold">détection</span> précoce et un <span className="font-semibold">accompagnement adapté</span>.</>
     ]
   },
   {
-    icon: <img src="https://images2.imgbox.com/df/8e/KHz9cB7k_o.png" alt="Transmission et Stratégie de négociation icon" className="w-24 h-24 object-contain" />,
-    title: "Transmission et Stratégie de négociation",
+    icon: <img src="https://images2.imgbox.com/df/8e/KHz9cB7k_o.png" alt="Transmission et stratégie de négociation icon" className="w-24 h-24 object-contain" />,
+    title: "Transmission et stratégie de négociation",
     description: "1/3 des transactions échouent directement faute d’audit ou de préparation :",
     details: [
-        "70% des entreprises sous-estiment les difficultés liées à la transmission et arrivent en négociation avec des informations financières incomplètes.",
-        "Les transactions préparées en amont avec un audit vendeur se concrétisent 2 fois plus rapidement.",
-        "Une bonne préparation peut augmenter le prix de vente de 10 à 20%."
+        <><span className="font-semibold">70% des entreprises sous-estiment les difficultés liées à la transmission</span> et arrivent en négociation avec des <span className="font-semibold">informations financières incomplètes.</span></>,
+        <>Les transactions préparées en amont avec un <span className="font-semibold">audit vendeur</span> se concrétisent <span className="font-semibold">2 fois plus rapidement</span>.</>,
+        <>Une bonne préparation peut <span className="font-semibold">augmenter le prix de vente</span> de 10 à 20%.</>
     ]
   },
   {
     icon: <img src="https://images2.imgbox.com/d4/4b/mBi6r288_o.png" alt="Sécurisation de la fonction financière icon" className="w-24 h-24 object-contain" />,
     title: "Sécurisation de la fonction financière",
-    description: "60 % des PME déclarent manquer de compétences financières stratégiques en interne :",
+    description: <>60 % des PME reconnaissent un <span className="font-semibold">besoin de renforcement</span> de leurs compétences financières et stratégiques</>,
     details: [
-        "Le délai moyen de recrutement d’un CFO est supérieur à 6 mois, avec un coût total souvent inaccessible pour une entreprise en phase de croissance",
+        <>Le <span className="font-semibold">délai moyen de recrutement</span> d’un CFO est <span className="font-semibold">supérieur à 6 mois</span>, avec un coût total souvent <span className="font-semibold">inaccessible</span> pour une entreprise en phase de croissance</>,
         "Lorsqu’un CFO quitte l’entreprise, il faut en moyenne 4 à 6 mois pour le remplacer, créant un vide critique dans le pilotage financier",
-        "Le recours à un CFO part-time permet de bénéficier immédiatement d’une expertise senior, d’accompagner la croissance, de sécuriser les financements et de renforcer la gouvernance sans supporter le coût d’un recrutement permanent"
+        <>Le recours à un CFO part-time permet de bénéficier immédiatement d’une <span className="font-semibold">expertise</span> senior, d’<span className="font-semibold">accompagner la croissance</span>, de <span className="font-semibold">sécuriser les financements</span> et de <span className="font-semibold">renforcer la gouvernance</span> sans supporter le coût d’un recrutement permanent</>
     ]
   },
 ];
