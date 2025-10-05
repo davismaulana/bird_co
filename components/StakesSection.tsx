@@ -67,7 +67,7 @@ const StakesSection: React.FC = () => {
           </Animate>
         </div>
         
-        <div className="relative max-w-4xl mx-auto py-4">
+        <div className="relative max-w-6xl mx-auto py-4">
           {/* Vertical Line */}
           <div className="absolute top-0 bottom-0 left-1/2 w-1 bg-gradient-to-b from-[#27013D] to-[#6D0037] transform -translate-x-1/2 rounded-full hidden sm:block"></div>
           
@@ -83,16 +83,16 @@ const StakesSection: React.FC = () => {
                       <div className="w-12 h-12 flex-shrink-0 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex items-center justify-center text-white font-bold text-lg shadow-md">
                         0{index + 1}
                       </div>
-                      <h3 className="text-lg font-bold text-black leading-tight">{stake.title}</h3>
+                      <h3 className="text-sm font-bold text-black leading-tight">{stake.title}</h3>
                     </div>
 
                     {/* Desktop Header */}
                     <div className="hidden sm:flex items-center gap-4 mb-3">
                         {React.cloneElement(stake.icon, { className: 'w-10 h-10 flex-shrink-0' })}
-                        <h3 className="text-lg font-bold text-black leading-tight">{stake.title}</h3>
+                        <h3 className="text-sm font-bold text-black leading-tight">{stake.title}</h3>
                     </div>
                     
-                    <p className="text-gray-800 text-sm leading-relaxed mb-4">{stake.description}</p>
+                    <p className="text-gray-800 text-xs leading-relaxed mb-4">{stake.description}</p>
                     <div className="space-y-2 text-xs text-gray-700">
                       {stake.details.map((detail, i) => (
                         <div key={i} className="flex items-start">
