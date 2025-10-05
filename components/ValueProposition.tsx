@@ -15,7 +15,7 @@ const propositionPoints = [
     title: "Allié stratégique",
     description: () => (
       <>
-        Un partenaire <strong>proche du dirigeant</strong> impliqué dans les réflexions critiques. Un véritable "alter ego" pour le dirigeant capable de créer une relation de confiance permettant d'<strong>anticiper les besoins, soutenir la prise de décision</strong>, et <strong>gérer les sujets sensibles</strong>.
+        Un partenaire <strong>proche du dirigeant</strong> impliqué dans les réflexions critiques. Un véritable <strong>"alter ego"</strong> pour le dirigeant capable de créer une relation de confiance permettant d'<strong>anticiper les besoins, soutenir la prise de décision</strong>, et <strong>gérer les sujets sensibles</strong>.
       </>
     ),
   },
@@ -23,7 +23,7 @@ const propositionPoints = [
     title: "Catalyseur de progrès",
     description: () => (
       <>
-       Un acteur clé capable de <strong>traduire la stratégie en actions concrètes</strong>, <strong>fixer des objectifs</strong>, <strong>suivre les résultats</strong>, et ajuster en conséquence pour avoir un impact direct sur la performance globale. Le bras-droit sait rythmer les missions confiées en se montrant <strong>pragmatique, dynamique et résilient</strong>.
+       Un acteur clé capable de <strong>traduire la stratégie en actions concrètes</strong>, <strong>fixer des objectifs</strong>, <strong>suivre les résultats</strong>, et <strong>ajuster en conséquence</strong> pour avoir un impact direct sur la performance globale. Le bras-droit sait rythmer les missions confiées en se montrant <strong>pragmatique, dynamique et résilient</strong>.
       </>
     ),
   },
