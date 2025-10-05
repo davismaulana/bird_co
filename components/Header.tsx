@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { services, HamburgerIcon, CloseIcon } from '../constants';
 
@@ -87,7 +86,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <a href="/" className="header-logo-container text-3xl font-bold text-[#27013D] tracking-tight">
+            <a href="/" className="header-logo-container text-3xl font-extrabold tracking-tight gradient-text">
               <span className="sr-only">BIRD&</span>
               <span 
                 className="header-logo-outline"
