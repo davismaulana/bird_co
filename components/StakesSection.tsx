@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Animate from './Animate';
 
@@ -38,7 +39,7 @@ const stakes = [
     description: <>60 % des PME reconnaissent un <span className="font-semibold">besoin de renforcement</span> de leurs compétences financières et stratégiques</>,
     details: [
         <>Le <span className="font-semibold">délai moyen de recrutement</span> d’un CFO est <span className="font-semibold">supérieur à 6 mois</span>, avec un coût total souvent <span className="font-semibold">inaccessible</span> pour une entreprise en phase de croissance</>,
-        "Lorsqu’un CFO quitte l’entreprise, il faut en moyenne 4 à 6 mois pour le remplacer, créant un vide critique dans le pilotage financier",
+        <>Lorsqu’un CFO quitte l’entreprise, il s’écoule <span className="font-semibold">4 à 6 mois</span> avant son <span className="font-semibold">remplacement</span>, générant un <span className="font-semibold">vide critique</span> dans la gouvernance et le pilotage financier</>,
         <>Le recours à un CFO part-time permet de bénéficier immédiatement d’une <span className="font-semibold">expertise</span> senior, d’<span className="font-semibold">accompagner la croissance</span>, de <span className="font-semibold">sécuriser les financements</span> et de <span className="font-semibold">renforcer la gouvernance</span> sans supporter le coût d’un recrutement permanent</>
     ]
   },
@@ -65,35 +66,64 @@ const StakesSection: React.FC = () => {
             </p>
           </Animate>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto stagger">
-          {stakes.map((stake, index) => (
-            <Animate
-              key={index}
-              variant="pop"
-              className="h-full"
-            >
-              <div className="bg-white rounded-xl flex flex-col h-full transition-all duration-300 ease-in-out border border-gray-200/50 hover:shadow-2xl hover:shadow-violet-100/50 hover:border-violet-200 hover:scale-105 overflow-hidden">
-                <div className="w-full h-48 flex items-center justify-center bg-gradient-to-br from-violet-100 to-pink-100 p-4 shadow-inner">
-                  {stake.icon}
-                </div>
-                <div className="p-8 flex flex-col flex-grow">
-                    <h3 className="text-xl font-bold text-black mb-3 leading-tight">
-                      {stake.title}
-                    </h3>
-                    <p className="text-gray-800 text-sm leading-relaxed">{stake.description}</p>
-                    <div className="space-y-3 text-sm text-gray-800 mt-4">
-                        {stake.details.map((detail, i) => (
-                            <div key={i} className="flex items-start">
-                                <span className="text-[#6D0037] mr-3 font-bold text-lg leading-tight">›</span>
-                                <span className="flex-1">{detail}</span>
-                            </div>
-                        ))}
+        
+        <div className="relative max-w-4xl mx-auto py-4">
+          {/* Vertical Line */}
+          <div className="absolute top-0 bottom-0 left-1/2 w-1 bg-gradient-to-b from-[#27013D] to-[#6D0037] transform -translate-x-1/2 rounded-full hidden sm:block"></div>
+          
+          <div className="space-y-12">
+            {stakes.map((stake, index) => {
+              const onRightSide = index % 2 !== 0; // index 0 (item 1) on left, index 1 (item 2) on right
+              
+              const CardContent = (
+                <Animate variant="pop">
+                  <div className="bg-white rounded-xl p-6 border border-gray-200/80 shadow-lg hover:shadow-2xl hover:shadow-violet-100/50 transition-all duration-300 transform hover:scale-105">
+                    {/* Mobile Header */}
+                    <div className="sm:hidden mb-4 flex items-center gap-4">
+                      <div className="w-12 h-12 flex-shrink-0 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex items-center justify-center text-white font-bold text-lg shadow-md">
+                        0{index + 1}
+                      </div>
+                      <h3 className="text-lg font-bold text-black leading-tight">{stake.title}</h3>
                     </div>
-                    <div className="flex-grow" />
+
+                    {/* Desktop Header */}
+                    <div className="hidden sm:flex items-center gap-4 mb-3">
+                        {React.cloneElement(stake.icon, { className: 'w-10 h-10 flex-shrink-0' })}
+                        <h3 className="text-lg font-bold text-black leading-tight">{stake.title}</h3>
+                    </div>
+                    
+                    <p className="text-gray-800 text-sm leading-relaxed mb-4">{stake.description}</p>
+                    <div className="space-y-2 text-xs text-gray-700">
+                      {stake.details.map((detail, i) => (
+                        <div key={i} className="flex items-start">
+                          <span className="text-[#6D0037] mr-2 font-bold leading-tight">›</span>
+                          <span className="flex-1">{detail}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </Animate>
+              );
+
+              return (
+                <div key={index} className="sm:relative sm:flex sm:items-center">
+                  <div className={`sm:w-1/2 ${onRightSide ? 'sm:order-3 sm:pl-8' : 'sm:order-1 sm:pr-8'}`}>
+                    {CardContent}
+                  </div>
+                  
+                  {/* Spacer */}
+                  <div className="sm:w-1/2 sm:order-2"></div>
+                  
+                  {/* Circle on line - Desktop */}
+                  <div className="hidden sm:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                    <div className="w-16 h-16 bg-gradient-to-br from-[#27013D] to-[#6D0037] rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg border-4 border-gray-50">
+                      0{index + 1}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </Animate>
-          ))}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
