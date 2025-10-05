@@ -93,8 +93,8 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
                         const size = Math.random() * 1.5 + 0.5;
                         const x = Math.random() * (sectionWidth - size * 2) + minX + size;
                         const y = Math.random() * (sectionHeight - size * 2) + minY + size;
-                        const speedX = (Math.random() * 0.6) - 0.3;
-                        const speedY = (Math.random() * 0.6) - 0.3;
+                        const speedX = (Math.random() * 1.2) - 0.6;
+                        const speedY = (Math.random() * 1.2) - 0.6;
                         sectionParticles.push(new Particle(x, y, size, speedX, speedY));
                     }
                     particleSections.push(sectionParticles);
