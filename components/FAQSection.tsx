@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     question: "Comment est né Bird ?",
-    answer: "De la conviction qu’il faut conjuguer performance et sens pour relever les défis économiques, sociaux et environnementaux."
+    answer: "Bird est né de la rencontre d’anciens consultants convaincus qu’il existe une autre façon d’accompagner les organisations. À mi-chemin entre l’expertise structurée du conseil et la flexibilité d’un consultant autonome, nous offrons un accompagnement sur mesure et accessible. Notre démarche ne remet pas en cause la valeur des cabinets traditionnels, mais vise à combler un vide : permettre à des organisations qui n’en ont pas toujours les moyens de bénéficier, elles aussi, d’un soutien stratégique et financier de haut niveau."
   },
   {
     question: "Quels types d’organisations accompagnez-vous ?",
