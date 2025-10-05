@@ -5,17 +5,13 @@ const StairsAnimation: React.FC = () => {
     const baseDelay = 100; // Adjusted for more steps
 
     const styles = `
-        .stair-step, .stair-outline {
+        .stair-step {
             opacity: 0;
             transform-origin: bottom left;
         }
 
         .reveal.is-visible .stair-step {
             animation: fadeInScaleUp 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        }
-        
-        .reveal.is-visible .stair-outline {
-            animation: fadeIn 2.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
 
         @keyframes fadeInScaleUp {
@@ -26,15 +22,6 @@ const StairsAnimation: React.FC = () => {
             to {
                 opacity: 1;
                 transform: scale(1) translateY(0);
-            }
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
             }
         }
     `;
@@ -90,29 +77,6 @@ const StairsAnimation: React.FC = () => {
             <style>{styles}</style>
             <svg viewBox={`0 0 ${viewBoxWidth} ${viewBoxHeight}`} className="w-full h-full" preserveAspectRatio="xMidYMid meet">
                 <g>
-                    {/* Background/filled steps for refinement */}
-                    {Array.from({ length: steps }).map((_, i) => {
-                        const stepHeight = ((i + 1) / steps) * viewBoxHeight;
-                        const color = getStepColor(i);
-                        return (
-                            <rect
-                                key={`stair-outline-${i}`}
-                                className="stair-outline"
-                                x={i * stepWidth}
-                                y={viewBoxHeight - stepHeight}
-                                width={stepWidth}
-                                height={stepHeight}
-                                fill={color}
-                                fillOpacity="0.2"
-                                rx="1"
-                                ry="1"
-                                style={{ animationDelay: `${i * baseDelay}ms` }}
-                            />
-                        );
-                    })}
-                </g>
-                
-                <g>
                     {/* Main solid steps */}
                     {Array.from({ length: steps }).map((_, i) => {
                         const stepHeight = ((i + 1) / steps) * viewBoxHeight;
@@ -123,12 +87,10 @@ const StairsAnimation: React.FC = () => {
                                 className="stair-step"
                                 x={i * stepWidth}
                                 y={viewBoxHeight - stepHeight}
-                                width={stepWidth}
+                                width={stepWidth + 0.2}
                                 height={stepHeight}
                                 fill={color}
-                                rx="2"
-                                ry="2"
-                                style={{ animationDelay: `${i * baseDelay + 100}ms` }}
+                                style={{ animationDelay: `${i * baseDelay}ms` }}
                             />
                         );
                     })}
