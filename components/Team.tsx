@@ -34,10 +34,12 @@ const Team: React.FC = () => {
                 <div className="bg-white rounded-xl shadow-2xl shadow-violet-900/20 overflow-hidden">
                   <div className="grid grid-cols-1 lg:grid-cols-4 items-stretch min-h-[240px]">
                     <div
-                      className="lg:col-span-1 w-full h-64 lg:h-auto bg-cover"
+                      className="lg:col-span-1 w-full h-64 lg:h-auto"
                       style={{
                         backgroundImage: `url(${member.imageUrl})`,
                         backgroundPosition: 'center 20%',
+                        backgroundSize: '110% auto',
+                        backgroundRepeat: 'no-repeat',
                       }}
                     ></div>
                     <div className="lg:col-span-3 px-5 py-4 sm:p-6 lg:p-8 flex items-center">
