@@ -213,8 +213,8 @@ const TaskShowcase: React.FC = () => {
                         </p>
                     </Animate>
                 </div>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div>
+                <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+                    <div className="lg:col-span-2">
                         <div className="grid grid-cols-1 gap-4 stagger">
                             {tasks.map((task, index) => (
                                 <Animate variant="pop" key={index}>
@@ -248,7 +248,7 @@ const TaskShowcase: React.FC = () => {
                             ))}
                         </div>
                     </div>
-                    <div className="min-h-[350px] sm:min-h-[400px]">
+                    <div className="min-h-[350px] sm:min-h-[400px] lg:col-span-3">
                         <div className="w-full h-full showcase-active" key={activeTask}>
                            {tasks[activeTask].visual}
                         </div>

@@ -160,150 +160,244 @@ export const FoodPilotLogo = ({ className }: { className?: string }) => <img src
 export const OctoGamingLogo = ({ className }: { className?: string }) => <img src="https://images2.imgbox.com/7b/76/O3kSavYf_o.png" alt="Octo Gaming Logo" className={className} />;
 export const SOCABEGLogo = ({ className }: { className?: string }) => <img src="https://images2.imgbox.com/94/30/H1BnocDS_o.png" alt="SOCABEG Logo" className={className} />;
 
-export const FinancialReportMockup: React.FC<{ theme?: string, disableHover?: boolean }> = ({ disableHover = false }) => (
-    <div className={`animated-mockup w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col ${!disableHover ? 'transform hover:scale-105 transition-transform duration-300' : ''}`}>
-        <div className="flex items-center justify-between mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
-            <h3 className="font-bold text-gray-900 text-sm">Modèle Financier</h3>
-            <div className="px-3 py-1 text-[10px] font-semibold bg-[#27013D] text-white rounded-full">Prévisions 2025-2027</div>
-        </div>
-        <div className="flex-grow space-y-3 text-xs">
-            {/* P&L Section */}
-            <div>
-                <div className="grid grid-cols-5 gap-2 text-gray-600 font-semibold px-1 mb-1 anim-child" style={{'--i': 1} as React.CSSProperties}>
-                    <span className="col-span-2">P&L</span>
-                    <span className="text-right">2025</span>
-                    <span className="text-right">2026</span>
-                    <span className="text-right">2027</span>
-                </div>
-                <div className="bg-gray-50 rounded-lg p-2 border border-gray-100 space-y-1">
-                    <div className="grid grid-cols-5 gap-2 text-gray-800 font-medium bg-violet-50 rounded-md p-1 anim-child" style={{'--i': 2} as React.CSSProperties}>
-                        <span className="font-semibold col-span-2">Chiffre d'affaires</span>
-                        <span className="text-right">5,2m€</span>
-                        <span className="text-right text-green-600">7,8m€</span>
-                        <span className="text-right text-green-600">11,5m€</span>
-                    </div>
-                    <div className="grid grid-cols-5 gap-2 text-gray-800 anim-child" style={{'--i': 3} as React.CSSProperties}>
-                        <span className="font-medium col-span-2">Marge brute</span>
-                        <span className="text-right">3,1m€</span>
-                        <span className="text-right">4,8m€</span>
-                        <span className="text-right">7,5m€</span>
-                    </div>
-                    <div className="grid grid-cols-5 gap-2 text-gray-700 anim-child" style={{'--i': 4} as React.CSSProperties}>
-                        <span className="pl-2 col-span-2">Taux de marge</span>
-                        <span className="text-right">60%</span>
-                        <span className="text-right">62%</span>
-                        <span className="text-right">65%</span>
-                    </div>
-                     <div className="grid grid-cols-5 gap-2 text-gray-800 anim-child" style={{'--i': 5} as React.CSSProperties}>
-                        <span className="font-medium col-span-2">Masse salariale</span>
-                        <span className="text-right">(1,0)m€</span>
-                        <span className="text-right">(1,5)m€</span>
-                        <span className="text-right">(2,1)m€</span>
-                    </div>
-                    <div className="grid grid-cols-5 gap-2 text-gray-800 anim-child" style={{'--i': 6} as React.CSSProperties}>
-                        <span className="font-medium col-span-2">Loyers</span>
-                        <span className="text-right">(0,1)m€</span>
-                        <span className="text-right">(0,1)m€</span>
-                        <span className="text-right">(0,2)m€</span>
-                    </div>
-                    <div className="grid grid-cols-5 gap-2 text-gray-800 anim-child" style={{'--i': 7} as React.CSSProperties}>
-                        <span className="font-medium col-span-2">Frais généraux</span>
-                        <span className="text-right">(0,4)m€</span>
-                        <span className="text-right">(0,6)m€</span>
-                        <span className="text-right">(0,8)m€</span>
-                    </div>
-                    <div className="grid grid-cols-5 gap-2 text-gray-800 font-medium bg-violet-50 rounded-md p-1 anim-child" style={{'--i': 8} as React.CSSProperties}>
-                        <span className="font-semibold col-span-2">EBITDA</span>
-                        <span className="text-right">1,6m€</span>
-                        <span className="text-right text-green-600">2,6m€</span>
-                        <span className="text-right text-green-600">4,4m€</span>
-                    </div>
-                    <div className="grid grid-cols-5 gap-2 text-gray-700 anim-child" style={{'--i': 9} as React.CSSProperties}>
-                        <span className="pl-2 col-span-2">Taux d'EBITDA</span>
-                        <span className="text-right">30%</span>
-                        <span className="text-right">34%</span>
-                        <span className="text-right">39%</span>
-                    </div>
-                </div>
-            </div>
+export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: boolean }> = ({
+  disableHover = false,
+}) => {
+  // Shared utilities
+  const cols = "grid grid-cols-[minmax(160px,200px)_repeat(5,minmax(0,1fr))]";
+  const num = "text-right tabular-nums"; // if you don't have the tabular-nums plugin, swap to 'font-mono text-right'
+  const cell = "px-2 py-1.5";
+  const vcol = "border-l border-slate-100 pl-3"; // visual column dividers
 
-            {/* KPIs Section */}
-            <div>
-                <div className="bg-gray-50 rounded-lg p-2 border border-gray-100 space-y-1">
-                    <div className="grid grid-cols-5 gap-2 text-gray-600 font-semibold p-1 anim-child" style={{'--i': 10} as React.CSSProperties}>
-                       <span className="col-span-5">KPIs</span>
-                    </div>
-                    <div className="grid grid-cols-5 gap-2 text-gray-800 anim-child" style={{'--i': 11} as React.CSSProperties}>
-                        <span className="font-medium col-span-2">ETP</span>
-                        <span className="text-right">21</span>
-                        <span className="text-right">29</span>
-                        <span className="text-right">38</span>
-                    </div>
-                    <div className="grid grid-cols-5 gap-2 text-gray-800 anim-child" style={{'--i': 12} as React.CSSProperties}>
-                        <span className="font-medium col-span-2">Salaire moyen / ETP</span>
-                        <span className="text-right">50k€</span>
-                        <span className="text-right">52k€</span>
-                        <span className="text-right">55k€</span>
-                    </div>
-                    <div className="grid grid-cols-5 gap-2 text-gray-800 anim-child" style={{'--i': 13} as React.CSSProperties}>
-                        <span className="font-medium col-span-2">CA moyen / ETP</span>
-                        <span className="text-right">248k€</span>
-                        <span className="text-right">269k€</span>
-                        <span className="text-right">303k€</span>
-                    </div>
-                     <div className="grid grid-cols-5 gap-2 text-gray-800 anim-child" style={{'--i': 14} as React.CSSProperties}>
-                        <span className="font-medium col-span-2">Points de vente</span>
-                        <span className="text-right">5</span>
-                        <span className="text-right">7</span>
-                        <span className="text-right">10</span>
-                    </div>
-                     <div className="grid grid-cols-5 gap-2 text-gray-800 anim-child" style={{'--i': 15} as React.CSSProperties}>
-                        <span className="font-medium col-span-2">CA / Points de vente</span>
-                        <span className="text-right">1,0m€</span>
-                        <span className="text-right">1,1m€</span>
-                        <span className="text-right">1,2m€</span>
-                    </div>
-                </div>
-            </div>
-            
-            {/* Cash Flow Section */}
-            <div>
-                <div className="grid grid-cols-5 gap-2 text-gray-600 font-semibold px-1 mb-1 anim-child" style={{'--i': 16} as React.CSSProperties}>
-                    <span className="col-span-2">Cash Flow</span>
-                    <span className="text-right">2025</span>
-                    <span className="text-right">2026</span>
-                    <span className="text-right">2027</span>
-                </div>
-                <div className="bg-gray-50 rounded-lg p-2 border border-gray-100 space-y-1">
-                     <div className="grid grid-cols-5 gap-2 text-gray-800 anim-child" style={{'--i': 17} as React.CSSProperties}>
-                        <span className="font-medium col-span-2">BFR</span>
-                        <span className="text-right">(0,3)m€</span>
-                        <span className="text-right">(0,3)m€</span>
-                        <span className="text-right">(0,4)m€</span>
-                    </div>
-                    <div className="grid grid-cols-5 gap-2 text-gray-800 anim-child" style={{'--i': 18} as React.CSSProperties}>
-                        <span className="font-medium col-span-2">CAPEX</span>
-                        <span className="text-right">(0,4)m€</span>
-                        <span className="text-right">(0,6)m€</span>
-                        <span className="text-right">(0,8)m€</span>
-                    </div>
-                    <div className="grid grid-cols-5 gap-2 text-gray-800 anim-child" style={{'--i': 19} as React.CSSProperties}>
-                        <span className="font-medium col-span-2">Financements</span>
-                        <span className="text-right">0,5m€</span>
-                        <span className="text-right text-green-600">1,0m€</span>
-                        <span className="text-right text-green-600">1,5m€</span>
-                    </div>
-                    <div className="grid grid-cols-5 gap-2 text-gray-800 font-medium bg-violet-50 rounded-md p-1 anim-child" style={{'--i': 20} as React.CSSProperties}>
-                        <span className="font-semibold col-span-2">Cash End of Period</span>
-                        <span className="text-right">0,8m€</span>
-                        <span className="text-right text-green-600">1,5m€</span>
-                        <span className="text-right text-green-600">2,9m€</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+  const HighlightRow: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+    <div className={`${cols} rounded-md bg-violet-50/60 text-slate-900 font-semibold`}>
+      {children}
     </div>
-);
+  );
+
+  const Row: React.FC<{ muted?: boolean; children: React.ReactNode }> = ({ muted, children }) => (
+    <div className={`${cols} ${muted ? "text-slate-600" : "text-slate-800"}`}>{children}</div>
+  );
+
+  return (
+    <div
+      className={[
+        "animated-mockup w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col",
+        !disableHover ? "transform hover:scale-[1.02] transition-transform duration-300" : "",
+      ].join(" ")}
+    >
+      {/* Header */}
+      <div className="flex items-center justify-between mb-3 sm:mb-4">
+        <h3 className="font-bold text-slate-900 text-sm">Modèle Financier</h3>
+        <div className="px-3 py-1 text-[10px] font-semibold bg-[#27013D] text-white rounded-full">
+          Prévisions 2025–2029
+        </div>
+      </div>
+
+      <div className="flex-grow space-y-3 text-xs">
+        {/* -------- P&L -------- */}
+        <div>
+          {/* Years header */}
+          <div className={`${cols} text-slate-600 font-semibold px-1 mb-1`}>
+            <span className="col-span-1">P&amp;L</span>
+            <span className={`${num}`}>2025</span>
+            <span className={`${num}`}>2026</span>
+            <span className={`${num}`}>2027</span>
+            <span className={`${num}`}>2028</span>
+            <span className={`${num}`}>2029</span>
+          </div>
+
+          <div className="bg-slate-50 rounded-lg p-2 border border-slate-100 space-y-1">
+            {/* Revenue */}
+            <HighlightRow>
+              <span className={`${cell}`}>Chiffre d'affaires</span>
+              <span className={`${cell} ${num} ${vcol}`}>5,2m€</span>
+              <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>7,8m€</span>
+              <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>11,5m€</span>
+              <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>15,0m€</span>
+              <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>19,5m€</span>
+            </HighlightRow>
+
+            <Row>
+              <span className={`${cell}`}>Marge brute</span>
+              <span className={`${cell} ${num} ${vcol}`}>3,1m€</span>
+              <span className={`${cell} ${num} ${vcol}`}>4,8m€</span>
+              <span className={`${cell} ${num} ${vcol}`}>7,5m€</span>
+              <span className={`${cell} ${num} ${vcol}`}>9,9m€</span>
+              <span className={`${cell} ${num} ${vcol}`}>13,1m€</span>
+            </Row>
+
+            <Row muted>
+              <span className={`${cell} pl-4`}>Taux de marge</span>
+              <span className={`${cell} ${num} ${vcol}`}>60%</span>
+              <span className={`${cell} ${num} ${vcol}`}>62%</span>
+              <span className={`${cell} ${num} ${vcol}`}>65%</span>
+              <span className={`${cell} ${num} ${vcol}`}>66%</span>
+              <span className={`${cell} ${num} ${vcol}`}>67%</span>
+            </Row>
+
+            <Row>
+              <span className={`${cell}`}>Masse salariale</span>
+              <span className={`${cell} ${num} ${vcol}`}>(1,0)m€</span>
+              <span className={`${cell} ${num} ${vcol}`}>(1,5)m€</span>
+              <span className={`${cell} ${num} ${vcol}`}>(2,1)m€</span>
+              <span className={`${cell} ${num} ${vcol}`}>(2,8)m€</span>
+              <span className={`${cell} ${num} ${vcol}`}>(3,6)m€</span>
+            </Row>
+
+            <Row>
+              <span className={`${cell}`}>Loyers</span>
+              <span className={`${cell} ${num} ${vcol}`}>(0,1)m€</span>
+              <span className={`${cell} ${num} ${vcol}`}>(0,1)m€</span>
+              <span className={`${cell} ${num} ${vcol}`}>(0,2)m€</span>
+              <span className={`${cell} ${num} ${vcol}`}>(0,2)m€</span>
+              <span className={`${cell} ${num} ${vcol}`}>(0,3)m€</span>
+            </Row>
+
+            <Row>
+              <span className={`${cell}`}>Frais généraux</span>
+              <span className={`${cell} ${num} ${vcol}`}>(0,4)m€</span>
+              <span className={`${cell} ${num} ${vcol}`}>(0,6)m€</span>
+              <span className={`${cell} ${num} ${vcol}`}>(0,8)m€</span>
+              <span className={`${cell} ${num} ${vcol}`}>(1,1)m€</span>
+              <span className={`${cell} ${num} ${vcol}`}>(1,4)m€</span>
+            </Row>
+
+            {/* EBITDA */}
+            <HighlightRow>
+              <span className={`${cell}`}>EBITDA</span>
+              <span className={`${cell} ${num} ${vcol}`}>1,6m€</span>
+              <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>2,6m€</span>
+              <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>4,4m€</span>
+              <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>5,8m€</span>
+              <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>7,8m€</span>
+            </HighlightRow>
+
+            <Row muted>
+              <span className={`${cell} pl-4`}>Taux d'EBITDA</span>
+              <span className={`${cell} ${num} ${vcol}`}>30%</span>
+              <span className={`${cell} ${num} ${vcol}`}>34%</span>
+              <span className={`${cell} ${num} ${vcol}`}>39%</span>
+              <span className={`${cell} ${num} ${vcol}`}>39%</span>
+              <span className={`${cell} ${num} ${vcol}`}>40%</span>
+            </Row>
+          </div>
+        </div>
+
+        {/* -------- KPIs -------- */}
+        <div>
+          <div className="bg-slate-50 rounded-lg p-2 border border-slate-100 space-y-1">
+            <div className="px-1 py-0.5 font-semibold text-slate-600">KPIs</div>
+
+            <Row>
+              <span className={`${cell}`}>ETP</span>
+              <span className={`${cell} ${num} ${vcol}`}>21</span>
+              <span className={`${cell} ${num} ${vcol}`}>29</span>
+              <span className={`${cell} ${num} ${vcol}`}>38</span>
+              <span className={`${cell} ${num} ${vcol}`}>48</span>
+              <span className={`${cell} ${num} ${vcol}`}>60</span>
+            </Row>
+
+            <Row>
+              <span className={`${cell}`}>Salaire moyen / ETP</span>
+              <span className={`${cell} ${num} ${vcol}`}>50k€</span>
+              <span className={`${cell} ${num} ${vcol}`}>52k€</span>
+              <span className={`${cell} ${num} ${vcol}`}>55k€</span>
+              <span className={`${cell} ${num} ${vcol}`}>58k€</span>
+              <span className={`${cell} ${num} ${vcol}`}>60k€</span>
+            </Row>
+
+            <Row>
+              <span className={`${cell}`}>CA moyen / ETP</span>
+              <span className={`${cell} ${num} ${vcol}`}>248k€</span>
+              <span className={`${cell} ${num} ${vcol}`}>269k€</span>
+              <span className={`${cell} ${num} ${vcol}`}>303k€</span>
+              <span className={`${cell} ${num} ${vcol}`}>313k€</span>
+              <span className={`${cell} ${num} ${vcol}`}>325k€</span>
+            </Row>
+
+            <Row>
+              <span className={`${cell}`}>Points de vente</span>
+              <span className={`${cell} ${num} ${vcol}`}>5</span>
+              <span className={`${cell} ${num} ${vcol}`}>7</span>
+              <span className={`${cell} ${num} ${vcol}`}>10</span>
+              <span className={`${cell} ${num} ${vcol}`}>13</span>
+              <span className={`${cell} ${num} ${vcol}`}>16</span>
+            </Row>
+
+            <Row>
+              <span className={`${cell}`}>CA / Points de vente</span>
+              <span className={`${cell} ${num} ${vcol}`}>1,0m€</span>
+              <span className={`${cell} ${num} ${vcol}`}>1,1m€</span>
+              <span className={`${cell} ${num} ${vcol}`}>1,2m€</span>
+              <span className={`${cell} ${num} ${vcol}`}>1,2m€</span>
+              <span className={`${cell} ${num} ${vcol}`}>1,2m€</span>
+            </Row>
+          </div>
+        </div>
+
+        {/* -------- Cash Flow -------- */}
+        <div>
+          <div className={`${cols} text-slate-600 font-semibold px-1 mb-1`}>
+            <span className="col-span-1">Cash Flow</span>
+            <span className={`${num}`}>2025</span>
+            <span className={`${num}`}>2026</span>
+            <span className={`${num}`}>2027</span>
+            <span className={`${num}`}>2028</span>
+            <span className={`${num}`}>2029</span>
+          </div>
+
+          <div className="bg-slate-50 rounded-lg p-2 border border-slate-100 space-y-1">
+            <HighlightRow>
+              <span className={`${cell}`}>Opening cash balance</span>
+              <span className={`${cell} ${num} ${vcol}`}>0,2m€</span>
+              <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>0,8m€</span>
+              <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>1,5m€</span>
+              <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>2,9m€</span>
+              <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>5,0m€</span>
+            </HighlightRow>
+
+            <Row>
+              <span className={`${cell}`}>BFR</span>
+              <span className={`${cell} ${num} ${vcol}`}>(0,3)m€</span>
+              <span className={`${cell} ${num} ${vcol}`}>(0,3)m€</span>
+              <span className={`${cell} ${num} ${vcol}`}>(0,4)m€</span>
+              <span className={`${cell} ${num} ${vcol}`}>(0,5)m€</span>
+              <span className={`${cell} ${num} ${vcol}`}>(0,6)m€</span>
+            </Row>
+
+            <Row>
+              <span className={`${cell}`}>CAPEX</span>
+              <span className={`${cell} ${num} ${vcol}`}>(0,4)m€</span>
+              <span className={`${cell} ${num} ${vcol}`}>(0,6)m€</span>
+              <span className={`${cell} ${num} ${vcol}`}>(0,8)m€</span>
+              <span className={`${cell} ${num} ${vcol}`}>(1,0)m€</span>
+              <span className={`${cell} ${num} ${vcol}`}>(1,2)m€</span>
+            </Row>
+
+            <Row>
+              <span className={`${cell}`}>Financements</span>
+              <span className={`${cell} ${num} ${vcol}`}>0,5m€</span>
+              <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>1,0m€</span>
+              <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>1,5m€</span>
+              <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>2,0m€</span>
+              <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>2,5m€</span>
+            </Row>
+
+            <HighlightRow>
+              <span className={`${cell}`}>Cash End of Period</span>
+              <span className={`${cell} ${num} ${vcol}`}>0,8m€</span>
+              <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>1,5m€</span>
+              <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>2,9m€</span>
+              <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>5,0m€</span>
+              <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>8,2m€</span>
+            </HighlightRow>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 export const KpiDashboardMockup: React.FC<{ theme?: string, noAspectRatio?: boolean, disableHover?: boolean }> = ({ noAspectRatio = false, disableHover = false }) => (
   <div className={`animated-mockup w-full h-full bg-white rounded-2xl ${noAspectRatio ? 'p-4 sm:p-6' : 'p-6'} shadow-2xl border border-gray-100 flex flex-col ${!disableHover ? 'transform hover:scale-105 transition-transform duration-300' : ''} ${!noAspectRatio ? 'aspect-[4/3]' : ''}`}>
     <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
