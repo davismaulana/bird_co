@@ -3,6 +3,9 @@ import Animate from './Animate';
 import { LinkedInIcon, teamMembers } from '../constants';
 
 const Team: React.FC = () => {
+  // Reverse to match the original display order (Benjamin then Seydina)
+  const displayedTeamMembers = [...teamMembers].reverse();
+
   return (
     <section id="notre-equipe" className="bg-gradient-to-br from-[#27013D] to-gray-900 text-white py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,89 +24,58 @@ const Team: React.FC = () => {
           </Animate>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 gap-12 max-w-6xl mx-auto">
           
-          {/* Benjamin Le Gal */}
-          <div className="md:col-span-1">
-            <Animate variant="pop" delay={300}>
-              <div className="bg-gray-300 rounded-lg p-1.5 shadow-2xl h-full">
-                <div className="bg-white rounded-md h-full flex flex-col overflow-hidden">
-                  <img
-                    src={teamMembers[1].imageUrl}
-                    alt={`Photo de ${teamMembers[1].name}`}
-                    className="w-full h-96 object-cover"
-                    style={{ objectPosition: 'center 20%' }}
-                  />
-                  <div className="p-6 flex flex-col flex-grow">
-                    <div className="flex-grow">
-                      <h3 className="text-xl font-bold text-[#27013D] mb-4">{teamMembers[1].name}</h3>
-                      <div className="space-y-3 text-gray-800 text-xs">
-                        {teamMembers[1].description.map((paragraph, pIndex) => (
-                          <p key={pIndex}>{paragraph}</p>
-                        ))}
+          {displayedTeamMembers.map((member, index) => (
+            <Animate key={member.name} variant="pop" delay={300 + index * 100}>
+              <div className="bg-white rounded-xl shadow-2xl shadow-violet-900/20 overflow-hidden">
+                <div className="grid grid-cols-1 sm:grid-cols-3">
+                  {/* Image Column */}
+                  <div className="sm:col-span-1">
+                    <img 
+                      className="w-full h-32 sm:h-80 object-cover" 
+                      loading="lazy" 
+                      src={member.imageUrl} 
+                      alt={`Photo de ${member.name}`}
+                      style={{ objectPosition: 'center 20%' }}
+                    />
+                  </div>
+                
+                  {/* Text Column */}
+                  <div className="sm:col-span-2 p-6 sm:p-8 flex items-center">
+                    <div className="flex-1 flex flex-col gap-3 text-center sm:text-left">
+                      <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start">
+                        <div className="flex flex-col mb-4 sm:mb-0">
+                          <span className="text-2xl font-bold text-[#27013D]">{member.name}</span>
+                          <div className="text-lg text-gray-800">{member.role}</div>
+                        </div>
+                        <div className="flex gap-5">
+                          <a 
+                            href={member.linkedinUrl} 
+                            rel="noopener noreferrer" 
+                            target="_blank" 
+                            aria-label={`LinkedIn de ${member.name}`}
+                            className="text-[#27013D] hover:text-[#6D0037] transition-colors"
+                          >
+                            <LinkedInIcon className="h-8 w-8" />
+                          </a>
+                        </div>
                       </div>
-                    </div>
-                    <div className="mt-6 pt-4 border-t border-gray-200 text-xs flex justify-between items-center">
-                      <div>
-                        <p className="font-semibold text-[#27013D]">{teamMembers[1].alumni}</p>
-                        <p className="text-gray-600">{teamMembers[1].diploma}</p>
+                      <div className="text-gray-800 text-xs space-y-2">
+                          {member.description.map((paragraph, pIndex) => (
+                            <p key={pIndex}>{paragraph}</p>
+                          ))}
                       </div>
-                      <a 
-                        href={teamMembers[1].linkedinUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`LinkedIn de ${teamMembers[1].name}`} 
-                        className="text-[#27013D] hover:text-[#6D0037] transition-colors"
-                      >
-                        <LinkedInIcon className="w-6 h-6" />
-                      </a>
+                      <div className="mt-4 pt-4 border-t border-gray-200 text-xs">
+                          <p className="font-semibold text-[#27013D]">{member.alumni}</p>
+                          <p className="text-gray-600">{member.diploma}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </Animate>
-          </div>
-
-          {/* Seydina Samb */}
-          <div className="md:col-span-1">
-            <Animate variant="pop" delay={400}>
-              <div className="bg-gray-300 rounded-lg p-1.5 shadow-2xl h-full">
-                <div className="bg-white rounded-md h-full flex flex-col overflow-hidden">
-                  <img
-                    src={teamMembers[0].imageUrl}
-                    alt={`Photo de ${teamMembers[0].name}`}
-                    className="w-full h-96 object-cover"
-                    style={{ objectPosition: 'center 20%' }}
-                  />
-                  <div className="p-6 flex flex-col flex-grow">
-                    <div className="flex-grow">
-                      <h3 className="text-xl font-bold text-[#27013D] mb-4">{teamMembers[0].name}</h3>
-                      <div className="space-y-3 text-gray-800 text-xs">
-                        {teamMembers[0].description.map((paragraph, pIndex) => (
-                          <p key={pIndex}>{paragraph}</p>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="mt-6 pt-4 border-t border-gray-200 text-xs flex justify-between items-center">
-                      <div>
-                        <p className="font-semibold text-[#27013D]">{teamMembers[0].alumni}</p>
-                        <p className="text-gray-600">{teamMembers[0].diploma}</p>
-                      </div>
-                      <a 
-                        href={teamMembers[0].linkedinUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`LinkedIn de ${teamMembers[0].name}`} 
-                        className="text-[#27013D] hover:text-[#6D0037] transition-colors"
-                      >
-                        <LinkedInIcon className="w-6 h-6" />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Animate>
-          </div>
+          ))}
           
         </div>
 
