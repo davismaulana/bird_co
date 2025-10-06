@@ -21,26 +21,17 @@ const Team: React.FC = () => {
           </Animate>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
           
-          {/* Column 1: Intro Text */}
-          <div className="lg:col-span-1">
-            <Animate variant="pop" delay={200}>
-              <p className="text-sm text-gray-300 leading-relaxed">
-                Bird est né de la rencontre d’anciens consultants convaincus qu’il existe une autre façon d’accompagner les organisations. À mi-chemin entre l’expertise structurée du conseil et la flexibilité d’un consultant autonome, nous offrons un accompagnement sur mesure et accessible. Notre démarche ne remet pas en cause la valeur des cabinets traditionnels, mais vise à combler un vide : permettre à des organisations qui n’en ont pas toujours les moyens de bénéficier, elles aussi, d’un soutien stratégique et financier de haut niveau.
-              </p>
-            </Animate>
-          </div>
-
-          {/* Column 2: Benjamin Le Gal */}
-          <div className="lg:col-span-1">
+          {/* Benjamin Le Gal */}
+          <div className="md:col-span-1">
             <Animate variant="pop" delay={300}>
               <div className="bg-gray-300 rounded-lg p-1.5 shadow-2xl h-full">
                 <div className="bg-white rounded-md h-full flex flex-col overflow-hidden">
                   <img
                     src={teamMembers[1].imageUrl}
                     alt={`Photo de ${teamMembers[1].name}`}
-                    className="w-full h-64 object-cover"
+                    className="w-full h-96 object-cover"
                     style={{ objectPosition: 'center 20%' }}
                   />
                   <div className="p-6 flex flex-col flex-grow">
@@ -73,15 +64,15 @@ const Team: React.FC = () => {
             </Animate>
           </div>
 
-          {/* Column 3: Seydina Samb */}
-          <div className="lg:col-span-1">
+          {/* Seydina Samb */}
+          <div className="md:col-span-1">
             <Animate variant="pop" delay={400}>
               <div className="bg-gray-300 rounded-lg p-1.5 shadow-2xl h-full">
                 <div className="bg-white rounded-md h-full flex flex-col overflow-hidden">
                   <img
                     src={teamMembers[0].imageUrl}
                     alt={`Photo de ${teamMembers[0].name}`}
-                    className="w-full h-64 object-cover"
+                    className="w-full h-96 object-cover"
                     style={{ objectPosition: 'center 20%' }}
                   />
                   <div className="p-6 flex flex-col flex-grow">
@@ -115,6 +106,16 @@ const Team: React.FC = () => {
           </div>
           
         </div>
+
+        {/* Description moved below cards */}
+        <div className="text-center mt-16">
+          <Animate variant="pop" delay={200}>
+            <p className="text-sm text-gray-300 leading-relaxed max-w-5xl mx-auto">
+              Bird est né de la rencontre d’anciens consultants convaincus qu’il existe une autre façon d’accompagner les organisations. À mi-chemin entre l’expertise structurée du conseil et la flexibilité d’un consultant autonome, nous offrons un accompagnement sur mesure et accessible. Notre démarche ne remet pas en cause la valeur des cabinets traditionnels, mais vise à combler un vide : permettre à des organisations qui n’en ont pas toujours les moyens de bénéficier, elles aussi, d’un soutien stratégique et financier de haut niveau.
+            </p>
+          </Animate>
+        </div>
+
       </div>
     </section>
   );
