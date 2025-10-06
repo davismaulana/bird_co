@@ -194,9 +194,9 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
         </div>
       </div>
 
-      <div className="flex-grow space-y-3 text-xs">
+      <div className="flex-grow space-y-3 text-xs overflow-x-auto">
         {/* -------- P&L -------- */}
-        <div>
+        <div className="min-w-[640px]">
           {/* Years header */}
           <div className={`${cols} text-slate-600 font-semibold px-1 mb-1`}>
             <span className="col-span-1">P&amp;L</span>
@@ -285,7 +285,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
         </div>
 
         {/* -------- KPIs -------- */}
-        <div>
+        <div className="min-w-[640px]">
           <div className="bg-slate-50 rounded-lg p-2 border border-slate-100 space-y-1">
             <div className="px-1 py-0.5 font-semibold text-slate-600">KPIs</div>
 
@@ -337,7 +337,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
         </div>
 
         {/* -------- Cash Flow -------- */}
-        <div>
+        <div className="min-w-[640px]">
           <div className={`${cols} text-slate-600 font-semibold px-1 mb-1`}>
             <span className="col-span-1">Cash Flow</span>
             <span className={`${num}`}>2025</span>
