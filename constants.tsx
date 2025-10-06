@@ -719,7 +719,7 @@ export const serviceDetails: { [key: string]: any } = {
                 { 
                     title: 'Reporting opérationnel et financier', 
                     list: [
-                        'Chiffre d\'affaires', 'EBITDA', 'Ecart Budget vs Réel', 'ETP', 'Cash burn', 'BFR', 'Dettes'
+                        'Chiffre d\'affaires', 'EBITDA', 'Ecart Budget vs Réel', 'ETP', 'Cash Burn', 'BFR', 'Dettes'
                     ]
                 },
                 {
@@ -1078,19 +1078,19 @@ export const serviceDetails: { [key: string]: any } = {
                 {
                     title: "Information Memorandum / Assistance à la cession et levée de fonds",
                     list: [
-                        'executive summary', 'présentation de l’entreprise', 'analyse du marché et de la concurrence', 'description des produits et services', 'stratégie de développement', 'organisation et management', 'données financières historiques et prévisionnelles', 'besoins de financement', 'valorisation et structure de l’opération', 'risques et opportunités', 'calendrier du process', 'sélection et approche des repreneurs et investisseurs potentiels', 'Mise en place de data room', 'Organisation de due diligence', 'négociation des termes', 'closing de l’opération'
+                        'Executive summary', 'Présentation de l’entreprise', 'Analyse du marché et de la concurrence', 'Description des produits et services', 'Stratégie de développement', 'Organisation et management', 'Données financières historiques et prévisionnelles', 'Besoins de financement', 'Valorisation et structure de l’opération', 'Risques et opportunités', 'Calendrier du process', 'Sélection et approche des repreneurs et investisseurs potentiels', 'Mise en place de data room', 'Organisation de due diligence', 'Négociation des termes', 'Closing de l’opération'
                     ]
                 },
                 {
                     title: "Vendor Assistance",
                     list: [
-                        'Préparation de la documentation financière', 'revue de la qualité des résultats (QoE)', 'normalisation de l’EBITDA', 'analyse du cash-flow et du BFR', 'identification des ajustements de dette nette (QoD)', 'préparation du business plan et des prévisions', 'mise en place de la data room', 'anticipation et réponse aux questions des investisseurs'
+                        'Préparation de la documentation financière', 'Revue de la qualité des résultats (QoE)', 'Normalisation de l’EBITDA', 'Analyse du cash-flow et du BFR', 'Identification des ajustements de dette nette (QoD)', 'Préparation du business plan et des prévisions', 'Mise en place de la data room', 'Anticipation et réponse aux questions des investisseurs'
                     ]
                 },
                 {
                     title: "Buy-side due diligence",
                     list: [
-                        'évaluation de la résilience du modèle économique', 'identification des zones de fragilité opérationnelle et financière', 'Revue critique de la qualité des résultats', 'validation indépendante de l’EBITDA retraité', 'stress-test du cash-flow et du BFR', 'analyse de la soutenabilité de la dette nette', 'test de cohérence des prévisions financières', 'revue critique des hypothèses de croissance et de marges', 'analyse contradictoire des ajustements proposés par la vendor assistance', 'mise en évidence des risques fiscaux, sociaux et réglementaires', 'appréciation des synergies réalistes', "recommandations d'ajustements du prix", 'structuration des garanties'
+                        'Évaluation de la résilience du modèle économique', 'Identification des zones de fragilité opérationnelle et financière', 'Revue critique de la qualité des résultats', 'Validation indépendante de l’EBITDA retraité', 'Stress-test du cash-flow et du BFR', 'Analyse de la soutenabilité de la dette nette', 'Test de cohérence des prévisions financières', 'Revue critique des hypothèses de croissance et de marges', 'Analyse contradictoire des ajustements proposés par la vendor assistance', 'Mise en évidence des risques fiscaux, sociaux et réglementaires', 'Appréciation des synergies réalistes', "Recommandations d'ajustements du prix", 'Structuration des garanties'
                     ]
                 }
             ]
