@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Animate from './Animate';
 import { LinkedInIcon, teamMembers } from '../constants';
@@ -26,59 +27,56 @@ const Team: React.FC = () => {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 gap-8 max-w-6xl mx-auto">
-          {displayedTeamMembers.map((member, index) => (
-            <Animate key={member.name} variant="pop" delay={300 + index * 100}>
-              <div className="bg-white rounded-xl shadow-2xl shadow-violet-900/20 overflow-hidden">
-                <div className="grid grid-cols-1 sm:grid-cols-[minmax(200px,230px)_1fr] items-stretch">
-                  {/* Image */}
-                  <div className="relative overflow-hidden rounded-t-xl sm:rounded-l-xl sm:rounded-tr-none">
-                    <img
-                      className="w-full h-[clamp(140px,25vw,200px)] sm:h-full sm:max-h-[220px] md:max-h-[240px] object-cover"
-                      loading="lazy"
-                      src={member.imageUrl}
-                      alt={`Photo de ${member.name}`}
-                      style={{ objectPosition: 'center 20%' }}
-                    />
-                  </div>
-
-                  {/* Text */}
-                  <div className="px-5 py-3 sm:px-6 sm:py-3 md:px-7 md:py-4 flex items-center">
-                    <div className="flex-1 flex flex-col gap-1.5 text-center sm:text-left">
-                      <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start gap-2">
-                        <div className="flex flex-col mb-2 sm:mb-0">
-                          <span className="text-lg md:text-xl font-bold text-[#27013D]">
-                            {member.name}
-                          </span>
-                          <div className="text-sm md:text-base text-gray-800">{member.role}</div>
+        <div className="grid grid-cols-1 gap-12 max-w-6xl mx-auto">
+          {displayedTeamMembers.map((member, index) => {
+            return (
+              <Animate key={member.name} variant="pop" delay={300 + index * 100}>
+                <div className="bg-white rounded-xl shadow-2xl shadow-violet-900/20 overflow-hidden">
+                  <div className="grid grid-cols-1 lg:grid-cols-4 items-stretch min-h-[240px]">
+                    <div
+                      className="lg:col-span-1 w-full h-64 lg:h-auto bg-cover"
+                      style={{
+                        backgroundImage: `url(${member.imageUrl})`,
+                        backgroundPosition: 'center 20%',
+                      }}
+                    ></div>
+                    <div className="lg:col-span-3 px-5 py-4 sm:p-6 lg:p-8 flex items-center">
+                      <div className="flex-1 flex flex-col gap-2 text-left">
+                        <div className="flex justify-between items-start gap-2">
+                          <div>
+                            <span className="text-lg lg:text-xl font-bold text-[#27013D]">
+                              {member.name}
+                            </span>
+                            <div className="text-sm lg:text-base text-gray-800">{member.role}</div>
+                          </div>
+                          <a
+                            href={member.linkedinUrl}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                            aria-label={`LinkedIn de ${member.name}`}
+                            className="text-[#27013D] hover:text-[#6D0037] transition-colors flex-shrink-0"
+                          >
+                            <LinkedInIcon className="h-6 w-6" />
+                          </a>
                         </div>
-                        <a
-                          href={member.linkedinUrl}
-                          rel="noopener noreferrer"
-                          target="_blank"
-                          aria-label={`LinkedIn de ${member.name}`}
-                          className="text-[#27013D] hover:text-[#6D0037] transition-colors"
-                        >
-                          <LinkedInIcon className="h-6 w-6" />
-                        </a>
-                      </div>
 
-                      <div className="text-gray-800 text-xs leading-relaxed space-y-1">
-                        {member.description.map((paragraph, pIndex) => (
-                          <p key={pIndex}>{paragraph}</p>
-                        ))}
-                      </div>
+                        <div className="text-gray-800 text-xs leading-relaxed space-y-2">
+                          {member.description.map((paragraph, pIndex) => (
+                            <p key={pIndex}>{paragraph}</p>
+                          ))}
+                        </div>
 
-                      <div className="mt-2 pt-2 border-t border-gray-200 text-[11px]">
-                        <p className="font-semibold text-[#27013D]">{member.alumni}</p>
-                        <p className="text-gray-600">{member.diploma}</p>
+                        <div className="mt-2 pt-3 border-t border-gray-200 text-xs">
+                          <p className="font-semibold text-[#27013D]">{member.alumni}</p>
+                          <p className="text-gray-600">{member.diploma}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </Animate>
-          ))}
+              </Animate>
+            )
+          })}
         </div>
 
         {/* Description below cards */}
