@@ -188,6 +188,14 @@
       }
     }
 
+    .animated-line-chart-path {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+    }
+    .reveal.is-visible .animated-line-chart-path {
+      animation: draw-line 1.5s cubic-bezier(0.25, 1, 0.5, 1) 300ms forwards;
+    }
+
     .nav-link-anchor {
       position: relative;
     }

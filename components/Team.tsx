@@ -1,6 +1,6 @@
 import React from 'react';
 import Animate from './Animate';
-import { LinkedInIcon, teamMembers, TrendingUpIcon } from '../constants';
+import { LinkedInIcon, teamMembers } from '../constants';
 
 const Team: React.FC = () => {
   const displayedTeamMembers = [...teamMembers].reverse();
@@ -59,8 +59,12 @@ const Team: React.FC = () => {
                   <p className="text-4xl lg:text-5xl font-bold text-violet-200">50M€+</p>
                   <p className="text-sm text-gray-300 mt-1">Fonds levés</p>
                 </div>
-                <div className="rounded-lg p-6 flex items-center justify-center">
-                  <TrendingUpIcon className="w-12 h-12 text-violet-200" />
+                <div className="rounded-lg p-6 flex items-center justify-start">
+                  <img
+                    src="https://images2.imgbox.com/c9/f1/doXt7nXv_o.png"
+                    alt="Hand holding a plant icon symbolizing growth"
+                    className="w-16 h-16 object-contain"
+                  />
                 </div>
               </div>
             </div>
