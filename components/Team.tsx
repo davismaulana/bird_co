@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Animate from './Animate';
 import { LinkedInIcon, teamMembers } from '../constants';
@@ -26,71 +25,78 @@ const Team: React.FC = () => {
           </Animate>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {displayedTeamMembers.map((member, index) => {
-            return (
-              <Animate key={member.name} variant="pop" delay={300 + index * 100}>
-                <div className="bg-white rounded-xl shadow-2xl shadow-violet-900/20 overflow-hidden h-full flex flex-col">
-                  <div
-                    className="w-full h-[480px] flex-shrink-0"
-                    style={{
-                      backgroundImage: `url(${member.imageUrl})`,
-                      backgroundPosition: 'center',
-                      backgroundSize: 'cover',
-                      backgroundRepeat: 'no-repeat',
-                    }}
-                  ></div>
-                  <div className="px-5 py-4 sm:p-6 lg:p-8 flex flex-col flex-grow">
-                    <div className="flex-1 flex flex-col gap-2 text-left">
-                      <div className="flex justify-between items-start gap-2">
-                        <div>
-                          <span className="text-lg lg:text-xl font-bold text-[#27013D]">
-                            {member.name}
-                          </span>
+        {/* New 2-column layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+          {/* Left Column: Text */}
+          <Animate variant="pop" className="lg:sticky lg:top-24">
+            <h3 className="text-2xl font-bold gradient-text-light mb-6">Notre histoire</h3>
+            <div className="text-sm text-gray-300 leading-relaxed space-y-4">
+              <p>
+                Bird est né de la rencontre d’anciens consultants convaincus qu’il existe une autre
+                façon d’accompagner les organisations. À mi-chemin entre l’expertise structurée du
+                conseil et la flexibilité d’un consultant autonome, nous offrons un accompagnement sur
+                mesure et accessible.
+              </p>
+              <p>
+                Notre démarche ne remet pas en cause la valeur des cabinets
+                traditionnels, mais vise à combler un vide : permettre à des organisations qui n’en
+                ont pas toujours les moyens de bénéficier, elles aussi, d’un soutien stratégique et
+                financier de haut niveau.
+              </p>
+            </div>
+          </Animate>
+
+          {/* Right Column: Team Members */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {displayedTeamMembers.map((member, index) => {
+              return (
+                <Animate key={member.name} variant="pop" delay={200 + index * 100}>
+                  <div className="bg-white rounded-xl shadow-2xl shadow-violet-900/20 overflow-hidden h-full flex flex-col">
+                    <div
+                      className="w-full h-80 flex-shrink-0"
+                      style={{
+                        backgroundImage: `url(${member.imageUrl})`,
+                        backgroundPosition: 'center',
+                        backgroundSize: 'cover',
+                        backgroundRepeat: 'no-repeat',
+                      }}
+                    ></div>
+                    <div className="p-6 flex flex-col flex-grow">
+                      <div className="flex-1 flex flex-col gap-2 text-left">
+                        <div className="flex justify-between items-start gap-2">
+                          <div>
+                            <span className="text-lg font-bold text-[#27013D]">
+                              {member.name}
+                            </span>
+                          </div>
+                          <a
+                            href={member.linkedinUrl}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                            aria-label={`LinkedIn de ${member.name}`}
+                            className="text-[#27013D] hover:text-[#6D0037] transition-colors flex-shrink-0"
+                          >
+                            <LinkedInIcon className="h-6 w-6" />
+                          </a>
                         </div>
-                        <a
-                          href={member.linkedinUrl}
-                          rel="noopener noreferrer"
-                          target="_blank"
-                          aria-label={`LinkedIn de ${member.name}`}
-                          className="text-[#27013D] hover:text-[#6D0037] transition-colors flex-shrink-0"
-                        >
-                          <LinkedInIcon className="h-6 w-6" />
-                        </a>
-                      </div>
 
-                      <div className="text-gray-800 text-xs leading-relaxed space-y-2">
-                        {member.description.map((paragraph, pIndex) => (
-                          <p key={pIndex}>{paragraph}</p>
-                        ))}
-                      </div>
+                        <div className="text-gray-800 text-xs leading-relaxed space-y-2">
+                          {member.description.map((paragraph, pIndex) => (
+                            <p key={pIndex}>{paragraph}</p>
+                          ))}
+                        </div>
 
-                      <div className="mt-auto pt-3 border-t border-gray-200 text-xs">
-                        <p className="font-semibold text-[#27013D]">{member.alumni}</p>
-                        <p className="text-gray-600">{member.diploma}</p>
+                        <div className="mt-auto pt-3 border-t border-gray-200 text-xs">
+                          <p className="font-semibold text-[#27013D]">{member.alumni}</p>
+                          <p className="text-gray-600">{member.diploma}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </Animate>
-            )
-          })}
-        </div>
-
-        {/* Description below cards */}
-        <div className="text-center mt-14">
-          <Animate variant="pop" delay={200}>
-            <p className="text-sm text-gray-300 leading-relaxed max-w-5xl mx-auto">
-              Bird est né de la rencontre d’anciens consultants convaincus qu’il existe une autre
-              façon d’accompagner les organisations. À mi-chemin entre l’expertise structurée du
-              conseil et la flexibilité d’un consultant autonome, nous offrons un accompagnement sur
-              mesure et accessible. Notre démarche ne remet pas en cause la valeur des cabinets
-              traditionnels, mais vise à combler un vide : permettre à des organisations qui n’en
-              ont pas toujours les moyens de bénéficier, elles aussi, d’un soutien stratégique et
-              financier de haut niveau.
-            </p>
-          </Animate>
+                </Animate>
+              )
+            })}
+          </div>
         </div>
       </div>
     </section>
