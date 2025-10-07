@@ -1,6 +1,6 @@
 import React from 'react';
 import Animate from './Animate';
-import { LinkedInIcon, teamMembers } from '../constants';
+import { LinkedInIcon, teamMembers, TrendingUpIcon } from '../constants';
 
 const Team: React.FC = () => {
   const displayedTeamMembers = [...teamMembers].reverse();
@@ -26,23 +26,43 @@ const Team: React.FC = () => {
         </div>
 
         {/* New 2-column layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
-          {/* Left Column: Text */}
-          <Animate variant="pop" className="lg:sticky lg:top-24">
-            <h3 className="text-2xl font-bold gradient-text-light mb-6">Notre histoire</h3>
-            <div className="text-sm text-gray-300 leading-relaxed space-y-4">
-              <p>
-                Bird est né de la rencontre d’anciens consultants convaincus qu’il existe une autre
-                façon d’accompagner les organisations. À mi-chemin entre l’expertise structurée du
-                conseil et la flexibilité d’un consultant autonome, nous offrons un accompagnement sur
-                mesure et accessible.
-              </p>
-              <p>
-                Notre démarche ne remet pas en cause la valeur des cabinets
-                traditionnels, mais vise à combler un vide : permettre à des organisations qui n’en
-                ont pas toujours les moyens de bénéficier, elles aussi, d’un soutien stratégique et
-                financier de haut niveau.
-              </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+          {/* Left Column: Text & Stats */}
+          <Animate variant="pop" className="lg:sticky lg:top-24 h-full flex flex-col">
+            <div className="space-y-12">
+              <div>
+                <h3 className="text-2xl font-bold gradient-text-light mb-4">Notre histoire</h3>
+                <p className="text-sm text-gray-300 leading-relaxed">
+                  Bird est né de la rencontre d’anciens consultants convaincus qu’il existe une autre façon d’accompagner les organisations. À mi-chemin entre l’expertise structurée du conseil et la flexibilité d’un consultant autonome, nous offrons un accompagnement sur mesure et accessible.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold gradient-text-light mb-4">Notre mission</h3>
+                <p className="text-sm text-gray-300 leading-relaxed">
+                  Notre démarche ne remet pas en cause la valeur des cabinets traditionnels, mais vise à combler un vide : permettre à des organisations qui n’en ont pas toujours les moyens de bénéficier, elles aussi, d’un soutien stratégique et financier de haut niveau.
+                </p>
+              </div>
+            </div>
+
+            {/* Stats Section */}
+            <div className="mt-12 lg:mt-12">
+              <div className="grid grid-cols-2 gap-6">
+                <div className="rounded-lg p-6 text-left">
+                  <p className="text-4xl lg:text-5xl font-bold text-violet-200">10+</p>
+                  <p className="text-sm text-gray-300 mt-1">Experts partenaires</p>
+                </div>
+                <div className="rounded-lg p-6 text-left">
+                  <p className="text-4xl lg:text-5xl font-bold text-violet-200">20+</p>
+                  <p className="text-sm text-gray-300 mt-1">Dirigeants accompagnés</p>
+                </div>
+                <div className="rounded-lg p-6 text-left">
+                  <p className="text-4xl lg:text-5xl font-bold text-violet-200">50M€+</p>
+                  <p className="text-sm text-gray-300 mt-1">Fonds levés</p>
+                </div>
+                <div className="rounded-lg p-6 flex items-center justify-center">
+                  <TrendingUpIcon className="w-12 h-12 text-violet-200" />
+                </div>
+              </div>
             </div>
           </Animate>
 
