@@ -126,7 +126,7 @@ const StakesSection: React.FC = () => {
         </div>
         <div className="max-w-6xl mx-auto">
           <Animate variant="pop">
-            <p className="text-left text-xs text-gray-500 mt-4">
+            <p className="text-left text-gray-500 mt-4" style={{ fontSize: '10px' }}>
               Source : Bpifrance Le Lab, INSEE, Banque de France, Eurostat, Observatoire des PME, MEDEF, Deloitte CFO Survey, EY Baromètre croissance et financement, PwC CEO Survey, Banque Européenne d’Investissement (BEI), OCDE.
             </p>
           </Animate>

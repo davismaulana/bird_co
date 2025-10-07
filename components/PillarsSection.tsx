@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Animate from './Animate';
 
@@ -54,7 +53,7 @@ const PillarsSection: React.FC = () => {
                   {pillar.icon}
                 </div>
                 <h3 className="text-lg font-bold text-[#27013D] mb-3">{pillar.title}</h3>
-                <p className="text-gray-800 leading-relaxed text-sm">{pillar.description}</p>
+                <p className="text-gray-800 leading-relaxed text-xs">{pillar.description}</p>
               </div>
             </Animate>
           ))}
