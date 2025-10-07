@@ -677,7 +677,7 @@ export const teamMembers = [
     ],
     alumni: 'Alumni EY, Exelmans & Payfit',
     diploma: 'Diplômé de l’IESEG School Of Management',
-    imageUrl: 'https://images2.imgbox.com/24/2a/BCFIKnMq_o.png',
+    imageUrl: 'https://images2.imgbox.com/97/03/tMJDdAih_o.jpg',
     linkedinUrl: 'https://www.linkedin.com/in/benjaminlegal/',
   },
 ];

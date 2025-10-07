@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Animate from './Animate';
 import { LinkedInIcon, teamMembers } from '../constants';
@@ -32,10 +33,10 @@ const Team: React.FC = () => {
               <Animate key={member.name} variant="pop" delay={300 + index * 100}>
                 <div className="bg-white rounded-xl shadow-2xl shadow-violet-900/20 overflow-hidden h-full flex flex-col">
                   <div
-                    className="w-full h-64 flex-shrink-0"
+                    className="w-full h-[480px] flex-shrink-0"
                     style={{
                       backgroundImage: `url(${member.imageUrl})`,
-                      backgroundPosition: 'center 20%',
+                      backgroundPosition: 'center',
                       backgroundSize: 'cover',
                       backgroundRepeat: 'no-repeat',
                     }}

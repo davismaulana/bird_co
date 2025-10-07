@@ -1,5 +1,4 @@
 
-
 import React from 'react';
 import Animate from './Animate';
 import { teamMembers, LinkedInIcon, GradientCheckIcon } from '../constants';
@@ -66,12 +65,12 @@ const TeamPage: React.FC = () => {
                     {/* Seydina Samb */}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                         <Animate variant="pop" className="relative">
-                            <div className="aspect-square">
+                            <div className="aspect-[3/4]">
                                 <img
                                     src={teamMembers[0].imageUrl}
                                     alt={`Photo de ${teamMembers[0].name}`}
                                     className="w-full h-full object-cover rounded-2xl shadow-2xl shadow-violet-200/50"
-                                    style={{ objectPosition: 'center 20%' }}
+                                    style={{ objectPosition: 'center' }}
                                 />
                             </div>
                         </Animate>
@@ -114,12 +113,12 @@ const TeamPage: React.FC = () => {
                     {/* Benjamin Le Gal */}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                         <Animate variant="pop" className="relative lg:order-last">
-                            <div className="aspect-square">
+                            <div className="aspect-[3/4]">
                                 <img
                                     src={teamMembers[1].imageUrl}
                                     alt={`Photo de ${teamMembers[1].name}`}
                                     className="w-full h-full object-cover rounded-2xl shadow-2xl shadow-violet-200/50"
-                                    style={{ objectPosition: 'center 20%' }}
+                                    style={{ objectPosition: 'center' }}
                                 />
                             </div>
                         </Animate>
