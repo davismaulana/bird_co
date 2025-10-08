@@ -36,7 +36,7 @@ const App: React.FC = () => {
 
     const revealEls = Array.from(document.querySelectorAll('.reveal'));
 
-    if (!('IntersectionObserver'in window) || revealEls.length === 0) {
+    if (!('IntersectionObserver' in window) || revealEls.length === 0) {
       revealEls.forEach(el => el.classList.add('is-visible'));
       return;
     }
@@ -74,7 +74,7 @@ const App: React.FC = () => {
       document.body.style.overflow = 'hidden';
     } else {
       setTimeout(() => {
-         document.body.style.overflow = 'unset';
+        document.body.style.overflow = 'unset';
       }, 500); // match transition duration
     }
   }, [isLoading]);
@@ -87,12 +87,12 @@ const App: React.FC = () => {
     if (hash) {
       const id = hash.substring(1);
       const element = document.getElementById(id);
-      
+
       if (element) {
         // Wait for the main content fade-in animation to complete before scrolling
         const timer = setTimeout(() => {
           element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 550); 
+        }, 550);
 
         return () => clearTimeout(timer);
       }
@@ -111,7 +111,7 @@ const App: React.FC = () => {
         </div>
       );
     }
-  
+
     /*
     if (pathname === '/ambition') {
       return (
@@ -135,7 +135,7 @@ const App: React.FC = () => {
         </div>
       );
     }
-  
+
     if (pathname === '/politique-de-confidentialite') {
       return (
         <div className="bg-white overflow-x-hidden">
@@ -177,32 +177,32 @@ const App: React.FC = () => {
           <Team />
           <section className="bg-white">
             <div className="max-w-none">
-              <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
-                  <Animate variant="pop" className="h-[400px] lg:h-full lg:order-last">
-                      <div className="h-[400px] lg:h-full">
-                        <StairsAnimation />
-                      </div>
-                  </Animate>
-                  <div className="lg:order-first">
-                      <div className="p-8 sm:p-12 md:p-20 container">
-                          <Animate variant="pop">
-                              <blockquote className="text-lg md:text-xl xl:text-2xl font-bold text-[#27013D] leading-snug">
-                                  "La meilleure façon de prédire l'avenir, c'est de le créer."
-                              </blockquote>
-                          </Animate>
-                          <Animate variant="pop" delay={150}>
-                              <p className="mt-4 text-sm text-gray-800">— Peter Drucker</p>
-                          </Animate>
-                          <Animate variant="pop" delay={300}>
-                              <p className="mt-8 text-gray-800 leading-relaxed text-xs">
-                                  Cette philosophie est au cœur de notre démarche. Nous ne nous contentons pas de réagir aux événements ; nous vous donnons les moyens de façonner activement l'avenir de votre entreprise, en transformant l'incertitude en opportunité et la vision en réalité.
-                              </p>
-                          </Animate>
-                      </div>
+              <div className="grid grid-cols-1 lg:grid-cols-2">
+                <Animate variant="pop" className="h-[400px] lg:h-full lg:order-last">
+                  <div className="h-[400px] lg:h-full">
+                    <StairsAnimation />
                   </div>
+                </Animate>
+                <div className="lg:order-first flex">
+                  <div className="pt-8 px-8 pb-0 sm:pt-12 sm:px-12 md:pt-20 md:px-20 container h-full flex flex-col justify-center min-h-[400px] lg:min-h-0">
+                    <Animate variant="pop">
+                      <blockquote className="text-lg md:text-xl xl:text-2xl font-bold text-[#27013D] leading-snug">
+                        "La meilleure façon de prédire l'avenir, c'est de le créer."
+                      </blockquote>
+                    </Animate>
+                    <Animate variant="pop" delay={150}>
+                      <p className="text-sm text-gray-800 mt-2">— Peter Drucker</p>
+                    </Animate>
+                    <Animate variant="pop" delay={300}>
+                      <p className="text-gray-800 leading-relaxed text-sm mt-6">
+                        Cette philosophie est au cœur de notre démarche. Nous ne nous contentons pas de réagir aux événements ; nous vous donnons les moyens de façonner activement l'avenir de votre entreprise, en transformant l'incertitude en opportunité et la vision en réalité.
+                      </p>
+                    </Animate>
+                  </div>
+                </div>
               </div>
             </div>
-        </section>
+          </section>
           <FAQSection />
           <Contact />
         </main>
@@ -214,8 +214,8 @@ const App: React.FC = () => {
   return (
     <>
       {isLoading && <LoadingScreen onLoaded={() => setIsLoading(false)} />}
-      <div 
-        className={`transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`} 
+      <div
+        className={`transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
         aria-hidden={isLoading}
       >
         <AppContent />
