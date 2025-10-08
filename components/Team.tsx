@@ -75,12 +75,12 @@ const Team: React.FC = () => {
             {displayedTeamMembers.map((member, index) => {
               return (
                 <Animate key={member.name} variant="pop" delay={200 + index * 100}>
-                  <div className="bg-white rounded-xl shadow-2xl shadow-violet-900/20 overflow-hidden h-full flex flex-col">
+                  <div className="bg-white rounded-xl shadow-2xl shadow-violet-900/20 overflow-hidden h-full flex flex-col border border-gray-200">
                     <div
-                      className="w-full h-80 flex-shrink-0"
+                      className="w-full h-72 flex-shrink-0"
                       style={{
                         backgroundImage: `url(${member.imageUrl})`,
-                        backgroundPosition: 'center 30%',
+                        backgroundPosition: 'center 25%',
                         backgroundSize: 'cover',
                         backgroundRepeat: 'no-repeat',
                       }}
