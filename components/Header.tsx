@@ -5,6 +5,7 @@ const navItems = [
   { name: 'Enjeux', href: '/#vos-enjeux' },
   { name: 'Solutions', href: '/#solutions' },
   { name: 'Pilliers', href: '/#piliers' },
+  { name: 'À l\'origine', href: '/#notre-equipe' },
   { name: 'FAQ', href: '/faq' },
   { name: 'Contact', href: '/#contact' },
 ];
@@ -43,7 +44,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
       return;
     }
 
-    const sectionIds = ['vos-enjeux', 'solutions', 'piliers', 'contact'];
+    const sectionIds = ['vos-enjeux', 'solutions', 'piliers', 'notre-equipe', 'contact'];
     const sections = sectionIds.map(id => document.getElementById(id)).filter(el => el !== null) as HTMLElement[];
 
     if (sections.length === 0) return;

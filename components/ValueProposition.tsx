@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Animate from './Animate';
 
@@ -53,8 +52,8 @@ const ValueProposition: React.FC = () => {
             </Animate>
           </div>
         </div>
-        <div className="bg-white p-8 md:p-16 flex items-center">
-            <div className="gradient-border-l pl-8 w-full">
+        <div className="bg-white flex items-center gradient-border-l">
+            <div className="p-8 md:p-16 w-full">
               <div className="space-y-10">
                 {propositionPoints.map((point, index) => (
                   <div key={index}>
