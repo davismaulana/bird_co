@@ -1,11 +1,13 @@
-
 import React, { useState } from 'react';
 import Animate from './Animate';
 import { CheckmarkCircleIcon, KpiDashboardMockup, FinancialReportMockup } from '../constants';
 
 const DueDiligenceVisual: React.FC = () => (
   <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
-    <h3 className="font-bold text-gray-800 text-xs sm:text-sm mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>Checklist Due Diligence VDD</h3>
+    <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
+      <h3 className="font-bold text-gray-900 text-sm">Due Diligence</h3>
+      <p className="text-xs text-gray-700">Analyses pour sécuriser les opérations de M&A</p>
+    </div>
     <div className="flex-grow space-y-3">
       <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 anim-child" style={{'--i': 1} as React.CSSProperties}>
         <CheckmarkCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0" />
@@ -29,7 +31,10 @@ const DueDiligenceVisual: React.FC = () => (
 
 const TransactionalSupportVisual: React.FC = () => (
     <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
-      <h3 className="font-bold text-gray-800 text-xs sm:text-sm mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>Accompagnement Transactionnel</h3>
+      <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
+        <h3 className="font-bold text-gray-900 text-sm">Accompagnement Transactionnel</h3>
+        <p className="text-xs text-gray-700">Soutien aux opérations de M&A et levées de fonds</p>
+      </div>
       <div className="flex-grow space-y-3">
           <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 anim-child" style={{'--i': 1} as React.CSSProperties}>
               <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse flex-shrink-0"></div>
@@ -52,8 +57,9 @@ const CashGrowthVisual: React.FC = () => {
 
     return (
         <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
-            <div className="flex justify-between items-start mb-2 anim-child" style={{'--i': 0} as React.CSSProperties}>
-                <h3 className="font-bold text-gray-800 text-xs">Gestion de la trésorerie</h3>
+            <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
+                <h3 className="font-bold text-gray-900 text-sm">Gestion de la trésorerie</h3>
+                <p className="text-xs text-gray-700">Gestion optimisée pour la croissance</p>
             </div>
             <div className="relative flex-grow">
                 <svg viewBox="0 0 335 170" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
@@ -87,9 +93,9 @@ const CashGrowthVisual: React.FC = () => {
 
 const OnSiteInterventionVisual: React.FC = () => (
     <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
-        <div className="flex items-center justify-between mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
-            <h3 className="font-bold text-gray-800 text-xs sm:text-sm">Atelier Stratégique</h3>
-            <div className="px-3 py-1 text-xs font-semibold bg-gray-100 text-gray-800 rounded-full">En personne</div>
+        <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
+            <h3 className="font-bold text-gray-900 text-sm">Intervention sur site</h3>
+            <p className="text-xs text-gray-700">Soutien physique et collaboration directe</p>
         </div>
         <div className="flex-grow bg-gray-50 rounded-lg p-4 space-y-3 border border-gray-100 text-xs">
             <p className="font-semibold text-gray-800 mb-2 anim-child" style={{'--i': 1} as React.CSSProperties}>Agenda de la session :</p>
@@ -210,7 +216,7 @@ const TaskShowcase: React.FC = () => {
                         </p>
                     </Animate>
                 </div>
-                <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
                     <div className="lg:col-span-2">
                         <div className="grid grid-cols-1 gap-4 stagger">
                             {tasks.map((task, index) => (
@@ -245,7 +251,7 @@ const TaskShowcase: React.FC = () => {
                             ))}
                         </div>
                     </div>
-                    <div className="aspect-[1/1] sm:aspect-[4/3] lg:col-span-3">
+                    <div className="aspect-[1/1] sm:aspect-[4/3] lg:col-span-3 lg:aspect-auto">
                         <div className="w-full h-full showcase-active" key={activeTask}>
                            {tasks[activeTask].visual}
                         </div>

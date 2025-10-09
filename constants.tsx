@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 export const PaperPlaneIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -166,10 +165,10 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
   noAspectRatio = false,
 }) => {
   // Shared utilities
-  const cols = "grid grid-cols-[minmax(160px,200px)_repeat(5,minmax(0,1fr))]";
+  const cols = "grid grid-cols-[minmax(140px,180px)_repeat(5,minmax(0,1fr))]";
   const num = "text-right tabular-nums"; // if you don't have the tabular-nums plugin, swap to 'font-mono text-right'
-  const cell = "px-2 py-1.5";
-  const vcol = "border-l border-slate-100 pl-3"; // visual column dividers
+  const cell = "px-2 py-0.5";
+  const vcol = "border-l border-slate-100 pl-2"; // visual column dividers
 
   const HighlightRow: React.FC<{ children: React.ReactNode }> = ({ children }) => (
     <div className={`${cols} rounded-md bg-violet-50/60 text-slate-900 font-semibold`}>
@@ -200,14 +199,12 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
       className={classNames.join(" ")}
     >
       {/* Header */}
-      <div className="flex items-center justify-between mb-3 sm:mb-4">
-        <h3 className="font-bold text-slate-900 text-sm">Modèle Financier</h3>
-        <div className="px-3 py-1 text-[10px] font-semibold bg-[#27013D] text-white rounded-full">
-          Prévisions 2025–2029
-        </div>
+      <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
+        <h3 className="font-bold text-gray-900 text-sm">Modélisation Financière</h3>
+        <p className="text-xs text-gray-700">Prévisionnels robustes et détaillés</p>
       </div>
 
-      <div className="flex-grow space-y-3 text-xs overflow-x-auto overflow-y-auto">
+      <div className="flex-grow space-y-1.5 text-[10px] overflow-x-auto overflow-y-auto">
         {/* -------- P&L -------- */}
         <div className="min-w-[640px]">
           {/* Years header */}
@@ -220,7 +217,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
             <span className={`${num}`}>2029</span>
           </div>
 
-          <div className="bg-slate-50 rounded-lg p-2 border border-slate-100 space-y-1">
+          <div className="bg-slate-50 rounded-lg p-1.5 border border-slate-100">
             {/* Revenue */}
             <HighlightRow>
               <span className={`${cell}`}>Chiffre d'affaires</span>
@@ -299,7 +296,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
 
         {/* -------- KPIs -------- */}
         <div className="min-w-[640px]">
-          <div className="bg-slate-50 rounded-lg p-2 border border-slate-100 space-y-1">
+          <div className="bg-slate-50 rounded-lg p-1.5 border border-slate-100">
             <div className="px-1 py-0.5 font-semibold text-slate-600">KPIs</div>
 
             <Row>
@@ -360,7 +357,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
             <span className={`${num}`}>2029</span>
           </div>
 
-          <div className="bg-slate-50 rounded-lg p-2 border border-slate-100 space-y-1">
+          <div className="bg-slate-50 rounded-lg p-1.5 border border-slate-100">
             <HighlightRow>
               <span className={`${cell}`}>Opening cash balance</span>
               <span className={`${cell} ${num} ${vcol}`}>0,2m€</span>
