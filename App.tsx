@@ -183,21 +183,19 @@ const App: React.FC = () => {
                     <StairsAnimation />
                   </div>
                 </Animate>
-                <div className="lg:order-first flex">
-                  <div className="pt-8 px-8 pb-8 sm:pt-12 sm:px-12 md:pt-20 md:px-20 container h-full flex flex-col justify-between min-h-[400px] lg:min-h-0">
-                    <div>
+                <div className="lg:order-first flex items-center">
+                  <div className="w-full p-8 sm:p-12 md:p-16 lg:p-20 flex flex-col justify-center min-h-[400px]">
+                    <div className="max-w-xl mx-auto lg:mx-0">
                       <Animate variant="pop">
                         <div className="flex justify-start mb-4">
                           <div className="w-16 h-1 bg-gradient-to-r from-[#27013D] to-[#6D0037] rounded-full"></div>
                         </div>
                       </Animate>
                       <Animate variant="pop" delay={100}>
-                        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">
+                        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight mb-10">
                           Notre <span className="gradient-text">philosophie</span>
                         </h2>
                       </Animate>
-                    </div>
-                    <div>
                       <Animate variant="pop" delay={200}>
                         <blockquote className="text-lg md:text-xl xl:text-2xl font-bold text-[#27013D] leading-snug">
                           "La meilleure façon de prédire l'avenir, c'est de le créer."
