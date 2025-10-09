@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect } from 'react';
 
 interface HeroAnimationProps {
@@ -14,7 +15,7 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
         if (!ctx) return;
 
         const particleFillColor = color === 'dark' ? 'rgba(39, 1, 61, 0.8)' : 'rgba(255, 255, 255, 0.8)';
-        const lineStrokeColorRGB = color === 'dark' ? '39, 1, 61' : '255, 255, 255';
+        const lineStrokeColorRGB = color === 'dark' ? '109, 0, 55' : '255, 255, 255';
 
         let animationFrameId: number;
         let particleSections: Particle[][] = [];
@@ -90,7 +91,7 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
                     const minY = r * sectionHeight;
 
                     for (let i = 0; i < 20; i++) { // Increased particle count to 20
-                        const size = Math.random() * 1.5 + 0.5;
+                        const size = Math.random() * 0.8 + 0.2;
                         const x = Math.random() * (sectionWidth - size * 2) + minX + size;
                         const y = Math.random() * (sectionHeight - size * 2) + minY + size;
                         const speedX = (Math.random() * 1.2) - 0.6;
@@ -117,7 +118,7 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
                     if (distance < connectThreshold) {
                         const opacityValue = 1 - (distance / connectThreshold);
                         ctx.strokeStyle = `rgba(${lineStrokeColorRGB}, ${opacityValue * 0.4})`;
-                        ctx.lineWidth = 0.5;
+                        ctx.lineWidth = 1.5;
                         ctx.beginPath();
                         ctx.moveTo(pA.x, pA.y);
                         ctx.lineTo(pB.x, pB.y);
