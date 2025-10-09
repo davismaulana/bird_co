@@ -160,8 +160,9 @@ export const FoodPilotLogo = ({ className }: { className?: string }) => <img src
 export const OctoGamingLogo = ({ className }: { className?: string }) => <img src="https://images2.imgbox.com/7b/76/O3kSavYf_o.png" alt="Octo Gaming Logo" className={className} />;
 export const SOCABEGLogo = ({ className }: { className?: string }) => <img src="https://images2.imgbox.com/94/30/H1BnocDS_o.png" alt="SOCABEG Logo" className={className} />;
 
-export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: boolean }> = ({
+export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: boolean; initialScaleDown?: boolean }> = ({
   disableHover = false,
+  initialScaleDown = false,
 }) => {
   // Shared utilities
   const cols = "grid grid-cols-[minmax(160px,200px)_repeat(5,minmax(0,1fr))]";
@@ -178,13 +179,20 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
   const Row: React.FC<{ muted?: boolean; children: React.ReactNode }> = ({ muted, children }) => (
     <div className={`${cols} ${muted ? "text-slate-600" : "text-slate-800"}`}>{children}</div>
   );
+  
+  const classNames = [
+    "animated-mockup w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transition-transform duration-300",
+  ];
+
+  if (initialScaleDown) {
+    classNames.push("transform scale-[0.9] hover:scale-100");
+  } else if (!disableHover) {
+    classNames.push("transform hover:scale-[1.02]");
+  }
 
   return (
     <div
-      className={[
-        "animated-mockup w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col",
-        !disableHover ? "transform hover:scale-[1.02] transition-transform duration-300" : "",
-      ].join(" ")}
+      className={classNames.join(" ")}
     >
       {/* Header */}
       <div className="flex items-center justify-between mb-3 sm:mb-4">
@@ -709,7 +717,7 @@ export const serviceDetails: { [key: string]: any } = {
                         ))}
                     </ul>
                 ),
-                visual: <FinancialReportMockup disableHover />,
+                visual: <FinancialReportMockup initialScaleDown />,
             }
         },
         mainContent: { 
