@@ -185,7 +185,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
   ];
 
   if (initialScaleDown) {
-    classNames.push("transform scale-[0.85] hover:scale-100");
+    classNames.push("transform scale-[0.80]");
   } else if (!disableHover) {
     classNames.push("transform hover:scale-[1.02]");
   }
