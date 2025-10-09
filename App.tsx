@@ -167,7 +167,7 @@ const App: React.FC = () => {
           <ServicesOverview />
           <ValueProposition />
           {/* <Methodology /> */}
-          <PillarsSection />
+          {/* <PillarsSection /> */}
           <TaskShowcase />
           <Personas />
           <Logos backgroundColor="bg-gray-50" />
