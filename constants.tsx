@@ -557,28 +557,40 @@ export const DueDiligenceVisual: React.FC = () => (
   </div>
 );
 
-export const TransactionalSupportVisual: React.FC = () => (
-    <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300 aspect-[4/3]">
-      <h3 className="font-bold text-gray-800 text-xs sm:text-sm mb-4">Accompagnement Transactionnel</h3>
-      <div className="flex-grow space-y-3">
-          <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
-              <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse flex-shrink-0"></div>
-              <p className="text-gray-800 text-xs font-medium">Phase 1: Préparation (Teaser, IM, VDD)</p>
-          </div>
-          <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 opacity-60">
-              <div className="w-3 h-3 rounded-full bg-gray-400 flex-shrink-0"></div>
-              <p className="text-gray-700 text-xs">Phase 2: Négociation des offres</p>
-          </div>
-          <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 opacity-60">
-              <div className="w-3 h-3 rounded-full bg-gray-400 flex-shrink-0"></div>
-              <p className="text-gray-700 text-xs">Phase 3: Due Diligence &amp; Closing</p>
-          </div>
-      </div>
-      <div className="mt-4 bg-[#27013D]/5 rounded-lg p-3 border border-[#27013D]/10 text-center">
-          <p className="text-xs font-bold text-[#27013D]">Objectif: Maximiser la valeur</p>
-      </div>
-    </div>
-);
+export const TransactionalSupportVisual: React.FC<{ theme?: string, disableHover?: boolean, initialScaleDown?: boolean }> = ({ disableHover = false, initialScaleDown = false }) => {
+    const classNames = [
+        "w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col aspect-[4/3]",
+    ];
+
+    if (initialScaleDown) {
+        classNames.push("transform scale-[0.7]");
+    } else if (!disableHover) {
+        classNames.push("transform hover:scale-105 transition-transform duration-300");
+    }
+
+    return (
+        <div className={classNames.join(' ')}>
+            <h3 className="font-bold text-gray-800 text-xs sm:text-sm mb-4">Accompagnement Transactionnel</h3>
+            <div className="flex-grow space-y-3">
+                <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
+                    <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse flex-shrink-0"></div>
+                    <p className="text-gray-800 text-xs font-medium">Phase 1: Préparation (Teaser, IM, VDD)</p>
+                </div>
+                <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 opacity-60">
+                    <div className="w-3 h-3 rounded-full bg-gray-400 flex-shrink-0"></div>
+                    <p className="text-gray-700 text-xs">Phase 2: Négociation des offres</p>
+                </div>
+                <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 opacity-60">
+                    <div className="w-3 h-3 rounded-full bg-gray-400 flex-shrink-0"></div>
+                    <p className="text-gray-700 text-xs">Phase 3: Due Diligence &amp; Closing</p>
+                </div>
+            </div>
+            <div className="mt-4 bg-[#27013D]/5 rounded-lg p-3 border border-[#27013D]/10 text-center">
+                <p className="text-xs font-bold text-[#27013D]">Objectif: Maximiser la valeur</p>
+            </div>
+        </div>
+    );
+};
 
 export const CashGrowthVisual: React.FC = () => {
     const pathData = "M 0 90 C 7 92 13 97 20 95 C 27 93 33 98 40 100 C 47 102 53 91 60 85 C 67 79 73 89 80 92 C 87 95 93 104 100 110 C 107 116 113 119 120 120 C 127 121 133 93 140 80 C 147 67 153 53 160 50 C 167 47 173 57 180 60 C 187 63 193 51 200 45 C 207 39 213 60 220 70 C 227 80 233 91 240 95 C 247 99 253 105 260 105 C 267 105 273 95 280 90 C 287 85 293 95 300 98";
@@ -1106,7 +1118,7 @@ export const serviceDetails: { [key: string]: any } = {
                         ))}
                     </ul>
                 ),
-                visual: <TransactionalSupportVisual />,
+                visual: <TransactionalSupportVisual initialScaleDown />,
             }
         },
         mainContent: {
