@@ -184,20 +184,34 @@ const App: React.FC = () => {
                   </div>
                 </Animate>
                 <div className="lg:order-first flex">
-                  <div className="pt-8 px-8 pb-0 sm:pt-12 sm:px-12 md:pt-20 md:px-20 container h-full flex flex-col justify-center min-h-[400px] lg:min-h-0">
-                    <Animate variant="pop">
-                      <blockquote className="text-lg md:text-xl xl:text-2xl font-bold text-[#27013D] leading-snug">
-                        "La meilleure façon de prédire l'avenir, c'est de le créer."
-                      </blockquote>
-                    </Animate>
-                    <Animate variant="pop" delay={150}>
-                      <p className="text-sm text-gray-800 mt-2">— Peter Drucker</p>
-                    </Animate>
-                    <Animate variant="pop" delay={300}>
-                      <p className="text-gray-800 leading-relaxed text-sm mt-6">
-                        Cette philosophie est au cœur de notre démarche. Nous ne nous contentons pas de réagir aux événements ; nous vous donnons les moyens de façonner activement l'avenir de votre entreprise, en transformant l'incertitude en opportunité et la vision en réalité.
-                      </p>
-                    </Animate>
+                  <div className="pt-8 px-8 pb-8 sm:pt-12 sm:px-12 md:pt-20 md:px-20 container h-full flex flex-col justify-between min-h-[400px] lg:min-h-0">
+                    <div>
+                      <Animate variant="pop">
+                        <div className="flex justify-start mb-4">
+                          <div className="w-16 h-1 bg-gradient-to-r from-[#27013D] to-[#6D0037] rounded-full"></div>
+                        </div>
+                      </Animate>
+                      <Animate variant="pop" delay={100}>
+                        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">
+                          Notre <span className="gradient-text">philosophie</span>
+                        </h2>
+                      </Animate>
+                    </div>
+                    <div>
+                      <Animate variant="pop" delay={200}>
+                        <blockquote className="text-lg md:text-xl xl:text-2xl font-bold text-[#27013D] leading-snug">
+                          "La meilleure façon de prédire l'avenir, c'est de le créer."
+                        </blockquote>
+                      </Animate>
+                      <Animate variant="pop" delay={350}>
+                        <p className="text-sm text-gray-800 mt-2">— Peter Drucker</p>
+                      </Animate>
+                      <Animate variant="pop" delay={500}>
+                        <p className="text-gray-800 leading-relaxed text-sm mt-6">
+                          Cette philosophie est au cœur de notre démarche. Nous ne nous contentons pas de réagir aux événements ; nous vous donnons les moyens de façonner activement l'avenir de votre entreprise, en transformant l'incertitude en opportunité et la vision en réalité.
+                        </p>
+                      </Animate>
+                    </div>
                   </div>
                 </div>
               </div>
