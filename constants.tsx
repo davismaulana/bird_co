@@ -845,7 +845,7 @@ export const serviceDetails: { [key: string]: any } = {
                         ))}
                     </ul>
                 ),
-                visual: <KpiDashboardMockup noAspectRatio disableHover initialScaleDown className="lg:aspect-square" />,
+                visual: <KpiDashboardMockup noAspectRatio disableHover initialScaleDown className="lg:aspect-[4/3]" />,
             }
         },
         mainContent: { 
