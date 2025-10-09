@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Animate from './Animate';
 
@@ -35,7 +36,7 @@ const Contact: React.FC = () => {
         <section id="contact" className="bg-white">
             <div className="grid grid-cols-1 lg:grid-cols-2">
                 {/* Left Column */}
-                <div className="relative bg-cover bg-center text-gray-900 p-8 sm:p-12 md:p-16 flex flex-col justify-center min-h-[500px] lg:min-h-0">
+                <div className="relative bg-cover bg-center text-gray-900 p-6 sm:p-8 md:p-12 lg:p-16 flex flex-col justify-center min-h-[500px] lg:min-h-0">
                     <div className="absolute inset-0 bg-[#EBE5F0]"></div>
                     <div className="relative z-10">
                         <Animate variant="pop" delay={200}>
@@ -65,7 +66,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 {/* Right Column (Form) */}
-                <div className="bg-gray-100 p-8 sm:p-12 md:p-16 flex flex-col justify-center">
+                <div className="bg-gray-100 p-6 sm:p-8 md:p-12 lg:p-16 flex flex-col justify-center">
                     <Animate variant="pop">
                         <h2 className="text-3xl font-bold text-[#27013D] mb-10">Laissez-nous un message</h2>
                     </Animate>

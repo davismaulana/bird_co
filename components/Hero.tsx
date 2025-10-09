@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Animate from './Animate';
 import HeroAnimation from './HeroAnimation';
@@ -5,11 +6,11 @@ import HeroAnimation from './HeroAnimation';
 const Hero: React.FC = () => {
   return (
     <section id="accueil" className="relative bg-white text-gray-900 flex items-center min-h-screen overflow-hidden">
-      <div className="container mx-auto px-1 lg:px-8 relative z-10 py-20 md:py-0">
-        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center relative">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 md:py-0">
+        <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center relative">
           
           {/* Left side: Text content */}
-          <div className="text-center md:text-left relative z-10 md:pl-16">
+          <div className="text-center md:text-left relative z-10 lg:pl-16">
             <Animate variant="pop">
               <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 leading-tight tracking-tight">
                 <span>Bras droit</span><br />

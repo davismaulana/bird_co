@@ -40,7 +40,7 @@ const Logos: React.FC<LogosProps> = ({ backgroundColor = 'bg-white' }) => {
             </h2>
           </Animate>
           <Animate variant="pop" delay={200}>
-            <p className="text-base text-gray-800 mt-4 whitespace-nowrap">
+            <p className="text-base text-gray-800 mt-4">
               Un <strong>allié</strong> et un <strong>soutien sur-mesure</strong> pour votre structure (<span className="gradient-text font-bold">TPE à Grandes entreprises et Fonds d'investissements</span>)
             </p>
           </Animate>

@@ -48,7 +48,7 @@ const Personas: React.FC = () => {
                 key={index} 
                 variant="pop"
               >
-                <div className="bg-white rounded-xl p-8 h-full flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left gap-6 border border-gray-200 transition-all duration-300 hover:shadow-xl hover:shadow-violet-100/50">
+                <div className="bg-white rounded-xl p-6 sm:p-8 h-full flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left gap-6 border border-gray-200 transition-all duration-300 hover:shadow-xl hover:shadow-violet-100/50">
                   <div className="flex-shrink-0 bg-gradient-to-br from-violet-100 to-pink-100 rounded-xl p-4 shadow-inner flex items-center justify-center w-20 h-20">
                     {persona.icon}
                   </div>

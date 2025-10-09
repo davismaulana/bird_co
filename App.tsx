@@ -184,7 +184,7 @@ const App: React.FC = () => {
                   </div>
                 </Animate>
                 <div className="lg:order-first flex items-center">
-                  <div className="w-full p-8 sm:p-12 md:p-16 lg:p-20 flex flex-col justify-center min-h-[400px]">
+                  <div className="w-full p-6 sm:p-10 md:p-14 lg:p-20 flex flex-col justify-center min-h-[400px]">
                     <div className="max-w-xl mx-auto lg:mx-0">
                       <Animate variant="pop">
                         <div className="flex justify-start mb-4">

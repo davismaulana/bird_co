@@ -32,7 +32,7 @@ const ServicesOverview: React.FC = () => {
               className="h-full"
             >
               <a href={`/service/${service.slug}`} className="block h-full group">
-                <div className="bg-white rounded-xl p-6 lg:p-4 flex flex-col items-center text-center h-full transition-all duration-300 ease-in-out border border-gray-200 group-hover:opacity-50 hover:!opacity-100 hover:scale-105 hover:shadow-2xl hover:shadow-violet-100/50">
+                <div className="bg-white rounded-xl p-4 sm:p-6 lg:p-4 flex flex-col items-center text-center h-full transition-all duration-300 ease-in-out border border-gray-200 group-hover:opacity-50 hover:!opacity-100 hover:scale-105 hover:shadow-2xl hover:shadow-violet-100/50">
                   <div className="h-20 w-20 flex items-center justify-center text-[#27013D] mb-2">
                     {React.cloneElement(service.icon, { className: service.iconClassName })}
                   </div>

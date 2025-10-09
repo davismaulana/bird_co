@@ -181,7 +181,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
   );
   
   const classNames = [
-    "animated-mockup w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transition-transform duration-300",
+    "animated-mockup w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transition-transform duration-300 max-h-[480px]",
   ];
 
   if (initialScaleDown) {
@@ -202,7 +202,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
         </div>
       </div>
 
-      <div className="flex-grow space-y-3 text-xs overflow-x-auto">
+      <div className="flex-grow space-y-3 text-xs overflow-x-auto overflow-y-auto">
         {/* -------- P&L -------- */}
         <div className="min-w-[640px]">
           {/* Years header */}
