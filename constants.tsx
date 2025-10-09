@@ -406,12 +406,13 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
     </div>
   );
 };
-export const KpiDashboardMockup: React.FC<{ theme?: string, noAspectRatio?: boolean, disableHover?: boolean, initialScaleDown?: boolean }> = ({ noAspectRatio = false, disableHover = false, initialScaleDown = false }) => {
+export const KpiDashboardMockup: React.FC<{ theme?: string, noAspectRatio?: boolean, disableHover?: boolean, initialScaleDown?: boolean, className?: string }> = ({ noAspectRatio = false, disableHover = false, initialScaleDown = false, className }) => {
   const classNames = [
     "animated-mockup w-full h-full bg-white rounded-2xl",
     noAspectRatio ? 'p-4 sm:p-6' : 'p-6',
     "shadow-2xl border border-gray-100 flex flex-col",
-    !noAspectRatio ? 'aspect-[4/3]' : ''
+    !noAspectRatio ? 'aspect-[4/3]' : '',
+    className
   ];
 
   if (initialScaleDown) {
@@ -421,7 +422,7 @@ export const KpiDashboardMockup: React.FC<{ theme?: string, noAspectRatio?: bool
   }
   
   return (
-    <div className={classNames.join(' ')}>
+    <div className={classNames.filter(Boolean).join(' ')}>
       <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
         <h3 className="font-bold text-gray-900 text-sm">Tableau de Bord - T4 2024</h3>
         <p className="text-xs text-gray-700">Suivi des KPIs clés</p>
@@ -844,7 +845,7 @@ export const serviceDetails: { [key: string]: any } = {
                         ))}
                     </ul>
                 ),
-                visual: <KpiDashboardMockup noAspectRatio disableHover initialScaleDown />,
+                visual: <KpiDashboardMockup noAspectRatio disableHover initialScaleDown className="lg:aspect-square" />,
             }
         },
         mainContent: { 
