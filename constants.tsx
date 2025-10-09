@@ -489,35 +489,48 @@ export const FieldWorkMockup: React.FC<{ theme?: string }> = () => (
         </div>
     </div>
 );
-export const DiagnosticScanMockup: React.FC<{ theme?: string }> = () => (
-    <div className="w-full h-full bg-white rounded-2xl p-6 shadow-2xl border border-gray-100 flex flex-col transform hover:scale-105 transition-transform duration-300 aspect-[4/3]">
-      <h3 className="font-bold text-gray-900 text-sm mb-4">Diagnostic 360° - Rapport d'Audit</h3>
-      <div className="flex-grow grid grid-cols-2 gap-4">
-        <div className="bg-violet-50/50 rounded-lg p-4 border border-violet-100 flex flex-col justify-center items-center">
-            <div className="w-24 h-24 rounded-full border-8 border-white flex items-center justify-center shadow-inner bg-violet-100">
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex items-center justify-center text-white font-bold text-xl">
-                    86%
+export const DiagnosticScanMockup: React.FC<{ theme?: string, disableHover?: boolean, initialScaleDown?: boolean }> = ({ disableHover = false, initialScaleDown = false }) => {
+    const classNames = [
+        "w-full h-full bg-white rounded-2xl p-6 shadow-2xl border border-gray-100 flex flex-col aspect-[4/3]",
+    ];
+
+    if (initialScaleDown) {
+        classNames.push("transform scale-[0.7]");
+    } else if (!disableHover) {
+        classNames.push("transform hover:scale-105 transition-transform duration-300");
+    }
+
+    return (
+        <div className={classNames.join(' ')}>
+          <h3 className="font-bold text-gray-900 text-sm mb-4">Diagnostic 360° - Rapport d'Audit</h3>
+          <div className="flex-grow grid grid-cols-2 gap-4">
+            <div className="bg-violet-50/50 rounded-lg p-4 border border-violet-100 flex flex-col justify-center items-center">
+                <div className="w-24 h-24 rounded-full border-8 border-white flex items-center justify-center shadow-inner bg-violet-100">
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex items-center justify-center text-white font-bold text-xl">
+                        86%
+                    </div>
+                </div>
+                <p className="text-xs font-semibold text-[#27013D] mt-3">Score de Performance</p>
+            </div>
+            <div className="space-y-3">
+                 <div className="flex items-center gap-3 bg-violet-50/50 p-3 rounded-lg border border-violet-100">
+                    <CheckmarkCircleIcon className="w-5 h-5 text-green-500 flex-shrink-0" />
+                    <p className="text-gray-800 text-xs">Santé Financière</p>
+                </div>
+                 <div className="flex items-center gap-3 bg-violet-50/50 p-3 rounded-lg border border-violet-100">
+                    <CheckmarkCircleIcon className="w-5 h-5 text-green-500 flex-shrink-0" />
+                    <p className="text-gray-800 text-xs">Efficacité Opérationnelle</p>
+                </div>
+                 <div className="flex items-center gap-3 bg-violet-50/50 p-3 rounded-lg border border-violet-100">
+                    <TrendingUpIcon className="w-5 h-5 text-blue-500 flex-shrink-0" />
+                    <p className="text-gray-800 text-xs">Stratégie de Croissance</p>
                 </div>
             </div>
-            <p className="text-xs font-semibold text-[#27013D] mt-3">Score de Performance</p>
+          </div>
         </div>
-        <div className="space-y-3">
-             <div className="flex items-center gap-3 bg-violet-50/50 p-3 rounded-lg border border-violet-100">
-                <CheckmarkCircleIcon className="w-5 h-5 text-green-500 flex-shrink-0" />
-                <p className="text-gray-800 text-xs">Santé Financière</p>
-            </div>
-             <div className="flex items-center gap-3 bg-violet-50/50 p-3 rounded-lg border border-violet-100">
-                <CheckmarkCircleIcon className="w-5 h-5 text-green-500 flex-shrink-0" />
-                <p className="text-gray-800 text-xs">Efficacité Opérationnelle</p>
-            </div>
-             <div className="flex items-center gap-3 bg-violet-50/50 p-3 rounded-lg border border-violet-100">
-                <TrendingUpIcon className="w-5 h-5 text-blue-500 flex-shrink-0" />
-                <p className="text-gray-800 text-xs">Stratégie de Croissance</p>
-            </div>
-        </div>
-      </div>
-    </div>
-);
+    );
+};
+
 
 {/* FIX: Moved TransactionalSupportVisual, DueDiligenceVisual, and CashGrowthVisual components before they are referenced. */}
 export const DueDiligenceVisual: React.FC = () => (
@@ -952,7 +965,7 @@ export const serviceDetails: { [key: string]: any } = {
                         ))}
                     </ul>
                 ),
-                visual: <DiagnosticScanMockup />,
+                visual: <DiagnosticScanMockup initialScaleDown />,
             }
         },
         mainContent: { 
