@@ -181,7 +181,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
   );
   
   const classNames = [
-    "animated-mockup w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transition-transform duration-300 max-h-[480px]",
+    "animated-mockup w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transition-transform duration-300 aspect-[4/3]",
   ];
 
   if (initialScaleDown) {
@@ -491,7 +491,7 @@ export const FieldWorkMockup: React.FC<{ theme?: string }> = () => (
 );
 export const DiagnosticScanMockup: React.FC<{ theme?: string, disableHover?: boolean, initialScaleDown?: boolean }> = ({ disableHover = false, initialScaleDown = false }) => {
     const classNames = [
-        "w-full h-full bg-white rounded-2xl p-6 shadow-2xl border border-gray-100 flex flex-col aspect-[4/3]",
+        "w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col aspect-[4/3]",
     ];
 
     if (initialScaleDown) {
@@ -558,7 +558,7 @@ export const DueDiligenceVisual: React.FC = () => (
 );
 
 export const TransactionalSupportVisual: React.FC = () => (
-    <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
+    <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300 aspect-[4/3]">
       <h3 className="font-bold text-gray-800 text-xs sm:text-sm mb-4">Accompagnement Transactionnel</h3>
       <div className="flex-grow space-y-3">
           <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
@@ -858,7 +858,7 @@ export const serviceDetails: { [key: string]: any } = {
                         ))}
                     </ul>
                 ),
-                visual: <KpiDashboardMockup noAspectRatio disableHover initialScaleDown className="lg:aspect-[4/3]" />,
+                visual: <KpiDashboardMockup noAspectRatio disableHover initialScaleDown className="aspect-[4/3]" />,
             }
         },
         mainContent: { 
