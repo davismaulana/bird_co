@@ -406,33 +406,49 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
     </div>
   );
 };
-export const KpiDashboardMockup: React.FC<{ theme?: string, noAspectRatio?: boolean, disableHover?: boolean }> = ({ noAspectRatio = false, disableHover = false }) => (
-  <div className={`animated-mockup w-full h-full bg-white rounded-2xl ${noAspectRatio ? 'p-4 sm:p-6' : 'p-6'} shadow-2xl border border-gray-100 flex flex-col ${!disableHover ? 'transform hover:scale-105 transition-transform duration-300' : ''} ${!noAspectRatio ? 'aspect-[4/3]' : ''}`}>
-    <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
-      <h3 className="font-bold text-gray-900 text-sm">Tableau de Bord - T4 2024</h3>
-      <p className="text-xs text-gray-700">Suivi des KPIs clés</p>
-    </div>
-    <div className="flex-grow grid grid-cols-2 grid-rows-2 gap-4">
-      <div className="bg-gray-50 rounded-lg p-3 border border-gray-100 col-span-1 row-span-2 flex flex-col anim-child" style={{'--i': 1} as React.CSSProperties}>
-        <p className="text-xs font-semibold text-gray-700 mb-2">Croissance MRR</p>
-        <div className="flex-grow flex items-end space-x-2">
-            <div className="w-full h-1/3 bg-[#6D0037]/20 rounded-t-sm anim-bar" style={{'--d': 0} as React.CSSProperties}></div>
-            <div className="w-full h-2/3 bg-[#6D0037]/20 rounded-t-sm anim-bar" style={{'--d': 1} as React.CSSProperties}></div>
-            <div className="w-full h-1/2 bg-[#6D0037]/20 rounded-t-sm anim-bar" style={{'--d': 2} as React.CSSProperties}></div>
-            <div className="w-full h-3/4 bg-[#6D0037] rounded-t-sm anim-bar" style={{'--d': 3} as React.CSSProperties}></div>
+export const KpiDashboardMockup: React.FC<{ theme?: string, noAspectRatio?: boolean, disableHover?: boolean, initialScaleDown?: boolean }> = ({ noAspectRatio = false, disableHover = false, initialScaleDown = false }) => {
+  const classNames = [
+    "animated-mockup w-full h-full bg-white rounded-2xl",
+    noAspectRatio ? 'p-4 sm:p-6' : 'p-6',
+    "shadow-2xl border border-gray-100 flex flex-col",
+    !noAspectRatio ? 'aspect-[4/3]' : ''
+  ];
+
+  if (initialScaleDown) {
+    classNames.push("transform scale-[0.7]");
+  } else if (!disableHover) {
+    classNames.push("transform hover:scale-105 transition-transform duration-300");
+  }
+  
+  return (
+    <div className={classNames.join(' ')}>
+      <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
+        <h3 className="font-bold text-gray-900 text-sm">Tableau de Bord - T4 2024</h3>
+        <p className="text-xs text-gray-700">Suivi des KPIs clés</p>
+      </div>
+      <div className="flex-grow grid grid-cols-2 grid-rows-2 gap-4">
+        <div className="bg-gray-50 rounded-lg p-3 border border-gray-100 col-span-1 row-span-2 flex flex-col anim-child" style={{'--i': 1} as React.CSSProperties}>
+          <p className="text-xs font-semibold text-gray-700 mb-2">Croissance MRR</p>
+          <div className="flex-grow flex items-end space-x-2">
+              <div className="w-full h-1/3 bg-[#6D0037]/20 rounded-t-sm anim-bar" style={{'--d': 0} as React.CSSProperties}></div>
+              <div className="w-full h-2/3 bg-[#6D0037]/20 rounded-t-sm anim-bar" style={{'--d': 1} as React.CSSProperties}></div>
+              <div className="w-full h-1/2 bg-[#6D0037]/20 rounded-t-sm anim-bar" style={{'--d': 2} as React.CSSProperties}></div>
+              <div className="w-full h-3/4 bg-[#6D0037] rounded-t-sm anim-bar" style={{'--d': 3} as React.CSSProperties}></div>
+          </div>
+        </div>
+        <div className="bg-gray-50 rounded-lg p-4 border border-gray-100 col-span-1 row-span-1 anim-child" style={{'--i': 2} as React.CSSProperties}>
+          <p className="text-xs text-gray-700">Taux de Churn</p>
+          <p className="font-bold text-gray-800 text-xl">2.1% <span className="text-green-500 text-sm">↓</span></p>
+        </div>
+         <div className="bg-gray-50 rounded-lg p-4 border border-gray-100 col-span-1 row-span-1 anim-child" style={{'--i': 3} as React.CSSProperties}>
+          <p className="text-xs text-gray-700">CAC</p>
+          <p className="font-bold text-[#27013D] text-xl">1.2k€ <span className="text-red-500 text-sm">↑</span></p>
         </div>
       </div>
-      <div className="bg-gray-50 rounded-lg p-4 border border-gray-100 col-span-1 row-span-1 anim-child" style={{'--i': 2} as React.CSSProperties}>
-        <p className="text-xs text-gray-700">Taux de Churn</p>
-        <p className="font-bold text-gray-800 text-xl">2.1% <span className="text-green-500 text-sm">↓</span></p>
-      </div>
-       <div className="bg-gray-50 rounded-lg p-4 border border-gray-100 col-span-1 row-span-1 anim-child" style={{'--i': 3} as React.CSSProperties}>
-        <p className="text-xs text-gray-700">CAC</p>
-        <p className="font-bold text-[#27013D] text-xl">1.2k€ <span className="text-red-500 text-sm">↑</span></p>
-      </div>
     </div>
-  </div>
-);
+  );
+};
+
 export const FieldWorkMockup: React.FC<{ theme?: string }> = () => (
     <div className="animated-mockup w-full h-full bg-white rounded-2xl p-6 shadow-2xl border border-gray-100 flex flex-col transform hover:scale-105 transition-transform duration-300 aspect-[4/3]">
         <div className="flex items-center justify-between mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
@@ -828,7 +844,7 @@ export const serviceDetails: { [key: string]: any } = {
                         ))}
                     </ul>
                 ),
-                visual: <KpiDashboardMockup noAspectRatio disableHover />,
+                visual: <KpiDashboardMockup noAspectRatio disableHover initialScaleDown />,
             }
         },
         mainContent: { 
