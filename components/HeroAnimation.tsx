@@ -40,13 +40,15 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
             size: number;
             speedX: number;
             speedY: number;
+            canConnect: boolean;
 
-            constructor(x: number, y: number, size: number, speedX: number, speedY: number) {
+            constructor(x: number, y: number, size: number, speedX: number, speedY: number, canConnect: boolean) {
                 this.x = x;
                 this.y = y;
                 this.size = size;
                 this.speedX = speedX;
                 this.speedY = speedY;
+                this.canConnect = canConnect;
             }
 
             draw() {
@@ -89,14 +91,16 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
                     const sectionParticles: Particle[] = [];
                     const minX = c * sectionWidth;
                     const minY = r * sectionHeight;
+                    const totalParticles = 60;
 
-                    for (let i = 0; i < 20; i++) { // Increased particle count to 20
-                        const size = Math.random() * 0.8 + 0.2;
+                    for (let i = 0; i < totalParticles; i++) {
+                        const size = Math.random() * 1.5 + 0.5;
                         const x = Math.random() * (sectionWidth - size * 2) + minX + size;
                         const y = Math.random() * (sectionHeight - size * 2) + minY + size;
-                        const speedX = (Math.random() * 1.2) - 0.6;
-                        const speedY = (Math.random() * 1.2) - 0.6;
-                        sectionParticles.push(new Particle(x, y, size, speedX, speedY));
+                        const speedX = (Math.random() * 0.2) - 0.1;
+                        const speedY = (Math.random() * 0.2) - 0.1;
+                        const canConnect = Math.random() > 0.5;
+                        sectionParticles.push(new Particle(x, y, size, speedX, speedY, canConnect));
                     }
                     particleSections.push(sectionParticles);
                 }
@@ -107,12 +111,15 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
             if (!ctx) return;
 
             const parentWidth = canvas.getBoundingClientRect().width;
-            const connectThreshold = (parentWidth / 3.5) * (parentWidth / 3.5);
+            const connectThreshold = (parentWidth / 5) * (parentWidth / 5);
 
             for (let i = 0; i < particleArray.length; i++) {
                 for (let j = i + 1; j < particleArray.length; j++) {
                     const pA = particleArray[i];
                     const pB = particleArray[j];
+                    
+                    if (!pA.canConnect || !pB.canConnect) continue;
+
                     const distance = ((pA.x - pB.x) * (pA.x - pB.x)) + ((pA.y - pB.y) * (pA.y - pB.y));
 
                     if (distance < connectThreshold) {
