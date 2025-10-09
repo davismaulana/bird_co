@@ -156,7 +156,7 @@ const tasks = [
     },
     title: "Modélisation",
     description: "Des prévisionnels robustes et détaillés pour soutenir votre stratégie, vos levées de fonds et vos décisions d'investissement.",
-    visual: <FinancialReportMockup disableHover />,
+    visual: <FinancialReportMockup disableHover noAspectRatio />,
   },
   {
     icon: {
@@ -245,7 +245,7 @@ const TaskShowcase: React.FC = () => {
                             ))}
                         </div>
                     </div>
-                    <div className="min-h-[350px] sm:min-h-[400px] lg:col-span-3">
+                    <div className="aspect-[1/1] sm:aspect-[4/3] lg:col-span-3">
                         <div className="w-full h-full showcase-active" key={activeTask}>
                            {tasks[activeTask].visual}
                         </div>

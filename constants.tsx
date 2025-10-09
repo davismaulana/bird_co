@@ -160,9 +160,10 @@ export const FoodPilotLogo = ({ className }: { className?: string }) => <img src
 export const OctoGamingLogo = ({ className }: { className?: string }) => <img src="https://images2.imgbox.com/7b/76/O3kSavYf_o.png" alt="Octo Gaming Logo" className={className} />;
 export const SOCABEGLogo = ({ className }: { className?: string }) => <img src="https://images2.imgbox.com/94/30/H1BnocDS_o.png" alt="SOCABEG Logo" className={className} />;
 
-export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: boolean; initialScaleDown?: boolean }> = ({
+export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: boolean; initialScaleDown?: boolean; noAspectRatio?: boolean }> = ({
   disableHover = false,
   initialScaleDown = false,
+  noAspectRatio = false,
 }) => {
   // Shared utilities
   const cols = "grid grid-cols-[minmax(160px,200px)_repeat(5,minmax(0,1fr))]";
@@ -181,8 +182,12 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
   );
   
   const classNames = [
-    "animated-mockup w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transition-transform duration-300 aspect-[4/3]",
+    "animated-mockup w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transition-transform duration-300",
   ];
+
+  if (!noAspectRatio) {
+    classNames.push("aspect-[4/3]");
+  }
 
   if (initialScaleDown) {
     classNames.push("transform scale-[0.7]");
