@@ -190,7 +190,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
   }
 
   if (initialScaleDown) {
-    classNames.push("transform scale-[0.7]");
+    classNames.push("transform scale-[0.85]");
   } else if (!disableHover) {
     classNames.push("transform hover:scale-[1.02]");
   }
@@ -419,7 +419,7 @@ export const KpiDashboardMockup: React.FC<{ theme?: string, noAspectRatio?: bool
   ];
 
   if (initialScaleDown) {
-    classNames.push("transform scale-[0.7]");
+    classNames.push("transform scale-[0.85]");
   } else if (!disableHover) {
     classNames.push("transform hover:scale-105 transition-transform duration-300");
   }
@@ -498,7 +498,7 @@ export const DiagnosticScanMockup: React.FC<{ theme?: string, disableHover?: boo
     ];
 
     if (initialScaleDown) {
-        classNames.push("transform scale-[0.7]");
+        classNames.push("transform scale-[0.85]");
     } else if (!disableHover) {
         classNames.push("transform hover:scale-105 transition-transform duration-300");
     }
@@ -566,7 +566,7 @@ export const TransactionalSupportVisual: React.FC<{ theme?: string, disableHover
     ];
 
     if (initialScaleDown) {
-        classNames.push("transform scale-[0.7]");
+        classNames.push("transform scale-[0.85]");
     } else if (!disableHover) {
         classNames.push("transform hover:scale-105 transition-transform duration-300");
     }
