@@ -50,11 +50,11 @@ const Team: React.FC = () => {
                         backgroundRepeat: 'no-repeat',
                       }}
                     ></div>
-                    <div className="p-5 flex flex-col flex-grow">
-                      <div className="flex-1 flex flex-col gap-1.5 text-left">
+                    <div className="p-4 flex flex-col flex-grow">
+                      <div className="flex-1 flex flex-col gap-1 text-left">
                         <div className="flex justify-between items-start gap-2">
                           <div>
-                            <span className="text-base font-bold text-[#27013D]">
+                            <span className="text-sm font-bold text-[#27013D]">
                               {member.name}
                             </span>
                           </div>
@@ -65,17 +65,17 @@ const Team: React.FC = () => {
                             aria-label={`LinkedIn de ${member.name}`}
                             className="text-[#27013D] hover:text-[#6D0037] transition-colors flex-shrink-0"
                           >
-                            <LinkedInIcon className="h-5 w-5" />
+                            <LinkedInIcon className="h-4 w-4" />
                           </a>
                         </div>
 
-                        <div className="text-gray-800 text-xs leading-normal space-y-1.5">
+                        <div className="text-gray-800 text-[11px] leading-snug space-y-1">
                           {member.description.map((paragraph, pIndex) => (
                             <p key={pIndex}>{paragraph}</p>
                           ))}
                         </div>
 
-                        <div className="mt-auto pt-2 border-t border-gray-200 text-xs">
+                        <div className="mt-auto pt-2 border-t border-gray-200 text-[11px]">
                           <p className="font-semibold text-[#27013D]">{member.alumni}</p>
                           <p className="text-gray-600">{member.diploma}</p>
                         </div>
