@@ -717,7 +717,7 @@ export const teamMembers = [
     ],
     alumni: 'Alumni Eight Advisory & KPMG',
     diploma: 'Diplômé de l’IESEG School Of Management',
-    imageUrl: 'https://images2.imgbox.com/0e/58/D7U5d6xw_o.jpg',
+    imageUrl: 'https://images2.imgbox.com/45/a5/pIJTiAbS_o.jpg',
     linkedinUrl: 'https://www.linkedin.com/in/seydina-samb-6638ba56/',
   },
   {
@@ -730,7 +730,7 @@ export const teamMembers = [
     ],
     alumni: 'Alumni EY, Exelmans & Payfit',
     diploma: 'Diplômé de l’IESEG School Of Management',
-    imageUrl: 'https://images2.imgbox.com/c5/97/247HUdvA_o.jpg',
+    imageUrl: 'https://images2.imgbox.com/17/05/vPQa5hkX_o.jpg',
     linkedinUrl: 'https://www.linkedin.com/in/benjaminlegal/',
   },
 ];
