@@ -26,63 +26,27 @@ const Team: React.FC = () => {
           </Animate>
         </div>
 
-        {/* New 2-column layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
-          {/* Left Column: Text & Stats */}
-          <Animate variant="pop" className="lg:sticky lg:top-24 h-full flex flex-col">
-            <div className="space-y-12">
-              <div>
-                <h3 className="text-2xl font-bold gradient-text-light mb-4">Notre histoire</h3>
-                <p className="text-sm text-gray-300 leading-relaxed">
-                  Bird est né de la rencontre d’anciens consultants convaincus qu’il existe une autre façon d’accompagner les organisations. À mi-chemin entre l’expertise structurée du conseil et la flexibilité d’un consultant autonome, nous offrons un accompagnement sur mesure et accessible.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold gradient-text-light mb-4">Notre mission</h3>
-                <p className="text-sm text-gray-300 leading-relaxed">
-                  Notre démarche ne remet pas en cause la valeur des cabinets traditionnels, mais vise à combler un vide : permettre à des organisations qui n’en ont pas toujours les moyens de bénéficier, elles aussi, d’un soutien stratégique et financier de haut niveau.
-                </p>
-              </div>
-            </div>
-
-            {/* Stats Section */}
-            <div className="mt-12 lg:mt-12">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="rounded-lg p-6 text-left">
-                  <p className="text-4xl lg:text-5xl font-bold text-violet-200">10+</p>
-                  <p className="text-sm text-gray-300 mt-1">Experts partenaires</p>
-                </div>
-                <div className="rounded-lg p-6 text-left">
-                  <p className="text-4xl lg:text-5xl font-bold text-violet-200">20+</p>
-                  <p className="text-sm text-gray-300 mt-1">Dirigeants accompagnés</p>
-                </div>
-                <div className="rounded-lg p-6 text-left">
-                  <p className="text-4xl lg:text-5xl font-bold text-violet-200">50M€+</p>
-                  <p className="text-sm text-gray-300 mt-1">Fonds levés</p>
-                </div>
-                <div className="rounded-lg p-6 flex items-center justify-start">
-                  <img
-                    src="https://images2.imgbox.com/c9/f1/doXt7nXv_o.png"
-                    alt="Hand holding a plant icon symbolizing growth"
-                    className="w-16 h-16 object-contain"
-                  />
-                </div>
-              </div>
-            </div>
+        {/* New 3-column layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 items-start">
+          {/* Left Column: Text */}
+          <Animate variant="pop" className="lg:col-span-1 lg:sticky lg:top-24">
+            <p className="text-sm text-gray-300 leading-relaxed">
+              Bird est né de la rencontre d’anciens consultants convaincus qu’il existe une autre façon d’accompagner les organisations. À mi-chemin entre l’expertise structurée du conseil et la flexibilité d’un consultant autonome, nous offrons un accompagnement sur mesure et accessible.
+            </p>
           </Animate>
 
-          {/* Right Column: Team Members */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Middle Column: Team Members */}
+          <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
             {displayedTeamMembers.map((member, index) => {
               return (
                 <Animate key={member.name} variant="pop" delay={200 + index * 100}>
                   <div className="bg-white rounded-lg shadow-2xl shadow-violet-900/20 overflow-hidden h-full flex flex-col border-2 border-gray-300">
                     <div
-                      className="w-full aspect-[4/5] md:aspect-auto md:h-72 flex-shrink-0"
+                      className="w-full aspect-square md:h-56 flex-shrink-0"
                       style={{
                         backgroundImage: `url(${member.imageUrl})`,
-                        backgroundPosition: 'center 25%',
-                        backgroundSize: 'cover',
+                        backgroundPosition: 'center 18%',
+                        backgroundSize: '115%',
                         backgroundRepeat: 'no-repeat',
                       }}
                     ></div>
@@ -122,7 +86,34 @@ const Team: React.FC = () => {
               )
             })}
           </div>
+
+          {/* Right Column: Credentials */}
+          <Animate variant="pop" className="lg:col-span-1 lg:sticky lg:top-24">
+            <div className="space-y-6">
+              <div className="rounded-lg p-6 text-left">
+                <p className="text-4xl lg:text-5xl font-bold text-violet-200">10+</p>
+                <p className="text-sm text-gray-300 mt-1">Experts partenaires</p>
+              </div>
+              <div className="rounded-lg p-6 text-left">
+                <p className="text-4xl lg:text-5xl font-bold text-violet-200">20+</p>
+                <p className="text-sm text-gray-300 mt-1">Dirigeants accompagnés</p>
+              </div>
+              <div className="rounded-lg p-6 text-left">
+                <p className="text-4xl lg:text-5xl font-bold text-violet-200">50M€+</p>
+                <p className="text-sm text-gray-300 mt-1">Fonds levés</p>
+              </div>
+            </div>
+          </Animate>
         </div>
+
+        {/* Mission Paragraph Below */}
+        <Animate variant="pop">
+          <div className="mt-16 max-w-3xl mx-auto text-center">
+            <p className="text-sm text-gray-300 leading-relaxed">
+              Notre démarche ne remet pas en cause la valeur des cabinets traditionnels, mais vise à combler un vide : permettre à des organisations qui n’en ont pas toujours les moyens de bénéficier, elles aussi, d’un soutien stratégique et financier de haut niveau.
+            </p>
+          </div>
+        </Animate>
       </div>
     </section>
   );
