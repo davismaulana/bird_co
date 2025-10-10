@@ -26,16 +26,9 @@ const Team: React.FC = () => {
           </Animate>
         </div>
 
-        {/* New 3-column layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 items-start">
-          {/* Left Column: Text */}
-          <Animate variant="pop" className="lg:col-span-1 lg:sticky lg:top-24">
-            <p className="text-sm text-gray-300 leading-relaxed">
-              Bird est né de la rencontre d’anciens consultants convaincus qu’il existe une autre façon d’accompagner les organisations. À mi-chemin entre l’expertise structurée du conseil et la flexibilité d’un consultant autonome, nous offrons un accompagnement sur mesure et accessible.
-            </p>
-          </Animate>
-
-          {/* Middle Column: Team Members */}
+        {/* Main content layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+          {/* Team Members */}
           <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
             {displayedTeamMembers.map((member, index) => {
               return (
@@ -87,22 +80,11 @@ const Team: React.FC = () => {
             })}
           </div>
 
-          {/* Right Column: Credentials */}
+          {/* Right Column: Text */}
           <Animate variant="pop" className="lg:col-span-1 lg:sticky lg:top-24">
-            <div className="space-y-6">
-              <div className="rounded-lg p-6 text-left">
-                <p className="text-4xl lg:text-5xl font-bold text-violet-200">10+</p>
-                <p className="text-sm text-gray-300 mt-1">Experts partenaires</p>
-              </div>
-              <div className="rounded-lg p-6 text-left">
-                <p className="text-4xl lg:text-5xl font-bold text-violet-200">20+</p>
-                <p className="text-sm text-gray-300 mt-1">Dirigeants accompagnés</p>
-              </div>
-              <div className="rounded-lg p-6 text-left">
-                <p className="text-4xl lg:text-5xl font-bold text-violet-200">50M€+</p>
-                <p className="text-sm text-gray-300 mt-1">Fonds levés</p>
-              </div>
-            </div>
+            <p className="text-sm text-gray-300 leading-relaxed">
+              Bird est né de la rencontre d’anciens consultants convaincus qu’il existe une autre façon d’accompagner les organisations. À mi-chemin entre l’expertise structurée du conseil et la flexibilité d’un consultant autonome, nous offrons un accompagnement sur mesure et accessible.
+            </p>
           </Animate>
         </div>
 
