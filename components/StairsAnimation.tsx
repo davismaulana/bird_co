@@ -1,7 +1,8 @@
+
 import React from 'react';
 
 const StairsAnimation: React.FC = () => {
-    const steps = 24; // More stairs
+    const steps = 21; // More stairs
     const baseDelay = 100; // Adjusted for more steps
 
     const styles = `

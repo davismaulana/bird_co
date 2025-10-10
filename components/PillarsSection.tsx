@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Animate from './Animate';
 
 const pillars = [
@@ -25,6 +25,16 @@ const pillars = [
 ];
 
 const PillarsSection: React.FC = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex(prevIndex => (prevIndex + 1) % pillars.length);
+    }, 3000); // Cycle every 3 seconds
+
+    return () => clearInterval(interval); // Cleanup interval on component unmount
+  }, []);
+
   return (
     <section id="piliers" className="bg-white py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -45,18 +55,33 @@ const PillarsSection: React.FC = () => {
             </p>
           </Animate>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto stagger">
-          {pillars.map((pillar, index) => (
-            <Animate key={index} variant="pop">
-              <div className="bg-white rounded-xl p-8 h-full border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-2xl hover:shadow-violet-100/50 hover:border-violet-200">
-                <div className="mb-6 h-14 flex items-start">
-                  {pillar.icon}
+        <div className="flex flex-col gap-4 max-w-3xl mx-auto">
+          {pillars.map((pillar, index) => {
+            const isActive = index === activeIndex;
+            return (
+              <Animate key={index} variant="pop">
+                 <div
+                    className={`
+                      rounded-xl p-6 transition-all duration-700 ease-in-out
+                      ${isActive
+                        ? 'bg-white scale-105 shadow-2xl shadow-violet-100/50 border border-violet-200 opacity-100'
+                        : 'bg-white scale-100 shadow-sm border border-gray-200 opacity-50'
+                      }
+                    `}
+                  >
+                    <div className="flex items-center gap-6">
+                        <div className={`flex-shrink-0 h-16 w-16 flex items-center justify-center rounded-lg transition-colors duration-700 ${isActive ? 'bg-violet-50' : 'bg-gray-100'}`}>
+                            {pillar.icon}
+                        </div>
+                        <div className="text-left">
+                            <h3 className={`text-base font-bold transition-colors duration-700 ${isActive ? 'text-[#27013D]' : 'text-gray-800'}`}>{pillar.title}</h3>
+                            <p className="text-gray-800 leading-relaxed text-xs mt-1">{pillar.description}</p>
+                        </div>
+                    </div>
                 </div>
-                <h3 className="text-lg font-bold text-[#27013D] mb-3">{pillar.title}</h3>
-                <p className="text-gray-800 leading-relaxed text-xs">{pillar.description}</p>
-              </div>
-            </Animate>
-          ))}
+              </Animate>
+            );
+          })}
         </div>
       </div>
     </section>
