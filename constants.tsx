@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 export const PaperPlaneIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -716,7 +717,7 @@ export const teamMembers = [
     ],
     alumni: 'Alumni Eight Advisory & KPMG',
     diploma: 'Diplômé de l’IESEG School Of Management',
-    imageUrl: 'https://images2.imgbox.com/26/ab/ooTECEUa_o.jpg',
+    imageUrl: 'https://images2.imgbox.com/25/c8/nlbHh4Qy_o.jpg',
     linkedinUrl: 'https://www.linkedin.com/in/seydina-samb-6638ba56/',
   },
   {
@@ -729,7 +730,7 @@ export const teamMembers = [
     ],
     alumni: 'Alumni EY, Exelmans & Payfit',
     diploma: 'Diplômé de l’IESEG School Of Management',
-    imageUrl: 'https://images2.imgbox.com/97/03/tMJDdAih_o.jpg',
+    imageUrl: 'https://images2.imgbox.com/0e/58/D7U5d6xw_o.jpg',
     linkedinUrl: 'https://www.linkedin.com/in/benjaminlegal/',
   },
 ];

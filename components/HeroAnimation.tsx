@@ -2,7 +2,7 @@
 import React, { useRef, useEffect } from 'react';
 
 interface HeroAnimationProps {
-    color?: 'dark' | 'light';
+  color?: 'dark' | 'light';
 }
 
 const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
@@ -15,12 +15,12 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
         if (!ctx) return;
 
         const particleFillColor = color === 'dark' ? 'rgba(39, 1, 61, 0.8)' : 'rgba(255, 255, 255, 0.8)';
-        const lineStrokeColorRGB = color === 'dark' ? '109, 0, 55' : '255, 255, 255';
+        const lineStrokeColorRGB = color === 'dark' ? '39, 1, 61' : '255, 255, 255';
 
         let animationFrameId: number;
         let particleSections: Particle[][] = [];
         const gridConfig = { rows: 1, cols: 1 };
-
+        
         const resizeCanvas = () => {
             const parent = canvas.parentElement;
             if (parent) {
@@ -40,15 +40,13 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
             size: number;
             speedX: number;
             speedY: number;
-            canConnect: boolean;
 
-            constructor(x: number, y: number, size: number, speedX: number, speedY: number, canConnect: boolean) {
+            constructor(x: number, y: number, size: number, speedX: number, speedY: number) {
                 this.x = x;
                 this.y = y;
                 this.size = size;
                 this.speedX = speedX;
                 this.speedY = speedY;
-                this.canConnect = canConnect;
             }
 
             draw() {
@@ -80,7 +78,7 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
         const init = () => {
             resizeCanvas();
             particleSections = [];
-
+            
             const parentWidth = canvas.getBoundingClientRect().width;
             const parentHeight = canvas.getBoundingClientRect().height;
             const sectionWidth = parentWidth / gridConfig.cols;
@@ -91,16 +89,14 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
                     const sectionParticles: Particle[] = [];
                     const minX = c * sectionWidth;
                     const minY = r * sectionHeight;
-                    const totalParticles = 60;
 
-                    for (let i = 0; i < totalParticles; i++) {
+                    for (let i = 0; i < 20; i++) { // Increased particle count to 20
                         const size = Math.random() * 1.5 + 0.5;
                         const x = Math.random() * (sectionWidth - size * 2) + minX + size;
                         const y = Math.random() * (sectionHeight - size * 2) + minY + size;
-                        const speedX = (Math.random() * 0.2) - 0.1;
-                        const speedY = (Math.random() * 0.2) - 0.1;
-                        const canConnect = Math.random() > 0.5;
-                        sectionParticles.push(new Particle(x, y, size, speedX, speedY, canConnect));
+                        const speedX = (Math.random() * 1.2) - 0.6;
+                        const speedY = (Math.random() * 1.2) - 0.6;
+                        sectionParticles.push(new Particle(x, y, size, speedX, speedY));
                     }
                     particleSections.push(sectionParticles);
                 }
@@ -109,23 +105,20 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
 
         const connectParticles = (particleArray: Particle[]) => {
             if (!ctx) return;
-
+            
             const parentWidth = canvas.getBoundingClientRect().width;
-            const connectThreshold = (parentWidth / 5) * (parentWidth / 5);
+            const connectThreshold = (parentWidth / 3.5) * (parentWidth / 3.5);
 
             for (let i = 0; i < particleArray.length; i++) {
                 for (let j = i + 1; j < particleArray.length; j++) {
                     const pA = particleArray[i];
                     const pB = particleArray[j];
-                    
-                    if (!pA.canConnect || !pB.canConnect) continue;
-
                     const distance = ((pA.x - pB.x) * (pA.x - pB.x)) + ((pA.y - pB.y) * (pA.y - pB.y));
 
                     if (distance < connectThreshold) {
                         const opacityValue = 1 - (distance / connectThreshold);
                         ctx.strokeStyle = `rgba(${lineStrokeColorRGB}, ${opacityValue * 0.4})`;
-                        ctx.lineWidth = 1.5;
+                        ctx.lineWidth = 0.5;
                         ctx.beginPath();
                         ctx.moveTo(pA.x, pA.y);
                         ctx.lineTo(pB.x, pB.y);
@@ -148,7 +141,7 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
             const sectionHeight = parentHeight / gridConfig.rows;
 
             ctx.clearRect(0, 0, parentWidth, parentHeight);
-
+            
             particleSections.forEach((section, index) => {
                 const c = index % gridConfig.cols;
                 const r = Math.floor(index / gridConfig.cols);
@@ -162,14 +155,14 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
                     particle.draw();
                 }
             });
-
+            
             connect();
             animationFrameId = requestAnimationFrame(animate);
         };
 
         init();
         animate();
-
+        
         window.addEventListener('resize', init);
 
         return () => {
@@ -180,7 +173,7 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
 
     return (
         <div className="absolute inset-0 w-full h-full">
-            <canvas ref={canvasRef} className="w-full h-full block" />
+          <canvas ref={canvasRef} className="w-full h-full block" />
         </div>
     );
 };
