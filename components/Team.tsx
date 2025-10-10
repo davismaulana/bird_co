@@ -33,7 +33,7 @@ const Team: React.FC = () => {
             {displayedTeamMembers.map((member, index) => {
               return (
                 <Animate key={member.name} variant="pop" delay={200 + index * 100}>
-                  <div className="bg-white rounded-lg shadow-2xl shadow-violet-900/20 overflow-hidden h-full flex flex-col border-2 border-gray-300">
+                  <div className="bg-white rounded-lg shadow-2xl shadow-violet-900/20 overflow-hidden h-full flex flex-col border-2 border-gray-300 max-w-72 mx-auto">
                     <div
                       className="w-full aspect-square md:h-64 flex-shrink-0"
                       style={{
