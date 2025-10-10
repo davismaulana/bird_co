@@ -190,7 +190,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
   }
 
   if (initialScaleDown) {
-    classNames.push("transform scale-[0.85]");
+    classNames.push("transform scale-[0.9]");
   } else if (!disableHover) {
     classNames.push("transform hover:scale-[1.02]");
   }
@@ -419,7 +419,7 @@ export const KpiDashboardMockup: React.FC<{ theme?: string, noAspectRatio?: bool
   ];
 
   if (initialScaleDown) {
-    classNames.push("transform scale-[0.85]");
+    classNames.push("transform scale-[0.9]");
   } else if (!disableHover) {
     classNames.push("transform hover:scale-105 transition-transform duration-300");
   }
@@ -498,7 +498,7 @@ export const DiagnosticScanMockup: React.FC<{ theme?: string, disableHover?: boo
     ];
 
     if (initialScaleDown) {
-        classNames.push("transform scale-[0.85]");
+        classNames.push("transform scale-[0.9]");
     } else if (!disableHover) {
         classNames.push("transform hover:scale-105 transition-transform duration-300");
     }
@@ -566,7 +566,7 @@ export const TransactionalSupportVisual: React.FC<{ theme?: string, disableHover
     ];
 
     if (initialScaleDown) {
-        classNames.push("transform scale-[0.85]");
+        classNames.push("transform scale-[0.9]");
     } else if (!disableHover) {
         classNames.push("transform hover:scale-105 transition-transform duration-300");
     }
@@ -717,7 +717,7 @@ export const teamMembers = [
     ],
     alumni: 'Alumni Eight Advisory & KPMG',
     diploma: 'Diplômé de l’IESEG School Of Management',
-    imageUrl: 'https://images2.imgbox.com/45/a5/pIJTiAbS_o.jpg',
+    imageUrl: 'https://images2.imgbox.com/4f/b1/e7ojkjCB_o.jpg',
     linkedinUrl: 'https://www.linkedin.com/in/seydina-samb-6638ba56/',
   },
   {
@@ -730,7 +730,7 @@ export const teamMembers = [
     ],
     alumni: 'Alumni EY, Exelmans & Payfit',
     diploma: 'Diplômé de l’IESEG School Of Management',
-    imageUrl: 'https://images2.imgbox.com/17/05/vPQa5hkX_o.jpg',
+    imageUrl: 'https://images2.imgbox.com/1f/8f/9VzAe3uw_o.jpg',
     linkedinUrl: 'https://www.linkedin.com/in/benjaminlegal/',
   },
 ];
