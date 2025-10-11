@@ -11,7 +11,7 @@ const Team: React.FC = () => {
       id="notre-equipe"
       className="bg-gradient-to-br from-[#27013D] to-gray-900 text-white py-16"
     >
-      <div className="container mx-auto px-16 sm:px-24 lg:px-40">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title */}
         <div className="text-center mb-14">
           <Animate variant="pop">
@@ -27,9 +27,9 @@ const Team: React.FC = () => {
         </div>
 
         {/* Main content layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-12 lg:gap-x-16 items-start">
           {/* Team Members */}
-          <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-2">
+          <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
             {displayedTeamMembers.map((member, index) => {
               return (
                 <Animate key={member.name} variant="pop" delay={200 + index * 100}>
@@ -81,11 +81,11 @@ const Team: React.FC = () => {
           </div>
 
           {/* Right Column: Text */}
-          <Animate variant="pop" className="lg:col-span-1 lg:sticky lg:top-24">
+          <Animate variant="pop" className="lg:col-span-1 lg:sticky lg:top-24 text-center lg:text-left">
             <p className="text-sm text-gray-300 leading-relaxed">
               Bird est né de la rencontre d’anciens consultants convaincus qu’il existe une autre façon d’accompagner les organisations. À mi-chemin entre l’expertise structurée du conseil et la flexibilité d’un consultant autonome, nous offrons un accompagnement sur mesure et accessible.
             </p>
-            <ul className="mt-6 space-y-4">
+            <ul className="mt-6 space-y-4 inline-block text-left">
                 <li className="flex items-start">
                     <CheckmarkCircleIcon className="w-5 h-5 flex-shrink-0 mr-3 mt-0.5 text-violet-300" />
                     <p className="text-sm text-gray-300 leading-relaxed">
@@ -109,7 +109,7 @@ const Team: React.FC = () => {
               <img 
                 src="https://images2.imgbox.com/e1/6b/xi2on8YK_o.png" 
                 alt="Illustration de la collaboration et de la stratégie d'entreprise" 
-                className="mt-8 rounded-lg shadow-lg w-1/2 mx-auto h-auto"
+                className="mt-8 rounded-lg shadow-lg w-1/3 mx-auto h-auto"
               />
             </Animate>
           </Animate>
