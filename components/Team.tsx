@@ -1,6 +1,7 @@
+
 import React from 'react';
 import Animate from './Animate';
-import { LinkedInIcon, teamMembers } from '../constants';
+import { LinkedInIcon, teamMembers, CheckmarkCircleIcon } from '../constants';
 
 const Team: React.FC = () => {
   const displayedTeamMembers = [...teamMembers].reverse();
@@ -61,13 +62,13 @@ const Team: React.FC = () => {
                           </a>
                         </div>
 
-                        <div className="text-gray-800 text-[11px] leading-snug space-y-1">
+                        <div className="text-gray-800 text-[10px] leading-snug space-y-1">
                           {member.description.map((paragraph, pIndex) => (
                             <p key={pIndex}>{paragraph}</p>
                           ))}
                         </div>
 
-                        <div className="mt-auto pt-2 border-t border-gray-200 text-[11px]">
+                        <div className="mt-auto pt-2 border-t border-gray-200 text-[10px]">
                           <p className="font-semibold text-[#27013D]">{member.alumni}</p>
                           <p className="text-gray-600">{member.diploma}</p>
                         </div>
@@ -84,6 +85,26 @@ const Team: React.FC = () => {
             <p className="text-sm text-gray-300 leading-relaxed">
               Bird est né de la rencontre d’anciens consultants convaincus qu’il existe une autre façon d’accompagner les organisations. À mi-chemin entre l’expertise structurée du conseil et la flexibilité d’un consultant autonome, nous offrons un accompagnement sur mesure et accessible.
             </p>
+            <ul className="mt-6 space-y-4">
+                <li className="flex items-start">
+                    <CheckmarkCircleIcon className="w-5 h-5 flex-shrink-0 mr-3 mt-0.5 text-violet-300" />
+                    <p className="text-sm text-gray-300 leading-relaxed">
+                        <strong>Écoute & Analyse:</strong> Comprendre vos défis en profondeur.
+                    </p>
+                </li>
+                <li className="flex items-start">
+                    <CheckmarkCircleIcon className="w-5 h-5 flex-shrink-0 mr-3 mt-0.5 text-violet-300" />
+                    <p className="text-sm text-gray-300 leading-relaxed">
+                        <strong>Stratégie sur Mesure:</strong> Développer des solutions adaptées à votre contexte.
+                    </p>
+                </li>
+                <li className="flex items-start">
+                    <CheckmarkCircleIcon className="w-5 h-5 flex-shrink-0 mr-3 mt-0.5 text-violet-300" />
+                    <p className="text-sm text-gray-300 leading-relaxed">
+                        <strong>Exécution & Suivi:</strong> Vous accompagner activement dans la mise en œuvre.
+                    </p>
+                </li>
+            </ul>
           </Animate>
         </div>
 
