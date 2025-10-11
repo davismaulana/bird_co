@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Animate from './Animate';
 import { LinkedInIcon, teamMembers } from '../constants';
@@ -27,9 +26,9 @@ const Team: React.FC = () => {
         </div>
 
         {/* Main content layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 items-start">
           {/* Team Members */}
-          <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-2">
             {displayedTeamMembers.map((member, index) => {
               return (
                 <Animate key={member.name} variant="pop" delay={200 + index * 100}>
