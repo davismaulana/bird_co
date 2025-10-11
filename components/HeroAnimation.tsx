@@ -14,13 +14,38 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
         const ctx = canvas.getContext('2d');
         if (!ctx) return;
 
-        const particleFillColor = color === 'dark' ? 'rgba(39, 1, 61, 0.8)' : 'rgba(255, 255, 255, 0.8)';
+        // --- Configuration ---
+        const particleFillColor = color === 'dark' ? 'rgba(39, 1, 61, 0.9)' : 'rgba(255, 255, 255, 0.9)';
         const lineStrokeColorRGB = color === 'dark' ? '39, 1, 61' : '255, 255, 255';
+        const BACKGROUND_PARTICLE_COUNT = 50; // More unconnected dots
+        const MAX_SPEED = 0.2; // Slower animation
+
+        // --- Constellation Definition (based on a 100x100 grid) ---
+        const birdPointsDefinition = [
+            { x: 15, y: 5 },   // 0: Top wing tip
+            { x: 50, y: 25 },  // 1: Back
+            { x: 75, y: 30 },  // 2: Head
+            { x: 85, y: 35 },  // 3: Upper beak joint
+            { x: 90, y: 40 },  // 4: Mid beak
+            { x: 95, y: 38 },  // 5: Beak tip
+            { x: 80, y: 45 },  // 6: Lower beak joint
+            { x: 60, y: 50 },  // 7: Neck
+            { x: 70, y: 70 },  // 8: Underbelly
+            { x: 35, y: 65 },  // 9: Lower wing
+            { x: 5, y: 95 },   // 10: Tail tip
+        ];
+
+        const birdLinesDefinition = [
+            [0, 9], [9, 10], [10, 8], [8, 9], [0, 1], [1, 9], [1, 7],
+            [7, 8], [1, 2], [2, 3], [3, 4], [4, 5], [3, 6], [6, 4], [6, 7]
+        ];
 
         let animationFrameId: number;
-        let particleSections: Particle[][] = [];
-        const gridConfig = { rows: 1, cols: 1 };
-        
+        let constellationParticles: Particle[] = [];
+        let backgroundParticles: Particle[] = [];
+        let scale = 1; // Variable to hold the scale factor
+
+        // --- Canvas and Particle Logic ---
         const resizeCanvas = () => {
             const parent = canvas.parentElement;
             if (parent) {
@@ -37,16 +62,22 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
         class Particle {
             x: number;
             y: number;
+            initialX: number;
+            initialY: number;
             size: number;
             speedX: number;
             speedY: number;
+            isConstellation: boolean;
 
-            constructor(x: number, y: number, size: number, speedX: number, speedY: number) {
+            constructor(x: number, y: number, size: number, speedX: number, speedY: number, isConstellation = false) {
                 this.x = x;
                 this.y = y;
+                this.initialX = x;
+                this.initialY = y;
                 this.size = size;
                 this.speedX = speedX;
                 this.speedY = speedY;
+                this.isConstellation = isConstellation;
             }
 
             draw() {
@@ -57,106 +88,118 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
                 ctx.fill();
             }
 
-            update(minX: number, maxX: number, minY: number, maxY: number) {
-                if (this.x + this.size > maxX || this.x - this.size < minX) {
-                    this.speedX = -this.speedX;
-                }
-                if (this.y + this.size > maxY || this.y - this.size < minY) {
-                    this.speedY = -this.speedY;
-                }
+            update(canvasWidth: number, canvasHeight: number) {
+                if (this.isConstellation) {
+                    // For constellation points, apply a restoring force to keep them near their origin
+                    const restoringForce = 0.005;
+                    const wanderStrength = 0.01;
+                    
+                    const dx = this.initialX - this.x;
+                    const dy = this.initialY - this.y;
 
-                if (this.x + this.size > maxX) this.x = maxX - this.size;
-                if (this.x - this.size < minX) this.x = minX + this.size;
-                if (this.y + this.size > maxY) this.y = maxY - this.size;
-                if (this.y - this.size < minY) this.y = minY + this.size;
+                    this.speedX += dx * restoringForce + (Math.random() - 0.5) * wanderStrength;
+                    this.speedY += dy * restoringForce + (Math.random() - 0.5) * wanderStrength;
 
-                this.x += this.speedX;
-                this.y += this.speedY;
+                    // Apply damping/friction
+                    this.speedX *= 0.95;
+                    this.speedY *= 0.95;
+
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+                } else {
+                    // For background particles, bounce off the walls
+                    if (this.x + this.size > canvasWidth || this.x - this.size < 0) {
+                        this.speedX = -this.speedX;
+                    }
+                    if (this.y + this.size > canvasHeight || this.y - this.size < 0) {
+                        this.speedY = -this.speedY;
+                    }
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+                }
             }
         }
-
+        
         const init = () => {
             resizeCanvas();
-            particleSections = [];
+            const canvasWidth = canvas.getBoundingClientRect().width;
+            const canvasHeight = canvas.getBoundingClientRect().height;
+
+            // --- Initialize Constellation Particles ---
+            scale = Math.min(canvasWidth, canvasHeight) / 100; // Update scale
+            const offsetX = (canvasWidth - 100 * scale) / 2;
+            const offsetY = (canvasHeight - 100 * scale) / 2;
+
+            constellationParticles = birdPointsDefinition.map(p => {
+                const size = color === 'dark' ? 1.5 : 2; // Constellation points are slightly larger
+                const x = p.x * scale + offsetX;
+                const y = p.y * scale + offsetY;
+                const speedX = (Math.random() * MAX_SPEED) - (MAX_SPEED / 2);
+                const speedY = (Math.random() * MAX_SPEED) - (MAX_SPEED / 2);
+                return new Particle(x, y, size, speedX, speedY, true);
+            });
             
-            const parentWidth = canvas.getBoundingClientRect().width;
-            const parentHeight = canvas.getBoundingClientRect().height;
-            const sectionWidth = parentWidth / gridConfig.cols;
-            const sectionHeight = parentHeight / gridConfig.rows;
-
-            for (let r = 0; r < gridConfig.rows; r++) {
-                for (let c = 0; c < gridConfig.cols; c++) {
-                    const sectionParticles: Particle[] = [];
-                    const minX = c * sectionWidth;
-                    const minY = r * sectionHeight;
-
-                    for (let i = 0; i < 20; i++) { // Increased particle count to 20
-                        const size = Math.random() * 1.5 + 0.5;
-                        const x = Math.random() * (sectionWidth - size * 2) + minX + size;
-                        const y = Math.random() * (sectionHeight - size * 2) + minY + size;
-                        const speedX = (Math.random() * 1.2) - 0.6;
-                        const speedY = (Math.random() * 1.2) - 0.6;
-                        sectionParticles.push(new Particle(x, y, size, speedX, speedY));
-                    }
-                    particleSections.push(sectionParticles);
-                }
+            // --- Initialize Background Particles ---
+            backgroundParticles = [];
+            for (let i = 0; i < BACKGROUND_PARTICLE_COUNT; i++) {
+                const size = Math.random() * 1.2 + 0.3;
+                const x = Math.random() * canvasWidth;
+                const y = Math.random() * canvasHeight;
+                const speedX = (Math.random() * MAX_SPEED) - (MAX_SPEED / 2);
+                const speedY = (Math.random() * MAX_SPEED) - (MAX_SPEED / 2);
+                backgroundParticles.push(new Particle(x, y, size, speedX, speedY, false));
             }
         };
 
-        const connectParticles = (particleArray: Particle[]) => {
+        const drawBirdLines = () => {
             if (!ctx) return;
-            
-            const parentWidth = canvas.getBoundingClientRect().width;
-            const connectThreshold = (parentWidth / 3.5) * (parentWidth / 3.5);
+            const MAX_LINE_DISTANCE_GRID = 80; // Max distance in original grid units before line disappears
+            const maxDistance = MAX_LINE_DISTANCE_GRID * scale;
+            const maxDistanceSq = maxDistance * maxDistance;
+            ctx.lineWidth = 1;
 
-            for (let i = 0; i < particleArray.length; i++) {
-                for (let j = i + 1; j < particleArray.length; j++) {
-                    const pA = particleArray[i];
-                    const pB = particleArray[j];
-                    const distance = ((pA.x - pB.x) * (pA.x - pB.x)) + ((pA.y - pB.y) * (pA.y - pB.y));
+            birdLinesDefinition.forEach(line => {
+                const pA = constellationParticles[line[0]];
+                const pB = constellationParticles[line[1]];
+                if (pA && pB) {
+                    const dx = pA.x - pB.x;
+                    const dy = pA.y - pB.y;
+                    const distanceSq = dx * dx + dy * dy;
 
-                    if (distance < connectThreshold) {
-                        const opacityValue = 1 - (distance / connectThreshold);
-                        ctx.strokeStyle = `rgba(${lineStrokeColorRGB}, ${opacityValue * 0.4})`;
-                        ctx.lineWidth = 0.5;
+                    if (distanceSq < maxDistanceSq) {
+                        const distance = Math.sqrt(distanceSq);
+                        // Opacity will be 0.5 at distance 0, and 0 at maxDistance
+                        const opacity = (1 - (distance / maxDistance)) * 0.5;
+
+                        ctx.strokeStyle = `rgba(${lineStrokeColorRGB}, ${opacity})`;
                         ctx.beginPath();
                         ctx.moveTo(pA.x, pA.y);
                         ctx.lineTo(pB.x, pB.y);
                         ctx.stroke();
                     }
                 }
-            }
-        };
-
-        const connect = () => {
-            if (!particleSections) return;
-            particleSections.forEach(connectParticles);
+            });
         };
 
         const animate = () => {
-            if (!ctx || !particleSections) return;
-            const parentWidth = canvas.getBoundingClientRect().width;
-            const parentHeight = canvas.getBoundingClientRect().height;
-            const sectionWidth = parentWidth / gridConfig.cols;
-            const sectionHeight = parentHeight / gridConfig.rows;
+            if (!ctx) return;
+            const canvasWidth = canvas.getBoundingClientRect().width;
+            const canvasHeight = canvas.getBoundingClientRect().height;
 
-            ctx.clearRect(0, 0, parentWidth, parentHeight);
+            ctx.clearRect(0, 0, canvasWidth, canvasHeight);
             
-            particleSections.forEach((section, index) => {
-                const c = index % gridConfig.cols;
-                const r = Math.floor(index / gridConfig.cols);
-                const minX = c * sectionWidth;
-                const maxX = (c + 1) * sectionWidth;
-                const minY = r * sectionHeight;
-                const maxY = (r + 1) * sectionHeight;
+            backgroundParticles.forEach(particle => {
+                particle.update(canvasWidth, canvasHeight);
+                particle.draw();
+            });
 
-                for (const particle of section) {
-                    particle.update(minX, maxX, minY, maxY);
-                    particle.draw();
-                }
+            constellationParticles.forEach(particle => {
+                particle.update(canvasWidth, canvasHeight);
+                particle.draw();
             });
             
-            connect();
+            drawBirdLines();
+
             animationFrameId = requestAnimationFrame(animate);
         };
 
