@@ -105,6 +105,13 @@ const Team: React.FC = () => {
                     </p>
                 </li>
             </ul>
+            <Animate variant="pop" delay={400}>
+              <img 
+                src="https://images2.imgbox.com/e1/6b/xi2on8YK_o.png" 
+                alt="Illustration de la collaboration et de la stratégie d'entreprise" 
+                className="mt-8 rounded-lg shadow-lg w-1/2 mx-auto h-auto"
+              />
+            </Animate>
           </Animate>
         </div>
 
