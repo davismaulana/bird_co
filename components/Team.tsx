@@ -11,7 +11,7 @@ const Team: React.FC = () => {
       id="notre-equipe"
       className="bg-gradient-to-br from-[#27013D] to-gray-900 text-white py-16"
     >
-      <div className="container mx-auto px-6 sm:px-16 lg:px-32">
+      <div className="container mx-auto px-8 sm:px-16 lg:px-32">
         {/* Title */}
         <div className="text-center mb-14">
           <Animate variant="pop">
