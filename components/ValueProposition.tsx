@@ -40,7 +40,7 @@ const ValueProposition: React.FC = () => {
   return (
     <section>
       <div className="grid grid-cols-1 lg:grid-cols-2">
-        <div className="bg-gray-50 min-h-[500px] lg:min-h-[700px] flex items-center justify-center p-8 md:p-16">
+        <div className="bg-[#EBE5F0] min-h-[500px] lg:min-h-[700px] flex items-center justify-center p-8 md:p-16">
           <div className="relative text-left w-full">
             <Animate variant="pop" delay={200}>
                 <h2 className="text-xl md:text-2xl xl:text-3xl text-[#27013D] leading-tight">

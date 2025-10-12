@@ -68,8 +68,9 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
             speedX: number;
             speedY: number;
             isConstellation: boolean;
+            index: number;
 
-            constructor(x: number, y: number, size: number, speedX: number, speedY: number, isConstellation = false) {
+            constructor(x: number, y: number, size: number, speedX: number, speedY: number, isConstellation = false, index = -1) {
                 this.x = x;
                 this.y = y;
                 this.initialX = x;
@@ -78,6 +79,7 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
                 this.speedX = speedX;
                 this.speedY = speedY;
                 this.isConstellation = isConstellation;
+                this.index = index;
             }
 
             draw() {
@@ -88,14 +90,30 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
                 ctx.fill();
             }
 
-            update(canvasWidth: number, canvasHeight: number) {
-                if (this.isConstellation) {
-                    // For constellation points, apply a restoring force to keep them near their origin
+            update(canvasWidth: number, canvasHeight: number, time?: number) {
+                if (this.isConstellation && time) {
                     const restoringForce = 0.005;
                     const wanderStrength = 0.01;
                     
+                    // --- Flapping motion for wings ---
+                    const flapAmplitude = 6 * scale; // Scaled amplitude
+                    const flapSpeed = 0.003;
+                    const flapTime = time * flapSpeed;
+                    
+                    let flapOffsetY = 0;
+                    if (this.index === 0) { // Top wing tip
+                        flapOffsetY = -Math.sin(flapTime) * flapAmplitude;
+                    } else if (this.index === 9) { // Lower wing
+                        flapOffsetY = Math.sin(flapTime + Math.PI / 4) * flapAmplitude * 0.8;
+                    } else if (this.index === 10) { // Tail tip
+                        flapOffsetY = Math.sin(flapTime + Math.PI / 2) * flapAmplitude * 0.5;
+                    }
+
+                    const targetY = this.initialY + flapOffsetY;
+
+                    // Apply a restoring force towards the (potentially animated) target position
                     const dx = this.initialX - this.x;
-                    const dy = this.initialY - this.y;
+                    const dy = targetY - this.y;
 
                     this.speedX += dx * restoringForce + (Math.random() - 0.5) * wanderStrength;
                     this.speedY += dy * restoringForce + (Math.random() - 0.5) * wanderStrength;
@@ -130,13 +148,13 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
             const offsetX = (canvasWidth - 100 * scale) / 2;
             const offsetY = (canvasHeight - 100 * scale) / 2;
 
-            constellationParticles = birdPointsDefinition.map(p => {
+            constellationParticles = birdPointsDefinition.map((p, index) => {
                 const size = color === 'dark' ? 1.5 : 2; // Constellation points are slightly larger
                 const x = p.x * scale + offsetX;
                 const y = p.y * scale + offsetY;
                 const speedX = (Math.random() * MAX_SPEED) - (MAX_SPEED / 2);
                 const speedY = (Math.random() * MAX_SPEED) - (MAX_SPEED / 2);
-                return new Particle(x, y, size, speedX, speedY, true);
+                return new Particle(x, y, size, speedX, speedY, true, index);
             });
             
             // --- Initialize Background Particles ---
@@ -153,30 +171,17 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
 
         const drawBirdLines = () => {
             if (!ctx) return;
-            const MAX_LINE_DISTANCE_GRID = 80; // Max distance in original grid units before line disappears
-            const maxDistance = MAX_LINE_DISTANCE_GRID * scale;
-            const maxDistanceSq = maxDistance * maxDistance;
-            ctx.lineWidth = 1;
+            ctx.lineWidth = 0.75;
+            ctx.strokeStyle = `rgba(${lineStrokeColorRGB}, 0.4)`;
 
             birdLinesDefinition.forEach(line => {
                 const pA = constellationParticles[line[0]];
                 const pB = constellationParticles[line[1]];
                 if (pA && pB) {
-                    const dx = pA.x - pB.x;
-                    const dy = pA.y - pB.y;
-                    const distanceSq = dx * dx + dy * dy;
-
-                    if (distanceSq < maxDistanceSq) {
-                        const distance = Math.sqrt(distanceSq);
-                        // Opacity will be 0.5 at distance 0, and 0 at maxDistance
-                        const opacity = (1 - (distance / maxDistance)) * 0.5;
-
-                        ctx.strokeStyle = `rgba(${lineStrokeColorRGB}, ${opacity})`;
-                        ctx.beginPath();
-                        ctx.moveTo(pA.x, pA.y);
-                        ctx.lineTo(pB.x, pB.y);
-                        ctx.stroke();
-                    }
+                    ctx.beginPath();
+                    ctx.moveTo(pA.x, pA.y);
+                    ctx.lineTo(pB.x, pB.y);
+                    ctx.stroke();
                 }
             });
         };
@@ -185,6 +190,7 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
             if (!ctx) return;
             const canvasWidth = canvas.getBoundingClientRect().width;
             const canvasHeight = canvas.getBoundingClientRect().height;
+            const time = Date.now();
 
             ctx.clearRect(0, 0, canvasWidth, canvasHeight);
             
@@ -194,7 +200,7 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
             });
 
             constellationParticles.forEach(particle => {
-                particle.update(canvasWidth, canvasHeight);
+                particle.update(canvasWidth, canvasHeight, time);
                 particle.draw();
             });
             
