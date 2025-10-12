@@ -78,7 +78,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                 </Animate>
             </div>
             {details.diagnostic.content && (
-              <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-16 items-baseline max-w-7xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-baseline max-w-7xl mx-auto">
                   <Animate variant={'pop'} delay={300} className="lg:col-span-3 aspect-[4/3] lg:aspect-auto relative lg:-top-2">
                       {details.diagnostic.content.visual}
                   </Animate>
