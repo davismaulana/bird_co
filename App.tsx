@@ -191,7 +191,7 @@ const App: React.FC = () => {
                         </blockquote>
                       </Animate>
                       <Animate variant="pop" delay={150}>
-                        <p className="text-sm text-gray-800 mt-2">— Peter Drucker</p>
+                        <p className="text-sm text-gray-800 mt-4">— Peter Drucker</p>
                       </Animate>
                       <Animate variant="pop" delay={300}>
                         <p className="text-gray-800 leading-relaxed text-sm mt-6">
