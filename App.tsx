@@ -164,7 +164,6 @@ const App: React.FC = () => {
         <main>
           <Hero />
           <StakesSection />
-          <ServicesOverview />
           <ValueProposition />
           {/* <Methodology /> */}
           {/* <PillarsSection /> */}
