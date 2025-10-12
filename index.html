@@ -283,6 +283,136 @@
       from { height: 0%; }
       to { height: 100%; }
     }
+
+    /* Pillars running dot animation */
+    @keyframes run-dot-position {
+      0%      { left: 0%; }
+      12.5%   { left: 0%; } /* Stop 1s at pillar 1 */
+      25%     { left: 33.333%; } /* Run 1s to pillar 2 */
+      37.5%   { left: 33.333%; } /* Stop 1s at pillar 2 */
+      50%     { left: 66.667%; } /* Run 1s to pillar 3 */
+      62.5%   { left: 66.667%; } /* Stop 1s at pillar 3 */
+      75%     { left: 100%; } /* Run 1s to pillar 4 */
+      100%    { left: 100%; } /* Stop 2s at pillar 4 */
+    }
+
+    .running-dot-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 0; /* Initial position */
+      transform: translateY(-50%);
+      animation: run-dot-position 8s ease-in-out infinite;
+      z-index: 5;
+    }
+
+    .running-dot-indicator {
+      width: 10px;
+      height: 10px;
+      background: linear-gradient(to right, #27013D, #6D0037);
+      border-radius: 9999px;
+      transform: translateX(-50%); /* Center the dot on the 'left' position */
+      box-shadow: 0 0 8px 2px rgba(39, 1, 61, 0.5);
+    }
+    
+    /* Styles for PillarsSection pure CSS animation */
+    .pillar-dot {
+        background-color: black;
+        animation-duration: 8s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+    .pillar-title {
+        animation-duration: 8s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        transition: color 0.3s, transform 0.3s;
+    }
+    .pillar-content-card {
+        opacity: 0; /* Initial state before animation */
+        animation-duration: 8s;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(.2,.65,.2,1);
+    }
+
+    /* Pillar 1 Animations */
+    .pillar-dot--1 { animation-name: active-dot-1; }
+    .pillar-title--1 { animation-name: active-title-1; }
+    .pillar-content-card--1 { animation-name: pop-in-stay-1; }
+
+    @keyframes active-dot-1 {
+        0%, 10% { width: 32px; height: 32px; background: linear-gradient(to bottom right, #27013D, #6D0037); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
+        12.5%, 100% { width: 28px; height: 28px; background: black; box-shadow: none; }
+    }
+    @keyframes active-title-1 {
+        0%, 10% { transform: scale(1.1); background-image: linear-gradient(to right, #27013D, #6D0037); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        12.5%, 100% { transform: scale(1); background-image: none; color: black; }
+    }
+    @keyframes pop-in-stay-1 {
+        0%      { opacity: 0; transform: translateY(16px) scale(.92); filter: blur(2px); }
+        3.75%   { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+        100%    { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+    }
+
+    /* Pillar 2 Animations */
+    .pillar-dot--2 { animation-name: active-dot-2; }
+    .pillar-title--2 { animation-name: active-title-2; }
+    .pillar-content-card--2 { animation-name: pop-in-stay-2; }
+
+    @keyframes active-dot-2 {
+        0%, 22.5% { width: 28px; height: 28px; background: black; box-shadow: none; }
+        25%, 35% { width: 32px; height: 32px; background: linear-gradient(to bottom right, #27013D, #6D0037); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
+        37.5%, 100% { width: 28px; height: 28px; background: black; box-shadow: none; }
+    }
+    @keyframes active-title-2 {
+        0%, 22.5% { transform: scale(1); background-image: none; color: black; }
+        25%, 35% { transform: scale(1.1); background-image: linear-gradient(to right, #27013D, #6D0037); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        37.5%, 100% { transform: scale(1); background-image: none; color: black; }
+    }
+    @keyframes pop-in-stay-2 {
+        0%, 25% { opacity: 0; transform: translateY(16px) scale(.92); filter: blur(2px); }
+        28.75%  { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+        100%    { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+    }
+
+    /* Pillar 3 Animations */
+    .pillar-dot--3 { animation-name: active-dot-3; }
+    .pillar-title--3 { animation-name: active-title-3; }
+    .pillar-content-card--3 { animation-name: pop-in-stay-3; }
+
+    @keyframes active-dot-3 {
+        0%, 47.5% { width: 28px; height: 28px; background: black; box-shadow: none; }
+        50%, 60% { width: 32px; height: 32px; background: linear-gradient(to bottom right, #27013D, #6D0037); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
+        62.5%, 100% { width: 28px; height: 28px; background: black; box-shadow: none; }
+    }
+    @keyframes active-title-3 {
+        0%, 47.5% { transform: scale(1); background-image: none; color: black; }
+        50%, 60% { transform: scale(1.1); background-image: linear-gradient(to right, #27013D, #6D0037); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        62.5%, 100% { transform: scale(1); background-image: none; color: black; }
+    }
+    @keyframes pop-in-stay-3 {
+        0%, 50% { opacity: 0; transform: translateY(16px) scale(.92); filter: blur(2px); }
+        53.75%  { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+        100%    { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+    }
+
+    /* Pillar 4 Animations */
+    .pillar-dot--4 { animation-name: active-dot-4; }
+    .pillar-title--4 { animation-name: active-title-4; }
+    .pillar-content-card--4 { animation-name: pop-in-stay-4; }
+
+    @keyframes active-dot-4 {
+        0%, 72.5% { width: 28px; height: 28px; background: black; box-shadow: none; }
+        75%, 100% { width: 32px; height: 32px; background: linear-gradient(to bottom right, #27013D, #6D0037); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
+    }
+    @keyframes active-title-4 {
+        0%, 72.5% { transform: scale(1); background-image: none; color: black; }
+        75%, 100% { transform: scale(1.1); background-image: linear-gradient(to right, #27013D, #6D0037); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    }
+    @keyframes pop-in-stay-4 {
+        0%, 75% { opacity: 0; transform: translateY(16px) scale(.92); filter: blur(2px); }
+        80%     { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+        100%    { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+    }
   </style>
 <script type="importmap">
 {
