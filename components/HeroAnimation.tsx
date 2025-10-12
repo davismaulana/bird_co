@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from 'react';
 
 interface HeroAnimationProps {
@@ -92,7 +91,7 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
 
             update(canvasWidth: number, canvasHeight: number, time?: number) {
                 if (this.isConstellation && time) {
-                    const restoringForce = 0.005;
+                    const restoringForce = 0.003;
                     const wanderStrength = 0.01;
                     
                     // --- Flapping motion for wings ---
@@ -119,8 +118,8 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
                     this.speedY += dy * restoringForce + (Math.random() - 0.5) * wanderStrength;
 
                     // Apply damping/friction
-                    this.speedX *= 0.95;
-                    this.speedY *= 0.95;
+                    this.speedX *= 0.85;
+                    this.speedY *= 0.85;
 
                     this.x += this.speedX;
                     this.y += this.speedY;
