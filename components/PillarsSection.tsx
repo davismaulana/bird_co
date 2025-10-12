@@ -4,22 +4,22 @@ import Animate from './Animate';
 
 const pillars = [
   {
-    icon: <img src="https://images2.imgbox.com/86/1a/o1GwdJHF_o.png" alt="Pragmatisme icon" className="w-14 h-14 object-contain" />,
+    icon: <img src="https://images2.imgbox.com/86/1a/o1GwdJHF_o.png" alt="Pragmatisme icon" className="w-10 h-10 object-contain" />,
     title: "Pragmatisme",
     description: "Nous apportons des solutions concrètes et adaptées à votre réalité, en conjuguant expertise et pragmatisme, pour un accompagnement aussi pertinent qu’économique.",
   },
   {
-    icon: <img src="https://images2.imgbox.com/a9/6f/sEU8YeyP_o.png" alt="Partenariat de Confiance icon" className="w-14 h-14 object-contain" />,
+    icon: <img src="https://images2.imgbox.com/a9/6f/sEU8YeyP_o.png" alt="Partenariat de Confiance icon" className="w-10 h-10 object-contain" />,
     title: "Partenariat de Confiance",
     description: "Plus qu’un consultant : un partenaire investi, guidé par la transparence et l’intégrité.",
   },
   {
-    icon: <img src="https://images2.imgbox.com/0f/19/ZMKxUMu0_o.png" alt="Clarté Décisionnelle icon" className="w-14 h-14 object-contain" />,
+    icon: <img src="https://images2.imgbox.com/0f/19/ZMKxUMu0_o.png" alt="Clarté Décisionnelle icon" className="w-10 h-10 object-contain" />,
     title: "Clarté Décisionnelle",
     description: "Nous transformons la complexité en clarté, fournissant des analyses et des outils qui éclairent vos décisions stratégiques.",
   },
   {
-    icon: <img src="https://images2.imgbox.com/04/bd/mF2HLfkj_o.png" alt="Proactivité icon" className="w-14 h-14 object-contain" />,
+    icon: <img src="https://images2.imgbox.com/04/bd/mF2HLfkj_o.png" alt="Proactivité icon" className="w-10 h-10 object-contain" />,
     title: "Proactivité",
     description: "Nous bâtissons des fondations solides pour une croissance durable, en identifiant les opportunités et anticipant les risques, afin de vous garder une longueur d'avance.",
   },
@@ -68,10 +68,10 @@ const PillarsSection: React.FC = () => {
                           const PillarContent = (
                             <div className={`pillar-content-card pillar-content-card--${index + 1} text-center px-2`}>
                                 <div className="flex flex-col items-center justify-start">
-                                    <div className="flex justify-center mb-2 h-16 w-16 items-center">
+                                    <div className="flex justify-center mb-1 h-12 w-12 items-center">
                                         {React.cloneElement(pillar.icon)}
                                     </div>
-                                    <h3 className={`pillar-title pillar-title--${index + 1} text-base font-bold text-black mb-1`}>
+                                    <h3 className={`pillar-title pillar-title--${index + 1} text-sm font-bold text-black mb-1`}>
                                         {pillar.title}
                                     </h3>
                                     <p className="text-gray-800 leading-relaxed text-xs">
@@ -85,7 +85,7 @@ const PillarsSection: React.FC = () => {
                               <div key={index} className="relative z-10 w-1/4 flex justify-center">
                                   <div className="flex flex-col items-center group">
                                       {/* Top Content */}
-                                      <div className={`min-h-[14rem] flex items-end pb-6 ${isAbove ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+                                      <div className={`min-h-[12rem] flex items-end pb-6 ${isAbove ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
                                         {PillarContent}
                                       </div>
 
@@ -93,7 +93,7 @@ const PillarsSection: React.FC = () => {
                                       <div className={`pillar-dot pillar-dot--${index + 1} rounded-full border-4 border-white`}></div>
                                       
                                       {/* Bottom Content */}
-                                      <div className={`min-h-[14rem] flex items-start pt-6 ${!isAbove ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+                                      <div className={`min-h-[12rem] flex items-start pt-6 ${!isAbove ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
                                         {PillarContent}
                                       </div>
                                   </div>
