@@ -184,11 +184,6 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                 </h2>
             </Animate>
             <Animate variant="pop" delay={200}>
-                <p className="mt-4 text-sm text-gray-300 max-w-2xl mx-auto">
-                    Laissez-nous un message
-                </p>
-            </Animate>
-            <Animate variant="pop" delay={300}>
                 <div className="mt-8">
                     <a
                       href="https://calendly.com/contact-birdandco/30min"
