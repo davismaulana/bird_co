@@ -6,7 +6,7 @@ import { services } from '../constants';
 
 const Hero: React.FC = () => {
   return (
-    <section id="accueil" className="relative bg-white text-gray-900 flex flex-col justify-center min-h-screen overflow-hidden">
+    <section id="accueil" className="relative bg-white text-gray-900 flex flex-col justify-center min-h-[90vh] overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex-grow flex items-center pt-20 md:pt-0">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center relative w-full">
           
@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
       </div>
       
       {/* Service Links */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pb-20 mt-16 md:mt-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pb-12 mt-12 md:mt-8">
         <div className="flex flex-col items-center gap-y-8 lg:flex-row lg:justify-between lg:px-16">
           {services.map((service, index) => (
             <Animate key={index} variant="pop" delay={600 + index * 100}>
