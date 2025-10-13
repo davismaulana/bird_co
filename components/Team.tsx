@@ -48,15 +48,15 @@ const Team: React.FC = () => {
                       backgroundRepeat: 'no-repeat',
                     }}
                   ></div>
-                  <div className="p-6 flex flex-col flex-grow">
-                    <div className="flex-1 flex flex-col gap-2 text-left">
+                  <div className="p-8 flex flex-col flex-grow">
+                    <div className="flex-1 flex flex-col gap-4 text-left">
                       <div>
                         <span className="text-base font-bold text-[#27013D]">
                           {member.name}
                         </span>
                       </div>
                       
-                      <div className="text-gray-800 text-xs leading-snug space-y-1.5">
+                      <div className="text-gray-800 text-xs leading-snug space-y-2">
                         {member.description.map((paragraph, pIndex) => (
                           <p key={pIndex}>{paragraph}</p>
                         ))}
