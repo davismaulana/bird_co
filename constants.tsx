@@ -367,6 +367,15 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
               <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>2,9m€</span>
               <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>5,0m€</span>
             </HighlightRow>
+            
+            <Row>
+              <span className={`${cell}`}>EBITDA</span>
+              <span className={`${cell} ${num} ${vcol}`}>1,6m€</span>
+              <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>2,6m€</span>
+              <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>4,4m€</span>
+              <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>5,8m€</span>
+              <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>7,8m€</span>
+            </Row>
 
             <Row>
               <span className={`${cell}`}>BFR</span>
