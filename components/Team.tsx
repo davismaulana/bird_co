@@ -11,7 +11,7 @@ const Team: React.FC = () => {
       id="notre-equipe"
       className="bg-gradient-to-br from-[#27013D] to-gray-900 text-white py-16"
     >
-      <div className="container mx-auto px-8 sm:px-16 lg:px-32">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title */}
         <div className="text-center mb-10">
           <Animate variant="pop">
@@ -25,9 +25,12 @@ const Team: React.FC = () => {
             </h2>
           </Animate>
           <Animate variant="pop" delay={200}>
-            <p className="text-sm text-gray-300 leading-relaxed mt-4 max-w-3xl mx-auto">
-              Bird est né de la rencontre d’anciens consultants convaincus qu’il existe une autre façon d’accompagner les organisations. À mi-chemin entre l’expertise structurée du conseil et la flexibilité d’un consultant autonome, nous offrons un accompagnement sur mesure et accessible.
-            </p>
+            <div className="text-sm text-gray-300 leading-relaxed mt-4 max-w-5xl mx-auto">
+              <p>
+                Bird est né de la rencontre d’anciens consultants convaincus qu’il existe une autre façon d’accompagner les organisations.<br />
+                <strong className="font-bold text-white">À mi-chemin</strong> entre <strong className="font-bold text-white">l’expertise structurée du conseil</strong> et la <strong className="font-bold text-white">flexibilité d’un consultant autonome</strong>, nous offrons <strong className="font-bold text-white">un accompagnement sur mesure et accessible.</strong>
+              </p>
+            </div>
           </Animate>
         </div>
 
@@ -84,7 +87,7 @@ const Team: React.FC = () => {
         </div>
         
         {/* Philosophy Text */}
-        <Animate variant="pop" delay={400} className="mt-10 max-w-3xl mx-auto text-center">
+        <Animate variant="pop" delay={400} className="mt-10 max-w-4xl mx-auto text-center">
           <p className="text-sm text-gray-300 leading-relaxed">
             Notre démarche ne remet pas en cause la valeur des cabinets traditionnels, mais vise à combler un vide : permettre à des organisations qui n’en ont pas toujours les moyens de bénéficier, elles aussi, d’un soutien stratégique et financier de haut niveau.
           </p>
