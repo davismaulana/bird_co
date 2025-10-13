@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Animate from './Animate';
 import { LinkedInIcon, teamMembers } from '../constants';
@@ -13,7 +12,7 @@ const Team: React.FC = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-20">
           <Animate variant="pop">
             <div className="flex justify-center mb-4">
               <div className="w-16 h-1 bg-gradient-to-r from-white to-gray-400 rounded-full" />
@@ -41,7 +40,7 @@ const Team: React.FC = () => {
               <Animate key={member.name} variant="pop" delay={200 + index * 100}>
                 <div className="bg-white rounded-lg shadow-2xl shadow-violet-900/20 overflow-hidden h-full flex flex-col border-2 border-gray-300">
                   <div
-                    className="w-full aspect-square md:h-80 flex-shrink-0"
+                    className="w-full aspect-square md:h-96 flex-shrink-0"
                     style={{
                       backgroundImage: `url(${member.imageUrl})`,
                       backgroundPosition: 'center 15%',
@@ -87,7 +86,7 @@ const Team: React.FC = () => {
         </div>
         
         {/* Philosophy Text */}
-        <Animate variant="pop" delay={400} className="mt-10 max-w-4xl mx-auto text-center">
+        <Animate variant="pop" delay={400} className="mt-10 max-w-5xl mx-auto text-center">
           <p className="text-sm text-gray-300 leading-relaxed">
             Notre démarche ne remet pas en cause la valeur des cabinets traditionnels, mais vise à combler un vide : permettre à des organisations qui n’en ont pas toujours les moyens de bénéficier, elles aussi, d’un soutien stratégique et financier de haut niveau.
           </p>
