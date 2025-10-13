@@ -1,17 +1,16 @@
-
 import React from 'react';
 import Animate from './Animate';
 
 const personas = [
   {
-    icon: <img src="https://images2.imgbox.com/88/a2/fagQVMCi_o.png" alt="Actionnaires icon" className="w-12 h-12 object-contain" />,
-    title: "Actionnaires",
-    description: "Nous vous apportons une vision stratégique et un cadre financier solide pour sécuriser et valoriser votre investissement.",
-  },
-  {
     icon: <img src="https://images2.imgbox.com/5c/0a/1tuigqwq_o.png" alt="Dirigeants & Fondateurs icon" className="w-12 h-12 object-contain" />,
     title: "Dirigeants & Fondateurs",
     description: "Nous vous renforçons pour faire face aux projets de transformation et aux défis de croissance, en agissant comme votre bras-droit.",
+  },
+  {
+    icon: <img src="https://images2.imgbox.com/88/a2/fagQVMCi_o.png" alt="Actionnaires icon" className="w-12 h-12 object-contain" />,
+    title: "Actionnaires",
+    description: "Nous vous apportons une vision stratégique et un cadre financier solide pour sécuriser et valoriser votre investissement.",
   },
   {
     icon: <img src="https://images2.imgbox.com/4f/d9/hcbc6lOc_o.png" alt="Avocats icon" className="w-12 h-12 object-contain" />,
