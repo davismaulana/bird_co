@@ -60,14 +60,18 @@ const Hero: React.FC = () => {
       
       {/* Service Links */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pb-12 mt-12 md:mt-8">
-        <div className="flex flex-col items-center gap-y-8 lg:flex-row lg:justify-between lg:px-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 lg:px-16">
           {services.map((service, index) => (
             <Animate key={index} variant="pop" delay={600 + index * 100}>
               <a
                 href={`/service/${service.slug}`}
-                className="text-xl font-normal text-center text-gray-900 hover-gradient-text transition-colors duration-300"
+                className="group block rounded-xl bg-white p-4 text-center shadow-sm transition-all duration-300 hover:shadow-xl hover:scale-105 border border-gray-200 h-full"
               >
-                {service.title}
+                <div className="flex items-center justify-center h-14 w-14 mx-auto text-[#27013D] mb-2">
+                  {React.cloneElement(service.icon, { className: service.iconClassName })}
+                </div>
+                <h3 className="text-sm font-bold text-gray-900">{service.title}</h3>
+                <p className="mt-1 text-xs font-semibold text-[#6D0037]">{service.subTitle}</p>
               </a>
             </Animate>
           ))}
