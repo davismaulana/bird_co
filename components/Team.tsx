@@ -40,7 +40,7 @@ const Team: React.FC = () => {
               <Animate key={member.name} variant="pop" delay={200 + index * 100}>
                 <div className="bg-white rounded-lg shadow-2xl shadow-violet-900/20 overflow-hidden h-full flex flex-col border-2 border-gray-300">
                   <div
-                    className="w-full aspect-square md:h-96 flex-shrink-0"
+                    className="w-full aspect-square md:h-[340px] flex-shrink-0"
                     style={{
                       backgroundImage: `url(${member.imageUrl})`,
                       backgroundPosition: 'center 15%',
@@ -56,7 +56,7 @@ const Team: React.FC = () => {
                         </span>
                       </div>
                       
-                      <div className="text-gray-800 text-xs leading-snug space-y-2">
+                      <div className="text-gray-800 text-xs leading-snug space-y-3">
                         {member.description.map((paragraph, pIndex) => (
                           <p key={pIndex}>{paragraph}</p>
                         ))}
