@@ -59,19 +59,15 @@ const Hero: React.FC = () => {
       </div>
       
       {/* Service Links */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pb-20 mt-8 md:mt-0">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pb-20 mt-16 md:mt-12">
+        <div className="flex flex-col items-center gap-y-6 lg:flex-row lg:flex-wrap lg:justify-center lg:gap-x-12 lg:gap-y-6">
           {services.map((service, index) => (
             <Animate key={index} variant="pop" delay={600 + index * 100}>
-              <a href={`/service/${service.slug}`} className="block p-4 rounded-xl border border-gray-200 bg-white hover:shadow-xl transition-all duration-300 group text-center md:text-left h-full shadow-md hover:scale-105 hover:border-violet-200">
-                <div className="flex flex-col sm:flex-row items-center gap-4">
-                  <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center text-[#27013D] bg-gray-50 rounded-lg shadow-inner border border-gray-100">
-                     {React.cloneElement(service.icon, { className: 'w-8 h-8 object-contain' })}
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-sm text-gray-900 group-hover:gradient-text">{service.title}</h3>
-                  </div>
-                </div>
+              <a
+                href={`/service/${service.slug}`}
+                className="text-xl font-normal text-center text-gray-900 hover-gradient-text transition-colors duration-300"
+              >
+                {service.title}
               </a>
             </Animate>
           ))}
