@@ -1,6 +1,7 @@
+
 import React from 'react';
 import Animate from './Animate';
-import { LinkedInIcon, teamMembers, CheckmarkCircleIcon } from '../constants';
+import { LinkedInIcon, teamMembers } from '../constants';
 
 const Team: React.FC = () => {
   const displayedTeamMembers = [...teamMembers].reverse();
@@ -31,13 +32,13 @@ const Team: React.FC = () => {
         </div>
 
         {/* Team Members */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-[37rem] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
           {displayedTeamMembers.map((member, index) => {
             return (
               <Animate key={member.name} variant="pop" delay={200 + index * 100}>
-                <div className="bg-white rounded-lg shadow-2xl shadow-violet-900/20 overflow-hidden h-full flex flex-col border-2 border-gray-300 max-w-72 mx-auto">
+                <div className="bg-white rounded-lg shadow-2xl shadow-violet-900/20 overflow-hidden h-full flex flex-col border-2 border-gray-300">
                   <div
-                    className="w-full aspect-square md:h-64 flex-shrink-0"
+                    className="w-full aspect-square md:h-80 flex-shrink-0"
                     style={{
                       backgroundImage: `url(${member.imageUrl})`,
                       backgroundPosition: 'center 15%',
@@ -45,13 +46,24 @@ const Team: React.FC = () => {
                       backgroundRepeat: 'no-repeat',
                     }}
                   ></div>
-                  <div className="p-4 flex flex-col flex-grow">
-                    <div className="flex-1 flex flex-col gap-1 text-left">
-                      <div className="flex justify-between items-start gap-2">
+                  <div className="p-6 flex flex-col flex-grow">
+                    <div className="flex-1 flex flex-col gap-2 text-left">
+                      <div>
+                        <span className="text-base font-bold text-[#27013D]">
+                          {member.name}
+                        </span>
+                      </div>
+                      
+                      <div className="text-gray-800 text-xs leading-snug space-y-1.5">
+                        {member.description.map((paragraph, pIndex) => (
+                          <p key={pIndex}>{paragraph}</p>
+                        ))}
+                      </div>
+
+                      <div className="mt-auto pt-4 border-t border-gray-200 text-xs flex justify-between items-end">
                         <div>
-                          <span className="text-sm font-bold text-[#27013D]">
-                            {member.name}
-                          </span>
+                          <p className="font-semibold text-[#27013D]">{member.alumni}</p>
+                          <p className="text-gray-600">{member.diploma}</p>
                         </div>
                         <a
                           href={member.linkedinUrl}
@@ -60,19 +72,8 @@ const Team: React.FC = () => {
                           aria-label={`LinkedIn de ${member.name}`}
                           className="text-[#27013D] hover:text-[#6D0037] transition-colors flex-shrink-0"
                         >
-                          <LinkedInIcon className="h-4 w-4" />
+                          <LinkedInIcon className="h-5 w-5" />
                         </a>
-                      </div>
-
-                      <div className="text-gray-800 text-[10px] leading-snug space-y-1">
-                        {member.description.map((paragraph, pIndex) => (
-                          <p key={pIndex}>{paragraph}</p>
-                        ))}
-                      </div>
-
-                      <div className="mt-auto pt-2 border-t border-gray-200 text-[10px]">
-                        <p className="font-semibold text-[#27013D]">{member.alumni}</p>
-                        <p className="text-gray-600">{member.diploma}</p>
                       </div>
                     </div>
                   </div>
