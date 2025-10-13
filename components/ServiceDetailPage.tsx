@@ -61,7 +61,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
       {details.diagnostic && (
         <section className="bg-gray-50 py-12 md:py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-14 max-w-5xl mx-auto">
+            <div className="text-center mb-16 max-w-5xl mx-auto">
                 <Animate variant="pop">
                   <div className="flex justify-center mb-4">
                     <div className="w-16 h-1 bg-gradient-to-r from-[#27013D] to-[#6D0037] rounded-full"></div>
@@ -79,7 +79,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                 </Animate>
             </div>
             {details.diagnostic.content && (
-              <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-start max-w-7xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-start max-w-7xl mx-auto mt-5">
                   <Animate variant={'pop'} delay={300} className="lg:col-span-3 aspect-[4/3] lg:aspect-auto relative lg:-top-10">
                       {details.diagnostic.content.visual}
                   </Animate>
@@ -123,7 +123,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
       {/* Content Section */}
       <main id="content" className="bg-gray-50 py-12 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-14 max-w-3xl mx-auto">
+            <div className="text-center mb-16 max-w-3xl mx-auto">
                 <Animate variant="pop">
                   <div className="flex justify-center mb-4">
                     <div className="w-16 h-1 bg-gradient-to-r from-[#27013D] to-[#6D0037] rounded-full"></div>
