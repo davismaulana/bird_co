@@ -58,7 +58,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
 
       {/* Diagnostic Section */}
       {details.diagnostic && (
-        <section className="bg-gray-50 py-12 md:py-16">
+        <section className="bg-gray-50 pt-12 md:pt-16 pb-6 md:pb-8">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 max-w-5xl mx-auto">
                 <Animate variant="pop">
@@ -82,7 +82,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                   <Animate variant={'pop'} delay={300} className="lg:col-span-3 aspect-[4/3] lg:aspect-auto relative lg:top-8">
                       {details.diagnostic.content.visual}
                   </Animate>
-                  <Animate variant={'pop'} delay={200} className="lg:col-span-2 relative lg:top-8 lg:pt-6">
+                  <Animate variant={'pop'} delay={200} className="lg:col-span-2 relative lg:top-8 lg:pt-8">
                       <div className="text-left">
                         <h3 className="text-lg font-bold text-[#27013D] mb-4">{details.diagnostic.content.title}</h3>
                         <div className="text-gray-800 leading-relaxed text-xs">
@@ -120,7 +120,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
       )}
 
       {/* Content Section */}
-      <main id="content" className="bg-gray-50 py-12 sm:py-16">
+      <main id="content" className="bg-gray-50 pt-6 sm:pt-8 pb-12 sm:pb-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 max-w-3xl mx-auto">
                 <Animate variant="pop">
