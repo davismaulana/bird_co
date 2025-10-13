@@ -58,7 +58,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
 
       {/* Diagnostic Section */}
       {details.diagnostic && (
-        <section className="bg-gray-50 pt-12 md:pt-16 pb-6 md:pb-8">
+        <section className="bg-gray-50 py-12 md:py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 max-w-5xl mx-auto">
                 <Animate variant="pop">
@@ -120,7 +120,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
       )}
 
       {/* Content Section */}
-      <main id="content" className="bg-gray-50 pt-6 sm:pt-8 pb-12 sm:pb-16">
+      <main id="content" className="bg-gray-50 py-12 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 max-w-3xl mx-auto">
                 <Animate variant="pop">
