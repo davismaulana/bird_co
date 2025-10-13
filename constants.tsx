@@ -596,9 +596,6 @@ export const TransactionalSupportVisual: React.FC<{ theme?: string, disableHover
                     <p className="text-gray-700 text-xs">Phase 3: Due Diligence &amp; Closing</p>
                 </div>
             </div>
-            <div className="mt-4 bg-[#27013D]/5 rounded-lg p-3 border border-[#27013D]/10 text-center">
-                <p className="text-xs font-bold text-[#27013D]">Objectif: Maximiser la valeur</p>
-            </div>
         </div>
     );
 };
