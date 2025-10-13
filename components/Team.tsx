@@ -12,7 +12,7 @@ const Team: React.FC = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12">
           <Animate variant="pop">
             <div className="flex justify-center mb-4">
               <div className="w-16 h-1 bg-gradient-to-r from-white to-gray-400 rounded-full" />
