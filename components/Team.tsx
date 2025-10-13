@@ -90,7 +90,7 @@ const Team: React.FC = () => {
         <Animate variant="pop" delay={400}>
           <div className="text-sm text-gray-300 leading-relaxed mt-10 max-w-5xl mx-auto text-center">
             <p>
-              Notre démarche ne remet pas en cause la valeur des cabinets traditionnels, mais vise à combler un vide : permettre à des organisations qui n’en ont pas toujours les moyens de bénéficier, elles aussi, d’un <strong className="font-bold text-white">soutien stratégique et financier de haut niveau.</strong>
+              Notre démarche ne remet pas en cause la valeur des cabinets traditionnels, mais vise à combler un vide : permettre à des organisations qui n’en ont pas toujours les moyens de bénéficier, elles aussi, d’un soutien stratégique et financier de haut niveau.
             </p>
           </div>
         </Animate>

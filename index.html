@@ -18,6 +18,12 @@
       background-clip: text;
       color: transparent;
     }
+    .gradient-text-pillar {
+      background-image: linear-gradient(to right, black, #27013D 50%, #6D0037);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
     .gradient-text-alt {
       background-image: linear-gradient(to right, #9333ea, #4f46e5);
       -webkit-background-clip: text;
@@ -316,6 +322,8 @@
     
     /* Styles for PillarsSection pure CSS animation */
     .pillar-dot {
+        width: 28px;
+        height: 28px;
         background-color: black;
         animation-duration: 8s;
         animation-iteration-count: infinite;
@@ -340,12 +348,12 @@
     .pillar-content-card--1 { animation-name: pop-in-stay-1; }
 
     @keyframes active-dot-1 {
-        0%, 10% { width: 32px; height: 32px; background: linear-gradient(to bottom right, #27013D, #6D0037); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
-        12.5%, 100% { width: 28px; height: 28px; background: black; box-shadow: none; }
+        0%, 10% { background: linear-gradient(to bottom right, #27013D, #6D0037); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
+        12.5%, 100% { background: black; box-shadow: none; }
     }
     @keyframes active-title-1 {
-        0%, 10% { transform: scale(1.1); background-image: linear-gradient(to right, #27013D, #6D0037); -webkit-background-clip: text; background-clip: text; color: transparent; }
-        12.5%, 100% { transform: scale(1); background-image: none; color: black; }
+        0%, 10% { transform: scale(1.1); }
+        12.5%, 100% { transform: scale(1); }
     }
     @keyframes pop-in-stay-1 {
         0%      { opacity: 0; transform: translateY(16px) scale(.92); filter: blur(2px); }
@@ -359,14 +367,14 @@
     .pillar-content-card--2 { animation-name: pop-in-stay-2; }
 
     @keyframes active-dot-2 {
-        0%, 22.5% { width: 28px; height: 28px; background: black; box-shadow: none; }
-        25%, 35% { width: 32px; height: 32px; background: linear-gradient(to bottom right, #27013D, #6D0037); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
-        37.5%, 100% { width: 28px; height: 28px; background: black; box-shadow: none; }
+        0%, 22.5% { background: black; box-shadow: none; }
+        25%, 35% { background: linear-gradient(to bottom right, #27013D, #6D0037); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
+        37.5%, 100% { background: black; box-shadow: none; }
     }
     @keyframes active-title-2 {
-        0%, 22.5% { transform: scale(1); background-image: none; color: black; }
-        25%, 35% { transform: scale(1.1); background-image: linear-gradient(to right, #27013D, #6D0037); -webkit-background-clip: text; background-clip: text; color: transparent; }
-        37.5%, 100% { transform: scale(1); background-image: none; color: black; }
+        0%, 22.5% { transform: scale(1); }
+        25%, 35% { transform: scale(1.1); }
+        37.5%, 100% { transform: scale(1); }
     }
     @keyframes pop-in-stay-2 {
         0%, 25% { opacity: 0; transform: translateY(16px) scale(.92); filter: blur(2px); }
@@ -380,14 +388,14 @@
     .pillar-content-card--3 { animation-name: pop-in-stay-3; }
 
     @keyframes active-dot-3 {
-        0%, 47.5% { width: 28px; height: 28px; background: black; box-shadow: none; }
-        50%, 60% { width: 32px; height: 32px; background: linear-gradient(to bottom right, #27013D, #6D0037); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
-        62.5%, 100% { width: 28px; height: 28px; background: black; box-shadow: none; }
+        0%, 47.5% { background: black; box-shadow: none; }
+        50%, 60% { background: linear-gradient(to bottom right, #27013D, #6D0037); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
+        62.5%, 100% { background: black; box-shadow: none; }
     }
     @keyframes active-title-3 {
-        0%, 47.5% { transform: scale(1); background-image: none; color: black; }
-        50%, 60% { transform: scale(1.1); background-image: linear-gradient(to right, #27013D, #6D0037); -webkit-background-clip: text; background-clip: text; color: transparent; }
-        62.5%, 100% { transform: scale(1); background-image: none; color: black; }
+        0%, 47.5% { transform: scale(1); }
+        50%, 60% { transform: scale(1.1); }
+        62.5%, 100% { transform: scale(1); }
     }
     @keyframes pop-in-stay-3 {
         0%, 50% { opacity: 0; transform: translateY(16px) scale(.92); filter: blur(2px); }
@@ -401,12 +409,12 @@
     .pillar-content-card--4 { animation-name: pop-in-stay-4; }
 
     @keyframes active-dot-4 {
-        0%, 72.5% { width: 28px; height: 28px; background: black; box-shadow: none; }
-        75%, 100% { width: 32px; height: 32px; background: linear-gradient(to bottom right, #27013D, #6D0037); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
+        0%, 72.5% { background: black; box-shadow: none; }
+        75%, 100% { background: linear-gradient(to bottom right, #27013D, #6D0037); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
     }
     @keyframes active-title-4 {
-        0%, 72.5% { transform: scale(1); background-image: none; color: black; }
-        75%, 100% { transform: scale(1.1); background-image: linear-gradient(to right, #27013D, #6D0037); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        0%, 72.5% { transform: scale(1); }
+        75%, 100% { transform: scale(1.1); }
     }
     @keyframes pop-in-stay-4 {
         0%, 75% { opacity: 0; transform: translateY(16px) scale(.92); filter: blur(2px); }

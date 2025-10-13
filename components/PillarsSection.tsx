@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Animate from './Animate';
 
@@ -6,7 +5,7 @@ const pillars = [
   {
     icon: <img src="https://images2.imgbox.com/86/1a/o1GwdJHF_o.png" alt="Pragmatisme icon" className="w-10 h-10 object-contain" />,
     title: "Pragmatisme",
-    description: "Nous apportons des solutions concrètes et adaptées à votre réalité, en conjuguant expertise et pragmatisme, pour un accompagnement aussi pertinent qu’économique.",
+    description: <>Des solutions concrètes pour un accompagnement <strong>pertinent</strong>, <strong>économique</strong> et <strong>adapté à votre réalité</strong>.</>,
   },
   {
     icon: <img src="https://images2.imgbox.com/a9/6f/sEU8YeyP_o.png" alt="Partenariat de Confiance icon" className="w-10 h-10 object-contain" />,
@@ -71,7 +70,7 @@ const PillarsSection: React.FC = () => {
                                     <div className="flex justify-center mb-1 h-12 w-12 items-center">
                                         {React.cloneElement(pillar.icon)}
                                     </div>
-                                    <h3 className={`pillar-title pillar-title--${index + 1} text-sm font-bold text-black mb-1`}>
+                                    <h3 className={`pillar-title pillar-title--${index + 1} text-sm font-bold mb-1 gradient-text-pillar`}>
                                         {pillar.title}
                                     </h3>
                                     <p className="text-gray-800 leading-relaxed text-xs">
