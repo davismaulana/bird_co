@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 
 export const PaperPlaneIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -202,7 +203,6 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
       {/* Header */}
       <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
         <h3 className="font-bold text-gray-900 text-sm">Modélisation Financière</h3>
-        <p className="text-xs text-gray-700">Prévisionnels robustes et détaillés</p>
       </div>
 
       <div className="flex-grow space-y-1.5 text-[10px] overflow-x-auto overflow-y-auto">
@@ -437,7 +437,6 @@ export const KpiDashboardMockup: React.FC<{ theme?: string, noAspectRatio?: bool
     <div className={classNames.filter(Boolean).join(' ')}>
       <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
         <h3 className="font-bold text-gray-900 text-sm">Tableau de Bord - T4 2024</h3>
-        <p className="text-xs text-gray-700">Suivi des KPIs clés</p>
       </div>
       <div className="flex-grow grid grid-cols-2 grid-rows-2 gap-4">
         <div className="bg-gray-50 rounded-lg p-3 border border-gray-100 col-span-1 row-span-2 flex flex-col anim-child" style={{'--i': 1} as React.CSSProperties}>
