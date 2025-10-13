@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
       </div>
       
       {/* Service Links */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pb-12 md:pb-16 mt-8 md:mt-0">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pb-20 mt-8 md:mt-0">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {services.map((service, index) => (
             <Animate key={index} variant="pop" delay={600 + index * 100}>
