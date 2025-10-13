@@ -84,7 +84,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                       {details.diagnostic.content.visual}
                   </Animate>
                   <Animate variant={'pop'} delay={200} className="lg:col-span-2 relative lg:-top-10 lg:pt-6">
-                      <div className="text-left">
+                      <div className="text-left mt-5">
                         <h3 className="text-lg font-bold text-[#27013D] mb-4">{details.diagnostic.content.title}</h3>
                         <div className="text-gray-800 leading-relaxed text-xs">
                           {details.diagnostic.content.description}
