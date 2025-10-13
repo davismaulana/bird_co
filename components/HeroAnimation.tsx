@@ -145,7 +145,7 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
             // --- Initialize Constellation Particles ---
             scale = Math.min(canvasWidth, canvasHeight) / 130; // Update scale to make the bird smaller
             const offsetX = (canvasWidth - 100 * scale) / 2;
-            const offsetY = (canvasHeight - 100 * scale) / 2;
+            const offsetY = (canvasHeight - 100 * scale) / 2 + 15 * scale;
 
             constellationParticles = birdPointsDefinition.map((p, index) => {
                 const size = color === 'dark' ? 1.5 : 2; // Constellation points are slightly larger
