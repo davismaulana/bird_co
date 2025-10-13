@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Animate from './Animate';
 import { CheckmarkCircleIcon, KpiDashboardMockup, FinancialReportMockup } from '../constants';
@@ -199,7 +200,7 @@ const TaskShowcase: React.FC = () => {
     return (
         <section className="bg-gray-50 py-16">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-20 max-w-3xl mx-auto">
+                <div className="text-center mb-12 max-w-3xl mx-auto">
                     <Animate variant="pop">
                       <div className="flex justify-center mb-4">
                         <div className="w-16 h-1 bg-gradient-to-r from-[#27013D] to-[#6D0037] rounded-full"></div>
