@@ -49,7 +49,7 @@ const Team: React.FC = () => {
                       backgroundRepeat: 'no-repeat',
                     }}
                   ></div>
-                  <div className="p-8 flex flex-col flex-grow">
+                  <div className="p-6 flex flex-col flex-grow">
                     <div className="flex-1 flex flex-col gap-4 text-left">
                       <div>
                         <span className="text-lg font-bold text-[#27013D]">
@@ -87,10 +87,12 @@ const Team: React.FC = () => {
         </div>
         
         {/* Philosophy Text */}
-        <Animate variant="pop" delay={400} className="mt-10 max-w-5xl mx-auto text-center">
-          <p className="text-sm text-gray-300 leading-relaxed">
-            Notre démarche ne remet pas en cause la valeur des cabinets traditionnels, mais vise à combler un vide : permettre à des organisations qui n’en ont pas toujours les moyens de bénéficier, elles aussi, d’un soutien stratégique et financier de haut niveau.
-          </p>
+        <Animate variant="pop" delay={400}>
+          <div className="text-sm text-gray-300 leading-relaxed mt-10 max-w-5xl mx-auto text-center">
+            <p>
+              Notre démarche ne remet pas en cause la valeur des cabinets traditionnels, mais vise à combler un vide : permettre à des organisations qui n’en ont pas toujours les moyens de bénéficier, elles aussi, d’un <strong className="font-bold text-white">soutien stratégique et financier de haut niveau.</strong>
+            </p>
+          </div>
         </Animate>
       </div>
     </section>
