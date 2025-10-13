@@ -60,7 +60,7 @@ const Hero: React.FC = () => {
       
       {/* Service Links */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pb-20 mt-16 md:mt-12">
-        <div className="flex flex-col items-center gap-y-8 lg:flex-row lg:justify-between">
+        <div className="flex flex-col items-center gap-y-8 lg:flex-row lg:justify-between lg:px-16">
           {services.map((service, index) => (
             <Animate key={index} variant="pop" delay={600 + index * 100}>
               <a
