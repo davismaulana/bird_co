@@ -1,5 +1,3 @@
-
-
 import React, { useState } from 'react';
 import Animate from './Animate';
 import { CheckmarkCircleIcon, KpiDashboardMockup, FinancialReportMockup } from '../constants';
@@ -52,38 +50,103 @@ const TransactionalSupportVisual: React.FC = () => (
     </div>
 );
 
-const CashGrowthVisual: React.FC = () => {
-    const pathData = "M 0 90 C 7 92 13 97 20 95 C 27 93 33 98 40 100 C 47 102 53 91 60 85 C 67 79 73 89 80 92 C 87 95 93 104 100 110 C 107 116 113 119 120 120 C 127 121 133 93 140 80 C 147 67 153 53 160 50 C 167 47 173 57 180 60 C 187 63 193 51 200 45 C 207 39 213 60 220 70 C 227 80 233 91 240 95 C 247 99 253 105 260 105 C 267 105 273 95 280 90 C 287 85 293 95 300 98";
+const LiquidityChartVisual: React.FC = () => {
+    // Data points based on the image (approximations) in k€
+    const data = [
+        { x: 0, y: 650 }, { x: 20, y: 600 }, { x: 40, y: 420 },
+        { x: 60, y: 320 }, { x: 80, y: 280 }, { x: 100, y: 120 },
+    ];
+
+    const svgWidth = 300;
+    const svgHeight = 170;
+    const padding = { top: 10, right: 10, bottom: 0, left: 35 };
+    const chartWidth = svgWidth - padding.left - padding.right;
+    const chartHeight = svgHeight - padding.top - padding.bottom;
+    const yMax = 700;
+
+    const scaleX = (x: number) => (x / 100) * chartWidth + padding.left;
+    const scaleY = (y: number) => svgHeight - padding.bottom - (y / yMax) * chartHeight;
+    
+    const linePathData = 
+        `M ${scaleX(data[0].x)} ${scaleY(data[0].y)}` +
+        ` C ${scaleX(10)} ${scaleY(630)}, ${scaleX(15)} ${scaleY(620)}, ${scaleX(data[1].x)} ${scaleY(data[1].y)}` +
+        ` C ${scaleX(28)} ${scaleY(550)}, ${scaleX(35)} ${scaleY(450)}, ${scaleX(data[2].x)} ${scaleY(data[2].y)}` +
+        ` C ${scaleX(48)} ${scaleY(380)}, ${scaleX(55)} ${scaleY(340)}, ${scaleX(data[3].x)} ${scaleY(data[3].y)}` +
+        ` C ${scaleX(65)} ${scaleY(300)}, ${scaleX(75)} ${scaleY(290)}, ${scaleX(data[4].x)} ${scaleY(data[4].y)}` +
+        ` C ${scaleX(85)} ${scaleY(270)}, ${scaleX(90)} ${scaleY(200)}, ${scaleX(data[5].x)} ${scaleY(data[5].y)}`;
+        
+    const areaPathData = linePathData + ` L ${scaleX(100)} ${svgHeight - padding.bottom} L ${scaleX(0)} ${svgHeight - padding.bottom} Z`;
+
+    const yAxisLabels = [700, 600, 500, 400, 300, 200, 100, 0];
 
     return (
-        <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
+        <div className="animated-mockup w-full h-full bg-[#27013D] rounded-2xl p-4 sm:p-6 shadow-2xl border border-white/10 flex flex-col transform group-hover:scale-105 transition-transform duration-300 text-white">
             <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
-                <h3 className="font-bold text-gray-900 text-sm">Gestion de la trésorerie</h3>
+                <h3 className="font-bold text-violet-200 text-sm">Liquidités</h3>
             </div>
-            <div className="relative flex-grow">
-                <svg viewBox="0 0 335 170" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
-                    {/* Y-axis labels */}
-                    <text x="0" y="25" alignmentBaseline="middle" fill="#6b7280" fontSize="6" className="anim-child" style={{'--i': 1} as React.CSSProperties}>+50k€</text>
-                    <text x="0" y="75" alignmentBaseline="middle" fill="#6b7280" fontSize="6" className="anim-child" style={{'--i': 2} as React.CSSProperties}>0</text>
-                    <text x="0" y="125" alignmentBaseline="middle" fill="#6b7280" fontSize="6" className="anim-child" style={{'--i': 3} as React.CSSProperties}>-50k€</text>
+            <div className="anim-child" style={{'--i': 1} as React.CSSProperties}>
+                <p className="text-3xl font-bold text-white">58 K€</p>
+            </div>
+            <div className="flex-grow mt-0.5 relative">
+                <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`} className="w-full h-full" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                        <linearGradient id="liquidityAreaGradient" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stopColor="#A78BFA" stopOpacity="0.4"/>
+                            <stop offset="100%" stopColor="#A78BFA" stopOpacity="0"/>
+                        </linearGradient>
+                    </defs>
                     
-                    <g transform="translate(35, 0)">
-                        {/* X-axis labels */}
-                        <text x="0" y="165" textAnchor="middle" fill="#6b7280" fontSize="6" className="anim-child" style={{'--i': 4} as React.CSSProperties}>T0</text>
-                        <text x="100" y="165" textAnchor="middle" fill="#6b7280" fontSize="6" className="anim-child" style={{'--i': 5} as React.CSSProperties}>T5</text>
-                        <text x="200" y="165" textAnchor="middle" fill="#6b7280" fontSize="6" className="anim-child" style={{'--i': 6} as React.CSSProperties}>T10</text>
-                        <text x="300" y="165" textAnchor="middle" fill="#6b7280" fontSize="6" className="anim-child" style={{'--i': 7} as React.CSSProperties}>T15</text>
-                        
-                        {/* Dashed reference line for zero */}
-                        <line x1="0" y1="75" x2="300" y2="75" stroke="#d1d5db" strokeWidth="1" strokeDasharray="3 3" className="anim-child" style={{'--i': 1} as React.CSSProperties} />
-                        
-                        {/* Additional reference lines */}
-                        <line x1="0" y1="25" x2="300" y2="25" stroke="#e5e7eb" strokeWidth="0.5" strokeDasharray="2 4" className="anim-child" style={{'--i': 1} as React.CSSProperties}/>
-                        <line x1="0" y1="125" x2="300" y2="125" stroke="#e5e7eb" strokeWidth="0.5" strokeDasharray="2 4" className="anim-child" style={{'--i': 1} as React.CSSProperties}/>
-
-                        {/* Green line chart */}
-                        <path d={pathData} stroke="#10B981" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" className="animated-line-chart" />
+                    <g className="anim-child" style={{'--i': 2} as React.CSSProperties}>
+                        {/* Y-axis labels */}
+                        {yAxisLabels.map((val, i) => (
+                            <text
+                                key={i}
+                                x={padding.left - 8}
+                                y={scaleY(val)}
+                                textAnchor="end"
+                                alignmentBaseline="middle"
+                                fill="#C4B5FD"
+                                fontSize="5"
+                                style={{ opacity: 0.7 }}
+                            >
+                                {val === 0 ? '0k' : `${val}k`}
+                            </text>
+                        ))}
                     </g>
+                    
+                    {/* Area fill path. */}
+                    <path
+                        d={areaPathData}
+                        fill="url(#liquidityAreaGradient)"
+                        className="anim-child"
+                        style={{'--i': 3, stroke: 'none'} as React.CSSProperties}
+                    />
+
+                    {/* Line path */}
+                    <path
+                        d={linePathData}
+                        stroke="#C4B5FD"
+                        strokeWidth="1"
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="animated-line-chart"
+                    />
+
+                    {/* Data point circles */}
+                    {data.map((point, i) => (
+                        <circle
+                            key={i}
+                            cx={scaleX(point.x)}
+                            cy={scaleY(point.y)}
+                            r="1.25"
+                            fill="#27013D"
+                            stroke="#C4B5FD"
+                            strokeWidth="0.75"
+                            className="anim-child"
+                            style={{'--i': 4 + i} as React.CSSProperties}
+                        />
+                    ))}
                 </svg>
             </div>
         </div>
@@ -151,7 +214,7 @@ const tasks = [
     },
     title: "Gestion de la trésorerie",
     description: "Une gestion optimisée de votre trésorerie pour financer votre croissance.",
-    visual: <CashGrowthVisual />,
+    visual: <LiquidityChartVisual />,
   },
   {
     icon: {

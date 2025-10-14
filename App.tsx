@@ -191,14 +191,6 @@ const App: React.FC = () => {
                           "La meilleure façon de prédire l'avenir, c'est de le créer."
                         </blockquote>
                       </Animate>
-                      <Animate variant="pop" delay={150}>
-                        <p className="text-sm text-gray-800 mt-4">— Peter Drucker</p>
-                      </Animate>
-                      <Animate variant="pop" delay={300}>
-                        <p className="text-gray-800 leading-relaxed text-sm mt-6">
-                          Cette philosophie est au cœur de notre démarche. Nous ne nous contentons pas de réagir aux événements ; nous vous donnons les moyens de façonner activement l'avenir de votre entreprise, en transformant l'incertitude en opportunité et la vision en réalité.
-                        </p>
-                      </Animate>
                     </div>
                   </div>
                 </div>
