@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Animate from './Animate';
 
@@ -51,7 +50,7 @@ const StakesSection: React.FC = () => {
                     
                     {/* Animated running dot container */}
                     <div className="absolute top-0 left-[12.5%] right-[12.5%] h-full pointer-events-none">
-                      <div className="running-dot-wrapper">
+                      <div className="running-dot-wrapper-stakes">
                           <div className="running-dot-indicator"></div>
                       </div>
                     </div>
@@ -63,8 +62,8 @@ const StakesSection: React.FC = () => {
 
                           const StakeKeyword = (
                             <div className={`stake-content-card stake-content-card--${index + 1} text-center px-4 w-64`}>
-                               <h3 className="text-sm font-bold gradient-text-pillar">{stake.keyword}</h3>
-                               <div className="w-24 h-px bg-gradient-to-r from-transparent via-[#6D0037] to-transparent my-1 mx-auto"></div>
+                               <h3 className={`stake-title stake-title--${index + 1} text-base font-bold gradient-text-stake`}>{stake.keyword}</h3>
+                               <div className="w-12 h-px bg-gradient-to-r from-[#27013D] to-[#6D0037] my-2 mx-auto rounded-full"></div>
                                <p className="text-gray-800 text-xs leading-relaxed">
                                  {stake.description}
                                </p>
