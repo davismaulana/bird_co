@@ -10,17 +10,17 @@ const pillars = [
   {
     icon: <img src="https://images2.imgbox.com/a9/6f/sEU8YeyP_o.png" alt="Partenariat de Confiance icon" className="w-10 h-10 object-contain" />,
     title: "Partenariat de Confiance",
-    description: "Plus qu’un consultant : un partenaire investi, guidé par la transparence et l’intégrité.",
+    description: <>Plus qu’un consultant : un partenaire investi, guidé par la <strong>transparence</strong> et l’<strong>intégrité</strong>.</>,
   },
   {
     icon: <img src="https://images2.imgbox.com/0f/19/ZMKxUMu0_o.png" alt="Clarté Décisionnelle icon" className="w-10 h-10 object-contain" />,
     title: "Clarté Décisionnelle",
-    description: "Nous transformons la complexité en clarté, fournissant des analyses et des outils qui éclairent vos décisions stratégiques.",
+    description: <>Des analyses complexes et ciblées pour éclairer vos <strong>décisions stratégiques</strong>.</>,
   },
   {
     icon: <img src="https://images2.imgbox.com/04/bd/mF2HLfkj_o.png" alt="Proactivité icon" className="w-10 h-10 object-contain" />,
     title: "Proactivité",
-    description: "Nous bâtissons des fondations solides pour une croissance durable, en identifiant les opportunités et anticipant les risques, afin de vous garder une longueur d'avance.",
+    description: "Nous vous aidons à identifier les opportunités et anticiper les risques sereinement",
   },
 ];
 

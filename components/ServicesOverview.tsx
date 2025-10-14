@@ -32,9 +32,25 @@ const ServicesOverview: React.FC = () => {
             >
               <a href={`/service/${service.slug}`} className="block h-full group">
                 <div className="bg-white rounded-xl p-6 flex flex-col items-start text-left h-full transition-all duration-300 ease-in-out border border-gray-200 group-hover:bg-[#27013D] group-hover:shadow-xl">
-                  <h3 className="text-sm font-bold text-black leading-tight mb-2 transition-colors duration-300 group-hover:text-white">
-                    {service.title}
-                  </h3>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="flex-shrink-0 text-[#27013D] transition-colors duration-300 group-hover:text-white">
+                      {service.darkIcon ? (
+                        <>
+                          <div className="group-hover:hidden">
+                            {React.cloneElement(service.icon, { className: 'w-8 h-8 object-contain' })}
+                          </div>
+                          <div className="hidden group-hover:block">
+                            {React.cloneElement(service.darkIcon, { className: 'w-8 h-8 object-contain' })}
+                          </div>
+                        </>
+                      ) : (
+                        React.cloneElement(service.icon, { className: 'w-8 h-8 object-contain' })
+                      )}
+                    </div>
+                    <h3 className="text-sm font-bold text-black leading-tight transition-colors duration-300 group-hover:text-white">
+                      {service.title}
+                    </h3>
+                  </div>
                   <p className="text-gray-800 text-xs leading-relaxed transition-colors duration-300 group-hover:text-white">{service.description}</p>
                   <div className="flex-grow" />
                   <div className="w-full mt-4 flex items-end justify-between text-xs font-semibold text-[#27013D] transition-colors duration-300 group-hover:text-white">
