@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Animate from './Animate';
 import HeroAnimation from './HeroAnimation';
@@ -5,7 +6,7 @@ import { services } from '../constants';
 
 const Hero: React.FC = () => {
   return (
-    <section id="accueil" className="relative bg-white text-gray-900 flex flex-col justify-center min-h-[90vh] overflow-hidden">
+    <section id="accueil" className="relative bg-white text-gray-900 flex flex-col justify-center min-h-[80vh] overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex-grow flex flex-col items-center justify-center pt-20 md:pt-0">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center relative w-full">
           
@@ -65,7 +66,7 @@ const Hero: React.FC = () => {
                   href={`/service/${service.slug}`}
                   className="group block rounded-xl bg-white p-4 text-center shadow-sm transition-all duration-300 hover:shadow-xl hover:scale-105 border border-gray-200 h-full flex items-center justify-center min-h-[80px]"
                 >
-                  <h3 className="text-sm font-bold text-gray-900">{service.title}</h3>
+                  <h3 className="text-base font-medium text-gray-900">{service.title}</h3>
                 </a>
               </Animate>
             ))}

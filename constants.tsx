@@ -1,6 +1,7 @@
 
 
 
+
 import React from 'react';
 
 export const PaperPlaneIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -709,7 +710,7 @@ export const services = [
     { slug: 'pilotage-planification', title: 'Pilotage & Planification', subTitle: 'Construire', description: 'les outils indispensables à une gestion optimale : reporting, business plan, prévisionnels de trésorerie etc.', icon: <PaperPlaneIcon />, iconClassName: 'w-16 h-16' },
     { slug: 'cfo-part-time', title: 'CFO Part-time', subTitle: 'Structurer', description: 'votre croissance et mettre en exécution votre stratégie financière avec un bras-droit dédié à temps partiel.', icon: <CfoIcon />, iconClassName: 'w-14 h-14' },
     { slug: 'diagnostic-restructuration', title: 'Diagnostic & Restructuration', subTitle: 'Rassurer', description: 'vos actionnaires et créanciers sur la santé financière de votre activité et votre capacité à la relancer.', icon: <DiagnosticIcon />, iconClassName: 'w-16 h-16' },
-    { slug: 'services-ma', title: 'Services M&A', subTitle: 'Accompagner', description: 'vos projets capitalistiques : cession, levée de fonds, croissance externe et réorganisation.', icon: <img src="https://images2.imgbox.com/c7/f4/CBToYVXb_o.png" alt="Services M&A Icon" />, iconClassName: 'w-20 h-20' },
+    { slug: 'services-ma', title: 'Services M&A', subTitle: 'Accompagner', description: 'vos projets capitalistiques : cession, levée de fonds, croissance externe et réorganisation.', icon: <img src="https://images2.imgbox.com/fb/c3/An8Qt7JF_o.png" alt="Services M&A Icon" />, iconClassName: 'w-20 h-20' },
 ];
 
 export const teamMembers = [
