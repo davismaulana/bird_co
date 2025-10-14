@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Animate from './Animate';
 
@@ -90,7 +89,7 @@ const PillarsSection: React.FC = () => {
                                       </div>
 
                                       {/* Point */}
-                                      <div className={`pillar-dot pillar-dot--${index + 1} rounded-full border-4 border-white`}></div>
+                                      <div className={`pillar-dot pillar-dot--${index + 1} rounded-full border-2 border-gray-50`}></div>
                                       
                                       {/* Bottom Content */}
                                       <div className={`min-h-[12rem] flex items-start pt-6 ${!isAbove ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>

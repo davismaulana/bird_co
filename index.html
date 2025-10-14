@@ -328,12 +328,13 @@
     
     /* Styles for PillarsSection pure CSS animation */
     .pillar-dot {
-        width: 28px;
-        height: 28px;
+        width: 16px;
+        height: 16px;
         background-color: black;
         animation-duration: 8s;
         animation-iteration-count: infinite;
         animation-timing-function: ease-in-out;
+        transition: background-color 0.3s, box-shadow 0.3s;
     }
     .pillar-title {
         animation-duration: 8s;
@@ -425,6 +426,82 @@
     @keyframes pop-in-stay-4 {
         0%, 75% { opacity: 0; transform: translateY(16px) scale(.92); filter: blur(2px); }
         80%     { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+        100%    { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+    }
+    
+    /* Styles for StakesSection pure CSS animation */
+    .stake-dot {
+        width: 16px;
+        height: 16px;
+        background-color: black;
+        animation-duration: 8s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        transition: background-color 0.3s, box-shadow 0.3s;
+    }
+
+    .stake-content-card {
+        opacity: 0; /* Initial state before animation */
+        animation-duration: 8s;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(.2,.65,.2,1);
+    }
+
+    /* Stake 1 Animations */
+    .stake-dot--1 { animation-name: active-dot-stake-1; }
+    .stake-content-card--1 { animation-name: pop-in-stay-stake-1; }
+
+    @keyframes active-dot-stake-1 {
+        0%, 22.5% { background: linear-gradient(to bottom right, #27013D, #6D0037); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
+        25%, 100% { background: black; box-shadow: none; }
+    }
+    @keyframes pop-in-stay-stake-1 {
+        0%      { opacity: 0; transform: translateY(16px) scale(.92); filter: blur(2px); }
+        3%      { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+        100%    { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+    }
+
+    /* Stake 2 Animations */
+    .stake-dot--2 { animation-name: active-dot-stake-2; }
+    .stake-content-card--2 { animation-name: pop-in-stay-stake-2; }
+
+    @keyframes active-dot-stake-2 {
+        0%, 22.5% { background: black; box-shadow: none; }
+        25%, 47.5% { background: linear-gradient(to bottom right, #27013D, #6D0037); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
+        50%, 100% { background: black; box-shadow: none; }
+    }
+    @keyframes pop-in-stay-stake-2 {
+        0%, 25% { opacity: 0; transform: translateY(16px) scale(.92); filter: blur(2px); }
+        28%     { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+        100%    { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+    }
+
+    /* Stake 3 Animations */
+    .stake-dot--3 { animation-name: active-dot-stake-3; }
+    .stake-content-card--3 { animation-name: pop-in-stay-stake-3; }
+
+    @keyframes active-dot-stake-3 {
+        0%, 47.5% { background: black; box-shadow: none; }
+        50%, 72.5% { background: linear-gradient(to bottom right, #27013D, #6D0037); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
+        75%, 100% { background: black; box-shadow: none; }
+    }
+    @keyframes pop-in-stay-stake-3 {
+        0%, 50% { opacity: 0; transform: translateY(16px) scale(.92); filter: blur(2px); }
+        53%     { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+        100%    { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+    }
+
+    /* Stake 4 Animations */
+    .stake-dot--4 { animation-name: active-dot-stake-4; }
+    .stake-content-card--4 { animation-name: pop-in-stay-stake-4; }
+
+    @keyframes active-dot-stake-4 {
+        0%, 72.5% { background: black; box-shadow: none; }
+        75%, 100% { background: linear-gradient(to bottom right, #27013D, #6D0037); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
+    }
+    @keyframes pop-in-stay-stake-4 {
+        0%, 75% { opacity: 0; transform: translateY(16px) scale(.92); filter: blur(2px); }
+        78%     { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
         100%    { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
     }
   </style>
