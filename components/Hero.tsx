@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
                   href={`/service/${service.slug}`}
                   className="group block rounded-xl bg-white p-4 text-center shadow-sm transition-all duration-300 hover:shadow-xl hover:scale-105 border border-gray-200 h-full flex items-center justify-center min-h-[80px]"
                 >
-                  <h3 className="text-base font-medium text-gray-900">{service.title}</h3>
+                  <h3 className="text-base font-light text-black">{service.title}</h3>
                 </a>
               </Animate>
             ))}
