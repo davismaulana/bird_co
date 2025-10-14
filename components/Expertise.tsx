@@ -67,20 +67,20 @@ const Expertise: React.FC = () => {
             const borderClasses = getBorderClasses(index);
             if ('icon' in item) {
               return (
-                <Animate key={index} variant="pop" className={`${borderClasses} p-6 md:p-8 flex flex-col items-center text-center justify-center min-h-[220px] transition-colors duration-300 hover:bg-white/5`}>
-                  {React.cloneElement(item.icon, { className: 'w-16 h-16 object-contain' })}
-                  <p className="text-gray-100 font-medium mt-4 text-base">{item.label}</p>
+                <Animate key={index} variant="pop" className={`${borderClasses} p-6 flex flex-col items-center text-center justify-center min-h-[180px] transition-colors duration-300 hover:bg-white/5`}>
+                  {React.cloneElement(item.icon, { className: 'w-12 h-12 object-contain' })}
+                  <p className="text-gray-100 font-medium mt-3 text-sm">{item.label}</p>
                 </Animate>
               );
             } else {
               // CTA
               return (
                 <Animate key={index} variant="pop" className={`${borderClasses} h-full`}>
-                  <a href="#contact" className="bg-[#3A224E] h-full flex flex-col justify-center items-center text-center p-6 md:p-8 transition-all duration-300 hover:bg-[#4f3066] group">
-                    <h3 className="text-lg font-bold text-white">Et bien plus encore...</h3>
-                    <p className="mt-2 text-violet-200 flex items-center gap-2 group-hover:text-white transition-colors text-sm">
+                  <a href="#contact" className="bg-[#3A224E] h-full flex flex-col justify-center items-center text-center p-6 transition-all duration-300 hover:bg-[#4f3066] group">
+                    <h3 className="text-base font-bold text-white">Et bien plus encore...</h3>
+                    <p className="mt-2 text-violet-200 flex items-center gap-2 group-hover:text-white transition-colors text-xs">
                       Discutons de votre projet
-                      <ArrowRightIcon className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                      <ArrowRightIcon className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </p>
                   </a>
                 </Animate>
