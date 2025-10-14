@@ -80,19 +80,19 @@ const LiquidityChartVisual: React.FC = () => {
     const yAxisLabels = [700, 600, 500, 400, 300, 200, 100, 0];
 
     return (
-        <div className="animated-mockup w-full h-full bg-[#27013D] rounded-2xl p-4 sm:p-6 shadow-2xl border border-white/10 flex flex-col transform group-hover:scale-105 transition-transform duration-300 text-white">
+        <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300 text-gray-900">
             <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
-                <h3 className="font-bold text-violet-200 text-sm">Liquidités</h3>
+                <h3 className="font-bold text-gray-900 text-sm">Liquidités</h3>
             </div>
             <div className="anim-child" style={{'--i': 1} as React.CSSProperties}>
-                <p className="text-3xl font-bold text-white">58 K€</p>
+                <p className="text-3xl font-bold text-[#27013D]">58 K€</p>
             </div>
             <div className="flex-grow mt-0.5 relative">
                 <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`} className="w-full h-full" preserveAspectRatio="xMidYMid meet">
                     <defs>
                         <linearGradient id="liquidityAreaGradient" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0%" stopColor="#A78BFA" stopOpacity="0.4"/>
-                            <stop offset="100%" stopColor="#A78BFA" stopOpacity="0"/>
+                            <stop offset="0%" stopColor="#27013D" stopOpacity="0.3"/>
+                            <stop offset="100%" stopColor="#27013D" stopOpacity="0"/>
                         </linearGradient>
                     </defs>
                     
@@ -105,7 +105,7 @@ const LiquidityChartVisual: React.FC = () => {
                                 y={scaleY(val)}
                                 textAnchor="end"
                                 alignmentBaseline="middle"
-                                fill="#C4B5FD"
+                                fill="#6b7280"
                                 fontSize="5"
                                 style={{ opacity: 0.7 }}
                             >
@@ -125,7 +125,7 @@ const LiquidityChartVisual: React.FC = () => {
                     {/* Line path */}
                     <path
                         d={linePathData}
-                        stroke="#C4B5FD"
+                        stroke="#27013D"
                         strokeWidth="1"
                         fill="none"
                         strokeLinecap="round"
@@ -140,8 +140,8 @@ const LiquidityChartVisual: React.FC = () => {
                             cx={scaleX(point.x)}
                             cy={scaleY(point.y)}
                             r="1.25"
-                            fill="#27013D"
-                            stroke="#C4B5FD"
+                            fill="white"
+                            stroke="#27013D"
                             strokeWidth="0.75"
                             className="anim-child"
                             style={{'--i': 4 + i} as React.CSSProperties}
