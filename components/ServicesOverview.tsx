@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Animate from './Animate';
 import { services, ArrowRightIcon } from '../constants';
@@ -24,7 +23,7 @@ const ServicesOverview: React.FC = () => {
             </p>
           </Animate>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 group stagger">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 stagger">
           {services.map((service: any, index) => (
             <Animate
               key={index}
@@ -32,19 +31,15 @@ const ServicesOverview: React.FC = () => {
               className="h-full"
             >
               <a href={`/service/${service.slug}`} className="block h-full group">
-                <div className="bg-white rounded-xl p-4 sm:p-6 lg:p-4 flex flex-col items-center text-center h-full transition-all duration-300 ease-in-out border border-gray-200 group-hover:opacity-50 hover:!opacity-100 hover:scale-105 hover:shadow-2xl hover:shadow-violet-100/50">
-                  <div className="h-20 w-20 flex items-center justify-center text-[#27013D] mb-2">
-                    {React.cloneElement(service.icon, { className: service.iconClassName })}
-                  </div>
-                  <h3 className="text-sm font-bold text-black leading-tight h-10 flex items-center justify-center">
+                <div className="bg-white rounded-xl p-6 flex flex-col items-start text-left h-full transition-all duration-300 ease-in-out border border-gray-200 group-hover:bg-[#27013D] group-hover:shadow-xl">
+                  <h3 className="text-sm font-bold text-black leading-tight mb-2 transition-colors duration-300 group-hover:text-white">
                     {service.title}
                   </h3>
-                  <p className="text-xs font-semibold text-[#6D0037] mb-2 whitespace-nowrap">{service.subTitle}</p>
-                  <p className="text-gray-800 text-xs leading-relaxed">{service.description}</p>
+                  <p className="text-gray-800 text-xs leading-relaxed transition-colors duration-300 group-hover:text-white">{service.description}</p>
                   <div className="flex-grow" />
-                  <div className="mt-4 flex items-center justify-center text-xs font-semibold text-[#27013D] transition-colors duration-300">
+                  <div className="w-full mt-4 flex items-end justify-between text-xs font-semibold text-[#27013D] transition-colors duration-300 group-hover:text-white">
                     <span>En savoir plus</span>
-                    <ArrowRightIcon className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+                    <ArrowRightIcon className="w-4 h-4" />
                   </div>
                 </div>
               </a>
