@@ -93,7 +93,7 @@ const LiquidityChartVisual: React.FC = () => {
                 <h3 className="font-bold text-gray-900 text-sm">Liquidités</h3>
             </div>
             <div className="anim-child" style={{'--i': 1} as React.CSSProperties}>
-                <p className="text-3xl font-bold text-[#27013D]">58 K€</p>
+                <p className="text-3xl font-bold text-black">58 K€</p>
             </div>
             <div className="flex-grow mt-0.5 relative">
                 <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`} className="w-full h-full" preserveAspectRatio="xMidYMid meet">
@@ -113,7 +113,7 @@ const LiquidityChartVisual: React.FC = () => {
                                 y={scaleY(val)}
                                 textAnchor="end"
                                 alignmentBaseline="middle"
-                                fill="#6b7280"
+                                fill="black"
                                 fontSize="5"
                                 style={{ opacity: 0.7 }}
                             >
@@ -131,8 +131,8 @@ const LiquidityChartVisual: React.FC = () => {
                                 y={svgHeight - padding.bottom + 10}
                                 textAnchor="middle"
                                 alignmentBaseline="middle"
-                                fill="#6b7280"
-                                fontSize="6"
+                                fill="black"
+                                fontSize="5"
                                 style={{ opacity: 0.7 }}
                             >
                                 {item.label}
