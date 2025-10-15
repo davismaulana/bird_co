@@ -73,7 +73,7 @@ const Hero: React.FC = () => {
 
           {/* Vertical gradient line */}
           <div className="hidden md:flex absolute top-0 bottom-0 left-1/2 -translate-x-1/2 items-center justify-center pointer-events-none">
-              <div className="relative w-1 h-80">
+              <div className="relative w-0.5 h-96">
                   <div 
                       className="absolute inset-0 rounded-full"
                       style={{ 

@@ -95,7 +95,7 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
                     const wanderStrength = 0.01;
                     
                     // --- Flapping motion for wings ---
-                    const flapAmplitude = 6 * scale; // Scaled amplitude
+                    const flapAmplitude = 8 * scale; // Scaled amplitude
                     const flapSpeed = 0.003;
                     const flapTime = time * flapSpeed;
                     
@@ -143,7 +143,7 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
             const canvasHeight = canvas.getBoundingClientRect().height;
 
             // --- Initialize Constellation Particles ---
-            scale = Math.min(canvasWidth, canvasHeight) / 130; // Update scale to make the bird smaller
+            scale = Math.min(canvasWidth, canvasHeight) / 110;
             const offsetX = (canvasWidth - 100 * scale) / 2;
             const offsetY = (canvasHeight - 100 * scale) / 2 + 15 * scale;
 
@@ -170,8 +170,8 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
 
         const drawBirdLines = () => {
             if (!ctx) return;
-            ctx.lineWidth = 0.75;
-            ctx.strokeStyle = `rgba(${lineStrokeColorRGB}, 0.4)`;
+            ctx.lineWidth = 1;
+            ctx.strokeStyle = `rgba(${lineStrokeColorRGB}, 0.6)`;
 
             birdLinesDefinition.forEach(line => {
                 const pA = constellationParticles[line[0]];
