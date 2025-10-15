@@ -5,7 +5,7 @@ import { services, ArrowRightIcon } from '../constants';
 const ServicesOverview: React.FC = () => {
   return (
     <section id="solutions" className="bg-white py-16">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <Animate variant="pop">
             <div className="flex justify-center mb-4">
@@ -23,7 +23,7 @@ const ServicesOverview: React.FC = () => {
             </p>
           </Animate>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 stagger">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 stagger">
           {services.map((service: any, index) => (
             <Animate
               key={index}
