@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Animate from './Animate';
 import { CheckmarkCircleIcon, KpiDashboardMockup, FinancialReportMockup } from '../constants';
@@ -93,7 +92,7 @@ const LiquidityChartVisual: React.FC = () => {
                 <h3 className="font-bold text-gray-900 text-sm">Liquidités</h3>
             </div>
             <div className="anim-child" style={{'--i': 1} as React.CSSProperties}>
-                <p className="text-3xl font-bold text-black">58 K€</p>
+                <p className="text-xl font-bold text-[#27013D]">58 K€</p>
             </div>
             <div className="flex-grow mt-0.5 relative">
                 <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`} className="w-full h-full" preserveAspectRatio="xMidYMid meet">
