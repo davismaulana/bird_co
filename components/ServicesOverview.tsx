@@ -32,7 +32,7 @@ const ServicesOverview: React.FC = () => {
             >
               <a href={`/service/${service.slug}`} className="block h-full group">
                 <div className="bg-white rounded-xl p-6 flex flex-col items-start text-left h-full transition-all duration-300 ease-in-out border border-gray-200 group-hover:bg-[#27013D] group-hover:shadow-xl">
-                  <div className="flex items-center gap-3 mb-4">
+                  <div className="flex items-center gap-3 mb-2">
                     <div className="flex-shrink-0 text-[#27013D] transition-colors duration-300 group-hover:text-white">
                       {service.darkIcon ? (
                         <>
@@ -51,6 +51,7 @@ const ServicesOverview: React.FC = () => {
                       {service.title}
                     </h3>
                   </div>
+                  <p className="text-xs font-semibold text-[#6D0037] mb-2 group-hover:text-violet-200 transition-colors duration-300">{service.subTitle}</p>
                   <p className="text-gray-800 text-xs leading-relaxed transition-colors duration-300 group-hover:text-white">{service.description}</p>
                   <div className="flex-grow" />
                   <div className="w-full mt-4 flex items-end justify-between text-xs font-semibold text-[#27013D] transition-colors duration-300 group-hover:text-white">
