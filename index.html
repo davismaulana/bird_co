@@ -560,6 +560,31 @@
         93%     { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
         100%    { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
     }
+
+    /* Dropdown Animation */
+    .dropdown-container {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98);
+        animation: dropdown-fade-in 250ms cubic-bezier(.2,.65,.2,1) forwards;
+    }
+    @keyframes dropdown-fade-in {
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+    .dropdown-item {
+        opacity: 0;
+        transform: translateY(10px) scale(0.95);
+        animation: dropdown-item-fade-in 350ms cubic-bezier(.2,.65,.2,1) forwards;
+        animation-delay: var(--delay);
+    }
+    @keyframes dropdown-item-fade-in {
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
   </style>
 <script type="importmap">
 {

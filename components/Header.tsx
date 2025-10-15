@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { services, HamburgerIcon, CloseIcon } from '../constants';
+import React, { useState, useEffect, useRef } from 'react';
+import { services, HamburgerIcon, CloseIcon, ArrowRightIcon } from '../constants';
 
 const navItems = [
   { name: 'Enjeux', href: '/#vos-enjeux' },
@@ -15,6 +15,20 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
   const [isMobileSolutionsOpen, setIsMobileSolutionsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const solutionsMenuTimer = useRef<number | null>(null);
+
+  const handleSolutionsEnter = () => {
+    if (solutionsMenuTimer.current) {
+      clearTimeout(solutionsMenuTimer.current);
+    }
+    setIsDropdownOpen(true);
+  };
+
+  const handleSolutionsLeave = () => {
+    solutionsMenuTimer.current = window.setTimeout(() => {
+      setIsDropdownOpen(false);
+    }, 200); // Delay to allow moving mouse to the menu
+  };
 
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -119,9 +133,8 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                     return (
                       <div 
                         key={item.name}
-                        className="relative"
-                        onMouseEnter={() => setIsDropdownOpen(true)}
-                        onMouseLeave={() => setIsDropdownOpen(false)}
+                        onMouseEnter={handleSolutionsEnter}
+                        onMouseLeave={handleSolutionsLeave}
                       >
                         <a
                           href={item.href}
@@ -131,29 +144,6 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                         >
                           {item.name}
                         </a>
-                        {isDropdownOpen && (
-                          <div className="absolute top-full left-1/2 -translate-x-1/2 w-72">
-                            <div className="h-2" /> {/* Bridge to prevent premature closing */}
-                            <div className="bg-white rounded-lg shadow-2xl ring-1 ring-black/5 py-2 z-50">
-                              {services.map(service => {
-                                const isServiceActive = pathname === `/service/${service.slug}`;
-                                return (
-                                  <a 
-                                    key={service.slug}
-                                    href={`/service/${service.slug}`}
-                                    className={`block px-4 py-3 text-sm transition-colors ${
-                                      isServiceActive
-                                      ? 'bg-[#27013D] text-white'
-                                      : 'text-black hover:bg-[#27013D] hover:text-white'
-                                    }`}
-                                  >
-                                    <span>{service.title}</span>
-                                  </a>
-                                );
-                              })}
-                            </div>
-                          </div>
-                        )}
                       </div>
                     );
                   }
@@ -224,6 +214,46 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
         </div>
       </header>
 
+      {/* Solutions Dropdown Panel */}
+      {isDropdownOpen && (
+        <>
+          <div
+            className="fixed inset-0 top-16 bg-black/20 backdrop-blur-sm z-40"
+            onClick={() => setIsDropdownOpen(false)}
+            onMouseEnter={handleSolutionsLeave}
+          ></div>
+          <div
+            className="fixed top-16 left-0 right-0 z-50 bg-white shadow-2xl dropdown-container"
+            onMouseEnter={handleSolutionsEnter}
+            onMouseLeave={handleSolutionsLeave}
+          >
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {services.map((service, index) => (
+                  <div key={index} className="dropdown-item" style={{'--delay': `${50 + index * 80}ms`} as React.CSSProperties}>
+                    <a href={`/service/${service.slug}`} className="block h-full group">
+                      <div className="bg-white rounded-xl p-6 flex flex-col items-start text-left h-full transition-all duration-300 ease-in-out border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1 group-hover:bg-[#27013D]">
+                        <h3 className="text-base font-bold text-gray-900 mb-2 transition-colors duration-300 group-hover:text-white">
+                          {service.title}
+                        </h3>
+                        <p className="text-sm text-gray-600 leading-relaxed transition-colors duration-300 group-hover:text-gray-200">
+                          {service.description}
+                        </p>
+                        <div className="flex-grow" />
+                        <div className="w-full mt-4 flex items-center justify-between text-sm font-semibold text-[#27013D] transition-colors duration-300 group-hover:text-white">
+                          <span>En savoir plus</span>
+                          <ArrowRightIcon className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <div 
@@ -256,24 +286,31 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                          {item.name}
                        </button>
                        {isMobileSolutionsOpen && (
-                         <div className="mt-4 space-y-1">
-                            {services.map((service) => {
-                               const isServiceActive = pathname === `/service/${service.slug}`;
-                               return (
-                                 <a
-                                    key={service.slug}
-                                    href={`/service/${service.slug}`}
-                                    onClick={() => setIsMobileMenuOpen(false)}
-                                    className={`block text-center w-full py-2 text-base rounded-lg transition-colors ${
-                                      isServiceActive
-                                      ? 'bg-[#27013D] text-white'
-                                      : 'text-black hover:bg-[#27013D] hover:text-white'
-                                    }`}
-                                 >
-                                    <span>{service.title}</span>
-                                 </a>
-                              );
-                            })}
+                         <div className="w-full px-2 mt-4">
+                           <div className="grid grid-cols-1 gap-4">
+                             {services.map((service, index) => (
+                               <a 
+                                 key={index} 
+                                 href={`/service/${service.slug}`} 
+                                 className="block h-full group"
+                                 onClick={() => setIsMobileMenuOpen(false)}
+                               >
+                                 <div className="bg-gray-50 rounded-xl p-4 flex flex-col items-start text-left h-full transition-all duration-300 ease-in-out border border-gray-200 group-hover:bg-[#27013D]">
+                                   <h3 className="text-base font-bold text-gray-900 mb-2 transition-colors duration-300 group-hover:text-white">
+                                     {service.title}
+                                   </h3>
+                                   <p className="text-sm text-gray-600 leading-relaxed transition-colors duration-300 group-hover:text-gray-200">
+                                     {service.description}
+                                   </p>
+                                   <div className="flex-grow" />
+                                   <div className="w-full mt-4 flex items-center justify-between text-sm font-semibold text-[#27013D] transition-colors duration-300 group-hover:text-white">
+                                     <span>En savoir plus</span>
+                                     <ArrowRightIcon className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                                   </div>
+                                 </div>
+                               </a>
+                             ))}
+                           </div>
                          </div>
                        )}
                     </div>

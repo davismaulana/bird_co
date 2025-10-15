@@ -57,30 +57,7 @@ const Hero: React.FC = () => {
 
         </div>
         
-        {/* Service Links */}
-        <div className="w-full relative z-10 mt-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 lg:px-16 stagger">
-            {services.map((service, index) => (
-              <Animate key={index} variant="pop" delay={600 + index * 100} className="h-full">
-                <a href={`/service/${service.slug}`} className="block h-full group">
-                  <div className="bg-white rounded-xl p-6 flex flex-col items-start text-left h-full transition-all duration-300 ease-in-out border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1 group-hover:bg-[#27013D]">
-                    <h3 className="text-base font-bold text-gray-900 mb-2 transition-colors duration-300 group-hover:text-white">
-                      {service.title}
-                    </h3>
-                    <p className="text-sm text-gray-600 leading-relaxed transition-colors duration-300 group-hover:text-gray-200">
-                      {service.description}
-                    </p>
-                    <div className="flex-grow" />
-                    <div className="w-full mt-4 flex items-center justify-between text-sm font-semibold text-[#27013D] transition-colors duration-300 group-hover:text-white">
-                      <span>En savoir plus</span>
-                      <ArrowRightIcon className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-                    </div>
-                  </div>
-                </a>
-              </Animate>
-            ))}
-          </div>
-        </div>
+        
       </div>
     </section>
   );
