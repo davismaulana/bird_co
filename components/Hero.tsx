@@ -73,7 +73,7 @@ const Hero: React.FC = () => {
 
           {/* Vertical gradient line */}
           <div className="hidden md:flex absolute top-0 bottom-0 left-1/2 -translate-x-1/2 items-center justify-center pointer-events-none">
-              <div className="relative w-0.5 h-96">
+              <div className="relative w-1 h-96">
                   <div 
                       className="absolute inset-0 rounded-full"
                       style={{ 
@@ -90,7 +90,7 @@ const Hero: React.FC = () => {
 
         </div>
         
-        <Animate variant="pop" delay={600} className="w-full pt-12 md:pt-20 mt-8 md:mt-12">
+        <Animate variant="pop" delay={600} className="w-full pt-10 md:pt-16">
           <div
             className="w-full overflow-hidden"
             style={{
