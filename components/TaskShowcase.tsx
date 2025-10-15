@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Animate from './Animate';
 import { CheckmarkCircleIcon, KpiDashboardMockup, FinancialReportMockup } from '../constants';
@@ -59,7 +60,7 @@ const LiquidityChartVisual: React.FC = () => {
 
     const svgWidth = 300;
     const svgHeight = 170;
-    const padding = { top: 10, right: 10, bottom: 0, left: 35 };
+    const padding = { top: 10, right: 10, bottom: 15, left: 35 };
     const chartWidth = svgWidth - padding.left - padding.right;
     const chartHeight = svgHeight - padding.top - padding.bottom;
     const yMax = 700;
@@ -78,6 +79,13 @@ const LiquidityChartVisual: React.FC = () => {
     const areaPathData = linePathData + ` L ${scaleX(100)} ${svgHeight - padding.bottom} L ${scaleX(0)} ${svgHeight - padding.bottom} Z`;
 
     const yAxisLabels = [700, 600, 500, 400, 300, 200, 100, 0];
+    const xAxisLabels = [
+        { value: 0, label: 'Janv.' },
+        { value: 25, label: 'Avr.' },
+        { value: 50, label: 'Juil.' },
+        { value: 75, label: 'Oct.' },
+        { value: 100, label: 'Déc.' },
+    ];
 
     return (
         <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300 text-gray-900">
@@ -114,6 +122,24 @@ const LiquidityChartVisual: React.FC = () => {
                         ))}
                     </g>
                     
+                    {/* X-axis labels */}
+                    <g className="anim-child" style={{'--i': 2} as React.CSSProperties}>
+                        {xAxisLabels.map((item, i) => (
+                           <text
+                                key={i}
+                                x={scaleX(item.value)}
+                                y={svgHeight - padding.bottom + 10}
+                                textAnchor="middle"
+                                alignmentBaseline="middle"
+                                fill="#6b7280"
+                                fontSize="6"
+                                style={{ opacity: 0.7 }}
+                            >
+                                {item.label}
+                            </text>
+                        ))}
+                    </g>
+
                     {/* Area fill path. */}
                     <path
                         d={areaPathData}
