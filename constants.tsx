@@ -737,7 +737,7 @@ export const teamMembers = [
     ],
     alumni: 'Alumni Eight Advisory & KPMG',
     diploma: 'Diplômé de l’IESEG School Of Management',
-    imageUrl: 'https://images2.imgbox.com/4f/b1/e7ojkjCB_o.jpg',
+    imageUrl: 'https://images2.imgbox.com/06/b6/N9VRuIDC_o.jpg',
     linkedinUrl: 'https://www.linkedin.com/in/seydina-samb-6638ba56/',
   },
   {

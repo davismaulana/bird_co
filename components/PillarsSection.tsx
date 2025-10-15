@@ -20,7 +20,7 @@ const pillars = [
   {
     icon: <img src="https://images2.imgbox.com/04/bd/mF2HLfkj_o.png" alt="Proactivité icon" className="w-10 h-10 object-contain" />,
     title: "Proactivité",
-    description: "Nous vous aidons à identifier les opportunités et anticiper les risques sereinement",
+    description: <>Nous vous aidons <strong>à identifier les opportunités</strong> et <strong>anticiper les risques</strong> sereinement</>,
   },
 ];
 
