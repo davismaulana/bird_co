@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 export const PaperPlaneIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -581,18 +580,27 @@ export const TransactionalSupportVisual: React.FC<{ theme?: string, disableHover
     return (
         <div className={classNames.join(' ')}>
             <h3 className="font-bold text-gray-800 text-xs sm:text-sm mb-4">Accompagnement Transactionnel</h3>
-            <div className="flex-grow space-y-3">
-                <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
-                    <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse flex-shrink-0"></div>
-                    <p className="text-gray-800 text-xs font-medium">Phase 1: Préparation (Teaser, IM, VDD)</p>
+            <div className="flex-grow space-y-4">
+                <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">1</div>
+                    <div>
+                        <h4 className="font-semibold text-gray-800 text-xs">Préparation Stratégique</h4>
+                        <p className="text-gray-600 text-[10px] leading-tight mt-1">Valorisation, Business Plan, VDD, Teaser, IM</p>
+                    </div>
                 </div>
-                <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 opacity-60">
-                    <div className="w-3 h-3 rounded-full bg-gray-400 flex-shrink-0"></div>
-                    <p className="text-gray-700 text-xs">Phase 2: Négociation des offres</p>
+                <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">2</div>
+                    <div>
+                        <h4 className="font-semibold text-gray-800 text-xs">Exécution & Négociation</h4>
+                        <p className="text-gray-600 text-[10px] leading-tight mt-1">Data Room, Management Présentations, Négociation des offres</p>
+                    </div>
                 </div>
-                <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 opacity-60">
-                    <div className="w-3 h-3 rounded-full bg-gray-400 flex-shrink-0"></div>
-                    <p className="text-gray-700 text-xs">Phase 3: Due Diligence &amp; Closing</p>
+                <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">3</div>
+                    <div>
+                        <h4 className="font-semibold text-gray-800 text-xs">Due Diligence & Closing</h4>
+                        <p className="text-gray-600 text-[10px] leading-tight mt-1">Audit d'acquisition, Signature (SPA), Levée des conditions suspensives</p>
+                    </div>
                 </div>
             </div>
         </div>
