@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Animate from './Animate';
 import { CheckmarkCircleIcon, KpiDashboardMockup, FinancialReportMockup } from '../constants';
@@ -293,7 +292,7 @@ const TaskShowcase: React.FC = () => {
     const [activeTask, setActiveTask] = useState(0);
 
     return (
-        <section className="bg-gray-50 min-h-screen flex flex-col justify-center py-16">
+        <section className="bg-gray-50 flex flex-col justify-center py-24">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12 max-w-3xl mx-auto">
                     <Animate variant="pop">
@@ -314,27 +313,27 @@ const TaskShowcase: React.FC = () => {
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
                     <div className="lg:col-span-2">
-                        <div className="grid grid-cols-1 gap-4 stagger">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 stagger">
                             {tasks.map((task, index) => (
                                 <Animate variant="pop" key={index}>
                                     <button
                                         onClick={() => setActiveTask(index)}
-                                        className={`w-full h-full text-left p-4 rounded-xl transition-all duration-300 group ${
+                                        className={`w-full h-full text-left p-3 rounded-xl transition-all duration-300 group ${
                                             activeTask === index
                                                 ? 'bg-[#27013D] shadow-xl shadow-violet-200/50 scale-105 hover:scale-[1.07]'
                                                 : 'bg-white hover:shadow-xl hover:shadow-violet-100/50 hover:scale-105'
                                         }`}
                                     >
-                                        <div className="flex items-center gap-4">
+                                        <div className="flex items-center gap-3">
                                             <div
-                                                className={`w-16 h-16 rounded-lg flex-shrink-0 flex items-center justify-center transition-colors duration-300 ${
+                                                className={`w-14 h-14 rounded-lg flex-shrink-0 flex items-center justify-center transition-colors duration-300 ${
                                                     activeTask === index ? 'bg-white/20' : 'bg-gray-100'
                                                 }`}
                                             >
                                                 <img
                                                     src={activeTask === index ? task.icon.active : task.icon.inactive}
                                                     alt={`${task.title} icon`}
-                                                    className="w-10 h-10 object-contain"
+                                                    className="w-9 h-9 object-contain"
                                                 />
                                             </div>
                                             <div>

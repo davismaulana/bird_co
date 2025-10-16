@@ -23,7 +23,7 @@ const Expertise: React.FC = () => {
   ];
 
   return (
-    <section className="bg-white min-h-screen flex flex-col justify-center py-16">
+    <section className="bg-white flex flex-col justify-center py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 max-w-3xl mx-auto">
           <Animate variant="pop">
@@ -42,7 +42,7 @@ const Expertise: React.FC = () => {
             </p>
           </Animate>
         </div>
-        <div className="bg-[#27013D] rounded-2xl grid grid-cols-1 md:grid-cols-3 max-w-6xl mx-auto overflow-hidden">
+        <div className="bg-[#27013D] rounded-2xl grid grid-cols-2 md:grid-cols-3 max-w-6xl mx-auto overflow-hidden">
           {allItems.map((item, index) => {
             const isLastItem = index === allItems.length - 1;
             const isLastRowOnDesktop = index >= 6;
@@ -58,17 +58,17 @@ const Expertise: React.FC = () => {
 
             if ('icon' in item) {
               return (
-                <Animate key={index} variant="pop" className={`${borderClasses.join(' ')} p-6 flex flex-col items-center text-center justify-center min-h-[180px] transition-colors duration-300 hover:bg-white/5`}>
-                  {React.cloneElement(item.icon, { className: 'w-12 h-12 object-contain' })}
-                  <p className="text-gray-100 font-medium mt-3 text-sm">{item.label}</p>
+                <Animate key={index} variant="pop" className={`${borderClasses.join(' ')} p-5 flex flex-col items-center text-center justify-center transition-colors duration-300 hover:bg-white/5`}>
+                  {React.cloneElement(item.icon, { className: 'w-10 h-10 object-contain' })}
+                  <p className="text-gray-100 font-medium mt-2 text-sm">{item.label}</p>
                 </Animate>
               );
             } else {
               // CTA
               return (
                 <Animate key={index} variant="pop" className={`${borderClasses.join(' ')} h-full`}>
-                  <a href="#contact" className="bg-[#3A224E] h-full flex flex-col justify-center items-center text-center p-6 transition-all duration-300 hover:bg-[#4f3066] group">
-                    <h3 className="text-base font-bold text-white">Et bien plus encore...</h3>
+                  <a href="#contact" className="bg-[#3A224E] h-full flex flex-col justify-center items-center text-center p-5 transition-all duration-300 hover:bg-[#4f3066] group">
+                    <h3 className="text-sm font-bold text-white">Et bien plus encore...</h3>
                     <p className="mt-2 text-violet-200 flex items-center gap-2 group-hover:text-white transition-colors text-xs">
                       Discutons de votre projet
                       <ArrowRightIcon className="w-4 h-4 transition-transform group-hover:translate-x-1" />
