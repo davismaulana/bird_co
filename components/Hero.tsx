@@ -84,7 +84,7 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Right side: Animation */}
-          <Animate variant="pop" delay={300} className="relative z-10 w-full aspect-square md:aspect-auto md:h-[320px] lg:h-[400px]">
+          <Animate variant="pop" delay={300} className="relative z-10 w-full aspect-square md:aspect-auto md:h-96">
             <HeroAnimation />
           </Animate>
 
