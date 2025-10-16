@@ -1,5 +1,4 @@
 
-
 import React, { useState } from 'react';
 import Animate from './Animate';
 
@@ -34,10 +33,10 @@ const Contact: React.FC = () => {
     };
 
     return (
-        <section id="contact" className="bg-white min-h-screen">
-            <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
+        <section id="contact" className="bg-white min-h-screen grid">
+            <div className="grid grid-cols-1 lg:grid-cols-2">
                 {/* Left Column */}
-                <div className="relative bg-cover bg-center text-gray-900 p-6 sm:p-8 md:p-12 lg:p-16 flex flex-col justify-center min-h-[500px] lg:h-full">
+                <div className="relative bg-cover bg-center text-gray-900 p-6 sm:p-8 md:p-12 lg:p-16 flex flex-col justify-center min-h-[500px]">
                     <div className="absolute inset-0 bg-[#EBE5F0]"></div>
                     <div className="relative z-10">
                         <Animate variant="pop" delay={200}>

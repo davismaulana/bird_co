@@ -175,8 +175,8 @@ const App: React.FC = () => {
           <Expertise />
           {/* <Deliverables /> */}
           <Team />
-          <section className="bg-white min-h-screen">
-            <div className="h-full grid grid-cols-1 lg:grid-cols-2">
+          <section className="bg-white min-h-screen grid">
+            <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
               <Animate variant="pop" className="h-[300px] lg:h-full lg:order-last">
                 <div className="h-[300px] lg:h-full">
                   <StairsAnimation />

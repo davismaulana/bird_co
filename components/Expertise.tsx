@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import Animate from './Animate';
 import {
@@ -23,25 +21,6 @@ const Expertise: React.FC = () => {
     { cta: true, label: 'CTA' },
     ...expertiseItems.slice(4),
   ];
-  
-  const getBorderClasses = (index: number) => {
-    const classes = [];
-    const colorClass = 'border-gray-500/20'; // Very subtle grey border
-
-    // Add right border to all but the last column
-    if (index % 3 < 2) {
-      classes.push('border-r');
-    }
-    // Add bottom border to all but the last row
-    if (index < 6) {
-      classes.push('border-b');
-    }
-    
-    if (classes.length > 0) {
-      return classes.join(' ') + ' ' + colorClass;
-    }
-    return '';
-  };
 
   return (
     <section className="bg-white min-h-screen flex flex-col justify-center py-16">
@@ -65,10 +44,21 @@ const Expertise: React.FC = () => {
         </div>
         <div className="bg-[#27013D] rounded-2xl grid grid-cols-1 md:grid-cols-3 max-w-6xl mx-auto overflow-hidden">
           {allItems.map((item, index) => {
-            const borderClasses = getBorderClasses(index);
+            const isLastItem = index === allItems.length - 1;
+            const isLastRowOnDesktop = index >= 6;
+            const isLastColOnDesktop = (index + 1) % 3 === 0;
+            const borderStyle = 'border-gray-500/20';
+
+            const borderClasses = [];
+            if (!isLastItem) borderClasses.push('border-b');
+            if (!isLastRowOnDesktop) borderClasses.push('md:border-b');
+            else borderClasses.push('md:border-b-0');
+            if (!isLastColOnDesktop) borderClasses.push('md:border-r');
+            if (borderClasses.length > 0) borderClasses.push(borderStyle);
+
             if ('icon' in item) {
               return (
-                <Animate key={index} variant="pop" className={`${borderClasses} p-6 flex flex-col items-center text-center justify-center min-h-[180px] transition-colors duration-300 hover:bg-white/5`}>
+                <Animate key={index} variant="pop" className={`${borderClasses.join(' ')} p-6 flex flex-col items-center text-center justify-center min-h-[180px] transition-colors duration-300 hover:bg-white/5`}>
                   {React.cloneElement(item.icon, { className: 'w-12 h-12 object-contain' })}
                   <p className="text-gray-100 font-medium mt-3 text-sm">{item.label}</p>
                 </Animate>
@@ -76,7 +66,7 @@ const Expertise: React.FC = () => {
             } else {
               // CTA
               return (
-                <Animate key={index} variant="pop" className={`${borderClasses} h-full`}>
+                <Animate key={index} variant="pop" className={`${borderClasses.join(' ')} h-full`}>
                   <a href="#contact" className="bg-[#3A224E] h-full flex flex-col justify-center items-center text-center p-6 transition-all duration-300 hover:bg-[#4f3066] group">
                     <h3 className="text-base font-bold text-white">Et bien plus encore...</h3>
                     <p className="mt-2 text-violet-200 flex items-center gap-2 group-hover:text-white transition-colors text-xs">

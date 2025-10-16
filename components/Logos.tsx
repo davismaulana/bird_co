@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { WellowLogo, RegenSchoolLogo, PomadLogo, BredLogo, EricKayserLogo, SquareLogo, CasaLogo, TmhAvocatsLogo, FoodPilotLogo, OctoGamingLogo, CameroneCapitalLogo, SOCABEGLogo } from '../constants';
 import Animate from './Animate';
@@ -56,10 +55,10 @@ const Logos: React.FC<LogosProps> = ({ backgroundColor = 'bg-white' }) => {
             {allLogos.map((logo, index) => {
               const logoClassName = "max-h-full max-w-full object-contain";
               const isEnlarged = ['Wellow', 'Octo Gaming', 'Camerone Capital'].includes(logo.name);
-              const sizeClass = isEnlarged ? "h-32 w-52" : "h-24 w-40";
+              const sizeClass = isEnlarged ? "h-24 w-40 sm:h-32 sm:w-52" : "h-20 w-32 sm:h-24 sm:w-40";
 
               return (
-                <div key={index} className="flex-shrink-0 px-6 lg:px-10 py-2">
+                <div key={index} className="flex-shrink-0 px-4 sm:px-6 lg:px-10 py-2">
                   <a href={logo.href} target="_blank" rel="noopener noreferrer" className={`${sizeClass} flex items-center justify-center text-gray-700 hover:text-gray-900 transition-colors`}>
                     {React.cloneElement(logo.component, { className: logoClassName })}
                   </a>

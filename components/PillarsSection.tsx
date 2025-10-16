@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Animate from './Animate';
 
@@ -48,61 +47,87 @@ const PillarsSection: React.FC = () => {
         </div>
         
         <div className="w-full max-w-7xl mx-auto">
-            <Animate variant="pop">
-                <div className="relative">
-                    {/* The static line connecting the dots */}
-                    <div className="absolute top-1/2 left-[12.5%] right-[12.5%] h-px bg-gray-300 transform -translate-y-1/2"></div>
-                    
-                    {/* Animated running dot container */}
-                    <div className="absolute top-0 left-[12.5%] right-[12.5%] h-full pointer-events-none">
-                      <div className="running-dot-wrapper">
-                          <div className="running-dot-indicator"></div>
+            {/* Desktop Timeline */}
+            <div className="hidden md:block">
+              <Animate variant="pop">
+                  <div className="relative">
+                      {/* The static line connecting the dots */}
+                      <div className="absolute top-1/2 left-[12.5%] right-[12.5%] h-px bg-gray-300 transform -translate-y-1/2"></div>
+                      
+                      {/* Animated running dot container */}
+                      <div className="absolute top-0 left-[12.5%] right-[12.5%] h-full pointer-events-none">
+                        <div className="running-dot-wrapper">
+                            <div className="running-dot-indicator"></div>
+                        </div>
                       </div>
-                    </div>
 
-                    {/* The static dots and content cards */}
-                    <div className="relative flex">
-                      {pillars.map((pillar, index) => {
-                          const isAbove = index % 2 === 0;
+                      {/* The static dots and content cards */}
+                      <div className="relative flex">
+                        {pillars.map((pillar, index) => {
+                            const isAbove = index % 2 === 0;
 
-                          const PillarContent = (
-                            <div className={`pillar-content-card pillar-content-card--${index + 1} text-center px-2`}>
-                                <div className="flex flex-col items-center justify-start">
-                                    <div className="flex justify-center mb-1 h-12 w-12 items-center">
-                                        {React.cloneElement(pillar.icon)}
-                                    </div>
-                                    <h3 className={`pillar-title pillar-title--${index + 1} text-sm font-bold mb-1 gradient-text-pillar`}>
-                                        {pillar.title}
-                                    </h3>
-                                    <p className="text-gray-800 leading-relaxed text-xs">
-                                        {pillar.description}
-                                    </p>
-                                </div>
-                            </div>
-                          );
-
-                          return (
-                              <div key={index} className="relative z-10 w-1/4 flex justify-center">
-                                  <div className="flex flex-col items-center group">
-                                      {/* Top Content */}
-                                      <div className={`min-h-[12rem] flex items-end pb-6 ${isAbove ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-                                        {PillarContent}
+                            const PillarContent = (
+                              <div className={`pillar-content-card pillar-content-card--${index + 1} text-center px-2`}>
+                                  <div className="flex flex-col items-center justify-start">
+                                      <div className="flex justify-center mb-1 h-12 w-12 items-center">
+                                          {React.cloneElement(pillar.icon)}
                                       </div>
-
-                                      {/* Point */}
-                                      <div className={`pillar-dot pillar-dot--${index + 1} rounded-full border-2 border-gray-50`}></div>
-                                      
-                                      {/* Bottom Content */}
-                                      <div className={`min-h-[12rem] flex items-start pt-6 ${!isAbove ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-                                        {PillarContent}
-                                      </div>
+                                      <h3 className={`pillar-title pillar-title--${index + 1} text-sm font-bold mb-1 gradient-text-pillar`}>
+                                          {pillar.title}
+                                      </h3>
+                                      <p className="text-gray-800 leading-relaxed text-xs">
+                                          {pillar.description}
+                                      </p>
                                   </div>
                               </div>
-                          );
-                      })}
-                    </div>
-                </div>
-            </Animate>
+                            );
+
+                            return (
+                                <div key={index} className="relative z-10 w-1/4 flex justify-center">
+                                    <div className="flex flex-col items-center group">
+                                        {/* Top Content */}
+                                        <div className={`min-h-[12rem] flex items-end pb-6 ${isAbove ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+                                          {PillarContent}
+                                        </div>
+
+                                        {/* Point */}
+                                        <div className={`pillar-dot pillar-dot--${index + 1} rounded-full border-2 border-gray-50`}></div>
+                                        
+                                        {/* Bottom Content */}
+                                        <div className={`min-h-[12rem] flex items-start pt-6 ${!isAbove ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+                                          {PillarContent}
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        })}
+                      </div>
+                  </div>
+              </Animate>
+            </div>
+
+            {/* Mobile Grid */}
+            <div className="block md:hidden">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                {pillars.map((pillar, index) => (
+                    <Animate key={index} variant="pop">
+                        <div className="text-center p-4">
+                            <div className="flex flex-col items-center justify-start">
+                                <div className="flex justify-center mb-2 h-12 w-12 items-center">
+                                    {React.cloneElement(pillar.icon)}
+                                </div>
+                                <h3 className="text-base font-bold mb-2 gradient-text-pillar">
+                                    {pillar.title}
+                                </h3>
+                                <p className="text-gray-800 leading-relaxed text-sm">
+                                    {pillar.description}
+                                </p>
+                            </div>
+                        </div>
+                    </Animate>
+                ))}
+              </div>
+            </div>
         </div>
       </div>
     </section>

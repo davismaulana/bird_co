@@ -419,7 +419,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
 export const KpiDashboardMockup: React.FC<{ theme?: string, noAspectRatio?: boolean, disableHover?: boolean, initialScaleDown?: boolean, className?: string }> = ({ noAspectRatio = false, disableHover = false, initialScaleDown = false, className }) => {
   const classNames = [
     "animated-mockup w-full h-full bg-white rounded-2xl",
-    noAspectRatio ? 'p-4 sm:p-6' : 'p-6',
+    noAspectRatio ? 'p-2 sm:p-4 md:p-6' : 'p-6',
     "shadow-2xl border border-gray-100 flex flex-col",
     !noAspectRatio ? 'aspect-[4/3]' : '',
     className
@@ -436,23 +436,23 @@ export const KpiDashboardMockup: React.FC<{ theme?: string, noAspectRatio?: bool
       <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
         <h3 className="font-bold text-gray-900 text-sm">Tableau de Bord - T4 2024</h3>
       </div>
-      <div className="flex-grow grid grid-cols-2 grid-rows-2 gap-4">
-        <div className="bg-gray-50 rounded-lg p-3 border border-gray-100 col-span-1 row-span-2 flex flex-col anim-child" style={{'--i': 1} as React.CSSProperties}>
+      <div className="flex-grow grid grid-cols-2 grid-rows-2 gap-2 sm:gap-4">
+        <div className="bg-gray-50 rounded-lg p-2 sm:p-3 border border-gray-100 col-span-1 row-span-2 flex flex-col anim-child" style={{'--i': 1} as React.CSSProperties}>
           <p className="text-xs font-semibold text-gray-700 mb-2">Croissance MRR</p>
-          <div className="flex-grow flex items-end space-x-2">
+          <div className="flex-grow flex items-end space-x-1 sm:space-x-2">
               <div className="w-full h-1/3 bg-[#6D0037]/20 rounded-t-sm anim-bar" style={{'--d': 0} as React.CSSProperties}></div>
               <div className="w-full h-2/3 bg-[#6D0037]/20 rounded-t-sm anim-bar" style={{'--d': 1} as React.CSSProperties}></div>
               <div className="w-full h-1/2 bg-[#6D0037]/20 rounded-t-sm anim-bar" style={{'--d': 2} as React.CSSProperties}></div>
               <div className="w-full h-3/4 bg-[#6D0037] rounded-t-sm anim-bar" style={{'--d': 3} as React.CSSProperties}></div>
           </div>
         </div>
-        <div className="bg-gray-50 rounded-lg p-4 border border-gray-100 col-span-1 row-span-1 anim-child" style={{'--i': 2} as React.CSSProperties}>
+        <div className="bg-gray-50 rounded-lg p-2 sm:p-4 border border-gray-100 col-span-1 row-span-1 anim-child" style={{'--i': 2} as React.CSSProperties}>
           <p className="text-xs text-gray-700">Taux de Churn</p>
-          <p className="font-bold text-gray-800 text-xl">2.1% <span className="text-green-500 text-sm">↓</span></p>
+          <p className="font-bold text-gray-800 text-lg sm:text-xl">2.1% <span className="text-green-500 text-sm">↓</span></p>
         </div>
-         <div className="bg-gray-50 rounded-lg p-4 border border-gray-100 col-span-1 row-span-1 anim-child" style={{'--i': 3} as React.CSSProperties}>
+         <div className="bg-gray-50 rounded-lg p-2 sm:p-4 border border-gray-100 col-span-1 row-span-1 anim-child" style={{'--i': 3} as React.CSSProperties}>
           <p className="text-xs text-gray-700">CAC</p>
-          <p className="font-bold text-[#27013D] text-xl">1.2k€ <span className="text-red-500 text-sm">↑</span></p>
+          <p className="font-bold text-[#27013D] text-lg sm:text-xl">1.2k€ <span className="text-red-500 text-sm">↑</span></p>
         </div>
       </div>
     </div>

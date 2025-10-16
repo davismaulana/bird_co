@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Animate from './Animate';
 import HeroAnimation from './HeroAnimation';
@@ -102,9 +101,9 @@ const Hero: React.FC = () => {
           <div className="flex w-max animate-scroll-x hover:[animation-play-state:paused] items-center">
             {allHeroLogos.map((logo, index) => {
               const isEnlarged = logosToEnlarge.includes(logo.name);
-              const sizeClass = isEnlarged ? "w-52 h-20" : "w-44 h-16";
+              const sizeClass = isEnlarged ? "w-40 h-16 sm:w-52 sm:h-20" : "w-36 h-14 sm:w-44 sm:h-16";
               return (
-                <div key={index} className={`flex-shrink-0 px-6 py-2 ${sizeClass} flex items-center justify-center filter grayscale hover:filter-none opacity-60 hover:opacity-100 transition-all duration-300`}>
+                <div key={index} className={`flex-shrink-0 px-4 sm:px-6 py-2 ${sizeClass} flex items-center justify-center filter grayscale hover:filter-none opacity-60 hover:opacity-100 transition-all duration-300`}>
                   {React.cloneElement(logo.component, { className: 'max-h-full max-w-full object-contain' })}
                 </div>
               );

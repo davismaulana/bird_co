@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Animate from './Animate';
 
@@ -44,55 +43,73 @@ const StakesSection: React.FC = () => {
         </div>
         
         <div className="w-full max-w-7xl mx-auto mt-12">
-            <Animate variant="pop">
-                <div className="relative">
-                    {/* The static line connecting the dots */}
-                    <div className="absolute top-1/2 left-[12.5%] right-[12.5%] h-px bg-gray-300 transform -translate-y-1/2"></div>
-                    
-                    {/* Animated running dot container */}
-                    <div className="absolute top-0 left-[12.5%] right-[12.5%] h-full pointer-events-none">
-                      <div className="running-dot-wrapper-stakes">
-                          <div className="running-dot-indicator"></div>
+            {/* Desktop Timeline */}
+            <div className="hidden md:block">
+              <Animate variant="pop">
+                  <div className="relative">
+                      {/* The static line connecting the dots */}
+                      <div className="absolute top-1/2 left-[12.5%] right-[12.5%] h-px bg-gray-300 transform -translate-y-1/2"></div>
+                      
+                      {/* Animated running dot container */}
+                      <div className="absolute top-0 left-[12.5%] right-[12.5%] h-full pointer-events-none">
+                        <div className="running-dot-wrapper-stakes">
+                            <div className="running-dot-indicator"></div>
+                        </div>
                       </div>
-                    </div>
 
-                    {/* The static dots and keywords */}
-                    <div className="relative flex">
-                      {stakes.map((stake, index) => {
-                          const isAbove = index % 2 === 0;
+                      {/* The static dots and keywords */}
+                      <div className="relative flex">
+                        {stakes.map((stake, index) => {
+                            const isAbove = index % 2 === 0;
 
-                          const StakeKeyword = (
-                            <div className={`stake-content-card stake-content-card--${index + 1} text-center px-4 w-64`}>
-                               <h3 className={`stake-title stake-title--${index + 1} text-base font-bold gradient-text-stake`}>{stake.keyword}</h3>
-                               <div className="w-12 h-px bg-gradient-to-r from-[#27013D] to-[#6D0037] my-2 mx-auto rounded-full"></div>
-                               <p className="text-gray-800 text-xs leading-relaxed">
-                                 {stake.description}
-                               </p>
-                            </div>
-                          );
-
-                          return (
-                              <div key={index} className="relative z-10 w-1/4 flex justify-center">
-                                  <div className="flex flex-col items-center group">
-                                      {/* Top Content */}
-                                      <div className={`min-h-[10rem] flex items-end pb-6 ${isAbove ? '' : 'opacity-0 pointer-events-none'}`}>
-                                        {StakeKeyword}
-                                      </div>
-
-                                      {/* Point */}
-                                      <div className={`stake-dot stake-dot--${index + 1} rounded-full border-2 border-gray-50`}></div>
-                                      
-                                      {/* Bottom Content */}
-                                      <div className={`min-h-[10rem] flex items-start pt-6 ${!isAbove ? '' : 'opacity-0 pointer-events-none'}`}>
-                                        {StakeKeyword}
-                                      </div>
-                                  </div>
+                            const StakeKeyword = (
+                              <div className={`stake-content-card stake-content-card--${index + 1} text-center px-4 w-64`}>
+                                <h3 className={`stake-title stake-title--${index + 1} text-base font-bold gradient-text-stake`}>{stake.keyword}</h3>
+                                <div className="w-12 h-px bg-gradient-to-r from-[#27013D] to-[#6D0037] my-2 mx-auto rounded-full"></div>
+                                <p className="text-gray-800 text-xs leading-relaxed">
+                                  {stake.description}
+                                </p>
                               </div>
-                          );
-                      })}
-                    </div>
-                </div>
-            </Animate>
+                            );
+
+                            return (
+                                <div key={index} className="relative z-10 w-1/4 flex justify-center">
+                                    <div className="flex flex-col items-center group">
+                                        {/* Top Content */}
+                                        <div className={`min-h-[10rem] flex items-end pb-6 ${isAbove ? '' : 'opacity-0 pointer-events-none'}`}>
+                                          {StakeKeyword}
+                                        </div>
+
+                                        {/* Point */}
+                                        <div className={`stake-dot stake-dot--${index + 1} rounded-full border-2 border-gray-50`}></div>
+                                        
+                                        {/* Bottom Content */}
+                                        <div className={`min-h-[10rem] flex items-start pt-6 ${!isAbove ? '' : 'opacity-0 pointer-events-none'}`}>
+                                          {StakeKeyword}
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        })}
+                      </div>
+                  </div>
+              </Animate>
+            </div>
+
+            {/* Mobile Layout */}
+            <div className="block md:hidden space-y-12">
+              {stakes.map((stake, index) => (
+                <Animate key={index} variant="pop">
+                  <div className="text-center">
+                      <h3 className="text-lg font-bold gradient-text-stake">{stake.keyword}</h3>
+                      <div className="w-12 h-px bg-gradient-to-r from-[#27013D] to-[#6D0037] my-3 mx-auto rounded-full"></div>
+                      <p className="text-gray-800 text-sm leading-relaxed max-w-xs mx-auto">
+                          {stake.description}
+                      </p>
+                  </div>
+                </Animate>
+              ))}
+            </div>
         </div>
       </div>
     </section>
