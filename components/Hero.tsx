@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
   const logosToEnlarge = ['Wellow', 'EricKayser', 'OctoGaming'];
 
   return (
-    <section id="accueil" className="relative bg-white text-gray-900 flex flex-col justify-center min-h-[80vh] overflow-hidden py-16">
+    <section id="accueil" className="relative bg-white text-gray-900 flex flex-col justify-center min-h-[80vh] overflow-hidden pt-16 pb-0">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex-grow flex flex-col items-center justify-center pt-20 md:pt-0">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center relative w-full">
           
@@ -89,30 +89,30 @@ const Hero: React.FC = () => {
           </Animate>
 
         </div>
-        
-        <Animate variant="pop" delay={600} className="w-full pt-10 md:pt-16">
-          <div
-            className="w-full overflow-hidden"
-            style={{
-              maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
-              WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
-            }}
-          >
-            <div className="flex w-max animate-scroll-x hover:[animation-play-state:paused] items-center">
-              {allHeroLogos.map((logo, index) => {
-                const isEnlarged = logosToEnlarge.includes(logo.name);
-                const sizeClass = isEnlarged ? "w-52 h-20" : "w-44 h-16";
-                return (
-                  <div key={index} className={`flex-shrink-0 px-6 py-2 ${sizeClass} flex items-center justify-center filter grayscale hover:filter-none opacity-60 hover:opacity-100 transition-all duration-300`}>
-                    {React.cloneElement(logo.component, { className: 'max-h-full max-w-full object-contain' })}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </Animate>
-        
       </div>
+      
+      <Animate variant="pop" delay={600} className="w-full pt-16 md:pt-24 pb-16">
+        <div
+          className="w-full overflow-hidden"
+          style={{
+            maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+            WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+          }}
+        >
+          <div className="flex w-max animate-scroll-x hover:[animation-play-state:paused] items-center">
+            {allHeroLogos.map((logo, index) => {
+              const isEnlarged = logosToEnlarge.includes(logo.name);
+              const sizeClass = isEnlarged ? "w-52 h-20" : "w-44 h-16";
+              return (
+                <div key={index} className={`flex-shrink-0 px-6 py-2 ${sizeClass} flex items-center justify-center filter grayscale hover:filter-none opacity-60 hover:opacity-100 transition-all duration-300`}>
+                  {React.cloneElement(logo.component, { className: 'max-h-full max-w-full object-contain' })}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </Animate>
+      
     </section>
   );
 };
