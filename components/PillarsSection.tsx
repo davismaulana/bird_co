@@ -86,7 +86,7 @@ const PillarsSection: React.FC = () => {
                                 <div key={index} className="relative z-10 w-1/4 flex justify-center">
                                     <div className="flex flex-col items-center group">
                                         {/* Top Content */}
-                                        <div className={`min-h-[12rem] flex items-end pb-6 ${isAbove ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+                                        <div className={`min-h-[10rem] flex items-end pb-6 ${isAbove ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
                                           {PillarContent}
                                         </div>
 
@@ -94,7 +94,7 @@ const PillarsSection: React.FC = () => {
                                         <div className={`pillar-dot pillar-dot--${index + 1} rounded-full border-2 border-gray-50`}></div>
                                         
                                         {/* Bottom Content */}
-                                        <div className={`min-h-[12rem] flex items-start pt-6 ${!isAbove ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+                                        <div className={`min-h-[10rem] flex items-start pt-6 ${!isAbove ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
                                           {PillarContent}
                                         </div>
                                     </div>

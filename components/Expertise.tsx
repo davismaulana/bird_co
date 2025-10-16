@@ -23,7 +23,7 @@ const Expertise: React.FC = () => {
   ];
 
   return (
-    <section className="bg-white flex flex-col justify-center py-24">
+    <section className="bg-white min-h-screen flex flex-col justify-center py-16 overflow-x-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 max-w-3xl mx-auto">
           <Animate variant="pop">
@@ -58,7 +58,7 @@ const Expertise: React.FC = () => {
 
             if ('icon' in item) {
               return (
-                <Animate key={index} variant="pop" className={`${borderClasses.join(' ')} p-5 flex flex-col items-center text-center justify-center transition-colors duration-300 hover:bg-white/5`}>
+                <Animate key={index} variant="pop" className={`${borderClasses.join(' ')} px-5 py-12 flex flex-col items-center text-center justify-center transition-colors duration-300 hover:bg-white/5`}>
                   {React.cloneElement(item.icon, { className: 'w-10 h-10 object-contain' })}
                   <p className="text-gray-100 font-medium mt-2 text-sm">{item.label}</p>
                 </Animate>
@@ -67,7 +67,7 @@ const Expertise: React.FC = () => {
               // CTA
               return (
                 <Animate key={index} variant="pop" className={`${borderClasses.join(' ')} h-full`}>
-                  <a href="#contact" className="bg-[#3A224E] h-full flex flex-col justify-center items-center text-center p-5 transition-all duration-300 hover:bg-[#4f3066] group">
+                  <a href="#contact" className="bg-[#3A224E] h-full flex flex-col justify-center items-center text-center px-5 py-12 transition-all duration-300 hover:bg-[#4f3066] group">
                     <h3 className="text-sm font-bold text-white">Et bien plus encore...</h3>
                     <p className="mt-2 text-violet-200 flex items-center gap-2 group-hover:text-white transition-colors text-xs">
                       Discutons de votre projet

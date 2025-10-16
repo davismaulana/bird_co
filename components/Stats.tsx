@@ -145,7 +145,7 @@ const stats = [
 
 const Stats: React.FC = () => {
   return (
-    <section className="bg-gray-50 min-h-screen flex flex-col justify-center py-16">
+    <section className="bg-gray-50 min-h-screen flex flex-col justify-center py-16 overflow-x-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="mb-12">
           <Animate variant="pop">
