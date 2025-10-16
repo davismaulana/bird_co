@@ -4,7 +4,7 @@ import Animate from './Animate';
 import { CheckmarkCircleIcon, KpiDashboardMockup, FinancialReportMockup } from '../constants';
 
 const DueDiligenceVisual: React.FC = () => (
-  <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
+  <div className="animated-mockup w-full h-full bg-white rounded-2xl p-2 sm:p-4 md:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
     <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
       <h3 className="font-bold text-gray-900 text-sm">Due Diligence</h3>
     </div>
@@ -30,7 +30,7 @@ const DueDiligenceVisual: React.FC = () => (
 );
 
 const TransactionalSupportVisual: React.FC = () => (
-    <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
+    <div className="animated-mockup w-full h-full bg-white rounded-2xl p-2 sm:p-4 md:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
       <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
         <h3 className="font-bold text-gray-900 text-sm">Accompagnement Transactionnel</h3>
       </div>
@@ -97,14 +97,14 @@ const LiquidityChartVisual: React.FC = () => {
     ];
 
     return (
-        <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300 text-gray-900">
-            <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
-                <h3 className="font-bold text-gray-900 text-sm">Liquidités</h3>
+        <div className="animated-mockup w-full h-full bg-white rounded-2xl p-2 sm:p-4 md:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300 text-gray-900">
+            <div className="w-full text-left mb-2 anim-child" style={{'--i': 0} as React.CSSProperties}>
+                <h3 className="font-bold text-gray-900 text-sm">Gestion de la trésorerie</h3>
             </div>
             <div className="anim-child" style={{'--i': 1} as React.CSSProperties}>
-                <p className="text-xl font-bold text-[#27013D]">58 K€</p>
+                <p className="text-lg font-bold text-[#27013D]">58 K€</p>
             </div>
-            <div className="flex-grow mt-0.5 relative">
+            <div className="flex-grow mt-1 relative">
                 <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`} className="w-full h-full" preserveAspectRatio="xMidYMid meet">
                     <defs>
                         <linearGradient id="liquidityAreaGradient" x1="0" y1="0" x2="0" y2="1">
@@ -189,7 +189,7 @@ const LiquidityChartVisual: React.FC = () => {
 };
 
 const OnSiteInterventionVisual: React.FC = () => (
-    <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
+    <div className="animated-mockup w-full h-full bg-white rounded-2xl p-2 sm:p-4 md:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
         <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
             <h3 className="font-bold text-gray-900 text-sm">Intervention sur site</h3>
         </div>
@@ -312,49 +312,61 @@ const TaskShowcase: React.FC = () => {
                         </p>
                     </Animate>
                 </div>
-                <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
-                    {/* Left: Buttons */}
-                    <div className="w-full max-w-md mx-auto lg:max-w-none lg:mx-0 lg:col-span-2">
-                        <div className="grid grid-cols-1 gap-2">
-                            {tasks.map((task, index) => (
-                                <Animate variant="pop" key={index}>
-                                    <button
-                                        onClick={() => setActiveTask(index)}
-                                        className={`w-full text-left p-2 rounded-xl transition-all duration-300 group ${
-                                            activeTask === index
-                                                ? 'bg-[#27013D] shadow-xl shadow-violet-200/50 scale-105 hover:scale-[1.07]'
-                                                : 'bg-white hover:shadow-xl hover:shadow-violet-100/50 hover:scale-105'
-                                        }`}
-                                    >
-                                        <div className="flex items-center gap-3">
-                                            <div
-                                                className={`w-12 h-12 rounded-lg flex-shrink-0 flex items-center justify-center transition-colors duration-300 ${
-                                                    activeTask === index ? 'bg-white/20' : 'bg-gray-100'
-                                                }`}
-                                            >
-                                                <img
-                                                    src={activeTask === index ? task.icon.active : task.icon.inactive}
-                                                    alt={`${task.title} icon`}
-                                                    className="w-8 h-8 object-contain"
-                                                />
+                <div className="max-w-6xl mx-auto">
+                    <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-stretch">
+                        {/* Left: Buttons */}
+                        <div className="w-full max-w-md mx-auto lg:max-w-none lg:mx-0 lg:col-span-2">
+                            <div className="grid grid-cols-1 gap-2">
+                                {tasks.map((task, index) => (
+                                    <Animate variant="pop" key={index}>
+                                        <button
+                                            onClick={() => setActiveTask(index)}
+                                            className={`w-full text-left p-2 rounded-xl transition-all duration-300 group ${
+                                                activeTask === index
+                                                    ? 'bg-[#27013D] shadow-xl shadow-violet-200/50 scale-105 hover:scale-[1.07]'
+                                                    : 'bg-white hover:shadow-xl hover:shadow-violet-100/50 hover:scale-105'
+                                            }`}
+                                        >
+                                            <div className="flex items-center gap-3">
+                                                <div
+                                                    className={`w-12 h-12 rounded-lg flex-shrink-0 flex items-center justify-center transition-colors duration-300 ${
+                                                        activeTask === index ? 'bg-white/20' : 'bg-gray-100'
+                                                    }`}
+                                                >
+                                                    <img
+                                                        src={activeTask === index ? task.icon.active : task.icon.inactive}
+                                                        alt={`${task.title} icon`}
+                                                        className="w-8 h-8 object-contain"
+                                                    />
+                                                </div>
+                                                <div className="flex-1">
+                                                    <h3 className={`font-semibold text-sm leading-tight ${activeTask === index ? 'text-white' : 'text-gray-900'}`}>{task.title}</h3>
+                                                    <p className={`text-xs leading-snug mt-1 ${activeTask === index ? 'text-violet-200' : 'text-gray-700'}`}>{task.description}</p>
+                                                </div>
                                             </div>
-                                            <div className="flex-1">
-                                                <h3 className={`font-semibold text-sm leading-tight ${activeTask === index ? 'text-white' : 'text-gray-900'}`}>{task.title}</h3>
-                                                <p className={`text-xs leading-snug mt-1 ${activeTask === index ? 'text-violet-200' : 'text-gray-700'}`}>{task.description}</p>
-                                            </div>
+                                        </button>
+                                    </Animate>
+                                ))}
+                            </div>
+                        </div>
+                        
+                        {/* Right: Visual */}
+                        <Animate variant="pop" delay={200} className="relative aspect-[4/3] lg:aspect-auto lg:h-full lg:col-span-3">
+                            <div className="w-full h-full">
+                                <div className="grid h-full">
+                                    {tasks.map((task, index) => (
+                                        <div
+                                            key={index}
+                                            className={`col-start-1 row-start-1 transition-opacity duration-500 ease-in-out ${activeTask === index ? 'opacity-100 showcase-active' : 'opacity-0 pointer-events-none'}`}
+                                            aria-hidden={activeTask !== index}
+                                        >
+                                            {task.visual}
                                         </div>
-                                    </button>
-                                </Animate>
-                            ))}
-                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </Animate>
                     </div>
-                    
-                    {/* Right: Visual */}
-                    <Animate variant="pop" delay={200} className="relative aspect-[4/3] lg:aspect-auto lg:h-full lg:col-span-3">
-                        <div className="w-full h-full showcase-active" key={activeTask}>
-                           {tasks[activeTask].visual}
-                        </div>
-                    </Animate>
                 </div>
             </div>
         </section>
