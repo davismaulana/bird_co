@@ -121,7 +121,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                     const isSectionActive = activeSection === 'solutions';
                     const hasBackground = isDropdownOpen || isPropositionSectionActive;
 
-                    let classes = 'nav-link-anchor px-4 py-2 rounded-lg text-sm font-light transition-colors flex items-center gap-2';
+                    let classes = 'nav-link-anchor px-4 py-2 rounded-lg text-sm font-bold transition-colors flex items-center gap-2';
                     if (hasBackground) {
                         classes += ' bg-[#27013D] text-white';
                     } else {
@@ -160,7 +160,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                   const sectionId = getSectionId(item.href);
                   const isSectionActive = pathname === '/' && sectionId ? activeSection === sectionId : false;
 
-                  const finalClasses = ['px-4', 'py-2', 'rounded-lg', 'text-sm', 'font-light', 'transition-colors'];
+                  const finalClasses = ['px-4', 'py-2', 'rounded-lg', 'text-sm', 'font-bold', 'transition-colors'];
 
                   if (isAnchorLink) {
                       finalClasses.push('nav-link-anchor');
@@ -278,7 +278,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                        <button
                          type="button"
                          onClick={() => setIsMobileSolutionsOpen(prev => !prev)}
-                         className={`block w-full text-xl font-light py-3 rounded-lg hover:bg-[#27013D] hover:text-white transition-colors text-center ${
+                         className={`block w-full text-xl font-bold py-3 rounded-lg hover:bg-[#27013D] hover:text-white transition-colors text-center ${
                            (isPropositionSectionActive || isMobileSolutionsOpen) ? 'bg-[#27013D] text-white' : 'text-black'
                          }`}
                          aria-expanded={isMobileSolutionsOpen}
@@ -322,7 +322,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                     key={item.name}
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`block w-full text-xl font-light py-3 rounded-lg hover:bg-[#27013D] hover:text-white transition-colors ${
+                    className={`block w-full text-xl font-bold py-3 rounded-lg hover:bg-[#27013D] hover:text-white transition-colors ${
                       isActive ? 'bg-[#27013D] text-white' : 'text-black'
                     }`}
                   >
