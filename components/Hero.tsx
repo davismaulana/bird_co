@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Animate from './Animate';
 import HeroAnimation from './HeroAnimation';
@@ -39,7 +38,7 @@ const Hero: React.FC = () => {
   const logosToEnlarge = ['Wellow', 'EricKayser', 'OctoGaming'];
 
   return (
-    <section id="accueil" className="relative bg-white text-gray-900 flex flex-col justify-center min-h-screen overflow-hidden pt-24 pb-12 md:pb-16">
+    <section id="accueil" className="relative bg-white text-gray-900 flex flex-col min-h-screen overflow-hidden pt-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex-grow flex flex-col items-center justify-center">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center relative w-full">
           
@@ -91,7 +90,7 @@ const Hero: React.FC = () => {
         </div>
       </div>
       
-      <Animate variant="pop" delay={600} className="w-full">
+      <Animate variant="pop" delay={600} className="w-full pb-8">
         <div
           className="w-full overflow-hidden"
           style={{
