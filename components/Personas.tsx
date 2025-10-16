@@ -18,7 +18,7 @@ const personas = [
     description: "Nous collaborons sur des dossiers complexes (litiges, M&A, restructurations) en apportant une expertise financière pointue, des analyses chiffrées robustes et des évaluations pour renforcer vos argumentaires juridiques.",
   },
   {
-    icon: <img src="https://images2.imgbox.com/78/c2/3dK6Hk8k_o.png" alt="Experts-Comptables icon" className="w-23 h-23 object-contain" />,
+    icon: <img src="https://images2.imgbox.com/78/c2/3dK6Hk8k_o.png" alt="Experts-Comptables icon" className="w-21 h-21 object-contain" />,
     title: "Experts-Comptables",
     description: "En appui sur des missions exceptionnelles (levée de fonds, reporting avancé, restructuration), nous complétons vos services avec une expertise financière spécialisée et ciblée pour atteindre vos objectifs.",
   },
