@@ -292,7 +292,7 @@ const TaskShowcase: React.FC = () => {
     const [activeTask, setActiveTask] = useState(0);
 
     return (
-        <section className="bg-gray-50 flex flex-col justify-center py-24">
+        <section className="bg-gray-50 flex flex-col justify-center py-28">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12 max-w-3xl mx-auto">
                     <Animate variant="pop">
@@ -311,9 +311,9 @@ const TaskShowcase: React.FC = () => {
                         </p>
                     </Animate>
                 </div>
-                <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+                <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-stretch">
                     <div className="lg:col-span-2">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 stagger">
+                        <div className="grid grid-cols-1 gap-4 stagger">
                             {tasks.map((task, index) => (
                                 <Animate variant="pop" key={index}>
                                     <button
@@ -336,9 +336,9 @@ const TaskShowcase: React.FC = () => {
                                                     className="w-9 h-9 object-contain"
                                                 />
                                             </div>
-                                            <div>
+                                            <div className="min-h-16 flex flex-col justify-center">
                                                 <h3 className={`font-bold text-sm ${activeTask === index ? 'text-white' : 'text-gray-900'}`}>{task.title}</h3>
-                                                <p className={`text-xs ${activeTask === index ? 'text-violet-200' : 'text-gray-700'}`}>{task.description}</p>
+                                                <p className={`text-[11px] leading-snug ${activeTask === index ? 'text-violet-200' : 'text-gray-700'}`}>{task.description}</p>
                                             </div>
                                         </div>
                                     </button>
@@ -346,7 +346,7 @@ const TaskShowcase: React.FC = () => {
                             ))}
                         </div>
                     </div>
-                    <div className="aspect-[1/1] sm:aspect-[4/3] lg:col-span-3 lg:aspect-auto">
+                    <div className="aspect-[4/3] lg:aspect-auto lg:col-span-3">
                         <div className="w-full h-full showcase-active" key={activeTask}>
                            {tasks[activeTask].visual}
                         </div>
