@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -169,36 +170,34 @@ const App: React.FC = () => {
           <TaskShowcase />
           <PillarsSection />
           <Personas />
-          <Logos backgroundColor="bg-white" />
+          <Logos />
           <Stats />
           <Expertise />
           {/* <Deliverables /> */}
           <Team />
-          <section className="bg-white">
-            <div className="max-w-none">
-              <div className="grid grid-cols-1 lg:grid-cols-2">
-                <Animate variant="pop" className="h-[300px] lg:h-full lg:order-last">
-                  <div className="h-[300px] lg:h-full">
-                    <StairsAnimation />
-                  </div>
-                </Animate>
-                <div className="lg:order-first flex items-center">
-                  <div className="w-full px-6 sm:px-10 md:px-14 lg:px-20 py-6 flex flex-col justify-center">
-                    <div className="max-w-xl mx-auto lg:mx-0">
-                      <Animate variant="pop">
-                        <blockquote className="text-lg md:text-xl xl:text-2xl font-bold text-[#27013D] leading-snug">
-                          "La meilleure façon de prédire l'avenir, c'est de le créer."
-                        </blockquote>
-                      </Animate>
-                      <Animate variant="pop" delay={150}>
-                        <p className="mt-6 text-sm text-gray-800">— Peter Drucker</p>
-                      </Animate>
-                      <Animate variant="pop" delay={300}>
-                        <p className="mt-8 text-gray-800 leading-relaxed text-xs">
-                          Cette philosophie est au cœur de notre démarche. Nous ne nous contentons pas de réagir aux événements ; nous vous donnons les moyens de façonner activement l'avenir de votre entreprise, en transformant l'incertitude en opportunité et la vision en réalité.
-                        </p>
-                      </Animate>
-                    </div>
+          <section className="bg-white min-h-screen">
+            <div className="h-full grid grid-cols-1 lg:grid-cols-2">
+              <Animate variant="pop" className="h-[300px] lg:h-full lg:order-last">
+                <div className="h-[300px] lg:h-full">
+                  <StairsAnimation />
+                </div>
+              </Animate>
+              <div className="lg:order-first flex items-center">
+                <div className="w-full px-6 sm:px-10 md:px-14 lg:px-20 py-6 flex flex-col justify-center">
+                  <div className="max-w-xl mx-auto lg:mx-0">
+                    <Animate variant="pop">
+                      <blockquote className="text-lg md:text-xl xl:text-2xl font-bold text-[#27013D] leading-snug">
+                        "La meilleure façon de prédire l'avenir, c'est de le créer."
+                      </blockquote>
+                    </Animate>
+                    <Animate variant="pop" delay={150}>
+                      <p className="mt-6 text-sm text-gray-800">— Peter Drucker</p>
+                    </Animate>
+                    <Animate variant="pop" delay={300}>
+                      <p className="mt-8 text-gray-800 leading-relaxed text-xs">
+                        Cette philosophie est au cœur de notre démarche. Nous ne nous contentons pas de réagir aux événements ; nous vous donnons les moyens de façonner activement l'avenir de votre entreprise, en transformant l'incertitude en opportunité et la vision en réalité.
+                      </p>
+                    </Animate>
                   </div>
                 </div>
               </div>

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Animate from './Animate';
 
@@ -22,7 +23,7 @@ const stakes = [
 
 const StakesSection: React.FC = () => {
   return (
-    <section id="vos-enjeux" className="bg-gray-50 py-16 overflow-x-hidden">
+    <section id="vos-enjeux" className="bg-gray-50 min-h-screen flex flex-col justify-center py-16 overflow-x-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <Animate variant="pop">

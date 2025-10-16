@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { services, HamburgerIcon, CloseIcon, ArrowRightIcon } from '../constants';
 
@@ -63,9 +64,9 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
     if (sections.length === 0) return;
 
     const handleScroll = () => {
-      const headerOffset = 150;
-      
-      const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+      const scrollTop = window.scrollY;
+      const headerOffset = window.innerHeight / 2;
+      const isAtBottom = window.innerHeight + scrollTop >= document.documentElement.scrollHeight - 2;
 
       if (isAtBottom) {
         setActiveSection('contact');
@@ -73,7 +74,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
       }
 
       const reversedSections = [...sections].reverse();
-      const currentSection = reversedSections.find(section => window.scrollY >= section.offsetTop - headerOffset);
+      const currentSection = reversedSections.find(section => scrollTop >= section.offsetTop - headerOffset);
 
       if (currentSection) {
         setActiveSection(currentSection.id);
@@ -81,7 +82,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
         setActiveSection('');
       }
     };
-
+    
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
 

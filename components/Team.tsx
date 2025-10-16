@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import Animate from './Animate';
 import { LinkedInIcon, teamMembers } from '../constants';
@@ -9,7 +10,7 @@ const Team: React.FC = () => {
   return (
     <section
       id="notre-equipe"
-      className="bg-gradient-to-br from-[#27013D] to-gray-900 text-white py-16"
+      className="bg-gradient-to-br from-[#27013D] to-gray-900 text-white min-h-screen flex flex-col justify-center py-16"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title */}

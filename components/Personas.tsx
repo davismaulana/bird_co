@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Animate from './Animate';
 
@@ -24,10 +25,9 @@ const personas = [
   },
 ];
 
-
 const Personas: React.FC = () => {
   return (
-    <section id="personas" className="bg-gray-50 py-16">
+    <section id="personas" className="bg-gray-50 min-h-screen flex flex-col justify-center py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <Animate variant="pop">
@@ -60,7 +60,7 @@ const Personas: React.FC = () => {
                 </div>
               </Animate>
             ))}
-          </div>
+        </div>
       </div>
     </section>
   );
