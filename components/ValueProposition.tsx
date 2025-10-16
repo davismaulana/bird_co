@@ -43,7 +43,7 @@ const ValueProposition: React.FC = () => {
         <div className="bg-[#EBE5F0] min-h-[600px] lg:min-h-[800px] flex items-center justify-center p-8 md:p-16">
           <div className="relative text-left w-full">
             <Animate variant="pop" delay={200}>
-                <h2 className="text-3xl md:text-4xl xl:text-5xl text-[#27013D] leading-tight">
+                <h2 className="text-xl md:text-2xl xl:text-3xl text-[#27013D] leading-tight">
                   Au-delà du conseil,<br />
                   Bird vous <strong className="font-black">accompagne</strong><br />
                   pour <strong className="font-black">relever vos défis</strong><br />
@@ -58,10 +58,10 @@ const ValueProposition: React.FC = () => {
                 {propositionPoints.map((point, index) => (
                   <div key={index}>
                     <Animate variant="pop" delay={index * 200}>
-                      <h3 className="text-lg font-bold text-[#27013D] mb-3">{point.title}</h3>
+                      <h3 className="text-xl font-bold text-[#27013D] mb-3">{point.title}</h3>
                     </Animate>
                     <Animate variant="pop" delay={index * 200 + 100}>
-                      <p className="text-gray-900 leading-relaxed text-xs">
+                      <p className="text-gray-900 leading-relaxed text-sm">
                         {point.description()}
                       </p>
                     </Animate>
