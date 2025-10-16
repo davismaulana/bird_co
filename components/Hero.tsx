@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
   const logosToEnlarge = ['Wellow', 'EricKayser', 'OctoGaming'];
 
   return (
-    <section id="accueil" className="relative bg-white text-gray-900 flex flex-col justify-center min-h-[80vh] overflow-hidden pt-16 pb-0">
+    <section id="accueil" className="relative bg-white text-gray-900 flex flex-col justify-center min-h-[80vh] overflow-hidden pt-24 pb-0">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex-grow flex flex-col items-center justify-center py-24 md:pt-0">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center relative w-full">
           
