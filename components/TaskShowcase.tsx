@@ -292,7 +292,7 @@ const TaskShowcase: React.FC = () => {
     const [activeTask, setActiveTask] = useState(0);
 
     return (
-        <section className="bg-gray-50 flex flex-col justify-center py-28">
+        <section className="bg-gray-50 flex flex-col justify-center py-20">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12 max-w-3xl mx-auto">
                     <Animate variant="pop">
@@ -311,20 +311,21 @@ const TaskShowcase: React.FC = () => {
                         </p>
                     </Animate>
                 </div>
-                <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-stretch">
-                    <div className="lg:col-span-2">
-                        <div className="grid grid-cols-1 gap-4 stagger">
+                <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+                    {/* Left: Buttons */}
+                    <div className="w-full max-w-md mx-auto lg:max-w-none lg:mx-0 lg:col-span-2">
+                        <div className="grid grid-cols-1 gap-3">
                             {tasks.map((task, index) => (
                                 <Animate variant="pop" key={index}>
                                     <button
                                         onClick={() => setActiveTask(index)}
-                                        className={`w-full h-full text-left p-3 rounded-xl transition-all duration-300 group ${
+                                        className={`w-full text-left p-3 rounded-xl transition-all duration-300 group ${
                                             activeTask === index
                                                 ? 'bg-[#27013D] shadow-xl shadow-violet-200/50 scale-105 hover:scale-[1.07]'
                                                 : 'bg-white hover:shadow-xl hover:shadow-violet-100/50 hover:scale-105'
                                         }`}
                                     >
-                                        <div className="flex items-center gap-3">
+                                        <div className="flex items-center gap-4">
                                             <div
                                                 className={`w-14 h-14 rounded-lg flex-shrink-0 flex items-center justify-center transition-colors duration-300 ${
                                                     activeTask === index ? 'bg-white/20' : 'bg-gray-100'
@@ -336,9 +337,9 @@ const TaskShowcase: React.FC = () => {
                                                     className="w-9 h-9 object-contain"
                                                 />
                                             </div>
-                                            <div className="min-h-16 flex flex-col justify-center">
-                                                <h3 className={`font-bold text-sm ${activeTask === index ? 'text-white' : 'text-gray-900'}`}>{task.title}</h3>
-                                                <p className={`text-[11px] leading-snug ${activeTask === index ? 'text-violet-200' : 'text-gray-700'}`}>{task.description}</p>
+                                            <div className="flex-1">
+                                                <h3 className={`font-semibold text-sm leading-tight ${activeTask === index ? 'text-white' : 'text-gray-900'}`}>{task.title}</h3>
+                                                <p className={`text-xs leading-snug mt-1 ${activeTask === index ? 'text-violet-200' : 'text-gray-700'}`}>{task.description}</p>
                                             </div>
                                         </div>
                                     </button>
@@ -346,11 +347,13 @@ const TaskShowcase: React.FC = () => {
                             ))}
                         </div>
                     </div>
-                    <div className="aspect-[4/3] lg:aspect-auto lg:col-span-3">
+                    
+                    {/* Right: Visual */}
+                    <Animate variant="pop" delay={200} className="relative aspect-[4/3] lg:aspect-auto lg:h-full lg:col-span-3">
                         <div className="w-full h-full showcase-active" key={activeTask}>
                            {tasks[activeTask].visual}
                         </div>
-                    </div>
+                    </Animate>
                 </div>
             </div>
         </section>
