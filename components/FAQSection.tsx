@@ -68,7 +68,7 @@ const FAQSection: React.FC = () => {
                       </div>
                     </Animate>
                     <Animate variant="pop" delay={100}>
-                        <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold leading-tight text-gray-900">
+                        <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
                           Questions <span className="gradient-text">fréquentes</span>
                         </h2>
                     </Animate>

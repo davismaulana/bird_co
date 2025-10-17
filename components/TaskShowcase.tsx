@@ -302,12 +302,12 @@ const TaskShowcase: React.FC = () => {
                       </div>
                     </Animate>
                     <Animate variant="pop" delay={100}>
-                        <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold leading-tight text-gray-900">
+                        <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
                           De la stratégie <span className="gradient-text">à l'exécution</span>
                         </h2>
                     </Animate>
                     <Animate variant="pop" delay={200}>
-                        <p className="text-base text-gray-800 mt-4">
+                        <p className="text-lg text-gray-800 mt-4">
                             Quel que soit votre besoin, nous produisons des livrables clairs et actionnables pour piloter votre performance, quel que soit votre besoin.
                         </p>
                     </Animate>

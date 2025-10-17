@@ -32,12 +32,12 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-7xl text-left">
             <Animate variant="pop">
-              <h1 className="text-3xl sm:text-4xl font-extrabold text-white leading-tight tracking-tight">
+              <h1 className="text-4xl sm:text-5xl xl:text-6xl font-extrabold text-white leading-tight tracking-tight">
                 <span>{details.title}</span>
               </h1>
             </Animate>
             <Animate variant="pop" delay={200}>
-              <p className={`mt-4 text-gray-200 max-w-5xl ${serviceId === 'pilotage-planification' || serviceId === 'cfo-part-time' ? 'text-sm' : 'text-sm md:text-base'}`}>
+              <p className={`mt-6 text-gray-200 max-w-5xl ${serviceId === 'pilotage-planification' || serviceId === 'cfo-part-time' ? 'text-base' : 'text-base md:text-lg'}`}>
                 {details.subtitle}
               </p>
             </Animate>
@@ -68,12 +68,12 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                   </div>
                 </Animate>
                 <Animate variant="pop" delay={100}>
-                  <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold leading-tight text-gray-900">
+                  <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
                     {details.diagnostic.title}
                   </h2>
                 </Animate>
                 <Animate variant="pop" delay={200}>
-                  <p className="text-sm text-gray-800 mt-4">
+                  <p className="text-base text-gray-800 mt-4">
                     {details.diagnostic.description}
                   </p>
                 </Animate>
@@ -107,12 +107,12 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                 </div>
               </Animate>
               <Animate variant="pop" delay={100}>
-                  <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold leading-tight text-gray-900">
+                  <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
                       Notre <span className="gradient-text">ambition</span>
                   </h2>
               </Animate>
               <Animate variant="pop" delay={200}>
-                  <p className="mt-4 text-sm text-gray-800 max-w-2xl mx-auto">
+                  <p className="mt-4 text-base text-gray-800 max-w-3xl mx-auto">
                       {details.ambition.description}
                   </p>
               </Animate>
@@ -130,13 +130,13 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                   </div>
                 </Animate>
                 <Animate variant="pop" delay={100}>
-                  <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold leading-tight text-gray-900">
+                  <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
                     <span className="gradient-text">{details.mainContent.title}</span>
                   </h2>
                 </Animate>
                 {details.mainContent.description && (
                     <Animate variant="pop" delay={200}>
-                        <p className="text-sm text-gray-800 mt-4">
+                        <p className="text-base text-gray-800 mt-4">
                             {details.mainContent.description}
                         </p>
                     </Animate>
@@ -180,7 +180,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
               </div>
             </Animate>
             <Animate variant="pop" delay={100}>
-                <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold leading-tight text-white">
+                <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-white">
                     Vous avez des <span className="gradient-text-light">questions ?</span>
                 </h2>
             </Animate>

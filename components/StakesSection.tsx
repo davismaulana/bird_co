@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Animate from './Animate';
 
@@ -55,12 +56,12 @@ const StakesSection: React.FC = () => {
             </div>
           </Animate>
           <Animate variant="pop" delay={100}>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold text-gray-900 leading-tight">
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
               Vos <span className="gradient-text">enjeux</span>
             </h2>
           </Animate>
           <Animate variant="pop" delay={200}>
-            <p className="text-base text-gray-800 mt-2">
+            <p className="text-lg text-gray-800 mt-4 max-w-3xl mx-auto">
               <strong>Identifier les risques</strong> pour mieux les <strong>maîtriser</strong> et <strong>transformer</strong> les défis en opportunités
             </p>
           </Animate>

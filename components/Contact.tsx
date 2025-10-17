@@ -40,7 +40,7 @@ const Contact: React.FC = () => {
                     <div className="absolute inset-0 bg-[#EBE5F0]"></div>
                     <div className="relative z-10">
                         <Animate variant="pop" delay={200}>
-                            <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-[#27013D]">Vous avez des questions</h2>
+                            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-[#27013D]">Vous avez des questions</h2>
                         </Animate>
                         <Animate variant="pop" delay={300}>
                             <p className="text-lg text-gray-700 mb-4">33 Rue La Fayette, 75009 Paris, France</p>
@@ -68,7 +68,7 @@ const Contact: React.FC = () => {
                 {/* Right Column (Form) */}
                 <div className="bg-gray-100 p-6 sm:p-8 md:p-12 lg:p-16 flex flex-col justify-center">
                     <Animate variant="pop">
-                        <h2 className="text-3xl font-bold text-[#27013D] mb-10">Laissez-nous un message</h2>
+                        <h2 className="text-4xl font-bold text-[#27013D] mb-10">Laissez-nous un message</h2>
                     </Animate>
                     <form onSubmit={handleSubmit}>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10 mb-10">

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Animate from './Animate';
 import HeroAnimation from './HeroAnimation';
@@ -45,13 +46,13 @@ const Hero: React.FC = () => {
           {/* Left side: Text content */}
           <div className="text-center md:text-left relative z-10 lg:pl-16">
             <Animate variant="pop">
-              <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 leading-tight tracking-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight tracking-tight">
                 <span>Bras droit</span><br />
                 <span className="gradient-text">stratégique et financier</span>
               </h1>
             </Animate>
             <Animate variant="pop" delay={200}>
-              <p className="mt-6 text-sm md:text-base text-gray-800 max-w-xl mx-auto md:mx-0">
+              <p className="mt-6 text-base md:text-lg text-gray-800 max-w-xl mx-auto md:mx-0">
                 Sollicitez une <span className="gradient-text font-semibold">ressource experte, ingénieuse et accessible,</span><br />
                 dédiée à la réussite de vos ambitions
               </p>

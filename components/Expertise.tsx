@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Animate from './Animate';
 import {
@@ -32,12 +33,12 @@ const Expertise: React.FC = () => {
             </div>
           </Animate>
           <Animate variant="pop" delay={100}>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold text-gray-900 leading-tight">
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
               Nos domaines <span className="gradient-text">d'expertise</span>
             </h2>
           </Animate>
           <Animate variant="pop" delay={200}>
-            <p className="text-base text-gray-800 mt-4">
+            <p className="text-lg text-gray-800 mt-4">
               Une expertise financière et stratégique complète <span className="gradient-text font-bold">pour répondre à l'ensemble de vos défis.</span>
             </p>
           </Animate>

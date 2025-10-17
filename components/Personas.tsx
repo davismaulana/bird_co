@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Animate from './Animate';
 
@@ -35,7 +36,7 @@ const Personas: React.FC = () => {
             </div>
           </Animate>
           <Animate variant="pop" delay={100}>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold text-gray-900 leading-tight">
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
               À qui nous <span className="gradient-text">adressons-nous ?</span>
             </h2>
           </Animate>

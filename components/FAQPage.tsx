@@ -114,12 +114,12 @@ const FAQPage: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-7xl text-left">
             <Animate variant="pop">
-              <h1 className="text-3xl sm:text-4xl font-extrabold text-white leading-tight tracking-tight">
+              <h1 className="text-4xl sm:text-5xl xl:text-6xl font-extrabold text-white leading-tight tracking-tight">
                 Questions <span>Fréquentes</span>
               </h1>
             </Animate>
             <Animate variant="pop" delay={200}>
-              <p className="mt-4 text-sm md:text-base text-gray-200 max-w-5xl">
+              <p className="mt-6 text-base md:text-lg text-gray-200 max-w-5xl">
                 Trouvez les réponses à vos questions sur nos services, notre approche et notre expertise.
               </p>
             </Animate>
@@ -143,7 +143,7 @@ const FAQPage: React.FC = () => {
             {faqs.map((category, categoryIndex) => (
                 <div key={categoryIndex} className={categoryIndex > 0 ? 'mt-16' : ''}>
                     <Animate variant="pop">
-                        <h2 className="text-2xl md:text-3xl font-bold gradient-text mb-8">{category.category}</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-8">{category.category}</h2>
                     </Animate>
                     <div className="stagger">
                         {category.items.map((item, itemIndex) => (
@@ -166,12 +166,12 @@ const FAQPage: React.FC = () => {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Animate variant="pop">
-                <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold text-gray-900">
+                <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900">
                     Vous avez d'autres <span className="gradient-text">questions ?</span>
                 </h2>
             </Animate>
             <Animate variant="pop" delay={150}>
-                <p className="mt-4 text-sm text-gray-800 max-w-2xl mx-auto">
+                <p className="mt-4 text-base text-gray-800 max-w-3xl mx-auto">
                     Notre équipe est à votre disposition pour discuter de vos projets et répondre à toutes vos interrogations.
                 </p>
             </Animate>

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { WellowLogo, RegenSchoolLogo, PomadLogo, BredLogo, EricKayserLogo, SquareLogo, CasaLogo, TmhAvocatsLogo, FoodPilotLogo, OctoGamingLogo, CameroneCapitalLogo, SOCABEGLogo } from '../constants';
 import Animate from './Animate';
@@ -34,12 +35,12 @@ const Logos: React.FC<LogosProps> = ({ backgroundColor = 'bg-white' }) => {
             </div>
           </Animate>
           <Animate variant="pop" delay={100}>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold text-gray-900 leading-tight">
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
               Ils nous <span className="gradient-text">font confiance</span>
             </h2>
           </Animate>
           <Animate variant="pop" delay={200}>
-            <p className="text-base text-gray-800 mt-4">
+            <p className="text-lg text-gray-800 mt-4 max-w-3xl mx-auto">
               Un <strong>allié</strong> et un <strong>soutien sur-mesure</strong> pour votre structure (<span className="gradient-text font-bold">TPE à Grandes entreprises et Fonds d'investissements</span>)
             </p>
           </Animate>
