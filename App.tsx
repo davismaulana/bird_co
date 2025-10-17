@@ -23,7 +23,7 @@ import Animate from './components/Animate';
 import FAQPage from './components/FAQPage';
 import FAQSection from './components/FAQSection';
 import ValueProposition from './components/ValueProposition';
-import StairsAnimation from './components/StairsAnimation';
+import HeroAnimation from './components/HeroAnimation';
 
 const App: React.FC = () => {
   const { pathname } = window.location;
@@ -159,10 +159,8 @@ const App: React.FC = () => {
           <section id="citation">
             <div className="bg-white min-h-screen grid">
               <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
-                <Animate variant="pop" className="h-[300px] sm:h-[350px] lg:h-full lg:order-last">
-                  <div className="h-[300px] sm:h-[350px] lg:h-full">
-                    <StairsAnimation />
-                  </div>
+                <Animate variant="pop" className="relative h-[300px] sm:h-[350px] lg:h-full lg:order-last">
+                  <HeroAnimation />
                 </Animate>
                 <div className="lg:order-first flex items-center">
                   <div className="w-full px-6 sm:px-8 md:px-14 lg:px-20 py-6 flex flex-col justify-center">
