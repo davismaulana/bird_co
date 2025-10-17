@@ -184,17 +184,17 @@ const App: React.FC = () => {
               </Animate>
               <div className="lg:order-first flex items-center">
                 <div className="w-full px-6 sm:px-10 md:px-14 lg:px-20 py-6 flex flex-col justify-center">
-                  <div className="max-w-xl mx-auto lg:mx-0">
-                    <Animate variant="pop">
-                      <blockquote className="text-lg md:text-xl xl:text-2xl font-bold text-[#27013D] leading-snug">
+                  <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
+                    <Animate variant="pop" delay={100}>
+                      <blockquote className="text-2xl md:text-3xl xl:text-4xl font-bold text-[#27013D] leading-tight">
                         "La meilleure façon de prédire l'avenir, c'est de le créer."
                       </blockquote>
                     </Animate>
-                    <Animate variant="pop" delay={150}>
-                      <p className="mt-6 text-sm text-gray-800">— Peter Drucker</p>
+                    <Animate variant="pop" delay={200}>
+                      <p className="mt-6 text-lg text-gray-800">— Peter Drucker</p>
                     </Animate>
                     <Animate variant="pop" delay={300}>
-                      <p className="mt-8 text-gray-800 leading-relaxed text-xs">
+                      <p className="mt-8 text-lg text-gray-800 leading-relaxed">
                         Cette philosophie est au cœur de notre démarche. Nous ne nous contentons pas de réagir aux événements ; nous vous donnons les moyens de façonner activement l'avenir de votre entreprise, en transformant l'incertitude en opportunité et la vision en réalité.
                       </p>
                     </Animate>
