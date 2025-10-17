@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Animate from './Animate';
 import HeroAnimation from './HeroAnimation';
@@ -35,7 +36,8 @@ const allHeroLogos = [...heroLogos, ...heroLogos];
 
 
 const Hero: React.FC = () => {
-  const logosToEnlarge = ['Wellow', 'EricKayser', 'OctoGaming'];
+  const logosToEnlarge = ['Casa', 'EricKayser', 'RegenSchool'];
+  const logosToSuperEnlarge = ['Wellow', 'OctoGaming'];
 
   return (
     <section id="accueil" className="relative bg-white text-gray-900 flex flex-col min-h-screen overflow-hidden pt-16">
@@ -101,7 +103,15 @@ const Hero: React.FC = () => {
           <div className="flex w-max animate-scroll-x hover:[animation-play-state:paused] items-center">
             {allHeroLogos.map((logo, index) => {
               const isEnlarged = logosToEnlarge.includes(logo.name);
-              const sizeClass = isEnlarged ? "w-40 h-16 sm:w-52 sm:h-20" : "w-36 h-14 sm:w-44 sm:h-16";
+              const isSuperEnlarged = logosToSuperEnlarge.includes(logo.name);
+              
+              let sizeClass = "w-36 h-14 sm:w-44 sm:h-16"; // base size
+              if (isEnlarged) {
+                  sizeClass = "w-44 h-16 sm:w-52 sm:h-20"; // ~20% larger
+              } else if (isSuperEnlarged) {
+                  sizeClass = "w-56 h-20 sm:w-64 sm:h-24"; // ~50% larger
+              }
+
               return (
                 <div key={index} className={`flex-shrink-0 px-4 sm:px-6 py-2 ${sizeClass} flex items-center justify-center filter grayscale hover:filter-none opacity-60 hover:opacity-100 transition-all duration-300`}>
                   {React.cloneElement(logo.component, { className: 'max-h-full max-w-full object-contain' })}
