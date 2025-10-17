@@ -16,6 +16,7 @@
     .scroll-container {
       scroll-snap-type: y mandatory;
       overflow-y: scroll;
+      overflow-x: hidden; /* Prevent horizontal scroll */
       height: 100vh;
       scroll-padding-top: 4rem; /* h-16 header height */
     }
@@ -23,7 +24,7 @@
       scroll-snap-align: start;
       scroll-snap-stop: always;
       height: 100vh;
-      width: 100vw;
+      width: 100%; /* Use percentage to avoid vw issues with scrollbars */
       position: relative;
       overflow: hidden; /* For parallax and to hide content overflow */
     }
