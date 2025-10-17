@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Animate from './Animate';
 import {
@@ -48,8 +47,8 @@ const Expertise: React.FC = () => {
             if ('icon' in item) {
               return (
                 <Animate key={index} variant="pop" className="bg-[#27013D] px-5 py-12 flex flex-col items-center text-center justify-center transition-colors duration-300 hover:bg-[#351a4d]">
-                  {React.cloneElement(item.icon, { className: 'w-10 h-10 object-contain' })}
-                  <p className="text-gray-100 font-medium mt-2 text-sm">{item.label}</p>
+                  {React.cloneElement(item.icon, { className: 'w-12 h-12 object-contain' })}
+                  <p className="text-gray-100 font-medium mt-4 text-base">{item.label}</p>
                 </Animate>
               );
             } else {
@@ -57,8 +56,8 @@ const Expertise: React.FC = () => {
               return (
                 <Animate key={index} variant="pop" className="h-full">
                   <a href="#contact" className="bg-[#3A224E] h-full flex flex-col justify-center items-center text-center px-5 py-12 transition-all duration-300 hover:bg-[#4f3066] group">
-                    <h3 className="text-sm font-bold text-white">Et bien plus encore...</h3>
-                    <p className="mt-2 text-violet-200 flex items-center gap-2 group-hover:text-white transition-colors text-xs">
+                    <h3 className="text-base font-bold text-white">Et bien plus encore...</h3>
+                    <p className="mt-2 text-violet-200 flex items-center gap-2 group-hover:text-white transition-colors text-sm">
                       Discutons de votre projet
                       <ArrowRightIcon className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </p>

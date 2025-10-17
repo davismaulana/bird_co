@@ -26,7 +26,7 @@ const Team: React.FC = () => {
             </h2>
           </Animate>
           <Animate variant="pop" delay={200}>
-            <div className="text-base text-gray-300 leading-relaxed mt-4 max-w-5xl mx-auto">
+            <div className="text-sm text-gray-300 leading-relaxed mt-4 max-w-5xl mx-auto">
               <p>
                 Bird est né de la rencontre d’anciens consultants convaincus qu’il existe une autre façon d’accompagner les organisations.<br />
                 <strong className="font-bold text-white">À mi-chemin</strong> entre <strong className="font-bold text-white">l’expertise structurée du conseil</strong> et la <strong className="font-bold text-white">flexibilité d’un consultant autonome</strong>, nous offrons <strong className="font-bold text-white">un accompagnement sur mesure et accessible.</strong>
