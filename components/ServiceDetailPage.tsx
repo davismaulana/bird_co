@@ -99,7 +99,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
       
       {/* Ambition Section */}
       {details.ambition && (
-        <section className="bg-white pt-20 pb-12 md:pt-24 md:pb-16">
+        <section className="bg-white min-h-screen flex flex-col justify-center py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <Animate variant="pop">
                 <div className="flex justify-center mb-4">
@@ -112,7 +112,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                   </h2>
               </Animate>
               <Animate variant="pop" delay={200}>
-                  <p className="mt-4 text-base text-gray-800 max-w-3xl mx-auto">
+                  <p className="mt-4 text-lg text-gray-800 max-w-3xl mx-auto">
                       {details.ambition.description}
                   </p>
               </Animate>
