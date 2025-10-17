@@ -168,7 +168,7 @@ const Stats: React.FC = () => {
             return (
               <Animate key={index} variant="pop">
                 <div className="flex flex-col items-center">
-                  <div className="mb-4 flex items-center justify-center h-28">
+                  <div className="mb-4 flex items-center justify-center h-24 md:h-28">
                     {stat.icon}
                   </div>
                   <p className="text-5xl lg:text-6xl font-extrabold text-[#27013D] tracking-tighter">

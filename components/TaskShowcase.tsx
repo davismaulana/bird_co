@@ -313,7 +313,7 @@ const TaskShowcase: React.FC = () => {
                     </Animate>
                 </div>
                 <div className="max-w-6xl mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-stretch">
+                    <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-stretch">
                         {/* Left: Buttons */}
                         <div className="w-full max-w-md mx-auto lg:max-w-none lg:mx-0 lg:col-span-2">
                             <div className="grid grid-cols-1 gap-2">

@@ -41,7 +41,7 @@ const ValueProposition: React.FC = () => {
   return (
     <section className="h-full grid">
       <div className="grid grid-cols-1 lg:grid-cols-2">
-        <div className="bg-[#EBE5F0] flex items-center justify-center p-8 md:p-16">
+        <div className="bg-[#EBE5F0] flex items-center justify-center p-8 sm:p-12 md:p-16">
           <div className="relative text-left w-full">
             <Animate variant="pop" delay={200}>
                 <h2 className="text-2xl md:text-3xl xl:text-4xl text-[#27013D] leading-tight">
@@ -54,7 +54,7 @@ const ValueProposition: React.FC = () => {
           </div>
         </div>
         <div className="bg-white flex items-center gradient-border-l">
-            <div className="p-8 md:p-16 w-full">
+            <div className="p-8 sm:p-12 md:p-16 w-full">
               <div className="space-y-10">
                 {propositionPoints.map((point, index) => (
                   <div key={index}>

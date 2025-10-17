@@ -44,7 +44,7 @@ const Hero: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center relative w-full">
           
           {/* Left side: Text content */}
-          <div className="text-center md:text-left relative z-10 lg:pl-16">
+          <div className="text-center md:text-left relative z-10 md:pl-8 lg:pl-16">
             <Animate variant="pop">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight tracking-tight">
                 <span>Bras droit</span><br />

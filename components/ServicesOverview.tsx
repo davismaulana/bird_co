@@ -42,7 +42,7 @@ const ServicesOverview: React.FC = () => {
                 className="h-full"
               >
                 <a href={`/service/${service.slug}`} className="block h-full group">
-                  <div className="relative bg-white rounded-xl p-8 flex flex-col items-start text-left h-full transition-all duration-300 ease-in-out border border-gray-200 group-hover:bg-[#27013D] group-hover:shadow-xl">
+                  <div className="relative bg-white rounded-xl p-6 sm:p-8 flex flex-col items-start text-left h-full transition-all duration-300 ease-in-out border border-gray-200 group-hover:bg-[#27013D] group-hover:shadow-xl">
                     <div className="absolute top-8 right-8 flex-shrink-0 text-[#27013D] transition-colors duration-300 group-hover:text-white">
                       {service.darkIcon ? (
                         <>

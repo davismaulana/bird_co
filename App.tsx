@@ -167,13 +167,13 @@ const App: React.FC = () => {
           <div className="scroll-section">
             <section className="bg-white h-full grid">
               <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
-                <Animate variant="pop" className="h-[300px] lg:h-full lg:order-last">
-                  <div className="h-[300px] lg:h-full">
+                <Animate variant="pop" className="h-[300px] sm:h-[350px] lg:h-full lg:order-last">
+                  <div className="h-[300px] sm:h-[350px] lg:h-full">
                     <StairsAnimation />
                   </div>
                 </Animate>
                 <div className="lg:order-first flex items-center">
-                  <div className="w-full px-6 sm:px-10 md:px-14 lg:px-20 py-6 flex flex-col justify-center">
+                  <div className="w-full px-6 sm:px-8 md:px-14 lg:px-20 py-6 flex flex-col justify-center">
                     <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
                       <Animate variant="pop" delay={100}>
                         <blockquote className="text-2xl md:text-3xl xl:text-4xl font-bold text-[#27013D] leading-tight">
