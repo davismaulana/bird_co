@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Animate from './Animate';
 
@@ -69,7 +68,7 @@ const StakesSection: React.FC = () => {
         
         <div className="relative max-w-6xl mx-auto py-4">
           {/* Vertical Line */}
-          <div className="absolute top-40 bottom-32 left-1/2 w-1 bg-gradient-to-b from-[#27013D] to-[#6D0037] transform -translate-x-1/2 rounded-full hidden sm:block"></div>
+          <div className="absolute top-40 bottom-32 left-1/2 w-px bg-gradient-to-b from-[#27013D] to-[#6D0037] transform -translate-x-1/2 rounded-full hidden sm:block"></div>
           
           {/* Running Dot */}
           <div className="absolute top-40 bottom-32 left-1/2 w-px -translate-x-1/2 hidden sm:block pointer-events-none">
@@ -118,7 +117,7 @@ const StakesSection: React.FC = () => {
                   
                   {/* Circle on line - Desktop */}
                   <div className={`hidden sm:flex absolute left-1/2 -translate-x-1/2 z-10 ${circlePositionClass}`}>
-                    <div className={`w-10 h-10 bg-gradient-to-br from-[#27013D] to-[#6D0037] rounded-full flex items-center justify-center shadow-lg border-2 border-gray-50 stake-circle stake-circle--${index + 1}`}>
+                    <div className={`w-8 h-8 bg-gradient-to-br from-[#27013D] to-[#6D0037] rounded-full flex items-center justify-center shadow-lg border-2 border-gray-50 stake-circle stake-circle--${index + 1}`}>
                     </div>
                   </div>
                 </div>
