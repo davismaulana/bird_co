@@ -1,5 +1,3 @@
-
-
 import React, { useState } from 'react';
 import Animate from './Animate';
 
@@ -30,7 +28,7 @@ const AccordionItem: React.FC<{ question: string; answer: string; isOpen: boolea
         onClick={onClick}
         aria-expanded={isOpen}
       >
-        <span className="text-base font-semibold">{question}</span>
+        <span className="text-lg font-semibold">{question}</span>
         <span className="ml-6 flex-shrink-0">
           <svg
             className={`w-6 h-6 transform transition-transform duration-300 text-[#27013D] ${isOpen ? 'rotate-45' : ''}`}
@@ -46,7 +44,7 @@ const AccordionItem: React.FC<{ question: string; answer: string; isOpen: boolea
         className={`grid transition-all duration-500 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
       >
         <div className="overflow-hidden">
-          <p className="pt-4 pr-12 text-sm text-gray-700 leading-relaxed">
+          <p className="pt-4 pr-12 text-base text-gray-700 leading-relaxed">
             {answer}
           </p>
         </div>
