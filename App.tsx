@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -29,11 +28,6 @@ import StairsAnimation from './components/StairsAnimation';
 const App: React.FC = () => {
   const { pathname } = window.location;
   const [isLoading, setIsLoading] = useState(true);
-
-  const isMainPage = !pathname.startsWith('/service/') && 
-                     pathname !== '/faq' && 
-                     pathname !== '/politique-de-confidentialite' && 
-                     pathname !== '/conditions-generales-utilisation';
 
   useEffect(() => {
     if (isLoading) return; // Don't setup observers until content is visible
@@ -72,23 +66,21 @@ const App: React.FC = () => {
     }
   }, [pathname, isLoading]);
 
-  // Prevent scrolling while loading or on main page
+  // Prevent scrolling only while loading
   useEffect(() => {
-    if (isLoading || isMainPage) {
+    if (isLoading) {
       document.body.style.overflow = 'hidden';
     } else {
-      setTimeout(() => {
-        document.body.style.overflow = 'unset';
-      }, 500); // match transition duration
+      document.body.style.overflow = 'unset';
     }
-  }, [isLoading, isMainPage]);
+  }, [isLoading]);
 
   // Handle scrolling to anchor links on page load
   useEffect(() => {
     if (isLoading) return;
 
     const { hash } = window.location;
-    if (hash && isMainPage) {
+    if (hash) {
       const id = hash.substring(1);
       const element = document.getElementById(id);
 
@@ -101,7 +93,7 @@ const App: React.FC = () => {
         return () => clearTimeout(timer);
       }
     }
-  }, [isLoading, isMainPage]);
+  }, [isLoading, pathname]);
 
   const AppContent: React.FC = () => {
     if (pathname.startsWith('/service/')) {
@@ -150,22 +142,22 @@ const App: React.FC = () => {
     }
 
     return (
-      <div className="bg-[#FFFFFF] h-screen">
+      <div className="bg-white">
         <Header pathname={pathname} />
-        <div className="scroll-container">
-          <div className="scroll-section" id="accueil"><Hero /></div>
-          <div className="scroll-section scroll-section--scrollable" id="vos-enjeux"><StakesSection /></div>
-          <div className="scroll-section" id="solutions"><ServicesOverview /></div>
-          <div className="scroll-section"><ValueProposition /></div>
-          <div className="scroll-section"><TaskShowcase /></div>
-          <div className="scroll-section"><PillarsSection /></div>
-          <div className="scroll-section"><Personas /></div>
-          <div className="scroll-section"><Logos /></div>
-          <div className="scroll-section"><Stats /></div>
-          <div className="scroll-section"><Expertise /></div>
-          <div className="scroll-section scroll-section--scrollable" id="notre-equipe"><Team /></div>
-          <div className="scroll-section">
-            <section className="bg-white h-full grid">
+        <main>
+          <Hero />
+          <StakesSection />
+          <ServicesOverview />
+          <ValueProposition />
+          <TaskShowcase />
+          <PillarsSection />
+          <Personas />
+          <Logos />
+          <Stats />
+          <Expertise />
+          <Team />
+          <section id="citation">
+            <div className="bg-white min-h-screen grid">
               <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
                 <Animate variant="pop" className="h-[300px] sm:h-[350px] lg:h-full lg:order-last">
                   <div className="h-[300px] sm:h-[350px] lg:h-full">
@@ -192,16 +184,14 @@ const App: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </section>
-          </div>
-          <div className="scroll-section"><FAQSection /></div>
-          <div className="scroll-section flex flex-col" id="contact">
-            <div className="flex-1 overflow-y-auto">
-              <Contact />
             </div>
+          </section>
+          <FAQSection />
+          <div id="contact">
+            <Contact />
             <Footer />
           </div>
-        </div>
+        </main>
       </div>
     );
   };

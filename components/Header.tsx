@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { services, HamburgerIcon, CloseIcon, ArrowRightIcon } from '../constants';
 
@@ -53,9 +52,10 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
   }, []);
 
   useEffect(() => {
-    if (pathname !== '/') {
-      setActiveSection('');
-      return;
+    const mainPath = '/';
+    if (pathname !== mainPath && !pathname.startsWith('/#')) {
+        setActiveSection('');
+        return;
     }
 
     const sectionIds = ['vos-enjeux', 'solutions', 'notre-equipe', 'contact'];
@@ -65,8 +65,8 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
 
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const headerOffset = window.innerHeight / 2;
-      const isAtBottom = window.innerHeight + scrollTop >= document.documentElement.scrollHeight - 2;
+      const headerOffset = window.innerHeight * 0.3; // Trigger active state sooner
+      const isAtBottom = window.innerHeight + scrollTop >= document.documentElement.scrollHeight - 10;
 
       if (isAtBottom) {
         setActiveSection('contact');
@@ -127,7 +127,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                         classes += ' bg-[#27013D] text-white';
                     } else {
                         classes += ' text-black hover:bg-[#27013D] hover:text-white';
-                        if (isSectionActive && pathname === '/') {
+                        if (isSectionActive) {
                             classes += ' active';
                         }
                     }
@@ -159,7 +159,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                       return null;
                   }
                   const sectionId = getSectionId(item.href);
-                  const isSectionActive = pathname === '/' && sectionId ? activeSection === sectionId : false;
+                  const isSectionActive = sectionId ? activeSection === sectionId : false;
 
                   const finalClasses = ['px-4', 'py-2', 'rounded-lg', 'text-base', 'font-normal', 'transition-colors'];
 

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Animate from './Animate';
 
@@ -33,7 +32,7 @@ const Contact: React.FC = () => {
     };
 
     return (
-        <section id="contact" className="bg-white h-full grid">
+        <section id="contact" className="bg-white min-h-screen grid">
             <div className="grid grid-cols-1 lg:grid-cols-2">
                 {/* Left Column */}
                 <div className="relative bg-cover bg-center text-gray-900 p-8 md:p-12 lg:p-16 flex flex-col justify-center min-h-[500px]">

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Animate from './Animate';
 import {
@@ -24,7 +23,7 @@ const Expertise: React.FC = () => {
   ];
 
   return (
-    <section className="bg-white h-full flex flex-col justify-center py-16 overflow-x-hidden">
+    <section className="bg-white min-h-screen flex flex-col justify-center py-16 overflow-x-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 max-w-3xl mx-auto">
           <Animate variant="pop">
