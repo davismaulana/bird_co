@@ -27,7 +27,7 @@ const personas = [
 
 const Personas: React.FC = () => {
   return (
-    <section id="personas" className="bg-gray-50 min-h-screen flex flex-col justify-center py-16 overflow-x-hidden">
+    <section id="personas" className="bg-gray-50 h-full flex flex-col justify-center py-16 overflow-x-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <Animate variant="pop">

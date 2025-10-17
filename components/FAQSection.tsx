@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Animate from './Animate';
 
@@ -57,7 +58,7 @@ const FAQSection: React.FC = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     return (
-        <section id="faq-home" className="bg-gray-50 min-h-screen flex flex-col justify-center py-16">
+        <section id="faq-home" className="bg-gray-50 h-full flex flex-col justify-center py-16">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12 max-w-3xl mx-auto">
                     <Animate variant="pop">

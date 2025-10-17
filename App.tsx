@@ -18,7 +18,6 @@ import TaskShowcase from './components/TaskShowcase';
 import LoadingScreen from './components/LoadingScreen';
 import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 import TermsOfServicePage from './components/TermsOfServicePage';
-import BackToTopButton from './components/BackToTopButton';
 import PillarsSection from './components/PillarsSection';
 import StakesSection from './components/StakesSection';
 import Animate from './components/Animate';
@@ -30,6 +29,11 @@ import StairsAnimation from './components/StairsAnimation';
 const App: React.FC = () => {
   const { pathname } = window.location;
   const [isLoading, setIsLoading] = useState(true);
+
+  const isMainPage = !pathname.startsWith('/service/') && 
+                     pathname !== '/faq' && 
+                     pathname !== '/politique-de-confidentialite' && 
+                     pathname !== '/conditions-generales-utilisation';
 
   useEffect(() => {
     if (isLoading) return; // Don't setup observers until content is visible
@@ -68,36 +72,36 @@ const App: React.FC = () => {
     }
   }, [pathname, isLoading]);
 
-  // Prevent scrolling while loading
+  // Prevent scrolling while loading or on main page
   useEffect(() => {
-    if (isLoading) {
+    if (isLoading || isMainPage) {
       document.body.style.overflow = 'hidden';
     } else {
       setTimeout(() => {
         document.body.style.overflow = 'unset';
       }, 500); // match transition duration
     }
-  }, [isLoading]);
+  }, [isLoading, isMainPage]);
 
   // Handle scrolling to anchor links on page load
   useEffect(() => {
     if (isLoading) return;
 
     const { hash } = window.location;
-    if (hash) {
+    if (hash && isMainPage) {
       const id = hash.substring(1);
       const element = document.getElementById(id);
 
       if (element) {
         // Wait for the main content fade-in animation to complete before scrolling
         const timer = setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          element.scrollIntoView({ behavior: 'smooth' });
         }, 550);
 
         return () => clearTimeout(timer);
       }
     }
-  }, [isLoading]);
+  }, [isLoading, isMainPage]);
 
   const AppContent: React.FC = () => {
     if (pathname.startsWith('/service/')) {
@@ -111,19 +115,6 @@ const App: React.FC = () => {
         </div>
       );
     }
-
-    /*
-    if (pathname === '/ambition') {
-      return (
-        <div className="bg-white overflow-x-hidden">
-          <Header pathname={pathname} />
-          <AmbitionPage />
-          <Logos />
-          <Footer />
-        </div>
-      );
-    }
-    */
 
     if (pathname === '/faq') {
       return (
@@ -159,54 +150,58 @@ const App: React.FC = () => {
     }
 
     return (
-      <div className="bg-[#FFFFFF] overflow-x-hidden">
+      <div className="bg-[#FFFFFF] h-screen">
         <Header pathname={pathname} />
-        <main>
-          <Hero />
-          <StakesSection />
-          <ServicesOverview />
-          <ValueProposition />
-          {/* <Methodology /> */}
-          <TaskShowcase />
-          <PillarsSection />
-          <Personas />
-          <Logos />
-          <Stats />
-          <Expertise />
-          {/* <Deliverables /> */}
-          <Team />
-          <section className="bg-white min-h-screen grid">
-            <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
-              <Animate variant="pop" className="h-[300px] lg:h-full lg:order-last">
-                <div className="h-[300px] lg:h-full">
-                  <StairsAnimation />
-                </div>
-              </Animate>
-              <div className="lg:order-first flex items-center">
-                <div className="w-full px-6 sm:px-10 md:px-14 lg:px-20 py-6 flex flex-col justify-center">
-                  <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
-                    <Animate variant="pop" delay={100}>
-                      <blockquote className="text-2xl md:text-3xl xl:text-4xl font-bold text-[#27013D] leading-tight">
-                        "La meilleure façon de prédire l'avenir, c'est de le créer."
-                      </blockquote>
-                    </Animate>
-                    <Animate variant="pop" delay={200}>
-                      <p className="mt-6 text-lg text-gray-800">— Peter Drucker</p>
-                    </Animate>
-                    <Animate variant="pop" delay={300}>
-                      <p className="mt-8 text-lg text-gray-800 leading-relaxed">
-                        Cette philosophie est au cœur de notre démarche. Nous ne nous contentons pas de réagir aux événements ; nous vous donnons les moyens de façonner activement l'avenir de votre entreprise, en transformant l'incertitude en opportunité et la vision en réalité.
-                      </p>
-                    </Animate>
+        <div className="scroll-container">
+          <div className="scroll-section" id="accueil"><Hero /></div>
+          <div className="scroll-section scroll-section--scrollable" id="vos-enjeux"><StakesSection /></div>
+          <div className="scroll-section" id="solutions"><ServicesOverview /></div>
+          <div className="scroll-section"><ValueProposition /></div>
+          <div className="scroll-section"><TaskShowcase /></div>
+          <div className="scroll-section"><PillarsSection /></div>
+          <div className="scroll-section"><Personas /></div>
+          <div className="scroll-section"><Logos /></div>
+          <div className="scroll-section"><Stats /></div>
+          <div className="scroll-section"><Expertise /></div>
+          <div className="scroll-section scroll-section--scrollable" id="notre-equipe"><Team /></div>
+          <div className="scroll-section">
+            <section className="bg-white h-full grid">
+              <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
+                <Animate variant="pop" className="h-[300px] lg:h-full lg:order-last">
+                  <div className="h-[300px] lg:h-full">
+                    <StairsAnimation />
+                  </div>
+                </Animate>
+                <div className="lg:order-first flex items-center">
+                  <div className="w-full px-6 sm:px-10 md:px-14 lg:px-20 py-6 flex flex-col justify-center">
+                    <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
+                      <Animate variant="pop" delay={100}>
+                        <blockquote className="text-2xl md:text-3xl xl:text-4xl font-bold text-[#27013D] leading-tight">
+                          "La meilleure façon de prédire l'avenir, c'est de le créer."
+                        </blockquote>
+                      </Animate>
+                      <Animate variant="pop" delay={200}>
+                        <p className="mt-6 text-lg text-gray-800">— Peter Drucker</p>
+                      </Animate>
+                      <Animate variant="pop" delay={300}>
+                        <p className="mt-8 text-lg text-gray-800 leading-relaxed">
+                          Cette philosophie est au cœur de notre démarche. Nous ne nous contentons pas de réagir aux événements ; nous vous donnons les moyens de façonner activement l'avenir de votre entreprise, en transformant l'incertitude en opportunité et la vision en réalité.
+                        </p>
+                      </Animate>
+                    </div>
                   </div>
                 </div>
               </div>
+            </section>
+          </div>
+          <div className="scroll-section"><FAQSection /></div>
+          <div className="scroll-section flex flex-col" id="contact">
+            <div className="flex-1 overflow-y-auto">
+              <Contact />
             </div>
-          </section>
-          <FAQSection />
-          <Contact />
-        </main>
-        <Footer />
+            <Footer />
+          </div>
+        </div>
       </div>
     );
   };
@@ -220,7 +215,6 @@ const App: React.FC = () => {
       >
         <AppContent />
       </div>
-      <BackToTopButton />
     </>
   );
 };

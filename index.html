@@ -12,6 +12,43 @@
     body {
       font-family: 'Satoshi', sans-serif;
     }
+    /* Scroll Snap styles */
+    .scroll-container {
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
+      height: 100vh;
+      scroll-padding-top: 4rem; /* h-16 header height */
+    }
+    .scroll-section {
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      height: 100vh;
+      width: 100vw;
+      position: relative;
+      overflow: hidden; /* For parallax and to hide content overflow */
+    }
+    .scroll-section--scrollable {
+      overflow-y: scroll;
+    }
+    /* Hide scrollbar for a cleaner look */
+    .scroll-section--scrollable::-webkit-scrollbar {
+        display: none;
+    }
+    .scroll-section--scrollable {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    .parallax-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        z-index: 0;
+    }
     .gradient-text {
       background-image: linear-gradient(to right, #27013D, #6D0037);
       -webkit-background-clip: text;
@@ -330,7 +367,7 @@
       56.25%  { top: 33.333%; }
       62.5%   { top: 33.333%; }
       75%     { top: 66.667%; }
-      81.25%  { top: 66.667%; }
+      81.25%  { left: 66.667%; }
       93.75%  { top: 100%; }
       100%    { top: 100%; }
     }

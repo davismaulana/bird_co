@@ -26,7 +26,7 @@ const Logos: React.FC<LogosProps> = ({ backgroundColor = 'bg-white' }) => {
   const allLogos = [...logos, ...logos]; // Duplicate logos for a seamless loop
 
   return (
-    <section className={`${backgroundColor} min-h-screen flex flex-col justify-center py-16 overflow-x-hidden`}>
+    <section className={`${backgroundColor} h-full flex flex-col justify-center py-16 overflow-x-hidden`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <Animate variant="pop">

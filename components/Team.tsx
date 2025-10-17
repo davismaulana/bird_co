@@ -10,9 +10,13 @@ const Team: React.FC = () => {
   return (
     <section
       id="notre-equipe"
-      className="bg-gradient-to-br from-[#27013D] to-gray-900 text-white min-h-screen flex flex-col justify-center py-16"
+      className="relative text-white py-16"
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div 
+        className="parallax-bg" 
+        style={{backgroundImage: 'linear-gradient(to bottom right, #27013D, rgb(17 24 39))'}}
+      ></div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Title */}
         <div className="text-center mb-12">
           <Animate variant="pop">
