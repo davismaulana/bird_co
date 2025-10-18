@@ -18,18 +18,18 @@ import {
 } from '../constants';
 
 const heroLogos = [
-  { name: 'Wellow', component: <WellowLogo /> },
-  { name: 'RegenSchool', component: <RegenSchoolLogo /> },
-  { name: 'Pomad', component: <PomadLogo /> },
-  { name: 'CameroneCapital', component: <CameroneCapitalLogo /> },
-  { name: 'Casa', component: <CasaLogo /> },
-  { name: 'Bred', component: <BredLogo /> },
-  { name: 'EricKayser', component: <EricKayserLogo /> },
-  { name: 'Square', component: <SquareLogo /> },
-  { name: 'TmhAvocats', component: <TmhAvocatsLogo /> },
-  { name: 'FoodPilot', component: <FoodPilotLogo /> },
-  { name: 'OctoGaming', component: <OctoGamingLogo /> },
-  { name: 'SOCABEG', component: <SOCABEGLogo /> },
+  { name: 'Wellow', component: <WellowLogo />, href: 'https://www.wellowhouse.com/' },
+  { name: 'RegenSchool', component: <RegenSchoolLogo />, href: 'https://www.regen-school.com/' },
+  { name: 'Pomad', component: <PomadLogo />, href: 'https://pomad.paris/' },
+  { name: 'CameroneCapital', component: <CameroneCapitalLogo />, href: 'https://cameronecap.fr/' },
+  { name: 'Casa', component: <CasaLogo />, href: 'https://www.instagram.com/casashops_belgium' },
+  { name: 'Bred', component: <BredLogo />, href: 'https://www.bred.fr/' },
+  { name: 'EricKayser', component: <EricKayserLogo />, href: 'https://maison-kayser.com/' },
+  { name: 'Square', component: <SquareLogo />, href: 'https://www.ui-investissement.com/' },
+  { name: 'TmhAvocats', component: <TmhAvocatsLogo />, href: 'https://tmhavocats.com/' },
+  { name: 'FoodPilot', component: <FoodPilotLogo />, href: 'https://foodpilot.io/fr/' },
+  { name: 'OctoGaming', component: <OctoGamingLogo />, href: 'https://octo-gaming.com' },
+  { name: 'SOCABEG', component: <SOCABEGLogo />, href: 'https://socabeg.com/' },
 ];
 
 const allHeroLogos = [...heroLogos, ...heroLogos];
@@ -113,9 +113,16 @@ const Hero: React.FC = () => {
               }
 
               return (
-                <div key={index} className={`flex-shrink-0 px-4 sm:px-6 py-2 ${sizeClass} flex items-center justify-center filter grayscale hover:filter-none opacity-60 hover:opacity-100 transition-all duration-300`}>
+                <a
+                  key={index}
+                  href={logo.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={logo.name}
+                  className={`flex-shrink-0 px-4 sm:px-6 py-2 ${sizeClass} flex items-center justify-center filter grayscale hover:filter-none opacity-60 hover:opacity-100 transition-all duration-300`}
+                >
                   {React.cloneElement(logo.component, { className: 'max-h-full max-w-full object-contain' })}
-                </div>
+                </a>
               );
             })}
           </div>

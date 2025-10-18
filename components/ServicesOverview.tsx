@@ -59,8 +59,8 @@ const ServicesOverview: React.FC = () => {
                     <h3 className="text-base font-bold text-black leading-tight transition-colors duration-300 group-hover:text-white mb-2 pr-16">
                       {service.title}
                     </h3>
-                    <p className="text-sm font-semibold text-[#6D0037] mb-3 group-hover:text-violet-200 transition-colors duration-300">{service.subTitle}</p>
-                    <p className="text-gray-800 text-sm leading-relaxed transition-colors duration-300 group-hover:text-white">{service.description}</p>
+                    <p className="text-sm font-semibold text-[#6D0037] mb-2 group-hover:text-violet-200 transition-colors duration-300">{service.subTitle}</p>
+                    <p className="text-slate-700 text-sm leading-relaxed transition-colors duration-300 group-hover:text-white">{service.description}</p>
                     <div className="flex-grow" />
                     <div className="w-full mt-6 flex items-end justify-between text-sm font-semibold text-[#27013D] transition-colors duration-300 group-hover:text-white">
                       <span>En savoir plus</span>
