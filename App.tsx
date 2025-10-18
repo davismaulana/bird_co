@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -149,12 +150,12 @@ const App: React.FC = () => {
           <StakesSection />
           <ServicesOverview />
           <ValueProposition />
+          <Expertise />
           <TaskShowcase />
           <PillarsSection />
           <Personas />
           <Logos />
           <Stats />
-          <Expertise />
           <Team />
           <section id="citation">
             <div className="bg-white min-h-screen grid">

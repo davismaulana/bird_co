@@ -40,7 +40,7 @@ const PillarsSection: React.FC = () => {
             </h2>
           </Animate>
           <Animate variant="pop" delay={200}>
-            <p className="text-lg text-gray-800 mt-4 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-800 mt-4 max-w-3xl mx-auto whitespace-nowrap">
               Notre proposition repose sur <strong>quatre piliers fondamentaux</strong> qui guident chacune de nos interventions.
             </p>
           </Animate>
