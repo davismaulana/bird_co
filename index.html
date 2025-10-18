@@ -481,6 +481,58 @@
         }
     }
     
+    /* Styles for ServicesOverview pure CSS animation */
+    .service-card-animated {
+        animation-duration: 8s;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(.2,.65,.2,1);
+        opacity: 0;
+        transform: translateY(16px) scale(.92);
+        filter: blur(2px);
+        animation-fill-mode: forwards;
+    }
+
+    .service-card-animated--1 { animation-name: service-pop-1; }
+    .service-card-animated--2 { animation-name: service-pop-2; }
+    .service-card-animated--3 { animation-name: service-pop-3; }
+    .service-card-animated--4 { animation-name: service-pop-4; }
+
+    @keyframes service-pop-1 {
+        0% {
+            opacity: 0; transform: translateY(16px) scale(.92); filter: blur(2px);
+        }
+        6.25%, 100% {
+            opacity: 1; transform: translateY(0) scale(1); filter: blur(0);
+        }
+    }
+
+    @keyframes service-pop-2 {
+        0%, 25% {
+            opacity: 0; transform: translateY(16px) scale(.92); filter: blur(2px);
+        }
+        31.25%, 100% {
+            opacity: 1; transform: translateY(0) scale(1); filter: blur(0);
+        }
+    }
+
+    @keyframes service-pop-3 {
+        0%, 50% {
+            opacity: 0; transform: translateY(16px) scale(.92); filter: blur(2px);
+        }
+        56.25%, 100% {
+            opacity: 1; transform: translateY(0) scale(1); filter: blur(0);
+        }
+    }
+
+    @keyframes service-pop-4 {
+        0%, 75% {
+            opacity: 0; transform: translateY(16px) scale(.92); filter: blur(2px);
+        }
+        81.25%, 100% {
+            opacity: 1; transform: translateY(0) scale(1); filter: blur(0);
+        }
+    }
+
     /* Styles for StakesSection pure CSS animation */
     .stake-circle {
         animation-duration: 8s;

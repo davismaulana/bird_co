@@ -23,7 +23,7 @@ const ServicesOverview: React.FC = () => {
             </p>
           </Animate>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto stagger">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {services.map((service: any, index) => {
             let iconSize;
             if (service.slug === 'services-ma') {
@@ -35,10 +35,9 @@ const ServicesOverview: React.FC = () => {
             }
             
             return (
-              <Animate
+              <div
                 key={index}
-                variant="pop"
-                className="h-full"
+                className={`h-full service-card-animated service-card-animated--${index + 1}`}
               >
                 <a href={`/service/${service.slug}`} className="block h-full group">
                   <div className="relative bg-white rounded-xl p-6 sm:p-8 flex flex-col items-start text-left h-full transition-all duration-300 ease-in-out border border-gray-200 group-hover:bg-[#27013D] group-hover:shadow-xl">
@@ -68,7 +67,7 @@ const ServicesOverview: React.FC = () => {
                     </div>
                   </div>
                 </a>
-              </Animate>
+              </div>
             );
           })}
         </div>
