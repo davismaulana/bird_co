@@ -22,7 +22,7 @@ interface LogosProps {
   backgroundColor?: string;
 }
 
-const Logos: React.FC<LogosProps> = ({ backgroundColor = 'bg-white' }) => {
+const Logos: React.FC<LogosProps> = ({ backgroundColor = 'bg-gray-50' }) => {
   const enlargedLogos = ['CASA', 'Eric Kayser', 'Regen School'];
   const superEnlargedLogos = ['Wellow', 'Octo Gaming'];
 

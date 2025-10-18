@@ -154,8 +154,8 @@ const App: React.FC = () => {
           <TaskShowcase />
           <PillarsSection />
           <Personas />
-          <Logos />
           <Stats />
+          <Logos />
           <Team />
           <section id="citation">
             <div className="bg-white min-h-screen grid">
