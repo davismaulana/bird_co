@@ -120,16 +120,13 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                 {navItems.map((item) => {
                   if (item.name === 'Solutions') {
                     const isSectionActive = activeSection === 'solutions';
-                    const hasBackground = isDropdownOpen || isPropositionSectionActive;
+                    const hasBackground = isDropdownOpen || isPropositionSectionActive || isSectionActive;
 
-                    let classes = 'nav-link-anchor px-4 py-2 rounded-lg text-base font-normal transition-colors flex items-center gap-2';
+                    let classes = 'px-4 py-2 rounded-lg text-base font-normal transition-colors flex items-center gap-2';
                     if (hasBackground) {
                         classes += ' bg-[#27013D] text-white';
                     } else {
                         classes += ' text-black hover:bg-[#27013D] hover:text-white';
-                        if (isSectionActive) {
-                            classes += ' active';
-                        }
                     }
                     return (
                       <div 
@@ -150,7 +147,6 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                   }
 
                   const isPageLink = item.href !== '/' && !item.href.startsWith('/#');
-                  const isAnchorLink = !isPageLink;
                   
                   const isPageActive = isPageLink && pathname === item.href;
                   
@@ -163,18 +159,10 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
 
                   const finalClasses = ['px-4', 'py-2', 'rounded-lg', 'text-base', 'font-normal', 'transition-colors'];
 
-                  if (isAnchorLink) {
-                      finalClasses.push('nav-link-anchor');
+                  if (isPageActive || isSectionActive) {
+                      finalClasses.push('bg-[#27013D]', 'text-white');
+                  } else {
                       finalClasses.push('text-black', 'hover:bg-[#27013D]', 'hover:text-white');
-                      if (isSectionActive) {
-                          finalClasses.push('active');
-                      }
-                  } else { // isPageLink
-                      if (isPageActive) {
-                          finalClasses.push('bg-[#27013D]', 'text-white');
-                      } else {
-                          finalClasses.push('text-black', 'hover:bg-[#27013D]', 'hover:text-white');
-                      }
                   }
                   
                   return (
