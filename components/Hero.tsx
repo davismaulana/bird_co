@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
   const logosToSuperEnlarge = ['Wellow', 'OctoGaming'];
 
   return (
-    <section id="accueil" className="relative bg-white text-gray-900 flex flex-col min-h-screen overflow-hidden pt-16">
+    <section id="accueil" className="relative bg-white text-gray-900 flex flex-col min-h-[90vh] overflow-hidden pt-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex-grow flex flex-col items-center justify-center">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center relative w-full">
           
@@ -48,7 +48,7 @@ const Hero: React.FC = () => {
           <div className="text-center md:text-left relative z-10 md:pl-8 lg:pl-16">
             <Animate variant="pop">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight tracking-tight">
-                <span>Bras droit</span><br />
+                <span>Votre bras droit</span><br />
                 <span className="gradient-text">stratégique et financier</span>
               </h1>
             </Animate>
