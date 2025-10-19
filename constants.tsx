@@ -1092,21 +1092,6 @@ export const serviceDetails: { [key: string]: any } = {
                         'Plan d’actions',
                         'Écarts réel vs budget'
                     ]
-                },
-                {
-                    title: 'Recherche de financement',
-                    list: [
-                        'Business angels',
-                        'Incubateurs et accélérateurs',
-                        'Plateformes de crowdfunding',
-                        'Fonds d’investissement',
-                        'Prêts bancaires',
-                        'Microcrédits',
-                        'Prêts participatifs',
-                        'Aides et subventions publiques',
-                        'Réseaux de prêts d’honneur',
-                        'Investisseurs privés via plateformes spécialisées'
-                    ]
                 }
             ] 
         },
@@ -1164,6 +1149,21 @@ export const serviceDetails: { [key: string]: any } = {
                     title: "Buy-side due diligence",
                     list: [
                         'Évaluation de la résilience du modèle économique', 'Identification des zones de fragilité opérationnelle et financière', 'Revue critique de la qualité des résultats', 'Validation indépendante de l’EBITDA retraité', 'Stress-test du cash-flow et du BFR', 'Analyse de la soutenabilité de la dette nette', 'Test de cohérence des prévisions financières', 'Revue critique des hypothèses de croissance et de marges', 'Analyse contradictoire des ajustements proposés par la vendor assistance', 'Mise en évidence des risques fiscaux, sociaux et réglementaires', 'Appréciation des synergies réalistes', "Recommandations d'ajustements du prix", 'Structuration des garanties'
+                    ]
+                },
+                {
+                    title: 'Recherche de financement',
+                    list: [
+                        'Business angels',
+                        'Incubateurs et accélérateurs',
+                        'Plateformes de crowdfunding',
+                        'Fonds d’investissement',
+                        'Prêts bancaires',
+                        'Microcrédits',
+                        'Prêts participatifs',
+                        'Aides et subventions publiques',
+                        'Réseaux de prêts d’honneur',
+                        'Investisseurs privés via plateformes spécialisées'
                     ]
                 }
             ]
