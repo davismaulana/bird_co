@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 export const PaperPlaneIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -168,7 +167,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
   // Shared utilities
   const cols = "grid grid-cols-[minmax(120px,160px)_repeat(5,minmax(0,1fr))]";
   const num = "text-right tabular-nums"; // if you don't have the tabular-nums plugin, swap to 'font-mono text-right'
-  const cell = "px-2 py-px";
+  const cell = "px-2";
   const vcol = "border-l border-slate-100 pl-2"; // visual column dividers
 
   const HighlightRow: React.FC<{ children: React.ReactNode }> = ({ children }) => (
@@ -204,7 +203,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
         <h3 className="font-bold text-gray-900 text-sm">Modélisation Financière</h3>
       </div>
 
-      <div className="flex-grow space-y-1 text-[10px] leading-tight overflow-x-auto overflow-y-auto">
+      <div className="flex-grow space-y-1 text-[12px] leading-none overflow-x-auto overflow-y-auto">
         {/* -------- P&L -------- */}
         <div className="min-w-[580px]">
           {/* Years header */}
