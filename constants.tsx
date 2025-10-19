@@ -907,7 +907,7 @@ export const serviceDetails: { [key: string]: any } = {
                         'Structure de pilotage',
                         'Comité financier',
                         'Gestion du processus budgétaire',
-                        'Négociation',
+                        'Négociation avec les relations prenantes',
                         'Gestion des risques',
                         'Suivi des investissements',
                         'Reporting régulier',
