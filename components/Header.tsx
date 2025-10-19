@@ -225,6 +225,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                         <h3 className="text-base font-bold text-gray-900 mb-2 transition-colors duration-300 group-hover:text-white">
                           {service.title}
                         </h3>
+                        <p className="text-sm font-semibold text-[#6D0037] mb-2 group-hover:text-violet-200 transition-colors duration-300">{service.subTitle}</p>
                         <p className="text-sm text-gray-600 leading-relaxed transition-colors duration-300 group-hover:text-gray-200">
                           {service.description}
                         </p>
@@ -288,6 +289,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                                    <h3 className="text-base font-bold text-gray-900 mb-2 transition-colors duration-300 group-hover:text-white">
                                      {service.title}
                                    </h3>
+                                   <p className="text-sm font-semibold text-[#6D0037] mb-2 group-hover:text-violet-200 transition-colors duration-300">{service.subTitle}</p>
                                    <p className="text-sm text-gray-600 leading-relaxed transition-colors duration-300 group-hover:text-gray-200">
                                      {service.description}
                                    </p>
