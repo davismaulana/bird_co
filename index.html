@@ -482,53 +482,65 @@
     }
     
     /* Styles for ServicesOverview pure CSS animation */
-    .service-card-animated {
-        animation-duration: 4s;
+    .service-card {
+        opacity: 0; /* Initial state before animation */
+        animation-duration: 8s;
         animation-iteration-count: infinite;
         animation-timing-function: cubic-bezier(.2,.65,.2,1);
-        opacity: 0;
-        transform: translateY(16px) scale(.92);
-        filter: blur(2px);
-        animation-fill-mode: forwards;
     }
 
-    .service-card-animated--1 { animation-name: service-pop-1; }
-    .service-card-animated--2 { animation-name: service-pop-2; }
-    .service-card-animated--3 { animation-name: service-pop-3; }
-    .service-card-animated--4 { animation-name: service-pop-4; }
-
-    @keyframes service-pop-1 {
-        0% {
+    /* Service 1 Animations */
+    .service-card--1 { animation-name: pop-in-stay-service-1; }
+    @keyframes pop-in-stay-service-1 {
+        0%, 37.49% {
+            opacity: 1; transform: translateY(0) scale(1); filter: blur(0);
+        }
+        37.5% {
             opacity: 0; transform: translateY(16px) scale(.92); filter: blur(2px);
         }
-        6.25%, 100% {
+        39.375%, 100% {
             opacity: 1; transform: translateY(0) scale(1); filter: blur(0);
         }
     }
 
-    @keyframes service-pop-2 {
-        0%, 25% {
+    /* Service 2 Animations */
+    .service-card--2 { animation-name: pop-in-stay-service-2; }
+    @keyframes pop-in-stay-service-2 {
+        0%, 37.49% {
+            opacity: 1; transform: translateY(0) scale(1); filter: blur(0);
+        }
+        37.5%, 56.25% {
             opacity: 0; transform: translateY(16px) scale(.92); filter: blur(2px);
         }
-        31.25%, 100% {
+        58.125%, 100% {
             opacity: 1; transform: translateY(0) scale(1); filter: blur(0);
         }
     }
 
-    @keyframes service-pop-3 {
-        0%, 50% {
+    /* Service 3 Animations */
+    .service-card--3 { animation-name: pop-in-stay-service-3; }
+    @keyframes pop-in-stay-service-3 {
+        0%, 37.49% {
+            opacity: 1; transform: translateY(0) scale(1); filter: blur(0);
+        }
+        37.5%, 75% {
             opacity: 0; transform: translateY(16px) scale(.92); filter: blur(2px);
         }
-        56.25%, 100% {
+        76.875%, 100% {
             opacity: 1; transform: translateY(0) scale(1); filter: blur(0);
         }
     }
 
-    @keyframes service-pop-4 {
-        0%, 75% {
+    /* Service 4 Animations */
+    .service-card--4 { animation-name: pop-in-stay-service-4; }
+    @keyframes pop-in-stay-service-4 {
+        0%, 37.49% {
+            opacity: 1; transform: translateY(0) scale(1); filter: blur(0);
+        }
+        37.5%, 93.75% {
             opacity: 0; transform: translateY(16px) scale(.92); filter: blur(2px);
         }
-        81.25%, 100% {
+        95.625%, 100% {
             opacity: 1; transform: translateY(0) scale(1); filter: blur(0);
         }
     }
