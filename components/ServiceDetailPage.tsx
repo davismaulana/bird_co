@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { services, serviceDetails } from '../constants';
 import Animate from './Animate';
@@ -88,6 +89,16 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                         <div className="text-gray-800 leading-relaxed text-xs">
                           {details.diagnostic.content.description}
                         </div>
+                        {details.ambition && (
+                            <div className="mt-8 pt-8 border-t border-gray-200">
+                                <h3 className="text-lg font-bold gradient-text mb-4">
+                                    {details.ambition.title}
+                                </h3>
+                                <p className="text-gray-800 leading-relaxed text-xs">
+                                    {details.ambition.description}
+                                </p>
+                            </div>
+                        )}
                       </div>
                   </Animate>
               </div>
@@ -96,29 +107,6 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
         </section>
       )}
       
-      {/* Ambition Section */}
-      {details.ambition && (
-        <section className="bg-white min-h-screen flex flex-col justify-center py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-              <Animate variant="pop">
-                <div className="flex justify-center mb-4">
-                  <div className="w-16 h-1 bg-gradient-to-r from-[#27013D] to-[#6D0037] rounded-full"></div>
-                </div>
-              </Animate>
-              <Animate variant="pop" delay={100}>
-                  <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
-                      Notre <span className="gradient-text">ambition</span>
-                  </h2>
-              </Animate>
-              <Animate variant="pop" delay={200}>
-                  <p className="mt-4 text-lg text-gray-800 max-w-3xl mx-auto">
-                      {details.ambition.description}
-                  </p>
-              </Animate>
-          </div>
-        </section>
-      )}
-
       {/* Content Section */}
       <main id="content" className="bg-gray-50 py-12 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
