@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { services, serviceDetails } from '../constants';
 import Animate from './Animate';
@@ -25,9 +24,9 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
   return (
     <div className="bg-white text-gray-800">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#27013D] to-gray-900 text-white flex items-center overflow-hidden pt-28 pb-12 md:pt-36 md:pb-16">
+      <section className="relative bg-gradient-to-br from-[#27013D] to-gray-900 text-white flex items-center overflow-hidden min-h-[50vh] py-24 md:py-32">
         <div className="absolute inset-0 z-0 opacity-40">
-          <HeroAnimation color="light" />
+          <HeroAnimation color="grey" />
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-7xl text-left">
@@ -37,7 +36,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
               </h1>
             </Animate>
             <Animate variant="pop" delay={200}>
-              <p className={`mt-6 text-gray-200 max-w-5xl ${serviceId === 'pilotage-planification' || serviceId === 'cfo-part-time' ? 'text-base' : 'text-base md:text-lg'}`}>
+              <p className="mt-6 text-base md:text-lg text-gray-200 max-w-5xl">
                 {details.subtitle}
               </p>
             </Animate>

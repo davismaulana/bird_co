@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 
 interface HeroAnimationProps {
-  color?: 'dark' | 'light';
+  color?: 'dark' | 'light' | 'grey';
 }
 
 // Utility to interpolate between two colors
@@ -39,9 +39,17 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
         const ROTATION_SPEED_Y = 0; // No global rotation
         const ROTATION_X_ANGLE = 0.4; // Static tilt for better viewing angle (slightly reduced)
 
-        const [COLOR_START_RGB, COLOR_END_RGB] = color === 'dark'
-            ? [hexToRgb('#6D0037'), hexToRgb('#27013D')]
-            : [hexToRgb('#FFD700'), hexToRgb('#B8860B')];
+        const [COLOR_START_RGB, COLOR_END_RGB] = (() => {
+            switch (color) {
+                case 'light':
+                    return [hexToRgb('#FFD700'), hexToRgb('#B8860B')];
+                case 'grey':
+                    return [hexToRgb('#E5E7EB'), hexToRgb('#6B7280')];
+                case 'dark':
+                default:
+                    return [hexToRgb('#6D0037'), hexToRgb('#27013D')];
+            }
+        })();
 
         let animationFrameId: number;
         let points: { ox: number, oy: number }[] = [];
