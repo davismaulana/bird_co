@@ -11,6 +11,7 @@ const navItems = [
 
 const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isDropdownActive, setIsDropdownActive] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileSolutionsOpen, setIsMobileSolutionsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,6 +30,19 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
       setIsDropdownOpen(false);
     }, 200); // Delay to allow moving mouse to the menu
   };
+
+  useEffect(() => {
+    let timer: number;
+    if (isDropdownOpen) {
+      // Small delay to ensure elements are in the DOM before animation starts.
+      timer = window.setTimeout(() => {
+        setIsDropdownActive(true);
+      }, 50);
+    } else {
+      setIsDropdownActive(false);
+    }
+    return () => clearTimeout(timer);
+  }, [isDropdownOpen]);
 
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -212,7 +226,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
             onMouseEnter={handleSolutionsLeave}
           ></div>
           <div
-            className="fixed top-16 left-0 right-0 z-50 bg-white shadow-2xl dropdown-container"
+            className={`fixed top-16 left-0 right-0 z-50 bg-white shadow-2xl dropdown-container ${isDropdownActive ? 'is-active' : ''}`}
             onMouseEnter={handleSolutionsEnter}
             onMouseLeave={handleSolutionsLeave}
           >
