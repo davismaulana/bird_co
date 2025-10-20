@@ -4,22 +4,22 @@ import { services, ArrowRightIcon } from '../constants';
 
 const ServicesOverview: React.FC = () => {
   return (
-    <section id="solutions" className="bg-white min-h-screen flex flex-col justify-center py-16">
+    <section id="solutions" className="bg-gradient-to-b from-[#332932] to-[#4f3e69] min-h-screen flex flex-col justify-center py-16">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <Animate variant="pop">
             <div className="flex justify-center mb-4">
-              <div className="w-16 h-1 bg-gradient-to-r from-[#27013D] to-[#6D0037] rounded-full"></div>
+              <div className="w-16 h-1 bg-gradient-to-r from-white to-gray-400 rounded-full"></div>
             </div>
           </Animate>
           <Animate variant="pop" delay={100}>
-            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
-              Un soutien <span className="gradient-text">à vos côtés</span>
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-white leading-tight">
+              Un soutien <span className="gradient-text-light">à vos côtés</span>
             </h2>
           </Animate>
           <Animate variant="pop" delay={200}>
-            <p className="text-lg text-gray-800 mt-4 max-w-3xl mx-auto">
-              Dans la <strong>gestion quotidienne</strong> comme dans les <strong>processus transactionnels</strong>
+            <p className="text-lg text-gray-300 mt-4 max-w-3xl mx-auto">
+              Dans la <strong className="text-white">gestion quotidienne</strong> comme dans les <strong className="text-white">processus transactionnels</strong>
             </p>
           </Animate>
         </div>
