@@ -28,8 +28,6 @@ const ServicesOverview: React.FC = () => {
             let iconSize;
             if (service.slug === 'services-ma') {
               iconSize = 'w-16 h-16';
-            } else if (service.slug === 'diagnostic-restructuration') {
-              iconSize = 'w-14 h-14';
             } else {
               iconSize = 'w-12 h-12';
             }
@@ -40,7 +38,7 @@ const ServicesOverview: React.FC = () => {
                   <div
                     className={`service-card service-card--${index + 1} relative bg-white rounded-xl p-6 sm:p-8 flex flex-col items-start text-left h-full transition-all duration-300 ease-in-out border border-gray-200 group-hover:bg-[#27013D] group-hover:shadow-xl group-hover:-translate-y-2 group-hover:scale-105`}
                   >
-                    <div className="absolute top-8 right-8 flex-shrink-0 text-[#27013D] transition-colors duration-300 group-hover:text-white">
+                    <div className="absolute top-8 right-8 flex-shrink-0 text-[#27013D] transition-colors duration-300 group-hover:text-white service-icon-wrapper service-child">
                       {service.darkIcon ? (
                         <>
                           <div className="group-hover:hidden">
@@ -56,17 +54,17 @@ const ServicesOverview: React.FC = () => {
                     </div>
                     
                     <div>
-                        <h3 className="text-base font-bold text-black leading-tight transition-colors duration-300 group-hover:text-white mb-2 pr-16">
+                        <h3 className="text-base font-bold text-black leading-tight transition-colors duration-300 group-hover:text-white mb-2 pr-16 service-title service-child">
                           {service.title}
                         </h3>
-                        <p className="text-sm font-semibold text-[#6D0037] mb-2 group-hover:text-violet-200 transition-colors duration-300">{service.subTitle}</p>
-                        <p className="text-slate-700 text-sm leading-relaxed transition-colors duration-300 group-hover:text-white">{service.description}</p>
+                        <p className="text-sm font-semibold text-[#6D0037] mb-2 group-hover:text-violet-200 transition-colors duration-300 service-subtitle service-child">{service.subTitle}</p>
+                        <p className="text-slate-700 text-sm leading-relaxed transition-colors duration-300 group-hover:text-white service-desc service-child">{service.description}</p>
                     </div>
 
                     <div className="flex-grow" />
                     
                     <div>
-                        <div className="w-full mt-6 flex items-end justify-between text-sm font-semibold text-[#27013D] transition-colors duration-300 group-hover:text-white">
+                        <div className="w-full mt-6 flex items-end justify-between text-sm font-semibold text-[#27013D] transition-colors duration-300 group-hover:text-white service-cta service-child">
                           <span>En savoir plus</span>
                           <ArrowRightIcon className="w-5 h-5" />
                         </div>
