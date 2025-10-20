@@ -28,37 +28,41 @@ const ServicesOverview: React.FC = () => {
             let iconSize;
             if (service.slug === 'services-ma') {
               iconSize = 'w-16 h-16';
-            } else {
+            } else if (service.slug === 'cfo-part-time') {
               iconSize = 'w-12 h-12';
+            } else {
+              iconSize = 'w-14 h-14';
             }
             
             return (
               <div key={index} className="h-full">
                 <a href={`/service/${service.slug}`} className="block h-full group">
                   <div
-                    className={`service-card service-card--${index + 1} relative bg-white rounded-xl p-6 sm:p-8 flex flex-col items-start text-left h-full transition-all duration-300 ease-in-out border border-gray-200 group-hover:bg-[#27013D] group-hover:shadow-xl group-hover:-translate-y-2 group-hover:scale-105`}
+                    className={`service-card service-card--${index + 1} bg-white rounded-xl p-6 sm:p-8 flex flex-col text-left h-full transition-all duration-300 ease-in-out border border-gray-200 group-hover:bg-[#27013D] group-hover:shadow-xl group-hover:-translate-y-2 group-hover:scale-105`}
                   >
-                    <div className="absolute top-8 right-8 flex-shrink-0 text-[#27013D] transition-colors duration-300 group-hover:text-white service-icon-wrapper service-child">
-                      {service.darkIcon ? (
-                        <>
-                          <div className="group-hover:hidden">
-                            {React.cloneElement(service.icon, { className: `${iconSize} object-contain` })}
-                          </div>
-                          <div className="hidden group-hover:block">
-                            {React.cloneElement(service.darkIcon, { className: `${iconSize} object-contain` })}
-                          </div>
-                        </>
-                      ) : (
-                        React.cloneElement(service.icon, { className: `${iconSize} object-contain` })
-                      )}
-                    </div>
-                    
-                    <div>
-                        <h3 className="text-base font-bold text-black leading-tight transition-colors duration-300 group-hover:text-white mb-2 pr-16 service-title service-child">
-                          {service.title}
-                        </h3>
-                        <p className="text-sm font-semibold text-[#6D0037] mb-2 group-hover:text-violet-200 transition-colors duration-300 service-subtitle service-child">{service.subTitle}</p>
-                        <p className="text-slate-700 text-sm leading-relaxed transition-colors duration-300 group-hover:text-white service-desc service-child">{service.description}</p>
+                    <div className="flex justify-between items-start gap-4">
+                      <div className="flex-1">
+                          <h3 className="text-base font-bold text-black leading-tight transition-colors duration-300 group-hover:text-white mb-2 service-title service-child">
+                            {service.title}
+                          </h3>
+                          <p className="text-sm font-semibold text-[#6D0037] mb-2 group-hover:text-violet-200 transition-colors duration-300 service-subtitle service-child">{service.subTitle}</p>
+                          <p className="text-slate-700 text-sm leading-relaxed transition-colors duration-300 group-hover:text-white service-desc service-child">{service.description}</p>
+                      </div>
+                      
+                      <div className="flex-shrink-0 text-[#27013D] transition-colors duration-300 group-hover:text-white service-icon-wrapper service-child">
+                        {service.darkIcon ? (
+                          <>
+                            <div className="group-hover:hidden">
+                              {React.cloneElement(service.icon, { className: `${iconSize} object-contain` })}
+                            </div>
+                            <div className="hidden group-hover:block">
+                              {React.cloneElement(service.darkIcon, { className: `${iconSize} object-contain` })}
+                            </div>
+                          </>
+                        ) : (
+                          React.cloneElement(service.icon, { className: `${iconSize} object-contain` })
+                        )}
+                      </div>
                     </div>
 
                     <div className="flex-grow" />
