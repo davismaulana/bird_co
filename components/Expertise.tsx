@@ -55,7 +55,12 @@ const Expertise: React.FC = () => {
               // CTA
               return (
                 <Animate key={index} variant="pop" className="h-full">
-                  <a href="#contact" className="bg-[#3A224E] h-full flex flex-col justify-center items-center text-center px-5 py-8 sm:py-10 md:py-12 transition-all duration-300 hover:bg-[#4f3066] group">
+                  <a
+                    href="https://calendly.com/contact-birdandco/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#3A224E] h-full flex flex-col justify-center items-center text-center px-5 py-8 sm:py-10 md:py-12 transition-all duration-300 hover:bg-[#4f3066] group"
+                  >
                     <h3 className="text-base font-bold text-white">Et bien plus encore...</h3>
                     <p className="mt-2 text-violet-200 flex items-center gap-2 group-hover:text-white transition-colors text-sm">
                       Discutons de votre projet
