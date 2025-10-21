@@ -48,8 +48,8 @@ const Team: React.FC = () => {
                     className="w-full aspect-square md:h-[400px] flex-shrink-0"
                     style={{
                       backgroundImage: `url(${member.imageUrl})`,
-                      backgroundPosition: 'center 15%',
-                      backgroundSize: 'cover',
+                      backgroundPosition: 'center 20%',
+                      backgroundSize: '115%',
                       backgroundRepeat: 'no-repeat',
                     }}
                   ></div>
