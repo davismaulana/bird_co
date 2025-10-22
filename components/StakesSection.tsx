@@ -35,12 +35,12 @@ const StakesSection: React.FC = () => {
             </div>
           </Animate>
           <Animate variant="pop" delay={100}>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
               Vos <span className="gradient-text">enjeux</span>
             </h2>
           </Animate>
           <Animate variant="pop" delay={200}>
-            <p className="text-xl text-gray-800 mt-4 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-800 mt-4 max-w-3xl mx-auto">
               <strong>Identifier les risques</strong> pour mieux les <strong>maîtriser</strong> et <strong>transformer</strong> les défis en opportunités
             </p>
           </Animate>
