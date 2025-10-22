@@ -35,18 +35,18 @@ const StakesSection: React.FC = () => {
             </div>
           </Animate>
           <Animate variant="pop" delay={100}>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold text-gray-900 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
               Vos <span className="gradient-text">enjeux</span>
             </h2>
           </Animate>
           <Animate variant="pop" delay={200}>
-            <p className="text-base text-gray-800 mt-2">
+            <p className="text-xl text-gray-800 mt-4 max-w-3xl mx-auto">
               <strong>Identifier les risques</strong> pour mieux les <strong>maîtriser</strong> et <strong>transformer</strong> les défis en opportunités
             </p>
           </Animate>
         </div>
         
-        <div className="w-full max-w-5xl mx-auto mt-12">
+        <div className="w-full max-w-[85rem] mx-auto mt-12">
             {/* Desktop Timeline */}
             <div className="hidden md:block">
                 <Animate variant="pop">
@@ -67,12 +67,12 @@ const StakesSection: React.FC = () => {
                               const isAbove = index % 2 === 0;
 
                               const StakeKeyword = (
-                                <div className={`stake-content-card stake-content-card--${index + 1} text-center px-4 w-64`}>
+                                <div className={`stake-content-card stake-content-card--${index + 1} text-center px-4`}>
                                    <div className="flex items-center justify-center gap-2">
                                      <img src={stake.icon} alt={`${stake.keyword} icon`} className="w-6 h-6 object-contain" />
                                      <h3 className={`stake-title stake-title--${index + 1} text-base font-bold gradient-text-stake`}>{stake.keyword}</h3>
                                    </div>
-                                   <div className="w-12 h-px bg-gradient-to-r from-[#27013D] to-[#6D0037] my-2 mx-auto rounded-full"></div>
+                                   <div className="w-20 h-px bg-gradient-to-r from-[#27013D] to-[#6D0037] my-2 mx-auto rounded-full"></div>
                                    <p className="text-gray-800 text-xs leading-relaxed">
                                      {stake.description}
                                    </p>
@@ -116,7 +116,7 @@ const StakesSection: React.FC = () => {
                                       {stake.keyword}
                                   </h3>
                                 </div>
-                                <div className="w-12 h-px bg-gradient-to-r from-[#27013D] to-[#6D0037] my-2 mx-auto rounded-full"></div>
+                                <div className="w-20 h-px bg-gradient-to-r from-[#27013D] to-[#6D0037] my-2 mx-auto rounded-full"></div>
                                 <p className="text-gray-800 leading-relaxed text-sm">
                                     {stake.description}
                                 </p>
