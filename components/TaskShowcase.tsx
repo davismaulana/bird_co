@@ -307,7 +307,7 @@ const TaskShowcase: React.FC = () => {
                     </Animate>
                     <Animate variant="pop" delay={200}>
                         <p className="text-lg text-gray-800 mt-4">
-                            Quel que soit votre besoin, nous produisons des livrables clairs et actionnables pour piloter votre performance, quel que soit votre besoin.
+                            <strong>Quel que soit votre besoin</strong>, nous produisons des <strong>livrables clairs et actionnables</strong> pour piloter votre performance.
                         </p>
                     </Animate>
                 </div>
