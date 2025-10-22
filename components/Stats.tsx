@@ -136,8 +136,8 @@ const stats = [
   },
   {
     icon: <img src="https://images2.imgbox.com/80/73/qtj75VEW_o.png" alt="Experts partenaires icon" className="w-24 h-24 object-contain" />,
-    value: "10+",
-    label: "Experts partenaires avec 5+ années d'expérience, issus de cabinets de conseil de renom",
+    value: "10+ années d'expérience",
+    label: "Un réseau d'experts : anciens consultants de cabinets de renom, dirigeants et entrepreneurs",
   },
 ];
 
@@ -160,7 +160,7 @@ const Stats: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 max-w-6xl mx-auto stagger">
           {stats.map((stat, index) => {
-            const match = stat.value.match(/(\d+)(\+?)/);
+            const match = stat.value.match(/^(\d+)(\+?)$/);
             const isCountUp = match && match[2] === '+';
             const isScrollUp = !isCountUp && /^\d+$/.test(stat.value);
             
