@@ -14,7 +14,7 @@ const stakes = [
   },
   {
     keyword: "Résister",
-    description: "Renforcer votre capacité à naviguer dans l'incertitude, en identifiant les risques et en déployant des stratégies agiles pour transformer les périodes de turbulence en opportunités.",
+    description: "Renforcer votre capacité à naviguer l'incertitude, en identifiant les risques et déployant des stratégies agiles pour transformer la turbulence en opportunités.",
     icon: "https://images2.imgbox.com/30/ad/ToMA2afU_o.png"
   },
   {
@@ -26,7 +26,7 @@ const stakes = [
 
 const StakesSection: React.FC = () => {
   return (
-    <section id="vos-enjeux" className="bg-gray-50 min-h-screen flex flex-col justify-center py-16 overflow-x-hidden">
+    <section id="vos-enjeux" className="bg-gray-50 flex flex-col justify-center py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <Animate variant="pop">
@@ -46,77 +46,67 @@ const StakesSection: React.FC = () => {
           </Animate>
         </div>
         
-        <div className="w-full max-w-[85rem] mx-auto mt-12">
-            {/* Desktop Timeline */}
+        <div className="w-full max-w-5xl mx-auto mt-12">
+            {/* Desktop Vertical Timeline */}
             <div className="hidden md:block">
-                <Animate variant="pop">
-                    <div className="relative">
-                        {/* The static line connecting the dots */}
-                        <div className="absolute top-1/2 left-[12.5%] right-[12.5%] h-px bg-gray-300 transform -translate-y-1/2"></div>
-                        
-                        {/* Animated running dot container */}
-                        <div className="absolute top-0 left-[12.5%] right-[12.5%] h-full pointer-events-none">
-                          <div className="running-dot-wrapper">
-                              <div className="running-dot-indicator"></div>
+              <Animate variant="pop">
+                <div className="relative">
+                  {/* The static line */}
+                  <div className="absolute top-20 bottom-20 left-1/2 w-0.5 -translate-x-1/2 bg-gray-300 z-0"></div>
+
+                  {/* Animated running dot */}
+                  <div className="absolute top-20 bottom-20 left-1/2 w-0.5 -translate-x-1/2 pointer-events-none z-20">
+                    <div className="running-dot-wrapper-vertical h-full relative">
+                      <div className="running-dot-indicator"></div>
+                    </div>
+                  </div>
+
+                  {/* Timeline Items */}
+                  <div className="space-y-2">
+                    {stakes.map((stake, index) => {
+                      const isRight = index % 2 !== 0;
+                      return (
+                        <div key={index} className="relative">
+                          {/* Static dot */}
+                          <div className={`stake-dot stake-dot--${index + 1} absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-black rounded-full border-4 border-gray-50 z-10`}></div>
+                          
+                          {/* Card */}
+                          <div className={`w-[calc(50%-2.5rem)] ${isRight ? 'ml-[calc(50%+2.5rem)] text-left' : 'text-right'}`}>
+                            <div className={`stake-content-card stake-content-card--${index + 1} bg-white p-6 rounded-xl shadow-lg border border-gray-100 h-40`}>
+                              <div className={`flex items-center gap-4 ${isRight ? 'flex-row' : 'flex-row-reverse'}`}>
+                                <img src={stake.icon} alt={`${stake.keyword} icon`} className="w-10 h-10 object-contain flex-shrink-0" />
+                                <div className="flex-1">
+                                  <h3 className={`stake-title stake-title--${index + 1} text-lg font-bold gradient-text-stake`}>{stake.keyword}</h3>
+                                  <p className={`text-gray-700 text-sm leading-relaxed mt-1 max-w-sm ${!isRight ? 'ml-auto' : ''}`}>
+                                    {stake.description}
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
-
-                        {/* The static dots and keywords */}
-                        <div className="relative flex">
-                          {stakes.map((stake, index) => {
-                              const isAbove = index % 2 === 0;
-
-                              const StakeKeyword = (
-                                <div className={`stake-content-card stake-content-card--${index + 1} text-center px-4`}>
-                                   <div className="flex items-center justify-center gap-2">
-                                     <img src={stake.icon} alt={`${stake.keyword} icon`} className="w-6 h-6 object-contain" />
-                                     <h3 className={`stake-title stake-title--${index + 1} text-base font-bold gradient-text-stake`}>{stake.keyword}</h3>
-                                   </div>
-                                   <div className="w-20 h-px bg-gradient-to-r from-[#27013D] to-[#6D0037] my-2 mx-auto rounded-full"></div>
-                                   <p className="text-gray-800 text-xs leading-relaxed">
-                                     {stake.description}
-                                   </p>
-                                </div>
-                              );
-
-                              return (
-                                  <div key={index} className="relative z-10 w-1/4 flex justify-center">
-                                      <div className="flex flex-col items-center group">
-                                          {/* Top Content */}
-                                          <div className={`min-h-[10rem] flex items-end pb-6 ${isAbove ? '' : 'opacity-0 pointer-events-none'}`}>
-                                            {StakeKeyword}
-                                          </div>
-
-                                          {/* Point */}
-                                          <div className={`stake-dot stake-dot--${index + 1} rounded-full border-2 border-gray-50`}></div>
-                                          
-                                          {/* Bottom Content */}
-                                          <div className={`min-h-[10rem] flex items-start pt-6 ${!isAbove ? '' : 'opacity-0 pointer-events-none'}`}>
-                                            {StakeKeyword}
-                                          </div>
-                                      </div>
-                                  </div>
-                              );
-                          })}
-                        </div>
-                    </div>
-                </Animate>
+                      );
+                    })}
+                  </div>
+                </div>
+              </Animate>
             </div>
+
 
              {/* Mobile Grid */}
             <div className="block md:hidden">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 {stakes.map((stake, index) => (
                     <Animate key={index} variant="pop">
-                        <div className="text-center p-4">
-                            <div className="flex flex-col items-center justify-start">
+                        <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 h-full">
+                            <div className="flex flex-col items-center justify-start text-center">
                                 <div className="flex items-center justify-center gap-2">
-                                  <img src={stake.icon} alt={`${stake.keyword} icon`} className="w-6 h-6 object-contain" />
+                                  <img src={stake.icon} alt={`${stake.keyword} icon`} className="w-8 h-8 object-contain" />
                                   <h3 className="text-base font-bold gradient-text-stake">
                                       {stake.keyword}
                                   </h3>
                                 </div>
-                                <div className="w-20 h-px bg-gradient-to-r from-[#27013D] to-[#6D0037] my-2 mx-auto rounded-full"></div>
+                                <div className="w-full h-px bg-gradient-to-r from-transparent via-[#6D0037] to-transparent my-3"></div>
                                 <p className="text-gray-800 leading-relaxed text-sm">
                                     {stake.description}
                                 </p>

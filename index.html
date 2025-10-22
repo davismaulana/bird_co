@@ -42,7 +42,7 @@
       color: transparent;
     }
     .gradient-text-stake {
-      background-image: linear-gradient(to right, black, #27013D 50%, #6D0037);
+      background-image: linear-gradient(to right, black 50%, #27013D 50%, #6D0037);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -309,7 +309,7 @@
     .running-dot-wrapper {
       position: absolute;
       top: 50%;
-      left: 0; /* Initial position */
+      left: 0%; /* Initial position */
       transform: translateY(-50%);
       animation: run-dot-position 8s ease-in-out infinite;
       z-index: 5;
@@ -575,10 +575,43 @@
         37.5%, 100% { opacity: 0; transform: translate3d(0, 12px, 0); }
     }
 
+    /* Vertical Running Dot */
+    @keyframes run-dot-position-vertical {
+      0%, 42.5% { top: 0%; }
+      56.25%, 61.25% { top: 33.3%; }
+      75%, 80% { top: 66.7%; }
+      93.75%, 100% { top: 100%; }
+    }
+
+    @keyframes run-dot-opacity-vertical {
+      0%, 42.49% { opacity: 0; }
+      42.5%, 56.24% { opacity: 1; }
+      56.25%, 61.24% { opacity: 0; }
+      61.25%, 74.99% { opacity: 1; }
+      75%, 79.99% { opacity: 0; }
+      80%, 93.74% { opacity: 1; }
+      93.75%, 100% { opacity: 0; }
+    }
+
+    .running-dot-wrapper-vertical {
+      position: absolute;
+      left: 50%;
+      width: 10px;
+      transform: translateX(-50%);
+      animation: run-dot-position-vertical 8s ease-in-out infinite;
+      z-index: 5;
+    }
+
+    .running-dot-wrapper-vertical .running-dot-indicator {
+      transform: translateY(-50%); /* Center the dot on the 'top' position */
+      animation: run-dot-opacity-vertical 8s infinite;
+    }
+
+
     /* Styles for StakesSection pure CSS animation */
     .stake-dot {
-        width: 16px;
-        height: 16px;
+        width: 20px;
+        height: 20px;
         background-color: black;
         animation-duration: 8s;
         animation-iteration-count: infinite;
@@ -590,6 +623,12 @@
         animation-iteration-count: infinite;
         animation-timing-function: ease-in-out;
         transition: color 0.3s, transform 0.3s;
+    }
+    .stake-title--1, .stake-title--3 {
+      transform-origin: right;
+    }
+    .stake-title--2, .stake-title--4 {
+      transform-origin: left;
     }
     .stake-content-card {
         opacity: 0; /* Initial state before animation */
