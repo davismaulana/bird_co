@@ -216,7 +216,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
             <span className={`${num}`}>2029</span>
           </div>
 
-          <div className="bg-slate-50 rounded-lg p-1.5 border border-slate-100">
+          <div className="bg-slate-50 rounded-lg p-1.5 border border-slate-100 text-[10px]">
             {/* Revenue */}
             <HighlightRow>
               <span className={`${cell}`}>Chiffre d'affaires</span>
@@ -295,9 +295,8 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
 
         {/* -------- KPIs -------- */}
         <div className="min-w-[580px]">
-          <div className="bg-slate-50 rounded-lg p-1.5 border border-slate-100">
-            <div className="px-1 py-0.5 font-semibold text-slate-600">KPIs</div>
-
+          <div className="px-1 py-0.5 mb-1 font-semibold text-slate-600">KPIs</div>
+          <div className="bg-slate-50 rounded-lg p-1.5 border border-slate-100 text-[10px]">
             <Row>
               <span className={`${cell}`}>ETP</span>
               <span className={`${cell} ${num} ${vcol}`}>21</span>
@@ -356,7 +355,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
             <span className={`${num}`}>2029</span>
           </div>
 
-          <div className="bg-slate-50 rounded-lg p-1.5 border border-slate-100">
+          <div className="bg-slate-50 rounded-lg p-1.5 border border-slate-100 text-[10px]">
             <HighlightRow>
               <span className={`${cell}`}>Opening cash balance</span>
               <span className={`${cell} ${num} ${vcol}`}>0,2m€</span>
