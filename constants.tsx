@@ -171,13 +171,13 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
   const vcol = "border-l border-slate-100 pl-2"; // visual column dividers
 
   const HighlightRow: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-    <div className={`${cols} rounded-md bg-violet-50/60 text-slate-900 font-semibold py-1`}>
+    <div className={`${cols} rounded-md bg-violet-50/60 text-slate-900 font-semibold py-0.5`}>
       {children}
     </div>
   );
 
   const Row: React.FC<{ muted?: boolean; children: React.ReactNode }> = ({ muted, children }) => (
-    <div className={`${cols} ${muted ? "text-slate-600" : "text-slate-800"} py-1`}>{children}</div>
+    <div className={`${cols} ${muted ? "text-slate-600" : "text-slate-800"} py-0.5`}>{children}</div>
   );
   
   const classNames = [
@@ -203,11 +203,11 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
         <h3 className="font-bold text-gray-900 text-sm">Modélisation Financière</h3>
       </div>
 
-      <div className="flex-grow space-y-1 text-[12px] leading-none overflow-x-auto overflow-y-auto">
+      <div className="flex-grow space-y-1 text-[11px] leading-none overflow-x-auto overflow-y-auto">
         {/* -------- P&L -------- */}
         <div className="min-w-[580px]">
           {/* Years header */}
-          <div className={`${cols} text-slate-600 font-semibold px-1 mb-1 py-1`}>
+          <div className={`${cols} text-slate-600 font-semibold px-1 mb-1 py-0.5`}>
             <span className="col-span-1">P&amp;L</span>
             <span className={`${num}`}>2025</span>
             <span className={`${num}`}>2026</span>
@@ -347,7 +347,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
 
         {/* -------- Cash Flow -------- */}
         <div className="min-w-[580px]">
-          <div className={`${cols} text-slate-600 font-semibold px-1 mb-1 py-1`}>
+          <div className={`${cols} text-slate-600 font-semibold px-1 mb-1 py-0.5`}>
             <span className="col-span-1">Cash Flow</span>
             <span className={`${num}`}>2025</span>
             <span className={`${num}`}>2026</span>

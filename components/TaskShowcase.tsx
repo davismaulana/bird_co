@@ -312,7 +312,7 @@ const TaskShowcase: React.FC = () => {
                     </Animate>
                 </div>
                 <div className="max-w-6xl mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-stretch">
+                    <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center">
                         {/* Left: Buttons */}
                         <div className="w-full max-w-md mx-auto lg:max-w-none lg:mx-0 lg:col-span-2">
                             <div className="grid grid-cols-1 gap-2">
@@ -350,7 +350,7 @@ const TaskShowcase: React.FC = () => {
                         </div>
                         
                         {/* Right: Visual */}
-                        <Animate variant="pop" delay={200} className="relative aspect-[4/3] lg:aspect-auto lg:min-h-full lg:col-span-3">
+                        <Animate variant="pop" delay={200} className="relative aspect-[4/3] lg:aspect-auto lg:col-span-3">
                             <div className="w-full h-full">
                                 <div className="grid h-full">
                                     {tasks.map((task, index) => (
