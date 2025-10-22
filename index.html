@@ -315,40 +315,12 @@
       z-index: 5;
     }
 
-    /* Stakes running dot animation */
-    @keyframes run-dot-position-stakes {
-      0%, 37.5%   { top: 0%; }
-      43.75%  { top: 0%; }
-      56.25%  { top: 33.333%; }
-      62.5%   { top: 33.333%; }
-      75%     { top: 66.667%; }
-      81.25%  { left: 66.667%; }
-      93.75%  { top: 100%; }
-      100%    { top: 100%; }
-    }
-
-    .running-dot-wrapper-stakes {
-      position: absolute;
-      top: 0; /* Initial position */
-      left: 50%;
-      transform: translateX(-50%);
-      animation: run-dot-position-stakes 8s ease-in-out infinite;
-      z-index: 5;
-    }
-
     .running-dot-indicator {
       width: 10px;
       height: 10px;
       background: linear-gradient(to right, #27013D, #6D0037);
       border-radius: 9999px;
       transform: translateX(-50%); /* Center the dot on the 'left' position */
-      box-shadow: 0 0 8px 2px rgba(39, 1, 61, 0.5);
-    }
-
-    .running-dot-indicator-stakes {
-      width: 10px;
-      height: 10px;
-      transform: translateY(-50%);
       box-shadow: 0 0 8px 2px rgba(39, 1, 61, 0.5);
     }
     
@@ -604,13 +576,21 @@
     }
 
     /* Styles for StakesSection pure CSS animation */
-    .stake-circle {
+    .stake-dot {
+        width: 16px;
+        height: 16px;
+        background-color: black;
         animation-duration: 8s;
         animation-iteration-count: infinite;
         animation-timing-function: ease-in-out;
-        transition: transform 0.3s, box-shadow 0.3s;
+        transition: background-color 0.3s, box-shadow 0.3s;
     }
-
+    .stake-title {
+        animation-duration: 8s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        transition: color 0.3s, transform 0.3s;
+    }
     .stake-content-card {
         opacity: 0; /* Initial state before animation */
         animation-duration: 8s;
@@ -619,13 +599,19 @@
     }
 
     /* Stake 1 Animations */
-    .stake-circle--1 { animation-name: active-circle-stake-1; }
+    .stake-dot--1 { animation-name: active-dot-stake-1; }
+    .stake-title--1 { animation-name: active-title-stake-1; }
     .stake-content-card--1 { animation-name: pop-in-stay-stake-1; }
 
-    @keyframes active-circle-stake-1 {
-        0%, 37.49% { transform: scale(1); box-shadow: 0 0 0 rgba(39, 1, 61, 0); }
-        37.5%, 42.5% { transform: scale(1.1); box-shadow: 0 0 16px 4px rgba(39, 1, 61, 0.4); }
-        43.75%, 100% { transform: scale(1); box-shadow: 0 0 0 rgba(39, 1, 61, 0); }
+    @keyframes active-dot-stake-1 {
+        0%, 37.49% { background: black; box-shadow: none; }
+        37.5%, 42.5% { background: linear-gradient(to bottom right, #27013D, #6D0037); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
+        43.75%, 100% { background: black; box-shadow: none; }
+    }
+    @keyframes active-title-stake-1 {
+        0%, 37.49% { transform: scale(1); }
+        37.5%, 42.5% { transform: scale(1.1); }
+        43.75%, 100% { transform: scale(1); }
     }
     @keyframes pop-in-stay-stake-1 {
         0%, 37.49% {
@@ -640,13 +626,19 @@
     }
 
     /* Stake 2 Animations */
-    .stake-circle--2 { animation-name: active-circle-stake-2; }
+    .stake-dot--2 { animation-name: active-dot-stake-2; }
+    .stake-title--2 { animation-name: active-title-stake-2; }
     .stake-content-card--2 { animation-name: pop-in-stay-stake-2; }
 
-    @keyframes active-circle-stake-2 {
-        0%, 56.24% { transform: scale(1); box-shadow: 0 0 0 rgba(39, 1, 61, 0); }
-        56.25%, 61.25% { transform: scale(1.1); box-shadow: 0 0 16px 4px rgba(39, 1, 61, 0.4); }
-        62.5%, 100% { transform: scale(1); box-shadow: 0 0 0 rgba(39, 1, 61, 0); }
+    @keyframes active-dot-stake-2 {
+        0%, 56.24% { background: black; box-shadow: none; }
+        56.25%, 61.25% { background: linear-gradient(to bottom right, #27013D, #6D0037); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
+        62.5%, 100% { background: black; box-shadow: none; }
+    }
+    @keyframes active-title-stake-2 {
+        0%, 56.24% { transform: scale(1); }
+        56.25%, 61.25% { transform: scale(1.1); }
+        62.5%, 100% { transform: scale(1); }
     }
     @keyframes pop-in-stay-stake-2 {
         0%, 37.49% {
@@ -661,13 +653,19 @@
     }
 
     /* Stake 3 Animations */
-    .stake-circle--3 { animation-name: active-circle-stake-3; }
+    .stake-dot--3 { animation-name: active-dot-stake-3; }
+    .stake-title--3 { animation-name: active-title-stake-3; }
     .stake-content-card--3 { animation-name: pop-in-stay-stake-3; }
 
-    @keyframes active-circle-stake-3 {
-        0%, 74.99% { transform: scale(1); box-shadow: 0 0 0 rgba(39, 1, 61, 0); }
-        75%, 80% { transform: scale(1.1); box-shadow: 0 0 16px 4px rgba(39, 1, 61, 0.4); }
-        81.25%, 100% { transform: scale(1); box-shadow: 0 0 0 rgba(39, 1, 61, 0); }
+    @keyframes active-dot-stake-3 {
+        0%, 74.99% { background: black; box-shadow: none; }
+        75%, 80% { background: linear-gradient(to bottom right, #27013D, #6D0037); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
+        81.25%, 100% { background: black; box-shadow: none; }
+    }
+    @keyframes active-title-stake-3 {
+        0%, 74.99% { transform: scale(1); }
+        75%, 80% { transform: scale(1.1); }
+        81.25%, 100% { transform: scale(1); }
     }
     @keyframes pop-in-stay-stake-3 {
         0%, 37.49% {
@@ -682,12 +680,17 @@
     }
 
     /* Stake 4 Animations */
-    .stake-circle--4 { animation-name: active-circle-stake-4; }
+    .stake-dot--4 { animation-name: active-dot-stake-4; }
+    .stake-title--4 { animation-name: active-title-stake-4; }
     .stake-content-card--4 { animation-name: pop-in-stay-stake-4; }
 
-    @keyframes active-circle-stake-4 {
-        0%, 93.74% { transform: scale(1); box-shadow: 0 0 0 rgba(39, 1, 61, 0); }
-        93.75%, 100% { transform: scale(1.1); box-shadow: 0 0 16px 4px rgba(39, 1, 61, 0.4); }
+     @keyframes active-dot-stake-4 {
+        0%, 93.74% { background: black; box-shadow: none; }
+        93.75%, 100% { background: linear-gradient(to bottom right, #27013D, #6D0037); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
+    }
+    @keyframes active-title-stake-4 {
+        0%, 93.74% { transform: scale(1); }
+        93.75%, 100% { transform: scale(1); }
     }
     @keyframes pop-in-stay-stake-4 {
         0%, 37.49% {
