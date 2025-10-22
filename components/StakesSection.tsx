@@ -76,7 +76,7 @@ const StakesSection: React.FC = () => {
                               <div className={`flex items-center gap-4 ${isRight ? 'flex-row' : 'flex-row-reverse'}`}>
                                 <img src={stake.icon} alt={`${stake.keyword} icon`} className="w-10 h-10 object-contain flex-shrink-0" />
                                 <div className="flex-1">
-                                  <h3 className={`stake-title stake-title--${index + 1} text-lg font-bold gradient-text-stake`}>{stake.keyword}</h3>
+                                  <h3 className={`stake-title stake-title--${index + 1} text-lg font-bold gradient-text-pillar`}>{stake.keyword}</h3>
                                   <p className={`text-gray-700 text-sm leading-relaxed mt-1 max-w-sm ${!isRight ? 'ml-auto' : ''}`}>
                                     {stake.description}
                                   </p>
@@ -102,7 +102,7 @@ const StakesSection: React.FC = () => {
                             <div className="flex flex-col items-center justify-start text-center">
                                 <div className="flex items-center justify-center gap-2">
                                   <img src={stake.icon} alt={`${stake.keyword} icon`} className="w-8 h-8 object-contain" />
-                                  <h3 className="text-base font-bold gradient-text-stake">
+                                  <h3 className="text-base font-bold gradient-text-pillar">
                                       {stake.keyword}
                                   </h3>
                                 </div>
