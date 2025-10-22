@@ -163,6 +163,11 @@ const Stats: React.FC = () => {
             const match = stat.value.match(/^(\d+)(\+?)$/);
             const isCountUp = match && match[2] === '+';
             const isScrollUp = !isCountUp && /^\d+$/.test(stat.value);
+
+            const isLongTextValue = stat.value === "10+ années d'expérience";
+            const pClassName = isLongTextValue
+              ? 'text-3xl lg:text-4xl font-extrabold text-[#27013D] tracking-tighter whitespace-nowrap'
+              : 'text-5xl lg:text-6xl font-extrabold text-[#27013D] tracking-tighter';
             
             return (
               <Animate key={index} variant="pop">
@@ -170,18 +175,20 @@ const Stats: React.FC = () => {
                   <div className="mb-4 flex items-center justify-center h-24 md:h-28">
                     {stat.icon}
                   </div>
-                  <p className="text-5xl lg:text-6xl font-extrabold text-[#27013D] tracking-tighter">
-                    {isCountUp ? (
-                      <CountUp 
-                        end={parseInt(match![1], 10)} 
-                        suffix={match![2]}
-                      />
-                    ) : isScrollUp ? (
-                      <ScrollUpAnimator end={parseInt(stat.value, 10)} />
-                    ) : (
-                      stat.value
-                    )}
-                  </p>
+                  <div className="h-20 flex items-center justify-center">
+                    <p className={pClassName}>
+                      {isCountUp ? (
+                        <CountUp 
+                          end={parseInt(match![1], 10)} 
+                          suffix={match![2]}
+                        />
+                      ) : isScrollUp ? (
+                        <ScrollUpAnimator end={parseInt(stat.value, 10)} />
+                      ) : (
+                        stat.value
+                      )}
+                    </p>
+                  </div>
                   <p className="text-gray-800 mt-4 text-base font-medium max-w-xs">{stat.label}</p>
                 </div>
               </Animate>
