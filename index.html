@@ -744,6 +744,61 @@
         }
     }
 
+    /* Stakes Section Line Connectors */
+    .line-horizontal {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 1px;
+      width: 35%;
+      background-size: 200% 100%;
+      animation-duration: 8s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-out;
+      z-index: 5;
+    }
+    .line-horizontal--left {
+      right: 50%;
+      background-image: linear-gradient(to right, #d4d4d8 50%, #6D0037 50%);
+    }
+    .line-horizontal--right {
+      left: 50%;
+      background-image: linear-gradient(to right, #6D0037 50%, #d4d4d8 50%);
+    }
+
+    /* --- Stake 1 Line Animation (left, hidden: 0%, shown: 100%) --- */
+    .line-horizontal--1 { animation-name: run-line-stake-1; }
+    @keyframes run-line-stake-1 {
+        0%, 37.49% { background-position: 100% 0; }
+        37.5% { background-position: 0% 0; }
+        39.375%, 100% { background-position: 100% 0; }
+    }
+
+    /* --- Stake 2 Line Animation (right, hidden: 100%, shown: 0%) --- */
+    .line-horizontal--2 { animation-name: run-line-stake-2; }
+    @keyframes run-line-stake-2 {
+        0%, 56.24% { background-position: 100% 0; }
+        56.25% { background-position: 100% 0; }
+        58.125%, 100% { background-position: 0% 0; }
+    }
+
+    /* --- Stake 3 Line Animation (left, hidden: 0%, shown: 100%) --- */
+    .line-horizontal--3 { animation-name: run-line-stake-3; }
+    @keyframes run-line-stake-3 {
+        0%, 74.99% { background-position: 0% 0; }
+        75% { background-position: 0% 0; }
+        76.875%, 100% { background-position: 100% 0; }
+    }
+
+    /* --- Stake 4 Line Animation (right, hidden: 100%, shown: 0%) --- */
+    .line-horizontal--4 { animation-name: run-line-stake-4; }
+    @keyframes run-line-stake-4 {
+        0%, 93.74% { background-position: 100% 0; }
+        93.75% { background-position: 100% 0; }
+        95.625%, 100% { background-position: 0% 0; }
+    }
+
+
     /* Dropdown Animation */
     .dropdown-container {
         opacity: 0;
