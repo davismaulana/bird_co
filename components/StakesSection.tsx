@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Animate from './Animate';
 
 const stakes = [
@@ -64,7 +64,16 @@ const stakes = [
   },
 ];
 
+const PlusIcon: React.FC<{ className?: string }> = ({ className }) => (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+    </svg>
+);
+
+
 const StakesSection: React.FC = () => {
+    const [openStake, setOpenStake] = useState<number | null>(null);
+
   return (
     <section id="vos-enjeux" className="bg-gray-50 flex flex-col justify-center py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -88,111 +97,129 @@ const StakesSection: React.FC = () => {
         
         <div className="w-full max-w-7xl mx-auto mt-12">
             {/* Desktop Vertical Timeline */}
-            <div className="hidden md:block">
-              <Animate variant="pop">
-                <div className="relative">
-                  {/* Animated running dot */}
-                  <div className="absolute top-0 bottom-0 left-1/2 w-0.5 -translate-x-1/2 pointer-events-none z-20">
-                    <div className="running-dot-wrapper-vertical h-full relative">
-                      <div className="running-dot-indicator"></div>
-                    </div>
-                  </div>
+            <Animate variant="pop" className="hidden md:block">
+              <div className="relative">
+                <div className="absolute top-0 bottom-0 left-1/2 w-0.5 -translate-x-1/2 bg-gray-200"></div>
 
-                  {/* Timeline Items */}
-                  <div className="space-y-2">
-                    {stakes.map((stake, index) => {
-                      const isRight = index % 2 !== 0;
+                <div className="space-y-8">
+                  {stakes.map((stake, index) => {
+                    const isOpen = openStake === index;
+                    const isRight = index % 2 !== 0;
 
-                      const ExistingCardContent = (
-                          <div className={`stake-content-card stake-content-card--${index + 1} bg-white p-6 rounded-xl shadow-lg border border-gray-100 ${isRight ? 'text-left' : 'text-right'}`}>
-                              <div className={`flex items-center gap-4 ${isRight ? 'flex-row' : 'flex-row-reverse'}`}>
-                                  <div className="flex-1">
-                                      <h3 className={`stake-title stake-title--${index + 1} text-lg font-bold gradient-text`}>{stake.keyword}</h3>
-                                      <p className={`text-gray-700 text-sm leading-relaxed mt-1 max-w-sm ${!isRight ? 'ml-auto' : ''}`}>
-                                          {stake.cardDescription}
-                                      </p>
-                                  </div>
-                              </div>
-                          </div>
-                      );
+                    const KeywordCard = (
+                        <button
+                            onClick={() => setOpenStake(isOpen ? null : index)}
+                            className={`w-full bg-white p-6 rounded-xl shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:border-gray-200 ${isOpen ? 'scale-105 shadow-xl border-gray-200' : ''}`}
+                            aria-expanded={isOpen}
+                            aria-controls={`stake-details-${index}`}
+                        >
+                            <div className={`flex items-center gap-4 ${isRight ? 'flex-row text-left' : 'flex-row-reverse text-right'}`}>
+                                <div className="flex-1">
+                                    <h3 className={`text-lg font-bold gradient-text`}>{stake.keyword}</h3>
+                                    <p className={`text-gray-700 text-sm leading-relaxed mt-1 max-w-sm ${!isRight ? 'ml-auto' : ''}`}>
+                                        {stake.cardDescription}
+                                    </p>
+                                </div>
+                                <div className={`flex-shrink-0 text-[#27013D] p-2 rounded-full transition-colors ${isOpen ? 'bg-gray-100' : ''}`}>
+                                    <PlusIcon className={`w-6 h-6 transition-transform duration-300 ${isOpen ? 'rotate-45' : ''}`} />
+                                </div>
+                            </div>
+                        </button>
+                    );
 
-                      const NewCardContent = (
-                          <div className={`stake-content-card stake-content-card--${index + 1} bg-gray-100/70 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-gray-200 text-left`}>
-                              <div className="flex flex-col items-start text-left">
-                                  <img src={stake.newCard.icon} alt={`${stake.newCard.title} icon`} className="w-8 h-8 object-contain mb-3" />
-                                  <h4 className="text-base font-bold gradient-text">{stake.newCard.title}</h4>
-                                  <p className="text-gray-800 text-xs leading-relaxed mt-2">{stake.newCard.description}</p>
-                                  <ul className="text-left text-xs text-gray-600 mt-3 space-y-1.5 self-start w-full">
-                                      {stake.newCard.details.map((detail, i) => (
-                                          <li key={i} className="flex items-start">
-                                              <span className="mr-2 mt-0.5 text-[#6D0037] font-bold">&#8226;</span>
-                                              <span className="flex-1">{detail}</span>
-                                          </li>
-                                      ))}
-                                  </ul>
-                              </div>
-                          </div>
-                      );
-
-                      return (
-                        <div key={index} className="relative stake-item">
-                          {/* Static dot */}
-                          <div className={`stake-dot stake-dot--${index + 1} absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-black rounded-full border-4 border-gray-50 z-10`}></div>
-                          
-                          <div className="flex justify-between items-center">
-                              {/* Left column */}
-                              <div className="w-[calc(50%-2.5rem)]">
-                                  {isRight ? NewCardContent : ExistingCardContent}
-                              </div>
-                              {/* Right column */}
-                              <div className="w-[calc(50%-2.5rem)]">
-                                  {isRight ? ExistingCardContent : NewCardContent}
-                              </div>
-                          </div>
+                    const DetailCard = (
+                        <div
+                            id={`stake-details-${index}`}
+                            className={`transition-all duration-500 ease-in-out ${isOpen ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 -translate-y-2 scale-95 pointer-events-none'}`}
+                        >
+                           <div className={`bg-gray-100/70 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-gray-200 text-left`}>
+                                <div className="flex flex-col items-start text-left">
+                                    <img src={stake.newCard.icon} alt={`${stake.newCard.title} icon`} className="w-8 h-8 object-contain mb-3" />
+                                    <h4 className="text-base font-bold gradient-text">{stake.newCard.title}</h4>
+                                    <p className="text-gray-800 text-xs leading-relaxed mt-2">{stake.newCard.description}</p>
+                                    <ul className="text-left text-xs text-gray-600 mt-3 space-y-1.5 self-start w-full">
+                                        {stake.newCard.details.map((detail, i) => (
+                                            <li key={i} className="flex items-start">
+                                                <span className="mr-2 mt-0.5 text-[#6D0037] font-bold">&#8226;</span>
+                                                <span className="flex-1">{detail}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                      );
-                    })}
-                  </div>
+                    );
+
+                    return (
+                      <div key={index} className="relative">
+                        <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-5 h-5 bg-gray-300 rounded-full border-4 border-gray-50 z-10"></div>
+                        
+                        <div className="flex justify-between items-center">
+                            <div className="w-[calc(50%-2.5rem)]">
+                                {isRight ? DetailCard : KeywordCard}
+                            </div>
+                            <div className="w-[calc(50%-2.5rem)]">
+                                {isRight ? KeywordCard : DetailCard}
+                            </div>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
-              </Animate>
-            </div>
+              </div>
+            </Animate>
 
 
              {/* Mobile Grid */}
             <div className="block md:hidden">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                {stakes.map((stake, index) => (
-                    <Animate key={index} variant="pop">
-                      <div className="space-y-4">
-                        <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 h-full">
-                            <div className="flex flex-col items-center justify-start text-center">
-                                <h3 className="text-base font-bold gradient-text">
-                                    {stake.keyword}
-                                </h3>
-                                <div className="w-full h-px bg-gradient-to-r from-transparent via-[#6D0037] to-transparent my-3"></div>
-                                <p className="text-gray-800 leading-relaxed text-sm">
-                                    {stake.cardDescription}
-                                </p>
+                {stakes.map((stake, index) => {
+                    const isOpen = openStake === index;
+                    return (
+                        <Animate key={index} variant="pop">
+                        <div className="space-y-4">
+                            <button
+                                onClick={() => setOpenStake(isOpen ? null : index)}
+                                className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 h-full w-full"
+                                aria-expanded={isOpen}
+                                aria-controls={`stake-details-mobile-${index}`}
+                            >
+                                <div className="flex flex-col items-center justify-start text-center">
+                                    <h3 className="text-base font-bold gradient-text">
+                                        {stake.keyword}
+                                    </h3>
+                                    <div className="w-full h-px bg-gradient-to-r from-transparent via-[#6D0037] to-transparent my-3"></div>
+                                    <p className="text-gray-800 leading-relaxed text-sm">
+                                        {stake.cardDescription}
+                                    </p>
+                                </div>
+                            </button>
+                            <div
+                                id={`stake-details-mobile-${index}`}
+                                className={`grid transition-all duration-500 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
+                            >
+                            <div className="overflow-hidden">
+                                <div className={`bg-gray-100/70 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-gray-200 text-left`}>
+                                    <div className="flex flex-col items-start text-left">
+                                        <img src={stake.newCard.icon} alt={`${stake.newCard.title} icon`} className="w-8 h-8 object-contain mb-3" />
+                                        <h4 className="text-base font-bold gradient-text">{stake.newCard.title}</h4>
+                                        <p className="text-gray-800 text-xs leading-relaxed mt-2">{stake.newCard.description}</p>
+                                        <ul className="text-left text-xs text-gray-600 mt-3 space-y-1.5 self-start w-full">
+                                            {stake.newCard.details.map((detail, i) => (
+                                                <li key={i} className="flex items-start">
+                                                    <span className="mr-2 mt-0.5 text-[#6D0037] font-bold">&#8226;</span>
+                                                    <span className="flex-1">{detail}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                             </div>
                         </div>
-                        <div className={`bg-gray-100/70 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-gray-200 text-left`}>
-                            <div className="flex flex-col items-start text-left">
-                                <img src={stake.newCard.icon} alt={`${stake.newCard.title} icon`} className="w-8 h-8 object-contain mb-3" />
-                                <h4 className="text-base font-bold gradient-text">{stake.newCard.title}</h4>
-                                <p className="text-gray-800 text-xs leading-relaxed mt-2">{stake.newCard.description}</p>
-                                <ul className="text-left text-xs text-gray-600 mt-3 space-y-1.5 self-start w-full">
-                                    {stake.newCard.details.map((detail, i) => (
-                                        <li key={i} className="flex items-start">
-                                            <span className="mr-2 mt-0.5 text-[#6D0037] font-bold">&#8226;</span>
-                                            <span className="flex-1">{detail}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        </div>
-                      </div>
-                    </Animate>
-                ))}
+                        </Animate>
+                    );
+                })}
               </div>
             </div>
         </div>
