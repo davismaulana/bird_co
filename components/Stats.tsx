@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState, useRef } from 'react';
 import Animate from './Animate';
 
@@ -136,7 +137,8 @@ const stats = [
   },
   {
     icon: <img src="https://images2.imgbox.com/80/73/qtj75VEW_o.png" alt="Experts partenaires icon" className="w-24 h-24 object-contain" />,
-    value: "10+ années d'expérience",
+    value: "10+",
+    valueSubtitle: "années d'expérience",
     label: "Un réseau d'experts : anciens consultants de cabinets de renom, dirigeants et entrepreneurs",
   },
 ];
@@ -164,10 +166,7 @@ const Stats: React.FC = () => {
             const isCountUp = match && match[2] === '+';
             const isScrollUp = !isCountUp && /^\d+$/.test(stat.value);
 
-            const isLongTextValue = stat.value === "10+ années d'expérience";
-            const pClassName = isLongTextValue
-              ? 'text-3xl lg:text-4xl font-extrabold text-[#27013D] tracking-tighter whitespace-nowrap'
-              : 'text-5xl lg:text-6xl font-extrabold text-[#27013D] tracking-tighter';
+            const pClassName = 'text-5xl lg:text-6xl font-extrabold text-[#27013D] tracking-tighter';
             
             return (
               <Animate key={index} variant="pop">
@@ -175,7 +174,7 @@ const Stats: React.FC = () => {
                   <div className="mb-4 flex items-center justify-center h-24 md:h-28">
                     {stat.icon}
                   </div>
-                  <div className="h-20 flex items-center justify-center">
+                  <div className="flex flex-col items-center justify-center min-h-[5rem]">
                     <p className={pClassName}>
                       {isCountUp ? (
                         <CountUp 
@@ -188,6 +187,11 @@ const Stats: React.FC = () => {
                         stat.value
                       )}
                     </p>
+                    { 'valueSubtitle' in stat && (
+                        <p className="text-[#27013D] mt-1 text-xl font-semibold">
+                            {(stat as any).valueSubtitle}
+                        </p>
+                    )}
                   </div>
                   <p className="text-gray-800 mt-4 text-base font-medium max-w-xs">{stat.label}</p>
                 </div>

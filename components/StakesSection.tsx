@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Animate from './Animate';
 
@@ -122,7 +121,7 @@ const StakesSection: React.FC = () => {
                           <div className={`stake-content-card stake-content-card--${index + 1} bg-gray-100/70 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-gray-200 text-left`}>
                               <div className="flex flex-col items-start text-left">
                                   <h4 className="text-base font-bold text-[#27013D]">{stake.newCard.title}</h4>
-                                  <p className="text-gray-700 text-xs leading-relaxed mt-2">{stake.newCard.description}</p>
+                                  <p className="text-gray-800 text-xs leading-relaxed mt-2">{stake.newCard.description}</p>
                                   <ul className="text-left text-xs text-gray-600 mt-3 space-y-1.5 self-start w-full">
                                       {stake.newCard.details.map((detail, i) => (
                                           <li key={i} className="flex items-start">
@@ -182,7 +181,7 @@ const StakesSection: React.FC = () => {
                         <div className={`bg-gray-100/70 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-gray-200 text-left`}>
                             <div className="flex flex-col items-start text-left">
                                 <h4 className="text-base font-bold text-[#27013D]">{stake.newCard.title}</h4>
-                                <p className="text-gray-700 text-xs leading-relaxed mt-2">{stake.newCard.description}</p>
+                                <p className="text-gray-800 text-xs leading-relaxed mt-2">{stake.newCard.description}</p>
                                 <ul className="text-left text-xs text-gray-600 mt-3 space-y-1.5 self-start w-full">
                                     {stake.newCard.details.map((detail, i) => (
                                         <li key={i} className="flex items-start">
