@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Animate from './Animate';
 
 const stakes = [
@@ -72,7 +72,19 @@ const PlusIcon: React.FC<{ className?: string }> = ({ className }) => (
 
 
 const StakesSection: React.FC = () => {
-    const [openStake, setOpenStake] = useState<number | null>(null);
+    const [activeStake, setActiveStake] = useState<number>(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setActiveStake(prevActiveStake => (prevActiveStake + 1) % stakes.length);
+        }, 8000); // Cycle every 8 seconds
+
+        return () => clearInterval(interval);
+    }, [activeStake]);
+
+    const handleStakeClick = (index: number) => {
+        setActiveStake(index);
+    };
 
   return (
     <section id="vos-enjeux" className="bg-gray-50 flex flex-col justify-center py-16">
@@ -103,15 +115,16 @@ const StakesSection: React.FC = () => {
 
                 <div className="space-y-8">
                   {stakes.map((stake, index) => {
-                    const isOpen = openStake === index;
+                    const isActive = activeStake === index;
                     const isRight = index % 2 !== 0;
 
                     const KeywordCard = (
-                        <button
-                            onClick={() => setOpenStake(isOpen ? null : index)}
-                            className={`w-full bg-white p-6 rounded-xl shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:border-gray-200 ${isOpen ? 'scale-105 shadow-xl border-gray-200' : ''}`}
-                            aria-expanded={isOpen}
-                            aria-controls={`stake-details-${index}`}
+                        <div
+                            onClick={() => handleStakeClick(index)}
+                            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleStakeClick(index); }}
+                            role="button"
+                            tabIndex={0}
+                            className={`w-full bg-white p-6 rounded-xl shadow-lg border border-gray-100 transition-all duration-300 cursor-pointer ${isActive ? 'scale-105 shadow-xl border-gray-200' : 'hover:scale-102 hover:shadow-lg'}`}
                         >
                             <div className={`flex items-center gap-4 ${isRight ? 'flex-row text-left' : 'flex-row-reverse text-right'}`}>
                                 <div className="flex-1">
@@ -120,17 +133,17 @@ const StakesSection: React.FC = () => {
                                         {stake.cardDescription}
                                     </p>
                                 </div>
-                                <div className={`flex-shrink-0 text-[#27013D] p-2 rounded-full transition-colors ${isOpen ? 'bg-gray-100' : ''}`}>
-                                    <PlusIcon className={`w-6 h-6 transition-transform duration-300 ${isOpen ? 'rotate-45' : ''}`} />
+                                <div className={`flex-shrink-0 text-[#27013D] p-2 rounded-full transition-colors ${isActive ? 'bg-gray-100' : ''}`}>
+                                    <PlusIcon className={`w-6 h-6 transition-transform duration-300 ${isActive ? 'rotate-45' : ''}`} />
                                 </div>
                             </div>
-                        </button>
+                        </div>
                     );
 
                     const DetailCard = (
                         <div
                             id={`stake-details-${index}`}
-                            className={`transition-all duration-500 ease-in-out ${isOpen ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 -translate-y-2 scale-95 pointer-events-none'}`}
+                            className={`transition-all duration-500 ease-in-out ${isActive ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 -translate-y-2 scale-95 pointer-events-none'}`}
                         >
                            <div className={`bg-gray-100/70 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-gray-200 text-left`}>
                                 <div className="flex flex-col items-start text-left">
@@ -174,15 +187,16 @@ const StakesSection: React.FC = () => {
             <div className="block md:hidden">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 {stakes.map((stake, index) => {
-                    const isOpen = openStake === index;
+                    const isActive = activeStake === index;
                     return (
                         <Animate key={index} variant="pop">
                         <div className="space-y-4">
-                            <button
-                                onClick={() => setOpenStake(isOpen ? null : index)}
-                                className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 h-full w-full"
-                                aria-expanded={isOpen}
-                                aria-controls={`stake-details-mobile-${index}`}
+                            <div
+                                onClick={() => handleStakeClick(index)}
+                                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleStakeClick(index); }}
+                                role="button"
+                                tabIndex={0}
+                                className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 h-full w-full cursor-pointer hover:shadow-xl hover:scale-102 transition-all duration-300"
                             >
                                 <div className="flex flex-col items-center justify-start text-center">
                                     <h3 className="text-base font-bold gradient-text">
@@ -193,10 +207,10 @@ const StakesSection: React.FC = () => {
                                         {stake.cardDescription}
                                     </p>
                                 </div>
-                            </button>
+                            </div>
                             <div
                                 id={`stake-details-mobile-${index}`}
-                                className={`grid transition-all duration-500 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
+                                className={`grid transition-all duration-500 ease-in-out ${isActive ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
                             >
                             <div className="overflow-hidden">
                                 <div className={`bg-gray-100/70 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-gray-200 text-left`}>
