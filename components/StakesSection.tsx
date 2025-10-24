@@ -106,7 +106,6 @@ const StakesSection: React.FC = () => {
                       const ExistingCardContent = (
                           <div className={`stake-content-card stake-content-card--${index + 1} bg-white p-6 rounded-xl shadow-lg border border-gray-100 ${isRight ? 'text-left' : 'text-right'}`}>
                               <div className={`flex items-center gap-4 ${isRight ? 'flex-row' : 'flex-row-reverse'}`}>
-                                  <img src={stake.cardIcon} alt={`${stake.keyword} icon`} className="w-10 h-10 object-contain flex-shrink-0" />
                                   <div className="flex-1">
                                       <h3 className={`stake-title stake-title--${index + 1} text-lg font-bold gradient-text`}>{stake.keyword}</h3>
                                       <p className={`text-gray-700 text-sm leading-relaxed mt-1 max-w-sm ${!isRight ? 'ml-auto' : ''}`}>
@@ -120,6 +119,7 @@ const StakesSection: React.FC = () => {
                       const NewCardContent = (
                           <div className={`stake-content-card stake-content-card--${index + 1} bg-gray-100/70 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-gray-200 text-left`}>
                               <div className="flex flex-col items-start text-left">
+                                  <img src={stake.newCard.icon} alt={`${stake.newCard.title} icon`} className="w-8 h-8 object-contain mb-3" />
                                   <h4 className="text-base font-bold gradient-text">{stake.newCard.title}</h4>
                                   <p className="text-gray-800 text-xs leading-relaxed mt-2">{stake.newCard.description}</p>
                                   <ul className="text-left text-xs text-gray-600 mt-3 space-y-1.5 self-start w-full">
@@ -166,12 +166,9 @@ const StakesSection: React.FC = () => {
                       <div className="space-y-4">
                         <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 h-full">
                             <div className="flex flex-col items-center justify-start text-center">
-                                <div className="flex items-center justify-center gap-2">
-                                  <img src={stake.cardIcon} alt={`${stake.keyword} icon`} className="w-8 h-8 object-contain" />
-                                  <h3 className="text-base font-bold gradient-text">
-                                      {stake.keyword}
-                                  </h3>
-                                </div>
+                                <h3 className="text-base font-bold gradient-text">
+                                    {stake.keyword}
+                                </h3>
                                 <div className="w-full h-px bg-gradient-to-r from-transparent via-[#6D0037] to-transparent my-3"></div>
                                 <p className="text-gray-800 leading-relaxed text-sm">
                                     {stake.cardDescription}
@@ -180,6 +177,7 @@ const StakesSection: React.FC = () => {
                         </div>
                         <div className={`bg-gray-100/70 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-gray-200 text-left`}>
                             <div className="flex flex-col items-start text-left">
+                                <img src={stake.newCard.icon} alt={`${stake.newCard.title} icon`} className="w-8 h-8 object-contain mb-3" />
                                 <h4 className="text-base font-bold gradient-text">{stake.newCard.title}</h4>
                                 <p className="text-gray-800 text-xs leading-relaxed mt-2">{stake.newCard.description}</p>
                                 <ul className="text-left text-xs text-gray-600 mt-3 space-y-1.5 self-start w-full">
