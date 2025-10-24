@@ -73,17 +73,29 @@ const PlusIcon: React.FC<{ className?: string }> = ({ className }) => (
 
 const StakesSection: React.FC = () => {
     const [activeStake, setActiveStake] = useState<number>(0);
+    const intervalRef = React.useRef<number | null>(null);
+
+    const resetInterval = () => {
+        if (intervalRef.current) {
+            clearInterval(intervalRef.current);
+        }
+        intervalRef.current = window.setInterval(() => {
+            setActiveStake(prevActiveStake => (prevActiveStake + 1) % stakes.length);
+        }, 8000);
+    };
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            setActiveStake(prevActiveStake => (prevActiveStake + 1) % stakes.length);
-        }, 8000); // Cycle every 8 seconds
-
-        return () => clearInterval(interval);
-    }, [activeStake]);
+        resetInterval();
+        return () => {
+            if (intervalRef.current) {
+                clearInterval(intervalRef.current);
+            }
+        };
+    }, []);
 
     const handleStakeClick = (index: number) => {
         setActiveStake(index);
+        resetInterval();
     };
 
   return (
@@ -124,7 +136,7 @@ const StakesSection: React.FC = () => {
                             onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleStakeClick(index); }}
                             role="button"
                             tabIndex={0}
-                            className={`w-full bg-white p-6 rounded-xl shadow-lg border border-gray-100 transition-all duration-300 cursor-pointer ${isActive ? 'scale-105 shadow-xl border-gray-200' : 'hover:scale-102 hover:shadow-lg'}`}
+                            className={`w-full bg-white p-6 rounded-xl shadow-lg border border-gray-100 transition-all duration-300 cursor-pointer flex-grow flex flex-col justify-center ${isActive ? 'scale-105 shadow-xl border-gray-200' : 'hover:scale-102 hover:shadow-lg'}`}
                         >
                             <div className={`flex items-center gap-4 ${isRight ? 'flex-row text-left' : 'flex-row-reverse text-right'}`}>
                                 <div className="flex-1">
@@ -143,9 +155,9 @@ const StakesSection: React.FC = () => {
                     const DetailCard = (
                         <div
                             id={`stake-details-${index}`}
-                            className={`transition-all duration-500 ease-in-out ${isActive ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 -translate-y-2 scale-95 pointer-events-none'}`}
+                            className={`transition-all duration-500 ease-in-out flex-grow flex ${isActive ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 -translate-y-2 scale-95 pointer-events-none'}`}
                         >
-                           <div className={`bg-gray-100/70 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-gray-200 text-left`}>
+                           <div className={`bg-gray-100/70 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-gray-200 text-left w-full flex flex-col justify-center`}>
                                 <div className="flex flex-col items-start text-left">
                                     <img src={stake.newCard.icon} alt={`${stake.newCard.title} icon`} className="w-8 h-8 object-contain mb-3" />
                                     <h4 className="text-base font-bold gradient-text">{stake.newCard.title}</h4>
@@ -167,11 +179,11 @@ const StakesSection: React.FC = () => {
                       <div key={index} className="relative">
                         <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-5 h-5 bg-gray-300 rounded-full border-4 border-gray-50 z-10"></div>
                         
-                        <div className="flex justify-between items-center">
-                            <div className="w-[calc(50%-2.5rem)]">
+                        <div className="flex justify-between items-stretch">
+                            <div className="w-[calc(50%-2.5rem)] flex">
                                 {isRight ? DetailCard : KeywordCard}
                             </div>
-                            <div className="w-[calc(50%-2.5rem)]">
+                            <div className="w-[calc(50%-2.5rem)] flex">
                                 {isRight ? KeywordCard : DetailCard}
                             </div>
                         </div>
