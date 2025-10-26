@@ -128,7 +128,8 @@ const StakesSection: React.FC = () => {
                 <div className="space-y-8">
                   {stakes.map((stake, index) => {
                     const isActive = activeStake === index;
-                    const isRight = index % 2 !== 0;
+                    const isCardRight = index % 2 !== 0;
+                    const isContentRight = index % 2 === 0;
 
                     const KeywordCard = (
                         <div
@@ -136,12 +137,13 @@ const StakesSection: React.FC = () => {
                             onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleStakeClick(index); }}
                             role="button"
                             tabIndex={0}
-                            className={`w-full bg-white p-6 rounded-xl shadow-lg border border-gray-100 transition-all duration-300 cursor-pointer flex-grow flex flex-col justify-center ${isActive ? 'scale-105 shadow-xl border-gray-200' : 'hover:scale-102 hover:shadow-lg'}`}
+                            className={`w-full bg-white p-4 rounded-xl shadow-lg border border-gray-100 transition-all duration-300 cursor-pointer flex-grow flex flex-col justify-start ${isActive ? 'scale-105 shadow-xl border-gray-200' : 'hover:scale-102 hover:shadow-lg'}`}
                         >
-                            <div className={`flex items-center gap-4 ${isRight ? 'flex-row text-left' : 'flex-row-reverse text-right'}`}>
-                                <div className="flex-1">
-                                    <h3 className={`text-lg font-bold gradient-text`}>{stake.keyword}</h3>
-                                    <p className={`text-gray-700 text-sm leading-relaxed mt-1 max-w-sm ${!isRight ? 'ml-auto' : ''}`}>
+                            <div className={`flex items-start gap-3 ${isContentRight ? 'flex-row-reverse' : 'flex-row'}`}>
+                                <div className={`flex-1 flex flex-col ${isContentRight ? 'items-end' : 'items-start'}`}>
+                                    <img src={stake.newCard.icon} alt="" className={`w-8 h-8 object-contain mb-2`} />
+                                    <h3 className={`text-lg font-bold gradient-text ${isContentRight ? 'text-right' : 'text-left'}`}>{stake.keyword}</h3>
+                                    <p className={`text-gray-700 text-sm leading-relaxed mt-2 max-w-sm ${isContentRight ? 'text-right' : 'text-left'}`}>
                                         {stake.cardDescription}
                                     </p>
                                 </div>
@@ -179,12 +181,12 @@ const StakesSection: React.FC = () => {
                       <div key={index} className="relative">
                         <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-5 h-5 bg-gray-300 rounded-full border-4 border-gray-50 z-10"></div>
                         
-                        <div className="flex justify-between items-stretch">
+                        <div className="flex justify-between">
                             <div className="w-[calc(50%-2.5rem)] flex">
-                                {isRight ? DetailCard : KeywordCard}
+                                {isCardRight ? DetailCard : KeywordCard}
                             </div>
                             <div className="w-[calc(50%-2.5rem)] flex">
-                                {isRight ? KeywordCard : DetailCard}
+                                {isCardRight ? KeywordCard : DetailCard}
                             </div>
                         </div>
                       </div>
@@ -211,6 +213,7 @@ const StakesSection: React.FC = () => {
                                 className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 h-full w-full cursor-pointer hover:shadow-xl hover:scale-102 transition-all duration-300"
                             >
                                 <div className="flex flex-col items-center justify-start text-center">
+                                    <img src={stake.newCard.icon} alt="" className="w-10 h-10 object-contain mb-3" />
                                     <h3 className="text-base font-bold gradient-text">
                                         {stake.keyword}
                                     </h3>
