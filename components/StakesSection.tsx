@@ -137,11 +137,10 @@ const StakesSection: React.FC = () => {
                             onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleStakeClick(index); }}
                             role="button"
                             tabIndex={0}
-                            className={`w-full bg-white p-4 rounded-xl shadow-lg border border-gray-100 transition-all duration-300 cursor-pointer flex-grow flex flex-col justify-start ${isActive ? 'scale-105 shadow-xl border-gray-200' : 'hover:scale-102 hover:shadow-lg'}`}
+                            className={`w-full bg-white px-10 pt-16 pb-10 rounded-xl shadow-lg border border-gray-100 transition-all duration-300 cursor-pointer flex-grow flex flex-col justify-start ${isActive ? 'scale-105 shadow-xl border-gray-200' : 'hover:scale-102 hover:shadow-lg'}`}
                         >
                             <div className={`flex items-start gap-3 ${isContentRight ? 'flex-row-reverse' : 'flex-row'}`}>
                                 <div className={`flex-1 flex flex-col ${isContentRight ? 'items-end' : 'items-start'}`}>
-                                    <img src={stake.newCard.icon} alt="" className={`w-8 h-8 object-contain mb-2`} />
                                     <h3 className={`text-lg font-bold gradient-text ${isContentRight ? 'text-right' : 'text-left'}`}>{stake.keyword}</h3>
                                     <p className={`text-gray-700 text-sm leading-relaxed mt-2 max-w-sm ${isContentRight ? 'text-right' : 'text-left'}`}>
                                         {stake.cardDescription}
@@ -159,7 +158,7 @@ const StakesSection: React.FC = () => {
                             id={`stake-details-${index}`}
                             className={`transition-all duration-500 ease-in-out flex-grow flex ${isActive ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 -translate-y-2 scale-95 pointer-events-none'}`}
                         >
-                           <div className={`bg-gray-100/70 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-gray-200 text-left w-full flex flex-col justify-center`}>
+                           <div className={`bg-[#EBE5F0] p-4 rounded-xl shadow-lg border border-violet-100 text-left w-full flex flex-col justify-center`}>
                                 <div className="flex flex-col items-start text-left">
                                     <img src={stake.newCard.icon} alt={`${stake.newCard.title} icon`} className="w-8 h-8 object-contain mb-3" />
                                     <h4 className="text-base font-bold gradient-text">{stake.newCard.title}</h4>
@@ -210,10 +209,9 @@ const StakesSection: React.FC = () => {
                                 onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleStakeClick(index); }}
                                 role="button"
                                 tabIndex={0}
-                                className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 h-full w-full cursor-pointer hover:shadow-xl hover:scale-102 transition-all duration-300"
+                                className="bg-white px-6 pt-8 pb-6 rounded-xl shadow-lg border border-gray-100 h-full w-full cursor-pointer hover:shadow-xl hover:scale-102 transition-all duration-300"
                             >
                                 <div className="flex flex-col items-center justify-start text-center">
-                                    <img src={stake.newCard.icon} alt="" className="w-10 h-10 object-contain mb-3" />
                                     <h3 className="text-base font-bold gradient-text">
                                         {stake.keyword}
                                     </h3>
@@ -228,7 +226,7 @@ const StakesSection: React.FC = () => {
                                 className={`grid transition-all duration-500 ease-in-out ${isActive ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
                             >
                             <div className="overflow-hidden">
-                                <div className={`bg-gray-100/70 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-gray-200 text-left`}>
+                                <div className={`bg-[#EBE5F0] p-4 rounded-xl shadow-lg border border-violet-100 text-left`}>
                                     <div className="flex flex-col items-start text-left">
                                         <img src={stake.newCard.icon} alt={`${stake.newCard.title} icon`} className="w-8 h-8 object-contain mb-3" />
                                         <h4 className="text-base font-bold gradient-text">{stake.newCard.title}</h4>
