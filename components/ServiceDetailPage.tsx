@@ -25,24 +25,24 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
   return (
     <div className="bg-white text-gray-800">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#27013D] to-gray-900 text-white flex items-center overflow-hidden min-h-[50vh] pt-24 pb-12 md:pt-36 md:pb-20">
+      <section className="relative bg-gradient-to-br from-[#27013D] to-gray-900 text-white flex items-center overflow-hidden min-h-[50vh] pt-28 pb-12 md:pt-36 md:pb-20">
         <div className="absolute inset-0 z-0 opacity-40">
           <HeroAnimation color="grey" />
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-7xl text-center md:text-left">
+          <div className="max-w-7xl text-left">
             <Animate variant="pop">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold text-white leading-tight tracking-tight">
+              <h1 className="text-4xl sm:text-5xl xl:text-6xl font-extrabold text-white leading-tight tracking-tight">
                 <span>{details.title}</span>
               </h1>
             </Animate>
             <Animate variant="pop" delay={200}>
-              <p className="mt-6 text-base md:text-lg text-gray-200 max-w-5xl mx-auto md:mx-0">
+              <p className="mt-6 text-base md:text-lg text-gray-200 max-w-5xl">
                 {details.subtitle}
               </p>
             </Animate>
             <Animate variant="pop" delay={400}>
-              <div className="mt-8 flex justify-center md:justify-start">
+              <div className="mt-8 flex justify-start">
                 <a
                   href="https://calendly.com/contact-birdandco/30min"
                   target="_blank"
