@@ -53,13 +53,13 @@ const Hero: React.FC = () => {
               </h1>
             </Animate>
             <Animate variant="pop" delay={200}>
-              <p className="mt-6 text-base md:text-lg text-gray-800 max-w-xl mx-auto md:mx-0">
+              <p className="mt-4 md:mt-6 text-base md:text-lg text-gray-800 max-w-xl mx-auto md:mx-0">
                 Sollicitez une <span className="gradient-text font-semibold">ressource experte, ingénieuse et accessible,</span><br />
                 dédiée à la réussite de vos ambitions
               </p>
             </Animate>
             <Animate variant="pop" delay={400}>
-              <div className="mt-10 flex justify-center md:justify-start">
+              <div className="mt-8 md:mt-10 flex justify-center md:justify-start">
                 <a
                   href="https://calendly.com/contact-birdandco/30min"
                   target="_blank"

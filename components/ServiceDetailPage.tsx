@@ -25,24 +25,24 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
   return (
     <div className="bg-white text-gray-800">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#27013D] to-gray-900 text-white flex items-center overflow-hidden min-h-[50vh] pt-28 pb-12 md:pt-36 md:pb-20">
+      <section className="relative bg-gradient-to-br from-[#27013D] to-gray-900 text-white flex items-center overflow-hidden min-h-[60vh] sm:min-h-[50vh] pt-24 pb-12 md:pt-36 md:pb-20">
         <div className="absolute inset-0 z-0 opacity-40">
           <HeroAnimation color="grey" />
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-7xl text-left">
+          <div className="max-w-7xl text-center md:text-left">
             <Animate variant="pop">
-              <h1 className="text-4xl sm:text-5xl xl:text-6xl font-extrabold text-white leading-tight tracking-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold text-white leading-tight tracking-tight">
                 <span>{details.title}</span>
               </h1>
             </Animate>
             <Animate variant="pop" delay={200}>
-              <p className="mt-6 text-base md:text-lg text-gray-200 max-w-5xl">
+              <p className="mt-6 text-base md:text-lg text-gray-200 max-w-5xl mx-auto md:mx-0">
                 {details.subtitle}
               </p>
             </Animate>
             <Animate variant="pop" delay={400}>
-              <div className="mt-8 flex justify-start">
+              <div className="mt-8 flex justify-center md:justify-start">
                 <a
                   href="https://calendly.com/contact-birdandco/30min"
                   target="_blank"
@@ -79,11 +79,11 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                 </Animate>
             </div>
             {details.diagnostic.content && (
-              <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 max-w-7xl mx-auto">
-                  <Animate variant={'pop'} delay={300} className="lg:col-span-3 aspect-[4/3] lg:aspect-auto relative lg:-top-10">
+              <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 max-w-7xl mx-auto lg:items-center">
+                  <Animate variant={'pop'} delay={300} className="lg:col-span-3 aspect-[4/3] lg:aspect-auto">
                       {details.diagnostic.content.visual}
                   </Animate>
-                  <Animate variant={'pop'} delay={200} className="lg:col-span-2 relative lg:-top-10 lg:pt-6">
+                  <Animate variant={'pop'} delay={200} className="lg:col-span-2">
                       <div className="text-left mt-5">
                         <h3 className="text-lg font-bold text-[#27013D] mb-4">{details.diagnostic.content.title}</h3>
                         <div className="text-gray-800 leading-relaxed text-base">

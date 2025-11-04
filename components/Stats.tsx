@@ -145,7 +145,7 @@ const stats = [
 
 const Stats: React.FC = () => {
   return (
-    <section className="bg-white min-h-screen flex flex-col justify-center py-16 overflow-x-hidden">
+    <section className="bg-white min-h-screen flex flex-col justify-center py-12 md:py-16 overflow-x-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="mb-12">
           <Animate variant="pop">
@@ -166,7 +166,7 @@ const Stats: React.FC = () => {
             const isCountUp = match && match[2] === '+';
             const isScrollUp = !isCountUp && /^\d+$/.test(stat.value);
 
-            const pClassName = 'text-5xl lg:text-6xl font-extrabold text-[#27013D] tracking-tighter';
+            const pClassName = 'text-5xl md:text-6xl font-extrabold text-[#27013D] tracking-tighter';
             
             return (
               <Animate key={index} variant="pop">

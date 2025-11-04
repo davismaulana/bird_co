@@ -159,11 +159,11 @@ const App: React.FC = () => {
           <Team />
           <section id="citation">
             <div className="bg-white min-h-screen grid">
-              <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
-                <Animate variant="pop" className="relative h-[300px] sm:h-[350px] lg:h-full lg:order-last">
+              <div className="grid grid-cols-1 md:grid-cols-2 items-center">
+                <Animate variant="pop" className="relative h-[300px] sm:h-[350px] md:h-full md:order-last">
                   <HeroAnimation />
                 </Animate>
-                <div className="lg:order-first flex items-center">
+                <div className="md:order-first flex items-center">
                   <div className="w-full px-6 sm:px-8 md:px-14 lg:px-20 py-6 flex flex-col justify-center">
                     <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
                       <Animate variant="pop" delay={100}>

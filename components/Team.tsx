@@ -9,7 +9,7 @@ const Team: React.FC = () => {
   return (
     <section
       id="notre-equipe"
-      className="relative text-white py-16"
+      className="relative text-white py-12 md:py-16"
     >
       <div 
         className="parallax-bg" 

@@ -4,7 +4,7 @@ import { services, ArrowRightIcon } from '../constants';
 
 const ServicesOverview: React.FC = () => {
   return (
-    <section id="solutions" className="bg-gradient-to-b from-[#332932] to-[#4f3e69] min-h-screen flex flex-col justify-center py-16">
+    <section id="solutions" className="bg-gradient-to-b from-[#332932] to-[#4f3e69] min-h-screen flex flex-col justify-center py-12 md:py-16">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <Animate variant="pop">
@@ -18,7 +18,7 @@ const ServicesOverview: React.FC = () => {
             </h2>
           </Animate>
           <Animate variant="pop" delay={200}>
-            <p className="text-lg text-gray-300 mt-4 max-w-3xl mx-auto">
+            <p className="text-base md:text-lg text-gray-300 mt-4 max-w-3xl mx-auto">
               Dans la <strong className="text-white">gestion quotidienne</strong> comme dans les <strong className="text-white">processus transactionnels</strong>
             </p>
           </Animate>
