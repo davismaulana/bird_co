@@ -18,7 +18,7 @@ const stakes = [
     }
   },
   {
-    keyword: "Pérenniser",
+    keyword: "Perenniser",
     cardDescription: "Assurer la continuité et la résilience de votre modèle économique en optimisant vos processus et en sécurisant votre gouvernance financière pour un avenir serein.",
     cardIcon: "https://images2.imgbox.com/d4/4b/mBi6r288_o.png",
     newCard: {
@@ -33,7 +33,7 @@ const stakes = [
     }
   },
   {
-    keyword: "Résister",
+    keyword: "Resister",
     cardDescription: "Renforcer votre capacité à naviguer l'incertitude, en identifiant les risques et déployant des stratégies agiles pour transformer la turbulence en opportunités.",
     cardIcon: "https://images2.imgbox.com/30/ad/ToMA2afU_o.png",
     newCard: {
