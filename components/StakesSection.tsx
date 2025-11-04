@@ -93,17 +93,17 @@ const StakesSection: React.FC = () => {
             <Animate variant="pop">
                 <div className="bg-white rounded-xl shadow-lg border border-gray-200">
                     {/* Tabs */}
-                    <div className="flex flex-col sm:flex-row border-b border-gray-200 px-2 sm:px-4">
+                    <div className="flex flex-col sm:flex-row border-b border-gray-200 bg-gray-100 rounded-t-xl overflow-hidden">
                         {stakes.map((stake, index) => (
                             <button
                                 key={index}
                                 role="tab"
                                 aria-selected={activeStake === index}
                                 onClick={() => setActiveStake(index)}
-                                className={`flex-1 sm:flex-auto flex items-center justify-center gap-3 px-1 sm:px-4 py-4 text-sm font-semibold transition-all duration-300 border-b-2 -mb-px focus:outline-none focus:ring-2 focus:ring-[#27013D] focus:ring-offset-2 rounded-t-md
+                                className={`flex-1 sm:flex-auto flex items-center justify-center gap-3 px-1 sm:px-4 py-4 text-sm font-semibold transition-all duration-300 border-b-2 -mb-px focus:outline-none 
                                     ${activeStake === index
-                                        ? 'border-[#27013D] text-[#27013D]'
-                                        : 'border-transparent text-gray-500 hover:text-gray-800 hover:bg-gray-100'
+                                        ? 'border-[#27013D] text-[#27013D] bg-white'
+                                        : 'border-transparent text-gray-500 bg-gray-100 hover:text-gray-800 hover:bg-gray-200'
                                     }`}
                             >
                                 <img src={stake.cardIcon} alt="" className="w-6 h-6 flex-shrink-0" />
