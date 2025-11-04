@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Animate from './Animate';
 
 const stakes = [
@@ -64,42 +64,12 @@ const stakes = [
   },
 ];
 
-const PlusIcon: React.FC<{ className?: string }> = ({ className }) => (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-    </svg>
-);
-
 
 const StakesSection: React.FC = () => {
     const [activeStake, setActiveStake] = useState<number>(0);
-    const intervalRef = React.useRef<number | null>(null);
-
-    const resetInterval = () => {
-        if (intervalRef.current) {
-            clearInterval(intervalRef.current);
-        }
-        intervalRef.current = window.setInterval(() => {
-            setActiveStake(prevActiveStake => (prevActiveStake + 1) % stakes.length);
-        }, 8000);
-    };
-
-    useEffect(() => {
-        resetInterval();
-        return () => {
-            if (intervalRef.current) {
-                clearInterval(intervalRef.current);
-            }
-        };
-    }, []);
-
-    const handleStakeClick = (index: number) => {
-        setActiveStake(index);
-        resetInterval();
-    };
 
   return (
-    <section id="vos-enjeux" className="bg-gray-50 flex flex-col justify-center py-16">
+    <section id="vos-enjeux" className="bg-gray-50 flex flex-col justify-center py-16 min-h-screen">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <Animate variant="pop">
@@ -119,136 +89,64 @@ const StakesSection: React.FC = () => {
           </Animate>
         </div>
         
-        <div className="w-full max-w-7xl mx-auto mt-12">
-            {/* Desktop Vertical Timeline */}
-            <Animate variant="pop" className="hidden md:block">
-              <div className="relative">
-                <div className="absolute top-0 bottom-0 left-1/2 w-0.5 -translate-x-1/2 bg-gray-200"></div>
-
-                <div className="space-y-8">
-                  {stakes.map((stake, index) => {
-                    const isActive = activeStake === index;
-                    const isCardRight = index % 2 !== 0;
-                    const isContentRight = index % 2 === 0;
-
-                    const KeywordCard = (
-                        <div
-                            onClick={() => handleStakeClick(index)}
-                            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleStakeClick(index); }}
-                            role="button"
-                            tabIndex={0}
-                            className={`w-full bg-white px-10 pt-16 pb-10 rounded-xl shadow-lg border border-gray-100 transition-all duration-300 cursor-pointer flex-grow flex flex-col justify-start ${isActive ? 'scale-105 shadow-xl border-gray-200' : 'hover:scale-102 hover:shadow-lg'}`}
-                        >
-                            <div className={`flex items-start gap-3 ${isContentRight ? 'flex-row-reverse' : 'flex-row'}`}>
-                                <div className={`flex-1 flex flex-col ${isContentRight ? 'items-end' : 'items-start'}`}>
-                                    <h3 className={`text-lg font-bold gradient-text ${isContentRight ? 'text-right' : 'text-left'}`}>{stake.keyword}</h3>
-                                    <p className={`text-gray-700 text-sm leading-relaxed mt-2 max-w-sm ${isContentRight ? 'text-right' : 'text-left'}`}>
-                                        {stake.cardDescription}
-                                    </p>
-                                </div>
-                                <div className={`flex-shrink-0 text-[#27013D] p-2 rounded-full transition-colors ${isActive ? 'bg-gray-100' : ''}`}>
-                                    <PlusIcon className={`w-6 h-6 transition-transform duration-300 ${isActive ? 'rotate-45' : ''}`} />
-                                </div>
-                            </div>
-                        </div>
-                    );
-
-                    const DetailCard = (
-                        <div
-                            id={`stake-details-${index}`}
-                            className={`transition-all duration-500 ease-in-out flex-grow flex ${isActive ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 -translate-y-2 scale-95 pointer-events-none'}`}
-                        >
-                           <div className={`bg-[#EBE5F0] p-4 rounded-xl shadow-lg border border-violet-100 text-left w-full flex flex-col justify-center`}>
-                                <div className="flex flex-col items-start text-left">
-                                    <img src={stake.newCard.icon} alt={`${stake.newCard.title} icon`} className="w-8 h-8 object-contain mb-3" />
-                                    <h4 className="text-base font-bold gradient-text">{stake.newCard.title}</h4>
-                                    <p className="text-gray-800 text-xs leading-relaxed mt-2">{stake.newCard.description}</p>
-                                    <ul className="text-left text-xs text-gray-600 mt-3 space-y-1.5 self-start w-full">
-                                        {stake.newCard.details.map((detail, i) => (
-                                            <li key={i} className="flex items-start">
-                                                <span className="mr-2 mt-0.5 text-[#6D0037] font-bold">&#8226;</span>
-                                                <span className="flex-1">{detail}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    );
-
-                    return (
-                      <div key={index} className="relative">
-                        <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-5 h-5 bg-gray-300 rounded-full border-4 border-gray-50 z-10"></div>
-                        
-                        <div className="flex justify-between">
-                            <div className="w-[calc(50%-2.5rem)] flex">
-                                {isCardRight ? DetailCard : KeywordCard}
-                            </div>
-                            <div className="w-[calc(50%-2.5rem)] flex">
-                                {isCardRight ? KeywordCard : DetailCard}
-                            </div>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </Animate>
-
-
-             {/* Mobile Grid */}
-            <div className="block md:hidden">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                {stakes.map((stake, index) => {
-                    const isActive = activeStake === index;
-                    return (
-                        <Animate key={index} variant="pop">
-                        <div className="space-y-4">
-                            <div
-                                onClick={() => handleStakeClick(index)}
-                                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleStakeClick(index); }}
-                                role="button"
-                                tabIndex={0}
-                                className="bg-white px-6 pt-8 pb-6 rounded-xl shadow-lg border border-gray-100 h-full w-full cursor-pointer hover:shadow-xl hover:scale-102 transition-all duration-300"
+        <div className="w-full max-w-5xl mx-auto mt-12">
+            <Animate variant="pop">
+                <div className="bg-white rounded-xl shadow-lg border border-gray-200">
+                    {/* Tabs */}
+                    <div className="flex flex-col sm:flex-row border-b border-gray-200 px-2 sm:px-4">
+                        {stakes.map((stake, index) => (
+                            <button
+                                key={index}
+                                role="tab"
+                                aria-selected={activeStake === index}
+                                onClick={() => setActiveStake(index)}
+                                className={`flex-1 sm:flex-auto flex items-center justify-center gap-3 px-1 sm:px-4 py-4 text-sm font-semibold transition-all duration-300 border-b-2 -mb-px focus:outline-none focus:ring-2 focus:ring-[#27013D] focus:ring-offset-2 rounded-t-md
+                                    ${activeStake === index
+                                        ? 'border-[#27013D] text-[#27013D]'
+                                        : 'border-transparent text-gray-500 hover:text-gray-800 hover:bg-gray-100'
+                                    }`}
                             >
-                                <div className="flex flex-col items-center justify-start text-center">
-                                    <h3 className="text-base font-bold gradient-text">
-                                        {stake.keyword}
-                                    </h3>
-                                    <div className="w-full h-px bg-gradient-to-r from-transparent via-[#6D0037] to-transparent my-3"></div>
-                                    <p className="text-gray-800 leading-relaxed text-sm">
-                                        {stake.cardDescription}
-                                    </p>
-                                </div>
-                            </div>
-                            <div
-                                id={`stake-details-mobile-${index}`}
-                                className={`grid transition-all duration-500 ease-in-out ${isActive ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
-                            >
-                            <div className="overflow-hidden">
-                                <div className={`bg-[#EBE5F0] p-4 rounded-xl shadow-lg border border-violet-100 text-left`}>
-                                    <div className="flex flex-col items-start text-left">
-                                        <img src={stake.newCard.icon} alt={`${stake.newCard.title} icon`} className="w-8 h-8 object-contain mb-3" />
-                                        <h4 className="text-base font-bold gradient-text">{stake.newCard.title}</h4>
-                                        <p className="text-gray-800 text-xs leading-relaxed mt-2">{stake.newCard.description}</p>
-                                        <ul className="text-left text-xs text-gray-600 mt-3 space-y-1.5 self-start w-full">
-                                            {stake.newCard.details.map((detail, i) => (
-                                                <li key={i} className="flex items-start">
-                                                    <span className="mr-2 mt-0.5 text-[#6D0037] font-bold">&#8226;</span>
-                                                    <span className="flex-1">{detail}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
+                                <img src={stake.cardIcon} alt="" className="w-6 h-6 flex-shrink-0" />
+                                <span>{stake.keyword}</span>
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* Tab Content */}
+                    <div className="p-6 sm:p-8">
+                        {stakes.map((stake, index) => {
+                            const isActive = activeStake === index;
+                            return (
+                                <div
+                                    key={index}
+                                    role="tabpanel"
+                                    aria-hidden={!isActive}
+                                    className={`${isActive ? 'block animate-fade-in-pop' : 'hidden'}`}
+                                    style={{ animationDuration: '500ms' }}
+                                >
+                                    <div className="text-left w-full flex flex-col md:flex-row items-start gap-6">
+                                        <div className="flex-shrink-0">
+                                            <img src={stake.newCard.icon} alt={`${stake.newCard.title} icon`} className="w-12 h-12 object-contain" />
+                                        </div>
+                                        <div className="flex-1">
+                                            <h4 className="text-xl font-bold gradient-text">{stake.newCard.title}</h4>
+                                            <p className="text-gray-800 text-sm leading-relaxed mt-3">{stake.newCard.description}</p>
+                                            <ul className="text-left text-sm text-gray-700 mt-4 space-y-2">
+                                                {stake.newCard.details.map((detail, i) => (
+                                                    <li key={i} className="flex items-start">
+                                                        <span className="mr-3 mt-1 text-[#6D0037] font-bold">&#8226;</span>
+                                                        <span className="flex-1">{detail}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            </div>
-                        </div>
-                        </Animate>
-                    );
-                })}
-              </div>
-            </div>
+                            );
+                        })}
+                    </div>
+                </div>
+            </Animate>
         </div>
       </div>
     </section>
