@@ -165,7 +165,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
   noAspectRatio = false,
 }) => {
   // Shared utilities
-  const cols = "grid grid-cols-[minmax(80px,1.5fr)_repeat(5,minmax(52px,1fr))]";
+  const cols = "grid grid-cols-[minmax(70px,1.5fr)_repeat(5,minmax(46px,1fr))] sm:grid-cols-[minmax(80px,1.5fr)_repeat(5,minmax(52px,1fr))]";
   const num = "text-right tabular-nums"; // if you don't have the tabular-nums plugin, swap to 'font-mono text-right'
   const cell = "px-2";
   const vcol = "border-l border-slate-100 pl-2"; // visual column dividers
@@ -205,7 +205,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
 
       <div className="flex-grow space-y-1 text-[10px] sm:text-[11px] leading-none overflow-x-auto overflow-y-auto">
         {/* -------- P&L -------- */}
-        <div className="min-w-[420px] sm:min-w-[520px]">
+        <div className="min-w-[340px] sm:min-w-[520px]">
           {/* Years header */}
           <div className={`${cols} text-slate-600 font-semibold px-1 mb-1 py-0.5`}>
             <span className="col-span-1">P&amp;L</span>
@@ -294,7 +294,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
         </div>
 
         {/* -------- KPIs -------- */}
-        <div className="min-w-[420px] sm:min-w-[520px]">
+        <div className="min-w-[340px] sm:min-w-[520px]">
           <div className="px-1 py-0.5 mb-1 font-semibold text-slate-600">KPIs</div>
           <div className="bg-slate-50 rounded-lg p-1.5 border border-slate-100 text-[9px] sm:text-[10px]">
             <Row>
@@ -345,7 +345,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
         </div>
 
         {/* -------- Cash Flow -------- */}
-        <div className="min-w-[420px] sm:min-w-[520px]">
+        <div className="min-w-[340px] sm:min-w-[520px]">
           <div className={`${cols} text-slate-600 font-semibold px-1 mb-1 py-0.5`}>
             <span className="col-span-1">Cash Flow</span>
             <span className={`${num}`}>2025</span>
@@ -447,11 +447,11 @@ export const KpiDashboardMockup: React.FC<{ theme?: string, noAspectRatio?: bool
         </div>
         <div className="bg-gray-50 rounded-lg p-2 border border-gray-100 col-span-1 row-span-1 anim-child" style={{'--i': 2} as React.CSSProperties}>
           <p className="text-[11px] sm:text-xs text-gray-700">Taux de Churn</p>
-          <p className="font-bold text-gray-800 text-base sm:text-lg">2.1% <span className="text-green-500 text-sm">↓</span></p>
+          <p className="font-bold text-gray-800 text-sm sm:text-lg">2.1% <span className="text-green-500 text-xs sm:text-sm">↓</span></p>
         </div>
          <div className="bg-gray-50 rounded-lg p-2 border border-gray-100 col-span-1 row-span-1 anim-child" style={{'--i': 3} as React.CSSProperties}>
           <p className="text-[11px] sm:text-xs text-gray-700">CAC</p>
-          <p className="font-bold text-[#27013D] text-base sm:text-lg">1.2k€ <span className="text-red-500 text-sm">↑</span></p>
+          <p className="font-bold text-[#27013D] text-sm sm:text-lg">1.2k€ <span className="text-red-500 text-xs sm:text-sm">↑</span></p>
         </div>
       </div>
     </div>
