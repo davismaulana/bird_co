@@ -54,13 +54,6 @@ const PillarsSection: React.FC = () => {
                       {/* The static line connecting the dots */}
                       <div className="absolute top-1/2 left-[12.5%] right-[12.5%] h-px bg-gray-300 transform -translate-y-1/2"></div>
                       
-                      {/* Simplified container for the running dot */}
-                      <div className="absolute top-0 left-0 right-0 h-full pointer-events-none">
-                        <div className="running-dot-wrapper">
-                            <div className="running-dot-indicator"></div>
-                        </div>
-                      </div>
-
                       {/* The static dots and content cards */}
                       <div className="relative flex">
                         {pillars.map((pillar, index) => {
