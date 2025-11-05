@@ -33,7 +33,7 @@ const App: React.FC = () => {
   useEffect(() => {
     if (isLoading) return; // Don't setup observers until content is visible
 
-    const revealEls = Array.from(document.querySelectorAll('.reveal'));
+    const revealEls = Array.from(document.querySelectorAll('.reveal:not(.reveal-custom-logic)'));
 
     if (!('IntersectionObserver' in window) || revealEls.length === 0) {
       revealEls.forEach(el => el.classList.add('is-visible'));
@@ -48,14 +48,21 @@ const App: React.FC = () => {
 
     const io = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target as HTMLElement;
+        const el = entry.target as HTMLElement;
+        const isRepeating = el.hasAttribute('data-reveal-repeat');
 
+        if (entry.isIntersecting) {
           const delay = el.getAttribute('data-reveal-delay');
           if (delay) el.style.transitionDelay = delay;
 
           el.classList.add('is-visible');
-          obs.unobserve(el);
+          if (!isRepeating) {
+            obs.unobserve(el);
+          }
+        } else {
+          if (isRepeating) {
+            el.classList.remove('is-visible');
+          }
         }
       });
     }, { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
