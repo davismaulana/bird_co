@@ -3,33 +3,33 @@ import Animate from './Animate';
 import { CheckmarkCircleIcon, KpiDashboardMockup, FinancialReportMockup } from '../constants';
 
 const DueDiligenceVisual: React.FC = () => (
-  <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
+  <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
     <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
       <h3 className="font-bold text-gray-900 text-xs sm:text-sm">Due Diligence</h3>
     </div>
     <div className="flex-grow space-y-3">
       <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 anim-child" style={{'--i': 1} as React.CSSProperties}>
         <CheckmarkCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0" />
-        <p className="text-gray-800 text-xs">Qualité des revenus (MRR, churn...)</p>
+        <p className="text-gray-800 text-[11px] sm:text-xs">Qualité des revenus (MRR, churn...)</p>
       </div>
       <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 anim-child" style={{'--i': 2} as React.CSSProperties}>
         <CheckmarkCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0" />
-        <p className="text-gray-800 text-xs">Analyse de la rentabilité (EBITDA, marges)</p>
+        <p className="text-gray-800 text-[11px] sm:text-xs">Analyse de la rentabilité (EBITDA, marges)</p>
       </div>
       <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 anim-child" style={{'--i': 3} as React.CSSProperties}>
         <CheckmarkCircleIcon className="w-6 h-6 text-gray-300 flex-shrink-0" />
-        <p className="text-gray-700 text-xs">Normalisation du BFR</p>
+        <p className="text-gray-700 text-[11px] sm:text-xs">Normalisation du BFR</p>
       </div>
        <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 anim-child" style={{'--i': 4} as React.CSSProperties}>
         <CheckmarkCircleIcon className="w-6 h-6 text-gray-300 flex-shrink-0" />
-        <p className="text-gray-700 text-xs">Analyse de la dette nette</p>
+        <p className="text-gray-700 text-[11px] sm:text-xs">Analyse de la dette nette</p>
       </div>
     </div>
   </div>
 );
 
 const TransactionalSupportVisual: React.FC = () => (
-    <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
+    <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
       <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
         <h3 className="font-bold text-gray-900 text-xs sm:text-sm">Accompagnement Transactionnel</h3>
       </div>
@@ -96,12 +96,12 @@ const LiquidityChartVisual: React.FC = () => {
     ];
 
     return (
-        <div className="animated-mockup w-full h-full bg-white rounded-2xl p-3 sm:p-4 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300 text-gray-900">
+        <div className="animated-mockup w-full h-full bg-white rounded-2xl p-3 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300 text-gray-900">
             <div className="w-full text-left mb-2 anim-child" style={{'--i': 0} as React.CSSProperties}>
                 <h3 className="font-bold text-gray-900 text-xs sm:text-sm">Gestion de la trésorerie</h3>
             </div>
             <div className="anim-child" style={{'--i': 1} as React.CSSProperties}>
-                <p className="text-base sm:text-lg font-bold text-[#27013D]">58 K€</p>
+                <p className="text-base font-bold text-[#27013D]">58 K€</p>
             </div>
             <div className="flex-grow mt-1 relative">
                 <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`} className="w-full h-full" preserveAspectRatio="xMidYMid meet">
@@ -188,11 +188,11 @@ const LiquidityChartVisual: React.FC = () => {
 };
 
 const OnSiteInterventionVisual: React.FC = () => (
-    <div className="animated-mockup w-full h-full bg-white rounded-2xl p-3 sm:p-4 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
+    <div className="animated-mockup w-full h-full bg-white rounded-2xl p-3 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
         <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
             <h3 className="font-bold text-gray-900 text-xs sm:text-sm">Intervention sur site</h3>
         </div>
-        <div className="flex-grow bg-gray-50 rounded-lg p-3 sm:p-4 space-y-3 border border-gray-100 text-xs">
+        <div className="flex-grow bg-gray-50 rounded-lg p-3 space-y-3 border border-gray-100 text-xs">
             <p className="font-semibold text-gray-800 mb-2 anim-child" style={{'--i': 1} as React.CSSProperties}>Agenda de la session :</p>
             <div className="flex items-start gap-3 anim-child" style={{'--i': 2} as React.CSSProperties}>
                 <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">1</div>
@@ -350,7 +350,7 @@ const TaskShowcase: React.FC = () => {
                         </div>
                         
                         {/* Right: Visual */}
-                        <Animate variant="pop" delay={200} className="relative aspect-[4/3] lg:aspect-auto lg:col-span-3">
+                        <Animate variant="pop" delay={200} className="relative aspect-square sm:aspect-[4/3] lg:col-span-3 lg:aspect-auto">
                             <div className="w-full h-full">
                                 <div className="grid h-full">
                                     {tasks.map((task, index) => (
