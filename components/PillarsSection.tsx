@@ -24,9 +24,9 @@ const pillars = [
   },
 ];
 
-const PilliersSection: React.FC = () => {
+const PillarsSection: React.FC = () => {
   return (
-    <section id="pilliers" className="bg-white min-h-screen flex flex-col justify-center py-16 overflow-x-hidden">
+    <section id="piliers" className="bg-white min-h-screen flex flex-col justify-center py-16 overflow-x-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <Animate variant="pop">
@@ -36,12 +36,12 @@ const PilliersSection: React.FC = () => {
           </Animate>
           <Animate variant="pop" delay={100}>
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
-              Nos <span className="gradient-text">Pilliers</span>
+              Nos <span className="gradient-text">Piliers</span>
             </h2>
           </Animate>
           <Animate variant="pop" delay={200}>
             <p className="text-lg text-gray-800 mt-4 max-w-3xl mx-auto">
-              Notre proposition repose sur <strong>quatre pilliers fondamentaux</strong> qui guident chacune de nos interventions.
+              Notre proposition repose sur <strong>quatre piliers fondamentaux</strong> qui guident chacune de nos interventions.
             </p>
           </Animate>
         </div>
@@ -49,33 +49,65 @@ const PilliersSection: React.FC = () => {
         <div className="w-full max-w-7xl mx-auto">
             {/* Desktop Timeline */}
             <div className="hidden md:block">
-                <div className="relative">
-                    {/* Timeline line */}
-                    <div className="absolute top-8 left-0 w-full h-px bg-gray-300" />
-                    <div className="relative flex justify-around stagger">
-                        {pillars.map((pillar, index) => (
-                            <Animate key={index} variant="pop" className="w-1/4 text-center px-4 group">
-                                <div className="relative inline-block bg-white p-1 z-10">
-                                    {/* Connector line from main line to dot */}
-                                    <div className="absolute bottom-full left-1/2 w-px h-8 bg-gray-300" />
-                                    {/* Dot */}
-                                    <div className="w-4 h-4 bg-gradient-to-br from-[#27013D] to-[#6D0037] rounded-full transition-transform duration-300 group-hover:scale-125" />
-                                </div>
-                                <div className="mt-4">
-                                    <div className="flex justify-center mb-2 h-12 w-12 items-center mx-auto">
-                                        {pillar.icon}
+              <Animate variant="pop">
+                  <div className="relative animated-pillars-timeline">
+                      {/* The static line connecting the dots */}
+                      <div className="absolute top-1/2 left-[12.5%] right-[12.5%] h-px bg-gray-300 transform -translate-y-1/2"></div>
+                      
+                      {/* Animated running dot container */}
+                      <div className="absolute top-0 left-[12.5%] right-[12.5%] h-full pointer-events-none">
+                        <div className="running-dot-wrapper">
+                            <div className="running-dot-indicator"></div>
+                        </div>
+                      </div>
+
+                      {/* The static dots and content cards */}
+                      <div className="relative flex">
+                        {pillars.map((pillar, index) => {
+                            const isAbove = index % 2 === 0;
+
+                            const PillarContent = (
+                              <div className={`pillar-content-card pillar-content-card--${index + 1} text-center px-2`}>
+                                  <div className="flex flex-col items-center justify-start">
+                                      <div className="flex justify-center mb-1 h-12 w-12 items-center">
+                                          {React.cloneElement(pillar.icon)}
+                                      </div>
+                                      <h3 className="text-sm font-bold mb-1 gradient-text-pillar">
+                                          {pillar.title}
+                                      </h3>
+                                      <p className="text-gray-800 leading-relaxed text-xs">
+                                          {pillar.description}
+                                      </p>
+                                  </div>
+                              </div>
+                            );
+
+                            return (
+                                <div key={index} className="relative z-10 w-1/4 flex justify-center">
+                                    <div className="flex flex-col items-center group">
+                                        {/* Top Content */}
+                                        <div className="min-h-[10rem] flex items-end pb-6">
+                                          {isAbove && PillarContent}
+                                        </div>
+
+                                        {/* Point */}
+                                        <div className={`pillar-dot pillar-dot--${index + 1} rounded-full border-2 border-white`}></div>
+                                        
+                                        {/* Bottom Content */}
+                                        <div className="min-h-[10rem] flex items-start pt-6">
+                                          {!isAbove && PillarContent}
+                                        </div>
                                     </div>
-                                    <h3 className="text-sm font-bold mb-1 gradient-text-pillar">{pillar.title}</h3>
-                                    <p className="text-gray-800 leading-relaxed text-xs">{pillar.description}</p>
                                 </div>
-                            </Animate>
-                        ))}
-                    </div>
-                </div>
+                            );
+                        })}
+                      </div>
+                  </div>
+              </Animate>
             </div>
 
             {/* Mobile Grid */}
-            <div className="block md:hidden stagger">
+            <div className="block md:hidden">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 {pillars.map((pillar, index) => (
                     <Animate key={index} variant="pop">
@@ -102,4 +134,4 @@ const PilliersSection: React.FC = () => {
   );
 };
 
-export default PilliersSection;
+export default PillarsSection;
