@@ -350,7 +350,7 @@ const TaskShowcase: React.FC = () => {
                         </div>
                         
                         {/* Right: Visual */}
-                        <Animate variant="pop" delay={200} className="relative aspect-[4/3] lg:aspect-auto lg:col-span-3">
+                        <Animate variant="pop" delay={200} className="relative aspect-[4/3] w-full max-w-md mx-auto lg:max-w-none lg:mx-0 lg:col-span-3">
                             <div className="w-full h-full">
                                 <div className="grid h-full">
                                     {tasks.map((task, index) => (
