@@ -40,7 +40,7 @@ const PillarsSection: React.FC = () => {
             </h2>
           </Animate>
           <Animate variant="pop" delay={200}>
-            <p className="text-lg text-gray-800 mt-4 max-w-3xl mx-auto whitespace-nowrap">
+            <p className="text-lg text-gray-800 mt-4 max-w-3xl mx-auto">
               Notre proposition repose sur <strong>quatre piliers fondamentaux</strong> qui guident chacune de nos interventions.
             </p>
           </Animate>
@@ -49,65 +49,33 @@ const PillarsSection: React.FC = () => {
         <div className="w-full max-w-7xl mx-auto">
             {/* Desktop Timeline */}
             <div className="hidden md:block">
-              <Animate variant="pop">
-                  <div className="relative">
-                      {/* The static line connecting the dots */}
-                      <div className="absolute top-1/2 left-[12.5%] right-[12.5%] h-px bg-gray-300 transform -translate-y-1/2"></div>
-                      
-                      {/* Animated running dot container */}
-                      <div className="absolute top-0 left-[12.5%] right-[12.5%] h-full pointer-events-none">
-                        <div className="running-dot-wrapper">
-                            <div className="running-dot-indicator"></div>
-                        </div>
-                      </div>
-
-                      {/* The static dots and content cards */}
-                      <div className="relative flex">
-                        {pillars.map((pillar, index) => {
-                            const isAbove = index % 2 === 0;
-
-                            const PillarContent = (
-                              <div className={`pillar-content-card pillar-content-card--${index + 1} text-center px-2`}>
-                                  <div className="flex flex-col items-center justify-start">
-                                      <div className="flex justify-center mb-1 h-12 w-12 items-center">
-                                          {React.cloneElement(pillar.icon)}
-                                      </div>
-                                      <h3 className={`pillar-title pillar-title--${index + 1} text-sm font-bold mb-1 gradient-text-pillar`}>
-                                          {pillar.title}
-                                      </h3>
-                                      <p className="text-gray-800 leading-relaxed text-xs">
-                                          {pillar.description}
-                                      </p>
-                                  </div>
-                              </div>
-                            );
-
-                            return (
-                                <div key={index} className="relative z-10 w-1/4 flex justify-center">
-                                    <div className="flex flex-col items-center group">
-                                        {/* Top Content */}
-                                        <div className={`min-h-[10rem] flex items-end pb-6 ${isAbove ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-                                          {PillarContent}
-                                        </div>
-
-                                        {/* Point */}
-                                        <div className={`pillar-dot pillar-dot--${index + 1} rounded-full border-2 border-gray-50`}></div>
-                                        
-                                        {/* Bottom Content */}
-                                        <div className={`min-h-[10rem] flex items-start pt-6 ${!isAbove ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-                                          {PillarContent}
-                                        </div>
-                                    </div>
+                <div className="relative">
+                    {/* Timeline line */}
+                    <div className="absolute top-8 left-0 w-full h-px bg-gray-300" />
+                    <div className="relative flex justify-around stagger">
+                        {pillars.map((pillar, index) => (
+                            <Animate key={index} variant="pop" className="w-1/4 text-center px-4 group">
+                                <div className="relative inline-block bg-white p-1 z-10">
+                                    {/* Connector line from main line to dot */}
+                                    <div className="absolute bottom-full left-1/2 w-px h-8 bg-gray-300" />
+                                    {/* Dot */}
+                                    <div className="w-4 h-4 bg-gradient-to-br from-[#27013D] to-[#6D0037] rounded-full transition-transform duration-300 group-hover:scale-125" />
                                 </div>
-                            );
-                        })}
-                      </div>
-                  </div>
-              </Animate>
+                                <div className="mt-4">
+                                    <div className="flex justify-center mb-2 h-12 w-12 items-center mx-auto">
+                                        {pillar.icon}
+                                    </div>
+                                    <h3 className="text-sm font-bold mb-1 gradient-text-pillar">{pillar.title}</h3>
+                                    <p className="text-gray-800 leading-relaxed text-xs">{pillar.description}</p>
+                                </div>
+                            </Animate>
+                        ))}
+                    </div>
+                </div>
             </div>
 
             {/* Mobile Grid */}
-            <div className="block md:hidden">
+            <div className="block md:hidden stagger">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 {pillars.map((pillar, index) => (
                     <Animate key={index} variant="pop">
