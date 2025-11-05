@@ -286,13 +286,13 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                         key={item.name}
                         type="button"
                         onClick={() => setMobilePanel('solutions')}
-                        className={`flex justify-between items-center w-full text-xl font-normal py-3 px-4 rounded-lg hover:bg-[#27013D] hover:text-white transition-colors text-center ${
+                        className={`relative flex justify-center items-center w-full text-xl font-normal py-3 px-4 rounded-lg hover:bg-[#27013D] hover:text-white transition-colors ${
                           (isPropositionSectionActive) ? 'bg-[#27013D] text-white' : 'text-black'
                         }`}
                         aria-expanded={false}
                       >
                         <span>{item.name}</span>
-                        <ChevronRightIcon className="w-6 h-6" />
+                        <ChevronRightIcon className="w-6 h-6 absolute right-4 top-1/2 -translate-y-1/2" />
                       </button>
                     );
                   }
@@ -329,12 +329,12 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
           {/* Panel 2: Solutions Menu */}
           <div className={`absolute inset-0 transition-transform duration-300 ease-in-out bg-white ${mobilePanel === 'solutions' ? 'translate-x-0' : 'translate-x-full'}`}>
             <div className="flex flex-col h-full">
-              <div className="flex-shrink-0 flex items-center justify-between p-4 border-b border-gray-200 h-16">
-                <button onClick={() => setMobilePanel('main')} aria-label="Retour au menu principal" className="p-2">
+              <div className="relative flex-shrink-0 flex items-center justify-center border-b border-gray-200 h-16">
+                <button onClick={() => setMobilePanel('main')} aria-label="Retour au menu principal" className="absolute left-4 top-1/2 -translate-y-1/2 p-2">
                   <ChevronLeftIcon className="w-7 h-7" />
                 </button>
                 <h3 className="font-bold text-lg text-gray-900">Nos Solutions</h3>
-                <button onClick={() => setIsMobileMenuOpen(false)} aria-label="Fermer le menu" className="p-2 text-black">
+                <button onClick={() => setIsMobileMenuOpen(false)} aria-label="Fermer le menu" className="absolute right-4 top-1/2 -translate-y-1/2 p-2 text-black">
                   <CloseIcon className="w-8 h-8" />
                 </button>
               </div>
