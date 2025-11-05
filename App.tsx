@@ -156,7 +156,7 @@ const App: React.FC = () => {
           <Stats />
           <Logos />
           <Team />
-          <section id="citation">
+          <section id="citation" className="min-h-screen grid">
             <div className="bg-white grid">
               <div className="grid grid-cols-1 md:grid-cols-2 items-center">
                 <Animate variant="pop" className="relative h-[300px] sm:h-[350px] md:h-full md:order-last">

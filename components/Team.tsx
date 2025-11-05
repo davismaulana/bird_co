@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import Animate from './Animate';
 import { LinkedInIcon, teamMembers } from '../constants';
@@ -9,7 +10,7 @@ const Team: React.FC = () => {
   return (
     <section
       id="notre-equipe"
-      className="relative text-white py-12 md:py-16"
+      className="relative text-white py-12 md:py-16 min-h-screen flex flex-col justify-center"
     >
       <div 
         className="parallax-bg" 

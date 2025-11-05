@@ -23,7 +23,7 @@ const Expertise: React.FC = () => {
   ];
 
   return (
-    <section className="bg-white flex flex-col justify-center py-16 overflow-x-hidden">
+    <section className="bg-white flex flex-col justify-center py-16 overflow-x-hidden min-h-screen">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 max-w-3xl mx-auto">
           <Animate variant="pop">

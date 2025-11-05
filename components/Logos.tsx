@@ -26,7 +26,7 @@ const Logos: React.FC<LogosProps> = ({ backgroundColor = 'bg-gray-50' }) => {
   const superEnlargedLogos = ['Wellow', 'Octo Gaming'];
 
   return (
-    <section className={`${backgroundColor} flex flex-col items-center justify-center py-16 sm:py-24`}>
+    <section className={`${backgroundColor} flex flex-col items-center justify-center py-16 sm:py-24 min-h-screen`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 lg:mb-16">
           <Animate variant="pop">

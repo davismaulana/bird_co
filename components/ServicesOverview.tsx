@@ -4,7 +4,7 @@ import { services, ArrowRightIcon } from '../constants';
 
 const ServicesOverview: React.FC = () => {
   return (
-    <section id="solutions" className="bg-gradient-to-b from-[#332932] to-[#4f3e69] flex flex-col justify-center py-16 md:py-24">
+    <section id="solutions" className="bg-gradient-to-b from-[#332932] to-[#4f3e69] flex flex-col justify-center py-16 md:py-24 min-h-screen">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <Animate variant="pop">

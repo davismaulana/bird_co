@@ -32,7 +32,7 @@ const Contact: React.FC = () => {
     };
 
     return (
-        <section id="contact" className="bg-white grid">
+        <section id="contact" className="bg-white grid min-h-screen">
             <div className="grid grid-cols-1 md:grid-cols-2">
                 {/* Left Column */}
                 <div className="relative bg-cover bg-center text-gray-900 p-8 md:p-12 lg:p-16 flex flex-col justify-center min-h-[400px] md:min-h-[500px]">
