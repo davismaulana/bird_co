@@ -49,13 +49,13 @@ const PillarsSection: React.FC = () => {
         <div className="w-full max-w-7xl mx-auto">
             {/* Desktop Timeline */}
             <div className="hidden md:block">
-              <Animate variant="pop">
+              <Animate variant="pop" data-reveal-repeat>
                   <div className="relative animated-pillars-timeline">
                       {/* The static line connecting the dots */}
                       <div className="absolute top-1/2 left-[12.5%] right-[12.5%] h-px bg-gray-300 transform -translate-y-1/2"></div>
                       
-                      {/* Animated running dot container */}
-                      <div className="absolute top-0 left-[12.5%] right-[12.5%] h-full pointer-events-none">
+                      {/* Simplified container for the running dot */}
+                      <div className="absolute top-0 left-0 right-0 h-full pointer-events-none">
                         <div className="running-dot-wrapper">
                             <div className="running-dot-indicator"></div>
                         </div>
