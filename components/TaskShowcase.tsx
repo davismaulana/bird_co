@@ -292,7 +292,7 @@ const TaskShowcase: React.FC = () => {
     const [activeTask, setActiveTask] = useState(0);
 
     return (
-        <section className="bg-gray-50 flex flex-col justify-center py-16 min-h-screen">
+        <section className="bg-gray-50 flex flex-col justify-center py-16">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12 max-w-3xl mx-auto">
                     <Animate variant="pop">
@@ -314,7 +314,7 @@ const TaskShowcase: React.FC = () => {
                 <div className="max-w-6xl mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center">
                         {/* Left: Buttons */}
-                        <div className="w-full max-w-sm mx-auto lg:max-w-none lg:mx-0 lg:col-span-2">
+                        <div className="w-full max-w-md mx-auto lg:max-w-none lg:mx-0 lg:col-span-2">
                             <div className="grid grid-cols-1 gap-2">
                                 {tasks.map((task, index) => (
                                     <Animate variant="pop" key={index}>
@@ -350,7 +350,7 @@ const TaskShowcase: React.FC = () => {
                         </div>
                         
                         {/* Right: Visual */}
-                        <Animate variant="pop" delay={200} className="relative aspect-[4/3] w-full max-w-sm mx-auto lg:max-w-none lg:mx-0 lg:col-span-3">
+                        <Animate variant="pop" delay={200} className="relative aspect-[4/3] lg:aspect-auto lg:col-span-3">
                             <div className="w-full h-full">
                                 <div className="grid h-full">
                                     {tasks.map((task, index) => (
