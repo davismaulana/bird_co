@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { services, HamburgerIcon, CloseIcon, ArrowRightIcon } from '../constants';
+import { services, HamburgerIcon, CloseIcon, ArrowRightIcon, ChevronRightIcon, ChevronLeftIcon } from '../constants';
 
 const navItems = [
   { name: 'Enjeux', href: '/#vos-enjeux' },
@@ -13,7 +13,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isDropdownActive, setIsDropdownActive] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isMobileSolutionsOpen, setIsMobileSolutionsOpen] = useState(false);
+  const [mobilePanel, setMobilePanel] = useState<'main' | 'solutions'>('main');
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('');
   const solutionsMenuTimer = useRef<number | null>(null);
@@ -49,7 +49,9 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
-      setIsMobileSolutionsOpen(false);
+      // Reset panel state when menu is closed
+      const timer = setTimeout(() => setMobilePanel('main'), 300);
+      return () => clearTimeout(timer);
     }
     return () => {
       document.body.style.overflow = 'unset';
@@ -259,98 +261,116 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
       )}
 
       {/* Mobile Menu Overlay */}
-      {isMobileMenuOpen && (
-        <div 
-            className="lg:hidden fixed inset-0 bg-white z-[100]"
-        >
-          <div 
-            className="flex flex-col items-center justify-center h-full p-6 pb-10 overflow-y-auto"
-          >
-            <button
-              onClick={() => setIsMobileMenuOpen(false)}
-              aria-label="Fermer le menu"
-              className="absolute top-6 right-5 p-2 text-black"
-            >
-              <CloseIcon className="w-8 h-8" />
-            </button>
-            
-            <nav className="flex flex-col items-center space-y-2 text-center w-full">
-              {navItems.map((item) => {
-                if (item.name === 'Solutions') {
-                  return (
-                    <div key={item.name} className="w-full">
-                       <button
-                         type="button"
-                         onClick={() => setIsMobileSolutionsOpen(prev => !prev)}
-                         className={`block w-full text-xl font-normal py-3 rounded-lg hover:bg-[#27013D] hover:text-white transition-colors text-center ${
-                           (isPropositionSectionActive || isMobileSolutionsOpen) ? 'bg-[#27013D] text-white' : 'text-black'
-                         }`}
-                         aria-expanded={isMobileSolutionsOpen}
-                       >
-                         {item.name}
-                       </button>
-                       {isMobileSolutionsOpen && (
-                         <div className="w-full px-2 mt-4">
-                           <div className="grid grid-cols-1 gap-4">
-                             {services.map((service, index) => (
-                               <a 
-                                 key={index} 
-                                 href={`/service/${service.slug}`} 
-                                 className="block h-full group"
-                                 onClick={() => setIsMobileMenuOpen(false)}
-                               >
-                                 <div className="bg-gray-50 rounded-xl p-4 flex flex-col items-start text-left h-full transition-all duration-300 ease-in-out border border-gray-200 group-hover:bg-[#27013D]">
-                                   <h3 className="text-base font-bold text-gray-900 mb-2 transition-colors duration-300 group-hover:text-white">
-                                     {service.title}
-                                   </h3>
-                                   <p className="text-sm font-semibold text-[#6D0037] mb-2 group-hover:text-violet-200 transition-colors duration-300">{service.subTitle}</p>
-                                   <p className="text-sm text-gray-600 leading-relaxed transition-colors duration-300 group-hover:text-gray-200">
-                                     {service.description}
-                                   </p>
-                                   <div className="flex-grow" />
-                                   <div className="w-full mt-4 flex items-center justify-between text-sm font-semibold text-[#27013D] transition-colors duration-300 group-hover:text-white">
-                                     <span>En savoir plus</span>
-                                     <ArrowRightIcon className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-                                   </div>
-                                 </div>
-                               </a>
-                             ))}
-                           </div>
-                         </div>
-                       )}
-                    </div>
-                  );
-                }
-                const isActive = (item.href !== '/' && !item.href.startsWith('/#') && pathname === item.href);
-                return (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className={`block w-full text-xl font-normal py-3 rounded-lg hover:bg-[#27013D] hover:text-white transition-colors ${
-                      isActive ? 'bg-[#27013D] text-white' : 'text-black'
-                    }`}
-                  >
-                    {item.name}
-                  </a>
-                );
-              })}
-            </nav>
-
-            <div className="mt-12 w-full max-w-xs">
-              <a
-                  href="https://calendly.com/contact-birdandco/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block w-full text-center bg-[#27013D] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#1c0e2a] transition-colors text-base"
+      <div className={`lg:hidden fixed inset-0 bg-white z-[100] transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className="relative h-full w-full overflow-x-hidden">
+          
+          {/* Panel 1: Main Menu */}
+          <div className={`absolute inset-0 transition-transform duration-300 ease-in-out ${mobilePanel === 'main' ? 'translate-x-0' : '-translate-x-full'}`}>
+            <div className="flex flex-col items-center justify-center h-full p-6 pb-10 overflow-y-auto">
+              <button
+                onClick={() => setIsMobileMenuOpen(false)}
+                aria-label="Fermer le menu"
+                className="absolute top-6 right-5 p-2 text-black"
               >
-                  {ctaText}
-              </a>
+                <CloseIcon className="w-8 h-8" />
+              </button>
+              
+              <nav className="flex flex-col items-center space-y-2 text-center w-full">
+                {navItems.map((item) => {
+                  const isPageLink = item.href !== '/' && !item.href.startsWith('/#');
+                  const isPageActive = isPageLink && pathname === item.href;
+                  
+                  if (item.name === 'Solutions') {
+                    return (
+                      <button
+                        key={item.name}
+                        type="button"
+                        onClick={() => setMobilePanel('solutions')}
+                        className={`flex justify-between items-center w-full text-xl font-normal py-3 px-4 rounded-lg hover:bg-[#27013D] hover:text-white transition-colors text-center ${
+                          (isPropositionSectionActive) ? 'bg-[#27013D] text-white' : 'text-black'
+                        }`}
+                        aria-expanded={false}
+                      >
+                        <span>{item.name}</span>
+                        <ChevronRightIcon className="w-6 h-6" />
+                      </button>
+                    );
+                  }
+                  
+                  return (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className={`block w-full text-xl font-normal py-3 rounded-lg hover:bg-[#27013D] hover:text-white transition-colors ${
+                        isPageActive ? 'bg-[#27013D] text-white' : 'text-black'
+                      }`}
+                    >
+                      {item.name}
+                    </a>
+                  );
+                })}
+              </nav>
+
+              <div className="mt-12 w-full max-w-xs">
+                <a
+                    href="https://calendly.com/contact-birdandco/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block w-full text-center bg-[#27013D] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#1c0e2a] transition-colors text-base"
+                >
+                    {ctaText}
+                </a>
+              </div>
             </div>
           </div>
+
+          {/* Panel 2: Solutions Menu */}
+          <div className={`absolute inset-0 transition-transform duration-300 ease-in-out bg-white ${mobilePanel === 'solutions' ? 'translate-x-0' : 'translate-x-full'}`}>
+            <div className="flex flex-col h-full">
+              <div className="flex-shrink-0 flex items-center justify-between p-4 border-b border-gray-200 h-16">
+                <button onClick={() => setMobilePanel('main')} aria-label="Retour au menu principal" className="p-2">
+                  <ChevronLeftIcon className="w-7 h-7" />
+                </button>
+                <h3 className="font-bold text-lg text-gray-900">Nos Solutions</h3>
+                <button onClick={() => setIsMobileMenuOpen(false)} aria-label="Fermer le menu" className="p-2 text-black">
+                  <CloseIcon className="w-8 h-8" />
+                </button>
+              </div>
+
+              <div className="flex-grow overflow-y-auto p-4">
+                <div className="grid grid-cols-1 gap-4">
+                  {services.map((service, index) => (
+                    <a 
+                      key={index} 
+                      href={`/service/${service.slug}`} 
+                      className="block h-full group"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <div className="bg-gray-50 rounded-xl p-4 flex flex-col items-start text-left h-full transition-all duration-300 ease-in-out border border-gray-200 group-hover:bg-[#27013D]">
+                        <h3 className="text-base font-bold text-gray-900 mb-2 transition-colors duration-300 group-hover:text-white">
+                          {service.title}
+                        </h3>
+                        <p className="text-sm font-semibold text-[#6D0037] mb-2 group-hover:text-violet-200 transition-colors duration-300">{service.subTitle}</p>
+                        <p className="text-sm text-gray-600 leading-relaxed transition-colors duration-300 group-hover:text-gray-200">
+                          {service.description}
+                        </p>
+                        <div className="flex-grow" />
+                        <div className="w-full mt-4 flex items-center justify-between text-sm font-semibold text-[#27013D] transition-colors duration-300 group-hover:text-white">
+                          <span>En savoir plus</span>
+                          <ArrowRightIcon className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                        </div>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
-      )}
+      </div>
     </>
   );
 };
