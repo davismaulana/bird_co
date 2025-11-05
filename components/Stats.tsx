@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, useRef } from 'react';
 import Animate from './Animate';
 
@@ -145,7 +144,7 @@ const stats = [
 
 const Stats: React.FC = () => {
   return (
-    <section className="bg-white min-h-screen flex flex-col justify-center py-12 md:py-16 overflow-x-hidden">
+    <section className="bg-white flex flex-col justify-center py-16 md:py-24 overflow-x-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="mb-12">
           <Animate variant="pop">

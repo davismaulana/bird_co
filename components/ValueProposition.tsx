@@ -38,7 +38,7 @@ const propositionPoints = [
 
 const ValueProposition: React.FC = () => {
   return (
-    <section className="min-h-screen grid">
+    <section className="grid">
       <div className="grid grid-cols-1 md:grid-cols-2">
         <div className="bg-[#EBE5F0] flex items-center justify-center p-8 sm:p-12 md:p-16">
           <div className="relative text-left w-full">

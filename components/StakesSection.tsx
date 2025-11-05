@@ -69,7 +69,7 @@ const StakesSection: React.FC = () => {
     const [activeStake, setActiveStake] = useState<number>(0);
 
   return (
-    <section id="vos-enjeux" className="bg-gray-50 flex flex-col justify-center py-16 min-h-screen">
+    <section id="vos-enjeux" className="bg-gray-50 flex flex-col justify-center py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <Animate variant="pop">

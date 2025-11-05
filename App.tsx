@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -158,7 +157,7 @@ const App: React.FC = () => {
           <Logos />
           <Team />
           <section id="citation">
-            <div className="bg-white min-h-screen grid">
+            <div className="bg-white grid">
               <div className="grid grid-cols-1 md:grid-cols-2 items-center">
                 <Animate variant="pop" className="relative h-[300px] sm:h-[350px] md:h-full md:order-last">
                   <HeroAnimation />
