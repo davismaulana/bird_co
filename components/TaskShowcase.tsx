@@ -94,12 +94,12 @@ const TaskShowcase: React.FC = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center">
                         {/* Left: Buttons */}
                         <div className="w-full max-w-md mx-auto lg:max-w-none lg:mx-0 lg:col-span-2">
-                            <div className="grid grid-cols-1 gap-2">
+                            <div className="grid grid-cols-1 gap-2 [grid-auto-rows:1fr]">
                                 {tasks.map((task, index) => (
-                                    <Animate variant="pop" key={index}>
+                                    <Animate variant="pop" key={index} className="h-full">
                                         <button
                                             onClick={() => setActiveTask(index)}
-                                            className={`w-full text-left p-2 rounded-xl transition-all duration-300 group ${
+                                            className={`w-full h-full text-left p-2 rounded-xl transition-all duration-300 group ${
                                                 activeTask === index
                                                     ? 'bg-[#27013D] shadow-xl shadow-violet-200/50 scale-105 hover:scale-[1.07]'
                                                     : 'bg-white hover:shadow-xl hover:shadow-violet-100/50 hover:scale-105'
