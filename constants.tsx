@@ -187,7 +187,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
   if (!noAspectRatio) {
     classNames.push("aspect-[4/3]");
   } else {
-    classNames.push("aspect-[10/7] sm:h-full");
+    classNames.push("h-full");
   }
 
   if (initialScaleDown) {
@@ -427,7 +427,7 @@ export const KpiDashboardMockup: React.FC<{ theme?: string, noAspectRatio?: bool
   if (!noAspectRatio) {
     classNames.push("aspect-[4/3]");
   } else {
-      classNames.push("aspect-[10/7] sm:h-full");
+      classNames.push("h-full");
   }
 
   if (initialScaleDown) {
@@ -547,7 +547,7 @@ export const DiagnosticScanMockup: React.FC<{ theme?: string, disableHover?: boo
 
 
 export const DueDiligenceVisual: React.FC = () => (
-  <div className="animated-mockup w-full aspect-[10/7] sm:h-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col transform hover:scale-105 transition-transform duration-300">
+  <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col transform hover:scale-105 transition-transform duration-300">
     <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
       <h3 className="font-bold text-gray-900 text-xs sm:text-sm">Due Diligence</h3>
     </div>
@@ -574,7 +574,7 @@ export const DueDiligenceVisual: React.FC = () => (
 
 export const TransactionalSupportVisual: React.FC<{ theme?: string, disableHover?: boolean, initialScaleDown?: boolean }> = ({ disableHover = false, initialScaleDown = false }) => {
     const classNames = [
-        "animated-mockup w-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col transition-transform duration-300 aspect-[10/7] sm:h-full",
+        "animated-mockup w-full h-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col transition-transform duration-300",
     ];
 
     if (initialScaleDown) {
@@ -690,7 +690,7 @@ export const LiquidityChartVisual: React.FC = () => {
     ];
 
     return (
-        <div className="animated-mockup w-full aspect-[10/7] sm:h-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col transform hover:scale-105 transition-transform duration-300 text-gray-900">
+        <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col transform hover:scale-105 transition-transform duration-300 text-gray-900">
             <div className="w-full text-left mb-2 anim-child" style={{'--i': 0} as React.CSSProperties}>
                 <h3 className="font-bold text-gray-900 text-xs sm:text-sm">Gestion de la trésorerie</h3>
             </div>
@@ -782,7 +782,7 @@ export const LiquidityChartVisual: React.FC = () => {
 };
 
 export const OnSiteInterventionVisual: React.FC = () => (
-    <div className="animated-mockup w-full aspect-[10/7] sm:h-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col transform hover:scale-105 transition-transform duration-300">
+    <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col transform hover:scale-105 transition-transform duration-300">
         <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
             <h3 className="font-bold text-gray-900 text-xs sm:text-sm">Intervention sur site</h3>
         </div>
