@@ -26,7 +26,7 @@ const pillars = [
 
 const PillarsSection: React.FC = () => {
   return (
-    <section id="piliers" className="bg-white min-h-screen flex flex-col justify-center py-16 overflow-x-hidden">
+    <section id="piliers" className="bg-white flex flex-col justify-center py-16 overflow-x-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <Animate variant="pop">
@@ -40,7 +40,7 @@ const PillarsSection: React.FC = () => {
             </h2>
           </Animate>
           <Animate variant="pop" delay={200}>
-            <p className="text-lg text-gray-800 mt-4 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-800 mt-4 max-w-3xl mx-auto whitespace-nowrap">
               Notre proposition repose sur <strong>quatre piliers fondamentaux</strong> qui guident chacune de nos interventions.
             </p>
           </Animate>
@@ -49,11 +49,18 @@ const PillarsSection: React.FC = () => {
         <div className="w-full max-w-7xl mx-auto">
             {/* Desktop Timeline */}
             <div className="hidden md:block">
-              <Animate variant="pop" data-reveal-repeat>
-                  <div className="relative animated-pillars-timeline">
+              <Animate variant="pop">
+                  <div className="relative">
                       {/* The static line connecting the dots */}
                       <div className="absolute top-1/2 left-[12.5%] right-[12.5%] h-px bg-gray-300 transform -translate-y-1/2"></div>
                       
+                      {/* Animated running dot container */}
+                      <div className="absolute top-0 left-[12.5%] right-[12.5%] h-full pointer-events-none">
+                        <div className="running-dot-wrapper">
+                            <div className="running-dot-indicator"></div>
+                        </div>
+                      </div>
+
                       {/* The static dots and content cards */}
                       <div className="relative flex">
                         {pillars.map((pillar, index) => {
@@ -65,7 +72,7 @@ const PillarsSection: React.FC = () => {
                                       <div className="flex justify-center mb-1 h-12 w-12 items-center">
                                           {React.cloneElement(pillar.icon)}
                                       </div>
-                                      <h3 className="text-sm font-bold mb-1 gradient-text-pillar">
+                                      <h3 className={`pillar-title pillar-title--${index + 1} text-sm font-bold mb-1 gradient-text-pillar`}>
                                           {pillar.title}
                                       </h3>
                                       <p className="text-gray-800 leading-relaxed text-xs">
@@ -79,16 +86,16 @@ const PillarsSection: React.FC = () => {
                                 <div key={index} className="relative z-10 w-1/4 flex justify-center">
                                     <div className="flex flex-col items-center group">
                                         {/* Top Content */}
-                                        <div className="min-h-[10rem] flex items-end pb-6">
-                                          {isAbove && PillarContent}
+                                        <div className={`min-h-[10rem] flex items-end pb-6 ${isAbove ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+                                          {PillarContent}
                                         </div>
 
                                         {/* Point */}
-                                        <div className={`pillar-dot pillar-dot--${index + 1} rounded-full border-2 border-white`}></div>
+                                        <div className={`pillar-dot pillar-dot--${index + 1} rounded-full border-2 border-gray-50`}></div>
                                         
                                         {/* Bottom Content */}
-                                        <div className="min-h-[10rem] flex items-start pt-6">
-                                          {!isAbove && PillarContent}
+                                        <div className={`min-h-[10rem] flex items-start pt-6 ${!isAbove ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+                                          {PillarContent}
                                         </div>
                                     </div>
                                 </div>

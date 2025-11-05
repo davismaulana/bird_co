@@ -165,7 +165,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
   noAspectRatio = false,
 }) => {
   // Shared utilities
-  const cols = "grid grid-cols-[minmax(70px,1.5fr)_repeat(5,minmax(46px,1fr))] sm:grid-cols-[minmax(80px,1.5fr)_repeat(5,minmax(52px,1fr))]";
+  const cols = "grid grid-cols-[minmax(120px,160px)_repeat(5,minmax(0,1fr))]";
   const num = "text-right tabular-nums"; // if you don't have the tabular-nums plugin, swap to 'font-mono text-right'
   const cell = "px-2";
   const vcol = "border-l border-slate-100 pl-2"; // visual column dividers
@@ -181,7 +181,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
   );
   
   const classNames = [
-    "animated-mockup w-full h-full bg-white rounded-2xl p-2 sm:p-4 shadow-2xl border border-gray-100 flex flex-col transition-transform duration-300",
+    "animated-mockup w-full h-full bg-white rounded-2xl p-2 sm:p-4 md:p-6 shadow-2xl border border-gray-100 flex flex-col transition-transform duration-300",
   ];
 
   if (!noAspectRatio) {
@@ -200,12 +200,12 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
     >
       {/* Header */}
       <div className="w-full text-left mb-2 anim-child" style={{'--i': 0} as React.CSSProperties}>
-        <h3 className="font-bold text-gray-900 text-xs sm:text-sm">Modélisation Financière</h3>
+        <h3 className="font-bold text-gray-900 text-sm">Modélisation Financière</h3>
       </div>
 
-      <div className="flex-grow space-y-1 text-[10px] sm:text-[11px] leading-none overflow-x-auto overflow-y-auto">
+      <div className="flex-grow space-y-1 text-[11px] leading-none overflow-x-auto overflow-y-auto">
         {/* -------- P&L -------- */}
-        <div className="min-w-[340px] sm:min-w-[520px]">
+        <div className="min-w-[580px]">
           {/* Years header */}
           <div className={`${cols} text-slate-600 font-semibold px-1 mb-1 py-0.5`}>
             <span className="col-span-1">P&amp;L</span>
@@ -216,7 +216,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
             <span className={`${num}`}>2029</span>
           </div>
 
-          <div className="bg-slate-50 rounded-lg p-1.5 border border-slate-100 text-[9px] sm:text-[10px]">
+          <div className="bg-slate-50 rounded-lg p-1.5 border border-slate-100 text-[10px]">
             {/* Revenue */}
             <HighlightRow>
               <span className={`${cell}`}>Chiffre d'affaires</span>
@@ -294,9 +294,9 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
         </div>
 
         {/* -------- KPIs -------- */}
-        <div className="min-w-[340px] sm:min-w-[520px]">
+        <div className="min-w-[580px]">
           <div className="px-1 py-0.5 mb-1 font-semibold text-slate-600">KPIs</div>
-          <div className="bg-slate-50 rounded-lg p-1.5 border border-slate-100 text-[9px] sm:text-[10px]">
+          <div className="bg-slate-50 rounded-lg p-1.5 border border-slate-100 text-[10px]">
             <Row>
               <span className={`${cell}`}>ETP</span>
               <span className={`${cell} ${num} ${vcol}`}>21</span>
@@ -345,7 +345,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
         </div>
 
         {/* -------- Cash Flow -------- */}
-        <div className="min-w-[340px] sm:min-w-[520px]">
+        <div className="min-w-[580px]">
           <div className={`${cols} text-slate-600 font-semibold px-1 mb-1 py-0.5`}>
             <span className="col-span-1">Cash Flow</span>
             <span className={`${num}`}>2025</span>
@@ -355,7 +355,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
             <span className={`${num}`}>2029</span>
           </div>
 
-          <div className="bg-slate-50 rounded-lg p-1.5 border border-slate-100 text-[9px] sm:text-[10px]">
+          <div className="bg-slate-50 rounded-lg p-1.5 border border-slate-100 text-[10px]">
             <HighlightRow>
               <span className={`${cell}`}>Opening cash balance</span>
               <span className={`${cell} ${num} ${vcol}`}>0,2m€</span>
@@ -418,7 +418,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
 export const KpiDashboardMockup: React.FC<{ theme?: string, noAspectRatio?: boolean, disableHover?: boolean, initialScaleDown?: boolean, className?: string }> = ({ noAspectRatio = false, disableHover = false, initialScaleDown = false, className }) => {
   const classNames = [
     "animated-mockup w-full h-full bg-white rounded-2xl",
-    noAspectRatio ? 'p-3 sm:p-4' : 'p-4 sm:p-6',
+    noAspectRatio ? 'p-2 sm:p-4 md:p-6' : 'p-6',
     "shadow-2xl border border-gray-100 flex flex-col",
     !noAspectRatio ? 'aspect-[4/3]' : '',
     className
@@ -432,26 +432,26 @@ export const KpiDashboardMockup: React.FC<{ theme?: string, noAspectRatio?: bool
   
   return (
     <div className={classNames.filter(Boolean).join(' ')}>
-      <div className="w-full text-left mb-2 sm:mb-3 anim-child" style={{'--i': 0} as React.CSSProperties}>
-        <h3 className="font-bold text-gray-900 text-xs sm:text-sm">Tableau de Bord - T4 2024</h3>
+      <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
+        <h3 className="font-bold text-gray-900 text-sm">Tableau de Bord - T4 2024</h3>
       </div>
-      <div className="flex-grow grid grid-cols-2 grid-rows-2 gap-2">
-        <div className="bg-gray-50 rounded-lg p-2 border border-gray-100 col-span-1 row-span-2 flex flex-col anim-child" style={{'--i': 1} as React.CSSProperties}>
-          <p className="text-[11px] sm:text-xs font-semibold text-gray-700 mb-2">Croissance MRR</p>
-          <div className="flex-grow flex items-end space-x-1 sm:space-x-1.5">
+      <div className="flex-grow grid grid-cols-2 grid-rows-2 gap-2 sm:gap-4">
+        <div className="bg-gray-50 rounded-lg p-2 sm:p-3 border border-gray-100 col-span-1 row-span-2 flex flex-col anim-child" style={{'--i': 1} as React.CSSProperties}>
+          <p className="text-xs font-semibold text-gray-700 mb-2">Croissance MRR</p>
+          <div className="flex-grow flex items-end space-x-1 sm:space-x-2">
               <div className="w-full h-1/3 bg-[#6D0037]/20 rounded-t-sm anim-bar" style={{'--d': 0} as React.CSSProperties}></div>
               <div className="w-full h-2/3 bg-[#6D0037]/20 rounded-t-sm anim-bar" style={{'--d': 1} as React.CSSProperties}></div>
               <div className="w-full h-1/2 bg-[#6D0037]/20 rounded-t-sm anim-bar" style={{'--d': 2} as React.CSSProperties}></div>
               <div className="w-full h-3/4 bg-[#6D0037] rounded-t-sm anim-bar" style={{'--d': 3} as React.CSSProperties}></div>
           </div>
         </div>
-        <div className="bg-gray-50 rounded-lg p-2 border border-gray-100 col-span-1 row-span-1 anim-child" style={{'--i': 2} as React.CSSProperties}>
-          <p className="text-[11px] sm:text-xs text-gray-700">Taux de Churn</p>
-          <p className="font-bold text-gray-800 text-sm sm:text-lg">2.1% <span className="text-green-500 text-xs sm:text-sm">↓</span></p>
+        <div className="bg-gray-50 rounded-lg p-2 sm:p-4 border border-gray-100 col-span-1 row-span-1 anim-child" style={{'--i': 2} as React.CSSProperties}>
+          <p className="text-xs text-gray-700">Taux de Churn</p>
+          <p className="font-bold text-gray-800 text-lg sm:text-xl">2.1% <span className="text-green-500 text-sm">↓</span></p>
         </div>
-         <div className="bg-gray-50 rounded-lg p-2 border border-gray-100 col-span-1 row-span-1 anim-child" style={{'--i': 3} as React.CSSProperties}>
-          <p className="text-[11px] sm:text-xs text-gray-700">CAC</p>
-          <p className="font-bold text-[#27013D] text-sm sm:text-lg">1.2k€ <span className="text-red-500 text-xs sm:text-sm">↑</span></p>
+         <div className="bg-gray-50 rounded-lg p-2 sm:p-4 border border-gray-100 col-span-1 row-span-1 anim-child" style={{'--i': 3} as React.CSSProperties}>
+          <p className="text-xs text-gray-700">CAC</p>
+          <p className="font-bold text-[#27013D] text-lg sm:text-xl">1.2k€ <span className="text-red-500 text-sm">↑</span></p>
         </div>
       </div>
     </div>
@@ -583,22 +583,22 @@ export const TransactionalSupportVisual: React.FC<{ theme?: string, disableHover
                 <div className="flex items-start gap-3">
                     <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">1</div>
                     <div>
-                        <h4 className="font-semibold text-gray-800 text-[11px] sm:text-xs">Préparation Stratégique</h4>
-                        <p className="text-gray-600 text-[10px] sm:text-[11px] leading-tight mt-1">Valorisation, Business Plan, VDD, Teaser, IM</p>
+                        <h4 className="font-semibold text-gray-800 text-xs">Préparation Stratégique</h4>
+                        <p className="text-gray-600 text-[10px] leading-tight mt-1">Valorisation, Business Plan, VDD, Teaser, IM</p>
                     </div>
                 </div>
                 <div className="flex items-start gap-3">
                     <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">2</div>
                     <div>
-                        <h4 className="font-semibold text-gray-800 text-[11px] sm:text-xs">Exécution & Négociation</h4>
-                        <p className="text-gray-600 text-[10px] sm:text-[11px] leading-tight mt-1">Data Room, Management Présentations, Négociation des offres</p>
+                        <h4 className="font-semibold text-gray-800 text-xs">Exécution & Négociation</h4>
+                        <p className="text-gray-600 text-[10px] leading-tight mt-1">Data Room, Management Présentations, Négociation des offres</p>
                     </div>
                 </div>
                 <div className="flex items-start gap-3">
                     <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">3</div>
                     <div>
-                        <h4 className="font-semibold text-gray-800 text-[11px] sm:text-xs">Due Diligence & Closing</h4>
-                        <p className="text-gray-600 text-[10px] sm:text-[11px] leading-tight mt-1">Audit d'acquisition, Signature (SPA), Levée des conditions suspensives</p>
+                        <h4 className="font-semibold text-gray-800 text-xs">Due Diligence & Closing</h4>
+                        <p className="text-gray-600 text-[10px] leading-tight mt-1">Audit d'acquisition, Signature (SPA), Levée des conditions suspensives</p>
                     </div>
                 </div>
             </div>
@@ -704,7 +704,6 @@ export const ExpertiseSpeechIcon: React.FC<{ className?: string }> = ({ classNam
     </svg>
 );
 
-export const ArrowLeftIcon: React.FC<{ className?: string }> = ({ className }) => <svg className={className} viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" /></svg>;
 export const ArrowRightIcon: React.FC<{ className?: string }> = ({ className }) => <svg className={className} viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" /></svg>;
 export const TargetIcon: React.FC<{ className?: string }> = ({ className }) => <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 21a9 9 0 100-18 9 9 0 000 18z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15a3 3 0 100-6 3 3 0 000 6z" /></svg>;
 export const BarChartIcon: React.FC<{ className?: string }> = ({ className }) => <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>;

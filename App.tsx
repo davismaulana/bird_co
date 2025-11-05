@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -33,7 +32,7 @@ const App: React.FC = () => {
   useEffect(() => {
     if (isLoading) return; // Don't setup observers until content is visible
 
-    const revealEls = Array.from(document.querySelectorAll('.reveal:not(.reveal-custom-logic)'));
+    const revealEls = Array.from(document.querySelectorAll('.reveal'));
 
     if (!('IntersectionObserver' in window) || revealEls.length === 0) {
       revealEls.forEach(el => el.classList.add('is-visible'));
@@ -48,21 +47,14 @@ const App: React.FC = () => {
 
     const io = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
-        const el = entry.target as HTMLElement;
-        const isRepeating = el.hasAttribute('data-reveal-repeat');
-
         if (entry.isIntersecting) {
+          const el = entry.target as HTMLElement;
+
           const delay = el.getAttribute('data-reveal-delay');
           if (delay) el.style.transitionDelay = delay;
 
           el.classList.add('is-visible');
-          if (!isRepeating) {
-            obs.unobserve(el);
-          }
-        } else {
-          if (isRepeating) {
-            el.classList.remove('is-visible');
-          }
+          obs.unobserve(el);
         }
       });
     }, { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
@@ -165,7 +157,7 @@ const App: React.FC = () => {
           <Logos />
           <Team />
           <section id="citation">
-            <div className="bg-white min-h-screen grid">
+            <div className="bg-white grid">
               <div className="grid grid-cols-1 md:grid-cols-2 items-center">
                 <Animate variant="pop" className="relative h-[300px] sm:h-[350px] md:h-full md:order-last">
                   <HeroAnimation />
