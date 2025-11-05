@@ -23,7 +23,7 @@ const ServicesOverview: React.FC = () => {
             </p>
           </Animate>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto stagger">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {services.map((service: any, index) => {
             let iconSize;
             if (service.slug === 'services-ma') {
@@ -35,43 +35,51 @@ const ServicesOverview: React.FC = () => {
             }
             
             return (
-              <Animate key={index} variant="pop" className="h-full">
+              <Animate key={index} variant="pop" className="h-full" delay={index * 500}>
                 <a href={`/service/${service.slug}`} className="block h-full group">
                   <div
                     className="bg-white rounded-xl p-6 sm:p-8 flex flex-col text-left h-full transition-all duration-300 ease-in-out border border-gray-200 group-hover:bg-[#27013D] group-hover:shadow-xl group-hover:-translate-y-2 group-hover:scale-105"
                   >
-                    <div className="flex justify-between items-start gap-4">
-                      <div className="flex-1">
-                          <h3 className="text-base font-bold text-black leading-tight transition-colors duration-300 group-hover:text-white mb-2">
-                            {service.title}
-                          </h3>
-                          <p className="text-sm font-semibold text-[#6D0037] mb-2 group-hover:text-violet-200 transition-colors duration-300">{service.subTitle}</p>
-                          <p className="text-slate-700 text-sm leading-relaxed transition-colors duration-300 group-hover:text-white">{service.description}</p>
-                      </div>
-                      
-                      <div className="flex-shrink-0 text-[#27013D] transition-colors duration-300 group-hover:text-white">
-                        {service.darkIcon ? (
-                          <>
-                            <div className="group-hover:hidden">
-                              {React.cloneElement(service.icon, { className: `${iconSize} object-contain` })}
+                    <div className="service-card-content">
+                      <div className="flex justify-between items-start gap-4">
+                        <div className="flex-1">
+                            <div className="anim-child" style={{'--i': 2} as React.CSSProperties}>
+                              <h3 className="text-base font-bold text-black leading-tight transition-colors duration-300 group-hover:text-white mb-2">
+                                {service.title}
+                              </h3>
                             </div>
-                            <div className="hidden group-hover:block">
-                              {React.cloneElement(service.darkIcon, { className: `${iconSize} object-contain` })}
+                            <div className="anim-child" style={{'--i': 2} as React.CSSProperties}>
+                              <p className="text-sm font-semibold text-[#6D0037] mb-2 group-hover:text-violet-200 transition-colors duration-300">{service.subTitle}</p>
                             </div>
-                          </>
-                        ) : (
-                          React.cloneElement(service.icon, { className: `${iconSize} object-contain` })
-                        )}
-                      </div>
-                    </div>
-
-                    <div className="flex-grow" />
-                    
-                    <div>
-                        <div className="w-full mt-6 flex items-end justify-between text-sm font-semibold text-[#27013D] transition-colors duration-300 group-hover:text-white">
-                          <span>En savoir plus</span>
-                          <ArrowRightIcon className="w-5 h-5" />
+                            <div className="anim-child" style={{'--i': 2} as React.CSSProperties}>
+                              <p className="text-slate-700 text-sm leading-relaxed transition-colors duration-300 group-hover:text-white">{service.description}</p>
+                            </div>
                         </div>
+                        
+                        <div className="flex-shrink-0 text-[#27013D] transition-colors duration-300 group-hover:text-white anim-child" style={{'--i': 0} as React.CSSProperties}>
+                          {service.darkIcon ? (
+                            <>
+                              <div className="group-hover:hidden">
+                                {React.cloneElement(service.icon, { className: `${iconSize} object-contain` })}
+                              </div>
+                              <div className="hidden group-hover:block">
+                                {React.cloneElement(service.darkIcon, { className: `${iconSize} object-contain` })}
+                              </div>
+                            </>
+                          ) : (
+                            React.cloneElement(service.icon, { className: `${iconSize} object-contain` })
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="flex-grow" />
+                      
+                      <div className="anim-child" style={{'--i': 2} as React.CSSProperties}>
+                          <div className="w-full mt-6 flex items-end justify-between text-sm font-semibold text-[#27013D] transition-colors duration-300 group-hover:text-white">
+                            <span>En savoir plus</span>
+                            <ArrowRightIcon className="w-5 h-5" />
+                          </div>
+                      </div>
                     </div>
                   </div>
                 </a>

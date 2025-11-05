@@ -190,6 +190,16 @@
       animation: fadeInPop 800ms cubic-bezier(.2,.65,.2,1) forwards;
       animation-delay: calc(var(--i, 0) * 120ms);
     }
+
+    /* Styles for Service Cards internal animations */
+    .service-card-content .anim-child {
+      opacity: 0;
+    }
+    .reveal.is-visible .service-card-content .anim-child {
+      animation: fadeInPop 600ms cubic-bezier(.2,.65,.2,1) forwards;
+      animation-delay: calc(var(--i, 0) * 150ms);
+    }
+
     .reveal.is-visible .animated-mockup .anim-bar {
       transform-origin: bottom;
       animation: growUp 750ms cubic-bezier(.2,.65,.2,1) forwards;
