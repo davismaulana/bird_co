@@ -181,11 +181,13 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
   );
   
   const classNames = [
-    "animated-mockup w-full h-full bg-white rounded-2xl p-2 sm:p-4 shadow-2xl border border-gray-100 flex flex-col transition-transform duration-300",
+    "animated-mockup w-full bg-white rounded-2xl p-2 sm:p-4 shadow-2xl border border-gray-100 flex flex-col transition-transform duration-300",
   ];
 
   if (!noAspectRatio) {
     classNames.push("aspect-[4/3]");
+  } else {
+    classNames.push("aspect-[10/7] sm:h-full");
   }
 
   if (initialScaleDown) {
@@ -417,12 +419,17 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
 };
 export const KpiDashboardMockup: React.FC<{ theme?: string, noAspectRatio?: boolean, disableHover?: boolean, initialScaleDown?: boolean, className?: string }> = ({ noAspectRatio = false, disableHover = false, initialScaleDown = false, className }) => {
   const classNames = [
-    "animated-mockup w-full h-full bg-white rounded-2xl",
+    "animated-mockup w-full bg-white rounded-2xl",
     noAspectRatio ? 'p-3 sm:p-4' : 'p-4 sm:p-6',
     "shadow-2xl border border-gray-100 flex flex-col",
-    !noAspectRatio ? 'aspect-[4/3]' : '',
     className
   ];
+
+  if (!noAspectRatio) {
+    classNames.push("aspect-[4/3]");
+  } else {
+      classNames.push("aspect-[10/7] sm:h-full");
+  }
 
   if (initialScaleDown) {
     classNames.push("transform scale-[0.9]");
@@ -540,26 +547,27 @@ export const DiagnosticScanMockup: React.FC<{ theme?: string, disableHover?: boo
 };
 
 
-{/* FIX: Moved TransactionalSupportVisual, DueDiligenceVisual, and CashGrowthVisual components before they are referenced. */}
 export const DueDiligenceVisual: React.FC = () => (
-  <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
-    <h3 className="font-bold text-gray-800 text-xs sm:text-sm mb-4">Checklist Due Diligence VDD</h3>
+  <div className="animated-mockup w-full aspect-[10/7] sm:h-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
+    <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
+      <h3 className="font-bold text-gray-900 text-xs sm:text-sm">Due Diligence</h3>
+    </div>
     <div className="flex-grow space-y-3">
-      <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
+      <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 anim-child" style={{'--i': 1} as React.CSSProperties}>
         <CheckmarkCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0" />
-        <p className="text-gray-800 text-xs">Qualité des revenus (MRR, churn...)</p>
+        <p className="text-gray-800 text-[11px] sm:text-xs">Qualité des revenus (MRR, churn...)</p>
       </div>
-      <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
+      <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 anim-child" style={{'--i': 2} as React.CSSProperties}>
         <CheckmarkCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0" />
-        <p className="text-gray-800 text-xs">Analyse de la rentabilité (EBITDA, marges)</p>
+        <p className="text-gray-800 text-[11px] sm:text-xs">Analyse de la rentabilité (EBITDA, marges)</p>
       </div>
-      <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
+      <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 anim-child" style={{'--i': 3} as React.CSSProperties}>
         <CheckmarkCircleIcon className="w-6 h-6 text-gray-300 flex-shrink-0" />
-        <p className="text-gray-700 text-xs">Normalisation du BFR</p>
+        <p className="text-gray-700 text-[11px] sm:text-xs">Normalisation du BFR</p>
       </div>
-       <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
+       <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 anim-child" style={{'--i': 4} as React.CSSProperties}>
         <CheckmarkCircleIcon className="w-6 h-6 text-gray-300 flex-shrink-0" />
-        <p className="text-gray-700 text-xs">Analyse de la dette nette</p>
+        <p className="text-gray-700 text-[11px] sm:text-xs">Analyse de la dette nette</p>
       </div>
     </div>
   </div>
@@ -567,7 +575,7 @@ export const DueDiligenceVisual: React.FC = () => (
 
 export const TransactionalSupportVisual: React.FC<{ theme?: string, disableHover?: boolean, initialScaleDown?: boolean }> = ({ disableHover = false, initialScaleDown = false }) => {
     const classNames = [
-        "w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col aspect-[4/3]",
+        "animated-mockup w-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300 aspect-[10/7] sm:aspect-[4/3]",
     ];
 
     if (initialScaleDown) {
@@ -578,23 +586,25 @@ export const TransactionalSupportVisual: React.FC<{ theme?: string, disableHover
 
     return (
         <div className={classNames.join(' ')}>
-            <h3 className="font-bold text-gray-800 text-xs sm:text-sm mb-4">Accompagnement Transactionnel</h3>
+            <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
+                <h3 className="font-bold text-gray-900 text-xs sm:text-sm">Accompagnement Transactionnel</h3>
+            </div>
             <div className="flex-grow space-y-4">
-                <div className="flex items-start gap-3">
+                <div className="flex items-start gap-3 anim-child" style={{'--i': 1} as React.CSSProperties}>
                     <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">1</div>
                     <div>
                         <h4 className="font-semibold text-gray-800 text-[11px] sm:text-xs">Préparation Stratégique</h4>
                         <p className="text-gray-600 text-[10px] sm:text-[11px] leading-tight mt-1">Valorisation, Business Plan, VDD, Teaser, IM</p>
                     </div>
                 </div>
-                <div className="flex items-start gap-3">
+                <div className="flex items-start gap-3 anim-child" style={{'--i': 2} as React.CSSProperties}>
                     <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">2</div>
                     <div>
                         <h4 className="font-semibold text-gray-800 text-[11px] sm:text-xs">Exécution & Négociation</h4>
                         <p className="text-gray-600 text-[10px] sm:text-[11px] leading-tight mt-1">Data Room, Management Présentations, Négociation des offres</p>
                     </div>
                 </div>
-                <div className="flex items-start gap-3">
+                <div className="flex items-start gap-3 anim-child" style={{'--i': 3} as React.CSSProperties}>
                     <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">3</div>
                     <div>
                         <h4 className="font-semibold text-gray-800 text-[11px] sm:text-xs">Due Diligence & Closing</h4>
@@ -643,6 +653,177 @@ export const CashGrowthVisual: React.FC = () => {
         </div>
     );
 };
+
+export const LiquidityChartVisual: React.FC = () => {
+    // Data points based on the image (approximations) in k€
+    const data = [
+        { x: 0, y: 650 }, { x: 20, y: 600 }, { x: 40, y: 420 },
+        { x: 60, y: 320 }, { x: 80, y: 280 }, { x: 100, y: 120 },
+    ];
+
+    const svgWidth = 300;
+    const svgHeight = 170;
+    const padding = { top: 10, right: 10, bottom: 15, left: 35 };
+    const chartWidth = svgWidth - padding.left - padding.right;
+    const chartHeight = svgHeight - padding.top - padding.bottom;
+    const yMax = 700;
+
+    const scaleX = (x: number) => (x / 100) * chartWidth + padding.left;
+    const scaleY = (y: number) => svgHeight - padding.bottom - (y / yMax) * chartHeight;
+    
+    const linePathData = 
+        `M ${scaleX(data[0].x)} ${scaleY(data[0].y)}` +
+        ` C ${scaleX(10)} ${scaleY(630)}, ${scaleX(15)} ${scaleY(620)}, ${scaleX(data[1].x)} ${scaleY(data[1].y)}` +
+        ` C ${scaleX(28)} ${scaleY(550)}, ${scaleX(35)} ${scaleY(450)}, ${scaleX(data[2].x)} ${scaleY(data[2].y)}` +
+        ` C ${scaleX(48)} ${scaleY(380)}, ${scaleX(55)} ${scaleY(340)}, ${scaleX(data[3].x)} ${scaleY(data[3].y)}` +
+        ` C ${scaleX(65)} ${scaleY(300)}, ${scaleX(75)} ${scaleY(290)}, ${scaleX(data[4].x)} ${scaleY(data[4].y)}` +
+        ` C ${scaleX(85)} ${scaleY(270)}, ${scaleX(90)} ${scaleY(200)}, ${scaleX(data[5].x)} ${scaleY(data[5].y)}`;
+        
+    const areaPathData = linePathData + ` L ${scaleX(100)} ${svgHeight - padding.bottom} L ${scaleX(0)} ${svgHeight - padding.bottom} Z`;
+
+    const yAxisLabels = [700, 600, 500, 400, 300, 200, 100, 0];
+    const xAxisLabels = [
+        { value: 0, label: 'Janv.' },
+        { value: 25, label: 'Avr.' },
+        { value: 50, label: 'Juil.' },
+        { value: 75, label: 'Oct.' },
+        { value: 100, label: 'Déc.' },
+    ];
+
+    return (
+        <div className="animated-mockup w-full aspect-[10/7] sm:h-full bg-white rounded-2xl p-3 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300 text-gray-900">
+            <div className="w-full text-left mb-2 anim-child" style={{'--i': 0} as React.CSSProperties}>
+                <h3 className="font-bold text-gray-900 text-xs sm:text-sm">Gestion de la trésorerie</h3>
+            </div>
+            <div className="anim-child" style={{'--i': 1} as React.CSSProperties}>
+                <p className="text-base font-bold text-[#27013D]">58 K€</p>
+            </div>
+            <div className="flex-grow mt-1 relative">
+                <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`} className="w-full h-full" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                        <linearGradient id="liquidityAreaGradient" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stopColor="#27013D" stopOpacity="0.3"/>
+                            <stop offset="100%" stopColor="#27013D" stopOpacity="0"/>
+                        </linearGradient>
+                    </defs>
+                    
+                    <g className="anim-child" style={{'--i': 2} as React.CSSProperties}>
+                        {/* Y-axis labels */}
+                        {yAxisLabels.map((val, i) => (
+                            <text
+                                key={i}
+                                x={padding.left - 8}
+                                y={scaleY(val)}
+                                textAnchor="end"
+                                alignmentBaseline="middle"
+                                fill="black"
+                                fontSize="5"
+                                style={{ opacity: 0.7 }}
+                            >
+                                {val === 0 ? '0k' : `${val}k`}
+                            </text>
+                        ))}
+                    </g>
+                    
+                    {/* X-axis labels */}
+                    <g className="anim-child" style={{'--i': 2} as React.CSSProperties}>
+                        {xAxisLabels.map((item, i) => (
+                           <text
+                                key={i}
+                                x={scaleX(item.value)}
+                                y={svgHeight - padding.bottom + 10}
+                                textAnchor="middle"
+                                alignmentBaseline="middle"
+                                fill="black"
+                                fontSize="5"
+                                style={{ opacity: 0.7 }}
+                            >
+                                {item.label}
+                            </text>
+                        ))}
+                    </g>
+
+                    {/* Area fill path. */}
+                    <path
+                        d={areaPathData}
+                        fill="url(#liquidityAreaGradient)"
+                        className="anim-child"
+                        style={{'--i': 3, stroke: 'none'} as React.CSSProperties}
+                    />
+
+                    {/* Line path */}
+                    <path
+                        d={linePathData}
+                        stroke="#27013D"
+                        strokeWidth="1"
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="animated-line-chart"
+                    />
+
+                    {/* Data point circles */}
+                    {data.map((point, i) => (
+                        <circle
+                            key={i}
+                            cx={scaleX(point.x)}
+                            cy={scaleY(point.y)}
+                            r="1.25"
+                            fill="white"
+                            stroke="#27013D"
+                            strokeWidth="0.75"
+                            className="anim-child"
+                            style={{'--i': 4 + i} as React.CSSProperties}
+                        />
+                    ))}
+                </svg>
+            </div>
+        </div>
+    );
+};
+
+export const OnSiteInterventionVisual: React.FC = () => (
+    <div className="animated-mockup w-full aspect-[10/7] sm:h-full bg-white rounded-2xl p-3 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
+        <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
+            <h3 className="font-bold text-gray-900 text-xs sm:text-sm">Intervention sur site</h3>
+        </div>
+        <div className="flex-grow bg-gray-50 rounded-lg p-3 space-y-3 border border-gray-100 text-xs">
+            <p className="font-semibold text-gray-800 mb-2 anim-child" style={{'--i': 1} as React.CSSProperties}>Agenda de la session :</p>
+            <div className="flex items-start gap-3 anim-child" style={{'--i': 2} as React.CSSProperties}>
+                <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">1</div>
+                <p className="text-gray-800">Présentation aux équipes</p>
+            </div>
+            <div className="flex items-start gap-3 anim-child" style={{'--i': 3} as React.CSSProperties}>
+                <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">2</div>
+                <p className="text-gray-800">Revue des processus internes</p>
+            </div>
+            <div className="flex items-start gap-3 anim-child" style={{'--i': 4} as React.CSSProperties}>
+                <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">3</div>
+                <p className="text-gray-800">Revue des performances et analyse des KPIs</p>
+            </div>
+            <div className="flex items-start gap-3 anim-child" style={{'--i': 5} as React.CSSProperties}>
+                <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">4</div>
+                <p className="text-gray-800">Identification des leviers de croissance</p>
+            </div>
+            <div className="flex items-start gap-3 anim-child" style={{'--i': 6} as React.CSSProperties}>
+                <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">5</div>
+                <p className="text-gray-800">Définition de la feuille de route stratégique</p>
+            </div>
+            <div className="flex items-start gap-3 anim-child" style={{'--i': 7} as React.CSSProperties}>
+                <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">6</div>
+                <p className="text-gray-800">Définition du plan d'action</p>
+            </div>
+             <div className="flex items-start gap-3 anim-child" style={{'--i': 8} as React.CSSProperties}>
+                <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">7</div>
+                <p className="text-gray-800">Planification des réunions de travail et points d'étape</p>
+            </div>
+        </div>
+        <div className="mt-4 flex items-center justify-between text-xs text-gray-500 anim-child" style={{'--i': 9} as React.CSSProperties}>
+            <span>BIRD&CO</span>
+            <span>CONFIDENTIEL</span>
+        </div>
+    </div>
+);
 
 export const ExpertiseSearchIcon: React.FC<{ className?: string }> = ({ className }) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" className={className} fill="currentColor">
