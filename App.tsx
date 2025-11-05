@@ -18,7 +18,7 @@ import TaskShowcase from './components/TaskShowcase';
 import LoadingScreen from './components/LoadingScreen';
 import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 import TermsOfServicePage from './components/TermsOfServicePage';
-import PillarsSection from './components/PillarsSection';
+import PilliersSection from './components/PillarsSection';
 import StakesSection from './components/StakesSection';
 import Animate from './components/Animate';
 import FAQPage from './components/FAQPage';
@@ -159,7 +159,7 @@ const App: React.FC = () => {
           <ValueProposition />
           <Expertise />
           <TaskShowcase />
-          <PillarsSection />
+          <PilliersSection />
           <Personas />
           <Stats />
           <Logos />

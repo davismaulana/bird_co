@@ -24,9 +24,9 @@ const pillars = [
   },
 ];
 
-const PillarsSection: React.FC = () => {
+const PilliersSection: React.FC = () => {
   return (
-    <section id="piliers" className="bg-white min-h-screen flex flex-col justify-center py-16 overflow-x-hidden">
+    <section id="pilliers" className="bg-white min-h-screen flex flex-col justify-center py-16 overflow-x-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <Animate variant="pop">
@@ -36,12 +36,12 @@ const PillarsSection: React.FC = () => {
           </Animate>
           <Animate variant="pop" delay={100}>
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
-              Nos <span className="gradient-text">Piliers</span>
+              Nos <span className="gradient-text">Pilliers</span>
             </h2>
           </Animate>
           <Animate variant="pop" delay={200}>
             <p className="text-lg text-gray-800 mt-4 max-w-3xl mx-auto">
-              Notre proposition repose sur <strong>quatre piliers fondamentaux</strong> qui guident chacune de nos interventions.
+              Notre proposition repose sur <strong>quatre pilliers fondamentaux</strong> qui guident chacune de nos interventions.
             </p>
           </Animate>
         </div>
@@ -102,4 +102,4 @@ const PillarsSection: React.FC = () => {
   );
 };
 
-export default PillarsSection;
+export default PilliersSection;
