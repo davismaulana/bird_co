@@ -292,7 +292,7 @@ const TaskShowcase: React.FC = () => {
     const [activeTask, setActiveTask] = useState(0);
 
     return (
-        <section className="bg-gray-50 flex flex-col justify-center py-16">
+        <section className="bg-gray-50 min-h-screen flex flex-col justify-center py-16">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12 max-w-3xl mx-auto">
                     <Animate variant="pop">

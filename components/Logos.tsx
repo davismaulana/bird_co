@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { WellowLogo, RegenSchoolLogo, PomadLogo, BredLogo, EricKayserLogo, SquareLogo, CasaLogo, TmhAvocatsLogo, FoodPilotLogo, OctoGamingLogo, CameroneCapitalLogo, SOCABEGLogo } from '../constants';
 import Animate from './Animate';
@@ -26,7 +27,7 @@ const Logos: React.FC<LogosProps> = ({ backgroundColor = 'bg-gray-50' }) => {
   const superEnlargedLogos = ['Wellow', 'Octo Gaming'];
 
   return (
-    <section className={`${backgroundColor} flex flex-col items-center justify-center py-16 sm:py-24`}>
+    <section className={`${backgroundColor} min-h-screen flex flex-col items-center justify-center py-16 sm:py-24`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 lg:mb-16">
           <Animate variant="pop">
