@@ -87,7 +87,7 @@
     
     /* Base reveal state */
     .reveal {
-      --reveal-duration: 800ms;
+      --reveal-duration: 1000ms;
       --reveal-ease: cubic-bezier(.2,.65,.2,1); /* snappy but smooth */
       --reveal-translate: 12px;
       --reveal-scale: .96;
@@ -196,8 +196,8 @@
       opacity: 0;
     }
     .reveal.is-visible .service-card-content .anim-child {
-      animation: fadeInPop 600ms cubic-bezier(.2,.65,.2,1) forwards;
-      animation-delay: calc(var(--i, 0) * 150ms);
+      animation: fadeInPop 800ms cubic-bezier(.2,.65,.2,1) forwards;
+      animation-delay: calc(var(--i, 0) * 200ms);
     }
 
     .reveal.is-visible .animated-mockup .anim-bar {

@@ -15,9 +15,9 @@ const ServicesOverview: React.FC = () => {
     const cards = Array.from(container.querySelectorAll('.reveal-custom-logic')) as HTMLElement[];
     if (cards.length === 0) return;
 
-    const staggerDelay = 450; // ms
-    // Last card starts at (3 * 450ms). Reveal is 800ms. Last content anim finishes 1200ms after reveal.
-    const totalAnimationTime = (cards.length - 1) * staggerDelay + 800 + 1200;
+    const staggerDelay = 600; // ms
+    // Last card starts at (3 * 600ms). Reveal is 1000ms. Last content anim finishes 1600ms after reveal.
+    const totalAnimationTime = (cards.length - 1) * staggerDelay + 1000 + 1600;
     const postAnimationDelay = 5000; // 5s
 
     const cleanup = () => {
