@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 
 export const PaperPlaneIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -504,10 +505,14 @@ export const FieldWorkMockup: React.FC<{ theme?: string }> = () => (
         </div>
     </div>
 );
-export const DiagnosticScanMockup: React.FC<{ theme?: string, disableHover?: boolean, initialScaleDown?: boolean }> = ({ disableHover = false, initialScaleDown = false }) => {
+export const DiagnosticScanMockup: React.FC<{ theme?: string, disableHover?: boolean, initialScaleDown?: boolean, noAspectRatio?: boolean }> = ({ disableHover = false, initialScaleDown = false, noAspectRatio = false }) => {
     const classNames = [
-        "w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col aspect-[4/3]",
+        "w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col",
     ];
+
+    if (!noAspectRatio) {
+        classNames.push("aspect-[4/3]");
+    }
 
     if (initialScaleDown) {
         classNames.push("transform scale-[0.9]");
@@ -1105,7 +1110,7 @@ export const serviceDetails: { [key: string]: any } = {
                         ))}
                     </ul>
                 ),
-                visual: <KpiDashboardMockup noAspectRatio disableHover initialScaleDown className="aspect-[4/3]" />,
+                visual: <KpiDashboardMockup noAspectRatio disableHover initialScaleDown />,
             }
         },
         mainContent: { 

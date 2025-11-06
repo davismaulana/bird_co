@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import { services, serviceDetails } from '../constants';
 import Animate from './Animate';
@@ -79,18 +80,20 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                 </Animate>
             </div>
             {details.diagnostic.content && (
-              <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 max-w-7xl mx-auto lg:items-center">
-                  <Animate variant={'pop'} delay={300} className="lg:col-span-3 aspect-[4/3] lg:aspect-auto">
-                      {details.diagnostic.content.visual}
+              <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 max-w-7xl mx-auto">
+                  <Animate variant={'pop'} delay={300} className="lg:col-span-3 aspect-[4/3] lg:aspect-auto h-full">
+                      {React.cloneElement(details.diagnostic.content.visual, { noAspectRatio: true })}
                   </Animate>
-                  <Animate variant={'pop'} delay={200} className="lg:col-span-2">
-                      <div className="text-left mt-5">
-                        <h3 className="text-lg font-bold text-[#27013D] mb-4">{details.diagnostic.content.title}</h3>
-                        <div className="text-gray-800 leading-relaxed text-base">
-                          {details.diagnostic.content.description}
+                  <Animate variant={'pop'} delay={200} className="lg:col-span-2 h-full">
+                      <div className="text-left mt-5 lg:mt-0 flex flex-col h-full">
+                        <div>
+                          <h3 className="text-lg font-bold text-[#27013D] mb-4">{details.diagnostic.content.title}</h3>
+                          <div className="text-gray-800 leading-relaxed text-base">
+                            {details.diagnostic.content.description}
+                          </div>
                         </div>
                         {details.ambition && (
-                            <div className="mt-8 pt-8 border-t border-gray-200">
+                            <div className="mt-auto pt-8 border-t border-gray-200">
                                 <h3 className="text-lg font-bold gradient-text mb-4">
                                     {details.ambition.title}
                                 </h3>
