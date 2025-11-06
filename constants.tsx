@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 export const PaperPlaneIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -583,32 +584,46 @@ export const TransactionalSupportVisual: React.FC<{ theme?: string, disableHover
         classNames.push("transform hover:scale-105");
     }
 
+    const steps = [
+        {
+            title: "Préparation Stratégique",
+            description: "Valorisation, Business Plan, VDD, Teaser, IM"
+        },
+        {
+            title: "Exécution & Négociation",
+            description: "Data Room, Management Présentations, Négociation des offres"
+        },
+        {
+            title: "Due Diligence & Closing",
+            description: "Audit d'acquisition, Signature (SPA), Levée des conditions suspensives"
+        }
+    ];
+
     return (
         <div className={classNames.join(' ')}>
             <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
                 <h3 className="font-bold text-gray-900 text-xs sm:text-sm">Accompagnement Transactionnel</h3>
             </div>
-            <div className="flex-grow space-y-4">
-                <div className="flex items-start gap-3 anim-child" style={{'--i': 1} as React.CSSProperties}>
-                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">1</div>
-                    <div>
-                        <h4 className="font-semibold text-gray-800 text-[11px] sm:text-xs">Préparation Stratégique</h4>
-                        <p className="text-gray-600 text-[10px] sm:text-[11px] leading-tight mt-1">Valorisation, Business Plan, VDD, Teaser, IM</p>
-                    </div>
-                </div>
-                <div className="flex items-start gap-3 anim-child" style={{'--i': 2} as React.CSSProperties}>
-                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">2</div>
-                    <div>
-                        <h4 className="font-semibold text-gray-800 text-[11px] sm:text-xs">Exécution & Négociation</h4>
-                        <p className="text-gray-600 text-[10px] sm:text-[11px] leading-tight mt-1">Data Room, Management Présentations, Négociation des offres</p>
-                    </div>
-                </div>
-                <div className="flex items-start gap-3 anim-child" style={{'--i': 3} as React.CSSProperties}>
-                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">3</div>
-                    <div>
-                        <h4 className="font-semibold text-gray-800 text-[11px] sm:text-xs">Due Diligence & Closing</h4>
-                        <p className="text-gray-600 text-[10px] sm:text-[11px] leading-tight mt-1">Audit d'acquisition, Signature (SPA), Levée des conditions suspensives</p>
-                    </div>
+            
+            <div className="flex-grow relative pl-8"> {/* Padding to make space for the timeline */}
+                {/* Vertical Line */}
+                <div className="absolute top-3 bottom-32 left-4 w-0.5 bg-gray-200 rounded-full"></div>
+
+                {/* Steps */}
+                <div className="space-y-8"> {/* Increased gap */}
+                    {steps.map((step, index) => (
+                        <div key={index} className="relative anim-child" style={{'--i': index + 1} as React.CSSProperties}>
+                            {/* Dot */}
+                            <div className="absolute top-0.5 -left-8 w-8 h-8 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] text-white flex items-center justify-center font-bold text-xs z-10 border-4 border-white">
+                                {index + 1}
+                            </div>
+                            {/* Content */}
+                            <div>
+                                <h4 className="font-semibold text-gray-800 text-[11px] sm:text-xs">{step.title}</h4>
+                                <p className="text-gray-600 text-[10px] sm:text-[11px] leading-tight mt-1">{step.description}</p>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
