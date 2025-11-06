@@ -902,6 +902,12 @@ export const ChevronRightIcon: React.FC<{ className?: string }> = ({ className }
     </svg>
 );
 
+export const ChevronDownIcon: React.FC<{ className?: string }> = ({ className }) => (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+    </svg>
+);
+
 export const services = [
     { slug: 'pilotage-planification', title: 'Pilotage & Planification', subTitle: 'Construire', description: 'les outils indispensables à une gestion optimale : reporting, business plan, prévisionnels de trésorerie etc.', icon: <PaperPlaneIcon />, iconClassName: 'w-16 h-16' },
     { slug: 'cfo-part-time', title: 'CFO Part-time', subTitle: 'Structurer', description: 'votre croissance et mettre en exécution votre stratégie financière avec un bras-droit dédié à temps partiel.', icon: <CfoIcon />, iconClassName: 'w-14 h-14' },

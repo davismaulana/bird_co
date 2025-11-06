@@ -14,6 +14,7 @@ import {
   OctoGamingLogo,
   CameroneCapitalLogo,
   SOCABEGLogo,
+  ChevronDownIcon,
 } from '../constants';
 
 const heroLogos = [
@@ -89,6 +90,13 @@ const Hero: React.FC = () => {
           </Animate>
 
         </div>
+        
+        {/* Scroll down arrow */}
+        <Animate variant="pop" delay={800} className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-20">
+          <a href="/#vos-enjeux" aria-label="Faire défiler vers le bas" className="p-2 text-[#27013D] animate-bounce block">
+            <ChevronDownIcon className="w-8 h-8" />
+          </a>
+        </Animate>
       </div>
       
       <Animate variant="pop" delay={600} className="w-full pb-8">
