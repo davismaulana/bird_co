@@ -607,10 +607,10 @@ export const TransactionalSupportVisual: React.FC<{ theme?: string, disableHover
             
             <div className="flex-grow relative pl-8"> {/* Padding to make space for the timeline */}
                 {/* Vertical Line */}
-                <div className="absolute top-3 bottom-32 left-4 w-0.5 bg-gray-200 rounded-full"></div>
+                <div className="absolute top-3 bottom-48 left-4 w-0.5 bg-gray-200 rounded-full"></div>
 
                 {/* Steps */}
-                <div className="space-y-8"> {/* Increased gap */}
+                <div className="space-y-12"> {/* Increased gap */}
                     {steps.map((step, index) => (
                         <div key={index} className="relative anim-child" style={{'--i': index + 1} as React.CSSProperties}>
                             {/* Dot */}
