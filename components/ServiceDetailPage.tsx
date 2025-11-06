@@ -85,7 +85,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                       {React.cloneElement(details.diagnostic.content.visual, { noAspectRatio: true })}
                   </Animate>
                   <Animate variant={'pop'} delay={200} className="lg:col-span-2 h-full">
-                      <div className="text-left mt-5 lg:mt-0 flex flex-col h-full">
+                      <div className="text-left mt-5 lg:mt-0 flex flex-col h-full lg:py-8">
                         <div>
                           <h3 className="text-lg font-bold text-[#27013D] mb-4">{details.diagnostic.content.title}</h3>
                           <div className="text-gray-800 leading-relaxed text-base">
