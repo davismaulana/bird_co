@@ -183,7 +183,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
   );
   
   const classNames = [
-    "animated-mockup w-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col transition-transform duration-300",
+    "animated-mockup w-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col transition-transform duration-300 will-change-transform",
   ];
 
   if (!noAspectRatio) {
@@ -421,9 +421,8 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
 };
 export const KpiDashboardMockup: React.FC<{ theme?: string, noAspectRatio?: boolean, disableHover?: boolean, initialScaleDown?: boolean, className?: string }> = ({ noAspectRatio = false, disableHover = false, initialScaleDown = false, className }) => {
   const classNames = [
-    "animated-mockup w-full bg-white rounded-2xl p-4",
-    "shadow-2xl border border-gray-100 flex flex-col",
-    className
+    "animated-mockup w-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col will-change-transform",
+    className,
   ];
 
   if (!noAspectRatio) {
@@ -467,7 +466,7 @@ export const KpiDashboardMockup: React.FC<{ theme?: string, noAspectRatio?: bool
 };
 
 export const FieldWorkMockup: React.FC<{ theme?: string }> = () => (
-    <div className="animated-mockup w-full h-full bg-white rounded-2xl p-6 shadow-2xl border border-gray-100 flex flex-col transform hover:scale-105 transition-transform duration-300 aspect-[4/3]">
+    <div className="animated-mockup w-full h-full bg-white rounded-2xl p-6 shadow-2xl border border-gray-100 flex flex-col transform hover:scale-105 transition-transform duration-300 aspect-[4/3] will-change-transform">
         <div className="flex items-center justify-between mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
             <h3 className="font-bold text-gray-900 text-sm">Atelier Stratégique</h3>
             <div className="px-3 py-1 text-xs font-semibold bg-gray-100 text-gray-800 rounded-full">En personne</div>
@@ -507,7 +506,7 @@ export const FieldWorkMockup: React.FC<{ theme?: string }> = () => (
 );
 export const DiagnosticScanMockup: React.FC<{ theme?: string, disableHover?: boolean, initialScaleDown?: boolean, noAspectRatio?: boolean }> = ({ disableHover = false, initialScaleDown = false, noAspectRatio = false }) => {
     const classNames = [
-        "w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col",
+        "w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col will-change-transform",
     ];
 
     if (!noAspectRatio) {
@@ -553,7 +552,7 @@ export const DiagnosticScanMockup: React.FC<{ theme?: string, disableHover?: boo
 
 
 export const DueDiligenceVisual: React.FC = () => (
-  <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col transform hover:scale-105 transition-transform duration-300">
+  <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col transform hover:scale-105 transition-transform duration-300 will-change-transform">
     <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
       <h3 className="font-bold text-gray-900 text-xs sm:text-sm">Due Diligence</h3>
     </div>
@@ -580,7 +579,7 @@ export const DueDiligenceVisual: React.FC = () => (
 
 export const TransactionalSupportVisual: React.FC<{ theme?: string, disableHover?: boolean, initialScaleDown?: boolean }> = ({ disableHover = false, initialScaleDown = false }) => {
     const classNames = [
-        "animated-mockup w-full h-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col transition-transform duration-300",
+        "animated-mockup w-full h-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col transition-transform duration-300 will-change-transform",
     ];
 
     if (initialScaleDown) {
@@ -639,7 +638,7 @@ export const CashGrowthVisual: React.FC = () => {
     const pathData = "M 0 90 C 7 92 13 97 20 95 C 27 93 33 98 40 100 C 47 102 53 91 60 85 C 67 79 73 89 80 92 C 87 95 93 104 100 110 C 107 116 113 119 120 120 C 127 121 133 93 140 80 C 147 67 153 53 160 50 C 167 47 173 57 180 60 C 187 63 193 51 200 45 C 207 39 213 60 220 70 C 227 80 233 91 240 95 C 247 99 253 105 260 105 C 267 105 273 95 280 90 C 287 85 293 95 300 98";
 
     return (
-        <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300">
+        <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300 will-change-transform">
             <div className="flex justify-between items-start mb-2">
                 <h3 className="font-bold text-gray-800 text-xs sm:text-sm">Cash Management</h3>
             </div>
@@ -710,7 +709,7 @@ export const LiquidityChartVisual: React.FC = () => {
     ];
 
     return (
-        <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col transform hover:scale-105 transition-transform duration-300 text-gray-900">
+        <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col transform hover:scale-105 transition-transform duration-300 text-gray-900 will-change-transform">
             <div className="w-full text-left mb-2 anim-child" style={{'--i': 0} as React.CSSProperties}>
                 <h3 className="font-bold text-gray-900 text-xs sm:text-sm">Gestion de la trésorerie</h3>
             </div>
@@ -768,6 +767,7 @@ export const LiquidityChartVisual: React.FC = () => {
                         fill="url(#liquidityAreaGradient)"
                         className="anim-child"
                         style={{'--i': 3, stroke: 'none'} as React.CSSProperties}
+                        shapeRendering="geometricPrecision"
                     />
 
                     {/* Line path */}
@@ -778,7 +778,8 @@ export const LiquidityChartVisual: React.FC = () => {
                         fill="none"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        className="animated-line-chart"
+                        className="animated-line-chart-path"
+                        shapeRendering="geometricPrecision"
                     />
 
                     {/* Data point circles */}
@@ -793,6 +794,7 @@ export const LiquidityChartVisual: React.FC = () => {
                             strokeWidth="0.75"
                             className="anim-child"
                             style={{'--i': 4 + i} as React.CSSProperties}
+                            shapeRendering="geometricPrecision"
                         />
                     ))}
                 </svg>
@@ -802,7 +804,7 @@ export const LiquidityChartVisual: React.FC = () => {
 };
 
 export const OnSiteInterventionVisual: React.FC = () => (
-    <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col transform hover:scale-105 transition-transform duration-300">
+    <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col transform hover:scale-105 transition-transform duration-300 will-change-transform">
         <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
             <h3 className="font-bold text-gray-900 text-xs sm:text-sm">Intervention sur site</h3>
         </div>
