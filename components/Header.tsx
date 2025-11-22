@@ -232,7 +232,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
             onMouseEnter={handleSolutionsEnter}
             onMouseLeave={handleSolutionsLeave}
           >
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div className="w-full px-2 py-8">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {services.map((service, index) => (
                   <div key={index} className="dropdown-item" style={{'--delay': `${50 + index * 80}ms`} as React.CSSProperties}>
@@ -242,11 +242,11 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                           {service.title}
                         </h3>
                         <p className="text-sm font-semibold text-[#6D0037] mb-2 group-hover:text-violet-200 transition-colors duration-300">{service.subTitle}</p>
-                        <p className="text-sm text-gray-600 leading-relaxed transition-colors duration-300 group-hover:text-gray-200">
+                        <p className="text-sm text-gray-600 leading-relaxed transition-colors duration-300 group-hover:text-gray-200 line-clamp-2">
                           {service.description}
                         </p>
                         <div className="flex-grow" />
-                        <div className="w-full mt-4 flex items-center justify-between text-sm font-semibold text-[#27013D] transition-colors duration-300 group-hover:text-white">
+                        <div className="w-full mt-4 flex items-center justify-between text-sm font-semibold text-gray-900 transition-colors duration-300 group-hover:text-white">
                           <span>En savoir plus</span>
                           <ArrowRightIcon className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                         </div>

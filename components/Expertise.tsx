@@ -37,8 +37,8 @@ const Expertise: React.FC = () => {
             </h2>
           </Animate>
           <Animate variant="pop" delay={200}>
-            <p className="text-lg text-gray-800 mt-4">
-              Une expertise financière et stratégique complète <span className="gradient-text font-bold">pour répondre à l'ensemble de vos défis.</span>
+            <p className="text-lg text-gray-800 mt-4 whitespace-nowrap">
+              Une expertise financière et stratégique complète <span className="gradient-text font-bold">pour répondre à l'ensemble de vos défis</span>
             </p>
           </Animate>
         </div>

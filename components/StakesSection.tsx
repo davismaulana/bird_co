@@ -18,7 +18,7 @@ const stakes = [
     }
   },
   {
-    keyword: "Perenniser",
+    keyword: "Pérenniser",
     cardDescription: "Assurer la continuité et la résilience de votre modèle économique en optimisant vos processus et en sécurisant votre gouvernance financière pour un avenir serein.",
     cardIcon: "https://images2.imgbox.com/d4/4b/mBi6r288_o.png",
     newCard: {
@@ -33,7 +33,7 @@ const stakes = [
     }
   },
   {
-    keyword: "Resister",
+    keyword: "Résister",
     cardDescription: "Renforcer votre capacité à naviguer l'incertitude, en identifiant les risques et déployant des stratégies agiles pour transformer la turbulence en opportunités.",
     cardIcon: "https://images2.imgbox.com/30/ad/ToMA2afU_o.png",
     newCard: {
@@ -100,7 +100,7 @@ const StakesSection: React.FC = () => {
                                 role="tab"
                                 aria-selected={activeStake === index}
                                 onClick={() => setActiveStake(index)}
-                                className={`flex-1 sm:flex-auto flex items-center justify-center gap-3 px-1 sm:px-4 py-4 text-sm font-semibold transition-all duration-300 border-b-2 -mb-px focus:outline-none 
+                                className={`flex-1 sm:flex-auto flex items-center justify-start sm:justify-center gap-3 px-4 py-4 text-sm font-semibold transition-all duration-300 border-b-2 -mb-px focus:outline-none 
                                     ${activeStake === index
                                         ? 'border-[#27013D] text-[#27013D] bg-white'
                                         : 'border-transparent text-gray-500 bg-gray-100 hover:text-gray-800 hover:bg-gray-200'

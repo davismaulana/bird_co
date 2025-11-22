@@ -40,19 +40,19 @@ const Personas: React.FC = () => {
             </h2>
           </Animate>
         </div>
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 stagger">
+        <div className="max-w-[85rem] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 stagger">
             {personas.map((persona, index) => (
               <Animate 
                 key={index} 
                 variant="pop"
               >
-                <div className="bg-white rounded-xl p-8 h-full flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left gap-6 sm:gap-8 border border-gray-200 transition-all duration-300 hover:shadow-xl hover:shadow-violet-100/50">
-                  <div className="flex-shrink-0 bg-gradient-to-br from-violet-100 to-pink-100 rounded-2xl p-5 shadow-inner flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28">
+                <div className="bg-white rounded-xl p-4 sm:p-5 h-full flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left gap-3 sm:gap-4 border border-gray-200 transition-all duration-300 hover:shadow-xl hover:shadow-violet-100/50">
+                  <div className="flex-shrink-0 bg-gradient-to-br from-violet-100 to-pink-100 rounded-2xl p-4 shadow-inner flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24">
                     {persona.icon}
                   </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-[#27013D] mb-3">{persona.title}</h3>
-                    <p className="text-black leading-relaxed text-xs">
+                  <div className="flex-grow">
+                    <h3 className="text-lg font-bold text-[#27013D] mb-2">{persona.title}</h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
                       {persona.description}
                     </p>
                   </div>

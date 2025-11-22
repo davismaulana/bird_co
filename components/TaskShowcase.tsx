@@ -17,7 +17,7 @@ const tasks = [
       inactive: "https://images2.imgbox.com/49/76/VCQT8RGf_o.png",
     },
     title: "Reporting & Tableau de Bord",
-    description: "Des outils clairs et nécessaires pour un pilotage efficace de votre activité",
+    description: "Des outils clairs et nécessaires pour un pilotage efficace de votre activité",
     visual: <KpiDashboardMockup noAspectRatio disableHover />,
   },
   {
@@ -85,8 +85,8 @@ const TaskShowcase: React.FC = () => {
                         </h2>
                     </Animate>
                     <Animate variant="pop" delay={200}>
-                        <p className="text-lg text-gray-800 mt-4">
-                            <strong>Quel que soit votre besoin</strong>, nous produisons des <strong>livrables clairs et actionnables</strong> pour piloter votre performance.
+                        <p className="text-lg text-gray-800 mt-4 whitespace-nowrap">
+                            <strong>Quel que soit votre besoin</strong>, nous produisons des <strong>livrables clairs et actionnables</strong> pour piloter votre performance
                         </p>
                     </Animate>
                 </div>

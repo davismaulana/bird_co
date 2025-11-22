@@ -41,8 +41,8 @@ const Hero: React.FC = () => {
 
   return (
     <section id="accueil" className="relative bg-white text-gray-900 flex flex-col min-h-screen overflow-hidden pt-16">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex-grow flex flex-col items-center justify-center">
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center relative w-full">
+      <div className="w-full relative z-10 flex-grow flex flex-col items-center justify-center">
+        <div className="grid md:grid-cols-2 gap-0 items-center relative w-full">
           
           {/* Left side: Text content */}
           <div className="text-center md:text-left relative z-10 md:pl-8 lg:pl-16">
@@ -53,7 +53,7 @@ const Hero: React.FC = () => {
               </h1>
             </Animate>
             <Animate variant="pop" delay={200}>
-              <p className="mt-4 md:mt-6 text-base md:text-lg text-gray-800 max-w-xl mx-auto md:mx-0">
+              <p className="mt-4 md:mt-6 text-xs sm:text-base md:text-lg text-gray-800 max-w-xl mx-auto md:mx-0 tracking-tight">
                 Sollicitez une <span className="gradient-text font-semibold">ressource experte, ingénieuse et accessible,</span><br />
                 dédiée à la réussite de vos ambitions
               </p>
@@ -85,18 +85,20 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Right side: Animation */}
-          <Animate variant="pop" delay={300} className="relative z-10 w-full aspect-square md:aspect-auto md:h-96">
+          <Animate variant="pop" delay={300} className="relative z-10 w-full aspect-square md:aspect-auto md:h-[500px] mr-0">
             <HeroAnimation />
           </Animate>
 
         </div>
         
         {/* Scroll down arrow */}
-        <Animate variant="pop" delay={800} className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-20">
-          <a href="/#vos-enjeux" aria-label="Faire défiler vers le bas" className="p-2 text-[#27013D] animate-bounce block">
-            <ChevronDownIcon className="w-8 h-8" />
-          </a>
-        </Animate>
+        <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-20">
+          <Animate variant="pop" delay={800}>
+            <a href="/#vos-enjeux" aria-label="Faire défiler vers le bas" className="p-2 text-[#27013D] animate-bounce block">
+              <ChevronDownIcon className="w-8 h-8" />
+            </a>
+          </Animate>
+        </div>
       </div>
       
       <Animate variant="pop" delay={600} className="w-full pb-8">

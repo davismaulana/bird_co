@@ -3,24 +3,24 @@ import Animate from './Animate';
 
 const pilliers = [
   {
-    icon: <img src="https://images2.imgbox.com/86/1a/o1GwdJHF_o.png" alt="Pragmatisme icon" className="w-10 h-10 object-contain" />,
+    icon: <img src="https://images2.imgbox.com/86/1a/o1GwdJHF_o.png" alt="Pragmatisme icon" className="w-14 h-14 object-contain" />,
     title: "Pragmatisme",
-    description: <>Des solutions concrètes pour un accompagnement <strong>pertinent</strong>, <strong>économique</strong> et <strong>adapté à votre réalité</strong>.</>,
+    description: <>Des solutions concrètes pour un accompagnement <strong>pertinent</strong>, <strong>économique</strong> et <strong>adapté à votre réalité</strong></>,
   },
   {
-    icon: <img src="https://images2.imgbox.com/a9/6f/sEU8YeyP_o.png" alt="Partenariat de Confiance icon" className="w-10 h-10 object-contain" />,
-    title: "Partenariat de Confiance",
-    description: <>Plus qu’un consultant : un partenaire investi, guidé par la <strong>transparence</strong> et l’<strong>intégrité</strong>.</>,
-  },
-  {
-    icon: <img src="https://images2.imgbox.com/0f/19/ZMKxUMu0_o.png" alt="Clarté Décisionnelle icon" className="w-10 h-10 object-contain" />,
+    icon: <img src="https://images2.imgbox.com/0f/19/ZMKxUMu0_o.png" alt="Clarté Décisionnelle icon" className="w-14 h-14 object-contain" />,
     title: "Clarté Décisionnelle",
-    description: <>Des analyses complexes et ciblées pour éclairer vos <strong>décisions stratégiques</strong>.</>,
+    description: <>Des analyses complexes et ciblées pour éclairer vos <strong>décisions stratégiques</strong></>,
   },
   {
-    icon: <img src="https://images2.imgbox.com/04/bd/mF2HLfkj_o.png" alt="Proactivité icon" className="w-10 h-10 object-contain" />,
+    icon: <img src="https://images2.imgbox.com/04/bd/mF2HLfkj_o.png" alt="Proactivité icon" className="w-14 h-14 object-contain" />,
     title: "Proactivité",
-    description: <>Nous vous aidons <strong>à identifier les opportunités</strong> et <strong>anticiper les risques</strong> sereinement</>,
+    description: <>Nous vous aidons <strong>à identifier les opportunités</strong> et <strong>anticiper les risques</strong> sereinement</>,
+  },
+  {
+    icon: <img src="https://images2.imgbox.com/a9/6f/sEU8YeyP_o.png" alt="Confiance icon" className="w-14 h-14 object-contain" />,
+    title: "Confiance",
+    description: <>Un partenaire investi, guidé par la <strong>transparence</strong> et l'<strong>intégrité</strong></>,
   },
 ];
 
@@ -41,7 +41,7 @@ const PillarsSection: React.FC = () => {
           </Animate>
           <Animate variant="pop" delay={200}>
             <p className="text-lg text-gray-800 mt-4 max-w-3xl mx-auto whitespace-nowrap">
-              Notre proposition repose sur <strong>quatre pilliers fondamentaux</strong> qui guident chacune de nos interventions.
+              Notre proposition repose sur quatre pilliers fondamentaux qui <strong>guident chacune de nos interventions</strong>
             </p>
           </Animate>
         </div>
@@ -62,20 +62,20 @@ const PillarsSection: React.FC = () => {
                       </div>
 
                       {/* The static dots and content cards */}
-                      <div className="relative flex">
+                      <div className="relative flex items-center">
                         {pilliers.map((pillier, index) => {
                             const isAbove = index % 2 === 0;
 
                             const PillierContent = (
                               <div className={`pillier-content-card pillier-content-card--${index + 1} text-center px-2`}>
                                   <div className="flex flex-col items-center justify-start">
-                                      <div className="flex justify-center mb-1 h-12 w-12 items-center">
+                                      <div className="flex justify-center mb-2 h-16 w-16 items-center">
                                           {React.cloneElement(pillier.icon)}
                                       </div>
-                                      <h3 className={`pillier-title pillier-title--${index + 1} text-sm font-bold mb-1 gradient-text-pillier`}>
+                                      <h3 className={`pillier-title pillier-title--${index + 1} text-base font-bold mb-2 gradient-text-pillier`}>
                                           {pillier.title}
                                       </h3>
-                                      <p className="text-gray-800 leading-relaxed text-xs">
+                                      <p className="text-gray-800 leading-relaxed text-sm">
                                           {pillier.description}
                                       </p>
                                   </div>
@@ -113,13 +113,13 @@ const PillarsSection: React.FC = () => {
                     <Animate key={index} variant="pop">
                         <div className="text-center p-4">
                             <div className="flex flex-col items-center justify-start">
-                                <div className="flex justify-center mb-2 h-12 w-12 items-center">
+                                <div className="flex justify-center mb-3 h-16 w-16 items-center">
                                     {React.cloneElement(pillier.icon)}
                                 </div>
-                                <h3 className="text-base font-bold mb-2 gradient-text-pillier">
+                                <h3 className="text-lg font-bold mb-3 gradient-text-pillier">
                                     {pillier.title}
                                 </h3>
-                                <p className="text-gray-800 leading-relaxed text-sm">
+                                <p className="text-gray-800 leading-relaxed text-base">
                                     {pillier.description}
                                 </p>
                             </div>
