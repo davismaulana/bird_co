@@ -37,7 +37,7 @@ const Expertise: React.FC = () => {
             </h2>
           </Animate>
           <Animate variant="pop" delay={200}>
-            <p className="text-lg text-gray-800 mt-4 whitespace-nowrap">
+            <p className="text-lg text-gray-800 mt-4 md:whitespace-nowrap">
               Une expertise financière et stratégique complète <span className="gradient-text font-bold">pour répondre à l'ensemble de vos défis</span>
             </p>
           </Animate>
@@ -46,9 +46,9 @@ const Expertise: React.FC = () => {
           {allItems.map((item, index) => {
             if ('icon' in item) {
               return (
-                <Animate key={index} variant="pop" className="bg-[#27013D] px-5 py-8 sm:py-10 md:py-12 flex flex-col items-center text-center justify-center transition-colors duration-300 hover:bg-[#351a4d]">
+                <Animate key={index} variant="pop" className="bg-[#27013D] px-5 py-12 sm:py-14 md:py-16 flex flex-col items-center text-center justify-center transition-colors duration-300 hover:bg-[#351a4d]">
                   {React.cloneElement(item.icon, { className: 'w-12 h-12 object-contain' })}
-                  <p className="text-gray-100 font-medium mt-4 text-base">{item.label}</p>
+                  <p className="text-gray-100 font-medium mt-4 text-lg">{item.label}</p>
                 </Animate>
               );
             } else {
@@ -59,7 +59,7 @@ const Expertise: React.FC = () => {
                     href="https://calendly.com/contact-birdandco/30min"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-[#3A224E] h-full flex flex-col justify-center items-center text-center px-5 py-8 sm:py-10 md:py-12 transition-all duration-300 hover:bg-[#4f3066] group"
+                    className="bg-[#3A224E] h-full flex flex-col justify-center items-center text-center px-5 py-12 sm:py-14 md:py-16 transition-all duration-300 hover:bg-[#4f3066] group"
                   >
                     <h3 className="text-base font-bold text-white">Et bien plus encore...</h3>
                     <p className="mt-2 text-violet-200 flex items-center gap-2 group-hover:text-white transition-colors text-sm">

@@ -4,7 +4,7 @@ import Animate from './Animate';
 const faqs = [
   {
     question: "Qu’est-ce que Bird ?",
-    answer: "Bird est un partenaire stratégique et financier qui aide les organisations à structurer, financer et développer leurs ambitions avec impact."
+    answer: "Bird est un partenaire stratégique et financier accessible, conçu pour accompagner les organisations — petites ou grandes — à structurer, financer et développer leurs ambitions avec sérénité et impact. Grâce à notre approche rigoureuse et à des offres tarifaires modulables, nous permettons à chacun d’accéder à un accompagnement haut de gamme, sans barrière de coût."
   },
   {
     question: "Pourquoi le nom Bird ?",
@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     question: "Comment est né Bird ?",
-    answer: "Bird est né de la rencontre d’anciens consultants convaincus qu’il existe une autre façon d’accompagner les organisations. À mi-chemin entre l’expertise structurée du conseil et la flexibilité d’un consultant autonome, nous offrons un accompagnement sur mesure et accessible. Notre démarche ne remet pas en cause la valeur des cabinets traditionnels, mais vise à combler un vide : permettre à des organisations qui n’en ont pas toujours les moyens de bénéficier, elles aussi, d’un soutien stratégique et financier de haut niveau."
+    answer: "Bird est né de la rencontre d’anciens consultants convaincus qu’il existe une autre façon d’accompagner les organisations.\nNotre démarche ne remet pas en cause la valeur des cabinets traditionnels. Elle vise à combler un vide : permettre à des organisations qui n’en ont pas toujours les moyens, surtout dans le contexte actuel de crise, de bénéficier, elles aussi, d’un soutien stratégique et financier de haut niveau."
   },
   {
     question: "Quels types d’organisations accompagnez-vous ?",
@@ -44,7 +44,7 @@ const AccordionItem: React.FC<{ question: string; answer: string; isOpen: boolea
         className={`grid transition-all duration-500 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
       >
         <div className="overflow-hidden">
-          <p className="pt-4 pr-12 text-base text-gray-700 leading-relaxed">
+          <p className="pt-4 pr-12 text-base text-gray-700 leading-relaxed whitespace-pre-line">
             {answer}
           </p>
         </div>

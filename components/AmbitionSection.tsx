@@ -20,7 +20,7 @@ const AmbitionSection: React.FC = () => {
                         </Animate>
                         <Animate variant="pop" delay={100}>
                             <p className="mt-6 text-base text-gray-300">
-                                Vous permettre d'anticiper les enjeux financiers et opérationnels futurs et prévenir les éventuelles difficultés.
+                                Cette philosophie est au cœur de notre ambition. Nous ne nous contentons pas de réagir aux événements, nous vous donnons les moyens de façonner activement l'avenir de votre entreprise, de prévenir les difficultés, en transformant l'incertitude en opportunité et la vision en réalité.
                             </p>
                         </Animate>
                         <Animate variant="pop" delay={200}>

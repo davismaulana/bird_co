@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import Animate from './Animate';
 import { LinkedInIcon, teamMembers } from '../constants';
@@ -10,7 +8,7 @@ const Team: React.FC = () => {
   return (
     <section
       id="notre-equipe"
-      className="relative text-white py-12 md:py-16 min-h-screen flex flex-col justify-center"
+      className="relative text-white py-12 md:py-16 min-h-screen flex flex-col justify-center overflow-hidden"
     >
       <div 
         className="parallax-bg" 
@@ -30,8 +28,8 @@ const Team: React.FC = () => {
             </h2>
           </Animate>
           <Animate variant="pop" delay={200}>
-            <div className="text-lg text-gray-300 leading-relaxed mt-4 max-w-5xl mx-auto">
-              <p>
+            <div className="text-xl text-gray-300 leading-relaxed mt-4 max-w-6xl mx-auto">
+              <p className="text-lg">
                 Bird est né de la <strong className="font-bold text-white">rencontre d’anciens consultants</strong> convaincus qu’il existe une autre façon d’accompagner les organisations.<br />
                 Nous offrons <strong className="font-bold text-white">un accompagnement sur-mesure et accessible</strong>, <strong className="font-bold text-white">à mi-chemin</strong> entre <strong className="font-bold text-white">l’expertise structurée du conseil</strong> et la <strong className="font-bold text-white">flexibilité d’un consultant autonome</strong>.
               </p>
@@ -40,17 +38,17 @@ const Team: React.FC = () => {
         </div>
 
         {/* Team Members */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
           {displayedTeamMembers.map((member, index) => {
             return (
               <Animate key={member.name} variant="pop" delay={200 + index * 100}>
                 <div className="bg-white rounded-lg shadow-2xl shadow-violet-900/20 overflow-hidden h-full flex flex-col border-2 border-gray-300">
                   <div
-                    className="w-full aspect-square md:h-[400px] flex-shrink-0"
+                    className="w-full aspect-square md:h-[450px] flex-shrink-0"
                     style={{
                       backgroundImage: `url(${member.imageUrl})`,
                       backgroundPosition: 'center 20%',
-                      backgroundSize: '115%',
+                      backgroundSize: 'cover',
                       backgroundRepeat: 'no-repeat',
                     }}
                   ></div>
@@ -62,7 +60,7 @@ const Team: React.FC = () => {
                         </span>
                       </div>
                       
-                      <div className="text-gray-800 text-xs leading-snug space-y-3">
+                      <div className="text-gray-800 text-sm leading-snug space-y-3">
                         {member.description.map((paragraph, pIndex) => (
                           <p key={pIndex}>{paragraph}</p>
                         ))}
@@ -95,7 +93,7 @@ const Team: React.FC = () => {
         <Animate variant="pop" delay={400}>
           <div className="text-lg text-gray-300 leading-relaxed mt-10 max-w-5xl mx-auto text-center">
             <p>
-              Notre démarche ne remet pas en cause la valeur des cabinets traditionnels, mais vise à combler un vide : permettre à des organisations qui n’en ont pas toujours les moyens de bénéficier, elles aussi, d’un soutien stratégique et financier de haut niveau.
+              Notre démarche ne remet pas en cause la valeur des cabinets traditionnels. Elle vise à combler un vide : permettre à des organisations qui n’en ont pas toujours les moyens, surtout dans le contexte actuel de crise, de bénéficier, elles aussi, d’un soutien stratégique et financier de haut niveau.
             </p>
           </div>
         </Animate>

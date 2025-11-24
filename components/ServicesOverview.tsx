@@ -4,7 +4,7 @@ import { services, ArrowRightIcon } from '../constants';
 
 const ServicesOverview: React.FC = () => {
   return (
-    <section id="solutions" className="bg-gradient-to-b from-[#332932] to-[#4f3e69] flex flex-col justify-center py-16 md:py-24 min-h-screen">
+    <section id="solutions" className="bg-gradient-to-b from-[#332932] to-[#4f3e69] flex flex-col justify-center py-16 md:py-24 min-h-screen overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <Animate variant="pop">
@@ -23,24 +23,24 @@ const ServicesOverview: React.FC = () => {
             </p>
           </Animate>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto stagger">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto stagger">
           {services.map((service: any, index) => {
             let iconSize;
             if (service.slug === 'services-ma') {
-              iconSize = 'w-16 h-16';
-            } else if (service.slug === 'cfo-part-time') {
-              iconSize = 'w-12 h-12';
-            } else {
               iconSize = 'w-14 h-14';
+            } else if (service.slug === 'cfo-part-time') {
+              iconSize = 'w-10 h-10';
+            } else {
+              iconSize = 'w-12 h-12';
             }
             
             return (
               <Animate key={index} variant="pop" className="h-full">
                 <a href={`/service/${service.slug}`} className="block h-full group">
                   <div
-                    className={`bg-white rounded-xl p-6 sm:p-8 flex flex-col text-left h-full transition-all duration-300 ease-in-out border border-gray-200 group-hover:bg-[#27013D] group-hover:shadow-xl group-hover:-translate-y-2 group-hover:scale-105`}
+                    className={`bg-white rounded-xl p-5 sm:p-6 flex flex-col text-left h-full transition-all duration-300 ease-in-out border border-gray-200 group-hover:bg-[#4f3e69] group-hover:shadow-xl group-hover:-translate-y-2 group-hover:scale-105`}
                   >
-                    <div className="flex justify-between items-start gap-4">
+                    <div className="flex justify-between items-start gap-2">
                       <div className="flex-1">
                           <h3 className="text-base font-bold text-black leading-tight transition-colors duration-300 group-hover:text-white mb-2">
                             {service.title}

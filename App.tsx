@@ -142,7 +142,7 @@ const App: React.FC = () => {
     }
 
     return (
-      <div className="bg-white">
+      <div className="bg-white overflow-x-hidden">
         <Header pathname={pathname} />
         <main>
           <Hero />

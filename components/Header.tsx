@@ -5,7 +5,7 @@ const navItems = [
   { name: 'Enjeux', href: '/#vos-enjeux' },
   { name: 'Solutions', href: '/#solutions' },
   { name: 'À l\'origine', href: '/#notre-equipe' },
-  { name: 'FAQ', href: '/faq' },
+  { name: 'À propos', href: '/faq' },
   { name: 'Contact', href: '/#contact' },
 ];
 

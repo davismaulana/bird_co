@@ -30,7 +30,7 @@ const HeroAnimation: React.FC<HeroAnimationProps> = ({ color = 'dark' }) => {
         if (!ctx) return;
 
         // --- Configuration ---
-        const GRID_COLS = 60; // Length of the ribbon
+        const GRID_COLS = 150; // Length of the ribbon (increased to fill screen)
         const GRID_ROWS = 15; // Thickness of the ribbon (increased)
         const PARTICLE_BASE_SIZE = 1.6; // Particle size (increased)
         const SPACING_X = 18; // Horizontal spacing (increased)

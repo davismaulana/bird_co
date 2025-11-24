@@ -183,19 +183,13 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
   );
   
   const classNames = [
-    "animated-mockup w-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col transition-transform duration-300 will-change-transform",
+    "animated-mockup w-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col",
   ];
 
   if (!noAspectRatio) {
     classNames.push("aspect-[4/3]");
   } else {
     classNames.push("h-full");
-  }
-
-  if (initialScaleDown) {
-    classNames.push("transform scale-[0.9]");
-  } else if (!disableHover) {
-    classNames.push("transform hover:scale-[1.02]");
   }
 
   return (
@@ -421,7 +415,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
 };
 export const KpiDashboardMockup: React.FC<{ theme?: string, noAspectRatio?: boolean, disableHover?: boolean, initialScaleDown?: boolean, className?: string }> = ({ noAspectRatio = false, disableHover = false, initialScaleDown = false, className }) => {
   const classNames = [
-    "animated-mockup w-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col will-change-transform",
+    "animated-mockup w-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col",
     className,
   ];
 
@@ -429,12 +423,6 @@ export const KpiDashboardMockup: React.FC<{ theme?: string, noAspectRatio?: bool
     classNames.push("aspect-[4/3]");
   } else {
       classNames.push("h-full");
-  }
-
-  if (initialScaleDown) {
-    classNames.push("transform scale-[0.9]");
-  } else if (!disableHover) {
-    classNames.push("transform hover:scale-105 transition-transform duration-300");
   }
   
   return (
@@ -466,7 +454,7 @@ export const KpiDashboardMockup: React.FC<{ theme?: string, noAspectRatio?: bool
 };
 
 export const FieldWorkMockup: React.FC<{ theme?: string }> = () => (
-    <div className="animated-mockup w-full h-full bg-white rounded-2xl p-6 shadow-2xl border border-gray-100 flex flex-col transform hover:scale-105 transition-transform duration-300 aspect-[4/3] will-change-transform">
+    <div className="animated-mockup w-full h-full bg-white rounded-2xl p-6 shadow-2xl border border-gray-100 flex flex-col transform scale-105 aspect-[4/3] will-change-transform">
         <div className="flex items-center justify-between mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
             <h3 className="font-bold text-gray-900 text-sm">Atelier Stratégique</h3>
             <div className="px-3 py-1 text-xs font-semibold bg-gray-100 text-gray-800 rounded-full">En personne</div>
@@ -506,17 +494,11 @@ export const FieldWorkMockup: React.FC<{ theme?: string }> = () => (
 );
 export const DiagnosticScanMockup: React.FC<{ theme?: string, disableHover?: boolean, initialScaleDown?: boolean, noAspectRatio?: boolean }> = ({ disableHover = false, initialScaleDown = false, noAspectRatio = false }) => {
     const classNames = [
-        "w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col will-change-transform",
+    "w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col will-change-transform transform scale-105",
     ];
 
     if (!noAspectRatio) {
         classNames.push("aspect-[4/3]");
-    }
-
-    if (initialScaleDown) {
-        classNames.push("transform scale-[0.9]");
-    } else if (!disableHover) {
-        classNames.push("transform hover:scale-105 transition-transform duration-300");
     }
 
     return (
@@ -552,7 +534,7 @@ export const DiagnosticScanMockup: React.FC<{ theme?: string, disableHover?: boo
 
 
 export const DueDiligenceVisual: React.FC = () => (
-  <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col transform hover:scale-105 transition-transform duration-300 will-change-transform">
+  <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col">
     <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
       <h3 className="font-bold text-gray-900 text-xs sm:text-sm">Due Diligence</h3>
     </div>
@@ -579,14 +561,8 @@ export const DueDiligenceVisual: React.FC = () => (
 
 export const TransactionalSupportVisual: React.FC<{ theme?: string, disableHover?: boolean, initialScaleDown?: boolean }> = ({ disableHover = false, initialScaleDown = false }) => {
     const classNames = [
-        "animated-mockup w-full h-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col transition-transform duration-300 will-change-transform",
+    "animated-mockup w-full h-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col",
     ];
-
-    if (initialScaleDown) {
-        classNames.push("transform scale-[0.9]");
-    } else if (!disableHover) {
-        classNames.push("transform hover:scale-105");
-    }
 
     const steps = [
         {
@@ -609,7 +585,7 @@ export const TransactionalSupportVisual: React.FC<{ theme?: string, disableHover
                 <h3 className="font-bold text-gray-900 text-xs sm:text-sm">Accompagnement Transactionnel</h3>
             </div>
             
-            <div className="flex-grow relative pl-8"> {/* Padding to make space for the timeline */}
+            <div className="flex-grow relative pl-12"> {/* Padding to make space for the timeline */}
                 {/* Vertical Line */}
                 <div className="absolute top-3 bottom-48 left-4 w-0.5 bg-gray-200 rounded-full"></div>
 
@@ -618,7 +594,7 @@ export const TransactionalSupportVisual: React.FC<{ theme?: string, disableHover
                     {steps.map((step, index) => (
                         <div key={index} className="relative anim-child" style={{'--i': index + 1} as React.CSSProperties}>
                             {/* Dot */}
-                            <div className="absolute top-0.5 -left-8 w-8 h-8 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] text-white flex items-center justify-center font-bold text-xs z-10 border-4 border-white">
+                            <div className="absolute top-0.5 -left-12 w-8 h-8 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] text-white flex items-center justify-center font-bold text-xs z-10 border-4 border-white">
                                 {index + 1}
                             </div>
                             {/* Content */}
@@ -638,7 +614,7 @@ export const CashGrowthVisual: React.FC = () => {
     const pathData = "M 0 90 C 7 92 13 97 20 95 C 27 93 33 98 40 100 C 47 102 53 91 60 85 C 67 79 73 89 80 92 C 87 95 93 104 100 110 C 107 116 113 119 120 120 C 127 121 133 93 140 80 C 147 67 153 53 160 50 C 167 47 173 57 180 60 C 187 63 193 51 200 45 C 207 39 213 60 220 70 C 227 80 233 91 240 95 C 247 99 253 105 260 105 C 267 105 273 95 280 90 C 287 85 293 95 300 98";
 
     return (
-        <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform group-hover:scale-105 transition-transform duration-300 will-change-transform">
+        <div className="w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col transform scale-105 will-change-transform">
             <div className="flex justify-between items-start mb-2">
                 <h3 className="font-bold text-gray-800 text-xs sm:text-sm">Cash Management</h3>
             </div>
@@ -709,7 +685,7 @@ export const LiquidityChartVisual: React.FC = () => {
     ];
 
     return (
-        <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col transform hover:scale-105 transition-transform duration-300 text-gray-900 will-change-transform">
+        <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col text-gray-900">
             <div className="w-full text-left mb-2 anim-child" style={{'--i': 0} as React.CSSProperties}>
                 <h3 className="font-bold text-gray-900 text-xs sm:text-sm">Gestion de la trésorerie</h3>
             </div>
@@ -804,7 +780,7 @@ export const LiquidityChartVisual: React.FC = () => {
 };
 
 export const OnSiteInterventionVisual: React.FC = () => (
-    <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col transform hover:scale-105 transition-transform duration-300 will-change-transform">
+    <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col">
         <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
             <h3 className="font-bold text-gray-900 text-xs sm:text-sm">Intervention sur site</h3>
         </div>
@@ -931,9 +907,9 @@ export const ChevronDownIcon: React.FC<{ className?: string }> = ({ className })
 );
 
 export const services = [
-    { slug: 'pilotage-planification', title: 'Pilotage & Planification', subTitle: 'Construire', description: 'les outils indispensables à une gestion optimale : reporting, business plan, prévisionnels de trésorerie etc.', icon: <PaperPlaneIcon />, iconClassName: 'w-16 h-16' },
-    { slug: 'cfo-part-time', title: 'CFO Part-time', subTitle: 'Structurer', description: 'votre croissance et mettre en exécution votre stratégie financière avec un bras-droit dédié à temps partiel.', icon: <CfoIcon />, iconClassName: 'w-14 h-14' },
-    { slug: 'diagnostic-restructuration', title: 'Diagnostic & Restructuration', subTitle: 'Rassurer', description: 'vos actionnaires et créanciers sur la santé financière de votre activité et votre capacité à la relancer.', icon: <DiagnosticIcon />, iconClassName: 'w-16 h-16' },
+    { slug: 'pilotage-planification', title: 'Pilotage & planification', subTitle: 'Construire', description: 'les outils indispensables à une gestion optimale : reporting, business plan, prévisionnels de trésorerie etc.', icon: <PaperPlaneIcon />, iconClassName: 'w-16 h-16' },
+    { slug: 'cfo-part-time', title: 'CFO part-time', subTitle: 'Structurer', description: 'votre croissance et mettre en exécution votre stratégie financière avec un bras-droit dédié à temps partiel.', icon: <CfoIcon />, iconClassName: 'w-14 h-14' },
+    { slug: 'diagnostic-restructuration', title: 'Diagnostic & restructuration', subTitle: 'Rassurer', description: 'vos actionnaires et créanciers sur la santé financière de votre activité et votre capacité à la relancer.', icon: <DiagnosticIcon />, iconClassName: 'w-16 h-16' },
     { 
         slug: 'services-ma', 
         title: 'Services M&A', 
@@ -963,7 +939,7 @@ export const teamMembers = [
     name: 'Benjamin Le Gal',
     role: 'Co-fondateur',
     description: [
-      'Expert dans l’assistance des entreprises et fonds dans leur processus de cessions-acquisitions notamment due diligence et recherche de repreneurs.',
+      'Expert dans l’assistance des entreprises et fonds dans leur processus de cessions-acquisitions notamment Due Diligence et recherche de repreneurs.',
       'Il bénéfice également d’une expérience solide en Direction financière de start-ups et ETI dont il a accompagné les levées de fonds.',
       'Ancien footballeur semi-professionnel, il est toujours guidé par la discipline, la stratégie et l’engagement.',
     ],

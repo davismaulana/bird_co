@@ -26,7 +26,7 @@ const pilliers = [
 
 const PillarsSection: React.FC = () => {
   return (
-    <section id="pilliers" className="bg-white flex flex-col justify-center py-16 overflow-x-hidden min-h-screen">
+    <section id="pilliers" className="bg-white flex flex-col justify-center py-16 overflow-x-hidden min-h-screen overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <Animate variant="pop">
@@ -36,18 +36,15 @@ const PillarsSection: React.FC = () => {
           </Animate>
           <Animate variant="pop" delay={100}>
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
-              Nos <span className="gradient-text">Pilliers</span>
+              Nos <span className="gradient-text">Piliers</span>
             </h2>
           </Animate>
           <Animate variant="pop" delay={200}>
-            <p className="text-lg text-gray-800 mt-4 max-w-3xl mx-auto whitespace-nowrap">
-              Notre proposition repose sur quatre pilliers fondamentaux qui <strong>guident chacune de nos interventions</strong>
+            <p className="text-lg text-gray-800 mt-4 max-w-3xl mx-auto md:whitespace-nowrap">
+              Notre proposition repose sur quatre piliers fondamentaux qui <strong>guident chacune de nos interventions</strong>
             </p>
           </Animate>
         </div>
-        
-        <div className="w-full max-w-7xl mx-auto">
-            {/* Desktop Timeline */}
             <div className="hidden md:block">
               <Animate variant="pop">
                   <div className="relative">
@@ -129,7 +126,6 @@ const PillarsSection: React.FC = () => {
               </div>
             </div>
         </div>
-      </div>
     </section>
   );
 };

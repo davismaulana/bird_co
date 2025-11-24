@@ -16,9 +16,9 @@ const tasks = [
       active: "https://images2.imgbox.com/df/52/6W0vqaOM_o.png",
       inactive: "https://images2.imgbox.com/49/76/VCQT8RGf_o.png",
     },
-    title: "Reporting & Tableau de Bord",
+    title: "Reporting & tableau de bord",
     description: "Des outils clairs et nécessaires pour un pilotage efficace de votre activité",
-    visual: <KpiDashboardMockup noAspectRatio disableHover />,
+    visual: <KpiDashboardMockup noAspectRatio />,
   },
   {
     icon: {
@@ -36,14 +36,14 @@ const tasks = [
     },
     title: "Modélisation",
     description: "Des prévisionnels robustes et détaillés pour soutenir votre stratégie, vos levées de fonds et vos décisions d'investissement.",
-    visual: <FinancialReportMockup disableHover noAspectRatio />,
+    visual: <FinancialReportMockup noAspectRatio />,
   },
   {
     icon: {
       active: "https://images2.imgbox.com/79/f8/8XIMmfYK_o.png",
       inactive: "https://images2.imgbox.com/19/00/31wNCP51_o.png",
     },
-    title: "Accompagnement Transactionnel",
+    title: "Accompagnement transactionnel",
     description: "Un soutien de bout en bout pour vos opérations de M&A et levées de fonds.",
     visual: <TransactionalSupportVisual />,
   },
@@ -72,7 +72,7 @@ const TaskShowcase: React.FC = () => {
 
     return (
         <section className="bg-gray-50 min-h-screen flex flex-col justify-center py-16">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="container mx-auto px-2 sm:px-4 lg:px-6">
                 <div className="text-center mb-12 max-w-3xl mx-auto">
                     <Animate variant="pop">
                       <div className="flex justify-center mb-4">
@@ -85,15 +85,15 @@ const TaskShowcase: React.FC = () => {
                         </h2>
                     </Animate>
                     <Animate variant="pop" delay={200}>
-                        <p className="text-lg text-gray-800 mt-4 whitespace-nowrap">
+                        <p className="text-lg text-gray-800 mt-4 md:whitespace-nowrap">
                             <strong>Quel que soit votre besoin</strong>, nous produisons des <strong>livrables clairs et actionnables</strong> pour piloter votre performance
                         </p>
                     </Animate>
                 </div>
-                <div className="max-w-6xl mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center">
+                <div className="max-w-7xl mx-auto">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                         {/* Left: Buttons */}
-                        <div className="w-full max-w-md mx-auto lg:max-w-none lg:mx-0 lg:col-span-2">
+                        <div className="w-full max-w-md mx-auto lg:max-w-none lg:mx-0">
                             <div className="grid grid-cols-1 gap-2 [grid-auto-rows:1fr]">
                                 {tasks.map((task, index) => (
                                     <Animate variant="pop" key={index} className="h-full">
@@ -129,7 +129,7 @@ const TaskShowcase: React.FC = () => {
                         </div>
                         
                         {/* Right: Visual */}
-                        <Animate variant="pop" delay={200} className="relative aspect-square sm:aspect-[4/3] lg:col-span-3 lg:aspect-auto">
+                        <Animate variant="pop" delay={200} className="relative aspect-square sm:aspect-[4/3] lg:aspect-auto">
                             <div className="w-full h-full">
                                 <div className="grid h-full">
                                     {tasks.map((task, index) => (

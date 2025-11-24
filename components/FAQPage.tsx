@@ -4,11 +4,11 @@ import HeroAnimation from './HeroAnimation';
 
 const faqs = [
   {
-    category: "Général",
+    category: "Qui sommes-nous",
     items: [
       {
         question: "Qu’est-ce que Bird ?",
-        answer: "Bird est un partenaire stratégique et financier qui aide les organisations à structurer, financer et développer leurs ambitions avec impact."
+        answer: "Bird est un partenaire stratégique et financier accessible, conçu pour accompagner les organisations — petites ou grandes — à structurer, financer et développer leurs ambitions avec sérénité et impact. Grâce à notre approche rigoureuse et à des offres tarifaires modulables, nous permettons à chacun d’accéder à un accompagnement haut de gamme, sans barrière de coût."
       },
       {
         question: "Pourquoi le nom Bird ?",
@@ -16,7 +16,7 @@ const faqs = [
       },
       {
         question: "Comment est né Bird ?",
-        answer: "Bird est né de la rencontre d’anciens consultants convaincus qu’il existe une autre façon d’accompagner les organisations. À mi-chemin entre l’expertise structurée du conseil et la flexibilité d’un consultant autonome, nous offrons un accompagnement sur mesure et accessible. Notre démarche ne remet pas en cause la valeur des cabinets traditionnels, mais vise à combler un vide : permettre à des organisations qui n’en ont pas toujours les moyens de bénéficier, elles aussi, d’un soutien stratégique et financier de haut niveau."
+        answer: "Bird est né de la rencontre d’anciens consultants convaincus qu’il existe une autre façon d’accompagner les organisations.\nNotre démarche ne remet pas en cause la valeur des cabinets traditionnels. Elle vise à combler un vide : permettre à des organisations qui n’en ont pas toujours les moyens, surtout dans le contexte actuel de crise, de bénéficier, elles aussi, d’un soutien stratégique et financier de haut niveau."
       },
       {
         question: "Dans quelles zones géographiques intervenez-vous ?",
@@ -24,7 +24,7 @@ const faqs = [
       },
       {
         question: "Qui se cache derrière Bird ?",
-        answer: "Une équipe passionnée par la stratégie, la finance et l’impact positif."
+        answer: "Un réseau d'experts anciens consultants, dirigeants ou entrepreneurs riches de plus de dix ans d'expérience."
       }
     ]
   },
@@ -34,7 +34,8 @@ const faqs = [
       {
         question: "Quels services proposez-vous ?",
         answer: `Nous accompagnons les dirigeants dans la structuration, le financement et le pilotage de leur croissance.
-Nos interventions couvrent l’ensemble du cycle de vie financier de l’entreprise — de la construction des outils de pilotage à la préparation d’opérations capitalistiques — avec une approche pragmatique et orientée résultats.
+
+Nos interventions couvrent l’ensemble du cycle de vie financier de l’entreprise, de la construction des outils de pilotage à la préparation d’opérations capitalistiques, avec une approche pragmatique et orientée résultats.
 
 Découvrez les quatre axes d’expertise de nos bras droit dans la section Solutions et dans les pages de détail incluant un aperçu des livrables qui matérialisent notre accompagnement.`
       },
