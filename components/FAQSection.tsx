@@ -4,11 +4,11 @@ import Animate from './Animate';
 const faqs = [
   {
     question: "Qu’est-ce que Bird ?",
-    answer: "Bird est un partenaire stratégique et financier accessible, conçu pour accompagner les organisations — petites ou grandes — à structurer, financer et développer leurs ambitions avec sérénité et impact. Grâce à notre approche rigoureuse et à des offres tarifaires modulables, nous permettons à chacun d’accéder à un accompagnement haut de gamme, sans barrière de coût."
+    answer: <>Bird est un <strong>partenaire stratégique et financier</strong> accessible, conçu pour accompagner les organisations — petites ou grandes — à structurer, financer et développer leurs ambitions avec sérénité et impact. Grâce à notre approche rigoureuse et à des offres tarifaires modulables, nous permettons à chacun d’accéder à un accompagnement haut de gamme, sans barrière de coût.</>
   },
   {
     question: "Pourquoi le nom Bird ?",
-    answer: "Parce qu’il incarne la hauteur de vue, la trajectoire claire et l’élan nécessaire pour faire grandir vos projets."
+    answer: <>Parce qu’il incarne la hauteur de vue, la trajectoire claire et l’élan nécessaire pour faire grandir vos projets.</>
   },
   {
     question: "Comment est né Bird ?",
@@ -16,11 +16,19 @@ const faqs = [
   },
   {
     question: "Quels types d’organisations accompagnez-vous ?",
-    answer: "TPE, PME, ETI, Grandes entreprises, Fonds d'investissements, Banque d'investissement, institutions publiques, associations selon les enjeux auxquels elles sont confrontées. Nous nous adressons également aux avocats, experts comptables, CSE, administrateurs judiciaires."
+    answer: <>
+      Selon les enjeux auxquels ils sont confrontés nous accompagnons :
+      <ul className="list-disc pl-5 mt-2 space-y-1">
+        <li>TPE, PME, ETI, Grandes entreprises</li>
+        <li>Fonds d'investissements, Banque d'investissement</li>
+        <li>Institutions publiques, associations</li>
+      </ul>
+      <p className="mt-2">Nous nous adressons également aux avocats, experts comptables, CSE, administrateurs judiciaires qui sollicitent notre réseau pour leurs clients.</p>
+    </>
   }
 ];
 
-const AccordionItem: React.FC<{ question: string; answer: string; isOpen: boolean; onClick: () => void }> = ({ question, answer, isOpen, onClick }) => {
+const AccordionItem: React.FC<{ question: string; answer: React.ReactNode; isOpen: boolean; onClick: () => void }> = ({ question, answer, isOpen, onClick }) => {
   return (
     <div className="border-b border-gray-200 py-6">
       <button
@@ -44,9 +52,9 @@ const AccordionItem: React.FC<{ question: string; answer: string; isOpen: boolea
         className={`grid transition-all duration-500 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
       >
         <div className="overflow-hidden">
-          <p className="pt-4 pr-12 text-base text-gray-700 leading-relaxed whitespace-pre-line">
+          <div className="pt-4 pr-12 text-base text-gray-700 leading-relaxed">
             {answer}
-          </p>
+          </div>
         </div>
       </div>
     </div>
