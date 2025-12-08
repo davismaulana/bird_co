@@ -15,6 +15,11 @@ const logos = [
   { component: <OctoGamingLogo />, name: 'Octo Gaming', href: 'https://octo-gaming.com' },
   { component: <CameroneCapitalLogo />, name: 'Camerone Capital', href: 'https://cameronecap.fr/' },
   { component: <SOCABEGLogo />, name: 'SOCABEG', href: 'https://socabeg.com/' },
+  { component: <img src="https://www.entrepreneurinvest.com/wp-content/uploads/2022/11/LOGO-EI-272x300.png" alt="Entrepreneur Invest" />, name: 'Entrepreneur Invest', href: 'https://www.entrepreneurinvest.com/' },
+  { component: <img src="https://www.socadif.fr/wp-content/uploads/2018/12/socadif-logo.jpg" alt="Socadif" />, name: 'Socadif', href: 'https://www.socadif.fr/' },
+  { component: <img src="https://www.groupe-bacalan.com/wp-content/uploads/Vector.svg" alt="Groupe Bacalan" />, name: 'Groupe Bacalan', href: 'https://www.groupe-bacalan.com/' },
+  { component: <img src="https://vtlogo.com/wp-content/uploads/2021/11/monoprix-fr-vector-logo.png" alt="Monoprix" />, name: 'Monoprix', href: 'https://www.monoprix.fr/' },
+  { component: <img src="https://images2.imgbox.com/9c/bc/H8bzjbLk_o.png" alt="Groupe Végéta" />, name: 'Groupe Végéta', href: '#' },
 ];
 
 interface LogosProps {
@@ -22,7 +27,7 @@ interface LogosProps {
 }
 
 const Logos: React.FC<LogosProps> = ({ backgroundColor = 'bg-gray-50' }) => {
-  const enlargedLogos = ['CASA', 'Eric Kayser', 'Regen School'];
+  const enlargedLogos = ['CASA', 'Eric Kayser', 'Regen School', 'Entrepreneur Invest', 'Monoprix'];
   const superEnlargedLogos = ['Wellow', 'Octo Gaming'];
 
   return (
