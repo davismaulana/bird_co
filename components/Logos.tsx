@@ -7,6 +7,11 @@ const logos = [
   { component: <BredLogo />, name: 'BRED', href: 'https://www.bred.fr/' },
   { component: <EricKayserLogo />, name: 'Eric Kayser', href: 'https://maison-kayser.com/' },
   { component: <CasaLogo />, name: 'CASA', href: 'https://www.instagram.com/casashops_belgium' },
+  { component: <img src="https://www.entrepreneurinvest.com/wp-content/uploads/2022/11/LOGO-EI-272x300.png" alt="Entrepreneur Invest" />, name: 'Entrepreneur Invest', href: 'https://www.entrepreneurinvest.com/' },
+  { component: <img src="https://www.socadif.fr/wp-content/uploads/2018/12/socadif-logo.jpg" alt="Socadif" />, name: 'Socadif', href: 'https://www.socadif.fr/' },
+  { component: <img src="https://www.groupe-bacalan.com/wp-content/uploads/Vector.svg" alt="Groupe Bacalan" />, name: 'Groupe Bacalan', href: 'https://www.groupe-bacalan.com/' },
+  { component: <img src="https://vtlogo.com/wp-content/uploads/2021/11/monoprix-fr-vector-logo.png" alt="Monoprix" />, name: 'Monoprix', href: 'https://www.monoprix.fr/' },
+  { component: <img src="https://images2.imgbox.com/9c/bc/H8bzjbLk_o.png" alt="Groupe Végéta" />, name: 'Groupe Végéta', href: 'https://www.vegetal.fr/' },
   { component: <PomadLogo />, name: 'Pomad', href: 'https://pomad.paris/' },
   { component: <RegenSchoolLogo />, name: 'Regen School', href: 'https://www.regen-school.com/' },
   { component: <WellowLogo />, name: 'Wellow', href: 'https://www.wellowhouse.com/' },
@@ -15,11 +20,6 @@ const logos = [
   { component: <OctoGamingLogo />, name: 'Octo Gaming', href: 'https://octo-gaming.com' },
   { component: <CameroneCapitalLogo />, name: 'Camerone Capital', href: 'https://cameronecap.fr/' },
   { component: <SOCABEGLogo />, name: 'SOCABEG', href: 'https://socabeg.com/' },
-  { component: <img src="https://www.entrepreneurinvest.com/wp-content/uploads/2022/11/LOGO-EI-272x300.png" alt="Entrepreneur Invest" />, name: 'Entrepreneur Invest', href: 'https://www.entrepreneurinvest.com/' },
-  { component: <img src="https://www.socadif.fr/wp-content/uploads/2018/12/socadif-logo.jpg" alt="Socadif" />, name: 'Socadif', href: 'https://www.socadif.fr/' },
-  { component: <img src="https://www.groupe-bacalan.com/wp-content/uploads/Vector.svg" alt="Groupe Bacalan" />, name: 'Groupe Bacalan', href: 'https://www.groupe-bacalan.com/' },
-  { component: <img src="https://vtlogo.com/wp-content/uploads/2021/11/monoprix-fr-vector-logo.png" alt="Monoprix" />, name: 'Monoprix', href: 'https://www.monoprix.fr/' },
-  { component: <img src="https://images2.imgbox.com/9c/bc/H8bzjbLk_o.png" alt="Groupe Végéta" />, name: 'Groupe Végéta', href: '#' },
 ];
 
 interface LogosProps {
@@ -54,14 +54,14 @@ const Logos: React.FC<LogosProps> = ({ backgroundColor = 'bg-gray-50' }) => {
           {logos.map((logo, index) => {
             const isEnlarged = enlargedLogos.includes(logo.name);
             const isSuperEnlarged = superEnlargedLogos.includes(logo.name);
-            
+
             let logoClassName = "max-h-16 max-w-[10rem] object-contain"; // Base size
             if (isEnlarged) {
               logoClassName = "max-h-20 max-w-[12rem] object-contain"; // ~20% larger
             } else if (isSuperEnlarged) {
               logoClassName = "max-h-24 max-w-[15rem] object-contain"; // ~50% larger
             }
-            
+
             return (
               <Animate
                 key={index}
