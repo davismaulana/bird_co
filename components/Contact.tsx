@@ -52,10 +52,10 @@ const Contact: React.FC = () => {
                             </p>
                         </Animate>
                         <Animate variant="pop" delay={500}>
-                            <a 
-                                href="https://calendly.com/contact-birdandco/30min" 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
+                            <a
+                                href="https://calendly.com/contact-birdandco/30min"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="inline-block bg-[#27013D] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#1c0e2a] transition-all hover:scale-105"
                             >
                                 Réserver une consultation
@@ -74,12 +74,12 @@ const Contact: React.FC = () => {
                             <Animate variant="pop" delay={100}>
                                 <div>
                                     <label htmlFor="name" className="text-base text-gray-500 block mb-1">Prénom Nom</label>
-                                    <input 
+                                    <input
                                         id="name"
                                         name="name"
                                         value={formData.name}
                                         onChange={handleChange}
-                                        className="w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-[#27013D] transition-colors text-gray-900" 
+                                        className="w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-[#27013D] transition-colors text-gray-900"
                                         type="text"
                                         autoComplete="name"
                                     />
@@ -88,12 +88,12 @@ const Contact: React.FC = () => {
                             <Animate variant="pop" delay={200}>
                                 <div>
                                     <label htmlFor="organization" className="text-base text-gray-500 block mb-1">Votre entreprise</label>
-                                    <input 
+                                    <input
                                         id="organization"
                                         name="organization"
                                         value={formData.organization}
                                         onChange={handleChange}
-                                        className="w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-[#27013D] transition-colors text-gray-900" 
+                                        className="w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-[#27013D] transition-colors text-gray-900"
                                         type="text"
                                         autoComplete="organization"
                                     />
@@ -103,13 +103,13 @@ const Contact: React.FC = () => {
                         <Animate variant="pop" delay={300}>
                             <div className="mb-10">
                                 <label htmlFor="email" className="text-base text-gray-500 block mb-1">E-mail *</label>
-                                <input 
-                                    id="email" 
+                                <input
+                                    id="email"
                                     name="email"
                                     value={formData.email}
                                     onChange={handleChange}
-                                    required 
-                                    className="w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-[#27013D] transition-colors text-gray-900" 
+                                    required
+                                    className="w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-[#27013D] transition-colors text-gray-900"
                                     type="email"
                                     autoComplete="email"
                                 />
@@ -118,13 +118,13 @@ const Contact: React.FC = () => {
                         <Animate variant="pop" delay={400}>
                             <div className="mb-12">
                                 <label htmlFor="message" className="text-base text-gray-500 block mb-1">On vous écoute *</label>
-                                <textarea 
-                                    id="message" 
+                                <textarea
+                                    id="message"
                                     name="message"
                                     value={formData.message}
                                     onChange={handleChange}
-                                    rows={2} 
-                                    required 
+                                    rows={2}
+                                    required
                                     className="w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-[#27013D] transition-colors resize-none text-gray-900"
                                 ></textarea>
                             </div>

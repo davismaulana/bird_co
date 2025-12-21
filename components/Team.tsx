@@ -10,9 +10,9 @@ const Team: React.FC = () => {
       id="notre-equipe"
       className="relative text-white py-12 md:py-16 min-h-screen flex flex-col justify-center overflow-hidden"
     >
-      <div 
-        className="parallax-bg" 
-        style={{backgroundImage: 'linear-gradient(to bottom right, #27013D, rgb(17 24 39))'}}
+      <div
+        className="parallax-bg"
+        style={{ backgroundImage: 'linear-gradient(to bottom right, #27013D, rgb(17 24 39))' }}
       ></div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Title */}
@@ -59,7 +59,7 @@ const Team: React.FC = () => {
                           {member.name}
                         </span>
                       </div>
-                      
+
                       <div className="text-gray-800 text-sm leading-snug space-y-3">
                         {member.description.map((paragraph, pIndex) => (
                           <p key={pIndex}>{paragraph}</p>
@@ -88,7 +88,7 @@ const Team: React.FC = () => {
             )
           })}
         </div>
-        
+
         {/* Philosophy Text */}
         <Animate variant="pop" delay={400}>
           <div className="text-lg text-gray-300 leading-relaxed mt-10 max-w-5xl mx-auto text-center">

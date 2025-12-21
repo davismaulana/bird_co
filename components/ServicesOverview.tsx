@@ -33,7 +33,7 @@ const ServicesOverview: React.FC = () => {
             } else {
               iconSize = 'w-12 h-12';
             }
-            
+
             return (
               <Animate key={index} variant="pop" className="h-full">
                 <a href={`/service/${service.slug}`} className="block h-full group">
@@ -42,13 +42,13 @@ const ServicesOverview: React.FC = () => {
                   >
                     <div className="flex justify-between items-start gap-2">
                       <div className="flex-1">
-                          <h3 className="text-base font-bold text-black leading-tight transition-colors duration-300 group-hover:text-white mb-2">
-                            {service.title}
-                          </h3>
-                          <p className="text-sm font-semibold text-[#6D0037] mb-2 group-hover:text-violet-200 transition-colors duration-300">{service.subTitle}</p>
-                          <p className="text-slate-700 text-sm leading-relaxed transition-colors duration-300 group-hover:text-white">{service.description}</p>
+                        <h3 className="text-base font-bold text-black leading-tight transition-colors duration-300 group-hover:text-white mb-2">
+                          {service.title}
+                        </h3>
+                        <p className="text-sm font-semibold text-[#6D0037] mb-2 group-hover:text-violet-200 transition-colors duration-300">{service.subTitle}</p>
+                        <p className="text-slate-700 text-sm leading-relaxed transition-colors duration-300 group-hover:text-white">{service.description}</p>
                       </div>
-                      
+
                       <div className="flex-shrink-0 text-[#27013D] transition-colors duration-300 group-hover:text-white">
                         {service.darkIcon ? (
                           <>
@@ -66,12 +66,12 @@ const ServicesOverview: React.FC = () => {
                     </div>
 
                     <div className="flex-grow" />
-                    
+
                     <div>
-                        <div className="w-full mt-6 flex items-end justify-between text-sm font-semibold text-[#27013D] transition-colors duration-300 group-hover:text-white">
-                          <span>En savoir plus</span>
-                          <ArrowRightIcon className="w-5 h-5" />
-                        </div>
+                      <div className="w-full mt-6 flex items-end justify-between text-sm font-semibold text-[#27013D] transition-colors duration-300 group-hover:text-white">
+                        <span>En savoir plus</span>
+                        <ArrowRightIcon className="w-5 h-5" />
+                      </div>
                     </div>
                   </div>
                 </a>

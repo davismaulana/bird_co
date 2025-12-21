@@ -7,7 +7,7 @@ const LoadingScreen: React.FC<{ onLoaded: () => void }> = ({ onLoaded }) => {
     const animationDuration = 2500; // ms for the fill animation
     const initialDelay = 500;       // ms before animation starts
     const fadeOutDelay = 200;       // ms after animation before fade-out
-    
+
     const totalVisibleTime = animationDuration + initialDelay + fadeOutDelay;
 
     // Start fading out before the component is fully removed
