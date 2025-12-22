@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import BuilderPage from './components/BuilderPage';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Logos from './components/Logos';
@@ -24,9 +26,13 @@ import FAQPage from './components/FAQPage';
 import FAQSection from './components/FAQSection';
 import ValueProposition from './components/ValueProposition';
 import HeroAnimation from './components/HeroAnimation';
+import StudioPage from './components/Studio';
+import SanityGlobalStyles from './components/SanityGlobalStyles';
+import SanityPage from './components/SanityPage';
 
 const App: React.FC = () => {
-  const { pathname } = window.location;
+
+  const { pathname, hash } = useLocation();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -79,7 +85,7 @@ const App: React.FC = () => {
   useEffect(() => {
     if (isLoading) return;
 
-    const { hash } = window.location;
+
     if (hash) {
       const id = hash.substring(1);
       const element = document.getElementById(id);
@@ -96,6 +102,14 @@ const App: React.FC = () => {
   }, [isLoading, pathname]);
 
   const AppContent: React.FC = () => {
+    if (pathname.startsWith('/studio')) {
+      return <StudioPage />;
+    }
+
+    if (pathname.startsWith('/p/')) {
+      return <SanityPage />;
+    }
+
     if (pathname.startsWith('/service/')) {
       const serviceId = pathname.substring('/service/'.length);
       return (
@@ -141,61 +155,67 @@ const App: React.FC = () => {
       );
     }
 
-    return (
-      <div className="bg-white overflow-x-hidden">
-        <Header pathname={pathname} />
-        <main>
-          <Hero />
-          <StakesSection />
-          <ServicesOverview />
-          <ValueProposition />
-          <Expertise />
-          <TaskShowcase />
-          <PillarsSection />
-          <Personas />
-          <Stats />
-          <Logos />
-          <Team />
-          <section id="citation" className="min-h-screen grid">
-            <div className="bg-white grid">
-              <div className="grid grid-cols-1 md:grid-cols-2 items-center">
-                <Animate variant="pop" className="relative h-[300px] sm:h-[350px] md:h-full md:order-last">
-                  <HeroAnimation />
-                </Animate>
-                <div className="md:order-first flex items-center">
-                  <div className="w-full px-6 sm:px-8 md:px-14 lg:px-20 py-6 flex flex-col justify-center">
-                    <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
-                      <Animate variant="pop" delay={100}>
-                        <blockquote className="text-2xl md:text-3xl xl:text-4xl font-bold text-[#27013D] leading-tight">
-                          "La meilleure façon de prédire l'avenir, c'est de le créer."
-                        </blockquote>
-                      </Animate>
-                      <Animate variant="pop" delay={200}>
-                        <p className="mt-6 text-lg text-gray-800">— Peter Drucker</p>
-                      </Animate>
-                      <Animate variant="pop" delay={300}>
-                        <p className="mt-8 text-lg text-gray-800 leading-relaxed">
-                          Cette philosophie est au cœur de notre démarche. Nous ne nous contentons pas de réagir aux événements ; nous vous donnons les moyens de façonner activement l'avenir de votre entreprise, en transformant l'incertitude en opportunité et la vision en réalité.
-                        </p>
-                      </Animate>
+    if (pathname === '/') {
+      return (
+        <div className="bg-white overflow-x-hidden">
+          <Header pathname={pathname} />
+          <main>
+            <Hero />
+            <StakesSection />
+            <ServicesOverview />
+            <ValueProposition />
+            <Expertise />
+            <TaskShowcase />
+            <PillarsSection />
+            <Personas />
+            <Stats />
+            <Logos />
+            <Team />
+            <section id="citation" className="min-h-screen grid">
+              <div className="bg-white grid">
+                <div className="grid grid-cols-1 md:grid-cols-2 items-center">
+                  <Animate variant="pop" className="relative h-[300px] sm:h-[350px] md:h-full md:order-last">
+                    <HeroAnimation />
+                  </Animate>
+                  <div className="md:order-first flex items-center">
+                    <div className="w-full px-6 sm:px-8 md:px-14 lg:px-20 py-6 flex flex-col justify-center">
+                      <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
+                        <Animate variant="pop" delay={100}>
+                          <blockquote className="text-2xl md:text-3xl xl:text-4xl font-bold text-[#27013D] leading-tight">
+                            "La meilleure façon de prédire l'avenir, c'est de le créer."
+                          </blockquote>
+                        </Animate>
+                        <Animate variant="pop" delay={200}>
+                          <p className="mt-6 text-lg text-gray-800">— Peter Drucker</p>
+                        </Animate>
+                        <Animate variant="pop" delay={300}>
+                          <p className="mt-8 text-lg text-gray-800 leading-relaxed">
+                            Cette philosophie est au cœur de notre démarche. Nous ne nous contentons pas de réagir aux événements ; nous vous donnons les moyens de façonner activement l'avenir de votre entreprise, en transformant l'incertitude en opportunité et la vision en réalité.
+                          </p>
+                        </Animate>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+            </section>
+            <FAQSection />
+            <div id="contact">
+              <Contact />
+              <Footer />
             </div>
-          </section>
-          <FAQSection />
-          <div id="contact">
-            <Contact />
-            <Footer />
-          </div>
-        </main>
-      </div>
-    );
+          </main>
+        </div>
+      );
+    }
+
+    // Catch-all for Builder.io
+    return <BuilderPage />;
   };
 
   return (
     <>
+      <SanityGlobalStyles />
       {isLoading && <LoadingScreen onLoaded={() => setIsLoading(false)} />}
       <div
         className={`transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}

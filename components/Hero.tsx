@@ -34,8 +34,20 @@ const heroLogos = [
 
 const allHeroLogos = [...heroLogos, ...heroLogos];
 
+interface HeroProps {
+    heading?: string;
+    subheading?: string;
+    backgroundImage?: any;
+    ctaText?: string;
+    ctaLink?: string;
+}
 
-const Hero: React.FC = () => {
+const Hero: React.FC<HeroProps> = ({
+    heading,
+    subheading,
+    ctaText = "Réserver une consultation",
+    ctaLink = "https://calendly.com/contact-birdandco/30min"
+}) => {
     const logosToEnlarge = ['Casa', 'EricKayser', 'RegenSchool'];
     const logosToSuperEnlarge = ['Wellow', 'OctoGaming'];
 
@@ -48,25 +60,37 @@ const Hero: React.FC = () => {
                     <div className="text-center md:text-left relative z-10 md:pl-8 lg:pl-16">
                         <Animate variant="pop">
                             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight tracking-tight">
-                                <span>Votre bras droit</span><br />
-                                <span className="gradient-text">stratégique et financier</span>
+                                {heading ? (
+                                    <span>{heading}</span>
+                                ) : (
+                                    <>
+                                        <span>Votre bras droit</span><br />
+                                        <span className="gradient-text">stratégique et financier</span>
+                                    </>
+                                )}
                             </h1>
                         </Animate>
                         <Animate variant="pop" delay={200}>
                             <p className="mt-4 md:mt-6 text-xs sm:text-base md:text-lg text-gray-800 max-w-xl mx-auto md:mx-0 tracking-tight">
-                                Sollicitez une <span className="gradient-text font-semibold">ressource experte, ingénieuse et accessible,</span><br />
-                                dédiée à la réussite de vos ambitions
+                                {subheading ? (
+                                    <span>{subheading}</span>
+                                ) : (
+                                    <>
+                                        Sollicitez une <span className="gradient-text font-semibold">ressource experte, ingénieuse et accessible,</span><br />
+                                        dédiée à la réussite de vos ambitions
+                                    </>
+                                )}
                             </p>
                         </Animate>
                         <Animate variant="pop" delay={400}>
                             <div className="mt-8 md:mt-10 flex justify-center md:justify-start">
                                 <a
-                                    href="https://calendly.com/contact-birdandco/30min"
+                                    href={ctaLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="inline-block text-center bg-[#27013D] text-white px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-[#1c0e2a] transition-colors transform hover:scale-105 text-sm"
                                 >
-                                    Réserver une consultation
+                                    {ctaText}
                                 </a>
                             </div>
                         </Animate>

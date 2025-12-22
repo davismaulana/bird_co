@@ -2,8 +2,21 @@ import React from 'react';
 import Animate from './Animate';
 import { LinkedInIcon, teamMembers } from '../constants';
 
-const Team: React.FC = () => {
-  const displayedTeamMembers = [...teamMembers].reverse();
+interface TeamProps {
+  heading?: string;
+  introText?: string;
+  teamMembers?: typeof teamMembers;
+  bottomText?: string;
+}
+
+const Team: React.FC<TeamProps> = ({
+  heading = "À l'origine du réseau de bras droit",
+  introText,
+  teamMembers: propTeamMembers,
+  bottomText
+}) => {
+  const membersToDisplay = propTeamMembers || teamMembers;
+  const displayedTeamMembers = [...membersToDisplay].reverse();
 
   return (
     <section
@@ -24,15 +37,19 @@ const Team: React.FC = () => {
           </Animate>
           <Animate variant="pop" delay={100}>
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-white">
-              À l'origine du <span className="gradient-text-light">réseau de bras droit</span>
+              {heading}
             </h2>
           </Animate>
           <Animate variant="pop" delay={200}>
             <div className="text-xl text-gray-300 leading-relaxed mt-4 max-w-6xl mx-auto">
-              <p className="text-lg">
-                Bird est né de la <strong className="font-bold text-white">rencontre d’anciens consultants</strong> convaincus qu’il existe une autre façon d’accompagner les organisations.<br />
-                Nous offrons <strong className="font-bold text-white">un accompagnement sur-mesure et accessible</strong>, <strong className="font-bold text-white">à mi-chemin</strong> entre <strong className="font-bold text-white">l’expertise structurée du conseil</strong> et la <strong className="font-bold text-white">flexibilité d’un consultant autonome</strong>.
-              </p>
+              {introText ? (
+                <p className="text-lg">{introText}</p>
+              ) : (
+                <p className="text-lg">
+                  Bird est né de la <strong className="font-bold text-white">rencontre d’anciens consultants</strong> convaincus qu’il existe une autre façon d’accompagner les organisations.<br />
+                  Nous offrons <strong className="font-bold text-white">un accompagnement sur-mesure et accessible</strong>, <strong className="font-bold text-white">à mi-chemin</strong> entre <strong className="font-bold text-white">l’expertise structurée du conseil</strong> et la <strong className="font-bold text-white">flexibilité d’un consultant autonome</strong>.
+                </p>
+              )}
             </div>
           </Animate>
         </div>
