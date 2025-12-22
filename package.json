@@ -12,15 +12,11 @@
     "@rollup/rollup-linux-x64-gnu": "^4.53.3"
   },
   "dependencies": {
-    "@builder.io/react": "^9.1.0",
-    "@sanity/client": "^7.13.2",
-    "@sanity/image-url": "^2.0.2",
-    "@sanity/vision": "^5.0.1",
+    "@measured/puck": "^0.20.2",
     "@vercel/node": "5.5.16",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.11.0",
-    "sanity": "5.0.1",
     "styled-components": "^6.1.19"
   },
   "devDependencies": {

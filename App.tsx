@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import BuilderPage from './components/BuilderPage';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Logos from './components/Logos';
@@ -26,9 +25,7 @@ import FAQPage from './components/FAQPage';
 import FAQSection from './components/FAQSection';
 import ValueProposition from './components/ValueProposition';
 import HeroAnimation from './components/HeroAnimation';
-import StudioPage from './components/Studio';
-import SanityGlobalStyles from './components/SanityGlobalStyles';
-import SanityPage from './components/SanityPage';
+import Editor from './components/Editor';
 
 const App: React.FC = () => {
 
@@ -102,14 +99,6 @@ const App: React.FC = () => {
   }, [isLoading, pathname]);
 
   const AppContent: React.FC = () => {
-    if (pathname.startsWith('/studio')) {
-      return <StudioPage />;
-    }
-
-    if (pathname.startsWith('/p/')) {
-      return <SanityPage />;
-    }
-
     if (pathname.startsWith('/service/')) {
       const serviceId = pathname.substring('/service/'.length);
       return (
@@ -153,6 +142,10 @@ const App: React.FC = () => {
           <Footer />
         </div>
       );
+    }
+
+    if (pathname === '/editor') {
+      return <Editor />;
     }
 
     if (pathname === '/') {
@@ -209,13 +202,23 @@ const App: React.FC = () => {
       );
     }
 
-    // Catch-all for Builder.io
-    return <BuilderPage />;
+    // Default catch-all (404)
+    return (
+      <div className="bg-white min-h-screen flex flex-col">
+        <Header pathname={pathname} />
+        <main className="flex-grow flex items-center justify-center">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold mb-4">404</h1>
+            <p className="text-xl">Page non trouvée</p>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
   };
 
   return (
     <>
-      <SanityGlobalStyles />
       {isLoading && <LoadingScreen onLoaded={() => setIsLoading(false)} />}
       <div
         className={`transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
