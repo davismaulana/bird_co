@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Animate from './Animate';
+import Notification, { NotificationType } from './Notification';
 
 interface ContactProps {
     heading?: string;
@@ -22,6 +23,30 @@ const Contact: React.FC<ContactProps> = ({
         email: '',
         message: ''
     });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    
+    // Notification State
+    const [notification, setNotification] = useState<{
+        isVisible: boolean;
+        message: string;
+        type: NotificationType;
+    }>({
+        isVisible: false,
+        message: '',
+        type: 'success'
+    });
+
+    const showNotification = (message: string, type: NotificationType) => {
+        setNotification({
+            isVisible: true,
+            message,
+            type
+        });
+    };
+
+    const closeNotification = () => {
+        setNotification(prev => ({ ...prev, isVisible: false }));
+    };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -31,22 +56,54 @@ const Contact: React.FC<ContactProps> = ({
         }));
     };
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        // In a real application, you would handle form submission here,
-        // e.g., send the data to a server or an email service.
-        console.log('Form submitted:', formData);
-        alert('Merci pour votre message ! Nous vous recontacterons bientôt.');
-        setFormData({
-            name: '',
-            organization: '',
-            email: '',
-            message: ''
-        });
+        setIsSubmitting(true);
+
+        try {
+            const response = await fetch(`https://formsubmit.co/ajax/${email}`, {
+                method: "POST",
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    ...formData,
+                    _subject: `Nouveau message de ${formData.name} (Bird & Co)`,
+                    _template: "table"
+                })
+            });
+
+            const result = await response.json();
+
+            if (result.success === "true" || response.ok) {
+                showNotification('Merci pour votre message ! Nous vous recontacterons bientôt.', 'success');
+                setFormData({
+                    name: '',
+                    organization: '',
+                    email: '',
+                    message: ''
+                });
+            } else {
+                console.error("Form submission failed", result);
+                showNotification("Une erreur s'est produite lors de l'envoi du message. Veuillez réessayer.", 'error');
+            }
+        } catch (error) {
+            console.error("Form submission error", error);
+            showNotification("Une erreur s'est produite lors de l'envoi du message. Veuillez réessayer.", 'error');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
-        <section id="contact" className="bg-white grid min-h-screen">
+        <section id="contact" className="bg-white grid min-h-screen relative">
+            <Notification 
+                message={notification.message}
+                type={notification.type}
+                isVisible={notification.isVisible}
+                onClose={closeNotification}
+            />
             <div className="grid grid-cols-1 md:grid-cols-2">
                 {/* Left Column */}
                 <div className="relative bg-cover bg-center text-gray-900 p-8 md:p-12 lg:p-16 flex flex-col justify-center min-h-[400px] md:min-h-[500px]">
@@ -145,8 +202,12 @@ const Contact: React.FC<ContactProps> = ({
                         </Animate>
                         <Animate variant="pop" delay={500}>
                             <div>
-                                <button type="submit" className="bg-[#27013D] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#1c0e2a] transition-colors">
-                                    Envoyer
+                                <button 
+                                    type="submit" 
+                                    disabled={isSubmitting}
+                                    className={`bg-[#27013D] text-white px-8 py-3 rounded-full font-semibold transition-colors ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-[#1c0e2a]'}`}
+                                >
+                                    {isSubmitting ? 'Envoi...' : 'Envoyer'}
                                 </button>
                             </div>
                         </Animate>

@@ -87,6 +87,9 @@ const Team: React.FC<TeamProps> = ({
                         <div>
                           <p className="font-semibold text-[#27013D]">{member.alumni}</p>
                           <p className="text-gray-600">{member.diploma}</p>
+                          {member.email && (
+                            <p className="text-[#6D0037] mt-1">{member.email}</p>
+                          )}
                         </div>
                         <a
                           href={member.linkedinUrl}

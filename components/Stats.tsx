@@ -126,7 +126,7 @@ const ScrollUpAnimator: React.FC<{ end: number }> = ({ end }) => {
 const stats = [
   {
     icon: <img src="https://images2.imgbox.com/87/dd/sN3rtZQi_o.png" alt="Naissance du réseau Bird& icon" className="w-20 h-20 object-contain" />,
-    value: "2024",
+    value: "2025",
     label: "Naissance du réseau Bird&",
   },
   {
