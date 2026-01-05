@@ -155,6 +155,16 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                           className={classes}
                           aria-haspopup="true"
                           aria-expanded={isDropdownOpen}
+                          onClick={(e) => {
+                            if (window.location.pathname === '/') {
+                              e.preventDefault();
+                              const element = document.getElementById('solutions');
+                              if (element) {
+                                element.scrollIntoView({ behavior: 'smooth' });
+                                window.history.pushState(null, '', '/#solutions');
+                              }
+                            }
+                          }}
                         >
                           {item.name}
                         </a>
@@ -186,6 +196,17 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                       key={item.name}
                       href={item.href}
                       className={finalClasses.join(' ')}
+                      onClick={(e) => {
+                        if (item.href.startsWith('/#') && window.location.pathname === '/') {
+                          e.preventDefault();
+                          const id = item.href.substring(2);
+                          const element = document.getElementById(id);
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                            window.history.pushState(null, '', item.href);
+                          }
+                        }
+                      }}
                     >
                       {item.name}
                     </a>
@@ -301,7 +322,18 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                     <a
                       key={item.name}
                       href={item.href}
-                      onClick={() => setIsMobileMenuOpen(false)}
+                      onClick={(e) => {
+                        setIsMobileMenuOpen(false);
+                        if (item.href.startsWith('/#') && window.location.pathname === '/') {
+                            e.preventDefault();
+                            const id = item.href.substring(2);
+                            const element = document.getElementById(id);
+                            if (element) {
+                                element.scrollIntoView({ behavior: 'smooth' });
+                                window.history.pushState(null, '', item.href);
+                            }
+                        }
+                      }}
                       className={`block w-full text-xl font-normal py-3 rounded-lg hover:bg-[#27013D] hover:text-white transition-colors ${
                         isPageActive ? 'bg-[#27013D] text-white' : 'text-black'
                       }`}
