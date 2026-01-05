@@ -129,7 +129,7 @@ const Contact: React.FC<ContactProps> = ({
                                 rel="noopener noreferrer"
                                 className="inline-block bg-[#27013D] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#1c0e2a] transition-all hover:scale-105"
                             >
-                                Réserver une consultation
+                                Discutons de vos projets
                             </a>
                         </Animate>
                     </div>

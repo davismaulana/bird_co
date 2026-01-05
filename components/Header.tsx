@@ -108,7 +108,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
   }, [pathname]);
 
   const isPropositionSectionActive = pathname.startsWith('/service/');
-  const ctaText = 'Réserver une consultation';
+  const ctaText = 'Discutons de vos projets';
 
   return (
     <>

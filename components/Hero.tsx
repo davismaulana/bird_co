@@ -45,7 +45,7 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({
     heading,
     subheading,
-    ctaText = "Réserver une consultation",
+    ctaText = "Discutons de vos projets",
     ctaLink = "https://calendly.com/contact-birdandco/30min"
 }) => {
     const logosToEnlarge = ['Casa', 'EricKayser', 'RegenSchool'];
