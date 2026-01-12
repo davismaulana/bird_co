@@ -1,34 +1,15 @@
 import React from 'react';
-import { WellowLogo, RegenSchoolLogo, PomadLogo, BredLogo, EricKayserLogo, SquareLogo, CasaLogo, TmhAvocatsLogo, FoodPilotLogo, OctoGamingLogo, CameroneCapitalLogo, SOCABEGLogo } from '../constants';
+import { PARTNER_LOGOS, ENLARGED_LOGOS, SUPER_ENLARGED_LOGOS } from '../constants';
 import Animate from './Animate';
 
-const logos = [
-  { component: <SquareLogo />, name: 'UI Investment', href: 'https://www.ui-investissement.com/' },
-  { component: <BredLogo />, name: 'BRED', href: 'https://www.bred.fr/' },
-  { component: <EricKayserLogo />, name: 'Eric Kayser', href: 'https://maison-kayser.com/' },
-  { component: <CasaLogo />, name: 'CASA', href: 'https://www.instagram.com/casashops_belgium' },
-  { component: <img src="https://www.entrepreneurinvest.com/wp-content/uploads/2022/11/LOGO-EI-272x300.png" alt="Entrepreneur Invest" />, name: 'Entrepreneur Invest', href: 'https://www.entrepreneurinvest.com/' },
-  { component: <img src="https://www.socadif.fr/wp-content/uploads/2018/12/socadif-logo.jpg" alt="Socadif" />, name: 'Socadif', href: 'https://www.socadif.fr/' },
-  { component: <img src="https://www.groupe-bacalan.com/wp-content/uploads/Vector.svg" alt="Groupe Bacalan" />, name: 'Groupe Bacalan', href: 'https://www.groupe-bacalan.com/' },
-  { component: <img src="https://vtlogo.com/wp-content/uploads/2021/11/monoprix-fr-vector-logo.png" alt="Monoprix" />, name: 'Monoprix', href: 'https://www.monoprix.fr/' },
-  { component: <img src="https://images2.imgbox.com/9c/bc/H8bzjbLk_o.png" alt="Groupe Végéta" />, name: 'Groupe Végéta', href: 'https://www.vegetal.fr/' },
-  { component: <PomadLogo />, name: 'Pomad', href: 'https://pomad.paris/' },
-  { component: <RegenSchoolLogo />, name: 'Regen School', href: 'https://www.regen-school.com/' },
-  { component: <WellowLogo />, name: 'Wellow', href: 'https://www.wellowhouse.com/' },
-  { component: <TmhAvocatsLogo />, name: 'TMH Avocats', href: 'https://tmhavocats.com/' },
-  { component: <FoodPilotLogo />, name: 'Food Pilot', href: 'https://foodpilot.io/fr/' },
-  { component: <OctoGamingLogo />, name: 'Octo Gaming', href: 'https://octo-gaming.com' },
-  { component: <CameroneCapitalLogo />, name: 'Camerone Capital', href: 'https://cameronecap.fr/' },
-  { component: <SOCABEGLogo />, name: 'SOCABEG', href: 'https://socabeg.com/' },
-];
+
 
 interface LogosProps {
   backgroundColor?: string;
 }
 
 const Logos: React.FC<LogosProps> = ({ backgroundColor = 'bg-gray-50' }) => {
-  const enlargedLogos = ['CASA', 'Eric Kayser', 'Regen School', 'Entrepreneur Invest', 'Monoprix'];
-  const superEnlargedLogos = ['Wellow', 'Octo Gaming'];
+  // Shared configuration is now imported
 
   return (
     <section className={`${backgroundColor} flex flex-col items-center justify-center py-16 sm:py-24 min-h-screen`}>
@@ -51,9 +32,9 @@ const Logos: React.FC<LogosProps> = ({ backgroundColor = 'bg-gray-50' }) => {
           </Animate>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-12 sm:gap-x-12 sm:gap-y-16 lg:gap-x-16 lg:gap-y-20 items-center justify-center stagger">
-          {logos.map((logo, index) => {
-            const isEnlarged = enlargedLogos.includes(logo.name);
-            const isSuperEnlarged = superEnlargedLogos.includes(logo.name);
+          {PARTNER_LOGOS.map((logo, index) => {
+            const isEnlarged = ENLARGED_LOGOS.includes(logo.name);
+            const isSuperEnlarged = SUPER_ENLARGED_LOGOS.includes(logo.name);
 
             let logoClassName = "max-h-16 max-w-[10rem] object-contain"; // Base size
             if (isEnlarged) {

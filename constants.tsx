@@ -161,6 +161,29 @@ export const FoodPilotLogo = ({ className }: { className?: string }) => <img src
 export const OctoGamingLogo = ({ className }: { className?: string }) => <img src="https://images2.imgbox.com/7b/76/O3kSavYf_o.png" alt="Octo Gaming Logo" className={className} />;
 export const SOCABEGLogo = ({ className }: { className?: string }) => <img src="https://images2.imgbox.com/94/30/H1BnocDS_o.png" alt="SOCABEG Logo" className={className} />;
 
+export const PARTNER_LOGOS = [
+  { component: <SquareLogo />, name: 'UI Investment', href: 'https://www.ui-investissement.com/' },
+  { component: <BredLogo />, name: 'BRED', href: 'https://www.bred.fr/' },
+  { component: <img src="https://www.entrepreneurinvest.com/wp-content/uploads/2022/11/LOGO-EI-272x300.png" alt="Entrepreneur Invest" />, name: 'Entrepreneur Invest', href: 'https://www.entrepreneurinvest.com/' },
+  { component: <img src="https://www.socadif.fr/wp-content/uploads/2018/12/socadif-logo.jpg" alt="Socadif" />, name: 'Socadif', href: 'https://www.socadif.fr/' },
+  { component: <EricKayserLogo />, name: 'Eric Kayser', href: 'https://maison-kayser.com/' },
+  { component: <CasaLogo />, name: 'CASA', href: 'https://www.instagram.com/casashops_belgium' },
+  { component: <img src="https://www.groupe-bacalan.com/wp-content/uploads/Vector.svg" alt="Groupe Bacalan" />, name: 'Groupe Bacalan', href: 'https://www.groupe-bacalan.com/' },
+  { component: <img src="https://images2.imgbox.com/05/40/lgZ04xPC_o.png" alt="Monoprix" />, name: 'Monoprix', href: 'https://www.monoprix.fr/' },
+  { component: <img src="https://images2.imgbox.com/9c/bc/H8bzjbLk_o.png" alt="Groupe Végéta" />, name: 'Groupe Végéta', href: 'https://www.vegetal.fr/' },
+  { component: <PomadLogo />, name: 'Pomad', href: 'https://pomad.paris/' },
+  { component: <RegenSchoolLogo />, name: 'Regen School', href: 'https://www.regen-school.com/' },
+  { component: <WellowLogo />, name: 'Wellow', href: 'https://www.wellowhouse.com/' },
+  { component: <TmhAvocatsLogo />, name: 'TMH Avocats', href: 'https://tmhavocats.com/' },
+  { component: <FoodPilotLogo />, name: 'Food Pilot', href: 'https://foodpilot.io/fr/' },
+  { component: <OctoGamingLogo />, name: 'Octo Gaming', href: 'https://octo-gaming.com' },
+  { component: <CameroneCapitalLogo />, name: 'Camerone Capital', href: 'https://cameronecap.fr/' },
+  { component: <SOCABEGLogo />, name: 'SOCABEG', href: 'https://socabeg.com/' },
+];
+
+export const ENLARGED_LOGOS = ['CASA', 'Eric Kayser', 'Regen School', 'Entrepreneur Invest', 'Monoprix'];
+export const SUPER_ENLARGED_LOGOS = ['Wellow', 'Octo Gaming'];
+
 export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: boolean; initialScaleDown?: boolean; noAspectRatio?: boolean }> = ({
   disableHover = false,
   initialScaleDown = false,
