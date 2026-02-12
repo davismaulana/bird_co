@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -15,7 +15,6 @@ import Expertise from './components/Expertise';
 // import Methodology from './components/Methodology';
 import TaskShowcase from './components/TaskShowcase';
 // import AmbitionPage from './components/AmbitionPage';
-import LoadingScreen from './components/LoadingScreen';
 import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 import TermsOfServicePage from './components/TermsOfServicePage';
 import PillarsSection from './components/PillarsSection';
@@ -30,11 +29,8 @@ import Editor from './components/Editor';
 const App: React.FC = () => {
 
   const { pathname, hash } = useLocation();
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    if (isLoading) return; // Don't setup observers until content is visible
-
     const revealEls = Array.from(document.querySelectorAll('.reveal'));
 
     if (!('IntersectionObserver' in window) || revealEls.length === 0) {
@@ -67,22 +63,10 @@ const App: React.FC = () => {
     return () => {
       revealEls.forEach(el => io.unobserve(el));
     }
-  }, [pathname, isLoading]);
-
-  // Prevent scrolling only while loading
-  useEffect(() => {
-    if (isLoading) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-  }, [isLoading]);
+  }, [pathname]);
 
   // Handle scrolling to anchor links on page load
   useEffect(() => {
-    if (isLoading) return;
-
-
     if (hash) {
       const id = hash.substring(1);
       const element = document.getElementById(id);
@@ -96,7 +80,7 @@ const App: React.FC = () => {
         return () => clearTimeout(timer);
       }
     }
-  }, [isLoading, pathname]);
+  }, [pathname]);
 
   const AppContent: React.FC = () => {
     if (pathname.startsWith('/service/')) {
@@ -219,13 +203,7 @@ const App: React.FC = () => {
 
   return (
     <>
-      {isLoading && <LoadingScreen onLoaded={() => setIsLoading(false)} />}
-      <div
-        className={`transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
-        aria-hidden={isLoading}
-      >
-        <AppContent />
-      </div>
+      <AppContent />
     </>
   );
 };
