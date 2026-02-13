@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Logos from './components/Logos';
@@ -9,12 +10,9 @@ import Stats from './components/Stats';
 import Personas from './components/Personas';
 import Team from './components/Team';
 import Contact from './components/Contact';
-// import Deliverables from './components/Deliverables';
 import ServiceDetailPage from './components/ServiceDetailPage';
 import Expertise from './components/Expertise';
-// import Methodology from './components/Methodology';
 import TaskShowcase from './components/TaskShowcase';
-// import AmbitionPage from './components/AmbitionPage';
 import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 import TermsOfServicePage from './components/TermsOfServicePage';
 import PillarsSection from './components/PillarsSection';
@@ -26,9 +24,53 @@ import ValueProposition from './components/ValueProposition';
 import HeroAnimation from './components/HeroAnimation';
 import Editor from './components/Editor';
 
-const App: React.FC = () => {
+// Service slug mappings for URL translation
+const serviceSlugMappings: Record<string, Record<string, string>> = {
+  en: {
+    'steering-planning': 'pilotage-planification',
+    'part-time-cfo': 'cfo-part-time',
+    'diagnostic-restructuring': 'diagnostic-restructuration',
+    'ma-services': 'services-ma',
+  },
+  fr: {
+    'pilotage-planification': 'pilotage-planification',
+    'cfo-part-time': 'cfo-part-time',
+    'diagnostic-restructuration': 'diagnostic-restructuration',
+    'services-ma': 'services-ma',
+  },
+};
 
+// Get the internal service ID from a URL slug
+const getInternalServiceId = (slug: string, lang: string): string => {
+  const mapping = serviceSlugMappings[lang];
+  return mapping?.[slug] || slug;
+};
+
+const App: React.FC = () => {
   const { pathname, hash } = useLocation();
+  const navigate = useNavigate();
+  const { t, i18n } = useTranslation();
+
+  // Extract language from URL and update i18n
+  useEffect(() => {
+    const langMatch = pathname.match(/^\/(en|fr)/);
+    if (langMatch) {
+      const urlLang = langMatch[1];
+      if (i18n.language !== urlLang) {
+        i18n.changeLanguage(urlLang);
+      }
+    }
+  }, [pathname, i18n]);
+
+  // Redirect root path to language-prefixed path
+  useEffect(() => {
+    if (pathname === '/') {
+      // Detect browser language
+      const browserLang = navigator.language.split('-')[0];
+      const targetLang = browserLang === 'en' ? 'en' : 'fr';
+      navigate(`/${targetLang}`, { replace: true });
+    }
+  }, [pathname, navigate]);
 
   useEffect(() => {
     const revealEls = Array.from(document.querySelectorAll('.reveal'));
@@ -72,7 +114,6 @@ const App: React.FC = () => {
       const element = document.getElementById(id);
 
       if (element) {
-        // Wait for the main content fade-in animation to complete before scrolling
         const timer = setTimeout(() => {
           element.scrollIntoView({ behavior: 'smooth' });
         }, 550);
@@ -82,20 +123,30 @@ const App: React.FC = () => {
     }
   }, [pathname]);
 
+  // Get current language from URL
+  const currentLang = pathname.startsWith('/en') ? 'en' : 'fr';
+  
+  // Remove language prefix for route matching
+  const pathWithoutLang = pathname.replace(/^\/(en|fr)/, '') || '/';
+
   const AppContent: React.FC = () => {
-    if (pathname.startsWith('/service/')) {
-      const serviceId = pathname.substring('/service/'.length);
+    // Service detail pages: /:lang/service/:slug
+    const serviceMatch = pathWithoutLang.match(/^\/service\/(.+)$/);
+    if (serviceMatch) {
+      const urlSlug = serviceMatch[1];
+      const internalServiceId = getInternalServiceId(urlSlug, currentLang);
       return (
         <div className="bg-white overflow-x-hidden">
           <Header pathname={pathname} />
-          <ServiceDetailPage serviceId={serviceId} />
+          <ServiceDetailPage serviceId={internalServiceId} />
           <Logos backgroundColor="bg-gray-50" />
           <Footer />
         </div>
       );
     }
 
-    if (pathname === '/faq') {
+    // FAQ page
+    if (pathWithoutLang === '/faq') {
       return (
         <div className="bg-white overflow-x-hidden">
           <Header pathname={pathname} />
@@ -106,7 +157,8 @@ const App: React.FC = () => {
       );
     }
 
-    if (pathname === '/politique-de-confidentialite') {
+    // Privacy policy (supports both FR and EN slugs)
+    if (pathWithoutLang === '/politique-de-confidentialite' || pathWithoutLang === '/privacy-policy') {
       return (
         <div className="bg-white overflow-x-hidden">
           <Header pathname={pathname} />
@@ -117,7 +169,8 @@ const App: React.FC = () => {
       );
     }
 
-    if (pathname === '/conditions-generales-utilisation') {
+    // Terms of service (supports both FR and EN slugs)
+    if (pathWithoutLang === '/conditions-generales-utilisation' || pathWithoutLang === '/terms-of-service') {
       return (
         <div className="bg-white overflow-x-hidden">
           <Header pathname={pathname} />
@@ -128,11 +181,13 @@ const App: React.FC = () => {
       );
     }
 
+    // Editor (no language prefix needed)
     if (pathname === '/editor') {
       return <Editor />;
     }
 
-    if (pathname === '/') {
+    // Homepage: /:lang or /:lang/
+    if (pathWithoutLang === '/' || pathWithoutLang === '') {
       return (
         <div className="bg-white overflow-x-hidden">
           <Header pathname={pathname} />
@@ -159,15 +214,15 @@ const App: React.FC = () => {
                       <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
                         <Animate variant="pop" delay={100}>
                           <blockquote className="text-2xl md:text-3xl xl:text-4xl font-bold text-[#27013D] leading-tight">
-                            "La meilleure façon de prédire l'avenir, c'est de le créer."
+                            {t('home:quote.text')}
                           </blockquote>
                         </Animate>
                         <Animate variant="pop" delay={200}>
-                          <p className="mt-6 text-lg text-gray-800">— Peter Drucker</p>
+                          <p className="mt-6 text-lg text-gray-800">{t('home:quote.author')}</p>
                         </Animate>
                         <Animate variant="pop" delay={300}>
                           <p className="mt-8 text-lg text-gray-800 leading-relaxed">
-                            Cette philosophie est au cœur de notre démarche. Nous ne nous contentons pas de réagir aux événements ; nous vous donnons les moyens de façonner activement l'avenir de votre entreprise, en transformant l'incertitude en opportunité et la vision en réalité.
+                            {t('home:quote.description')}
                           </p>
                         </Animate>
                       </div>
@@ -192,8 +247,8 @@ const App: React.FC = () => {
         <Header pathname={pathname} />
         <main className="flex-grow flex items-center justify-center">
           <div className="text-center">
-            <h1 className="text-4xl font-bold mb-4">404</h1>
-            <p className="text-xl">Page non trouvée</p>
+            <h1 className="text-4xl font-bold mb-4">{t('common:errors.404')}</h1>
+            <p className="text-xl">{t('common:errors.pageNotFound')}</p>
           </div>
         </main>
         <Footer />

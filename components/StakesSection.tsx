@@ -1,72 +1,77 @@
 import React, { useState } from 'react';
+import { useTranslation, Trans } from 'react-i18next';
 import Animate from './Animate';
 
-const stakes = [
-  {
-    keyword: "Structurer",
-    cardDescription: "Mettre en place des fondations financières et opérationnelles solides pour piloter votre croissance avec clarté et anticiper les défis futurs.",
-    cardIcon: "https://images2.imgbox.com/47/18/8gfHAt43_o.png",
-    newCard: {
-        icon: "https://images2.imgbox.com/47/18/8gfHAt43_o.png",
-        title: "Défis de la croissance",
-        description: <>Sans une structure financière solide, la croissance rapide peut mener à des <span className="font-semibold text-[#27013D]">problèmes de trésorerie</span> et une <span className="font-semibold text-[#27013D]">perte de contrôle</span></>,
-        details: [
-            <><span className="font-semibold text-[#27013D]">2 PME en forte croissance sur 3</span> rencontrent des <span className="font-semibold text-[#27013D]">tensions de trésorerie</span> dans les deux ans suivant leur phase d’expansion</>,
-            <>La <span className="font-semibold text-[#27013D]">complexité opérationnelle</span> augmente en moyenne de <span className="font-semibold text-[#27013D]">30 %</span> pour chaque <span className="font-semibold text-[#27013D]">doublement du chiffre d’affaires</span></>,
-            <>Les entreprises qui mettent en place tôt des <span className="font-semibold text-[#27013D]">outils de pilotage réduisent</span> de 40 % <span className="font-semibold text-[#27013D]">leur risque de déséquilibre financier</span></>
-        ]
-    }
-  },
-  {
-    keyword: "Pérenniser",
-    cardDescription: "Assurer la continuité et la résilience de votre modèle économique en optimisant vos processus et en sécurisant votre gouvernance financière pour un avenir serein.",
-    cardIcon: "https://images2.imgbox.com/d4/4b/mBi6r288_o.png",
-    newCard: {
-        icon: "https://images2.imgbox.com/d4/4b/mBi6r288_o.png",
-        title: "Sécurisation de la fonction financière",
-        description: <>60 % des PME reconnaissent un <span className="font-semibold text-[#27013D]">besoin de renforcement</span> de leurs compétences financières et stratégiques</>,
-        details: [
-            <>Le <span className="font-semibold text-[#27013D]">délai moyen de recrutement</span> du premier CFO est <span className="font-semibold text-[#27013D]">supérieur à 6 mois</span>, avec un coût total souvent <span className="font-semibold text-[#27013D]">inaccessible</span> pour une entreprise en phase de croissance</>,
-            <>Lorsqu’un CFO quitte l’entreprise, il s’écoule <span className="font-semibold text-[#27013D]">4 à 6 mois</span> avant son <span className="font-semibold text-[#27013D]">remplacement</span>, générant un <span className="font-semibold text-[#27013D]">vide critique</span> dans la gouvernance et le pilotage financier</>,
-            <>Le recours à un CFO part-time permet de bénéficier immédiatement d’une <span className="font-semibold text-[#27013D]">expertise</span> senior, d’<span className="font-semibold text-[#27013D]">accompagner la croissance</span>, de <span className="font-semibold text-[#27013D]">sécuriser les financements</span> et de <span className="font-semibold text-[#27013D]">renforcer la gouvernance</span> sans supporter le coût d’un recrutement permanent</>
-        ]
-    }
-  },
-  {
-    keyword: "Résister",
-    cardDescription: "Renforcer votre capacité à naviguer l'incertitude, en identifiant les risques et déployant des stratégies agiles pour transformer la turbulence en opportunités.",
-    cardIcon: "https://images2.imgbox.com/30/ad/ToMA2afU_o.png",
-    newCard: {
-        icon: "https://images2.imgbox.com/30/ad/ToMA2afU_o.png",
-        title: "Prévention des difficultés et résilience",
-        description: <>Au moins 66 000 faillites d’entreprises sont attendues en 2025 en France, conséquence directe du <span className="font-semibold text-[#27013D]">ralentissement économique</span>, de la <span className="font-semibold text-[#27013D]">fin des aides publiques</span> et du durcissement des <span className="font-semibold text-[#27013D]">conditions de crédit</span></>,
-        details: [
-            <>Les entreprises ayant un <span className="font-semibold text-[#27013D]">dispositif de prévention structuré</span> réduisent de près de 30% leur risque de faillite</>,
-            <>Près de 60% des demandes de refinancement ou de restructuration de dettes échouent <span className="font-semibold text-[#27013D]">faute de business plan crédible</span></>,
-            <>La moitié des défaillances pourraient être évitées grâce à une <span className="font-semibold text-[#27013D]">détection</span> précoce et un <span className="font-semibold text-[#27013D]">accompagnement adapté</span></>
-        ]
-    }
-  },
-  {
-    keyword: "Maximiser",
-    cardDescription: "Valoriser pleinement votre patrimoine et vos actifs lors des moments clés, en exécutant des transactions stratégiques qui optimisent les retours pour toutes les parties prenantes.",
-    cardIcon: "https://images2.imgbox.com/df/8e/KHz9cB7k_o.png",
-    newCard: {
-        icon: "https://images2.imgbox.com/df/8e/KHz9cB7k_o.png",
-        title: "Transmission et stratégie de négociation",
-        description: <>1/3 des transactions échouent directement faute d’audit ou de préparation</>,
-        details: [
-            <><span className="font-semibold text-[#27013D]">70% des entreprises sous-estiment les difficultés liées à la transmission</span> et arrivent en négociation avec des <span className="font-semibold text-[#27013D]">informations financières incomplètes</span></>,
-            <>Les transactions préparées en amont avec un <span className="font-semibold text-[#27013D]">audit vendeur</span> se concrétisent <span className="font-semibold text-[#27013D]">2 fois plus rapidement</span></>,
-            <>Une bonne préparation peut <span className="font-semibold text-[#27013D]">augmenter le prix de vente</span> de 10 à 20%</>
-        ]
-    }
-  },
-];
-
-
 const StakesSection: React.FC = () => {
+    const { t } = useTranslation();
     const [activeStake, setActiveStake] = useState<number>(0);
+
+    const stakes = [
+        {
+            key: 'structure',
+            keyword: t('home:stakes.tabs.structure.keyword'),
+            cardDescription: t('home:stakes.tabs.structure.description'),
+            cardIcon: "https://images2.imgbox.com/47/18/8gfHAt43_o.png",
+            newCard: {
+                icon: "https://images2.imgbox.com/47/18/8gfHAt43_o.png",
+                title: t('home:stakes.tabs.structure.cardTitle'),
+                descriptionKey: 'home:stakes.tabs.structure.cardDescription',
+                detailsKeys: [
+                    'home:stakes.tabs.structure.details.0',
+                    'home:stakes.tabs.structure.details.1',
+                    'home:stakes.tabs.structure.details.2'
+                ]
+            }
+        },
+        {
+            key: 'sustain',
+            keyword: t('home:stakes.tabs.sustain.keyword'),
+            cardDescription: t('home:stakes.tabs.sustain.description'),
+            cardIcon: "https://images2.imgbox.com/d4/4b/mBi6r288_o.png",
+            newCard: {
+                icon: "https://images2.imgbox.com/d4/4b/mBi6r288_o.png",
+                title: t('home:stakes.tabs.sustain.cardTitle'),
+                descriptionKey: 'home:stakes.tabs.sustain.cardDescription',
+                detailsKeys: [
+                    'home:stakes.tabs.sustain.details.0',
+                    'home:stakes.tabs.sustain.details.1',
+                    'home:stakes.tabs.sustain.details.2'
+                ]
+            }
+        },
+        {
+            key: 'resist',
+            keyword: t('home:stakes.tabs.resist.keyword'),
+            cardDescription: t('home:stakes.tabs.resist.description'),
+            cardIcon: "https://images2.imgbox.com/30/ad/ToMA2afU_o.png",
+            newCard: {
+                icon: "https://images2.imgbox.com/30/ad/ToMA2afU_o.png",
+                title: t('home:stakes.tabs.resist.cardTitle'),
+                descriptionKey: 'home:stakes.tabs.resist.cardDescription',
+                detailsKeys: [
+                    'home:stakes.tabs.resist.details.0',
+                    'home:stakes.tabs.resist.details.1',
+                    'home:stakes.tabs.resist.details.2'
+                ]
+            }
+        },
+        {
+            key: 'maximize',
+            keyword: t('home:stakes.tabs.maximize.keyword'),
+            cardDescription: t('home:stakes.tabs.maximize.description'),
+            cardIcon: "https://images2.imgbox.com/df/8e/KHz9cB7k_o.png",
+            newCard: {
+                icon: "https://images2.imgbox.com/df/8e/KHz9cB7k_o.png",
+                title: t('home:stakes.tabs.maximize.cardTitle'),
+                descriptionKey: 'home:stakes.tabs.maximize.cardDescription',
+                detailsKeys: [
+                    'home:stakes.tabs.maximize.details.0',
+                    'home:stakes.tabs.maximize.details.1',
+                    'home:stakes.tabs.maximize.details.2'
+                ]
+            }
+        },
+    ];
 
   return (
     <section id="vos-enjeux" className="bg-gray-50 flex flex-col justify-center py-16 min-h-screen overflow-hidden">
@@ -79,12 +84,15 @@ const StakesSection: React.FC = () => {
           </Animate>
           <Animate variant="pop" delay={100}>
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
-              Vos <span className="gradient-text">enjeux</span>
+              {t('home:stakes.sectionTitle')} <span className="gradient-text">{t('home:stakes.sectionTitleHighlight')}</span>
             </h2>
           </Animate>
           <Animate variant="pop" delay={200}>
             <p className="text-lg text-gray-800 mt-4 max-w-3xl mx-auto">
-              <strong>Identifier les risques</strong> pour mieux les <strong>maîtriser</strong> et <strong>transformer</strong> les défis en opportunités
+              <Trans 
+                i18nKey="home:stakes.subtitle" 
+                components={{ strong: <strong /> }} 
+              />
             </p>
           </Animate>
         </div>
@@ -127,12 +135,22 @@ const StakesSection: React.FC = () => {
                                     <div className="text-left w-full flex flex-col md:flex-row items-start">
                                         <div className="flex-1">
                                             <h4 className="text-xl font-bold gradient-text">{stake.newCard.title}</h4>
-                                            <p className="text-gray-800 text-sm leading-relaxed mt-2">{stake.newCard.description}</p>
+                                            <p className="text-gray-800 text-sm leading-relaxed mt-2">
+                                                <Trans 
+                                                    i18nKey={stake.newCard.descriptionKey} 
+                                                    components={{ strong: <span className="font-semibold text-[#27013D]" /> }} 
+                                                />
+                                            </p>
                                             <ul className="text-left text-sm text-gray-700 mt-4 space-y-2">
-                                                {stake.newCard.details.map((detail, i) => (
+                                                {stake.newCard.detailsKeys.map((detailKey, i) => (
                                                     <li key={i} className="flex items-start">
                                                         <span className="mr-3 text-[#27013D] font-bold text-lg leading-none">&mdash;</span>
-                                                        <span className="flex-1">{detail}</span>
+                                                        <span className="flex-1">
+                                                            <Trans 
+                                                                i18nKey={detailKey} 
+                                                                components={{ strong: <span className="font-semibold text-[#27013D]" /> }} 
+                                                            />
+                                                        </span>
                                                     </li>
                                                 ))}
                                             </ul>

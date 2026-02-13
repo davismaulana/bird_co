@@ -1,15 +1,37 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { services, HamburgerIcon, CloseIcon, ArrowRightIcon, ChevronRightIcon, ChevronLeftIcon } from '../constants';
-
-const navItems = [
-  { name: 'Enjeux', href: '/#vos-enjeux' },
-  { name: 'Solutions', href: '/#solutions' },
-  { name: 'À l\'origine', href: '/#notre-equipe' },
-  { name: 'À propos', href: '/faq' },
-  { name: 'Contact', href: '/#contact' },
-];
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language || 'fr';
+  
+  // Generate nav items with current language
+  const getNavItems = () => [
+    { name: t('common:nav.stakes'), href: `/${currentLang}/#vos-enjeux`, sectionId: 'vos-enjeux' },
+    { name: t('common:nav.solutions'), href: `/${currentLang}/#solutions`, sectionId: 'solutions' },
+    { name: t('common:nav.origin'), href: `/${currentLang}/#notre-equipe`, sectionId: 'notre-equipe' },
+    { name: t('common:nav.about'), href: `/${currentLang}/faq` },
+    { name: t('common:nav.contact'), href: `/${currentLang}/#contact`, sectionId: 'contact' },
+  ];
+
+  const navItems = getNavItems();
+
+  // Service slugs based on language
+  const getServiceSlug = (service: typeof services[0]) => {
+    if (currentLang === 'en') {
+      const slugMap: Record<string, string> = {
+        'pilotage-planification': 'steering-planning',
+        'cfo-part-time': 'part-time-cfo',
+        'diagnostic-restructuration': 'diagnostic-restructuring',
+        'services-ma': 'ma-services',
+      };
+      return slugMap[service.slug] || service.slug;
+    }
+    return service.slug;
+  };
+
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isDropdownActive, setIsDropdownActive] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -28,13 +50,12 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
   const handleSolutionsLeave = () => {
     solutionsMenuTimer.current = window.setTimeout(() => {
       setIsDropdownOpen(false);
-    }, 200); // Delay to allow moving mouse to the menu
+    }, 200);
   };
 
   useEffect(() => {
     let timer: number;
     if (isDropdownOpen) {
-      // Small delay to ensure elements are in the DOM before animation starts.
       timer = window.setTimeout(() => {
         setIsDropdownActive(true);
       }, 50);
@@ -49,7 +70,6 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
-      // Reset panel state when menu is closed
       const timer = setTimeout(() => setMobilePanel('main'), 300);
       return () => clearTimeout(timer);
     }
@@ -68,10 +88,13 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
   }, []);
 
   useEffect(() => {
-    const mainPath = '/';
-    if (pathname !== mainPath && !pathname.startsWith('/#')) {
-        setActiveSection('');
-        return;
+    // Check if we're on the homepage (with or without language prefix)
+    const pathWithoutLang = pathname.replace(/^\/(en|fr)/, '') || '/';
+    const isHomepage = pathWithoutLang === '/' || pathWithoutLang === '';
+    
+    if (!isHomepage) {
+      setActiveSection('');
+      return;
     }
 
     const sectionIds = ['vos-enjeux', 'solutions', 'notre-equipe', 'contact'];
@@ -81,7 +104,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
 
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const headerOffset = window.innerHeight * 0.3; // Trigger active state sooner
+      const headerOffset = window.innerHeight * 0.3;
       const isAtBottom = window.innerHeight + scrollTop >= document.documentElement.scrollHeight - 10;
 
       if (isAtBottom) {
@@ -107,8 +130,17 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
     };
   }, [pathname]);
 
-  const isPropositionSectionActive = pathname.startsWith('/service/');
-  const ctaText = 'Discutons de vos projets';
+  const isPropositionSectionActive = pathname.includes('/service/');
+  const ctaText = t('common:cta.discussProjects');
+
+  // Get homepage path with current language
+  const getHomePath = () => `/${currentLang}`;
+  
+  // Check if current path is homepage
+  const isHomepage = () => {
+    const pathWithoutLang = pathname.replace(/^\/(en|fr)/, '') || '/';
+    return pathWithoutLang === '/' || pathWithoutLang === '';
+  };
 
   return (
     <>
@@ -117,7 +149,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <a href="/" className="header-logo-container text-3xl font-bold tracking-tight text-[#27013D]">
+            <a href={getHomePath()} className="header-logo-container text-3xl font-bold tracking-tight text-[#27013D]">
               <span className="sr-only">BIRD&</span>
               <span 
                 className="header-logo-outline"
@@ -134,7 +166,9 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
               {/* Desktop Navigation */}
               <nav className="flex items-center space-x-2">
                 {navItems.map((item) => {
-                  if (item.name === 'Solutions') {
+                  const isSolutionsNav = item.sectionId === 'solutions';
+                  
+                  if (isSolutionsNav) {
                     const isSectionActive = activeSection === 'solutions';
                     const hasBackground = isDropdownOpen || isPropositionSectionActive || isSectionActive;
 
@@ -156,12 +190,12 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                           aria-haspopup="true"
                           aria-expanded={isDropdownOpen}
                           onClick={(e) => {
-                            if (window.location.pathname === '/') {
+                            if (isHomepage()) {
                               e.preventDefault();
                               const element = document.getElementById('solutions');
                               if (element) {
                                 element.scrollIntoView({ behavior: 'smooth' });
-                                window.history.pushState(null, '', '/#solutions');
+                                window.history.pushState(null, '', `/${currentLang}/#solutions`);
                               }
                             }
                           }}
@@ -172,16 +206,12 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                     );
                   }
 
-                  const isPageLink = item.href !== '/' && !item.href.startsWith('/#');
+                  const isPageLink = !item.href.includes('/#');
+                  const pathWithoutLang = pathname.replace(/^\/(en|fr)/, '') || '/';
+                  const itemPathWithoutLang = item.href.replace(/^\/(en|fr)/, '') || '/';
+                  const isPageActive = isPageLink && pathWithoutLang === itemPathWithoutLang;
                   
-                  const isPageActive = isPageLink && pathname === item.href;
-                  
-                  const getSectionId = (href: string) => {
-                      if (href.startsWith('/#')) return href.substring(2);
-                      return null;
-                  }
-                  const sectionId = getSectionId(item.href);
-                  const isSectionActive = sectionId ? activeSection === sectionId : false;
+                  const isSectionActive = item.sectionId ? activeSection === item.sectionId : false;
 
                   const finalClasses = ['px-4', 'py-2', 'rounded-lg', 'text-base', 'font-normal', 'transition-colors'];
 
@@ -197,13 +227,15 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                       href={item.href}
                       className={finalClasses.join(' ')}
                       onClick={(e) => {
-                        if (item.href.startsWith('/#') && window.location.pathname === '/') {
+                        if (item.href.includes('/#') && isHomepage()) {
                           e.preventDefault();
-                          const id = item.href.substring(2);
-                          const element = document.getElementById(id);
-                          if (element) {
-                            element.scrollIntoView({ behavior: 'smooth' });
-                            window.history.pushState(null, '', item.href);
+                          const id = item.sectionId;
+                          if (id) {
+                            const element = document.getElementById(id);
+                            if (element) {
+                              element.scrollIntoView({ behavior: 'smooth' });
+                              window.history.pushState(null, '', item.href);
+                            }
                           }
                         }
                       }}
@@ -214,12 +246,17 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                 })}
               </nav>
 
+              {/* Language Switcher */}
+              <div className="ml-4">
+                <LanguageSwitcher />
+              </div>
+
               {/* CTA Button */}
               <a 
                 href="https://calendly.com/contact-birdandco/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ml-6 bg-[#27013D] text-white px-3 py-2 rounded-full font-semibold text-sm hover:bg-[#1c0e2a] transition-colors whitespace-nowrap"
+                className="ml-4 bg-[#27013D] text-white px-3 py-2 rounded-full font-semibold text-sm hover:bg-[#1c0e2a] transition-colors whitespace-nowrap"
               >
                 {ctaText}
               </a>
@@ -227,10 +264,11 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
 
 
             {/* Mobile Menu Button */}
-            <div className="lg:hidden">
+            <div className="lg:hidden flex items-center gap-2">
+              <LanguageSwitcher />
               <button
                 onClick={() => setIsMobileMenuOpen(true)}
-                aria-label="Ouvrir le menu"
+                aria-label={t('common:accessibility.openMenu')}
                 className="text-black p-2 -mr-2"
               >
                 <HamburgerIcon className="w-7 h-7" />
@@ -257,7 +295,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {services.map((service, index) => (
                   <div key={index} className="dropdown-item" style={{'--delay': `${50 + index * 80}ms`} as React.CSSProperties}>
-                    <a href={`/service/${service.slug}`} className="block h-full group">
+                    <a href={`/${currentLang}/service/${getServiceSlug(service)}`} className="block h-full group">
                       <div className="bg-white rounded-xl p-6 flex flex-col items-start text-left h-full transition-all duration-300 ease-in-out border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1 group-hover:bg-[#27013D]">
                         <h3 className="text-base font-bold text-gray-900 mb-2 transition-colors duration-300 group-hover:text-white">
                           {service.title}
@@ -268,7 +306,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                         </p>
                         <div className="flex-grow" />
                         <div className="w-full mt-4 flex items-center justify-between text-sm font-semibold text-gray-900 transition-colors duration-300 group-hover:text-white">
-                          <span>En savoir plus</span>
+                          <span>{t('common:nav.learnMore')}</span>
                           <ArrowRightIcon className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                         </div>
                       </div>
@@ -290,7 +328,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
             <div className="flex flex-col items-center justify-center h-full p-6 pb-10 overflow-y-auto">
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
-                aria-label="Fermer le menu"
+                aria-label={t('common:accessibility.closeMenu')}
                 className="absolute top-6 right-5 p-2 text-black"
               >
                 <CloseIcon className="w-8 h-8" />
@@ -298,10 +336,13 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
               
               <nav className="flex flex-col items-center space-y-2 text-center w-full">
                 {navItems.map((item) => {
-                  const isPageLink = item.href !== '/' && !item.href.startsWith('/#');
-                  const isPageActive = isPageLink && pathname === item.href;
+                  const isPageLink = !item.href.includes('/#');
+                  const pathWithoutLang = pathname.replace(/^\/(en|fr)/, '') || '/';
+                  const itemPathWithoutLang = item.href.replace(/^\/(en|fr)/, '') || '/';
+                  const isPageActive = isPageLink && pathWithoutLang === itemPathWithoutLang;
+                  const isSolutionsNav = item.sectionId === 'solutions';
                   
-                  if (item.name === 'Solutions') {
+                  if (isSolutionsNav) {
                     return (
                       <button
                         key={item.name}
@@ -324,13 +365,15 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                       href={item.href}
                       onClick={(e) => {
                         setIsMobileMenuOpen(false);
-                        if (item.href.startsWith('/#') && window.location.pathname === '/') {
+                        if (item.href.includes('/#') && isHomepage()) {
                             e.preventDefault();
-                            const id = item.href.substring(2);
-                            const element = document.getElementById(id);
-                            if (element) {
-                                element.scrollIntoView({ behavior: 'smooth' });
-                                window.history.pushState(null, '', item.href);
+                            const id = item.sectionId;
+                            if (id) {
+                              const element = document.getElementById(id);
+                              if (element) {
+                                  element.scrollIntoView({ behavior: 'smooth' });
+                                  window.history.pushState(null, '', item.href);
+                              }
                             }
                         }
                       }}
@@ -362,11 +405,11 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
           <div className={`absolute inset-0 transition-transform duration-300 ease-in-out bg-white ${mobilePanel === 'solutions' ? 'translate-x-0' : 'translate-x-full'}`}>
             <div className="flex flex-col h-full">
               <div className="relative flex-shrink-0 flex items-center justify-center border-b border-gray-200 h-16">
-                <button onClick={() => setMobilePanel('main')} aria-label="Retour au menu principal" className="absolute left-4 top-1/2 -translate-y-1/2 p-2">
+                <button onClick={() => setMobilePanel('main')} aria-label={t('common:accessibility.backToMainMenu')} className="absolute left-4 top-1/2 -translate-y-1/2 p-2">
                   <ChevronLeftIcon className="w-7 h-7" />
                 </button>
-                <h3 className="font-bold text-lg text-gray-900">Nos Solutions</h3>
-                <button onClick={() => setIsMobileMenuOpen(false)} aria-label="Fermer le menu" className="absolute right-4 top-1/2 -translate-y-1/2 p-2 text-black">
+                <h3 className="font-bold text-lg text-gray-900">{t('common:nav.ourSolutions')}</h3>
+                <button onClick={() => setIsMobileMenuOpen(false)} aria-label={t('common:accessibility.closeMenu')} className="absolute right-4 top-1/2 -translate-y-1/2 p-2 text-black">
                   <CloseIcon className="w-8 h-8" />
                 </button>
               </div>
@@ -376,7 +419,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                   {services.map((service, index) => (
                     <a 
                       key={index} 
-                      href={`/service/${service.slug}`} 
+                      href={`/${currentLang}/service/${getServiceSlug(service)}`} 
                       className="block h-full group"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
@@ -390,7 +433,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                         </p>
                         <div className="flex-grow" />
                         <div className="w-full mt-4 flex items-center justify-between text-sm font-semibold text-[#27013D] transition-colors duration-300 group-hover:text-white">
-                          <span>En savoir plus</span>
+                          <span>{t('common:nav.learnMore')}</span>
                           <ArrowRightIcon className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                         </div>
                       </div>

@@ -1,0 +1,29 @@
+{
+  "sectionTitle": "Questions",
+  "sectionTitleHighlight": "fréquentes",
+  "pageTitle": "Foire aux Questions",
+  "items": {
+    "whatIsBird": {
+      "question": "Qu'est-ce que Bird ?",
+      "answer": "Bird est un <strong>partenaire stratégique et financier</strong> accessible, conçu pour accompagner les organisations — petites ou grandes — à structurer, financer et développer leurs ambitions avec sérénité et impact. Grâce à notre approche rigoureuse et à des offres tarifaires modulables, nous permettons à chacun d'accéder à un accompagnement haut de gamme, sans barrière de coût."
+    },
+    "whyBird": {
+      "question": "Pourquoi le nom Bird ?",
+      "answer": "Parce qu'il incarne la hauteur de vue, la trajectoire claire et l'élan nécessaire pour faire grandir vos projets."
+    },
+    "howBorn": {
+      "question": "Comment est né Bird ?",
+      "answer": "Bird est né de la rencontre d'anciens consultants convaincus qu'il existe une autre façon d'accompagner les organisations.\nNotre démarche ne remet pas en cause la valeur des cabinets traditionnels. Elle vise à combler un vide : permettre à des organisations qui n'en ont pas toujours les moyens, surtout dans le contexte actuel de crise, de bénéficier, elles aussi, d'un soutien stratégique et financier de haut niveau."
+    },
+    "whoDoYouHelp": {
+      "question": "Quels types d'organisations accompagnez-vous ?",
+      "answer": "Selon les enjeux auxquels ils sont confrontés nous accompagnons :",
+      "list": [
+        "TPE, PME, ETI, Grandes entreprises",
+        "Fonds d'investissements, Banque d'investissement",
+        "Institutions publiques, associations"
+      ],
+      "additional": "Nous nous adressons également aux avocats, experts comptables, CSE, administrateurs judiciaires qui sollicitent notre réseau pour leurs clients."
+    }
+  }
+}

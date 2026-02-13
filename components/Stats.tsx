@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import Animate from './Animate';
 
 // A reusable component for counting up numbers with animation when it becomes visible.
@@ -123,26 +124,28 @@ const ScrollUpAnimator: React.FC<{ end: number }> = ({ end }) => {
 };
 
 
-const stats = [
-  {
-    icon: <img src="https://images2.imgbox.com/87/dd/sN3rtZQi_o.png" alt="Naissance du réseau Bird& icon" className="w-20 h-20 object-contain" />,
-    value: "2025",
-    label: "Naissance du réseau Bird&",
-  },
-  {
-    icon: <img src="https://images2.imgbox.com/0e/6d/ydTjAfbc_o.png" alt="Dirigeants et actionnaires accompagnés icon" className="w-24 h-24 object-contain" />,
-    value: "20+",
-    label: <>Dirigeants et actionnaires<br />accompagnés</>,
-  },
-  {
-    icon: <img src="https://images2.imgbox.com/80/73/qtj75VEW_o.png" alt="Experts partenaires icon" className="w-24 h-24 object-contain" />,
-    value: "10+",
-    valueSubtitle: "années d'expérience",
-    label: "Un réseau d'experts : anciens consultants de cabinets de renom, dirigeants et entrepreneurs",
-  },
-];
-
 const Stats: React.FC = () => {
+  const { t } = useTranslation();
+
+  const stats = [
+    {
+      icon: <img src="https://images2.imgbox.com/87/dd/sN3rtZQi_o.png" alt={t('home:stats.birth')} className="w-20 h-20 object-contain" />,
+      value: "2025",
+      label: t('home:stats.birth'),
+    },
+    {
+      icon: <img src="https://images2.imgbox.com/0e/6d/ydTjAfbc_o.png" alt={t('home:stats.executives')} className="w-24 h-24 object-contain" />,
+      value: "20+",
+      label: t('home:stats.executives'),
+    },
+    {
+      icon: <img src="https://images2.imgbox.com/80/73/qtj75VEW_o.png" alt={t('home:stats.expertNetwork')} className="w-24 h-24 object-contain" />,
+      value: "10+",
+      valueSubtitle: t('home:stats.yearsExperience'),
+      label: t('home:stats.expertNetwork'),
+    },
+  ];
+
   return (
     <section className="bg-white flex flex-col justify-center py-16 md:py-24 overflow-x-hidden min-h-screen">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -154,7 +157,7 @@ const Stats: React.FC = () => {
           </Animate>
           <Animate variant="pop" delay={100}>
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
-              Un impact qui <span className="gradient-text">fait la différence</span>
+              {t('home:stats.sectionTitle')} <span className="gradient-text">{t('home:stats.sectionTitleHighlight')}</span>
             </h2>
           </Animate>
         </div>

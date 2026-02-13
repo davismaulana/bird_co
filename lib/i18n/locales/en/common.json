@@ -1,0 +1,37 @@
+{
+  "nav": {
+    "stakes": "Challenges",
+    "solutions": "Solutions",
+    "origin": "Our Story",
+    "about": "About",
+    "contact": "Contact",
+    "ourSolutions": "Our Solutions",
+    "learnMore": "Learn More"
+  },
+  "cta": {
+    "discussProjects": "Let's Discuss Your Projects",
+    "send": "Send",
+    "sending": "Sending...",
+    "seeAllQuestions": "See All Questions"
+  },
+  "footer": {
+    "copyright": "BIRD&. All Rights Reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfUse": "Terms of Use"
+  },
+  "accessibility": {
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "backToMainMenu": "Back to main menu",
+    "scrollDown": "Scroll down"
+  },
+  "errors": {
+    "404": "404",
+    "pageNotFound": "Page Not Found"
+  },
+  "language": {
+    "fr": "Français",
+    "en": "English",
+    "switchLanguage": "Switch language"
+  }
+}

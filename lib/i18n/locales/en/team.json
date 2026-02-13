@@ -1,0 +1,29 @@
+{
+  "sectionTitle": "The origins of our trusted partner network",
+  "intro": "Bird was born from the <strong>meeting of former consultants</strong> convinced that there is another way to support organizations.<br />We offer <strong>tailored and accessible guidance</strong>, <strong>bridging the gap</strong> between <strong>the structured expertise of consulting firms</strong> and the <strong>flexibility of an independent consultant</strong>.",
+  "philosophy": "Our approach does not question the value of traditional consulting firms. It aims to fill a gap: enabling organizations that may not always have the resources, especially in the current economic climate, to also benefit from high-level strategic and financial support.",
+  "members": {
+    "seydina": {
+      "name": "Seydina Samb",
+      "role": "Co-founder",
+      "description": [
+        "Specialist in complex situations and companies requiring financial, strategic, and operational structuring or restructuring.",
+        "Throughout his career, he has demonstrated resilience, agility, and creativity, particularly in complex transactional processes.",
+        "His passion for music and cinema, two demanding fields, reflects a curious and structured mind with a keen eye for detail."
+      ],
+      "alumni": "Eight Advisory & KPMG Alumni",
+      "diploma": "Graduate of IESEG School Of Management"
+    },
+    "benjamin": {
+      "name": "Benjamin Le Gal",
+      "role": "Co-founder",
+      "description": [
+        "Expert in assisting companies and funds with their M&A processes, including Due Diligence and buyer searches.",
+        "He also brings solid experience in CFO roles at startups and mid-sized companies, where he supported fundraising efforts.",
+        "A former semi-professional footballer, he is still guided by discipline, strategy, and commitment."
+      ],
+      "alumni": "EY, Exelmans & Payfit Alumni",
+      "diploma": "Graduate of IESEG School Of Management"
+    }
+  }
+}

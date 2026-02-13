@@ -1,0 +1,103 @@
+{
+  "hero": {
+    "title1": "Your strategic",
+    "title2": "and financial partner",
+    "subtitle1": "Engage an",
+    "subtitleHighlight": "expert, resourceful, and accessible partner,",
+    "subtitle2": "dedicated to achieving your ambitions"
+  },
+  "stakes": {
+    "sectionTitle": "Your",
+    "sectionTitleHighlight": "challenges",
+    "subtitle": "Identify risks to better manage them and transform challenges into opportunities",
+    "tabs": {
+      "structure": {
+        "keyword": "Structure",
+        "description": "Establish solid financial and operational foundations to steer your growth with clarity and anticipate future challenges.",
+        "cardTitle": "Growth challenges",
+        "cardDescription": "Without a solid financial structure, rapid growth can lead to <strong>cash flow issues</strong> and <strong>loss of control</strong>",
+        "details": [
+          "<strong>2 out of 3 fast-growing SMEs</strong> experience <strong>cash flow tensions</strong> within two years of their expansion phase",
+          "<strong>Operational complexity</strong> increases by an average of <strong>30%</strong> for each <strong>doubling of revenue</strong>",
+          "Companies that implement <strong>management tools early reduce</strong> their <strong>risk of financial imbalance</strong> by 40%"
+        ]
+      },
+      "sustain": {
+        "keyword": "Sustain",
+        "description": "Ensure the continuity and resilience of your business model by optimizing processes and securing your financial governance for a stable future.",
+        "cardTitle": "Securing the finance function",
+        "cardDescription": "60% of SMEs acknowledge a <strong>need to strengthen</strong> their financial and strategic capabilities",
+        "details": [
+          "The <strong>average recruitment time</strong> for a first CFO is <strong>over 6 months</strong>, with a total cost often <strong>unaffordable</strong> for a growing company",
+          "When a CFO leaves a company, it takes <strong>4 to 6 months</strong> to find a <strong>replacement</strong>, creating a <strong>critical gap</strong> in governance and financial management",
+          "Engaging a part-time CFO provides immediate access to <strong>senior expertise</strong>, <strong>supports growth</strong>, <strong>secures financing</strong>, and <strong>strengthens governance</strong> without the cost of a permanent hire"
+        ]
+      },
+      "resist": {
+        "keyword": "Resist",
+        "description": "Strengthen your ability to navigate uncertainty by identifying risks and deploying agile strategies to turn turbulence into opportunities.",
+        "cardTitle": "Difficulty prevention and resilience",
+        "cardDescription": "At least 66,000 business failures are expected in France in 2025, a direct consequence of the <strong>economic slowdown</strong>, the <strong>end of public support</strong>, and tightening <strong>credit conditions</strong>",
+        "details": [
+          "Companies with a <strong>structured prevention system</strong> reduce their risk of bankruptcy by nearly 30%",
+          "Nearly 60% of refinancing or debt restructuring requests fail <strong>due to lack of a credible business plan</strong>",
+          "Half of all failures could be avoided through <strong>early detection</strong> and <strong>appropriate support</strong>"
+        ]
+      },
+      "maximize": {
+        "keyword": "Maximize",
+        "description": "Fully leverage your assets and equity at key moments by executing strategic transactions that optimize returns for all stakeholders.",
+        "cardTitle": "Transmission and negotiation strategy",
+        "cardDescription": "1/3 of transactions fail directly due to lack of audit or preparation",
+        "details": [
+          "<strong>70% of companies underestimate the difficulties related to business transfer</strong> and enter negotiations with <strong>incomplete financial information</strong>",
+          "Transactions prepared in advance with a <strong>vendor due diligence</strong> close <strong>twice as fast</strong>",
+          "Proper preparation can <strong>increase the sale price</strong> by 10 to 20%"
+        ]
+      }
+    }
+  },
+  "services": {
+    "sectionTitle": "Support",
+    "sectionTitleHighlight": "by your side",
+    "subtitle": "In <strong>day-to-day management</strong> as well as <strong>transactional processes</strong>"
+  },
+  "pillars": {
+    "sectionTitle": "Our",
+    "sectionTitleHighlight": "Pillars",
+    "subtitle": "Our approach is built on four fundamental pillars that guide each of our engagements",
+    "pragmatism": {
+      "title": "Pragmatism",
+      "description": "Concrete solutions for <strong>relevant</strong>, <strong>cost-effective</strong> support <strong>tailored to your reality</strong>"
+    },
+    "clarity": {
+      "title": "Decision Clarity",
+      "description": "Complex and targeted analyses to inform your <strong>strategic decisions</strong>"
+    },
+    "proactivity": {
+      "title": "Proactivity",
+      "description": "We help you <strong>identify opportunities</strong> and <strong>anticipate risks</strong> with confidence"
+    },
+    "trust": {
+      "title": "Trust",
+      "description": "A committed partner, guided by <strong>transparency</strong> and <strong>integrity</strong>"
+    }
+  },
+  "stats": {
+    "sectionTitle": "An impact that",
+    "sectionTitleHighlight": "makes a difference",
+    "birth": "Founding of the Bird& network",
+    "executives": "Executives and shareholders supported",
+    "yearsExperience": "years of experience",
+    "expertNetwork": "A network of experts: former consultants from renowned firms, executives, and entrepreneurs"
+  },
+  "quote": {
+    "text": "\"The best way to predict the future is to create it.\"",
+    "author": "— Peter Drucker",
+    "description": "This philosophy is at the heart of our approach. We don't simply react to events; we empower you to actively shape your company's future, transforming uncertainty into opportunity and vision into reality."
+  },
+  "valueProposition": {
+    "sectionTitle": "Our",
+    "sectionTitleHighlight": "value proposition"
+  }
+}

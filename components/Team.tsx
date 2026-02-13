@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation, Trans } from 'react-i18next';
 import Animate from './Animate';
 import { LinkedInIcon, teamMembers } from '../constants';
 
@@ -10,11 +11,12 @@ interface TeamProps {
 }
 
 const Team: React.FC<TeamProps> = ({
-  heading = "À l'origine du réseau de bras droit",
+  heading,
   introText,
   teamMembers: propTeamMembers,
   bottomText
 }) => {
+  const { t } = useTranslation();
   const membersToDisplay = propTeamMembers || teamMembers;
   const displayedTeamMembers = [...membersToDisplay].reverse();
 
@@ -37,7 +39,7 @@ const Team: React.FC<TeamProps> = ({
           </Animate>
           <Animate variant="pop" delay={100}>
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-white">
-              {heading}
+              {heading || t('team:sectionTitle')}
             </h2>
           </Animate>
           <Animate variant="pop" delay={200}>
@@ -46,8 +48,13 @@ const Team: React.FC<TeamProps> = ({
                 <p className="text-lg">{introText}</p>
               ) : (
                 <p className="text-lg">
-                  Bird est né de la <strong className="font-bold text-white">rencontre d’anciens consultants</strong> convaincus qu’il existe une autre façon d’accompagner les organisations.<br />
-                  Nous offrons <strong className="font-bold text-white">un accompagnement sur-mesure et accessible</strong>, <strong className="font-bold text-white">à mi-chemin</strong> entre <strong className="font-bold text-white">l’expertise structurée du conseil</strong> et la <strong className="font-bold text-white">flexibilité d’un consultant autonome</strong>.
+                  <Trans
+                    i18nKey="team:intro"
+                    components={{
+                      strong: <strong className="font-bold text-white" />,
+                      br: <br />
+                    }}
+                  />
                 </p>
               )}
             </div>
@@ -113,7 +120,7 @@ const Team: React.FC<TeamProps> = ({
         <Animate variant="pop" delay={400}>
           <div className="text-lg text-gray-300 leading-relaxed mt-10 max-w-5xl mx-auto text-center">
             <p>
-              Notre démarche ne remet pas en cause la valeur des cabinets traditionnels. Elle vise à combler un vide : permettre à des organisations qui n’en ont pas toujours les moyens, surtout dans le contexte actuel de crise, de bénéficier, elles aussi, d’un soutien stratégique et financier de haut niveau.
+              {bottomText || t('team:philosophy')}
             </p>
           </div>
         </Animate>

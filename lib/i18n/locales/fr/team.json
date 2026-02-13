@@ -1,0 +1,29 @@
+{
+  "sectionTitle": "À l'origine du réseau de bras droit",
+  "intro": "Bird est né de la <strong>rencontre d'anciens consultants</strong> convaincus qu'il existe une autre façon d'accompagner les organisations.<br />Nous offrons <strong>un accompagnement sur-mesure et accessible</strong>, <strong>à mi-chemin</strong> entre <strong>l'expertise structurée du conseil</strong> et la <strong>flexibilité d'un consultant autonome</strong>.",
+  "philosophy": "Notre démarche ne remet pas en cause la valeur des cabinets traditionnels. Elle vise à combler un vide : permettre à des organisations qui n'en ont pas toujours les moyens, surtout dans le contexte actuel de crise, de bénéficier, elles aussi, d'un soutien stratégique et financier de haut niveau.",
+  "members": {
+    "seydina": {
+      "name": "Seydina Samb",
+      "role": "Co-fondateur",
+      "description": [
+        "Spécialiste des situations complexes et entreprises nécessitant structuration voire restructuration financière, stratégique et opérationnelle.",
+        "Tout au long de son parcours, il s'est montré résilient, agile et créatif notamment dans des processus transactionnels lourds.",
+        "Sa passion pour la musique et le cinéma, deux univers exigeants, témoigne d'un esprit curieux, structuré et d'un sens du détail prononcé."
+      ],
+      "alumni": "Alumni Eight Advisory & KPMG",
+      "diploma": "Diplômé de l'IESEG School Of Management"
+    },
+    "benjamin": {
+      "name": "Benjamin Le Gal",
+      "role": "Co-fondateur",
+      "description": [
+        "Expert dans l'assistance des entreprises et fonds dans leur processus de cessions-acquisitions notamment Due Diligence et recherche de repreneurs.",
+        "Il bénéfice également d'une expérience solide en Direction financière de start-ups et ETI dont il a accompagné les levées de fonds.",
+        "Ancien footballeur semi-professionnel, il est toujours guidé par la discipline, la stratégie et l'engagement."
+      ],
+      "alumni": "Alumni EY, Exelmans & Payfit",
+      "diploma": "Diplômé de l'IESEG School Of Management"
+    }
+  }
+}

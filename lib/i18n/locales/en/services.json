@@ -1,0 +1,194 @@
+{
+  "list": {
+    "pilotage": {
+      "slug": "steering-planning",
+      "title": "Steering & Planning",
+      "subTitle": "Build",
+      "description": "the essential tools for optimal management: reporting, business plans, cash flow forecasts, and more."
+    },
+    "cfo": {
+      "slug": "part-time-cfo",
+      "title": "Part-Time CFO",
+      "subTitle": "Structure",
+      "description": "your growth and execute your financial strategy with a dedicated part-time right-hand partner."
+    },
+    "diagnostic": {
+      "slug": "diagnostic-restructuring",
+      "title": "Diagnostic & Restructuring",
+      "subTitle": "Reassure",
+      "description": "your shareholders and creditors about your business's financial health and your ability to turn it around."
+    },
+    "ma": {
+      "slug": "ma-services",
+      "title": "M&A Services",
+      "subTitle": "Support",
+      "description": "your capital projects: divestitures, fundraising, external growth, and reorganization."
+    }
+  },
+  "details": {
+    "pilotage": {
+      "title": "Steering & Planning",
+      "subtitle": "Build the essential tools for day-to-day management of your business",
+      "diagnosticTitle": "Your <highlight>objectives</highlight>",
+      "diagnosticDescription": "Build the essential tools to implement your financial strategy and support your company's growth.",
+      "contentTitle": "Define a clear roadmap",
+      "objectives": [
+        "Implement effective financial steering tools",
+        "Set operational and financial objectives",
+        "Analyze financial and operational performance",
+        "Make the decisions necessary for improvement",
+        "Optimize working capital and cash flow",
+        "Plan your business activities and project your financial statements",
+        "Manage relationships with your investors and creditors"
+      ],
+      "mainContentTitle": "Key deliverables",
+      "categories": {
+        "reporting": {
+          "title": "Operational and financial reporting",
+          "items": ["Revenue", "EBITDA", "Budget vs. Actual Variance", "FTE", "Cash Burn", "Working Capital", "Debt"]
+        },
+        "commercial": {
+          "title": "Sales dashboard",
+          "items": ["Actual Revenue", "Forecast Revenue", "Order Backlog", "Lead Conversion Rate", "Customer Acquisition Cost", "Average Order Value", "Gross Margin", "Sales Volume", "New Customers Acquired", "Lost Customers", "Churn", "Retention Rate", "Customer Loyalty Rate", "Accounts Receivable", "Days Sales Outstanding (DSO)", "Performance by Product", "Performance by Channel", "Performance by Sales Rep", "Sales Pipeline", "Target Achievement Rate", "Ongoing Sales Initiatives"]
+        },
+        "planning": {
+          "title": "Other planning tools",
+          "items": ["Forecast Scenarios", "Sensitivity Analysis", "Business Continuity Plan", "Transformation Plan", "Balanced Scorecard", "Strategic Project Analysis and Evaluation"]
+        },
+        "budget": {
+          "title": "Budget and Business Plan",
+          "items": ["Revenue", "Variable Costs", "Payroll", "Overhead Costs", "EBITDA"]
+        },
+        "treasury": {
+          "title": "Cash Flow Forecast",
+          "items": ["Cash EBITDA", "Operating Working Capital", "Non-Operating Working Capital", "Financial Income", "Financial Expenses", "Corporate Income Tax", "CAPEX", "Loans", "Other Financing", "Capital Increase", "Dividend Distribution", "Shareholder Loans"]
+        }
+      },
+      "ambitionTitle": "Our ambition",
+      "ambitionDescription": "Enable you to anticipate future financial and operational challenges and prevent potential difficulties."
+    },
+    "cfo": {
+      "title": "Part-Time CFO",
+      "subtitle": "A key partner to structure and grow your organization",
+      "diagnosticTitle": "Your <highlight>challenges</highlight>",
+      "diagnosticDescription": "Structure an essential Finance function to develop your business with confidence:",
+      "contentTitle": "Grow your business with confidence",
+      "objectives": [
+        "Manage profitability and financial performance",
+        "Make the decisions necessary for improvement",
+        "Secure financing suited to your stage of maturity",
+        "Set operational and financial objectives",
+        "Manage relationships with your investors and creditors",
+        "Support M&A and restructuring projects",
+        "Contribute to investment and innovation strategy"
+      ],
+      "mainContentTitle": "Key responsibilities",
+      "categories": {
+        "governance": {
+          "title": "Financial governance",
+          "items": ["Steering Structure", "Finance Committee", "Budget Process Management", "Stakeholder Negotiations", "Risk Management", "Investment Monitoring", "Regular Reporting", "Performance Indicators", "Regulatory Compliance", "Auditor Relations", "Investor Relations"]
+        },
+        "performance": {
+          "title": "Performance management",
+          "items": ["Margin and Cost Optimization", "Profitability Analysis", "Improvement Plans"]
+        },
+        "treasury": {
+          "title": "Cash management",
+          "items": ["Cash Forecasts", "Daily Collections and Disbursements Monitoring", "Working Capital Optimization", "Customer and Supplier Payment Terms Management", "Bank Balance Monitoring", "Short-Term Financing Management", "Cash Surplus Investment", "Financial Flow Security", "Forecast vs. Actual Variance Analysis", "Cash Reporting", "Financing Plan"]
+        },
+        "strategy": {
+          "title": "Financial strategy",
+          "items": ["Equity Story Development", "Business Plan Construction", "Capital Allocation", "Funding Source Selection", "Investment Policy", "Risk Management", "Cost of Capital Optimization", "Strategic KPI Definition and Monitoring", "Operational and Financial Lever Identification"]
+        },
+        "financing": {
+          "title": "Financing & Growth",
+          "items": ["Financing Needs Identification", "Financing Plan Structuring", "Equity Fundraising", "Bank or Bond Debt", "Alternative and Crowdfunding", "Grants and Public Subsidies", "Cash Flow Optimization", "R&D and Innovation Investment", "Commercial and International Development", "Organic and External Growth", "Profitability Indicator Monitoring", "Value Creation Plan"]
+        }
+      },
+      "ambitionTitle": "Our ambition",
+      "ambitionDescription": "Ensure the growth and sustainability of your business"
+    },
+    "diagnostic": {
+      "title": "Diagnostic & Restructuring",
+      "subtitle": "An expert perspective to step back, make sound decisions, and relaunch with confidence",
+      "diagnosticTitle": "Your <highlight>objectives</highlight>",
+      "diagnosticDescription": "Conduct a comprehensive, clear, and objective assessment of the company's financial health",
+      "contentTitle": "Drive the business turnaround",
+      "objectives": [
+        "Understand historical performance",
+        "Identify management dysfunctions",
+        "Renegotiate debt",
+        "Secure new financing",
+        "Redefine the company's strategy",
+        "Restructure its organization and operations"
+      ],
+      "mainContentTitle": "Key deliverables",
+      "categories": {
+        "diagnostic": {
+          "title": "Economic and financial diagnostic",
+          "items": ["Root Cause Analysis of Difficulties", "Detailed Critical Review of Financial Statements", "Income Statement Analysis (Revenue, Margin, Payroll)", "Working Capital Analysis", "Long and Short-Term Financial Debt Analysis", "Operating and Cash Flow Forecast Development", "Performance Improvement Lever Identification"]
+        },
+        "financial": {
+          "title": "Financial restructuring",
+          "items": ["Financial Restructuring Plan Proposal", "Assistance with Insolvency Proceedings with Court-Appointed Administrators and Lawyers", "Cash Flow Forecast Monitoring and Updates", "Support During Insolvency Proceedings", "Stakeholder Coordination", "Short-Term Financing Solutions (Inventory, Factoring)", "Creditor Negotiations"]
+        },
+        "strategic": {
+          "title": "Strategic and operational restructuring",
+          "items": ["Business Portfolio Review", "Refocus on Core Business Activities", "Divestiture or Discontinuation of Non-Strategic Activities", "Repositioning and Business Model Redefinition", "Value Chain Optimization", "Operational Process Improvement", "Digitalization and Automation", "Performance Improvement Lever Identification", "Cost Reduction and Productivity Gains", "Team and Responsibility Reorganization", "Workforce Reduction or Internal Mobility", "Governance Strengthening", "Monitoring and Steering Indicator Implementation", "Internal and External Communication"]
+        },
+        "performance": {
+          "title": "Performance improvement",
+          "items": ["Operational and Financial Diagnostic", "KPI Monitoring", "OKR Definition and Implementation", "Cost Reduction Plan", "Margin Review by Activity", "Supplier Renegotiation", "Working Capital Optimization", "Digitalization", "Employee Upskilling", "Process Improvement", "Performance Monitoring Committee Setup"]
+        },
+        "reporting": {
+          "title": "Operational and financial reporting",
+          "items": ["Revenue Tracking", "Gross Margin", "Payroll Analysis", "Overhead Costs", "EBITDA", "Available Cash", "Cash Burn", "Runway", "Debt Level", "Working Capital Variance", "Accounts Receivable", "Accounts Payable", "Inventory Levels", "Completed Investments", "Order Backlog", "Sales Conversion Rate", "Team Productivity", "Customer Satisfaction", "Deadline Compliance", "HR Indicators", "Action Plan", "Actual vs. Budget Variance"]
+        }
+      },
+      "ambitionTitle": "Our ambition",
+      "ambitionDescription": "Provide the perspective needed for decision-making and relaunching your business"
+    },
+    "ma": {
+      "title": "M&A Services",
+      "subtitle": "Support your capital projects: divestitures, fundraising, external growth, and reorganization",
+      "diagnosticTitle": "Your <highlight>objectives</highlight>",
+      "diagnosticDescription": "Create objective presentations and analyses that highlight the target's performance and potential",
+      "contentTitle": "Maximize value and secure the transaction",
+      "objectives": [
+        "Strengthen credibility and maximize company valuation",
+        "Accelerate the sales process",
+        "Reduce transaction risks",
+        "Gain the confidence of potential buyers",
+        "Strengthen your negotiating position",
+        "Identify relevant acquirers"
+      ],
+      "mainContentTitle": "Key responsibilities and deliverables",
+      "categories": {
+        "im": {
+          "title": "Information Memorandum / Divestiture and Fundraising Assistance",
+          "items": ["Executive Summary", "Company Presentation", "Market and Competitive Analysis", "Products and Services Description", "Growth Strategy", "Organization and Management", "Historical and Projected Financial Data", "Financing Requirements", "Valuation and Deal Structure", "Risks and Opportunities", "Process Timeline", "Acquirer and Investor Identification and Outreach", "Data Room Setup", "Due Diligence Coordination", "Terms Negotiation", "Transaction Closing"]
+        },
+        "vendor": {
+          "title": "Vendor Assistance",
+          "items": ["Financial Documentation Preparation", "Quality of Earnings Review (QoE)", "EBITDA Normalization", "Cash Flow and Working Capital Analysis", "Net Debt Adjustment Identification (QoD)", "Business Plan and Forecast Preparation", "Data Room Setup", "Investor Question Anticipation and Response"]
+        },
+        "buyside": {
+          "title": "Buy-Side Due Diligence",
+          "items": ["Business Model Resilience Assessment", "Operational and Financial Vulnerability Identification", "Critical Quality of Earnings Review", "Independent Adjusted EBITDA Validation", "Cash Flow and Working Capital Stress Testing", "Net Debt Sustainability Analysis", "Financial Forecast Consistency Testing", "Critical Review of Growth and Margin Assumptions", "Contradictory Analysis of Vendor Assistance Adjustments", "Tax, Social, and Regulatory Risk Identification", "Realistic Synergy Assessment", "Price Adjustment Recommendations", "Warranty Structuring"]
+        },
+        "financing": {
+          "title": "Financing Search",
+          "items": ["Business Angels", "Incubators and Accelerators", "Crowdfunding Platforms", "Investment Funds", "Bank Loans", "Microloans", "Mezzanine Loans", "Public Grants and Subsidies", "Honor Loan Networks", "Private Investors via Specialized Platforms"]
+        }
+      },
+      "ambitionTitle": "Our ambition",
+      "ambitionDescription": "Anticipate investor expectations and strengthen your position in the transaction process"
+    }
+  },
+  "slugs": {
+    "pilotage": "steering-planning",
+    "cfo": "part-time-cfo",
+    "diagnostic": "diagnostic-restructuring",
+    "ma": "ma-services"
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "list": {
+    "pilotage": {
+      "slug": "pilotage-planification",
+      "title": "Pilotage & planification",
+      "subTitle": "Construire",
+      "description": "les outils indispensables à une gestion optimale : reporting, business plan, prévisionnels de trésorerie etc."
+    },
+    "cfo": {
+      "slug": "cfo-part-time",
+      "title": "CFO part-time",
+      "subTitle": "Structurer",
+      "description": "votre croissance et mettre en exécution votre stratégie financière avec un bras-droit dédié à temps partiel."
+    },
+    "diagnostic": {
+      "slug": "diagnostic-restructuration",
+      "title": "Diagnostic & restructuration",
+      "subTitle": "Rassurer",
+      "description": "vos actionnaires et créanciers sur la santé financière de votre activité et votre capacité à la relancer."
+    },
+    "ma": {
+      "slug": "services-ma",
+      "title": "Services M&A",
+      "subTitle": "Accompagner",
+      "description": "vos projets capitalistiques : cession, levée de fonds, croissance externe et réorganisation."
+    }
+  },
+  "details": {
+    "pilotage": {
+      "title": "Pilotage & Planification",
+      "subtitle": "Construire les outils indispensables à la gestion quotidienne de votre entreprise",
+      "diagnosticTitle": "Vos <highlight>objectifs</highlight>",
+      "diagnosticDescription": "Construire les outils indispensables pour appliquer votre stratégie financière et accompagner la croissance de votre entreprise.",
+      "contentTitle": "Définir une feuille de route claire",
+      "objectives": [
+        "Mettre en place des outils de pilotage financier efficaces",
+        "Fixer des objectifs opérationnels et financiers",
+        "Analyser la performance financière et opérationnelle",
+        "Prendre les décisions nécessaires à son amélioration",
+        "Optimiser le BFR et la trésorerie",
+        "Planifier votre activité et projeter vos états financiers",
+        "Assurer les relations avec vos investisseurs et créanciers"
+      ],
+      "mainContentTitle": "Les livrables essentiels",
+      "categories": {
+        "reporting": {
+          "title": "Reporting opérationnel et financier",
+          "items": ["Chiffre d'affaires", "EBITDA", "Ecart Budget vs Réel", "ETP", "Cash Burn", "BFR", "Dettes"]
+        },
+        "commercial": {
+          "title": "Tableau de bord commercial",
+          "items": ["Chiffre d'affaires réalisé", "Chiffre d'affaires prévisionnel", "Carnet de commandes", "Taux de conversion prospects", "Coût d'acquisition client", "Panier moyen", "Marge commerciale", "Volume de ventes", "Nouveaux clients acquis", "Clients perdus", "Churn", "Taux de rétention", "Taux de fidélisation", "Créances clients", "Délai moyen de paiement (DSO)", "Performance par produit", "Performance par canal", "Performance par commercial", "Pipe commercial", "Taux de réalisation des objectifs", "Actions commerciales en cours"]
+        },
+        "planning": {
+          "title": "Autres outils de planification",
+          "items": ["Scénarios prospectifs", "Analyse de sensibilité", "Plan de continuité d'activité", "Plan de transformation", "Tableau de bord prospectif", "Analyses et évaluations de projets stratégiques"]
+        },
+        "budget": {
+          "title": "Budget et Business plan",
+          "items": ["Chiffre d'affaires", "Coûts variables", "Masse salariale", "Coûts de structure", "EBITDA"]
+        },
+        "treasury": {
+          "title": "Prévisionnel de trésorerie",
+          "items": ["EBITDA Cash", "BFR d'exploitation", "BFR hors exploitation", "Produits financiers", "Charges financières", "Impôts sur les sociétés", "CAPEX", "Emprunts", "Autres financements", "Augmentation de capital", "Distribution de dividendes", "Avances en compte courant"]
+        }
+      },
+      "ambitionTitle": "Notre ambition",
+      "ambitionDescription": "Vous permettre d'anticiper les enjeux financiers et opérationnels futurs et prévenir les éventuelles difficultés."
+    },
+    "cfo": {
+      "title": "CFO Part-Time",
+      "subtitle": "Un partenaire clé pour structurer et faire croître votre organisation",
+      "diagnosticTitle": "Vos <highlight>enjeux</highlight>",
+      "diagnosticDescription": "Structurer une fonction Finance indispensable pour développer sereinement votre activité :",
+      "contentTitle": "Développer sereinement votre activité",
+      "objectives": [
+        "Piloter la rentabilité et la performance financière",
+        "Prendre les décisions nécessaires à son amélioration",
+        "Rechercher les financements adaptés à votre maturité",
+        "Fixer des objectifs opérationnels et financiers",
+        "Gérer les relations avec vos investisseurs et créanciers",
+        "Accompagner les projets M&A et de restructuration",
+        "Contribuer à la stratégie d'investissement et d'innovation"
+      ],
+      "mainContentTitle": "Les missions essentielles",
+      "categories": {
+        "governance": {
+          "title": "Gouvernance financière",
+          "items": ["Structure de pilotage", "Comité financier", "Gestion du processus budgétaire", "Négociation avec les relations prenantes", "Gestion des risques", "Suivi des investissements", "Reporting régulier", "Indicateurs de performance", "Conformité réglementaire", "Relation avec les auditeurs", "Relations investisseurs"]
+        },
+        "performance": {
+          "title": "Pilotage de la performance",
+          "items": ["Optimisation des marges et coûts", "Analyses de rentabilité", "Plans d'amélioration"]
+        },
+        "treasury": {
+          "title": "Gestion de trésorerie",
+          "items": ["Prévisions de trésorerie", "Suivi quotidien des encaissements et décaissements", "Optimisation du besoin en fonds de roulement", "Gestion des délais de paiement clients et fournisseurs", "Suivi des encours bancaires", "Gestion des financements court terme", "Placement des excédents de trésorerie", "Sécurisation des flux financiers", "Analyse des écarts prévisionnel vs réalisé", "Reporting de trésorerie", "Plan de financement"]
+        },
+        "strategy": {
+          "title": "Stratégie financière",
+          "items": ["Rédaction de l'equity story", "Construction du business plan", "Allocation du capital", "Choix des sources de financement", "Politique d'investissement", "Gestion du risque", "Optimisation du coût du capital", "Définition et suivi des KPIs stratégiques", "Identification de leviers opérationnels et financiers"]
+        },
+        "financing": {
+          "title": "Financement & Croissance",
+          "items": ["Identification des besoins de financement", "Structuration du plan de financement", "Levée de fonds en capital", "Recours à la dette bancaire ou obligataire", "Financement alternatif et participatif", "Subventions et aides publiques", "Optimisation du cash-flow", "Investissement en R&D et innovation", "Développement commercial et international", "Croissance organique et externe", "Suivi des indicateurs de rentabilité", "Plan de création de valeur"]
+        }
+      },
+      "ambitionTitle": "Notre ambition",
+      "ambitionDescription": "Garantir la croissance et la pérennité de votre entreprise"
+    },
+    "diagnostic": {
+      "title": "Diagnostic & Restructuration",
+      "subtitle": "Un regard avisé pour prendre du recul, décider juste et relancer avec confiance",
+      "diagnosticTitle": "Vos <highlight>objectifs</highlight>",
+      "diagnosticDescription": "Réaliser une évaluation complète, claire et objective de la santé financière de l'entreprise",
+      "contentTitle": "Piloter la relance de l'activité",
+      "objectives": [
+        "Comprendre la performance historique",
+        "Identifier les dysfonctionnements de gestion",
+        "Renégocier ses dettes",
+        "Lever de nouveaux financements",
+        "Redéfinir la stratégie de l'entreprise",
+        "Restructurer son organisation et ses opérations"
+      ],
+      "mainContentTitle": "Les livrables essentiels",
+      "categories": {
+        "diagnostic": {
+          "title": "Diagnostic économique et financier",
+          "items": ["Clarification de l'origine des difficultés", "Examen détaillé et critique des états financiers", "Analyse des agrégats de résultat (Chiffre d'affaires, Marge, Masse salariale)", "Analyse du besoin en fonds de roulement", "Analyse de la dette financière long et court terme", "Construction des prévisionnels d'exploitation et de trésorerie", "Identification de leviers d'amélioration de la performance"]
+        },
+        "financial": {
+          "title": "Restructuration financière",
+          "items": ["Proposition de plan de restructuration financière", "Assistance à l'ouverture de procédures collectives avec administrateurs judiciaires et avocats", "Suivi et mise à jour du prévisionnel de trésorerie", "Accompagnement lors des procédures collectives", "Coordination avec les parties prenantes", "Recherche de financements court-terme (stocks, affacturage)", "Négociation avec les créanciers"]
+        },
+        "strategic": {
+          "title": "Restructuration stratégique et opérationnelle",
+          "items": ["Revue du portefeuille d'activités", "Recentrage sur les activités coeur de métier", "Cession ou arrêt des activités non stratégiques", "Redéfinition du positionnement et du modèle économique", "Optimisation de la chaîne de valeur", "Amélioration des processus opérationnels", "Digitalisation et automatisation", "Identification de leviers d'amélioration de la performance", "Réduction des coûts et gains de productivité", "Réorganisation des équipes et des responsabilités", "Plan social ou mobilité interne", "Renforcement de la gouvernance", "Mise en place d'indicateurs de suivi et de pilotage", "Communication interne et externe"]
+        },
+        "performance": {
+          "title": "Amélioration de la performance",
+          "items": ["Diagnostic opérationnel et financier", "Suivi des KPIs", "Définition et mise en place d'OKR", "Plan de réduction des coûts", "Revue des marges par activité", "Renégociation avec les fournisseurs", "Optimisation BFR", "Digitalisation", "Montée en compétence des collaborateurs", "Amélioration des processus", "Mise en place de comité de suivi de la performance"]
+        },
+        "reporting": {
+          "title": "Reporting opérationnel et financier",
+          "items": ["Suivi du chiffre d'affaires", "Marge brute", "Analyse de la masse salariale", "Coûts de structure", "EBITDA", "Trésorerie disponible", "Cash burn", "Runway", "Endettement", "Variation du BFR", "Créances clients", "Dettes fournisseurs", "Niveau de stocks", "Investissements réalisés", "Carnet de commandes", "Taux de conversion commerciale", "Productivité des équipes", "Satisfaction client", "Respect des délais", "Indicateurs RH", "Plan d'actions", "Écarts réel vs budget"]
+        }
+      },
+      "ambitionTitle": "Notre ambition",
+      "ambitionDescription": "Apporter la prise de recul nécessaire à la prise de décision et à la relance de votre activité"
+    },
+    "ma": {
+      "title": "Services M&A",
+      "subtitle": "Accompagner vos projets capitalistiques : cession, levée de fonds, croissance externe et réorganisation",
+      "diagnosticTitle": "Vos <highlight>objectifs</highlight>",
+      "diagnosticDescription": "Concevoir des présentations et analyses objectives qui mettent en évidence la performance et le potentiel de la cible",
+      "contentTitle": "Maximiser la valeur et sécuriser la transaction",
+      "objectives": [
+        "Crédibiliser et maximiser la valorisation de l'entreprise",
+        "Accélérer le processus de vente",
+        "Réduire les risques de transactions",
+        "Gagner la confiance des acheteurs potentiels",
+        "Renforcer la position négociatrice",
+        "Rechercher des repreneurs pertinents"
+      ],
+      "mainContentTitle": "Les missions et livrables essentiels",
+      "categories": {
+        "im": {
+          "title": "Information Memorandum / Assistance à la cession et levée de fonds",
+          "items": ["Executive summary", "Présentation de l'entreprise", "Analyse du marché et de la concurrence", "Description des produits et services", "Stratégie de développement", "Organisation et management", "Données financières historiques et prévisionnelles", "Besoins de financement", "Valorisation et structure de l'opération", "Risques et opportunités", "Calendrier du process", "Sélection et approche des repreneurs et investisseurs potentiels", "Mise en place de data room", "Organisation de due diligence", "Négociation des termes", "Closing de l'opération"]
+        },
+        "vendor": {
+          "title": "Vendor Assistance",
+          "items": ["Préparation de la documentation financière", "Revue de la qualité des résultats (QoE)", "Normalisation de l'EBITDA", "Analyse du cash-flow et du BFR", "Identification des ajustements de dette nette (QoD)", "Préparation du business plan et des prévisions", "Mise en place de la data room", "Anticipation et réponse aux questions des investisseurs"]
+        },
+        "buyside": {
+          "title": "Buy-side due diligence",
+          "items": ["Évaluation de la résilience du modèle économique", "Identification des zones de fragilité opérationnelle et financière", "Revue critique de la qualité des résultats", "Validation indépendante de l'EBITDA retraité", "Stress-test du cash-flow et du BFR", "Analyse de la soutenabilité de la dette nette", "Test de cohérence des prévisions financières", "Revue critique des hypothèses de croissance et de marges", "Analyse contradictoire des ajustements proposés par la vendor assistance", "Mise en évidence des risques fiscaux, sociaux et réglementaires", "Appréciation des synergies réalistes", "Recommandations d'ajustements du prix", "Structuration des garanties"]
+        },
+        "financing": {
+          "title": "Recherche de financement",
+          "items": ["Business angels", "Incubateurs et accélérateurs", "Plateformes de crowdfunding", "Fonds d'investissement", "Prêts bancaires", "Microcrédits", "Prêts participatifs", "Aides et subventions publiques", "Réseaux de prêts d'honneur", "Investisseurs privés via plateformes spécialisées"]
+        }
+      },
+      "ambitionTitle": "Notre ambition",
+      "ambitionDescription": "Anticiper les attentes des investisseurs et renforcer votre position dans le processus de transaction"
+    }
+  },
+  "slugs": {
+    "pilotage": "pilotage-planification",
+    "cfo": "cfo-part-time",
+    "diagnostic": "diagnostic-restructuration",
+    "ma": "services-ma"
+  }
+}

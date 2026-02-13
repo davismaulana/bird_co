@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import Animate from './Animate';
 import Notification, { NotificationType } from './Notification';
 
@@ -11,12 +12,13 @@ interface ContactProps {
 }
 
 const Contact: React.FC<ContactProps> = ({
-    heading = "Vous avez des questions",
+    heading,
     address = "33 Rue La Fayette, 75009 Paris, France",
     email = "contact@birdandco.fr",
     calendlyLink = "https://calendly.com/contact-birdandco/30min",
-    formHeading = "Laissez-nous un message"
+    formHeading
 }) => {
+    const { t } = useTranslation();
     const [formData, setFormData] = useState({
         name: '',
         organization: '',
@@ -77,7 +79,7 @@ const Contact: React.FC<ContactProps> = ({
             const result = await response.json();
 
             if (result.success === "true" || response.ok) {
-                showNotification('Merci pour votre message ! Nous vous recontacterons bientôt.', 'success');
+                showNotification(t('contact:notifications.success'), 'success');
                 setFormData({
                     name: '',
                     organization: '',
@@ -86,11 +88,11 @@ const Contact: React.FC<ContactProps> = ({
                 });
             } else {
                 console.error("Form submission failed", result);
-                showNotification("Une erreur s'est produite lors de l'envoi du message. Veuillez réessayer.", 'error');
+                showNotification(t('contact:notifications.error'), 'error');
             }
         } catch (error) {
             console.error("Form submission error", error);
-            showNotification("Une erreur s'est produite lors de l'envoi du message. Veuillez réessayer.", 'error');
+            showNotification(t('contact:notifications.error'), 'error');
         } finally {
             setIsSubmitting(false);
         }
@@ -110,7 +112,7 @@ const Contact: React.FC<ContactProps> = ({
                     <div className="absolute inset-0 bg-[#EBE5F0]"></div>
                     <div className="relative z-10">
                         <Animate variant="pop" delay={200}>
-                            <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-[#27013D]">{heading}</h2>
+                            <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-[#27013D]">{heading || t('contact:heading')}</h2>
                         </Animate>
                         <Animate variant="pop" delay={300}>
                             <p className="text-base text-gray-700 mb-4">{address}</p>
@@ -129,7 +131,7 @@ const Contact: React.FC<ContactProps> = ({
                                 rel="noopener noreferrer"
                                 className="inline-block bg-[#27013D] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#1c0e2a] transition-all hover:scale-105"
                             >
-                                Discutons de vos projets
+                                {t('common:cta.discussProjects')}
                             </a>
                         </Animate>
                     </div>
@@ -138,13 +140,13 @@ const Contact: React.FC<ContactProps> = ({
                 {/* Right Column (Form) */}
                 <div className="bg-gray-100 p-8 md:p-12 lg:p-16 flex flex-col justify-center">
                     <Animate variant="pop">
-                        <h2 className="text-3xl sm:text-4xl font-bold text-[#27013D] mb-10">{formHeading}</h2>
+                        <h2 className="text-3xl sm:text-4xl font-bold text-[#27013D] mb-10">{formHeading || t('contact:formHeading')}</h2>
                     </Animate>
                     <form onSubmit={handleSubmit}>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10 mb-10">
                             <Animate variant="pop" delay={100}>
                                 <div>
-                                    <label htmlFor="name" className="text-base text-gray-500 block mb-1">Prénom Nom</label>
+                                    <label htmlFor="name" className="text-base text-gray-500 block mb-1">{t('contact:labels.name')}</label>
                                     <input
                                         id="name"
                                         name="name"
@@ -158,7 +160,7 @@ const Contact: React.FC<ContactProps> = ({
                             </Animate>
                             <Animate variant="pop" delay={200}>
                                 <div>
-                                    <label htmlFor="organization" className="text-base text-gray-500 block mb-1">Votre entreprise</label>
+                                    <label htmlFor="organization" className="text-base text-gray-500 block mb-1">{t('contact:labels.organization')}</label>
                                     <input
                                         id="organization"
                                         name="organization"
@@ -173,7 +175,7 @@ const Contact: React.FC<ContactProps> = ({
                         </div>
                         <Animate variant="pop" delay={300}>
                             <div className="mb-10">
-                                <label htmlFor="email" className="text-base text-gray-500 block mb-1">E-mail *</label>
+                                <label htmlFor="email" className="text-base text-gray-500 block mb-1">{t('contact:labels.email')}</label>
                                 <input
                                     id="email"
                                     name="email"
@@ -188,7 +190,7 @@ const Contact: React.FC<ContactProps> = ({
                         </Animate>
                         <Animate variant="pop" delay={400}>
                             <div className="mb-12">
-                                <label htmlFor="message" className="text-base text-gray-500 block mb-1">On vous écoute *</label>
+                                <label htmlFor="message" className="text-base text-gray-500 block mb-1">{t('contact:labels.message')}</label>
                                 <textarea
                                     id="message"
                                     name="message"
@@ -207,7 +209,7 @@ const Contact: React.FC<ContactProps> = ({
                                     disabled={isSubmitting}
                                     className={`bg-[#27013D] text-white px-8 py-3 rounded-full font-semibold transition-colors ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-[#1c0e2a]'}`}
                                 >
-                                    {isSubmitting ? 'Envoi...' : 'Envoyer'}
+                                    {isSubmitting ? t('common:cta.sending') : t('common:cta.send')}
                                 </button>
                             </div>
                         </Animate>

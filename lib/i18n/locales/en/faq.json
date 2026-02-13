@@ -1,0 +1,29 @@
+{
+  "sectionTitle": "Frequently Asked",
+  "sectionTitleHighlight": "Questions",
+  "pageTitle": "Frequently Asked Questions",
+  "items": {
+    "whatIsBird": {
+      "question": "What is Bird?",
+      "answer": "Bird is an accessible <strong>strategic and financial partner</strong>, designed to help organizations — small or large — structure, finance, and develop their ambitions with confidence and impact. Through our rigorous approach and flexible pricing options, we enable everyone to access premium support without cost barriers."
+    },
+    "whyBird": {
+      "question": "Why the name Bird?",
+      "answer": "Because it embodies the bird's-eye view, clear trajectory, and momentum needed to help your projects soar."
+    },
+    "howBorn": {
+      "question": "How was Bird founded?",
+      "answer": "Bird was born from the meeting of former consultants convinced that there is another way to support organizations.\nOur approach does not question the value of traditional consulting firms. It aims to fill a gap: enabling organizations that may not always have the resources, especially in the current economic climate, to also benefit from high-level strategic and financial support."
+    },
+    "whoDoYouHelp": {
+      "question": "What types of organizations do you support?",
+      "answer": "Depending on the challenges they face, we support:",
+      "list": [
+        "Small businesses, SMEs, mid-sized companies, large corporations",
+        "Investment funds, investment banks",
+        "Public institutions, nonprofits"
+      ],
+      "additional": "We also work with lawyers, accountants, works councils, and court-appointed administrators who seek our network's expertise for their clients."
+    }
+  }
+}

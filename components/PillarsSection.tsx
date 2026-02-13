@@ -1,30 +1,33 @@
 import React from 'react';
+import { useTranslation, Trans } from 'react-i18next';
 import Animate from './Animate';
 
-const pilliers = [
-  {
-    icon: <img src="https://images2.imgbox.com/86/1a/o1GwdJHF_o.png" alt="Pragmatisme icon" className="w-14 h-14 object-contain" />,
-    title: "Pragmatisme",
-    description: <>Des solutions concrètes pour un accompagnement <strong>pertinent</strong>, <strong>économique</strong> et <strong>adapté à votre réalité</strong></>,
-  },
-  {
-    icon: <img src="https://images2.imgbox.com/0f/19/ZMKxUMu0_o.png" alt="Clarté Décisionnelle icon" className="w-14 h-14 object-contain" />,
-    title: "Clarté Décisionnelle",
-    description: <>Des analyses complexes et ciblées pour éclairer vos <strong>décisions stratégiques</strong></>,
-  },
-  {
-    icon: <img src="https://images2.imgbox.com/04/bd/mF2HLfkj_o.png" alt="Proactivité icon" className="w-14 h-14 object-contain" />,
-    title: "Proactivité",
-    description: <>Nous vous aidons <strong>à identifier les opportunités</strong> et <strong>anticiper les risques</strong> sereinement</>,
-  },
-  {
-    icon: <img src="https://images2.imgbox.com/a9/6f/sEU8YeyP_o.png" alt="Confiance icon" className="w-14 h-14 object-contain" />,
-    title: "Confiance",
-    description: <>Un partenaire investi, guidé par la <strong>transparence</strong> et l'<strong>intégrité</strong></>,
-  },
-];
-
 const PillarsSection: React.FC = () => {
+  const { t } = useTranslation();
+
+  const pilliers = [
+    {
+      icon: <img src="https://images2.imgbox.com/86/1a/o1GwdJHF_o.png" alt="Pragmatisme icon" className="w-14 h-14 object-contain" />,
+      title: t('home:pillars.pragmatism.title'),
+      description: <Trans i18nKey="home:pillars.pragmatism.description" components={{ strong: <strong /> }} />,
+    },
+    {
+      icon: <img src="https://images2.imgbox.com/0f/19/ZMKxUMu0_o.png" alt="Clarté Décisionnelle icon" className="w-14 h-14 object-contain" />,
+      title: t('home:pillars.clarity.title'),
+      description: <Trans i18nKey="home:pillars.clarity.description" components={{ strong: <strong /> }} />,
+    },
+    {
+      icon: <img src="https://images2.imgbox.com/04/bd/mF2HLfkj_o.png" alt="Proactivité icon" className="w-14 h-14 object-contain" />,
+      title: t('home:pillars.proactivity.title'),
+      description: <Trans i18nKey="home:pillars.proactivity.description" components={{ strong: <strong /> }} />,
+    },
+    {
+      icon: <img src="https://images2.imgbox.com/a9/6f/sEU8YeyP_o.png" alt="Confiance icon" className="w-14 h-14 object-contain" />,
+      title: t('home:pillars.trust.title'),
+      description: <Trans i18nKey="home:pillars.trust.description" components={{ strong: <strong /> }} />,
+    },
+  ];
+
   return (
     <section id="pilliers" className="bg-white flex flex-col justify-center py-16 overflow-x-hidden min-h-screen overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,12 +39,12 @@ const PillarsSection: React.FC = () => {
           </Animate>
           <Animate variant="pop" delay={100}>
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
-              Nos <span className="gradient-text">Piliers</span>
+              {t('home:pillars.sectionTitle')} <span className="gradient-text">{t('home:pillars.sectionTitleHighlight')}</span>
             </h2>
           </Animate>
           <Animate variant="pop" delay={200}>
             <p className="text-lg text-gray-800 mt-4 max-w-3xl mx-auto md:whitespace-nowrap">
-              Notre proposition repose sur quatre piliers fondamentaux qui <strong>guident chacune de nos interventions</strong>
+              <Trans i18nKey="home:pillars.subtitle" components={{ strong: <strong /> }} />
             </p>
           </Animate>
         </div>

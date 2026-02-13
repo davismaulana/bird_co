@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Animate from './Animate';
 import HeroAnimation from './HeroAnimation';
 import {
@@ -21,9 +22,11 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({
     heading,
     subheading,
-    ctaText = "Discutons de vos projets",
+    ctaText,
     ctaLink = "https://calendly.com/contact-birdandco/30min"
 }) => {
+    const { t } = useTranslation();
+    
     return (
         <section id="accueil" className="relative bg-white text-gray-900 flex flex-col min-h-screen overflow-hidden pt-16">
             <div className="w-full relative z-10 flex-grow flex flex-col items-center justify-center">
@@ -37,8 +40,8 @@ const Hero: React.FC<HeroProps> = ({
                                     <span>{heading}</span>
                                 ) : (
                                     <>
-                                        <span>Votre bras droit</span><br />
-                                        <span className="gradient-text">stratégique et financier</span>
+                                        <span>{t('home:hero.title1')}</span><br />
+                                        <span className="gradient-text">{t('home:hero.title2')}</span>
                                     </>
                                 )}
                             </h1>
@@ -49,8 +52,8 @@ const Hero: React.FC<HeroProps> = ({
                                     <span>{subheading}</span>
                                 ) : (
                                     <>
-                                        Sollicitez une <span className="gradient-text font-semibold">ressource experte, ingénieuse et accessible,</span><br />
-                                        dédiée à la réussite de vos ambitions
+                                        {t('home:hero.subtitle1')} <span className="gradient-text font-semibold">{t('home:hero.subtitleHighlight')}</span><br />
+                                        {t('home:hero.subtitle2')}
                                     </>
                                 )}
                             </p>
@@ -63,7 +66,7 @@ const Hero: React.FC<HeroProps> = ({
                                     rel="noopener noreferrer"
                                     className="inline-block text-center bg-[#27013D] text-white px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-[#1c0e2a] transition-colors transform hover:scale-105 text-sm"
                                 >
-                                    {ctaText}
+                                    {ctaText || t('common:cta.discussProjects')}
                                 </a>
                             </div>
                         </Animate>

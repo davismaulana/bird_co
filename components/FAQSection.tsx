@@ -1,32 +1,8 @@
 import React, { useState } from 'react';
+import { useTranslation, Trans } from 'react-i18next';
 import Animate from './Animate';
 
-const faqs = [
-  {
-    question: "Qu’est-ce que Bird ?",
-    answer: <>Bird est un <strong>partenaire stratégique et financier</strong> accessible, conçu pour accompagner les organisations — petites ou grandes — à structurer, financer et développer leurs ambitions avec sérénité et impact. Grâce à notre approche rigoureuse et à des offres tarifaires modulables, nous permettons à chacun d’accéder à un accompagnement haut de gamme, sans barrière de coût.</>
-  },
-  {
-    question: "Pourquoi le nom Bird ?",
-    answer: <>Parce qu’il incarne la hauteur de vue, la trajectoire claire et l’élan nécessaire pour faire grandir vos projets.</>
-  },
-  {
-    question: "Comment est né Bird ?",
-    answer: "Bird est né de la rencontre d’anciens consultants convaincus qu’il existe une autre façon d’accompagner les organisations.\nNotre démarche ne remet pas en cause la valeur des cabinets traditionnels. Elle vise à combler un vide : permettre à des organisations qui n’en ont pas toujours les moyens, surtout dans le contexte actuel de crise, de bénéficier, elles aussi, d’un soutien stratégique et financier de haut niveau."
-  },
-  {
-    question: "Quels types d’organisations accompagnez-vous ?",
-    answer: <>
-      Selon les enjeux auxquels ils sont confrontés nous accompagnons :
-      <ul className="list-disc pl-5 mt-2 space-y-1">
-        <li>TPE, PME, ETI, Grandes entreprises</li>
-        <li>Fonds d'investissements, Banque d'investissement</li>
-        <li>Institutions publiques, associations</li>
-      </ul>
-      <p className="mt-2">Nous nous adressons également aux avocats, experts comptables, CSE, administrateurs judiciaires qui sollicitent notre réseau pour leurs clients.</p>
-    </>
-  }
-];
+const faqKeys = ['whatIsBird', 'whyBird', 'howBorn', 'whoDoYouHelp'] as const;
 
 const AccordionItem: React.FC<{ question: string; answer: React.ReactNode; isOpen: boolean; onClick: () => void }> = ({ question, answer, isOpen, onClick }) => {
   return (
@@ -62,7 +38,34 @@ const AccordionItem: React.FC<{ question: string; answer: React.ReactNode; isOpe
 };
 
 const FAQSection: React.FC = () => {
+    const { t } = useTranslation();
     const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+    const renderAnswer = (key: typeof faqKeys[number]) => {
+      if (key === 'whatIsBird') {
+        return (
+          <Trans
+            i18nKey="faq:items.whatIsBird.answer"
+            components={{ strong: <strong /> }}
+          />
+        );
+      }
+      if (key === 'whoDoYouHelp') {
+        const list = t('faq:items.whoDoYouHelp.list', { returnObjects: true }) as string[];
+        return (
+          <>
+            {t('faq:items.whoDoYouHelp.answer')}
+            <ul className="list-disc pl-5 mt-2 space-y-1">
+              {list.map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
+            </ul>
+            <p className="mt-2">{t('faq:items.whoDoYouHelp.additional')}</p>
+          </>
+        );
+      }
+      return t(`faq:items.${key}.answer`);
+    };
 
     return (
         <section id="faq-home" className="bg-gray-50 flex flex-col justify-center py-16 min-h-screen">
@@ -75,16 +78,16 @@ const FAQSection: React.FC = () => {
                     </Animate>
                     <Animate variant="pop" delay={100}>
                         <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
-                          Questions <span className="gradient-text">fréquentes</span>
+                          {t('faq:sectionTitle')} <span className="gradient-text">{t('faq:sectionTitleHighlight')}</span>
                         </h2>
                     </Animate>
                 </div>
                 <div className="max-w-3xl mx-auto stagger">
-                    {faqs.map((faq, index) => (
-                        <Animate variant="pop" key={index}>
+                    {faqKeys.map((key, index) => (
+                        <Animate variant="pop" key={key}>
                             <AccordionItem
-                                question={faq.question}
-                                answer={faq.answer}
+                                question={t(`faq:items.${key}.question`)}
+                                answer={renderAnswer(key)}
                                 isOpen={openIndex === index}
                                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                             />
@@ -97,7 +100,7 @@ const FAQSection: React.FC = () => {
                           href="/faq"
                           className="inline-block bg-white border border-gray-300 text-[#27013D] px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors transform hover:scale-105 text-sm"
                         >
-                          Voir toutes les questions
+                          {t('common:cta.seeAllQuestions')}
                         </a>
                     </div>
                 </Animate>
