@@ -64,22 +64,25 @@ export const changeLanguage = (lng: string) => {
 // Get initial language from URL BEFORE initializing i18n
 const initialLanguage = getLanguageFromPath();
 
-// Initialize i18n synchronously with all resources bundled
-i18n
+// Initialize i18n and export the promise so we can await it
+export const i18nInitPromise = i18n
   .use(initReactI18next)
   .init({
     resources,
     defaultNS,
-    lng: initialLanguage, // Set language directly - no async detection needed
+    lng: initialLanguage,
     fallbackLng: 'fr',
     supportedLngs: ['fr', 'en'],
+    
+    // Since all resources are bundled, initialization is sync
+    initImmediate: false,
 
     interpolation: {
       escapeValue: false, // React already escapes
     },
 
     react: {
-      useSuspense: true, // Enable Suspense for proper loading states
+      useSuspense: false, // We handle loading ourselves
     },
   });
 
