@@ -1,6 +1,5 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
 
 // Import French translations
 import frCommon from './locales/fr/common.json';
@@ -38,8 +37,9 @@ export const resources = {
   },
 } as const;
 
-// Function to get language from URL path
+// Function to get language from URL path (called before React renders)
 export const getLanguageFromPath = (): string => {
+  if (typeof window === 'undefined') return 'fr';
   const path = window.location.pathname;
   if (path.startsWith('/en')) return 'en';
   if (path.startsWith('/fr')) return 'fr';
@@ -61,34 +61,26 @@ export const changeLanguage = (lng: string) => {
   window.location.href = newPath;
 };
 
+// Get initial language from URL BEFORE initializing i18n
+const initialLanguage = getLanguageFromPath();
+
+// Initialize i18n synchronously with all resources bundled
 i18n
-  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources,
     defaultNS,
+    lng: initialLanguage, // Set language directly - no async detection needed
     fallbackLng: 'fr',
     supportedLngs: ['fr', 'en'],
-    
-    detection: {
-      order: ['path', 'localStorage', 'navigator'],
-      lookupFromPathIndex: 0,
-      caches: ['localStorage'],
-    },
 
     interpolation: {
       escapeValue: false, // React already escapes
     },
 
     react: {
-      useSuspense: false,
+      useSuspense: true, // Enable Suspense for proper loading states
     },
   });
-
-// Set initial language from URL
-const langFromPath = getLanguageFromPath();
-if (i18n.language !== langFromPath) {
-  i18n.changeLanguage(langFromPath);
-}
 
 export default i18n;
