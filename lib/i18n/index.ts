@@ -37,7 +37,10 @@ export const resources = {
   },
 } as const;
 
-// Function to get language from URL path (called before React renders)
+/**
+ * Get language from URL path
+ * Called before React renders to determine initial language
+ */
 export const getLanguageFromPath = (): string => {
   if (typeof window === 'undefined') return 'fr';
   const path = window.location.pathname;
@@ -46,25 +49,31 @@ export const getLanguageFromPath = (): string => {
   return 'fr'; // Default fallback
 };
 
-// Function to change language and update URL
+/**
+ * Change language and update URL
+ * Used by LanguageSwitcher component
+ */
 export const changeLanguage = (lng: string) => {
   const currentPath = window.location.pathname;
-  let newPath: string;
-
+  
   // Remove current language prefix if exists
   const pathWithoutLang = currentPath.replace(/^\/(en|fr)/, '') || '/';
   
   // Add new language prefix
-  newPath = `/${lng}${pathWithoutLang === '/' ? '' : pathWithoutLang}`;
+  const newPath = `/${lng}${pathWithoutLang === '/' ? '' : pathWithoutLang}`;
   
-  // Update URL and reload
+  // Update URL and reload to ensure clean state
   window.location.href = newPath;
 };
 
 // Get initial language from URL BEFORE initializing i18n
 const initialLanguage = getLanguageFromPath();
 
-// Initialize i18n and export the promise so we can await it
+/**
+ * Initialize i18n
+ * Returns a Promise that resolves when initialization is complete
+ * All resources are bundled, so this should be fast
+ */
 export const i18nInitPromise = i18n
   .use(initReactI18next)
   .init({
@@ -74,15 +83,12 @@ export const i18nInitPromise = i18n
     fallbackLng: 'fr',
     supportedLngs: ['fr', 'en'],
     
-    // Since all resources are bundled, initialization is sync
-    initImmediate: false,
-
     interpolation: {
       escapeValue: false, // React already escapes
     },
 
     react: {
-      useSuspense: false, // We handle loading ourselves
+      useSuspense: false, // We handle loading in index.tsx
     },
   });
 
