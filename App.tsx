@@ -73,38 +73,66 @@ const App: React.FC = () => {
   }, [pathname, navigate]);
 
   useEffect(() => {
-    const revealEls = Array.from(document.querySelectorAll('.reveal'));
+    // Small delay to ensure DOM is fully rendered after i18n loads
+    const initReveal = () => {
+      const revealEls = Array.from(document.querySelectorAll('.reveal'));
 
-    if (!('IntersectionObserver' in window) || revealEls.length === 0) {
-      revealEls.forEach(el => el.classList.add('is-visible'));
-      return;
-    }
+      if (!('IntersectionObserver' in window) || revealEls.length === 0) {
+        revealEls.forEach(el => el.classList.add('is-visible'));
+        return;
+      }
 
-    document.querySelectorAll('.stagger').forEach(group => {
-      Array.from(group.children)
-        .filter(el => (el as HTMLElement).classList.contains('reveal'))
-        .forEach((el, i) => (el as HTMLElement).style.setProperty('--i', String(i)));
+      document.querySelectorAll('.stagger').forEach(group => {
+        Array.from(group.children)
+          .filter(el => (el as HTMLElement).classList.contains('reveal'))
+          .forEach((el, i) => (el as HTMLElement).style.setProperty('--i', String(i)));
+      });
+
+      const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target as HTMLElement;
+
+            const delay = el.getAttribute('data-reveal-delay');
+            if (delay) el.style.transitionDelay = delay;
+
+            el.classList.add('is-visible');
+            obs.unobserve(el);
+          }
+        });
+      }, { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
+
+      revealEls.forEach(el => io.observe(el));
+
+      // Fallback: if elements are still not visible after 500ms, force them visible
+      // This handles edge cases where IntersectionObserver doesn't trigger
+      const fallbackTimer = setTimeout(() => {
+        revealEls.forEach(el => {
+          if (!el.classList.contains('is-visible')) {
+            el.classList.add('is-visible');
+          }
+        });
+      }, 500);
+
+      return () => {
+        revealEls.forEach(el => io.unobserve(el));
+        clearTimeout(fallbackTimer);
+      };
+    };
+
+    // Use requestAnimationFrame to ensure DOM is painted
+    const rafId = requestAnimationFrame(() => {
+      const cleanup = initReveal();
+      // Store cleanup function
+      (window as any).__revealCleanup = cleanup;
     });
 
-    const io = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target as HTMLElement;
-
-          const delay = el.getAttribute('data-reveal-delay');
-          if (delay) el.style.transitionDelay = delay;
-
-          el.classList.add('is-visible');
-          obs.unobserve(el);
-        }
-      });
-    }, { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
-
-    revealEls.forEach(el => io.observe(el));
-
     return () => {
-      revealEls.forEach(el => io.unobserve(el));
-    }
+      cancelAnimationFrame(rafId);
+      if ((window as any).__revealCleanup) {
+        (window as any).__revealCleanup();
+      }
+    };
   }, [pathname]);
 
   // Handle scrolling to anchor links on page load
