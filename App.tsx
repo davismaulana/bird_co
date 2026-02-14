@@ -24,27 +24,7 @@ import ValueProposition from './components/ValueProposition';
 import HeroAnimation from './components/HeroAnimation';
 import Editor from './components/Editor';
 
-// Service slug mappings for URL translation
-const serviceSlugMappings: Record<string, Record<string, string>> = {
-  en: {
-    'steering-planning': 'pilotage-planification',
-    'part-time-cfo': 'cfo-part-time',
-    'diagnostic-restructuring': 'diagnostic-restructuration',
-    'ma-services': 'services-ma',
-  },
-  fr: {
-    'pilotage-planification': 'pilotage-planification',
-    'cfo-part-time': 'cfo-part-time',
-    'diagnostic-restructuration': 'diagnostic-restructuration',
-    'services-ma': 'services-ma',
-  },
-};
 
-// Get the internal service ID from a URL slug
-const getInternalServiceId = (slug: string, lang: string): string => {
-  const mapping = serviceSlugMappings[lang];
-  return mapping?.[slug] || slug;
-};
 
 const App: React.FC = () => {
   const { pathname, hash } = useLocation();
@@ -183,11 +163,10 @@ const App: React.FC = () => {
     const serviceMatch = pathWithoutLang.match(/^\/service\/(.+)$/);
     if (serviceMatch) {
       const urlSlug = serviceMatch[1];
-      const internalServiceId = getInternalServiceId(urlSlug, currentLang);
       return (
         <div className="bg-white overflow-x-hidden">
           <Header pathname={pathname} />
-          <ServiceDetailPage serviceId={internalServiceId} />
+          <ServiceDetailPage serviceId={urlSlug} />
           <Logos backgroundColor="bg-gray-50" />
           <Footer />
         </div>

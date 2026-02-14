@@ -7,7 +7,7 @@ import Animate from './Animate';
 import HeroAnimation from './HeroAnimation';
 
 const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const allDetails = useServiceDetails();
   const details = allDetails[serviceId];
   const allServices = useServices();
@@ -19,7 +19,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
         <Animate variant="pop">
             <h1 className="text-3xl font-bold text-gray-900">{t('pages:serviceDetailPage.comingSoonTitle')}</h1>
             <p className="mt-4 text-gray-800">{t('pages:serviceDetailPage.comingSoonDescription')}</p>
-            <a href="/" className="mt-8 inline-block bg-gray-800 text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-900 transition-colors">
+            <a href={`/${i18n.language || 'fr'}`} className="mt-8 inline-block bg-gray-800 text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-900 transition-colors">
             {t('pages:serviceDetailPage.backHome')}
             </a>
         </Animate>

@@ -28,7 +28,7 @@ const TermsOfServicePage: React.FC = () => {
             <Animate variant="pop" delay={400}>
               <div className="mt-8 flex justify-start">
                 <a
-                  href="/"
+                  href={`/${i18n.language || 'fr'}`}
                   className="inline-block text-center bg-white text-[#27013D] px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors transform hover:scale-105 text-sm"
                 >
                   {t('pages:termsPage.backHome')}

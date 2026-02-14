@@ -25,7 +25,8 @@ const Hero: React.FC<HeroProps> = ({
     ctaText,
     ctaLink = "https://calendly.com/contact-birdandco/30min"
 }) => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+    const currentLang = i18n.language || 'fr';
     
     return (
         <section id="accueil" className="relative bg-white text-gray-900 flex flex-col min-h-screen overflow-hidden pt-16">
@@ -94,7 +95,7 @@ const Hero: React.FC<HeroProps> = ({
                 {/* Scroll down arrow */}
                 <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-20">
                     <Animate variant="pop" delay={800}>
-                        <a href="/#vos-enjeux" aria-label={t('common:accessibility.scrollDown')} className="p-2 text-[#6D0037] animate-bounce block">
+                        <a href={`/${currentLang}/#vos-enjeux`} aria-label={t('common:accessibility.scrollDown')} className="p-2 text-[#6D0037] animate-bounce block">
                             <ChevronDownIcon className="w-8 h-8" />
                         </a>
                     </Animate>

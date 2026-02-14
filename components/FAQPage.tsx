@@ -37,7 +37,8 @@ const AccordionItem: React.FC<{ question: string; answer: React.ReactNode | stri
 };
 
 const FAQPage: React.FC = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+    const currentLang = i18n.language || 'fr';
     const faqs = t('pages:faqPage.categories', { returnObjects: true }) as Array<{
       title: string;
       items: Array<{ question: string; answer: string }>;
@@ -71,7 +72,7 @@ const FAQPage: React.FC = () => {
             <Animate variant="pop" delay={400}>
               <div className="mt-8 flex justify-start">
                 <a
-                  href="/#contact"
+                  href={`/${currentLang}/#contact`}
                   className="inline-block text-center bg-white text-[#27013D] px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors transform hover:scale-105 text-sm"
                 >
                   {t('pages:faqPage.heroCta')}
