@@ -1,6 +1,7 @@
 
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 export const PaperPlaneIcon: React.FC<{ className?: string }> = ({ className }) => (
     <svg viewBox="20.051 39 160.061 122.147" xmlns="http://www.w3.org/2000/svg" className={className}>
@@ -189,6 +190,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
   initialScaleDown = false,
   noAspectRatio = false,
 }) => {
+  const { t } = useTranslation();
   // Shared utilities
   const cols = "grid grid-cols-[minmax(70px,1.5fr)_repeat(5,minmax(46px,1fr))] sm:grid-cols-[minmax(80px,1.5fr)_repeat(5,minmax(52px,1fr))]";
   const num = "text-right tabular-nums"; // if you don't have the tabular-nums plugin, swap to 'font-mono text-right'
@@ -221,7 +223,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
     >
       {/* Header */}
       <div className="w-full text-left mb-2 anim-child" style={{'--i': 0} as React.CSSProperties}>
-        <h3 className="font-bold text-gray-900 text-xs sm:text-sm">Modélisation Financière</h3>
+        <h3 className="font-bold text-gray-900 text-xs sm:text-sm">{t('pages:mockups.financialModeling')}</h3>
       </div>
 
       <div className="flex-grow space-y-1 text-[10px] sm:text-[11px] leading-none overflow-x-auto overflow-y-auto">
@@ -240,7 +242,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
           <div className="bg-slate-50 rounded-lg p-1.5 border border-slate-100 text-[9px] sm:text-[10px]">
             {/* Revenue */}
             <HighlightRow>
-              <span className={`${cell}`}>Chiffre d'affaires</span>
+              <span className={`${cell}`}>{t('pages:mockups.revenue')}</span>
               <span className={`${cell} ${num} ${vcol}`}>5,2m€</span>
               <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>7,8m€</span>
               <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>11,5m€</span>
@@ -249,7 +251,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
             </HighlightRow>
 
             <Row>
-              <span className={`${cell}`}>Marge brute</span>
+              <span className={`${cell}`}>{t('pages:mockups.grossMargin')}</span>
               <span className={`${cell} ${num} ${vcol}`}>3,1m€</span>
               <span className={`${cell} ${num} ${vcol}`}>4,8m€</span>
               <span className={`${cell} ${num} ${vcol}`}>7,5m€</span>
@@ -258,7 +260,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
             </Row>
 
             <Row muted>
-              <span className={`${cell} pl-4`}>Taux de marge</span>
+              <span className={`${cell} pl-4`}>{t('pages:mockups.marginRate')}</span>
               <span className={`${cell} ${num} ${vcol}`}>60%</span>
               <span className={`${cell} ${num} ${vcol}`}>62%</span>
               <span className={`${cell} ${num} ${vcol}`}>65%</span>
@@ -267,7 +269,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
             </Row>
 
             <Row>
-              <span className={`${cell}`}>Masse salariale</span>
+              <span className={`${cell}`}>{t('pages:mockups.payroll')}</span>
               <span className={`${cell} ${num} ${vcol}`}>(1,0)m€</span>
               <span className={`${cell} ${num} ${vcol}`}>(1,5)m€</span>
               <span className={`${cell} ${num} ${vcol}`}>(2,1)m€</span>
@@ -276,7 +278,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
             </Row>
 
             <Row>
-              <span className={`${cell}`}>Loyers</span>
+              <span className={`${cell}`}>{t('pages:mockups.rent')}</span>
               <span className={`${cell} ${num} ${vcol}`}>(0,1)m€</span>
               <span className={`${cell} ${num} ${vcol}`}>(0,1)m€</span>
               <span className={`${cell} ${num} ${vcol}`}>(0,2)m€</span>
@@ -285,7 +287,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
             </Row>
 
             <Row>
-              <span className={`${cell}`}>Frais généraux</span>
+              <span className={`${cell}`}>{t('pages:mockups.generalExpenses')}</span>
               <span className={`${cell} ${num} ${vcol}`}>(0,4)m€</span>
               <span className={`${cell} ${num} ${vcol}`}>(0,6)m€</span>
               <span className={`${cell} ${num} ${vcol}`}>(0,8)m€</span>
@@ -304,7 +306,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
             </HighlightRow>
 
             <Row muted>
-              <span className={`${cell} pl-4`}>Taux d'EBITDA</span>
+              <span className={`${cell} pl-4`}>{t('pages:mockups.ebitdaRate')}</span>
               <span className={`${cell} ${num} ${vcol}`}>30%</span>
               <span className={`${cell} ${num} ${vcol}`}>34%</span>
               <span className={`${cell} ${num} ${vcol}`}>39%</span>
@@ -319,7 +321,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
           <div className="px-1 py-0.5 mb-1 font-semibold text-slate-600">KPIs</div>
           <div className="bg-slate-50 rounded-lg p-1.5 border border-slate-100 text-[9px] sm:text-[10px]">
             <Row>
-              <span className={`${cell}`}>ETP</span>
+              <span className={`${cell}`}>{t('pages:mockups.fte')}</span>
               <span className={`${cell} ${num} ${vcol}`}>21</span>
               <span className={`${cell} ${num} ${vcol}`}>29</span>
               <span className={`${cell} ${num} ${vcol}`}>38</span>
@@ -328,7 +330,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
             </Row>
 
             <Row>
-              <span className={`${cell}`}>Salaire moyen / ETP</span>
+              <span className={`${cell}`}>{t('pages:mockups.avgSalaryFte')}</span>
               <span className={`${cell} ${num} ${vcol}`}>50k€</span>
               <span className={`${cell} ${num} ${vcol}`}>52k€</span>
               <span className={`${cell} ${num} ${vcol}`}>55k€</span>
@@ -337,7 +339,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
             </Row>
 
             <Row>
-              <span className={`${cell}`}>CA moyen / ETP</span>
+              <span className={`${cell}`}>{t('pages:mockups.avgRevenueFte')}</span>
               <span className={`${cell} ${num} ${vcol}`}>248k€</span>
               <span className={`${cell} ${num} ${vcol}`}>269k€</span>
               <span className={`${cell} ${num} ${vcol}`}>303k€</span>
@@ -346,7 +348,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
             </Row>
 
             <Row>
-              <span className={`${cell}`}>Points de vente</span>
+              <span className={`${cell}`}>{t('pages:mockups.pointsOfSale')}</span>
               <span className={`${cell} ${num} ${vcol}`}>5</span>
               <span className={`${cell} ${num} ${vcol}`}>7</span>
               <span className={`${cell} ${num} ${vcol}`}>10</span>
@@ -355,7 +357,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
             </Row>
 
             <Row>
-              <span className={`${cell}`}>CA / Points de vente</span>
+              <span className={`${cell}`}>{t('pages:mockups.revenuePerPos')}</span>
               <span className={`${cell} ${num} ${vcol}`}>1,0m€</span>
               <span className={`${cell} ${num} ${vcol}`}>1,1m€</span>
               <span className={`${cell} ${num} ${vcol}`}>1,2m€</span>
@@ -396,7 +398,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
             </Row>
 
             <Row>
-              <span className={`${cell}`}>BFR</span>
+              <span className={`${cell}`}>{t('pages:mockups.workingCapital')}</span>
               <span className={`${cell} ${num} ${vcol}`}>(0,3)m€</span>
               <span className={`${cell} ${num} ${vcol}`}>(0,3)m€</span>
               <span className={`${cell} ${num} ${vcol}`}>(0,4)m€</span>
@@ -414,7 +416,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
             </Row>
 
             <Row>
-              <span className={`${cell}`}>Financements</span>
+              <span className={`${cell}`}>{t('pages:mockups.financing')}</span>
               <span className={`${cell} ${num} ${vcol}`}>0,5m€</span>
               <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>1,0m€</span>
               <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>1,5m€</span>
@@ -437,6 +439,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
   );
 };
 export const KpiDashboardMockup: React.FC<{ theme?: string, noAspectRatio?: boolean, disableHover?: boolean, initialScaleDown?: boolean, className?: string }> = ({ noAspectRatio = false, disableHover = false, initialScaleDown = false, className }) => {
+  const { t } = useTranslation();
   const classNames = [
     "animated-mockup w-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col",
     className,
@@ -451,11 +454,11 @@ export const KpiDashboardMockup: React.FC<{ theme?: string, noAspectRatio?: bool
   return (
     <div className={classNames.filter(Boolean).join(' ')}>
       <div className="w-full text-left mb-2 sm:mb-3 anim-child" style={{'--i': 0} as React.CSSProperties}>
-        <h3 className="font-bold text-gray-900 text-xs sm:text-sm">Tableau de Bord - T4 2024</h3>
+        <h3 className="font-bold text-gray-900 text-xs sm:text-sm">{t('pages:mockups.dashboard')}</h3>
       </div>
       <div className="flex-grow grid grid-cols-2 grid-rows-2 gap-2">
         <div className="bg-gray-50 rounded-lg p-2 border border-gray-100 col-span-1 row-span-2 flex flex-col anim-child" style={{'--i': 1} as React.CSSProperties}>
-          <p className="text-[11px] sm:text-xs font-semibold text-gray-700 mb-2">Croissance MRR</p>
+          <p className="text-[11px] sm:text-xs font-semibold text-gray-700 mb-2">{t('pages:mockups.mrrGrowth')}</p>
           <div className="flex-grow flex items-end space-x-1 sm:space-x-1.5">
               <div className="w-full h-1/3 bg-[#6D0037]/20 rounded-t-sm anim-bar" style={{'--d': 0} as React.CSSProperties}></div>
               <div className="w-full h-2/3 bg-[#6D0037]/20 rounded-t-sm anim-bar" style={{'--d': 1} as React.CSSProperties}></div>
@@ -464,7 +467,7 @@ export const KpiDashboardMockup: React.FC<{ theme?: string, noAspectRatio?: bool
           </div>
         </div>
         <div className="bg-gray-50 rounded-lg p-2 border border-gray-100 col-span-1 row-span-1 anim-child" style={{'--i': 2} as React.CSSProperties}>
-          <p className="text-[11px] sm:text-xs text-gray-700">Taux de Churn</p>
+          <p className="text-[11px] sm:text-xs text-gray-700">{t('pages:mockups.churnRate')}</p>
           <p className="font-bold text-gray-800 text-sm sm:text-lg">2.1% <span className="text-green-500 text-xs sm:text-sm">↓</span></p>
         </div>
          <div className="bg-gray-50 rounded-lg p-2 border border-gray-100 col-span-1 row-span-1 anim-child" style={{'--i': 3} as React.CSSProperties}>
@@ -476,46 +479,50 @@ export const KpiDashboardMockup: React.FC<{ theme?: string, noAspectRatio?: bool
   );
 };
 
-export const FieldWorkMockup: React.FC<{ theme?: string }> = () => (
+export const FieldWorkMockup: React.FC<{ theme?: string }> = () => {
+    const { t } = useTranslation();
+    return (
     <div className="animated-mockup w-full h-full bg-white rounded-2xl p-6 shadow-2xl border border-gray-100 flex flex-col transform scale-105 aspect-[4/3] will-change-transform">
         <div className="flex items-center justify-between mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
-            <h3 className="font-bold text-gray-900 text-sm">Atelier Stratégique</h3>
-            <div className="px-3 py-1 text-xs font-semibold bg-gray-100 text-gray-800 rounded-full">En personne</div>
+            <h3 className="font-bold text-gray-900 text-sm">{t('pages:mockups.strategicWorkshop')}</h3>
+            <div className="px-3 py-1 text-xs font-semibold bg-gray-100 text-gray-800 rounded-full">{t('pages:mockups.inPerson')}</div>
         </div>
         <div className="flex-grow bg-gray-50 rounded-lg p-4 space-y-3 border border-gray-100 text-xs">
-            <p className="font-semibold text-gray-800 mb-2 anim-child" style={{'--i': 1} as React.CSSProperties}>Agenda de la session :</p>
+            <p className="font-semibold text-gray-800 mb-2 anim-child" style={{'--i': 1} as React.CSSProperties}>{t('pages:mockups.sessionAgenda')}</p>
             <div className="flex items-start gap-3 anim-child" style={{'--i': 2} as React.CSSProperties}>
                 <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">1</div>
-                <p className="text-gray-800">Présentation aux équipes</p>
+                <p className="text-gray-800">{t('pages:mockups.agendaItems.0')}</p>
             </div>
             <div className="flex items-start gap-3 anim-child" style={{'--i': 3} as React.CSSProperties}>
                 <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">2</div>
-                <p className="text-gray-800">Revue des processus internes</p>
+                <p className="text-gray-800">{t('pages:mockups.agendaItems.1')}</p>
             </div>
             <div className="flex items-start gap-3 anim-child" style={{'--i': 4} as React.CSSProperties}>
                 <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">3</div>
-                <p className="text-gray-800">Revue des performances et analyse des KPIs</p>
+                <p className="text-gray-800">{t('pages:mockups.agendaItems.2')}</p>
             </div>
             <div className="flex items-start gap-3 anim-child" style={{'--i': 5} as React.CSSProperties}>
                 <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">4</div>
-                <p className="text-gray-800">Identification des leviers de croissance</p>
+                <p className="text-gray-800">{t('pages:mockups.agendaItems.3')}</p>
             </div>
             <div className="flex items-start gap-3 anim-child" style={{'--i': 6} as React.CSSProperties}>
                 <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">5</div>
-                <p className="text-gray-800">Définition de la feuille de route stratégique</p>
+                <p className="text-gray-800">{t('pages:mockups.agendaItems.4')}</p>
             </div>
             <div className="flex items-start gap-3 anim-child" style={{'--i': 7} as React.CSSProperties}>
                 <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">6</div>
-                <p className="text-gray-800">Plan d'action et Planification des réunions de travail et points d'étapes</p>
+                <p className="text-gray-800">{t('pages:mockups.agendaItems.5')}</p>
             </div>
         </div>
         <div className="mt-4 flex items-center justify-between text-xs text-gray-500 anim-child" style={{'--i': 8} as React.CSSProperties}>
             <span>BIRD&CO</span>
-            <span>CONFIDENTIEL</span>
+            <span>{t('pages:mockups.confidential')}</span>
         </div>
     </div>
-);
+    );
+};
 export const DiagnosticScanMockup: React.FC<{ theme?: string, disableHover?: boolean, initialScaleDown?: boolean, noAspectRatio?: boolean }> = ({ disableHover = false, initialScaleDown = false, noAspectRatio = false }) => {
+    const { t } = useTranslation();
     const classNames = [
     "w-full h-full bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100 flex flex-col will-change-transform transform scale-105",
     ];
@@ -526,7 +533,7 @@ export const DiagnosticScanMockup: React.FC<{ theme?: string, disableHover?: boo
 
     return (
         <div className={classNames.join(' ')}>
-          <h3 className="font-bold text-gray-900 text-sm mb-4">Diagnostic 360° - Rapport d'Audit</h3>
+          <h3 className="font-bold text-gray-900 text-sm mb-4">{t('pages:mockups.diagnostic360')}</h3>
           <div className="flex-grow grid grid-cols-2 gap-4">
             <div className="bg-violet-50/50 rounded-lg p-4 border border-violet-100 flex flex-col justify-center items-center">
                 <div className="w-24 h-24 rounded-full border-8 border-white flex items-center justify-center shadow-inner bg-violet-100">
@@ -534,20 +541,20 @@ export const DiagnosticScanMockup: React.FC<{ theme?: string, disableHover?: boo
                         86%
                     </div>
                 </div>
-                <p className="text-xs font-semibold text-[#27013D] mt-3">Score de Performance</p>
+                <p className="text-xs font-semibold text-[#27013D] mt-3">{t('pages:mockups.performanceScore')}</p>
             </div>
             <div className="space-y-3">
                  <div className="flex items-center gap-3 bg-violet-50/50 p-3 rounded-lg border border-violet-100">
                     <CheckmarkCircleIcon className="w-5 h-5 text-green-500 flex-shrink-0" />
-                    <p className="text-gray-800 text-xs">Santé Financière</p>
+                    <p className="text-gray-800 text-xs">{t('pages:mockups.financialHealth')}</p>
                 </div>
                  <div className="flex items-center gap-3 bg-violet-50/50 p-3 rounded-lg border border-violet-100">
                     <CheckmarkCircleIcon className="w-5 h-5 text-green-500 flex-shrink-0" />
-                    <p className="text-gray-800 text-xs">Efficacité Opérationnelle</p>
+                    <p className="text-gray-800 text-xs">{t('pages:mockups.operationalEfficiency')}</p>
                 </div>
                  <div className="flex items-center gap-3 bg-violet-50/50 p-3 rounded-lg border border-violet-100">
                     <TrendingUpIcon className="w-5 h-5 text-blue-500 flex-shrink-0" />
-                    <p className="text-gray-800 text-xs">Stratégie de Croissance</p>
+                    <p className="text-gray-800 text-xs">{t('pages:mockups.growthStrategy')}</p>
                 </div>
             </div>
           </div>
@@ -556,7 +563,9 @@ export const DiagnosticScanMockup: React.FC<{ theme?: string, disableHover?: boo
 };
 
 
-export const DueDiligenceVisual: React.FC = () => (
+export const DueDiligenceVisual: React.FC = () => {
+  const { t } = useTranslation();
+  return (
   <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col">
     <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
       <h3 className="font-bold text-gray-900 text-xs sm:text-sm">Due Diligence</h3>
@@ -564,48 +573,50 @@ export const DueDiligenceVisual: React.FC = () => (
     <div className="flex-grow space-y-3">
       <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 anim-child" style={{'--i': 1} as React.CSSProperties}>
         <CheckmarkCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0" />
-        <p className="text-gray-800 text-[11px] sm:text-xs">Qualité des revenus (MRR, churn...)</p>
+        <p className="text-gray-800 text-[11px] sm:text-xs">{t('pages:mockups.revenueQuality')}</p>
       </div>
       <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 anim-child" style={{'--i': 2} as React.CSSProperties}>
         <CheckmarkCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0" />
-        <p className="text-gray-800 text-[11px] sm:text-xs">Analyse de la rentabilité (EBITDA, marges)</p>
+        <p className="text-gray-800 text-[11px] sm:text-xs">{t('pages:mockups.profitabilityAnalysis')}</p>
       </div>
       <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 anim-child" style={{'--i': 3} as React.CSSProperties}>
         <CheckmarkCircleIcon className="w-6 h-6 text-gray-300 flex-shrink-0" />
-        <p className="text-gray-700 text-[11px] sm:text-xs">Normalisation du BFR</p>
+        <p className="text-gray-700 text-[11px] sm:text-xs">{t('pages:mockups.wcNormalization')}</p>
       </div>
        <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100 anim-child" style={{'--i': 4} as React.CSSProperties}>
         <CheckmarkCircleIcon className="w-6 h-6 text-gray-300 flex-shrink-0" />
-        <p className="text-gray-700 text-[11px] sm:text-xs">Analyse de la dette nette</p>
+        <p className="text-gray-700 text-[11px] sm:text-xs">{t('pages:mockups.netDebtAnalysis')}</p>
       </div>
     </div>
   </div>
-);
+  );
+};
 
 export const TransactionalSupportVisual: React.FC<{ theme?: string, disableHover?: boolean, initialScaleDown?: boolean }> = ({ disableHover = false, initialScaleDown = false }) => {
+    const { t } = useTranslation();
     const classNames = [
     "animated-mockup w-full h-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col",
     ];
 
     const steps = [
         {
-            title: "Préparation Stratégique",
-            description: "Valorisation, Business Plan, VDD, Teaser, IM"
+            title: t('pages:mockups.strategicPrep'),
+            description: t('pages:mockups.strategicPrepDesc')
         },
         {
-            title: "Exécution & Négociation",
-            description: "Data Room, Management Présentations, Négociation des offres"
+            title: t('pages:mockups.executionNegotiation'),
+            description: t('pages:mockups.executionNegotiationDesc')
         },
         {
             title: "Due Diligence & Closing",
-            description: "Audit d'acquisition, Signature (SPA), Levée des conditions suspensives"
+            description: t('pages:mockups.ddClosingDesc')
         }
     ];
 
     return (
         <div className={classNames.join(' ')}>
             <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
-                <h3 className="font-bold text-gray-900 text-xs sm:text-sm">Accompagnement Transactionnel</h3>
+                <h3 className="font-bold text-gray-900 text-xs sm:text-sm">{t('pages:mockups.transactionalSupport')}</h3>
             </div>
             
             <div className="flex-grow relative pl-12"> {/* Padding to make space for the timeline */}
@@ -672,6 +683,7 @@ export const CashGrowthVisual: React.FC = () => {
 };
 
 export const LiquidityChartVisual: React.FC = () => {
+    const { t } = useTranslation();
     // Data points based on the image (approximations) in k€
     const data = [
         { x: 0, y: 650 }, { x: 20, y: 600 }, { x: 40, y: 420 },
@@ -700,17 +712,17 @@ export const LiquidityChartVisual: React.FC = () => {
 
     const yAxisLabels = [700, 600, 500, 400, 300, 200, 100, 0];
     const xAxisLabels = [
-        { value: 0, label: 'Janv.' },
-        { value: 25, label: 'Avr.' },
-        { value: 50, label: 'Juil.' },
-        { value: 75, label: 'Oct.' },
-        { value: 100, label: 'Déc.' },
+        { value: 0, label: t('pages:mockups.jan') },
+        { value: 25, label: t('pages:mockups.apr') },
+        { value: 50, label: t('pages:mockups.jul') },
+        { value: 75, label: t('pages:mockups.oct') },
+        { value: 100, label: t('pages:mockups.dec') },
     ];
 
     return (
         <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col text-gray-900">
             <div className="w-full text-left mb-2 anim-child" style={{'--i': 0} as React.CSSProperties}>
-                <h3 className="font-bold text-gray-900 text-xs sm:text-sm">Gestion de la trésorerie</h3>
+                <h3 className="font-bold text-gray-900 text-xs sm:text-sm">{t('pages:mockups.cashManagement')}</h3>
             </div>
             <div className="anim-child" style={{'--i': 1} as React.CSSProperties}>
                 <p className="text-base font-bold text-[#27013D]">58 K€</p>
@@ -802,48 +814,51 @@ export const LiquidityChartVisual: React.FC = () => {
     );
 };
 
-export const OnSiteInterventionVisual: React.FC = () => (
+export const OnSiteInterventionVisual: React.FC = () => {
+    const { t } = useTranslation();
+    return (
     <div className="animated-mockup w-full h-full bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 flex flex-col">
         <div className="w-full text-left mb-4 anim-child" style={{'--i': 0} as React.CSSProperties}>
-            <h3 className="font-bold text-gray-900 text-xs sm:text-sm">Intervention sur site</h3>
+            <h3 className="font-bold text-gray-900 text-xs sm:text-sm">{t('pages:mockups.onSiteIntervention')}</h3>
         </div>
         <div className="flex-grow bg-gray-50 rounded-lg p-3 space-y-3 border border-gray-100 text-xs">
-            <p className="font-semibold text-gray-800 mb-2 anim-child" style={{'--i': 1} as React.CSSProperties}>Agenda de la session :</p>
+            <p className="font-semibold text-gray-800 mb-2 anim-child" style={{'--i': 1} as React.CSSProperties}>{t('pages:mockups.sessionAgenda')}</p>
             <div className="flex items-start gap-3 anim-child" style={{'--i': 2} as React.CSSProperties}>
                 <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">1</div>
-                <p className="text-gray-800">Présentation aux équipes</p>
+                <p className="text-gray-800">{t('pages:mockups.onSiteAgendaItems.0')}</p>
             </div>
             <div className="flex items-start gap-3 anim-child" style={{'--i': 3} as React.CSSProperties}>
                 <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">2</div>
-                <p className="text-gray-800">Revue des processus internes</p>
+                <p className="text-gray-800">{t('pages:mockups.onSiteAgendaItems.1')}</p>
             </div>
             <div className="flex items-start gap-3 anim-child" style={{'--i': 4} as React.CSSProperties}>
                 <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">3</div>
-                <p className="text-gray-800">Revue des performances et analyse des KPIs</p>
+                <p className="text-gray-800">{t('pages:mockups.onSiteAgendaItems.2')}</p>
             </div>
             <div className="flex items-start gap-3 anim-child" style={{'--i': 5} as React.CSSProperties}>
                 <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">4</div>
-                <p className="text-gray-800">Identification des leviers de croissance</p>
+                <p className="text-gray-800">{t('pages:mockups.onSiteAgendaItems.3')}</p>
             </div>
             <div className="flex items-start gap-3 anim-child" style={{'--i': 6} as React.CSSProperties}>
                 <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">5</div>
-                <p className="text-gray-800">Définition de la feuille de route stratégique</p>
+                <p className="text-gray-800">{t('pages:mockups.onSiteAgendaItems.4')}</p>
             </div>
             <div className="flex items-start gap-3 anim-child" style={{'--i': 7} as React.CSSProperties}>
                 <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">6</div>
-                <p className="text-gray-800">Définition du plan d'action</p>
+                <p className="text-gray-800">{t('pages:mockups.onSiteAgendaItems.5')}</p>
             </div>
              <div className="flex items-start gap-3 anim-child" style={{'--i': 8} as React.CSSProperties}>
                 <div className="w-5 h-5 mt-0.5 rounded-full bg-gradient-to-br from-[#27013D] to-[#6D0037] flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">7</div>
-                <p className="text-gray-800">Planification des réunions de travail et points d'étape</p>
+                <p className="text-gray-800">{t('pages:mockups.onSiteAgendaItems.6')}</p>
             </div>
         </div>
         <div className="mt-4 flex items-center justify-between text-xs text-gray-500 anim-child" style={{'--i': 9} as React.CSSProperties}>
             <span>BIRD&CO</span>
-            <span>CONFIDENTIEL</span>
+            <span>{t('pages:mockups.confidential')}</span>
         </div>
     </div>
-);
+    );
+};
 
 export const ExpertiseSearchIcon: React.FC<{ className?: string }> = ({ className }) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" className={className} fill="currentColor">
@@ -1394,4 +1409,99 @@ export const serviceDetails: { [key: string]: any } = {
             icon: <AnticipationIcon />,
         }
     },
+};
+
+export const useServices = () => {
+  const { t } = useTranslation();
+  return [
+    { slug: t('services:slugs.pilotage'), title: t('services:list.pilotage.title'), subTitle: t('services:list.pilotage.subTitle'), description: t('services:list.pilotage.description'), icon: <PaperPlaneIcon />, iconClassName: 'w-16 h-16' },
+    { slug: t('services:slugs.cfo'), title: t('services:list.cfo.title'), subTitle: t('services:list.cfo.subTitle'), description: t('services:list.cfo.description'), icon: <CfoIcon />, iconClassName: 'w-14 h-14' },
+    { slug: t('services:slugs.diagnostic'), title: t('services:list.diagnostic.title'), subTitle: t('services:list.diagnostic.subTitle'), description: t('services:list.diagnostic.description'), icon: <DiagnosticIcon />, iconClassName: 'w-16 h-16' },
+    { slug: t('services:slugs.ma'), title: t('services:list.ma.title'), subTitle: t('services:list.ma.subTitle'), description: t('services:list.ma.description'), icon: <img src="https://images2.imgbox.com/fb/c3/An8Qt7JF_o.png" alt="Services M&A Icon" />, darkIcon: <img src="https://images2.imgbox.com/91/54/9teZ4nY8_o.png" alt="Services M&A Icon" />, iconClassName: 'w-20 h-20' },
+  ];
+};
+
+export const useTeamMembers = () => {
+  const { t } = useTranslation();
+  return [
+    {
+      name: t('team:members.seydina.name'),
+      role: t('team:members.seydina.role'),
+      description: t('team:members.seydina.description', { returnObjects: true }) as string[],
+      alumni: t('team:members.seydina.alumni'),
+      diploma: t('team:members.seydina.diploma'),
+      email: 'samb@birdandco.fr',
+      imageUrl: 'https://images2.imgbox.com/06/b6/N9VRuIDC_o.jpg',
+      linkedinUrl: 'https://www.linkedin.com/in/seydina-samb-6638ba56/',
+    },
+    {
+      name: t('team:members.benjamin.name'),
+      role: t('team:members.benjamin.role'),
+      description: t('team:members.benjamin.description', { returnObjects: true }) as string[],
+      alumni: t('team:members.benjamin.alumni'),
+      diploma: t('team:members.benjamin.diploma'),
+      email: 'blegal@birdandco.fr',
+      imageUrl: 'https://images2.imgbox.com/1f/8f/9VzAe3uw_o.jpg',
+      linkedinUrl: 'https://www.linkedin.com/in/benjaminlegal/',
+    },
+  ];
+};
+
+export const useServiceDetails = () => {
+  const { t } = useTranslation();
+  
+  const serviceKeys = ['pilotage', 'cfo', 'diagnostic', 'ma'] as const;
+  const slugMap: Record<string, string> = {
+    pilotage: t('services:slugs.pilotage'),
+    cfo: t('services:slugs.cfo'),
+    diagnostic: t('services:slugs.diagnostic'),
+    ma: t('services:slugs.ma'),
+  };
+  const visualMap: Record<string, React.ReactNode> = {
+    pilotage: <FinancialReportMockup initialScaleDown />,
+    cfo: <KpiDashboardMockup noAspectRatio disableHover initialScaleDown />,
+    diagnostic: <DiagnosticScanMockup initialScaleDown />,
+    ma: <TransactionalSupportVisual initialScaleDown />,
+  };
+  const iconMap: Record<string, React.ReactNode> = {
+    pilotage: <AnticipationIcon />,
+    cfo: <TargetIcon />,
+    diagnostic: <AnticipationIcon />,
+    ma: <AnticipationIcon />,
+  };
+
+  const details: { [key: string]: any } = {};
+  
+  for (const key of serviceKeys) {
+    const slug = slugMap[key];
+    const objectives = t(`services:details.${key}.objectives`, { returnObjects: true }) as string[];
+    const categoriesRaw = t(`services:details.${key}.categories`, { returnObjects: true }) as Record<string, { title: string; items: string[] }>;
+    
+    details[slug] = {
+      title: t(`services:details.${key}.title`),
+      subtitle: t(`services:details.${key}.subtitle`),
+      diagnostic: {
+        title: t(`services:details.${key}.diagnosticTitle`),
+        description: t(`services:details.${key}.diagnosticDescription`),
+        contentTitle: t(`services:details.${key}.contentTitle`),
+        objectives,
+        visual: visualMap[key],
+      },
+      mainContent: {
+        title: t(`services:details.${key}.mainContentTitle`),
+        description: '',
+        categories: Object.values(categoriesRaw).map(cat => ({
+          title: cat.title,
+          list: cat.items,
+        })),
+      },
+      ambition: {
+        title: t(`services:details.${key}.ambitionTitle`),
+        description: t(`services:details.${key}.ambitionDescription`),
+        icon: iconMap[key],
+      },
+    };
+  }
+  
+  return details;
 };

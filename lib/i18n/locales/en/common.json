@@ -23,7 +23,9 @@
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "backToMainMenu": "Back to main menu",
-    "scrollDown": "Scroll down"
+    "scrollDown": "Scroll down",
+    "backToTop": "Back to top",
+    "linkedinOf": "{{name}}'s LinkedIn"
   },
   "errors": {
     "404": "404",

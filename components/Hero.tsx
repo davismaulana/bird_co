@@ -94,7 +94,7 @@ const Hero: React.FC<HeroProps> = ({
                 {/* Scroll down arrow */}
                 <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-20">
                     <Animate variant="pop" delay={800}>
-                        <a href="/#vos-enjeux" aria-label="Faire défiler vers le bas" className="p-2 text-[#6D0037] animate-bounce block">
+                        <a href="/#vos-enjeux" aria-label={t('common:accessibility.scrollDown')} className="p-2 text-[#6D0037] animate-bounce block">
                             <ChevronDownIcon className="w-8 h-8" />
                         </a>
                     </Animate>

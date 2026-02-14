@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import Animate from './Animate';
 import { 
     CheckmarkCircleIcon, 
@@ -10,64 +11,20 @@ import {
     OnSiteInterventionVisual
 } from '../constants';
 
-const tasks = [
-  {
-    icon: {
-      active: "https://images2.imgbox.com/df/52/6W0vqaOM_o.png",
-      inactive: "https://images2.imgbox.com/49/76/VCQT8RGf_o.png",
-    },
-    title: "Reporting & tableau de bord",
-    description: "Des outils clairs et nécessaires pour un pilotage efficace de votre activité",
-    visual: <KpiDashboardMockup noAspectRatio />,
-  },
-  {
-    icon: {
-      active: "https://images2.imgbox.com/c9/3a/aTMjbvJm_o.png",
-      inactive: "https://images2.imgbox.com/39/ad/jr5KyoWX_o.png",
-    },
-    title: "Gestion de la trésorerie",
-    description: "Une gestion optimisée de votre trésorerie pour financer votre croissance.",
-    visual: <LiquidityChartVisual />,
-  },
-  {
-    icon: {
-      active: "https://images2.imgbox.com/3d/3e/Xmi67EFc_o.png",
-      inactive: "https://images2.imgbox.com/78/74/vQLOdRKy_o.png",
-    },
-    title: "Modélisation",
-    description: "Des prévisionnels robustes et détaillés pour soutenir votre stratégie, vos levées de fonds et vos décisions d'investissement.",
-    visual: <FinancialReportMockup noAspectRatio />,
-  },
-  {
-    icon: {
-      active: "https://images2.imgbox.com/79/f8/8XIMmfYK_o.png",
-      inactive: "https://images2.imgbox.com/19/00/31wNCP51_o.png",
-    },
-    title: "Accompagnement transactionnel",
-    description: "Un soutien de bout en bout pour vos opérations de M&A et levées de fonds.",
-    visual: <TransactionalSupportVisual />,
-  },
-  {
-    icon: {
-      active: "https://images2.imgbox.com/b9/14/MF1gdmdv_o.png",
-      inactive: "https://images2.imgbox.com/6f/40/aXO1So4w_o.png",
-    },
-    title: "Due Diligence",
-    description: "Des analyses approfondies pour sécuriser vos opérations de M&A.",
-    visual: <DueDiligenceVisual />,
-  },
-  {
-    icon: {
-      active: "https://images2.imgbox.com/a2/b7/59FiRfCP_o.png",
-      inactive: "https://images2.imgbox.com/e3/33/EMa1rUaj_o.png",
-    },
-    title: "Intervention sur site",
-    description: "Un soutien physique et une collaboration directe avec vos équipes.",
-    visual: <OnSiteInterventionVisual />,
-  },
-];
-
 const TaskShowcase: React.FC = () => {
+    const { t } = useTranslation();
+    const taskItems = t('pages:taskShowcase.items', { returnObjects: true }) as Array<{ title: string; description: string }>;
+
+    const taskVisuals = [
+      { icon: { active: "https://images2.imgbox.com/df/52/6W0vqaOM_o.png", inactive: "https://images2.imgbox.com/49/76/VCQT8RGf_o.png" }, visual: <KpiDashboardMockup noAspectRatio /> },
+      { icon: { active: "https://images2.imgbox.com/c9/3a/aTMjbvJm_o.png", inactive: "https://images2.imgbox.com/39/ad/jr5KyoWX_o.png" }, visual: <LiquidityChartVisual /> },
+      { icon: { active: "https://images2.imgbox.com/3d/3e/Xmi67EFc_o.png", inactive: "https://images2.imgbox.com/78/74/vQLOdRKy_o.png" }, visual: <FinancialReportMockup noAspectRatio /> },
+      { icon: { active: "https://images2.imgbox.com/79/f8/8XIMmfYK_o.png", inactive: "https://images2.imgbox.com/19/00/31wNCP51_o.png" }, visual: <TransactionalSupportVisual /> },
+      { icon: { active: "https://images2.imgbox.com/b9/14/MF1gdmdv_o.png", inactive: "https://images2.imgbox.com/6f/40/aXO1So4w_o.png" }, visual: <DueDiligenceVisual /> },
+      { icon: { active: "https://images2.imgbox.com/a2/b7/59FiRfCP_o.png", inactive: "https://images2.imgbox.com/e3/33/EMa1rUaj_o.png" }, visual: <OnSiteInterventionVisual /> },
+    ];
+    const tasks = taskItems.map((item, i) => ({ ...item, ...taskVisuals[i] }));
+
     const [activeTask, setActiveTask] = useState(0);
 
     return (
@@ -81,13 +38,11 @@ const TaskShowcase: React.FC = () => {
                     </Animate>
                     <Animate variant="pop" delay={100}>
                         <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
-                          De la stratégie <span className="gradient-text">à l'exécution</span>
+                          {t('pages:taskShowcase.title')} <span className="gradient-text">{t('pages:taskShowcase.titleHighlight')}</span>
                         </h2>
                     </Animate>
                     <Animate variant="pop" delay={200}>
-                        <p className="text-lg text-gray-800 mt-4 md:whitespace-nowrap">
-                            <strong>Quel que soit votre besoin</strong>, nous produisons des <strong>livrables clairs et actionnables</strong> pour piloter votre performance
-                        </p>
+                        <p className="text-lg text-gray-800 mt-4 md:whitespace-nowrap" dangerouslySetInnerHTML={{ __html: t('pages:taskShowcase.subtitle') }} />
                     </Animate>
                 </div>
                 <div className="max-w-7xl mx-auto">

@@ -8,6 +8,7 @@ import frServices from './locales/fr/services.json';
 import frTeam from './locales/fr/team.json';
 import frFaq from './locales/fr/faq.json';
 import frContact from './locales/fr/contact.json';
+import frPages from './locales/fr/pages.json';
 
 // Import English translations
 import enCommon from './locales/en/common.json';
@@ -16,6 +17,7 @@ import enServices from './locales/en/services.json';
 import enTeam from './locales/en/team.json';
 import enFaq from './locales/en/faq.json';
 import enContact from './locales/en/contact.json';
+import enPages from './locales/en/pages.json';
 
 export const defaultNS = 'common';
 export const resources = {
@@ -26,6 +28,7 @@ export const resources = {
     team: frTeam,
     faq: frFaq,
     contact: frContact,
+    pages: frPages,
   },
   en: {
     common: enCommon,
@@ -34,6 +37,7 @@ export const resources = {
     team: enTeam,
     faq: enFaq,
     contact: enContact,
+    pages: enPages,
   },
 } as const;
 

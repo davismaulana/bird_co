@@ -1,22 +1,26 @@
 
 
 import React from 'react';
-import { services, serviceDetails } from '../constants';
+import { useTranslation } from 'react-i18next';
+import { useServiceDetails, useServices, GradientCheckIcon } from '../constants';
 import Animate from './Animate';
 import HeroAnimation from './HeroAnimation';
 
 const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
-  const details = serviceDetails[serviceId];
-  const service = services.find(s => s.slug === serviceId);
+  const { t } = useTranslation();
+  const allDetails = useServiceDetails();
+  const details = allDetails[serviceId];
+  const allServices = useServices();
+  const service = allServices.find(s => s.slug === serviceId);
 
   if (!details || !service) {
     return (
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-48 text-center">
         <Animate variant="pop">
-            <h1 className="text-3xl font-bold text-gray-900">Service Bientôt Disponible</h1>
-            <p className="mt-4 text-gray-800">Cette page est en cours de construction.</p>
+            <h1 className="text-3xl font-bold text-gray-900">{t('pages:serviceDetailPage.comingSoonTitle')}</h1>
+            <p className="mt-4 text-gray-800">{t('pages:serviceDetailPage.comingSoonDescription')}</p>
             <a href="/" className="mt-8 inline-block bg-gray-800 text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-900 transition-colors">
-            Retour à l'accueil
+            {t('pages:serviceDetailPage.backHome')}
             </a>
         </Animate>
       </div>
@@ -50,7 +54,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                   rel="noopener noreferrer"
                   className="inline-block text-center bg-white text-[#27013D] px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors transform hover:scale-105 text-sm"
                 >
-                  Échanger avec un bras droit
+                  {t('pages:serviceDetailPage.heroCta')}
                 </a>
               </div>
             </Animate>
@@ -69,9 +73,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                   </div>
                 </Animate>
                 <Animate variant="pop" delay={100}>
-                  <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900">
-                    {details.diagnostic.title}
-                  </h2>
+                  <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-gray-900" dangerouslySetInnerHTML={{ __html: details.diagnostic.title.replace(/<highlight>/g, '<span class="gradient-text">').replace(/<\/highlight>/g, '</span>') }} />
                 </Animate>
                 <Animate variant="pop" delay={200}>
                   <p className="text-base text-gray-800 mt-4">
@@ -79,18 +81,23 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                   </p>
                 </Animate>
             </div>
-            {details.diagnostic.content && (
+            {details.diagnostic.visual && (
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 max-w-7xl mx-auto">
                   <Animate variant={'pop'} delay={300} className="lg:col-span-3 aspect-[4/3] lg:aspect-auto h-full">
-                      {React.cloneElement(details.diagnostic.content.visual, { noAspectRatio: true })}
+                      {React.cloneElement(details.diagnostic.visual, { noAspectRatio: true })}
                   </Animate>
                   <Animate variant={'pop'} delay={200} className="lg:col-span-2 h-full">
                       <div className="text-left mt-5 lg:mt-0 flex flex-col h-full lg:py-8">
                         <div>
-                          <h3 className="text-lg font-bold text-[#27013D] mb-4">{details.diagnostic.content.title}</h3>
-                          <div className="text-gray-800 leading-relaxed text-base">
-                            {details.diagnostic.content.description}
-                          </div>
+                          <h3 className="text-lg font-bold text-[#27013D] mb-4">{details.diagnostic.contentTitle}</h3>
+                          <ul className="text-gray-800 leading-relaxed text-base space-y-2">
+                            {details.diagnostic.objectives.map((item: string) => (
+                              <li key={item} className="flex items-center">
+                                <GradientCheckIcon className="w-6 h-6 flex-shrink-0 mr-2" />
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
                         </div>
                         {details.ambition && (
                             <div className="mt-auto pt-8 border-t border-gray-200">
@@ -171,7 +178,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
             </Animate>
             <Animate variant="pop" delay={100}>
                 <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-white">
-                    Vous avez des <span className="gradient-text-light">questions ?</span>
+                    {t('pages:serviceDetailPage.ctaTitle')} <span className="gradient-text-light">{t('pages:serviceDetailPage.ctaTitleHighlight')}</span>
                 </h2>
             </Animate>
             <Animate variant="pop" delay={200}>
@@ -182,7 +189,7 @@ const ServiceDetailPage: React.FC<{ serviceId: string }> = ({ serviceId }) => {
                       rel="noopener noreferrer"
                       className="inline-block bg-white text-[#27013D] px-10 py-4 rounded-full font-semibold hover:bg-gray-200 transition-all transform hover:scale-105 text-sm"
                     >
-                      On&nbsp;vous&nbsp;écoute
+                      {t('pages:serviceDetailPage.ctaCta')}
                     </a>
                 </div>
             </Animate>

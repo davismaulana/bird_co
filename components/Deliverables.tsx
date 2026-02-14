@@ -1,27 +1,14 @@
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Animate from './Animate';
 import { FinancialReportMockup, KpiDashboardMockup, FieldWorkMockup } from '../constants';
 
-const deliverables = [
-  {
-    title: "Modélisation Financière & Business Plan",
-    description: "Nous construisons des modèles financiers robustes et des business plans détaillés pour soutenir votre stratégie, vos levées de fonds et vos décisions d'investissement.",
-    mockup: <FinancialReportMockup />,
-  },
-  {
-    title: "Reporting & Tableau de Bord",
-    description: "Des tableaux de bord sur-mesure et des reportings clairs pour un pilotage visuel et intuitif de votre activité.",
-    mockup: <KpiDashboardMockup />,
-  },
-  {
-    title: "Intervention sur site",
-    description: "Nous nous déplaçons dans vos locaux pour des missions ponctuelles ou récurrentes, offrant un support physique et une collaboration directe avec vos équipes.",
-    mockup: <FieldWorkMockup />,
-  }
-];
-
 const Deliverables: React.FC = () => {
+  const { t } = useTranslation();
+  const items = t('pages:deliverables.items', { returnObjects: true }) as Array<{ title: string; description: string }>;
+  const mockups = [<FinancialReportMockup />, <KpiDashboardMockup />, <FieldWorkMockup />];
+
   return (
     <section className="bg-gray-50 py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,17 +20,17 @@ const Deliverables: React.FC = () => {
           </Animate>
           <Animate variant="pop" delay={100}>
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold leading-tight text-gray-900">
-              Des livrables <span className="gradient-text">clairs et impactants</span>
+              {t('pages:deliverables.title')} <span className="gradient-text">{t('pages:deliverables.titleHighlight')}</span>
             </h2>
           </Animate>
           <Animate variant="pop" delay={200}>
             <p className="text-base text-gray-800 mt-4 max-w-3xl mx-auto">
-              Nous transformons des données complexes en outils de pilotage visuels et intuitifs, conçus pour vous donner une visibilité complète sur votre activité.
+              {t('pages:deliverables.subtitle')}
             </p>
           </Animate>
         </div>
         <div className="space-y-20">
-          {deliverables.map((item, index) => (
+          {items.map((item, index) => (
             <div
               key={index}
               className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center`}
@@ -52,7 +39,7 @@ const Deliverables: React.FC = () => {
                 variant={'pop'}
                 delay={200}
               >
-                {item.mockup}
+                {mockups[index]}
               </Animate>
               <Animate variant={'pop'} delay={300}>
                 <div className="text-left">

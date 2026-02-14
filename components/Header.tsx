@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { services, HamburgerIcon, CloseIcon, ArrowRightIcon, ChevronRightIcon, ChevronLeftIcon } from '../constants';
+import { useServices, HamburgerIcon, CloseIcon, ArrowRightIcon, ChevronRightIcon, ChevronLeftIcon } from '../constants';
 import LanguageSwitcher from './LanguageSwitcher';
 
 const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language || 'fr';
+  const services = useServices();
   
   // Generate nav items with current language
   const getNavItems = () => [
@@ -17,20 +18,6 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
   ];
 
   const navItems = getNavItems();
-
-  // Service slugs based on language
-  const getServiceSlug = (service: typeof services[0]) => {
-    if (currentLang === 'en') {
-      const slugMap: Record<string, string> = {
-        'pilotage-planification': 'steering-planning',
-        'cfo-part-time': 'part-time-cfo',
-        'diagnostic-restructuration': 'diagnostic-restructuring',
-        'services-ma': 'ma-services',
-      };
-      return slugMap[service.slug] || service.slug;
-    }
-    return service.slug;
-  };
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isDropdownActive, setIsDropdownActive] = useState(false);
@@ -295,7 +282,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {services.map((service, index) => (
                   <div key={index} className="dropdown-item" style={{'--delay': `${50 + index * 80}ms`} as React.CSSProperties}>
-                    <a href={`/${currentLang}/service/${getServiceSlug(service)}`} className="block h-full group">
+                    <a href={`/${currentLang}/service/${service.slug}`} className="block h-full group">
                       <div className="bg-white rounded-xl p-6 flex flex-col items-start text-left h-full transition-all duration-300 ease-in-out border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1 group-hover:bg-[#27013D]">
                         <h3 className="text-base font-bold text-gray-900 mb-2 transition-colors duration-300 group-hover:text-white">
                           {service.title}
@@ -419,7 +406,7 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                   {services.map((service, index) => (
                     <a 
                       key={index} 
-                      href={`/${currentLang}/service/${getServiceSlug(service)}`} 
+                      href={`/${currentLang}/service/${service.slug}`} 
                       className="block h-full group"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >

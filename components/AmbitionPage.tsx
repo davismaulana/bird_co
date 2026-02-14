@@ -1,27 +1,16 @@
 
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Animate from './Animate';
 import HeroAnimation from './HeroAnimation';
 import { CheckmarkCircleIcon } from '../constants';
 import StairsAnimation from './StairsAnimation';
 
-const dnaItems = [
-    {
-      text: "<strong>Engagement :</strong> Nous sommes à vos côtés, pleinement investis dans la réussite de vos projets."
-    },
-    {
-      text: "<strong>Excellence :</strong> Nous visons les plus hauts standards de qualité dans chacune de nos missions."
-    },
-    {
-      text: "<strong>Proactivité :</strong> Nous utilisons notre expertise et l'analyse de données pour identifier les opportunités et les risques futurs, vous permettant de garder une longueur d'avance."
-    },
-    {
-      text: "<strong>Confiance :</strong> Nous construisons des relations durables basées sur la transparence et l'intégrité."
-    }
-];
-
 const AmbitionPage: React.FC = () => {
+  const { t } = useTranslation();
+  const dnaItems = t('pages:ambitionPage.dnaItems', { returnObjects: true }) as string[];
+
   return (
     <div className="bg-white">
       {/* Hero Section */}
@@ -33,12 +22,12 @@ const AmbitionPage: React.FC = () => {
           <div className="max-w-7xl text-left">
             <Animate variant="pop">
               <h1 className="text-3xl sm:text-4xl font-extrabold text-white leading-tight tracking-tight">
-                Notre <span>ambition</span>
+                {t('pages:ambitionPage.heroTitle')} <span>{t('pages:ambitionPage.heroTitleHighlight')}</span>
               </h1>
             </Animate>
             <Animate variant="pop" delay={200}>
               <p className="mt-4 text-sm md:text-base text-gray-200 max-w-5xl">
-                Façonner l'avenir de votre entreprise en transformant la vision en réalité.
+                {t('pages:ambitionPage.heroSubtitle')}
               </p>
             </Animate>
             <Animate variant="pop" delay={400}>
@@ -49,7 +38,7 @@ const AmbitionPage: React.FC = () => {
                   rel="noopener noreferrer"
                   className="inline-block text-center bg-white text-[#27013D] px-6 sm:px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors transform hover:scale-105 text-sm"
                 >
-                  Échanger avec un bras droit
+                  {t('pages:ambitionPage.heroCta')}
                 </a>
               </div>
             </Animate>
@@ -62,18 +51,18 @@ const AmbitionPage: React.FC = () => {
           <div className="text-center max-w-3xl mx-auto">
               <Animate variant="pop">
                   <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold text-gray-900 mb-6">
-                      L'ADN du réseau <span className="gradient-text">Bird</span>
+                      {t('pages:ambitionPage.dnaTitle')} <span className="gradient-text">{t('pages:ambitionPage.dnaTitleHighlight')}</span>
                   </h2>
               </Animate>
               <Animate variant="pop" delay={150}>
-                  <p className="text-sm text-gray-800 leading-relaxed">Quatre valeurs fondamentales définissent qui nous sommes, comment nous travaillons, et ce que nous nous engageons à vous apporter.</p>
+                  <p className="text-sm text-gray-800 leading-relaxed">{t('pages:ambitionPage.dnaSubtitle')}</p>
               </Animate>
           </div>
           <ul className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-5xl mx-auto stagger">
               {dnaItems.map((item, index) => (
               <Animate as="li" key={index} variant="pop" className="flex items-start">
                   <CheckmarkCircleIcon className="w-6 h-6 flex-shrink-0 mr-4 text-green-500 mt-1" />
-                  <p className="text-sm text-gray-800 leading-relaxed" dangerouslySetInnerHTML={{ __html: item.text }}></p>
+                  <p className="text-sm text-gray-800 leading-relaxed" dangerouslySetInnerHTML={{ __html: item }}></p>
               </Animate>
               ))}
           </ul>
@@ -93,7 +82,7 @@ const AmbitionPage: React.FC = () => {
                     <div className="p-8 sm:p-12 md:p-20 container">
                         <Animate variant="pop">
                             <blockquote className="text-lg md:text-xl xl:text-2xl font-bold text-[#27013D] leading-snug">
-                                "La meilleure façon de prédire l'avenir, c'est de le créer."
+                                {t('pages:ambitionPage.quote')}
                             </blockquote>
                         </Animate>
                         <Animate variant="pop" delay={150}>
@@ -101,7 +90,7 @@ const AmbitionPage: React.FC = () => {
                         </Animate>
                         <Animate variant="pop" delay={300}>
                             <p className="mt-8 text-gray-800 leading-relaxed text-xs">
-                                Cette philosophie est au cœur de notre démarche. Nous ne nous contentons pas de réagir aux événements ; nous vous donnons les moyens de façonner activement l'avenir de votre entreprise, en transformant l'incertitude en opportunité et la vision en réalité.
+                                {t('pages:ambitionPage.quoteDescription')}
                             </p>
                         </Animate>
                     </div>
@@ -115,12 +104,12 @@ const AmbitionPage: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Animate variant="pop">
                 <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold text-white">
-                    Vous avez des <span className="gradient-text-light">questions ?</span>
+                    {t('pages:ambitionPage.ctaTitle')} <span className="gradient-text-light">{t('pages:ambitionPage.ctaTitleHighlight')}</span>
                 </h2>
             </Animate>
             <Animate variant="pop" delay={150}>
                 <p className="mt-4 text-sm text-gray-300 max-w-2xl mx-auto">
-                    Laissez-nous un message
+                    {t('pages:ambitionPage.ctaFormHeading')}
                 </p>
             </Animate>
             <Animate variant="pop" delay={300}>
@@ -131,7 +120,7 @@ const AmbitionPage: React.FC = () => {
                       rel="noopener noreferrer"
                       className="inline-block bg-white text-[#27013D] px-10 py-4 rounded-full font-semibold hover:bg-gray-200 transition-all transform hover:scale-105 text-sm"
                     >
-                      On&nbsp;vous&nbsp;écoute
+                      {t('pages:ambitionPage.ctaCta')}
                     </a>
                 </div>
             </Animate>

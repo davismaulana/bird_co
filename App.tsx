@@ -62,6 +62,27 @@ const App: React.FC = () => {
     }
   }, [pathname, i18n]);
 
+  // Keep <html lang="..."> and meta descriptions in sync with current language
+  useEffect(() => {
+    const lang = i18n.language || 'fr';
+    document.documentElement.lang = lang;
+
+    const descriptions: Record<string, string> = {
+      fr: 'Bird& | Votre bras droit stratégique et financier',
+      en: 'Bird& | Your strategic and financial partner',
+    };
+    const description = descriptions[lang] || descriptions.fr;
+
+    const metaSelectors = [
+      'meta[property="og:description"]',
+      'meta[property="twitter:description"]',
+    ];
+    metaSelectors.forEach(selector => {
+      const el = document.querySelector(selector);
+      if (el) el.setAttribute('content', description);
+    });
+  }, [i18n.language]);
+
   // Redirect root path to language-prefixed path
   useEffect(() => {
     if (pathname === '/') {

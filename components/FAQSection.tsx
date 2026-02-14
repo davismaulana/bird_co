@@ -38,7 +38,8 @@ const AccordionItem: React.FC<{ question: string; answer: React.ReactNode; isOpe
 };
 
 const FAQSection: React.FC = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+    const currentLang = i18n.language || 'fr';
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     const renderAnswer = (key: typeof faqKeys[number]) => {
@@ -97,7 +98,7 @@ const FAQSection: React.FC = () => {
                  <Animate variant="pop" delay={300}>
                     <div className="mt-12 text-center">
                         <a
-                          href="/faq"
+                          href={`/${currentLang}/faq`}
                           className="inline-block bg-white border border-gray-300 text-[#27013D] px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors transform hover:scale-105 text-sm"
                         >
                           {t('common:cta.seeAllQuestions')}

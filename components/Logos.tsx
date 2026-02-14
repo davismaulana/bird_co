@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { PARTNER_LOGOS, ENLARGED_LOGOS, SUPER_ENLARGED_LOGOS } from '../constants';
 import Animate from './Animate';
 
@@ -9,7 +10,7 @@ interface LogosProps {
 }
 
 const Logos: React.FC<LogosProps> = ({ backgroundColor = 'bg-gray-50' }) => {
-  // Shared configuration is now imported
+  const { t } = useTranslation();
 
   return (
     <section className={`${backgroundColor} flex flex-col items-center justify-center py-16 sm:py-24 min-h-screen`}>
@@ -22,13 +23,11 @@ const Logos: React.FC<LogosProps> = ({ backgroundColor = 'bg-gray-50' }) => {
           </Animate>
           <Animate variant="pop" delay={100}>
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
-              Ils nous <span className="gradient-text">font confiance</span>
+              {t('pages:logos.title')} <span className="gradient-text">{t('pages:logos.titleHighlight')}</span>
             </h2>
           </Animate>
           <Animate variant="pop" delay={200}>
-            <p className="text-lg text-gray-800 mt-4 max-w-5xl mx-auto">
-              Un <strong>allié</strong> et un <strong>soutien sur-mesure</strong> pour votre structure (<span className="gradient-text font-bold">TPE à Grandes entreprises et Fonds d'investissements</span>)
-            </p>
+            <p className="text-lg text-gray-800 mt-4 max-w-5xl mx-auto" dangerouslySetInnerHTML={{ __html: t('pages:logos.description').replace('<highlight>', '<span class="gradient-text font-bold">').replace('</highlight>', '</span>') }} />
           </Animate>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-12 sm:gap-x-12 sm:gap-y-16 lg:gap-x-16 lg:gap-y-20 items-center justify-center stagger">

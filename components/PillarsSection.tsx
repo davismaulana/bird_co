@@ -5,25 +5,30 @@ import Animate from './Animate';
 const PillarsSection: React.FC = () => {
   const { t } = useTranslation();
 
+  const pragmatismTitle = t('home:pillars.pragmatism.title');
+  const clarityTitle = t('home:pillars.clarity.title');
+  const proactivityTitle = t('home:pillars.proactivity.title');
+  const trustTitle = t('home:pillars.trust.title');
+
   const pilliers = [
     {
-      icon: <img src="https://images2.imgbox.com/86/1a/o1GwdJHF_o.png" alt="Pragmatisme icon" className="w-14 h-14 object-contain" />,
-      title: t('home:pillars.pragmatism.title'),
+      icon: <img src="https://images2.imgbox.com/86/1a/o1GwdJHF_o.png" alt={pragmatismTitle} className="w-14 h-14 object-contain" />,
+      title: pragmatismTitle,
       description: <Trans i18nKey="home:pillars.pragmatism.description" components={{ strong: <strong /> }} />,
     },
     {
-      icon: <img src="https://images2.imgbox.com/0f/19/ZMKxUMu0_o.png" alt="Clarté Décisionnelle icon" className="w-14 h-14 object-contain" />,
-      title: t('home:pillars.clarity.title'),
+      icon: <img src="https://images2.imgbox.com/0f/19/ZMKxUMu0_o.png" alt={clarityTitle} className="w-14 h-14 object-contain" />,
+      title: clarityTitle,
       description: <Trans i18nKey="home:pillars.clarity.description" components={{ strong: <strong /> }} />,
     },
     {
-      icon: <img src="https://images2.imgbox.com/04/bd/mF2HLfkj_o.png" alt="Proactivité icon" className="w-14 h-14 object-contain" />,
-      title: t('home:pillars.proactivity.title'),
+      icon: <img src="https://images2.imgbox.com/04/bd/mF2HLfkj_o.png" alt={proactivityTitle} className="w-14 h-14 object-contain" />,
+      title: proactivityTitle,
       description: <Trans i18nKey="home:pillars.proactivity.description" components={{ strong: <strong /> }} />,
     },
     {
-      icon: <img src="https://images2.imgbox.com/a9/6f/sEU8YeyP_o.png" alt="Confiance icon" className="w-14 h-14 object-contain" />,
-      title: t('home:pillars.trust.title'),
+      icon: <img src="https://images2.imgbox.com/a9/6f/sEU8YeyP_o.png" alt={trustTitle} className="w-14 h-14 object-contain" />,
+      title: trustTitle,
       description: <Trans i18nKey="home:pillars.trust.description" components={{ strong: <strong /> }} />,
     },
   ];

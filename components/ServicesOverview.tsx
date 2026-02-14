@@ -1,23 +1,15 @@
 import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import Animate from './Animate';
-import { services, ArrowRightIcon } from '../constants';
+import { useServices, ArrowRightIcon } from '../constants';
 
 const ServicesOverview: React.FC = () => {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language;
-
-  // Map French slugs to English slugs
-  const slugMap: Record<string, string> = {
-    'cfo-part-time': 'part-time-cfo',
-    'services-ma': 'ma-services',
-    'restructuration-retournement': 'restructuring-turnaround',
-    'missions-strategiques': 'strategic-missions'
-  };
+  const services = useServices();
 
   const getServiceUrl = (slug: string) => {
-    const localizedSlug = currentLang === 'en' ? (slugMap[slug] || slug) : slug;
-    return `/${currentLang}/service/${localizedSlug}`;
+    return `/${currentLang}/service/${slug}`;
   };
 
   return (

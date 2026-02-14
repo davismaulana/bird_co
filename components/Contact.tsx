@@ -71,7 +71,7 @@ const Contact: React.FC<ContactProps> = ({
                 },
                 body: JSON.stringify({
                     ...formData,
-                    _subject: `Nouveau message de ${formData.name} (Bird & Co)`,
+                    _subject: t('contact:emailSubject', { name: formData.name }),
                     _template: "table"
                 })
             });

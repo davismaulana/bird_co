@@ -1,0 +1,582 @@
+{
+  "faqPage": {
+    "heroTitle": "Frequently Asked",
+    "heroTitleHighlight": "Questions",
+    "heroSubtitle": "Find answers to your questions about our services, approach, and expertise.",
+    "heroCta": "Ask another question",
+    "ctaTitle": "Have any other",
+    "ctaTitleHighlight": "questions?",
+    "ctaDescription": "Our team is available to discuss your projects and answer all your questions.",
+    "ctaCta": "Talk to a partner",
+    "categories": [
+      {
+        "title": "About Bird / Identity",
+        "items": [
+          {
+            "question": "What is Bird exactly (firm, agency, partner)?",
+            "answer": "Bird is a <strong>strategic and financial partner</strong>.<br />We help executives structure their vision, strengthen their business model, drive growth, and anchor their impact.<br />We are not a traditional consulting firm: more agile, more involved, more operational."
+          },
+          {
+            "question": "What is your mission / long-term vision?",
+            "answer": "Our mission: <strong>help organizations reconcile economic performance, strategic clarity, and sustainable responsibility</strong>.<br />Our vision: an ecosystem where strategy, finance, and impact don't oppose each other — they reinforce each other."
+          },
+          {
+            "question": "How was Bird founded? (origins, founder)",
+            "answer": "Bird was born from an observation: many executives carry strong ambitions but lack a partner able to provide robust structure, a bird's-eye view, and reliable execution.<br />Bird was created to fill this need: a bridge between vision, rigor, and impact."
+          },
+          {
+            "question": "Why the name \"Bird\"?",
+            "answer": "Because a bird <strong>sees far, gains altitude, and spreads its wings</strong>.<br />This is the essence of our approach: bringing clarity, revealing potential, giving momentum."
+          },
+          {
+            "question": "In which geographic areas do you operate?",
+            "answer": "Paris, France, Europe, international, occasional missions in Asia — <strong>in-person, hybrid, or 100% remote</strong>."
+          },
+          {
+            "question": "What types of profiles do you work with?",
+            "answer": "Startups, growing SMEs, scale-ups, nonprofits, NGOs, public institutions.<br />All those who want to <strong>structure, accelerate, transform, or integrate more impact into their model</strong>."
+          }
+        ]
+      },
+      {
+        "title": "Services & Areas of Intervention",
+        "items": [
+          {
+            "question": "What services do you offer (strategy, finance, CSR, support)?",
+            "answer": "Our interventions revolve around four pillars:\n<ul><li><strong>Strategy</strong>: vision, strategic plan, offer structuring.</li><li><strong>Finance</strong>: business plan, financial models, management, KPIs, cash.</li><li><strong>Organization & growth</strong>: internal structuring, processes, efficiency levers.</li><li><strong>Impact / CSR</strong>: sustainable strategy, impact measurement, values alignment.</li></ul>"
+          },
+          {
+            "question": "How to restructure my business?",
+            "answer": "Restructuring always depends on your situation.\n\nBefore any decision, it is essential to conduct an <strong>economic, financial, and operational diagnostic</strong>, often led with an expert, to identify the real causes of difficulties and action levers.\n\nDepending on the findings, several options may be considered:\n\n- <strong>Recovery plan or performance improvement plan</strong> (cost optimization, organization, activity prioritization, cash plan...)\n- <strong>Amicable procedures</strong>: Ad hoc mandate, Conciliation\n- <strong>Judicial procedures</strong> (in case of proven difficulties): Safeguard, Judicial reorganization, Judicial liquidation (last resort)\n\nIn some situations, working with a <strong>restructuring lawyer</strong> and a <strong>court-appointed administrator</strong> is necessary.\n\n<strong>Every situation is unique. Bird first evaluates your environment, figures, and operational dynamics before recommending the most suitable approach.</strong>"
+          },
+          {
+            "question": "Can you help raise funds / structure financial partnerships?",
+            "answer": "Yes.<br />BP preparation, deck, data room, needs analysis, introductions."
+          },
+          {
+            "question": "Do you work on impact / CSR / sustainable development?",
+            "answer": "Yes, in an integrated manner.<br />Impact is not a supplement: it's a dimension that strengthens performance and credibility."
+          },
+          {
+            "question": "Does Bird offer a \"turnkey\" or customized offer?",
+            "answer": "<strong>100% custom.</strong><br />Each mission is adapted to your challenges, your stage of development, and your vision."
+          },
+          {
+            "question": "How does the engagement work (phases, duration)?",
+            "answer": "1. <strong>Exploration</strong>\n2. <strong>Diagnostic</strong>\n3. <strong>Modeling / structuring</strong>\n4. <strong>Deployment</strong>\n5. <strong>Management & adjustments</strong>\n\nDuration ranges from <strong>3 weeks to several months</strong>, depending on the ambition."
+          },
+          {
+            "question": "What is the cost / pricing model / billing method?",
+            "answer": "Depending on the projects:\n- <strong>fixed fee</strong>,\n- <strong>day rate</strong>,\n- <strong>monthly subscription</strong>.\n\nTransparency from the scoping phase."
+          },
+          {
+            "question": "Do you only do finance?",
+            "answer": "No. We also work on strategy, governance, and operations."
+          },
+          {
+            "question": "Are you specialized in a specific sector?",
+            "answer": "Our network of partners is comprehensive and can intervene across all sectors."
+          }
+        ]
+      },
+      {
+        "title": "Collaboration & Clients",
+        "items": [
+          {
+            "question": "How to start a collaboration?",
+            "answer": "A <strong>free introductory call</strong> allows us to scope your needs and define the best approach.<br />Then a structured proposal based on a mini-diagnostic."
+          },
+          {
+            "question": "What types of organizations do you support?",
+            "answer": "Depending on the challenges they face, we support:\n- Small businesses, SMEs, mid-sized companies, large corporations\n- Investment funds, investment banks\n- Public institutions, nonprofits\n\nWe also work with lawyers, accountants, works councils, and court-appointed administrators who seek our network's expertise for their clients."
+          },
+          {
+            "question": "Do you take interns / apprentices / partner with schools?",
+            "answer": "Yes, on targeted topics (finance, strategic analysis, impact)."
+          },
+          {
+            "question": "How do you ensure confidentiality / data security?",
+            "answer": "Systematic NDA clauses, strict internal practices, secure storage, encrypted data rooms."
+          },
+          {
+            "question": "What are the criteria for accepting a project?",
+            "answer": "- Real strategic challenges\n- Compatible values\n- Relationship transparency\n- Willingness to move forward\n- Potential positive impact"
+          }
+        ]
+      },
+      {
+        "title": "Value & Differentiation",
+        "items": [
+          {
+            "question": "How is Bird different from \"traditional\" consulting firms?",
+            "answer": "- Financial rigor + strategic ambition + impact\n- Pragmatic, operational approach\n- Partner relationship, not supplier\n- Adaptation to the executive's pace\n- Actionable deliverables, not theoretical"
+          },
+          {
+            "question": "What results can your clients expect?",
+            "answer": "Depending on the missions:\n- Clarified vision\n- Robust financial model\n- Reliable KPIs\n- Secured decisions\n- Accelerated fundraising\n- More efficient organization\n- Activated impact strategy"
+          },
+          {
+            "question": "What does \"succeeding with purpose\" mean at Bird?",
+            "answer": "Being performant <strong>and</strong> responsible.<br />Aligning economic, human, and sustainable ambitions."
+          },
+          {
+            "question": "What ethical or sustainable commitments do you have?",
+            "answer": "Transparency, responsible partner selection, ethical methodologies, orientation toward projects meaningful to stakeholders."
+          }
+        ]
+      },
+      {
+        "title": "Practical & Logistics",
+        "items": [
+          {
+            "question": "Do you work remotely / on-site?",
+            "answer": "Both.<br />We regularly work in a <strong>hybrid</strong> format."
+          },
+          {
+            "question": "How long does a typical mission last?",
+            "answer": "From <strong>3-6 weeks</strong> (audit, BP) to <strong>3-9 months</strong> (deployment, management)."
+          },
+          {
+            "question": "What are typical deliverables or outputs?",
+            "answer": "- Strategic plans\n- Business plans\n- Financial models\n- KPIs & dashboards\n- Scenarios & analyses\n- Impact reports\n- Operational roadmaps\n- Investor deck"
+          },
+          {
+            "question": "What is the process in case of disagreement / mission revision?",
+            "answer": "Immediate adjustment in transparency through regular exchanges and intermediate validations."
+          },
+          {
+            "question": "What guarantees / insurance / responsibilities do you take?",
+            "answer": "Professional liability engaged within applicable standards.\nStructured contracts, best-efforts obligations, secured collaboration."
+          }
+        ]
+      },
+      {
+        "title": "After-Sales & Follow-up",
+        "items": [
+          {
+            "question": "Do you offer follow-up after the mission?",
+            "answer": "Yes:\n- Monitoring\n- Monthly management\n- Post-fundraising follow-up\n- Executive coaching\n- Ad hoc advisory board"
+          },
+          {
+            "question": "How do you measure the impact or success of projects?",
+            "answer": "Through <strong>strategic and financial KPIs</strong> defined together, but also through <strong>qualitative results</strong> (clarity, structuring, efficiency)."
+          },
+          {
+            "question": "Can we come back to you for new phases or additional projects?",
+            "answer": "Yes.<br />Many clients extend to: organization, new offer, next fundraising round, repositioning."
+          },
+          {
+            "question": "Do you have testimonials / case studies available?",
+            "answer": "Yes, some can be presented in direct exchange, respecting NDAs."
+          }
+        ]
+      },
+      {
+        "title": "Additional Questions",
+        "items": [
+          {
+            "question": "When should I reach out to Bird?",
+            "answer": "When you need to structure a vision, secure your financial decisions, prepare a fundraising round, clarify your model, accelerate, or transform."
+          },
+          {
+            "question": "Can you work with my executive committee?",
+            "answer": "Yes. We support executive committees, founders, boards, finance departments, and operational teams."
+          },
+          {
+            "question": "Can you work with my other partners (accountants, lawyers, funds, banks)?",
+            "answer": "Yes. Bird can coordinate, align, or challenge different stakeholders."
+          },
+          {
+            "question": "Do you support organizations in difficulty or transformation?",
+            "answer": "Yes, if the management genuinely wishes to restructure or relaunch momentum."
+          },
+          {
+            "question": "Does Bird offer workshops or internal training?",
+            "answer": "Yes: strategy, finance, management, impact — custom-made."
+          }
+        ]
+      }
+    ]
+  },
+  "privacyPage": {
+    "heroTitle": "Legal Notices &",
+    "heroTitleHighlight": "Privacy",
+    "lastUpdate": "Last updated:",
+    "backHome": "Back to home",
+    "sections": [
+      {
+        "title": "1. Website Publisher",
+        "content": "The website birdandco.fr is published by BIRD&CO, a simplified joint-stock company (SASU) with a share capital of 1,000.00 euros, registered with the Paris Trade and Companies Register under number 984 766 595, with its registered office at 33 rue La Fayette, 75009 Paris.\nIntra-community VAT number: FR50984766595\nEmail: contact@birdandco.fr"
+      },
+      {
+        "title": "2. Publication Director",
+        "content": "The publication director is Mr. Seydina SAMB, in his capacity as President of BIRD&CO."
+      },
+      {
+        "title": "3. Website Host",
+        "content": "The website is hosted by Webflow, Inc., with its registered office at 398 11th Street, 2nd Floor, San Francisco, CA 94103, United States."
+      },
+      {
+        "title": "4. Intellectual Property",
+        "content": "The entire website, including its structure, tree structure, texts, images, graphics, and any other element composing it, constitutes a work protected by copyright and intellectual property law. Any representation, reproduction, modification, or exploitation, in whole or in part, of the website or its content, by any means and on any medium, without the prior written authorization of BIRD&CO, is strictly prohibited."
+      },
+      {
+        "title": "5. Personal Data (GDPR)",
+        "content": "BIRD&CO is committed to ensuring that the collection and processing of your data, carried out from the website birdandco.fr, comply with the General Data Protection Regulation (GDPR) and the French Data Protection Act.\nInformation collected via the contact form is recorded in a computerized file by BIRD&CO for customer management. It is kept for 3 years and is intended for the sales department.\nIn accordance with the law, you may exercise your right to access your personal data and have it corrected by contacting: contact@birdandco.fr."
+      },
+      {
+        "title": "6. Cookies",
+        "content": "The website birdandco.fr may ask you to accept cookies for statistical and display purposes. A cookie is information stored on your hard drive by the server of the website you visit."
+      },
+      {
+        "title": "7. Applicable Law",
+        "content": "This website and its legal notices are subject to French law."
+      }
+    ]
+  },
+  "termsPage": {
+    "heroTitle": "Terms and",
+    "heroTitleHighlight": "Conditions of Sale",
+    "lastUpdate": "Last updated:",
+    "backHome": "Back to home",
+    "articles": [
+      {
+        "title": "Article 1 - Purpose and Scope",
+        "content": "These General Terms and Conditions of Sale (\"GTC\") define the conditions under which BIRD&CO provides its consulting services to its professional clients (\"the Client\"). They apply to all service agreements entered into by BIRD&CO."
+      },
+      {
+        "title": "Article 2 - Quotes and Orders",
+        "content": "Any intervention by BIRD&CO is subject to a prior quote, sent by BIRD&CO to the Client. This quote specifies the nature, content, duration, and cost of the services. The order is deemed firm and final upon receipt by BIRD&CO of the quote duly dated and signed by the Client."
+      },
+      {
+        "title": "Article 3 - Duration of Services",
+        "content": "The duration of services is defined in the quote. Unless otherwise agreed, services are contracted for the specified duration and are not tacitly renewable."
+      },
+      {
+        "title": "Article 4 - Prices and Payment Terms",
+        "content": "Service prices are those detailed in the quote accepted by the Client. They are expressed in euros, exclusive of taxes. Unless otherwise agreed, invoices are payable within 30 days end of month from their date of issue. Any late payment will automatically result in the application of late payment penalties equal to three times the legal interest rate, as well as a fixed compensation for recovery costs of 40 euros."
+      },
+      {
+        "title": "Article 5 - Obligations of the Parties",
+        "content": "BIRD&CO undertakes to perform the services with all due care and diligence, in accordance with professional standards. The Client undertakes to provide BIRD&CO with all information and documents necessary for the proper performance of the services and to actively collaborate in the success of the project."
+      },
+      {
+        "title": "Article 6 - Intellectual Property",
+        "content": "BIRD&CO retains ownership of its tools, methods, and know-how developed prior to or during the performance of the services. Subject to full payment of the price, BIRD&CO transfers to the Client the intellectual property rights on deliverables specifically created for the Client. The Client shall not distribute or market the deliverables without the prior written consent of BIRD&CO."
+      },
+      {
+        "title": "Article 7 - Confidentiality",
+        "content": "Each party undertakes not to disclose confidential information received from the other party. Confidential information means all information, of whatever nature, on whatever medium, relating to the structure, organization, business, internal policies, projects, and personnel of each party."
+      },
+      {
+        "title": "Article 8 - Liability",
+        "content": "BIRD&CO's liability can only be engaged in case of proven fault attributable to it. BIRD&CO is subject to a best-efforts obligation. In no case shall BIRD&CO be held liable for indirect damages (such as loss of market, commercial prejudice, etc.) suffered by the Client."
+      },
+      {
+        "title": "Article 9 - Non-Solicitation of Personnel",
+        "content": "The Client undertakes not to poach, hire, or have work, directly or indirectly, any BIRD&CO employee who participated in the performance of the services, for the entire duration of the contract and for a period of twelve (12) months after its termination. In case of violation, the Client shall owe BIRD&CO a lump-sum indemnity equal to twelve (12) months of the last gross salary of the concerned employee."
+      },
+      {
+        "title": "Article 10 - Independence of the Parties",
+        "content": "The parties expressly declare to be and remain independent commercial partners. This contract shall in no case be construed as establishing a subordination relationship, a de facto partnership, or a joint venture between the parties. BIRD&CO performs its services in full independence and organizes its work without any subordination to the Client."
+      },
+      {
+        "title": "Article 11 - Termination",
+        "content": "In the event of a breach by one of the parties of its obligations, not remedied within thirty (30) days of receipt of a formal notice, the other party may terminate the service as of right, without prejudice to any damages. In the event of early termination at the Client's initiative not justified by a fault of BIRD&CO, amounts already paid shall remain acquired by BIRD&CO."
+      },
+      {
+        "title": "Article 12 - Force Majeure",
+        "content": "BIRD&CO's liability cannot be invoked if the non-performance or delay in the performance of one of its obligations results from a case of force majeure, as defined by Article 1218 of the French Civil Code."
+      },
+      {
+        "title": "Article 13 - Commercial References",
+        "content": "Unless the Client objects in writing, BIRD&CO is authorized to include the Client's name and logo on its commercial documents and on its website as a reference."
+      },
+      {
+        "title": "Article 14 - Entirety and Severability",
+        "content": "These GTC and the quote accepted by the Client constitute the entire agreement between the parties. If one or more provisions herein are held invalid or declared as such pursuant to a law, regulation, or following a final decision by a competent jurisdiction, the other provisions shall retain their full force and effect."
+      },
+      {
+        "title": "Article 15 - Applicable Law and Jurisdiction",
+        "content": "These GTC are governed by French law. Any dispute relating to their interpretation and/or execution falls under the exclusive jurisdiction of the courts of Paris."
+      }
+    ]
+  },
+  "ambitionPage": {
+    "heroTitle": "Our",
+    "heroTitleHighlight": "ambition",
+    "heroSubtitle": "Shaping the future of your business by transforming vision into reality.",
+    "heroCta": "Talk to a partner",
+    "dnaTitle": "The DNA of the Bird",
+    "dnaTitleHighlight": "network",
+    "dnaSubtitle": "Four fundamental values define who we are, how we work, and what we commit to delivering.",
+    "dnaItems": [
+      "<strong>Commitment:</strong> We are by your side, fully invested in the success of your projects.",
+      "<strong>Excellence:</strong> We aim for the highest quality standards in each of our missions.",
+      "<strong>Proactivity:</strong> We use our expertise and data analysis to identify opportunities and future risks, helping you stay ahead.",
+      "<strong>Trust:</strong> We build lasting relationships based on transparency and integrity."
+    ],
+    "quote": "\"The best way to predict the future is to create it.\"",
+    "quoteAuthor": "— Peter Drucker",
+    "quoteDescription": "This philosophy is at the heart of our approach. We don't simply react to events; we empower you to actively shape your company's future, transforming uncertainty into opportunity and vision into reality.",
+    "ctaTitle": "Have any",
+    "ctaTitleHighlight": "questions?",
+    "ctaFormHeading": "Leave us a message",
+    "ctaCta": "We're listening"
+  },
+  "teamPage": {
+    "heroTitle": "Our",
+    "heroTitleHighlight": "Team",
+    "heroSubtitle": "Two partners, one vision",
+    "heroDescription": "Complementary expertise serving your growth, combining financial rigor and strategic vision.",
+    "heroCta": "Schedule a meeting",
+    "dnaTitle": "Our",
+    "dnaTitleHighlight": "DNA",
+    "dnaSubtitle": "Four fundamental values that define who we are, how we work, and what we commit to delivering.",
+    "dnaItems": [
+      "<strong>Commitment:</strong> We are by your side, fully invested in the success of your projects.",
+      "<strong>Excellence:</strong> We aim for the highest quality standards in each of our missions.",
+      "<strong>Proactivity:</strong> We use our expertise and data analysis to identify opportunities and future risks, helping you stay ahead.",
+      "<strong>Trust:</strong> We build lasting relationships based on transparency and integrity."
+    ],
+    "ctaTitle": "Have any",
+    "ctaTitleHighlight": "questions?",
+    "ctaFormHeading": "Leave us a message",
+    "ctaCta": "We're listening",
+    "linkedinProfile": "LinkedIn Profile",
+    "photoOf": "Photo of"
+  },
+  "serviceDetailPage": {
+    "comingSoonTitle": "Service Coming Soon",
+    "comingSoonDescription": "This page is under construction.",
+    "backHome": "Back to home",
+    "heroCta": "Talk to a partner",
+    "ctaTitle": "Have any",
+    "ctaTitleHighlight": "questions?",
+    "ctaCta": "We're listening"
+  },
+  "logos": {
+    "title": "They",
+    "titleHighlight": "trust us",
+    "description": "An <strong>ally</strong> and <strong>tailored support</strong> for your organization (<highlight>small to large businesses and investment funds</highlight>)"
+  },
+  "personas": {
+    "title": "Who do we",
+    "titleHighlight": "serve?",
+    "items": [
+      {
+        "title": "Executives & Founders",
+        "description": "We act as your right-hand partner to structure your growth, make the right decisions, and execute your vision with confidence, securing your financial and operational performance."
+      },
+      {
+        "title": "Shareholders",
+        "description": "Benefit from a strategic vision and solid financial framework to enhance your investment. Our independent analysis and custom reporting provide complete clarity for your decisions."
+      },
+      {
+        "title": "Lawyers",
+        "description": "We collaborate on complex cases (litigation, M&A, restructuring) by providing sharp financial expertise, robust quantitative analyses, and valuations to strengthen your legal arguments."
+      },
+      {
+        "title": "Accountants",
+        "description": "Supporting exceptional engagements (fundraising, advanced reporting, restructuring), we complement your services with specialized and targeted financial expertise to achieve your objectives."
+      }
+    ]
+  },
+  "expertise": {
+    "title": "Our areas of",
+    "titleHighlight": "expertise",
+    "subtitle": "Complete financial and strategic expertise",
+    "subtitleHighlight": "to meet all your challenges",
+    "items": [
+      "Reporting & Dashboard",
+      "Cash Management",
+      "Financial Modeling",
+      "Project Management",
+      "Restructuring",
+      "Mergers & Acquisitions",
+      "Fundraising",
+      "Due Diligence"
+    ],
+    "ctaTitle": "And much more...",
+    "ctaCta": "Let's discuss your project"
+  },
+  "taskShowcase": {
+    "title": "From strategy",
+    "titleHighlight": "to execution",
+    "subtitle": "<strong>Whatever your need</strong>, we produce <strong>clear and actionable deliverables</strong> to drive your performance",
+    "items": [
+      {
+        "title": "Reporting & Dashboard",
+        "description": "Clear and essential tools for effective management of your business"
+      },
+      {
+        "title": "Cash Management",
+        "description": "Optimized cash management to finance your growth."
+      },
+      {
+        "title": "Modeling",
+        "description": "Robust and detailed forecasts to support your strategy, fundraising, and investment decisions."
+      },
+      {
+        "title": "Transactional Support",
+        "description": "End-to-end support for your M&A and fundraising operations."
+      },
+      {
+        "title": "Due Diligence",
+        "description": "In-depth analyses to secure your M&A operations."
+      },
+      {
+        "title": "On-site Intervention",
+        "description": "Physical support and direct collaboration with your teams."
+      }
+    ]
+  },
+  "valueProposition": {
+    "heading": "Beyond consulting,<br />Bird <strong>supports</strong> you<br />to <strong>meet your challenges</strong><br />strategic and financial with <strong>confidence</strong>",
+    "items": [
+      {
+        "title": "High-level support",
+        "description": "A <strong>network of corporate finance specialists</strong> combining technical rigor and the ability to step back and help executives make decisions. A key role to <strong>support your financial strategy</strong> and <strong>execute your projects</strong>."
+      },
+      {
+        "title": "Strategic ally",
+        "description": "A partner <strong>close to the executive</strong>, involved in critical thinking. A true <strong>\"alter ego\"</strong> for the executive, able to build trust allowing to <strong>anticipate needs, support decision-making</strong>, and <strong>handle sensitive topics</strong>."
+      },
+      {
+        "title": "Catalyst for progress",
+        "description": "A key player able to <strong>translate strategy into concrete actions</strong>, <strong>set objectives</strong>, <strong>track results</strong>, and <strong>adjust accordingly</strong> to have a direct impact on overall performance. The right-hand partner knows how to pace missions by being <strong>pragmatic, dynamic, and resilient</strong>."
+      },
+      {
+        "title": "Flexible and agile",
+        "description": "An ability to <strong>intervene in varied situations</strong>: structuring, growth acceleration, fundraising, crisis management, restructuring. A <strong>versatile positioning</strong> that adapts to the specific needs of the business and its evolution."
+      }
+    ]
+  },
+  "methodology": {
+    "title": "Our methodological approach",
+    "subtitle": "A structured approach to ensure the success of your projects.",
+    "steps": [
+      {
+        "title": "Diagnostic",
+        "points": [
+          "Analysis of the current state",
+          "Needs identification"
+        ]
+      },
+      {
+        "title": "Design",
+        "points": [
+          "Custom modeling",
+          "Validation with your teams"
+        ]
+      },
+      {
+        "title": "Implementation",
+        "points": [
+          "Progressive deployment",
+          "User training"
+        ]
+      },
+      {
+        "title": "Follow-up",
+        "points": [
+          "Ongoing support",
+          "Tool optimization"
+        ]
+      }
+    ]
+  },
+  "deliverables": {
+    "title": "Clear and",
+    "titleHighlight": "impactful deliverables",
+    "subtitle": "We transform complex data into visual and intuitive management tools, designed to give you complete visibility on your business.",
+    "items": [
+      {
+        "title": "Financial Modeling & Business Plan",
+        "description": "We build robust financial models and detailed business plans to support your strategy, fundraising, and investment decisions."
+      },
+      {
+        "title": "Reporting & Dashboard",
+        "description": "Custom dashboards and clear reporting for visual and intuitive management of your business."
+      },
+      {
+        "title": "On-site Intervention",
+        "description": "We travel to your premises for one-off or recurring missions, providing physical support and direct collaboration with your teams."
+      }
+    ]
+  },
+  "ambitionSection": {
+    "stats": [
+      "+50 missions completed in one year (small to large businesses)",
+      "+30 qualified consultants with 8 to 30 years of experience from renowned firms (KPMG, EY, Eight Advisory, McKinsey, etc.)",
+      "+EUR50M raised for our clients"
+    ],
+    "title": "Shaping the future of your business",
+    "description": "This philosophy is at the heart of our ambition. We don't simply react to events; we empower you to actively shape your company's future, transforming uncertainty into opportunity and vision into reality.",
+    "cta": "Let's schedule a meeting"
+  },
+  "mockups": {
+    "financialModeling": "Financial Modeling",
+    "revenue": "Revenue",
+    "grossMargin": "Gross Margin",
+    "marginRate": "Margin Rate",
+    "payroll": "Payroll",
+    "rent": "Rent",
+    "generalExpenses": "General Expenses",
+    "ebitdaRate": "EBITDA Rate",
+    "fte": "FTE",
+    "avgSalaryFte": "Avg. salary / FTE",
+    "avgRevenueFte": "Avg. revenue / FTE",
+    "pointsOfSale": "Points of sale",
+    "revenuePerPos": "Revenue / Point of sale",
+    "workingCapital": "WC",
+    "financing": "Financing",
+    "dashboard": "Dashboard - Q4 2024",
+    "mrrGrowth": "MRR Growth",
+    "churnRate": "Churn Rate",
+    "strategicWorkshop": "Strategic Workshop",
+    "inPerson": "In person",
+    "sessionAgenda": "Session agenda:",
+    "agendaItems": [
+      "Presentation to the teams",
+      "Internal process review",
+      "Performance review and KPI analysis",
+      "Identification of growth drivers",
+      "Definition of the strategic roadmap",
+      "Action plan and planning of work meetings and milestones"
+    ],
+    "confidential": "CONFIDENTIAL",
+    "diagnostic360": "360° Diagnostic - Audit Report",
+    "performanceScore": "Performance Score",
+    "financialHealth": "Financial Health",
+    "operationalEfficiency": "Operational Efficiency",
+    "growthStrategy": "Growth Strategy",
+    "revenueQuality": "Revenue quality (MRR, churn...)",
+    "profitabilityAnalysis": "Profitability analysis (EBITDA, margins)",
+    "wcNormalization": "Working capital normalization",
+    "netDebtAnalysis": "Net debt analysis",
+    "strategicPrep": "Strategic Preparation",
+    "strategicPrepDesc": "Valuation, Business Plan, VDD, Teaser, IM",
+    "executionNegotiation": "Execution & Negotiation",
+    "executionNegotiationDesc": "Data Room, Management Presentations, Offer Negotiation",
+    "ddClosing": "Due Diligence & Closing",
+    "ddClosingDesc": "Acquisition audit, Signing (SPA), Conditions precedent fulfillment",
+    "transactionalSupport": "Transactional Support",
+    "cashManagement": "Cash Management",
+    "jan": "Jan.",
+    "apr": "Apr.",
+    "jul": "Jul.",
+    "oct": "Oct.",
+    "dec": "Dec.",
+    "onSiteIntervention": "On-site Intervention",
+    "onSiteAgendaItems": [
+      "Presentation to the teams",
+      "Internal process review",
+      "Performance review and KPI analysis",
+      "Identification of growth drivers",
+      "Definition of the strategic roadmap",
+      "Definition of the action plan",
+      "Planning of work meetings and milestones"
+    ]
+  }
+}

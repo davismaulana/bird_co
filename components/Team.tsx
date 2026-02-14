@@ -1,12 +1,12 @@
 import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import Animate from './Animate';
-import { LinkedInIcon, teamMembers } from '../constants';
+import { LinkedInIcon, useTeamMembers } from '../constants';
 
 interface TeamProps {
   heading?: string;
   introText?: string;
-  teamMembers?: typeof teamMembers;
+  teamMembers?: ReturnType<typeof useTeamMembers>;
   bottomText?: string;
 }
 
@@ -17,7 +17,8 @@ const Team: React.FC<TeamProps> = ({
   bottomText
 }) => {
   const { t } = useTranslation();
-  const membersToDisplay = propTeamMembers || teamMembers;
+  const defaultTeamMembers = useTeamMembers();
+  const membersToDisplay = propTeamMembers || defaultTeamMembers;
   const displayedTeamMembers = [...membersToDisplay].reverse();
 
   return (
@@ -102,7 +103,7 @@ const Team: React.FC<TeamProps> = ({
                           href={member.linkedinUrl}
                           rel="noopener noreferrer"
                           target="_blank"
-                          aria-label={`LinkedIn de ${member.name}`}
+                          aria-label={t('common:accessibility.linkedinOf', { name: member.name })}
                           className="text-[#27013D] hover:text-[#6D0037] transition-colors flex-shrink-0"
                         >
                           <LinkedInIcon className="h-5 w-5" />

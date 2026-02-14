@@ -23,7 +23,9 @@
     "openMenu": "Ouvrir le menu",
     "closeMenu": "Fermer le menu",
     "backToMainMenu": "Retour au menu principal",
-    "scrollDown": "Faire défiler vers le bas"
+    "scrollDown": "Faire défiler vers le bas",
+    "backToTop": "Retour en haut",
+    "linkedinOf": "LinkedIn de {{name}}"
   },
   "errors": {
     "404": "404",
