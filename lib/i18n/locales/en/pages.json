@@ -517,6 +517,11 @@
   },
   "mockups": {
     "financialModeling": "Financial Modeling",
+    "pnl": "P&L",
+    "cashFlow": "Cash Flow",
+    "kpis": "KPIs",
+    "openingCash": "Opening cash balance",
+    "closingCash": "Cash End of Period",
     "revenue": "Revenue",
     "grossMargin": "Gross Margin",
     "marginRate": "Margin Rate",

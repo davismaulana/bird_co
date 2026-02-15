@@ -231,7 +231,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
         <div className="min-w-[340px] sm:min-w-[520px]">
           {/* Years header */}
           <div className={`${cols} text-slate-600 font-semibold px-1 mb-1 py-0.5`}>
-            <span className="col-span-1">P&amp;L</span>
+            <span className="col-span-1">{t('pages:mockups.pnl')}</span>
             <span className={`${num}`}>2025</span>
             <span className={`${num}`}>2026</span>
             <span className={`${num}`}>2027</span>
@@ -318,7 +318,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
 
         {/* -------- KPIs -------- */}
         <div className="min-w-[340px] sm:min-w-[520px]">
-          <div className="px-1 py-0.5 mb-1 font-semibold text-slate-600">KPIs</div>
+          <div className="px-1 py-0.5 mb-1 font-semibold text-slate-600">{t('pages:mockups.kpis')}</div>
           <div className="bg-slate-50 rounded-lg p-1.5 border border-slate-100 text-[9px] sm:text-[10px]">
             <Row>
               <span className={`${cell}`}>{t('pages:mockups.fte')}</span>
@@ -370,7 +370,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
         {/* -------- Cash Flow -------- */}
         <div className="min-w-[340px] sm:min-w-[520px]">
           <div className={`${cols} text-slate-600 font-semibold px-1 mb-1 py-0.5`}>
-            <span className="col-span-1">Cash Flow</span>
+            <span className="col-span-1">{t('pages:mockups.cashFlow')}</span>
             <span className={`${num}`}>2025</span>
             <span className={`${num}`}>2026</span>
             <span className={`${num}`}>2027</span>
@@ -380,7 +380,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
 
           <div className="bg-slate-50 rounded-lg p-1.5 border border-slate-100 text-[9px] sm:text-[10px]">
             <HighlightRow>
-              <span className={`${cell}`}>Opening cash balance</span>
+              <span className={`${cell}`}>{t('pages:mockups.openingCash')}</span>
               <span className={`${cell} ${num} ${vcol}`}>0,2m€</span>
               <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>0,8m€</span>
               <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>1,5m€</span>
@@ -425,7 +425,7 @@ export const FinancialReportMockup: React.FC<{ theme?: string; disableHover?: bo
             </Row>
 
             <HighlightRow>
-              <span className={`${cell}`}>Cash End of Period</span>
+              <span className={`${cell}`}>{t('pages:mockups.closingCash')}</span>
               <span className={`${cell} ${num} ${vcol}`}>0,8m€</span>
               <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>1,5m€</span>
               <span className={`${cell} ${num} text-emerald-600 ${vcol}`}>2,9m€</span>

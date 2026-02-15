@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 interface LanguageOption {
   code: string;
@@ -8,14 +8,15 @@ interface LanguageOption {
   flag: string;
 }
 
+// Language labels should be in their native language (correct UX)
 const languages: LanguageOption[] = [
   { code: 'fr', label: 'Français', flag: '🇫🇷' },
   { code: 'en', label: 'English', flag: '🇬🇧' },
 ];
 
-// URL slug mappings between languages
-const slugMappings: Record<string, Record<string, string>> = {
-  // French to English
+// URL slug mappings between languages (FIX #22: More robust approach using full slug matching)
+const SLUG_MAPPINGS: Record<string, Record<string, string>> = {
+  // French slugs to English
   fr: {
     'pilotage-planification': 'steering-planning',
     'cfo-part-time': 'part-time-cfo',
@@ -24,7 +25,7 @@ const slugMappings: Record<string, Record<string, string>> = {
     'politique-de-confidentialite': 'privacy-policy',
     'conditions-generales-utilisation': 'terms-of-service',
   },
-  // English to French (reverse mapping)
+  // English slugs to French
   en: {
     'steering-planning': 'pilotage-planification',
     'part-time-cfo': 'cfo-part-time',
@@ -38,6 +39,7 @@ const slugMappings: Record<string, Record<string, string>> = {
 const LanguageSwitcher: React.FC = () => {
   const { i18n, t } = useTranslation();
   const location = useLocation();
+  const navigate = useNavigate(); // FIX #12: Use navigate for client-side routing
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -56,18 +58,23 @@ const LanguageSwitcher: React.FC = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const translatePath = (path: string, fromLang: string, toLang: string): string => {
+  // FIX #22: Improved slug translation with proper path parsing
+  const translatePath = (pathname: string, fromLang: string, toLang: string): string => {
     // Remove current language prefix
-    let pathWithoutLang = path.replace(/^\/(en|fr)/, '') || '/';
-    
-    // Translate slugs in the path
-    const mappings = slugMappings[fromLang];
+    let pathWithoutLang = pathname.replace(/^\/(en|fr)/i, '') || '/';
+
+    // Parse path segments and translate slugs
+    const segments = pathWithoutLang.split('/').filter(Boolean);
+    const mappings = SLUG_MAPPINGS[fromLang];
+
     if (mappings) {
-      Object.entries(mappings).forEach(([fromSlug, toSlug]) => {
-        pathWithoutLang = pathWithoutLang.replace(fromSlug, toSlug);
+      const translatedSegments = segments.map(segment => {
+        // Check if this segment has a translation
+        return mappings[segment] || segment;
       });
+      pathWithoutLang = '/' + translatedSegments.join('/');
     }
-    
+
     // Add new language prefix
     return `/${toLang}${pathWithoutLang === '/' ? '' : pathWithoutLang}`;
   };
@@ -78,10 +85,22 @@ const LanguageSwitcher: React.FC = () => {
       return;
     }
 
+    // Translate the path
     const newPath = translatePath(location.pathname, currentLang, langCode);
-    
-    // Update URL and navigate
-    window.location.href = newPath;
+
+    // FIX #10, #11: Preserve hash and query parameters
+    const hash = location.hash || '';
+    const search = location.search || '';
+    const fullPath = `${newPath}${search}${hash}`;
+
+    // FIX #12: Use client-side navigation instead of full page reload
+    // First change the language
+    i18n.changeLanguage(langCode);
+
+    // Then navigate to the new path
+    navigate(fullPath, { replace: false });
+
+    setIsOpen(false);
   };
 
   return (

@@ -181,8 +181,12 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                               e.preventDefault();
                               const element = document.getElementById('solutions');
                               if (element) {
-                                element.scrollIntoView({ behavior: 'smooth' });
-                                window.history.pushState(null, '', `/${currentLang}/#solutions`);
+                                // FIX #19: Force scroll even on consecutive clicks
+                                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                // Update URL without triggering navigation
+                                if (window.location.hash !== '#solutions') {
+                                  window.history.pushState(null, '', `/${currentLang}/#solutions`);
+                                }
                               }
                             }
                           }}
@@ -220,8 +224,12 @@ const Header: React.FC<{ pathname: string }> = ({ pathname }) => {
                           if (id) {
                             const element = document.getElementById(id);
                             if (element) {
-                              element.scrollIntoView({ behavior: 'smooth' });
-                              window.history.pushState(null, '', item.href);
+                              // FIX #19: Force scroll even on consecutive clicks
+                              element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                              // Update URL without triggering navigation
+                              if (window.location.hash !== `#${id}`) {
+                                window.history.pushState(null, '', item.href);
+                              }
                             }
                           }
                         }

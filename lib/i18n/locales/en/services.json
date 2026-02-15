@@ -178,7 +178,7 @@
         },
         "financing": {
           "title": "Financing Search",
-          "items": ["Business Angels", "Incubators and Accelerators", "Crowdfunding Platforms", "Investment Funds", "Bank Loans", "Microloans", "Mezzanine Loans", "Public Grants and Subsidies", "Honor Loan Networks", "Private Investors via Specialized Platforms"]
+          "items": ["Business Angels", "Incubators and Accelerators", "Crowdfunding Platforms", "Investment Funds", "Bank Loans", "Microloans", "Participating Loans", "Public Grants and Subsidies", "Honor Loan Networks", "Private Investors via Specialized Platforms"]
         }
       },
       "ambitionTitle": "Our ambition",

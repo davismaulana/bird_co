@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 
 export type NotificationType = 'success' | 'error';
@@ -50,7 +50,6 @@ const NotificationContainer = styled.div<{ $isVisible: boolean; $type: Notificat
   
   animation: ${props => props.$isVisible ? css`${slideIn} 0.4s ease-out forwards` : css`${slideOut} 0.4s ease-in forwards`};
   
-  /* Setup unmount delay handling in parent or use transitions */
   pointer-events: ${props => props.$isVisible ? 'auto' : 'none'};
 `;
 
@@ -90,17 +89,29 @@ const CloseButton = styled.button`
   }
 `;
 
+// FIX #28: Proper exit animation - render component during exit animation
 const Notification: React.FC<NotificationProps> = ({ message, type, isVisible, onClose }) => {
+    // Track if we should render the component (delayed unmount for exit animation)
+    const [shouldRender, setShouldRender] = useState(isVisible);
+    
     useEffect(() => {
         if (isVisible) {
+            setShouldRender(true);
             const timer = setTimeout(() => {
                 onClose();
             }, 5000); // Auto close after 5 seconds
             return () => clearTimeout(timer);
+        } else {
+            // Delay unmount to allow exit animation to play
+            const timer = setTimeout(() => {
+                setShouldRender(false);
+            }, 400); // Match animation duration
+            return () => clearTimeout(timer);
         }
     }, [isVisible, onClose]);
 
-    if (!isVisible) return null;
+    // Don't render if not visible AND animation has completed
+    if (!shouldRender) return null;
 
     return (
         <NotificationContainer $isVisible={isVisible} $type={type}>

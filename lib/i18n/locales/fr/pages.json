@@ -505,6 +505,11 @@
   },
   "mockups": {
     "financialModeling": "Modélisation Financière",
+    "pnl": "Compte de résultat",
+    "cashFlow": "Flux de trésorerie",
+    "kpis": "KPIs",
+    "openingCash": "Trésorerie d'ouverture",
+    "closingCash": "Trésorerie de clôture",
     "revenue": "Chiffre d'affaires",
     "grossMargin": "Marge brute",
     "marginRate": "Taux de marge",
