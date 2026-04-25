@@ -16,8 +16,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     res.status(405).json({ error: 'method_not_allowed' });
     return;
   }
-  const expected = process.env.ADMIN_PASSWORD;
-  if (!expected || !adminSecret()) {
+  const expectedPassword = process.env.ADMIN_PASSWORD;
+  const expectedUsername = process.env.ADMIN_USERNAME || 'admin';
+  if (!expectedPassword || !adminSecret()) {
     res.status(500).json({ error: 'admin_not_configured' });
     return;
   }
@@ -29,12 +30,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (delay) await sleep(delay);
 
   const body = (typeof req.body === 'string' ? safeParse(req.body) : req.body) as
-    | { password?: unknown }
+    | { username?: unknown; password?: unknown }
     | null;
-  const provided = typeof body?.password === 'string' ? body.password : '';
-  if (!provided || !constantTimeEqual(provided, expected)) {
+  const providedUsername = typeof body?.username === 'string' ? body.username : '';
+  const providedPassword = typeof body?.password === 'string' ? body.password : '';
+
+  // Always run both compares so timing doesn't reveal which field was wrong.
+  const userOk = constantTimeEqual(providedUsername, expectedUsername);
+  const passOk = constantTimeEqual(providedPassword, expectedPassword);
+  if (!providedUsername || !providedPassword || !userOk || !passOk) {
     recordFailure(ip);
-    res.status(401).json({ error: 'invalid_password' });
+    res.status(401).json({ error: 'invalid_credentials' });
     return;
   }
   clearFailures(ip);
@@ -42,7 +48,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.status(200).json({ ok: true });
 }
 
-const safeParse = (s: string): { password?: unknown } | null => {
+const safeParse = (s: string): { username?: unknown; password?: unknown } | null => {
   try {
     return JSON.parse(s);
   } catch {

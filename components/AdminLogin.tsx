@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 const AdminLogin: React.FC = () => {
   const navigate = useNavigate();
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -16,14 +17,14 @@ const AdminLogin: React.FC = () => {
       const res = await fetch('/api/admin/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ password }),
+        body: JSON.stringify({ username, password }),
         credentials: 'same-origin',
       });
       if (res.ok) {
         navigate('/admin', { replace: true });
         return;
       }
-      if (res.status === 401) setError('Invalid password.');
+      if (res.status === 401) setError('Invalid username or password.');
       else setError('Login failed. Try again.');
     } catch {
       setError('Network error. Try again.');
@@ -39,10 +40,20 @@ const AdminLogin: React.FC = () => {
         <p className="mt-1 text-sm text-gray-600">Visitor analytics dashboard.</p>
         <form onSubmit={submit} className="mt-6 space-y-4">
           <label className="block">
+            <span className="text-xs font-semibold text-gray-700">Username</span>
+            <input
+              type="text"
+              autoFocus
+              autoComplete="username"
+              value={username}
+              onChange={e => setUsername(e.target.value)}
+              className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7C3AED] focus:border-[#7C3AED]"
+            />
+          </label>
+          <label className="block">
             <span className="text-xs font-semibold text-gray-700">Password</span>
             <input
               type="password"
-              autoFocus
               autoComplete="current-password"
               value={password}
               onChange={e => setPassword(e.target.value)}
@@ -56,7 +67,7 @@ const AdminLogin: React.FC = () => {
           )}
           <button
             type="submit"
-            disabled={submitting || !password}
+            disabled={submitting || !username || !password}
             className="w-full px-4 py-2 text-sm font-semibold rounded-md bg-[#27013D] text-white hover:bg-[#3a0259] disabled:opacity-50"
           >
             {submitting ? 'Signing in…' : 'Sign in'}
