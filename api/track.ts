@@ -1,4 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
+import { getSql } from './_lib/db';
 
 type TrackBody = {
   sessionId?: unknown;
@@ -6,6 +7,24 @@ type TrackBody = {
   lang?: unknown;
   referrer?: unknown;
   ua?: unknown;
+};
+
+const PROD_ORIGINS = new Set<string>([
+  'https://www.birdandco.fr',
+  'https://birdandco.fr',
+]);
+
+const isAllowedOrigin = (origin: string | undefined): boolean => {
+  if (!origin) return true;
+  if (PROD_ORIGINS.has(origin)) return true;
+  try {
+    const u = new URL(origin);
+    if (u.hostname.endsWith('.vercel.app')) return true;
+    if (u.hostname === 'localhost' || u.hostname === '127.0.0.1') return true;
+  } catch {
+    return false;
+  }
+  return false;
 };
 
 const isStr = (v: unknown, max: number) =>
@@ -33,11 +52,51 @@ const parseUA = (ua: string) => {
   return { device, browser, os };
 };
 
+const RATE_CAPACITY = 30;
+const RATE_REFILL_PER_MS = RATE_CAPACITY / 60_000;
+const buckets = new Map<string, { tokens: number; updatedAt: number }>();
+
+const consumeToken = (key: string): boolean => {
+  const now = Date.now();
+  const entry = buckets.get(key);
+  if (!entry) {
+    buckets.set(key, { tokens: RATE_CAPACITY - 1, updatedAt: now });
+    return true;
+  }
+  const refill = (now - entry.updatedAt) * RATE_REFILL_PER_MS;
+  entry.tokens = Math.min(RATE_CAPACITY, entry.tokens + refill);
+  entry.updatedAt = now;
+  if (entry.tokens < 1) return false;
+  entry.tokens -= 1;
+  return true;
+};
+
+const setCors = (req: VercelRequest, res: VercelResponse) => {
+  const origin = req.headers.origin as string | undefined;
+  if (origin && isAllowedOrigin(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+    res.setHeader('Vary', 'Origin');
+  }
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+};
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader('Cache-Control', 'no-store');
+  setCors(req, res);
 
+  if (req.method === 'OPTIONS') {
+    res.status(204).end();
+    return;
+  }
   if (req.method !== 'POST') {
     res.status(405).json({ error: 'method_not_allowed' });
+    return;
+  }
+
+  const origin = req.headers.origin as string | undefined;
+  if (!isAllowedOrigin(origin)) {
+    res.status(403).json({ error: 'origin_not_allowed' });
     return;
   }
 
@@ -58,6 +117,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   const sessionId = body.sessionId as string;
+  if (!consumeToken(sessionId)) {
+    res.status(429).json({ error: 'rate_limited' });
+    return;
+  }
+
   const path = body.path as string;
   const lang = (body.lang as string).toLowerCase();
   const referrer =
@@ -100,24 +164,5 @@ const decodeHeader = (v: string | undefined): string | null => {
     return decodeURIComponent(v);
   } catch {
     return v;
-  }
-};
-
-let sqlSingleton: ((strings: TemplateStringsArray, ...values: unknown[]) => Promise<unknown>) | null | undefined;
-
-const getSql = async () => {
-  if (sqlSingleton !== undefined) return sqlSingleton;
-  if (!process.env.POSTGRES_URL) {
-    sqlSingleton = null;
-    return null;
-  }
-  try {
-    // @ts-expect-error — optional dep, added to package.json by the engineer when Postgres is provisioned
-    const mod = await import('@vercel/postgres');
-    sqlSingleton = mod.sql as unknown as typeof sqlSingleton;
-    return sqlSingleton;
-  } catch {
-    sqlSingleton = null;
-    return null;
   }
 };

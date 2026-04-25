@@ -24,6 +24,8 @@ import ValueProposition from './components/ValueProposition';
 import HeroAnimation from './components/HeroAnimation';
 import Editor from './components/Editor';
 import ConsentBanner from './components/ConsentBanner';
+import AdminLogin from './components/AdminLogin';
+import AdminDashboard from './components/AdminDashboard';
 import { useTracking } from './lib/tracking';
 
 // Slug mappings for language switching and validation
@@ -405,8 +407,13 @@ const App: React.FC = () => {
 
   // Redirect non-prefixed paths to language-prefixed paths (FIX #5)
   useEffect(() => {
-    // Skip if path already has language prefix or is editor
-    if (pathname.match(/^\/(en|fr)/i) || pathname === '/editor') {
+    // Skip if path already has language prefix, is editor, or is admin (intentionally outside i18n)
+    if (
+      pathname.match(/^\/(en|fr)/i) ||
+      pathname === '/editor' ||
+      pathname === '/admin' ||
+      pathname.startsWith('/admin/')
+    ) {
       return;
     }
 
@@ -548,6 +555,14 @@ const App: React.FC = () => {
       }
     }
   }, [pathname, hash]);
+
+  // Admin routes — outside the language-prefixed SPA, no header/footer/banner/tracker.
+  if (pathname === '/admin/login') {
+    return <AdminLogin />;
+  }
+  if (pathname === '/admin' || pathname.startsWith('/admin/')) {
+    return <AdminDashboard />;
+  }
 
   return (
     <>
