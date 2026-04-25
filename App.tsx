@@ -23,6 +23,8 @@ import FAQSection from './components/FAQSection';
 import ValueProposition from './components/ValueProposition';
 import HeroAnimation from './components/HeroAnimation';
 import Editor from './components/Editor';
+import ConsentBanner from './components/ConsentBanner';
+import { useTracking } from './lib/tracking';
 
 // Slug mappings for language switching and validation
 const SLUG_MAPPINGS: Record<string, Record<string, string>> = {
@@ -547,7 +549,18 @@ const App: React.FC = () => {
     }
   }, [pathname, hash]);
 
-  return <AppContent pathname={pathname} pathWithoutLang={pathWithoutLang} currentLang={currentLang} t={t} />;
+  return (
+    <>
+      <AppContent pathname={pathname} pathWithoutLang={pathWithoutLang} currentLang={currentLang} t={t} />
+      <ConsentBanner />
+      <Tracker />
+    </>
+  );
+};
+
+const Tracker: React.FC = () => {
+  useTracking();
+  return null;
 };
 
 export default App;

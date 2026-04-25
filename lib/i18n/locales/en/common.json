@@ -35,5 +35,12 @@
     "fr": "Français",
     "en": "English",
     "switchLanguage": "Switch language"
+  },
+  "cookie": {
+    "title": "Cookies & privacy",
+    "message": "We use a single audience-measurement cookie to understand how the site is used (country, page, language). No personal data is stored. You can accept or refuse.",
+    "accept": "Accept",
+    "refuse": "Refuse",
+    "privacyLink": "Read our privacy policy"
   }
 }
