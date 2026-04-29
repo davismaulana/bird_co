@@ -45,8 +45,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     await client.sql`CREATE INDEX IF NOT EXISTS idx_visits_country ON visits (country)`;
     res.status(200).json({ ok: true });
   } catch (err) {
-    const msg = err instanceof Error ? err.message : String(err);
-    res.status(500).json({ error: 'sql_failed', message: msg });
+    const e = err as Record<string, unknown>;
+    res.status(500).json({
+      error: 'sql_failed',
+      name: err instanceof Error ? err.name : typeof err,
+      message: err instanceof Error ? err.message : null,
+      code: e?.code ?? null,
+      detail: e?.detail ?? null,
+      hint: e?.hint ?? null,
+      raw: JSON.stringify(err, Object.getOwnPropertyNames(err ?? {})).slice(0, 1000),
+    });
   } finally {
     await client.end().catch(() => {});
   }
