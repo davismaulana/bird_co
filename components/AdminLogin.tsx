@@ -1,36 +1,21 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ADMIN_USERNAME, ADMIN_PASSWORD, ADMIN_SESSION_KEY } from '@/lib/adminCreds';
 
 const AdminLogin: React.FC = () => {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const submit = async (e: React.FormEvent) => {
+  const submit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (submitting) return;
-    setSubmitting(true);
-    setError(null);
-    try {
-      const res = await fetch('/api/admin/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password }),
-        credentials: 'same-origin',
-      });
-      if (res.ok) {
-        navigate('/admin', { replace: true });
-        return;
-      }
-      if (res.status === 401) setError('Invalid username or password.');
-      else setError('Login failed. Try again.');
-    } catch {
-      setError('Network error. Try again.');
-    } finally {
-      setSubmitting(false);
+    if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
+      sessionStorage.setItem(ADMIN_SESSION_KEY, password);
+      navigate('/admin', { replace: true });
+      return;
     }
+    setError('Invalid username or password.');
   };
 
   return (
@@ -67,10 +52,10 @@ const AdminLogin: React.FC = () => {
           )}
           <button
             type="submit"
-            disabled={submitting || !username || !password}
+            disabled={!username || !password}
             className="w-full px-4 py-2 text-sm font-semibold rounded-md bg-[#27013D] text-white hover:bg-[#3a0259] disabled:opacity-50"
           >
-            {submitting ? 'Signing in…' : 'Sign in'}
+            Sign in
           </button>
         </form>
       </div>

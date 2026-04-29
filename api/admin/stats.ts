@@ -1,6 +1,12 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { requireAdmin } from '../_lib/admin-auth';
+import { ADMIN_PASSWORD } from '../../lib/adminCreds';
 import { getSql } from '../_lib/db';
+
+const isAuthorized = (req: VercelRequest): boolean => {
+  const auth = req.headers.authorization || '';
+  const provided = auth.startsWith('Bearer ') ? auth.slice('Bearer '.length) : '';
+  return provided === ADMIN_PASSWORD;
+};
 
 const parseISO = (value: unknown): Date | null => {
   if (typeof value !== 'string' || !value) return null;
@@ -14,7 +20,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     res.status(405).json({ error: 'method_not_allowed' });
     return;
   }
-  if (!requireAdmin(req, res)) return;
+  if (!isAuthorized(req)) {
+    res.status(401).json({ error: 'unauthorized' });
+    return;
+  }
   const sql = await getSql();
   if (!sql) {
     res.status(500).json({ error: 'postgres_not_configured' });

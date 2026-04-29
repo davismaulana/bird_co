@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ADMIN_SESSION_KEY } from '@/lib/adminCreds';
 
 type Range = '24h' | '7d' | '30d' | 'all';
 
@@ -113,16 +114,29 @@ const AdminDashboard: React.FC = () => {
 
   const params = useMemo(() => rangeToFromTo(range), [range]);
 
+  useEffect(() => {
+    if (!sessionStorage.getItem(ADMIN_SESSION_KEY)) {
+      navigate('/admin/login', { replace: true });
+    }
+  }, [navigate]);
+
   const load = useCallback(async () => {
     setLoading(true);
     setError(null);
+    const token = sessionStorage.getItem(ADMIN_SESSION_KEY);
+    if (!token) {
+      navigate('/admin/login', { replace: true });
+      return;
+    }
+    const headers = { Authorization: `Bearer ${token}` };
     try {
       const qs = new URLSearchParams(params).toString();
       const [s, v] = await Promise.all([
-        fetch(`/api/admin/stats?${qs}`, { credentials: 'same-origin' }),
-        fetch(`/api/admin/visitors?${qs}&limit=100`, { credentials: 'same-origin' }),
+        fetch(`/api/admin/stats?${qs}`, { headers }),
+        fetch(`/api/admin/visitors?${qs}&limit=100`, { headers }),
       ]);
       if (s.status === 401 || v.status === 401) {
+        sessionStorage.removeItem(ADMIN_SESSION_KEY);
         navigate('/admin/login', { replace: true });
         return;
       }
@@ -147,8 +161,8 @@ const AdminDashboard: React.FC = () => {
     void load();
   }, [load]);
 
-  const logout = async () => {
-    await fetch('/api/admin/logout', { method: 'POST', credentials: 'same-origin' });
+  const logout = () => {
+    sessionStorage.removeItem(ADMIN_SESSION_KEY);
     navigate('/admin/login', { replace: true });
   };
 
@@ -192,7 +206,7 @@ const AdminDashboard: React.FC = () => {
               Refresh
             </button>
             <button
-              onClick={() => void logout()}
+              onClick={logout}
               className="text-xs px-3 py-1 rounded bg-white text-[#27013D] hover:bg-gray-100"
             >
               Sign out

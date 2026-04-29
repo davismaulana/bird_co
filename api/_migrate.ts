@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { adminSecret, constantTimeEqual } from './_lib/admin-auth';
+import { ADMIN_PASSWORD } from '../lib/adminCreds';
 import { getSql } from './_lib/db';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
@@ -8,14 +8,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     res.status(405).json({ error: 'method_not_allowed' });
     return;
   }
-  const secret = adminSecret();
-  if (!secret) {
-    res.status(500).json({ error: 'admin_secret_not_configured' });
-    return;
-  }
   const auth = req.headers.authorization || '';
   const provided = auth.startsWith('Bearer ') ? auth.slice('Bearer '.length) : '';
-  if (!provided || !constantTimeEqual(provided, secret)) {
+  if (provided !== ADMIN_PASSWORD) {
     res.status(401).json({ error: 'unauthorized' });
     return;
   }
