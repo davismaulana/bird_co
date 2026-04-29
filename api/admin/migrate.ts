@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { ADMIN_PASSWORD } from '../../lib/adminCreds';
-import { getSql } from '../_lib/db';
+import { ADMIN_PASSWORD } from '../../lib/adminCreds.js';
+import { getSql } from '../_lib/db.js';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader('Cache-Control', 'no-store');
