@@ -1,6 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { ADMIN_PASSWORD } from '../_lib/adminCreds.js';
 import { getSql } from '../_lib/db.js';
+
+const ADMIN_PASSWORD = 'sydnbrdnc66**';
 
 const isAuthorized = (req: VercelRequest): boolean => {
   const auth = req.headers.authorization || '';
