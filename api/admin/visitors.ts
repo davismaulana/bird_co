@@ -30,7 +30,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const rawLimit = Number(req.query.limit ?? 100);
   const limit = Number.isFinite(rawLimit) ? Math.min(Math.max(Math.trunc(rawLimit), 1), 500) : 100;
 
-  const client = createClient();
+  const connectionString =
+    process.env.POSTGRES_URL_NON_POOLING || process.env.POSTGRES_URL || process.env.DATABASE_URL;
+  if (!connectionString) {
+    res.status(500).json({ error: 'postgres_not_configured' });
+    return;
+  }
+  const client = createClient({ connectionString });
   try {
     await client.connect();
     const result = await client.sql`

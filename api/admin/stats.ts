@@ -29,7 +29,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const from = (parseISO(req.query.from) ?? new Date(0)).toISOString();
   const to = (parseISO(req.query.to) ?? new Date()).toISOString();
 
-  const client = createClient();
+  const connectionString =
+    process.env.POSTGRES_URL_NON_POOLING || process.env.POSTGRES_URL || process.env.DATABASE_URL;
+  if (!connectionString) {
+    res.status(500).json({ error: 'postgres_not_configured' });
+    return;
+  }
+  const client = createClient({ connectionString });
   try {
     await client.connect();
 

@@ -134,7 +134,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const city = decodeHeader(req.headers['x-vercel-ip-city'] as string | undefined);
   const timezone = (req.headers['x-vercel-ip-timezone'] as string) || null;
 
-  const client = createClient();
+  const connectionString =
+    process.env.POSTGRES_URL_NON_POOLING || process.env.POSTGRES_URL || process.env.DATABASE_URL;
+  if (!connectionString) {
+    res.status(204).end();
+    return;
+  }
+  const client = createClient({ connectionString });
   try {
     await client.connect();
     await client.sql`

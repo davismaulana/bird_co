@@ -15,7 +15,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     res.status(401).json({ error: 'unauthorized' });
     return;
   }
-  const client = createClient();
+  const connectionString =
+    process.env.POSTGRES_URL_NON_POOLING || process.env.POSTGRES_URL || process.env.DATABASE_URL;
+  if (!connectionString) {
+    res.status(500).json({ error: 'postgres_not_configured' });
+    return;
+  }
+  const client = createClient({ connectionString });
   try {
     await client.connect();
     await client.sql`
