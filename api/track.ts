@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { getSql } from './_lib/db.js';
+import { createClient } from '@vercel/postgres';
 
 type TrackBody = {
   sessionId?: unknown;
@@ -134,18 +134,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const city = decodeHeader(req.headers['x-vercel-ip-city'] as string | undefined);
   const timezone = (req.headers['x-vercel-ip-timezone'] as string) || null;
 
+  const client = createClient();
   try {
-    const sql = await getSql();
-    if (!sql) {
-      res.status(204).end();
-      return;
-    }
-    await sql/* sql */`
+    await client.connect();
+    await client.sql`
       INSERT INTO visits (session_id, path, lang, referrer, country, city, timezone, ua_device, ua_browser, ua_os)
       VALUES (${sessionId}, ${path}, ${lang}, ${referrer}, ${country}, ${city}, ${timezone}, ${device}, ${browser}, ${os})
     `;
   } catch {
     // Never fail the page on a tracking error.
+  } finally {
+    await client.end().catch(() => {});
   }
   res.status(204).end();
 }
