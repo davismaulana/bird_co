@@ -1,5 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { createClient } from '@vercel/postgres';
+import pg from 'pg';
+
+const { Client } = pg;
 
 const ADMIN_PASSWORD = 'sydnbrdnc66**';
 
@@ -25,47 +27,52 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     res.status(401).json({ error: 'unauthorized' });
     return;
   }
-
-  const from = (parseISO(req.query.from) ?? new Date(0)).toISOString();
-  const to = (parseISO(req.query.to) ?? new Date()).toISOString();
-
   const connectionString =
     process.env.POSTGRES_URL_NON_POOLING || process.env.POSTGRES_URL || process.env.DATABASE_URL;
   if (!connectionString) {
     res.status(500).json({ error: 'postgres_not_configured' });
     return;
   }
-  const client = createClient({ connectionString });
+
+  const from = (parseISO(req.query.from) ?? new Date(0)).toISOString();
+  const to = (parseISO(req.query.to) ?? new Date()).toISOString();
+
+  const client = new Client({ connectionString, ssl: { rejectUnauthorized: false } });
   try {
     await client.connect();
 
-    const totalsRow = await client.sql`
-      SELECT COUNT(*)::int AS total_visits, COUNT(DISTINCT session_id)::int AS unique_sessions
-      FROM visits WHERE created_at >= ${from} AND created_at <= ${to}
-    `;
+    const totalsRow = await client.query(
+      `SELECT COUNT(*)::int AS total_visits, COUNT(DISTINCT session_id)::int AS unique_sessions
+       FROM visits WHERE created_at >= $1 AND created_at <= $2`,
+      [from, to],
+    );
     const totalVisits = Number((totalsRow.rows[0] as Record<string, unknown>)?.total_visits ?? 0);
     const uniqueSessions = Number((totalsRow.rows[0] as Record<string, unknown>)?.unique_sessions ?? 0);
 
-    const countriesRow = await client.sql`
-      SELECT COALESCE(country, 'unknown') AS country, COUNT(*)::int AS visits
-      FROM visits WHERE created_at >= ${from} AND created_at <= ${to}
-      GROUP BY country ORDER BY visits DESC LIMIT 10
-    `;
-    const pagesRow = await client.sql`
-      SELECT path, COUNT(*)::int AS visits
-      FROM visits WHERE created_at >= ${from} AND created_at <= ${to}
-      GROUP BY path ORDER BY visits DESC LIMIT 10
-    `;
-    const langRow = await client.sql`
-      SELECT lang, COUNT(*)::int AS visits
-      FROM visits WHERE created_at >= ${from} AND created_at <= ${to}
-      GROUP BY lang
-    `;
-    const deviceRow = await client.sql`
-      SELECT ua_device AS device, COUNT(*)::int AS visits
-      FROM visits WHERE created_at >= ${from} AND created_at <= ${to}
-      GROUP BY ua_device
-    `;
+    const countriesRow = await client.query(
+      `SELECT COALESCE(country, 'unknown') AS country, COUNT(*)::int AS visits
+       FROM visits WHERE created_at >= $1 AND created_at <= $2
+       GROUP BY country ORDER BY visits DESC LIMIT 10`,
+      [from, to],
+    );
+    const pagesRow = await client.query(
+      `SELECT path, COUNT(*)::int AS visits
+       FROM visits WHERE created_at >= $1 AND created_at <= $2
+       GROUP BY path ORDER BY visits DESC LIMIT 10`,
+      [from, to],
+    );
+    const langRow = await client.query(
+      `SELECT lang, COUNT(*)::int AS visits
+       FROM visits WHERE created_at >= $1 AND created_at <= $2
+       GROUP BY lang`,
+      [from, to],
+    );
+    const deviceRow = await client.query(
+      `SELECT ua_device AS device, COUNT(*)::int AS visits
+       FROM visits WHERE created_at >= $1 AND created_at <= $2
+       GROUP BY ua_device`,
+      [from, to],
+    );
 
     const langSplit: Record<string, number> = { fr: 0, en: 0 };
     for (const row of langRow.rows as Array<Record<string, unknown>>) {
@@ -92,8 +99,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       deviceSplit,
     });
   } catch (err) {
-    const msg = err instanceof Error ? err.message : String(err);
-    res.status(500).json({ error: 'sql_failed', message: msg });
+    const e = err as Record<string, unknown>;
+    res.status(500).json({
+      error: 'sql_failed',
+      name: err instanceof Error ? err.name : typeof err,
+      message: err instanceof Error ? err.message : String(err),
+      code: e?.code ?? null,
+    });
   } finally {
     await client.end().catch(() => {});
   }
