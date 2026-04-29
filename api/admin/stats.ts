@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { getSql } from '../_lib/db.js';
+import { sql } from '@vercel/postgres';
 
 const ADMIN_PASSWORD = 'sydnbrdnc66**';
 
@@ -25,8 +25,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     res.status(401).json({ error: 'unauthorized' });
     return;
   }
-  const sql = await getSql();
-  if (!sql) {
+  if (!process.env.POSTGRES_URL) {
     res.status(500).json({ error: 'postgres_not_configured' });
     return;
   }
